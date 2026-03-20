@@ -39,7 +39,7 @@ function MateriaisPageContent() {
   const turmaQuery = searchParams.get("turma");
 
   const [turmas, setTurmas] = useState<Turma[]>([]);
-  const [turmaId, setTurmaId] = useState("");
+  const [manualTurmaId, setManualTurmaId] = useState("");
   const [materiais, setMateriais] = useState<Material[]>([]);
   const [activeFilter, setActiveFilter] = useState("Todos");
   const [search, setSearch] = useState("");
@@ -83,19 +83,23 @@ function MateriaisPageContent() {
   }, []);
 
   useEffect(() => {
-    carregarTurmas();
+    queueMicrotask(() => {
+      void carregarTurmas();
+    });
   }, [carregarTurmas]);
 
-  useEffect(() => {
-    if (turmaQuery && turmas.some((t) => String(t.id) === turmaQuery)) {
-      setTurmaId(turmaQuery);
-      return;
-    }
-    if (turmas.length === 1) setTurmaId(String(turmas[0].id));
-  }, [turmaQuery, turmas]);
+  const turmaId = useMemo(() => {
+    if (turmaQuery && turmas.some((t) => String(t.id) === turmaQuery))
+      return turmaQuery;
+    if (turmas.length === 1) return String(turmas[0].id);
+    return manualTurmaId;
+  }, [turmaQuery, turmas, manualTurmaId]);
 
   useEffect(() => {
-    if (turmaId) carregarMateriais(turmaId);
+    if (!turmaId) return;
+    queueMicrotask(() => {
+      void carregarMateriais(turmaId);
+    });
   }, [turmaId, carregarMateriais]);
 
   const tipoFiltro = FILTROS.find((f) => f.label === activeFilter)?.tipo;
@@ -177,7 +181,7 @@ function MateriaisPageContent() {
         </label>
         <select
           value={turmaId}
-          onChange={(e) => setTurmaId(e.target.value)}
+          onChange={(e) => setManualTurmaId(e.target.value)}
           disabled={carregandoTurmas}
           className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A]"
         >

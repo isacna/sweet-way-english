@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch, apiPaths, getStoredUser } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
 
 type FeedbackItem = {
@@ -31,7 +31,7 @@ export default function AlunoFeedbacksPage() {
     let cancelled = false;
 
     async function load() {
-      const res = await apiFetch("/alunos/me/feedbacks");
+      const res = await apiFetch(apiPaths.alunoMeFeedbacks);
       if (cancelled) return;
       if (res.status === 401 || res.status === 403) {
         router.replace("/login?tipo=aluno");

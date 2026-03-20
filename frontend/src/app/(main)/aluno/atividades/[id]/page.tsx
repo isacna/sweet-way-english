@@ -44,8 +44,12 @@ function AtividadeEntregaContent() {
       return;
     }
     if (!turmaId) {
-      setCarregando(false);
-      setErro("Falta o parâmetro da turma. Abra a atividade a partir da turma.");
+      queueMicrotask(() => {
+        setCarregando(false);
+        setErro(
+          "Falta o parâmetro da turma. Abra a atividade a partir da turma."
+        );
+      });
       return;
     }
 

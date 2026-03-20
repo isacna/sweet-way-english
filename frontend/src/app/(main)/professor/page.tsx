@@ -101,7 +101,9 @@ export default function ProfessorDashboardPage() {
   }, [router]);
 
   useEffect(() => {
-    carregar();
+    queueMicrotask(() => {
+      void carregar();
+    });
   }, [carregar]);
 
   const stats = [

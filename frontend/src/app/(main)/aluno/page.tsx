@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch, apiPaths, getStoredUser } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
 
 type Turma = {
@@ -68,7 +68,7 @@ export default function AlunoDashboardPage() {
       }
       const listaTurmas: Turma[] = await resTurmas.json();
 
-      const resFb = await apiFetch("/alunos/me/feedbacks");
+      const resFb = await apiFetch(apiPaths.alunoMeFeedbacks);
       if (cancelled) return;
       const listaFb: FeedbackItem[] = resFb.ok ? await resFb.json() : [];
 

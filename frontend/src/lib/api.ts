@@ -1,6 +1,14 @@
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3333";
 
+/** Rotas REST do backend (`server.ts` monta em `/api`). Ver `backend/src/http/routes/index.ts`. */
+export const apiPaths = {
+  professorAlunos: "/professor/alunos",
+  professorAluno: (id: number) => `/professor/alunos/${id}`,
+  /** Feedbacks do aluno autenticado */
+  alunoMeFeedbacks: "/alunos/me/feedbacks",
+} as const;
+
 export function getToken(): string | null {
   if (typeof window === "undefined") return null;
   return localStorage.getItem("token");

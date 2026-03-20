@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
-import { apiFetch } from "@/lib/api";
+import { apiFetch, assetUrl } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
 
 type TurmaDetalhe = {
@@ -89,15 +89,19 @@ function TurmaDetalhePageContent() {
   );
 
   useEffect(() => {
-    carregarTurma();
+    queueMicrotask(() => {
+      void carregarTurma();
+    });
   }, [carregarTurma]);
 
   useEffect(() => {
-    if (atividadeDestaque) {
-      carregarSubmissoes(atividadeDestaque);
-    } else {
-      setSubmissoes([]);
-    }
+    queueMicrotask(() => {
+      if (atividadeDestaque) {
+        void carregarSubmissoes(atividadeDestaque);
+      } else {
+        setSubmissoes([]);
+      }
+    });
   }, [atividadeDestaque, carregarSubmissoes]);
 
   async function enviarFeedback(submissaoId: number) {
@@ -267,6 +271,22 @@ function TurmaDetalhePageContent() {
                     <p className="text-sm text-[#4A4A4A] whitespace-pre-wrap">
                       {s.conteudo}
                     </p>
+                  )}
+                  {s.arquivoUrl && (
+                    <a
+                      href={assetUrl(s.arquivoUrl) ?? "#"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm text-[#8A4FF7] font-medium hover:underline"
+                    >
+                      <Image
+                        src="/icons/download.svg"
+                        alt=""
+                        width={16}
+                        height={16}
+                      />
+                      Baixar anexo do aluno
+                    </a>
                   )}
                   {s.feedback ? (
                     <div className="text-sm bg-green-50 border border-green-100 rounded-lg p-3">

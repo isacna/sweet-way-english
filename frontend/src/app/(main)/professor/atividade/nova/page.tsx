@@ -41,11 +41,16 @@ function NovaAtividadePageContent() {
   }, [router, turmaIdInicial]);
 
   useEffect(() => {
-    carregarTurmas();
+    queueMicrotask(() => {
+      void carregarTurmas();
+    });
   }, [carregarTurmas]);
 
   useEffect(() => {
-    if (turmaIdInicial) setTurmaId(turmaIdInicial);
+    if (!turmaIdInicial) return;
+    queueMicrotask(() => {
+      setTurmaId(turmaIdInicial);
+    });
   }, [turmaIdInicial]);
 
   async function handleSubmit(e: React.FormEvent) {

@@ -17,7 +17,11 @@ type ButtonProps = {
   className?: string;
 } & (
   | { href: string; as?: never }
-  | { href?: never; as?: "button"; type?: "button" | "submit" }
+  | ({
+      href?: never;
+      as?: "button";
+      type?: "button" | "submit";
+    } & React.ButtonHTMLAttributes<HTMLButtonElement>)
 );
 
 const sizeStyles: Record<string, string> = {
@@ -54,10 +58,24 @@ export function Button({
     );
   }
 
-  const buttonType = ("type" in props ? props.type : undefined) ?? "button";
+  const {
+    type: buttonTypeProp,
+    disabled,
+    onClick,
+    as,
+    ...restButton
+  } = props as { as?: string } & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  void as;
+  const buttonType = buttonTypeProp ?? "button";
 
   return (
-    <button type={buttonType} className={classes}>
+    <button
+      type={buttonType}
+      className={classes}
+      disabled={disabled}
+      onClick={onClick}
+      {...restButton}
+    >
       {children}
     </button>
   );
