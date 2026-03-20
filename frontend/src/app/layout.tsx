@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: "Sweet Way English",
   description:
     "Aprenda inglês de um jeito doce e eficiente. Plataforma que conecta professores e alunos.",
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
 };
 
 export default function RootLayout({

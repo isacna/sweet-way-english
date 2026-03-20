@@ -6,8 +6,8 @@ export function NavbarAuth() {
       <Button href="/entrar" variant="ghost" size="sm">
         Entrar
       </Button>
-      <Button href="/cadastrar" variant="primary" size="nav">
-        Cadastrar
+      <Button href="/cadastrar" variant="primary" size="nav" className="rounded-full px-6">
+        Começar agora
       </Button>
     </nav>
   );

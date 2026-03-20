@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/database/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Professor {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  email     String   @unique
+  senha     String
+  criadoEm DateTime @default(now())
+  turmas    Turma[]
+  feedbacks Feedback[]
+}
+
+model Turma {
+  id             Int              @id @default(autoincrement())
+  nome           String
+  descricao      String?
+  codigoConvite  String           @unique
+  professorId    Int
+  criadoEm       DateTime         @default(now())
+  professor      Professor        @relation(fields: [professorId], references: [id])
+  matriculas     Matricula[]
+  atividades     Atividade[]
+  materiais      MaterialApoio[]
+}
+
+model Aluno {
+  id         Int         @id @default(autoincrement())
+  nome       String
+  email      String      @unique
+  senha      String
+  criadoEm  DateTime    @default(now())
+  matriculas Matricula[]
+  submissoes Submissao[]
+}
+
+model Matricula {
+  id             Int      @id @default(autoincrement())
+  alunoId        Int
+  turmaId        Int
+  dataMatricula  DateTime @default(now())
+  status         String   @default("ativa")
+  aluno          Aluno    @relation(fields: [alunoId], references: [id])
+  turma          Turma    @relation(fields: [turmaId], references: [id])
+  @@unique([alunoId, turmaId])
+}
+
+model Atividade {
+  id          Int         @id @default(autoincrement())
+  titulo      String
+  descricao   String
+  dataEntrega DateTime
+  turmaId     Int
+  criadoEm   DateTime    @default(now())
+  turma       Turma       @relation(fields: [turmaId], references: [id])
+  submissoes  Submissao[]
+}
+
+model Submissao {
+  id          Int       @id @default(autoincrement())
+  atividadeId Int
+  alunoId     Int
+  conteudo    String?
+  arquivoUrl  String?
+  dataEnvio   DateTime  @default(now())
+  status      String    @default("pendente")
+  atividade   Atividade @relation(fields: [atividadeId], references: [id])
+  aluno       Aluno     @relation(fields: [alunoId], references: [id])
+  feedback    Feedback?
+}
+
+model Feedback {
+  id           Int       @id @default(autoincrement())
+  submissaoId  Int       @unique
+  professorId  Int
+  comentario   String
+  nota         Float
+  criadoEm    DateTime  @default(now())
+  submissao    Submissao @relation(fields: [submissaoId], references: [id])
+  professor    Professor @relation(fields: [professorId], references: [id])
+}
+
+model MaterialApoio {
+  id         Int      @id @default(autoincrement())
+  titulo     String
+  tipo       String   // "pdf" | "audio" | "video" | "link"
+  urlArquivo String
+  turmaId    Int
+  criadoEm  DateTime @default(now())
+  turma      Turma    @relation(fields: [turmaId], references: [id])
+}
