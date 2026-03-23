@@ -1,4 +1,4 @@
-import { test, expect, type Page, type ConsoleMessage } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 
 // Public pages that load without authentication
 const PUBLIC_PAGES = [
@@ -7,8 +7,8 @@ const PUBLIC_PAGES = [
   { path: "/login?tipo=professor", name: "Login Professor" },
 ];
 
-// Error severities to capture from the browser console
-const CONSOLE_ERROR_TYPES = ["error", "warning"];
+// Only capture actual errors — warnings are common in Next.js dev mode
+const CONSOLE_ERROR_TYPES = ["error"];
 
 // Network responses that indicate a broken page
 const FAILING_STATUS_CODES = [500, 502, 503, 504];
@@ -17,7 +17,7 @@ function collectErrors(page: Page) {
   const consoleErrors: string[] = [];
   const networkErrors: string[] = [];
 
-  page.on("console", (msg: ConsoleMessage) => {
+  page.on("console", (msg) => {
     if (CONSOLE_ERROR_TYPES.includes(msg.type())) {
       // Ignore expected Next.js dev overlay noise
       const text = msg.text();
