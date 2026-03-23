@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { prisma } from '../../database/client.js';
+import { StatusSubmissao } from '../../database/generated/prisma/client.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import multer from 'multer';
@@ -328,16 +329,78 @@ router.post('/turmas/entrar', authenticateToken, async (req: any, res) => {
 // --- Atividades Routes ---
 router.post('/turmas/:turmaId/atividades', authenticateToken, async (req: any, res) => {
   if (req.user.role !== 'professor') return res.status(403).json({ error: 'Acesso negado' });
-  const { titulo, descricao, dataEntrega } = req.body;
+  const turmaId = parseInt(req.params.turmaId, 10);
+  if (Number.isNaN(turmaId)) return res.status(400).json({ error: 'Turma inválida' });
+  const turma = await prisma.turma.findFirst({
+    where: { id: turmaId, professorId: req.user.id }
+  });
+  if (!turma) return res.status(404).json({ error: 'Turma não encontrada' });
+
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio } = req.body;
   const atividade = await prisma.atividade.create({
     data: {
       titulo,
       descricao,
       dataEntrega: new Date(dataEntrega),
-      turmaId: parseInt(req.params.turmaId)
+      arquivoObrigatorio: Boolean(arquivoObrigatorio),
+      turmaId
     }
   });
   res.status(201).json(atividade);
+});
+
+router.patch('/professor/atividades/:id', authenticateToken, async (req: any, res) => {
+  if (req.user.role !== 'professor') return res.status(403).json({ error: 'Acesso negado' });
+  const id = parseInt(req.params.id, 10);
+  if (Number.isNaN(id)) return res.status(400).json({ error: 'ID inválido' });
+
+  const existente = await prisma.atividade.findUnique({
+    where: { id },
+    include: { turma: { select: { professorId: true } } }
+  });
+  if (!existente) return res.status(404).json({ error: 'Atividade não encontrada' });
+  if (existente.turma.professorId !== req.user.id) {
+    return res.status(403).json({ error: 'Acesso negado' });
+  }
+
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio } = req.body;
+  const data: {
+    titulo?: string;
+    descricao?: string;
+    dataEntrega?: Date;
+    arquivoObrigatorio?: boolean;
+  } = {};
+  if (titulo !== undefined) {
+    const t = String(titulo).trim();
+    if (!t) return res.status(400).json({ error: 'Título não pode ser vazio' });
+    data.titulo = t;
+  }
+  if (descricao !== undefined) {
+    const d = String(descricao).trim();
+    if (!d) return res.status(400).json({ error: 'Descrição não pode ser vazia' });
+    data.descricao = d;
+  }
+  if (dataEntrega !== undefined) {
+    const d = new Date(dataEntrega);
+    if (Number.isNaN(d.getTime())) {
+      return res.status(400).json({ error: 'Data de entrega inválida' });
+    }
+    data.dataEntrega = d;
+  }
+  if (arquivoObrigatorio !== undefined) {
+    data.arquivoObrigatorio = Boolean(arquivoObrigatorio);
+  }
+  if (Object.keys(data).length === 0) {
+    return res.status(400).json({
+      error: 'Envie titulo, descricao, dataEntrega e/ou arquivoObrigatorio'
+    });
+  }
+
+  const atividade = await prisma.atividade.update({
+    where: { id },
+    data
+  });
+  res.json(atividade);
 });
 
 router.get('/turmas/:turmaId/atividades', authenticateToken, async (req: any, res) => {
@@ -358,7 +421,10 @@ router.get('/turmas/:turmaId/atividades', authenticateToken, async (req: any, re
     req.user.role === 'aluno'
       ? {
           where: { alunoId: req.user.id },
-          include: { aluno: { select: { nome: true } } },
+          include: {
+            aluno: { select: { nome: true } },
+            feedback: { include: { professor: { select: { nome: true } } } }
+          },
           orderBy: { dataEnvio: 'desc' as const }
         }
       : {
@@ -376,10 +442,38 @@ router.get('/turmas/:turmaId/atividades', authenticateToken, async (req: any, re
 // --- Submissões Routes ---
 router.post('/atividades/:id/submissoes', authenticateToken, upload.single('arquivo'), async (req: any, res) => {
   if (req.user.role !== 'aluno') return res.status(403).json({ error: 'Acesso negado' });
+  const atividadeId = parseInt(req.params.id, 10);
+  if (Number.isNaN(atividadeId)) return res.status(400).json({ error: 'Atividade inválida' });
+
+  const atividade = await prisma.atividade.findUnique({ where: { id: atividadeId } });
+  if (!atividade) return res.status(404).json({ error: 'Atividade não encontrada' });
+
+  const matriculado = await prisma.matricula.findFirst({
+    where: { turmaId: atividade.turmaId, alunoId: req.user.id }
+  });
+  if (!matriculado) return res.status(403).json({ error: 'Você não está nesta turma' });
+
+  if (atividade.arquivoObrigatorio && !req.file) {
+    return res.status(400).json({ error: 'Esta atividade exige o envio de um arquivo.' });
+  }
+
+  const ultimaSubmissao = await prisma.submissao.findFirst({
+    where: { atividadeId, alunoId: req.user.id },
+    orderBy: { dataEnvio: 'desc' }
+  });
+  // Nova entrega só é permitida se não houver entrega anterior ou se a última
+  // estiver reprovada. Com pendente, aprovado ou corrigido, o aluno aguarda ou encerrou.
+  if (ultimaSubmissao && ultimaSubmissao.status !== StatusSubmissao.reprovado) {
+    return res.status(400).json({
+      error:
+        'Você já possui uma entrega para esta atividade. Só é possível enviar de novo se o professor reprovar a última entrega (status reprovado). Com entrega aprovada ou corrigida, não há nova submissão.'
+    });
+  }
+
   const { conteudo } = req.body;
   const submissao = await prisma.submissao.create({
     data: {
-      atividadeId: parseInt(req.params.id),
+      atividadeId,
       alunoId: req.user.id,
       conteudo,
       arquivoUrl: req.file ? `/uploads/${req.file.filename}` : null
@@ -390,9 +484,22 @@ router.post('/atividades/:id/submissoes', authenticateToken, upload.single('arqu
 
 router.get('/atividades/:id/submissoes', authenticateToken, async (req: any, res) => {
   if (req.user.role !== 'professor') return res.status(403).json({ error: 'Acesso negado' });
+  const atividadeId = parseInt(req.params.id, 10);
+  if (Number.isNaN(atividadeId)) return res.status(400).json({ error: 'ID inválido' });
+
+  const atividade = await prisma.atividade.findUnique({
+    where: { id: atividadeId },
+    include: { turma: { select: { professorId: true } } }
+  });
+  if (!atividade) return res.status(404).json({ error: 'Atividade não encontrada' });
+  if (atividade.turma.professorId !== req.user.id) {
+    return res.status(403).json({ error: 'Acesso negado' });
+  }
+
   const submissoes = await prisma.submissao.findMany({
-    where: { atividadeId: parseInt(req.params.id) },
-    include: { aluno: { select: { nome: true } }, feedback: true }
+    where: { atividadeId },
+    include: { aluno: { select: { id: true, nome: true } }, feedback: true },
+    orderBy: { dataEnvio: 'desc' }
   });
   res.json(submissoes);
 });
@@ -400,20 +507,95 @@ router.get('/atividades/:id/submissoes', authenticateToken, async (req: any, res
 // --- Feedbacks Routes ---
 router.post('/submissoes/:id/feedback', authenticateToken, async (req: any, res) => {
   if (req.user.role !== 'professor') return res.status(403).json({ error: 'Acesso negado' });
+  const submissaoId = parseInt(req.params.id, 10);
+  if (Number.isNaN(submissaoId)) return res.status(400).json({ error: 'ID inválido' });
+
+  const existente = await prisma.submissao.findUnique({
+    where: { id: submissaoId },
+    include: { atividade: { include: { turma: { select: { professorId: true } } } }, feedback: true }
+  });
+  if (!existente) return res.status(404).json({ error: 'Submissão não encontrada' });
+  if (existente.atividade.turma.professorId !== req.user.id) {
+    return res.status(403).json({ error: 'Acesso negado' });
+  }
+  if (existente.feedback) {
+    return res.status(400).json({ error: 'Esta submissão já possui feedback.' });
+  }
+  if (
+    existente.status === StatusSubmissao.aprovado ||
+    existente.status === StatusSubmissao.reprovado
+  ) {
+    return res.status(400).json({
+      error: 'Não é possível enviar nota após Aprovar ou Reprovar nesta entrega.'
+    });
+  }
+
   const { comentario, nota } = req.body;
   const feedback = await prisma.feedback.create({
     data: {
-      submissaoId: parseInt(req.params.id),
+      submissaoId,
       professorId: req.user.id,
       comentario,
       nota: parseFloat(nota)
     }
   });
   await prisma.submissao.update({
-    where: { id: parseInt(req.params.id) },
-    data: { status: 'corrigido' }
+    where: { id: submissaoId },
+    data: { status: StatusSubmissao.corrigido }
   });
   res.status(201).json(feedback);
+});
+
+router.patch('/professor/submissoes/:id', authenticateToken, async (req: any, res) => {
+  if (req.user.role !== 'professor') return res.status(403).json({ error: 'Acesso negado' });
+  const id = parseInt(req.params.id, 10);
+  if (Number.isNaN(id)) return res.status(400).json({ error: 'ID inválido' });
+
+  const { status } = req.body;
+  if (status !== 'aprovado' && status !== 'reprovado') {
+    return res.status(400).json({ error: 'Envie status: "aprovado" ou "reprovado"' });
+  }
+
+  const submissao = await prisma.submissao.findUnique({
+    where: { id },
+    include: { atividade: { include: { turma: { select: { professorId: true } } } } }
+  });
+  if (!submissao) return res.status(404).json({ error: 'Submissão não encontrada' });
+  if (submissao.atividade.turma.professorId !== req.user.id) {
+    return res.status(403).json({ error: 'Acesso negado' });
+  }
+
+  const novo =
+    status === 'aprovado' ? StatusSubmissao.aprovado : StatusSubmissao.reprovado;
+
+  if (
+    submissao.status === StatusSubmissao.aprovado ||
+    submissao.status === StatusSubmissao.reprovado
+  ) {
+    return res.status(400).json({
+      error:
+        'Esta entrega já foi avaliada com Aprovar ou Reprovar e não pode ser alterada.'
+    });
+  }
+
+  if (submissao.status === StatusSubmissao.corrigido && novo === StatusSubmissao.aprovado) {
+    return res.status(400).json({
+      error:
+        'Uma entrega já corrigida com nota só pode ser reprovada para o aluno tentar de novo.'
+    });
+  }
+
+  const atualizada = await prisma.$transaction(async (tx) => {
+    if (novo === StatusSubmissao.reprovado) {
+      await tx.feedback.deleteMany({ where: { submissaoId: id } });
+    }
+    return tx.submissao.update({
+      where: { id },
+      data: { status: novo },
+      include: { aluno: { select: { id: true, nome: true } }, feedback: true }
+    });
+  });
+  res.json(atualizada);
 });
 
 router.get('/alunos/me/feedbacks', authenticateToken, async (req: any, res) => {

@@ -27,6 +27,7 @@ type Atividade = {
   titulo: string;
   descricao: string;
   dataEntrega: string;
+  arquivoObrigatorio?: boolean;
   submissoes: { id: number; status: string; dataEnvio: string }[];
 };
 
@@ -34,6 +35,8 @@ function statusAluno(a: Atividade): string {
   const s = a.submissoes?.[0];
   if (!s) return "A entregar";
   if (s.status === "corrigido") return "Corrigida";
+  if (s.status === "aprovado") return "Aprovada";
+  if (s.status === "reprovado") return "Reprovada";
   return "Enviada · aguardando correção";
 }
 
@@ -190,6 +193,11 @@ export default function AlunoTurmaDetalhePage() {
                     Entrega:{" "}
                     {new Date(a.dataEntrega).toLocaleString("pt-BR")}
                   </p>
+                  {a.arquivoObrigatorio && (
+                    <p className="text-xs text-amber-800 mt-1 font-medium">
+                      Arquivo obrigatório na entrega
+                    </p>
+                  )}
                   <p className="text-xs font-medium text-[#8A4FF7] mt-1">
                     {statusAluno(a)}
                   </p>

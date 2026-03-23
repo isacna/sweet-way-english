@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../src/database/client.js';
+import { StatusSubmissao } from '../src/database/generated/prisma/client.js';
 
 async function main() {
   const senhaHash = await bcrypt.hash('senha123', 10);
@@ -91,7 +92,7 @@ async function main() {
       atividadeId: atividade1.id,
       alunoId: aluno1.id,
       conteudo: 'My name is Ana. I am 25 years old. I work as a designer. I like to read and travel.',
-      status: 'corrigido',
+      status: StatusSubmissao.corrigido,
     },
   });
 

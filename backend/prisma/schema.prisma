@@ -52,26 +52,34 @@ model Matricula {
 }
 
 model Atividade {
-  id          Int         @id @default(autoincrement())
-  titulo      String
-  descricao   String
-  dataEntrega DateTime
-  turmaId     Int
-  criadoEm   DateTime    @default(now())
-  turma       Turma       @relation(fields: [turmaId], references: [id])
-  submissoes  Submissao[]
+  id                 Int         @id @default(autoincrement())
+  titulo             String
+  descricao          String
+  dataEntrega        DateTime
+  arquivoObrigatorio Boolean     @default(false)
+  turmaId            Int
+  criadoEm           DateTime    @default(now())
+  turma              Turma       @relation(fields: [turmaId], references: [id])
+  submissoes         Submissao[]
+}
+
+enum StatusSubmissao {
+  pendente
+  aprovado
+  reprovado
+  corrigido
 }
 
 model Submissao {
-  id          Int       @id @default(autoincrement())
+  id          Int             @id @default(autoincrement())
   atividadeId Int
   alunoId     Int
   conteudo    String?
   arquivoUrl  String?
-  dataEnvio   DateTime  @default(now())
-  status      String    @default("pendente")
-  atividade   Atividade @relation(fields: [atividadeId], references: [id])
-  aluno       Aluno     @relation(fields: [alunoId], references: [id])
+  dataEnvio   DateTime        @default(now())
+  status      StatusSubmissao @default(pendente)
+  atividade   Atividade       @relation(fields: [atividadeId], references: [id])
+  aluno       Aluno           @relation(fields: [alunoId], references: [id])
   feedback    Feedback?
 }
 

@@ -19,6 +19,7 @@ function NovaAtividadePageContent() {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [dataEntrega, setDataEntrega] = useState("");
+  const [arquivoObrigatorio, setArquivoObrigatorio] = useState(false);
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
   const [carregandoTurmas, setCarregandoTurmas] = useState(true);
@@ -67,6 +68,7 @@ function NovaAtividadePageContent() {
         titulo,
         descricao,
         dataEntrega: new Date(dataEntrega).toISOString(),
+        arquivoObrigatorio,
       }),
     });
     setCarregando(false);
@@ -181,6 +183,17 @@ function NovaAtividadePageContent() {
             className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
           />
         </div>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={arquivoObrigatorio}
+            onChange={(e) => setArquivoObrigatorio(e.target.checked)}
+            className="mt-1 rounded border-gray-300 text-[#8A4FF7] focus:ring-[#8A4FF7]"
+          />
+          <span className="text-sm text-[#1A1A1A]">
+            Exigir arquivo na entrega (alunos precisam anexar um arquivo para enviar)
+          </span>
+        </label>
         {erro && (
           <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
             {erro}

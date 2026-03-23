@@ -29,12 +29,19 @@ type LinhaPrazo = {
   turmaNome: string;
   titulo: string;
   dataEntrega: string;
-  situacao: "a_entregar" | "aguardando" | "corrigida";
+  situacao:
+    | "a_entregar"
+    | "aguardando"
+    | "corrigida"
+    | "aprovada"
+    | "reprovada";
 };
 
 function situacaoLabel(s: LinhaPrazo["situacao"]) {
   if (s === "a_entregar") return "A entregar";
   if (s === "aguardando") return "Aguardando correção";
+  if (s === "aprovada") return "Aprovada";
+  if (s === "reprovada") return "Reprovada";
   return "Corrigida";
 }
 
@@ -95,6 +102,10 @@ export default function AlunoDashboardPage() {
               entregar += 1;
             } else if (ultima.status === "corrigido") {
               situacao = "corrigida";
+            } else if (ultima.status === "aprovado") {
+              situacao = "aprovada";
+            } else if (ultima.status === "reprovado") {
+              situacao = "reprovada";
             } else {
               situacao = "aguardando";
             }
@@ -251,7 +262,11 @@ export default function AlunoDashboardPage() {
                           ? "bg-orange-100 text-orange-800"
                           : p.situacao === "aguardando"
                             ? "bg-blue-50 text-blue-800"
-                            : "bg-green-50 text-green-800"
+                            : p.situacao === "reprovada"
+                              ? "bg-red-50 text-red-800"
+                              : p.situacao === "aprovada"
+                                ? "bg-emerald-50 text-emerald-800"
+                                : "bg-green-50 text-green-800"
                       }`}
                     >
                       {situacaoLabel(p.situacao)}
@@ -261,7 +276,10 @@ export default function AlunoDashboardPage() {
                     href={`/aluno/atividades/${p.atividadeId}?turmaId=${p.turmaId}`}
                     className="text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0] shrink-0"
                   >
-                    {p.situacao === "corrigida" ? "Ver" : "Abrir"}
+                    {p.situacao === "a_entregar" ||
+                    p.situacao === "aguardando"
+                      ? "Abrir"
+                      : "Ver"}
                   </Link>
                 </li>
               ))}
