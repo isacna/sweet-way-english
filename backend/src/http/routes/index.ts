@@ -9,6 +9,8 @@ import { materialRouter } from './material.routes.js';
 
 const router = Router();
 
+router.get('/health', (_req, res) => res.json({ status: 'ok' }));
+
 router.use('/auth', authRouter);
 router.use('/turmas', classRouter);
 router.use('/turmas/:turmaId/atividades', activityRouter);

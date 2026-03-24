@@ -17,7 +17,7 @@ O Sweet Way English nasceu da necessidade identificada durante um curso básico 
 - **TypeScript** - Superset do JavaScript com tipagem estática
 
 ### Banco de Dados
-- **PostgreSQL** - Banco de dados relacional para persistência de dados estruturados
+- **SQLite** - Banco de dados relacional embarcado, sem necessidade de servidor separado
 - **Prisma ORM** - Camada de acesso ao banco de dados com modelagem tipada e migrações
 
 ### DevOps
@@ -38,11 +38,9 @@ O projeto está organizado para demonstrar a separação clara de responsabilida
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Node.js (versão LTS recomendada)
 - Docker e Docker Compose
-- PostgreSQL (ou usar via Docker)
 
-### Instalação
+### Com Docker (recomendado)
 
 1. Clone o repositório:
 ```bash
@@ -50,20 +48,36 @@ git clone https://github.com/seu-usuario/sweet-way-english.git
 cd sweet-way-english
 ```
 
-2. Configure as variáveis de ambiente:
-   - Crie arquivos `.env` no diretório `backend/` e `frontend/` conforme necessário
-
-3. Execute com Docker:
+2. Crie o arquivo `.env` na raiz do projeto a partir do exemplo:
 ```bash
-docker-compose up
+cp .env.example .env
 ```
 
-Ou execute manualmente:
+3. Preencha as variáveis no `.env`:
+```env
+JWT_SECRET=sua-chave-secreta
+GEMINI_API_KEY=sua-chave-gemini
+APP_URL=http://localhost:3333
+NEXT_PUBLIC_API_URL=http://localhost:3333
+```
+
+4. Inicie os containers:
+```bash
+docker compose up --build
+```
+
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3333
+
+### Sem Docker (desenvolvimento local)
+
+**Pré-requisitos adicionais:** Node.js 20+
 
 **Backend:**
 ```bash
 cd backend
 npm install
+npx prisma migrate dev
 npm run dev
 ```
 
@@ -73,6 +87,17 @@ cd frontend
 npm install
 npm run dev
 ```
+
+## 🔑 Credenciais de Teste
+
+O banco de dados é populado automaticamente com dados de exemplo na primeira execução.
+
+| Perfil | E-mail | Senha |
+|--------|--------|-------|
+| Professor | `professor@sweetway.com` | `senha123` |
+| Aluno | `ana@email.com` | `senha123` |
+| Aluno | `bruno@email.com` | `senha123` |
+| Aluno | `carla@email.com` | `senha123` |
 
 ## ✨ Funcionalidades
 

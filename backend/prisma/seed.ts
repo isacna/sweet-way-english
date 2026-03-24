@@ -107,7 +107,7 @@ async function main() {
 
   await prisma.materialApoio.createMany({
     data: [
-      { titulo: 'Guia de Verbos - Simple Present', tipo: 'pdf', urlArquivo: '/materiais/verbos-simple-present.pdf', turmaId: turma1.id },
+      { titulo: 'Guia de Verbos - Simple Present', tipo: 'pdf', urlArquivo: '/uploads/verbos-simple-present.pdf', turmaId: turma1.id },
       { titulo: 'Vídeo - Pronúncia do TH', tipo: 'video', urlArquivo: 'https://youtube.com/watch?v=exemplo', turmaId: turma1.id },
       { titulo: 'Links úteis para estudo', tipo: 'link', urlArquivo: 'https://sweetway.com/links', turmaId: turma1.id },
     ],

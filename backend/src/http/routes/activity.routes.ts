@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { authenticateToken } from '../middlewares/auth.js';
 import { createActivity, updateActivity, listActivitiesByClass } from '../controllers/ActivityController.js';
 
-const router = Router();
+const router = Router({ mergeParams: true });
 
 // Mounted at /turmas/:turmaId/atividades
 router.post('/', authenticateToken, createActivity as any);
