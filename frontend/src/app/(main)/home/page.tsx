@@ -8,11 +8,11 @@ export default function HomePage() {
       <main className="pt-12 pb-20 px-8 max-w-6xl mx-auto">
         <div className="flex justify-center mb-12">
           <Image
-            src="/logo.svg"
+            src="/logo-sweet.png"
             alt="Sweet Way English - Learn. Speak. Achieve."
-            width={200}
-            height={200}
-            className="object-contain"
+            width={480}
+            height={480}
+            className="w-auto h-auto max-w-[min(92vw,380px)] sm:max-w-[440px] md:max-w-[500px] object-contain"
             priority
           />
         </div>

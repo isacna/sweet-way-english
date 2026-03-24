@@ -29,11 +29,25 @@ function NavIcon({ icon, active }: { icon: string; active: boolean }) {
   );
 }
 
-export function StudentNav() {
+export type StudentNavVariant = "horizontal" | "vertical";
+
+export function StudentNav({
+  variant = "horizontal",
+}: {
+  variant?: StudentNavVariant;
+}) {
   const pathname = usePathname();
+  const vertical = variant === "vertical";
 
   return (
-    <nav className="flex items-center gap-1 flex-wrap">
+    <nav
+      aria-label={vertical ? "Menu principal" : undefined}
+      className={
+        vertical
+          ? "flex w-full flex-col"
+          : "flex w-max max-w-none items-center gap-1 flex-nowrap md:w-full md:max-w-full md:justify-center"
+      }
+    >
       {navItems.map((item) => {
         const isActive =
           item.href === "/aluno"
@@ -43,11 +57,20 @@ export function StudentNav() {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-              isActive
-                ? "text-[#8A4FF7] bg-[#8A4FF7]/10"
-                : "text-[#4A4A4A] hover:bg-gray-100"
-            }`}
+            role={vertical ? "menuitem" : undefined}
+            className={
+              vertical
+                ? `flex w-full items-center gap-3 px-3 py-3 text-sm font-medium transition-colors border-b border-gray-100 last:border-b-0 ${
+                    isActive
+                      ? "text-[#8A4FF7] bg-[#8A4FF7]/10"
+                      : "text-[#1A1A1A] hover:bg-gray-50"
+                  }`
+                : `flex shrink-0 items-center gap-2 whitespace-nowrap px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-[#8A4FF7] bg-[#8A4FF7]/10"
+                      : "text-[#4A4A4A] hover:bg-gray-100"
+                  }`
+            }
           >
             <NavIcon icon={item.icon} active={isActive} />
             {item.label}

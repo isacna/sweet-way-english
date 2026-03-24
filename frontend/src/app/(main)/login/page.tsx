@@ -58,11 +58,11 @@ function LoginPageContent() {
         <div className="flex justify-center mb-12">
           <Link href="/home">
             <Image
-              src="/logo.svg"
+              src="/logo-sweet.png"
               alt="Sweet Way English - Learn. Speak. Achieve."
-              width={200}
-              height={200}
-              className="object-contain"
+              width={480}
+              height={480}
+              className="w-auto h-auto max-w-[min(92vw,380px)] sm:max-w-[440px] md:max-w-[500px] object-contain"
               priority
             />
           </Link>

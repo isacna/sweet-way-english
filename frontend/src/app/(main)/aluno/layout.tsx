@@ -13,7 +13,7 @@ export default function AlunoLayout({
         variant="dashboard"
         logoHref="/aluno"
         center={<StudentNav />}
-        right={<NavbarUser />}
+        right={<NavbarUser mobileNav={<StudentNav variant="vertical" />} />}
       />
       <main className="p-8">{children}</main>
     </div>

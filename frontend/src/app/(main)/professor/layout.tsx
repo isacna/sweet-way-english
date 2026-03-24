@@ -12,7 +12,7 @@ export default function ProfessorLayout({
       <Navbar
         variant="dashboard"
         center={<TeacherNav />}
-        right={<NavbarUser />}
+        right={<NavbarUser mobileNav={<TeacherNav variant="vertical" />} />}
       />
       <main className="p-8">{children}</main>
     </div>

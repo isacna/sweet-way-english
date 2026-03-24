@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { AssetPreview } from "@/components/AssetPreview";
 import { apiFetch, assetUrl } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
 
@@ -254,35 +255,49 @@ function MateriaisPageContent() {
             return (
               <div
                 key={mat.id}
-                className="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm"
+                className="p-4 rounded-xl bg-white border border-gray-100 shadow-sm space-y-4"
               >
-                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
-                  <Image
-                    src={iconeTipo(mat.tipo)}
-                    alt=""
-                    width={24}
-                    height={24}
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-[#1A1A1A] truncate">
-                    {mat.titulo}
-                  </p>
-                  <p className="text-sm text-[#4A4A4A]">
-                    {mat.tipo.toUpperCase()} •{" "}
-                    {tempoRelativoPt(mat.criadoEm)}
-                  </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <Image
+                      src={iconeTipo(mat.tipo)}
+                      alt=""
+                      width={24}
+                      height={24}
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-[#1A1A1A] truncate">
+                      {mat.titulo}
+                    </p>
+                    <p className="text-sm text-[#4A4A4A]">
+                      {mat.tipo.toUpperCase()} •{" "}
+                      {tempoRelativoPt(mat.criadoEm)}
+                    </p>
+                  </div>
+                  {href && (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 text-[#4A4A4A] hover:text-[#8A4FF7] hover:bg-[#8A4FF7]/10 rounded-lg transition-colors flex-shrink-0"
+                      aria-label="Abrir material"
+                    >
+                      <Image
+                        src="/icons/download.svg"
+                        alt=""
+                        width={20}
+                        height={20}
+                      />
+                    </a>
+                  )}
                 </div>
                 {href && (
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 text-[#4A4A4A] hover:text-[#8A4FF7] hover:bg-[#8A4FF7]/10 rounded-lg transition-colors flex-shrink-0"
-                    aria-label="Abrir material"
-                  >
-                    <Image src="/icons/download.svg" alt="" width={20} height={20} />
-                  </a>
+                  <AssetPreview
+                    fullUrl={href}
+                    tipo={mat.tipo}
+                    title={mat.titulo}
+                  />
                 )}
               </div>
             );

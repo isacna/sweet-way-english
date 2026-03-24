@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
+import { AssetPreview } from "@/components/AssetPreview";
 import { Button } from "@/components/Button";
 import { apiFetch, assetUrl } from "@/lib/api";
 import {
@@ -38,6 +39,31 @@ type Submissao = {
   aluno: { id: number; nome: string };
   feedback: { comentario: string; nota: number } | null;
 };
+
+function BlocoAnexoAluno({
+  arquivoUrl,
+  nomeAluno,
+}: {
+  arquivoUrl: string;
+  nomeAluno: string;
+}) {
+  const full = assetUrl(arquivoUrl);
+  if (!full) return null;
+  return (
+    <div className="space-y-3">
+      <a
+        href={full}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-sm text-[#8A4FF7] font-medium hover:underline"
+      >
+        <Image src="/icons/download.svg" alt="" width={16} height={16} />
+        Baixar anexo do aluno
+      </a>
+      <AssetPreview fullUrl={full} title={`Anexo — ${nomeAluno}`} />
+    </div>
+  );
+}
 
 function TurmaDetalhePageContent() {
   const params = useParams();
@@ -475,20 +501,10 @@ function TurmaDetalhePageContent() {
                       </p>
                     )}
                     {s.arquivoUrl && (
-                      <a
-                        href={assetUrl(s.arquivoUrl) ?? "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm text-[#8A4FF7] font-medium hover:underline"
-                      >
-                        <Image
-                          src="/icons/download.svg"
-                          alt=""
-                          width={16}
-                          height={16}
-                        />
-                        Baixar anexo do aluno
-                      </a>
+                      <BlocoAnexoAluno
+                        arquivoUrl={s.arquivoUrl}
+                        nomeAluno={s.aluno.nome}
+                      />
                     )}
                     {s.feedback ? (
                       <div className="text-sm bg-green-50 border border-green-100 rounded-lg p-3">

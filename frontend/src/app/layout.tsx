@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     "Aprenda inglês de um jeito doce e eficiente. Plataforma que conecta professores e alunos.",
   icons: {
-    icon: "/logo.svg",
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+    icon: "/logo-sweet.png",
+    shortcut: "/logo-sweet.png",
+    apple: "/logo-sweet.png",
   },
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { getStoredUser } from "@/lib/api";
 
 function iniciais(nome: string): string {
@@ -19,7 +19,12 @@ function rotuloPapel(role: string): string {
   return role;
 }
 
-export function NavbarUser() {
+type NavbarUserProps = {
+  /** No mobile: links do menu (Painel, Turmas…) dentro do dropdown do perfil. */
+  mobileNav?: ReactNode;
+};
+
+export function NavbarUser({ mobileNav }: NavbarUserProps) {
   const [montado, setMontado] = useState(false);
   const [aberto, setAberto] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -115,6 +120,18 @@ export function NavbarUser() {
               {exibirPapel}
             </p>
           </div>
+          {mobileNav ? (
+            <div
+              className="md:hidden"
+              onClick={(e) => {
+                if ((e.target as HTMLElement).closest("a[href]")) {
+                  setAberto(false);
+                }
+              }}
+            >
+              {mobileNav}
+            </div>
+          ) : null}
           <button
             type="button"
             role="menuitem"
@@ -122,7 +139,9 @@ export function NavbarUser() {
               setAberto(false);
               sair();
             }}
-            className="w-full text-left px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
+            className={`w-full text-left px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors ${
+              mobileNav ? "border-t border-gray-100 md:border-t-0" : ""
+            }`}
           >
             Sair da conta
           </button>
