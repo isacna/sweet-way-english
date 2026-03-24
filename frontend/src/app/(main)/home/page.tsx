@@ -10,8 +10,8 @@ export default function HomePage() {
           <Image
             src="/logo-sweet.png"
             alt="Sweet Way English - Learn. Speak. Achieve."
-            width={480}
-            height={480}
+            width={340}
+            height={340}
             className="w-auto h-auto max-w-[min(92vw,380px)] sm:max-w-[440px] md:max-w-[500px] object-contain"
             priority
           />
