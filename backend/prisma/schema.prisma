@@ -28,6 +28,17 @@ model Turma {
   matriculas     Matricula[]
   atividades     Atividade[]
   materiais      MaterialApoio[]
+  avisos         Aviso[]
+}
+
+model Aviso {
+  id        Int      @id @default(autoincrement())
+  titulo    String
+  conteudo  String?
+  link      String?
+  turmaId   Int
+  criadoEm  DateTime @default(now())
+  turma     Turma    @relation(fields: [turmaId], references: [id])
 }
 
 model Aluno {
@@ -57,6 +68,7 @@ model Atividade {
   descricao          String
   dataEntrega        DateTime
   arquivoObrigatorio Boolean     @default(false)
+  link               String?
   turmaId            Int
   criadoEm           DateTime    @default(now())
   turma              Turma       @relation(fields: [turmaId], references: [id])
@@ -92,6 +104,11 @@ model Feedback {
   criadoEm    DateTime  @default(now())
   submissao    Submissao @relation(fields: [submissaoId], references: [id])
   professor    Professor @relation(fields: [professorId], references: [id])
+}
+
+model ConfiguracaoApp {
+  id      Int     @id @default(1)
+  logoUrl String?
 }
 
 model MaterialApoio {

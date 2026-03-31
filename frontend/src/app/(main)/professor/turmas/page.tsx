@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
+import { FiltroLista } from "@/components/FiltroLista";
 import { apiFetch } from "@/lib/api";
 
 type Turma = {
@@ -21,6 +22,17 @@ export default function TurmasPage() {
   const [turmas, setTurmas] = useState<Turma[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
+  const [busca, setBusca] = useState("");
+
+  const turmasFiltradas = useMemo(() => {
+    const q = busca.trim().toLowerCase();
+    if (!q) return turmas;
+    return turmas.filter(
+      (t) =>
+        t.nome.toLowerCase().includes(q) ||
+        t.descricao?.toLowerCase().includes(q),
+    );
+  }, [turmas, busca]);
 
   useEffect(() => {
     let cancelled = false;
@@ -73,6 +85,16 @@ export default function TurmasPage() {
         </p>
       )}
 
+      {!carregando && turmas.length > 0 && (
+        <FiltroLista
+          busca={busca}
+          onBuscaChange={setBusca}
+          placeholderBusca="Buscar por nome ou descrição…"
+          total={turmas.length}
+          totalFiltrado={turmasFiltradas.length}
+        />
+      )}
+
       {carregando ? (
         <p className="text-[#4A4A4A]">Carregando turmas…</p>
       ) : turmas.length === 0 ? (
@@ -82,9 +104,13 @@ export default function TurmasPage() {
             Criar primeira turma
           </Button>
         </div>
+      ) : turmasFiltradas.length === 0 ? (
+        <p className="text-[#4A4A4A] text-sm">
+          Nenhuma turma encontrada para "{busca}".
+        </p>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {turmas.map((cls) => (
+          {turmasFiltradas.map((cls) => (
             <article
               key={cls.id}
               className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col"

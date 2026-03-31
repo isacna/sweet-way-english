@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { getStoredUser } from "@/lib/api";
 
@@ -132,6 +133,16 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
               {mobileNav}
             </div>
           ) : null}
+          {role === "professor" && (
+            <Link
+              href="/professor/configuracoes"
+              role="menuitem"
+              onClick={() => setAberto(false)}
+              className="flex w-full items-center px-4 py-3 text-sm font-medium text-[#1A1A1A] hover:bg-gray-50 transition-colors"
+            >
+              Configurações
+            </Link>
+          )}
           <button
             type="button"
             role="menuitem"

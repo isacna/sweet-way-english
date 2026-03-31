@@ -11,9 +11,11 @@ const navItems = [
   { href: "/professor/materiais", label: "Materiais", icon: "folder" },
 ];
 
+const iconsWithActive = ["grid", "folder", "users", "graduation-cap"];
+
 function NavIcon({ icon, active }: { icon: string; active: boolean }) {
-  const src =
-    active ? `/icons/${icon}-active.svg` : `/icons/${icon}.svg`;
+  const hasActive = iconsWithActive.includes(icon);
+  const src = hasActive && active ? `/icons/${icon}-active.svg` : `/icons/${icon}.svg`;
   return (
     <Image
       src={src}

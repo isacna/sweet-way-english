@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "Aviso" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "titulo" TEXT NOT NULL,
+    "conteudo" TEXT,
+    "link" TEXT,
+    "turmaId" INTEGER NOT NULL,
+    "criadoEm" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "Aviso_turmaId_fkey" FOREIGN KEY ("turmaId") REFERENCES "Turma" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
+import { FiltroLista } from "@/components/FiltroLista";
 import { apiFetch, apiPaths } from "@/lib/api";
 
 type TurmaOpcao = { id: number; nome: string };
@@ -66,6 +67,22 @@ export default function ProfessorAlunosPage() {
   const [turmas, setTurmas] = useState<TurmaOpcao[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erroLista, setErroLista] = useState("");
+
+  const [busca, setBusca] = useState("");
+  const [turmaFiltro, setTurmaFiltro] = useState("");
+
+  const alunosFiltrados = useMemo(() => {
+    const q = busca.trim().toLowerCase();
+    return alunos.filter((a) => {
+      const matchBusca =
+        q === "" ||
+        a.nome.toLowerCase().includes(q) ||
+        a.email.toLowerCase().includes(q);
+      const matchTurma =
+        turmaFiltro === "" || a.turmas.some((t) => String(t.id) === turmaFiltro);
+      return matchBusca && matchTurma;
+    });
+  }, [alunos, busca, turmaFiltro]);
 
   const [modalNovo, setModalNovo] = useState(false);
   const [editando, setEditando] = useState<AlunoLista | null>(null);
@@ -275,6 +292,25 @@ export default function ProfessorAlunosPage() {
         </p>
       )}
 
+      {!carregando && alunos.length > 0 && (
+        <FiltroLista
+          busca={busca}
+          onBuscaChange={setBusca}
+          placeholderBusca="Buscar por nome ou e-mail…"
+          filtros={[
+            {
+              id: "turma",
+              label: "Turma",
+              opcoes: turmas.map((t) => ({ valor: String(t.id), rotulo: t.nome })),
+              valor: turmaFiltro,
+              onChange: setTurmaFiltro,
+            },
+          ]}
+          total={alunos.length}
+          totalFiltrado={alunosFiltrados.length}
+        />
+      )}
+
       <div className="rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden">
         {carregando ? (
           <p className="p-8 text-[#4A4A4A]">Carregando alunos…</p>
@@ -293,6 +329,10 @@ export default function ProfessorAlunosPage() {
               </button>
             )}
           </div>
+        ) : alunosFiltrados.length === 0 ? (
+          <p className="p-8 text-center text-[#4A4A4A] text-sm">
+            Nenhum aluno encontrado para os filtros aplicados.
+          </p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
@@ -313,7 +353,7 @@ export default function ProfessorAlunosPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {alunos.map((a) => (
+                {alunosFiltrados.map((a) => (
                   <tr key={a.id} className="hover:bg-gray-50/80">
                     <td className="px-6 py-4 font-medium text-[#1A1A1A]">
                       {a.nome}

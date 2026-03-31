@@ -25,6 +25,7 @@ type TurmaDetalhe = {
     descricao: string;
     dataEntrega: string;
     arquivoObrigatorio?: boolean;
+    link?: string | null;
   }[];
   materiais: { id: number; titulo: string }[];
   matriculas: { aluno: { id: number; nome: string; email: string } }[];
@@ -82,12 +83,28 @@ function TurmaDetalhePageContent() {
   const [editDescricao, setEditDescricao] = useState("");
   const [editDataEntrega, setEditDataEntrega] = useState("");
   const [editArquivoObrigatorio, setEditArquivoObrigatorio] = useState(false);
+  const [editLink, setEditLink] = useState("");
   const [salvandoGestao, setSalvandoGestao] = useState(false);
   const [gestaoErro, setGestaoErro] = useState("");
   const [statusSubBusy, setStatusSubBusy] = useState<{
     id: number;
     tipo: "aprovado" | "reprovado";
   } | null>(null);
+
+  // Mural de avisos
+  type Aviso = { id: number; titulo: string; conteudo: string | null; link: string | null; criadoEm: string };
+  const [avisos, setAvisos] = useState<Aviso[]>([]);
+  const [modalAviso, setModalAviso] = useState(false);
+  const [avisoTitulo, setAvisoTitulo] = useState("");
+  const [avisoConteudo, setAvisoConteudo] = useState("");
+  const [avisoLink, setAvisoLink] = useState("");
+  const [salvandoAviso, setSalvandoAviso] = useState(false);
+  const [avisoErro, setAvisoErro] = useState("");
+
+  const carregarAvisos = useCallback(async () => {
+    const res = await apiFetch(`/turmas/${id}/avisos`);
+    if (res.ok) setAvisos(await res.json());
+  }, [id]);
 
   const carregarTurma = useCallback(async () => {
     setCarregando(true);
@@ -132,8 +149,9 @@ function TurmaDetalhePageContent() {
   useEffect(() => {
     queueMicrotask(() => {
       void carregarTurma();
+      void carregarAvisos();
     });
-  }, [carregarTurma]);
+  }, [carregarTurma, carregarAvisos]);
 
   useEffect(() => {
     queueMicrotask(() => {
@@ -155,9 +173,40 @@ function TurmaDetalhePageContent() {
       setEditDescricao(a.descricao);
       setEditDataEntrega(isoToDatetimeLocalValue(a.dataEntrega));
       setEditArquivoObrigatorio(Boolean(a.arquivoObrigatorio));
+      setEditLink(a.link ?? "");
       setGestaoErro("");
     });
   }, [turma, atividadeDestaque]);
+
+  async function publicarAviso(e: React.FormEvent) {
+    e.preventDefault();
+    setAvisoErro("");
+    setSalvandoAviso(true);
+    const res = await apiFetch(`/turmas/${id}/avisos`, {
+      method: "POST",
+      body: JSON.stringify({
+        titulo: avisoTitulo.trim(),
+        conteudo: avisoConteudo.trim() || null,
+        link: avisoLink.trim() || null,
+      }),
+    });
+    setSalvandoAviso(false);
+    if (!res.ok) {
+      const d = await res.json().catch(() => ({}));
+      setAvisoErro(d.error ?? "Erro ao publicar aviso.");
+      return;
+    }
+    setAvisoTitulo("");
+    setAvisoConteudo("");
+    setAvisoLink("");
+    setModalAviso(false);
+    void carregarAvisos();
+  }
+
+  async function deletarAviso(avisoId: number) {
+    await apiFetch(`/turmas/${id}/avisos/${avisoId}`, { method: "DELETE" });
+    void carregarAvisos();
+  }
 
   async function salvarGestaoAtividade() {
     if (!atividadeDestaque) return;
@@ -170,6 +219,7 @@ function TurmaDetalhePageContent() {
         descricao: editDescricao.trim(),
         dataEntrega: new Date(editDataEntrega).toISOString(),
         arquivoObrigatorio: editArquivoObrigatorio,
+        link: editLink.trim() || null,
       }),
     });
     setSalvandoGestao(false);
@@ -267,6 +317,13 @@ function TurmaDetalhePageContent() {
               <Image src="/icons/play-white.svg" alt="" width={18} height={18} />
               Nova atividade
             </Button>
+            <button
+              type="button"
+              onClick={() => { setModalAviso(true); setAvisoErro(""); }}
+              className="inline-flex items-center gap-2 font-medium rounded-lg border border-gray-300 text-[#1A1A1A] px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
+            >
+              📌 Novo aviso
+            </button>
             <Button
               href={`/professor/materiais?turma=${turma.id}`}
               variant="secondary"
@@ -277,6 +334,124 @@ function TurmaDetalhePageContent() {
           </div>
         </div>
       </div>
+
+      {/* Mural de Avisos — lista */}
+      {avisos.length > 0 && (
+        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-3">
+          <h2 className="text-lg font-bold text-[#1A1A1A]">Mural de Avisos</h2>
+          <ul className="space-y-3">
+            {avisos.map((av) => (
+              <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-gray-100 bg-[#F8F9FA]">
+                <div className="flex-1 min-w-0 space-y-1">
+                  <p className="font-medium text-[#1A1A1A]">{av.titulo}</p>
+                  {av.conteudo && (
+                    <p className="text-sm text-[#4A4A4A]">{av.conteudo}</p>
+                  )}
+                  {av.link && (
+                    <a
+                      href={av.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-[#8A4FF7] hover:underline break-all"
+                    >
+                      🔗 {av.link}
+                    </a>
+                  )}
+                  <p className="text-xs text-[#4A4A4A]">
+                    {new Date(av.criadoEm).toLocaleString("pt-BR")}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => void deletarAviso(av.id)}
+                  className="text-xs font-medium text-red-400 hover:text-red-600 shrink-0 self-start"
+                  aria-label="Deletar aviso"
+                >
+                  Remover
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Modal: novo aviso */}
+      {modalAviso && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+          onClick={() => setModalAviso(false)}
+        >
+          <div
+            className="w-full max-w-md rounded-xl bg-white border border-gray-100 shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
+              <h2 className="text-lg font-bold text-[#1A1A1A]">Novo aviso</h2>
+              <button
+                type="button"
+                onClick={() => setModalAviso(false)}
+                className="p-2 rounded-lg text-[#4A4A4A] hover:bg-gray-100"
+                aria-label="Fechar"
+              >
+                ×
+              </button>
+            </div>
+            <form onSubmit={publicarAviso} className="p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Título *</label>
+                <input
+                  type="text"
+                  value={avisoTitulo}
+                  onChange={(e) => setAvisoTitulo(e.target.value)}
+                  placeholder="Ex: Aula ao vivo hoje às 19h"
+                  required
+                  autoFocus
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Mensagem <span className="font-normal text-[#4A4A4A]">(opcional)</span></label>
+                <textarea
+                  value={avisoConteudo}
+                  onChange={(e) => setAvisoConteudo(e.target.value)}
+                  placeholder="Informações adicionais…"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7] resize-none"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Link <span className="font-normal text-[#4A4A4A]">(opcional)</span></label>
+                <input
+                  type="text"
+                  value={avisoLink}
+                  onChange={(e) => setAvisoLink(e.target.value)}
+                  placeholder="https://meet.google.com/..."
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                />
+              </div>
+              {avisoErro && (
+                <p className="text-sm text-red-600 bg-red-50 px-4 py-2 rounded-lg">{avisoErro}</p>
+              )}
+              <div className="flex gap-3 pt-1">
+                <button
+                  type="button"
+                  onClick={() => setModalAviso(false)}
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-[#4A4A4A] hover:bg-gray-50"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  disabled={salvandoAviso || !avisoTitulo.trim()}
+                  className="flex-1 px-4 py-3 rounded-lg bg-[#8A4FF7] text-white text-sm font-medium hover:bg-[#7742e0] disabled:opacity-70 transition-colors"
+                >
+                  {salvandoAviso ? "Publicando…" : "Publicar"}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       <div className="grid lg:grid-cols-2 gap-8">
         <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
@@ -404,6 +579,31 @@ function TurmaDetalhePageContent() {
                   Exigir arquivo na entrega (submissão sem anexo é bloqueada)
                 </span>
               </label>
+              <div className="sm:col-span-2">
+                <label
+                  htmlFor="gestao-link"
+                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                >
+                  Link (opcional)
+                </label>
+                <input
+                  id="gestao-link"
+                  type="text"
+                  value={editLink}
+                  onChange={(e) => setEditLink(e.target.value)}
+                  placeholder="https://youtube.com/... ou outro link"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-[#1A1A1A]"
+                />
+                {editLink.trim() && (
+                  <div className="mt-3">
+                    <AssetPreview
+                      fullUrl={editLink.trim()}
+                      tipo="link"
+                      title={editTitulo || "Link da atividade"}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
             {gestaoErro && (
               <p className="text-sm text-red-600 mt-3">{gestaoErro}</p>

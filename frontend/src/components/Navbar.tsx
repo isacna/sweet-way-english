@@ -10,18 +10,24 @@ const variantStyles: Record<NavbarVariant, string> = {
     "sticky top-0 px-4 sm:px-8 py-3 sm:py-4 bg-white border-b border-gray-200",
 };
 
-function Logo({ variant }: { variant: NavbarVariant }) {
+function Logo({ variant, logoUrl }: { variant: NavbarVariant; logoUrl?: string | null }) {
+  const className =
+    variant === "home"
+      ? "h-14 w-auto max-w-[min(90vw,320px)] object-contain object-left sm:h-16 sm:max-w-[400px] md:h-[4.5rem] md:max-w-[460px]"
+      : "h-12 w-auto max-w-[min(55vw,260px)] object-contain object-left sm:h-14 sm:max-w-[300px] md:h-16 md:max-w-[360px] lg:max-w-[400px]";
+
+  if (logoUrl) {
+    // eslint-disable-next-line @next/next/no-img-element
+    return <img src={logoUrl} alt="Sweet Way English" className={className} />;
+  }
+
   return (
     <Image
       src="/logo-sweet.png"
       alt="Sweet Way English"
       width={400}
       height={120}
-      className={
-        variant === "home"
-          ? "h-14 w-auto max-w-[min(90vw,320px)] object-contain object-left sm:h-16 sm:max-w-[400px] md:h-[4.5rem] md:max-w-[460px]"
-          : "h-12 w-auto max-w-[min(55vw,260px)] object-contain object-left sm:h-14 sm:max-w-[300px] md:h-16 md:max-w-[360px] lg:max-w-[400px]"
-      }
+      className={className}
       priority
     />
   );
@@ -34,6 +40,8 @@ type NavbarProps = {
   className?: string;
   /** Se omitido, no dashboard o padrão é /professor */
   logoHref?: string;
+  /** URL do logo customizado (substitui o logo estático padrão) */
+  logoUrl?: string | null;
 };
 
 export function Navbar({
@@ -42,6 +50,7 @@ export function Navbar({
   right,
   className = "",
   logoHref: logoHrefProp,
+  logoUrl,
 }: NavbarProps) {
   const logoHref =
     logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/home");
@@ -54,7 +63,7 @@ export function Navbar({
         href={logoHref}
         className="order-1 flex items-center gap-2 shrink-0 min-w-0"
       >
-        <Logo variant={variant} />
+        <Logo variant={variant} logoUrl={logoUrl} />
       </Link>
       {center ? (
         <div className="order-3 hidden w-full min-w-0 basis-full justify-start border-t border-gray-100 pt-3 md:order-2 md:flex md:basis-auto md:flex-1 md:justify-center md:border-t-0 md:pt-0 md:overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">

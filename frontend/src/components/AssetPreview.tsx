@@ -93,9 +93,15 @@ function PreviewBody({
   }
 
   if (kind === "pdf") {
+    // PDFs de URLs externas são bloqueados por X-Frame-Options na maioria dos sites.
+    // Para esses casos, redireciona pelo Google Docs Viewer que não tem essa restrição.
+    const isInternal = fullUrl.includes("/uploads/");
+    const src = isInternal
+      ? fullUrl
+      : `https://docs.google.com/gview?url=${encodeURIComponent(fullUrl)}&embedded=true`;
     return (
       <iframe
-        src={fullUrl}
+        src={src}
         title={title}
         className={`w-full ${frameMaxHeightClass} border-0 rounded-md bg-white`}
       />

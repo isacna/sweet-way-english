@@ -20,13 +20,14 @@ export async function createActivity(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio } = req.body;
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body;
   const atividade = await prisma.atividade.create({
     data: {
       titulo,
       descricao,
       dataEntrega: new Date(dataEntrega),
       arquivoObrigatorio: Boolean(arquivoObrigatorio),
+      link: link ? String(link).trim() : null,
       turmaId,
     },
   });
@@ -58,8 +59,8 @@ export async function updateActivity(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio } = req.body;
-  const data: { titulo?: string; descricao?: string; dataEntrega?: Date; arquivoObrigatorio?: boolean } = {};
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body;
+  const data: { titulo?: string; descricao?: string; dataEntrega?: Date; arquivoObrigatorio?: boolean; link?: string | null } = {};
 
   if (titulo !== undefined) {
     const t = String(titulo).trim();
@@ -77,6 +78,7 @@ export async function updateActivity(req: AuthRequest, res: Response) {
     data.dataEntrega = d;
   }
   if (arquivoObrigatorio !== undefined) data.arquivoObrigatorio = Boolean(arquivoObrigatorio);
+  if (link !== undefined) data.link = link ? String(link).trim() : null;
 
   if (Object.keys(data).length === 0) {
     res.status(400).json({ error: 'Envie titulo, descricao, dataEntrega e/ou arquivoObrigatorio' });

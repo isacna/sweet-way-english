@@ -6,6 +6,8 @@ import { activityRouter } from './activity.routes.js';
 import { submissionRouter, professorSubmissionRouter } from './submission.routes.js';
 import { feedbackRouter, studentFeedbackRouter } from './feedback.routes.js';
 import { materialRouter } from './material.routes.js';
+import { adminRouter } from './admin.routes.js';
+import { avisoRouter } from './aviso.routes.js';
 
 const router = Router();
 
@@ -14,6 +16,7 @@ router.get('/health', (_req, res) => res.json({ status: 'ok' }));
 router.use('/auth', authRouter);
 router.use('/turmas', classRouter);
 router.use('/turmas/:turmaId/atividades', activityRouter);
+router.use('/turmas/:turmaId/avisos', avisoRouter);
 router.use('/turmas/:id/materiais', materialRouter);
 router.use('/professor/alunos', studentRouter);
 router.use('/professor/atividades', activityRouter);
@@ -21,5 +24,6 @@ router.use('/professor/submissoes', professorSubmissionRouter);
 router.use('/atividades/:id/submissoes', submissionRouter);
 router.use('/submissoes/:id/feedback', feedbackRouter);
 router.use('/alunos', studentFeedbackRouter);
+router.use('/', adminRouter);
 
 export { router };

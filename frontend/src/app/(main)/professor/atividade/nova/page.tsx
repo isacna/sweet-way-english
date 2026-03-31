@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
+import { AssetPreview } from "@/components/AssetPreview";
 import { Button } from "@/components/Button";
 import { apiFetch } from "@/lib/api";
 
@@ -20,6 +21,7 @@ function NovaAtividadePageContent() {
   const [descricao, setDescricao] = useState("");
   const [dataEntrega, setDataEntrega] = useState("");
   const [arquivoObrigatorio, setArquivoObrigatorio] = useState(false);
+  const [link, setLink] = useState("");
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
   const [carregandoTurmas, setCarregandoTurmas] = useState(true);
@@ -69,6 +71,7 @@ function NovaAtividadePageContent() {
         descricao,
         dataEntrega: new Date(dataEntrega).toISOString(),
         arquivoObrigatorio,
+        link: link.trim() || null,
       }),
     });
     setCarregando(false);
@@ -194,6 +197,31 @@ function NovaAtividadePageContent() {
             Exigir arquivo na entrega (alunos precisam anexar um arquivo para enviar)
           </span>
         </label>
+        <div>
+          <label
+            htmlFor="link"
+            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+          >
+            Link (opcional)
+          </label>
+          <input
+            id="link"
+            type="text"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+            placeholder="https://youtube.com/... ou outro link"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+          />
+          {link.trim() && (
+            <div className="mt-3">
+              <AssetPreview
+                fullUrl={link.trim()}
+                tipo="link"
+                title={titulo || "Link da atividade"}
+              />
+            </div>
+          )}
+        </div>
         {erro && (
           <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
             {erro}
