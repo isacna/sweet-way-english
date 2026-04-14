@@ -111,7 +111,7 @@ export default function ProfessorDashboardPage() {
       label: "Total de Alunos",
       value: carregando ? "…" : String(totalAlunos),
       icon: "users" as const,
-      color: "bg-[#8A4FF7]/10 text-[#8A4FF7]",
+      color: "bg-[#1898DC]/10 text-[#1898DC]",
     },
     {
       label: "Para Corrigir",
@@ -251,7 +251,7 @@ export default function ProfessorDashboardPage() {
                 Você ainda não criou turmas.{" "}
                 <Link
                   href="/professor/turmas/nova"
-                  className="text-[#8A4FF7] font-medium hover:text-[#7742e0]"
+                  className="text-[#1898DC] font-medium hover:text-[#147EB8]"
                 >
                   Criar turma
                 </Link>
@@ -277,7 +277,7 @@ export default function ProfessorDashboardPage() {
           </div>
           <Link
             href="/professor/turmas"
-            className="mt-4 inline-block text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+            className="mt-4 inline-block text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
           >
             Ver todas as turmas
           </Link>

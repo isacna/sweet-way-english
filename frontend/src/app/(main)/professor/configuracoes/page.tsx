@@ -115,7 +115,7 @@ function SecaoMinhaConta() {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -128,7 +128,7 @@ function SecaoMinhaConta() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -141,7 +141,7 @@ function SecaoMinhaConta() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             placeholder="••••••••"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         {msg && (
@@ -158,7 +158,7 @@ function SecaoMinhaConta() {
         <button
           type="submit"
           disabled={salvando}
-          className="inline-flex items-center justify-center font-medium rounded-lg bg-[#8A4FF7] text-white px-6 py-3 hover:bg-[#7742e0] transition-colors disabled:opacity-70"
+          className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
         >
           {salvando ? "Salvando…" : "Salvar alterações"}
         </button>
@@ -261,7 +261,7 @@ function SecaoAparencia() {
             type="file"
             accept="image/*"
             onChange={onSelecionarArquivo}
-            className="block w-full text-sm text-[#4A4A4A] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#8A4FF7]/10 file:text-[#8A4FF7] hover:file:bg-[#8A4FF7]/20 cursor-pointer"
+            className="block w-full text-sm text-[#4A4A4A] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#1898DC]/10 file:text-[#1898DC] hover:file:bg-[#1898DC]/20 cursor-pointer"
           />
           <p className="text-xs text-[#4A4A4A] mt-1">PNG, JPG ou SVG recomendado. Máx. 5 MB.</p>
         </div>
@@ -279,7 +279,7 @@ function SecaoAparencia() {
         <button
           type="submit"
           disabled={enviando || !arquivo}
-          className="inline-flex items-center gap-2 font-medium rounded-lg bg-[#8A4FF7] text-white px-6 py-3 hover:bg-[#7742e0] transition-colors disabled:opacity-70"
+          className="inline-flex items-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
         >
           <Image src="/icons/upload-white.svg" alt="" width={16} height={16} />
           {enviando ? "Enviando…" : "Enviar logo"}
@@ -408,14 +408,14 @@ function SecaoProfessores() {
           <button
             type="button"
             onClick={() => setModalPromover(true)}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[#8A4FF7] text-[#8A4FF7] hover:bg-[#8A4FF7]/5 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[#1898DC] text-[#1898DC] hover:bg-[#1898DC]/5 transition-colors"
           >
             Promover aluno
           </button>
           <button
             type="button"
             onClick={abrirCriar}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[#8A4FF7] text-white hover:bg-[#7742e0] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[#1898DC] text-white hover:bg-[#147EB8] transition-colors"
           >
             <Image src="/icons/plus-white.svg" alt="" width={14} height={14} />
             Novo professor
@@ -439,7 +439,7 @@ function SecaoProfessores() {
                 <button
                   type="button"
                   onClick={() => abrirEditar(p)}
-                  className="text-xs font-medium text-[#8A4FF7] hover:underline"
+                  className="text-xs font-medium text-[#1898DC] hover:underline"
                 >
                   Editar
                 </button>
@@ -470,7 +470,7 @@ function SecaoProfessores() {
                 value={fNome}
                 onChange={(e) => setFNome(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -480,7 +480,7 @@ function SecaoProfessores() {
                 value={fEmail}
                 onChange={(e) => setFEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -493,7 +493,7 @@ function SecaoProfessores() {
                 onChange={(e) => setFSenha(e.target.value)}
                 required={modalForm.modo === "criar"}
                 placeholder={modalForm.modo === "editar" ? "••••••••" : undefined}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             {fErro && <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">{fErro}</p>}
@@ -508,7 +508,7 @@ function SecaoProfessores() {
               <button
                 type="submit"
                 disabled={fSalvando}
-                className="flex-1 px-4 py-3 rounded-lg bg-[#8A4FF7] text-white text-sm font-medium hover:bg-[#7742e0] disabled:opacity-70"
+                className="flex-1 px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-70"
               >
                 {fSalvando ? "Salvando…" : "Salvar"}
               </button>
@@ -529,7 +529,7 @@ function SecaoProfessores() {
                   value={buscaEmail}
                   onChange={(e) => { setBuscaEmail(e.target.value); setAlunoEncontrado(null); setBuscaErro(""); setPromoverMsg(null); }}
                   placeholder="aluno@email.com"
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
                 />
                 <button
                   type="button"
@@ -562,7 +562,7 @@ function SecaoProfessores() {
                     type="checkbox"
                     checked={promoverConfirmado}
                     onChange={(e) => setPromoverConfirmado(e.target.checked)}
-                    className="mt-1 rounded border-gray-300 text-[#8A4FF7] focus:ring-[#8A4FF7]"
+                    className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
                   />
                   <span className="text-sm text-[#1A1A1A]">
                     Entendo que os dados do aluno serão perdidos e confirmo a promoção.
@@ -579,7 +579,7 @@ function SecaoProfessores() {
                   type="button"
                   onClick={() => void promover()}
                   disabled={!promoverConfirmado || promovendo}
-                  className="w-full px-4 py-3 rounded-lg bg-[#8A4FF7] text-white text-sm font-medium hover:bg-[#7742e0] disabled:opacity-50 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-50 transition-colors"
                 >
                   {promovendo ? "Promovendo…" : "Confirmar promoção"}
                 </button>

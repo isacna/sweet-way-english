@@ -26,7 +26,7 @@ export default async function ProfessorLayout({
   const logoUrl = await getLogoUrl();
 
   return (
-    <div className="min-h-screen bg-[#F8F8FA]">
+    <div className="min-h-screen bg-surface">
       <Navbar
         variant="dashboard"
         logoUrl={logoUrl}

@@ -53,7 +53,7 @@ function LoginPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8FA]">
+    <div className="min-h-screen bg-surface">
       <main className="pt-12 pb-20 px-8 max-w-6xl mx-auto">
         <div className="flex justify-center mb-12">
           <Link href="/home">
@@ -81,7 +81,7 @@ function LoginPageContent() {
             />
             </div>
             <div className="absolute -bottom-6 -left-4 lg:left-0 right-4 lg:right-auto max-w-xs p-5 rounded-2xl bg-white shadow-lg border border-gray-100">
-              <div className="w-12 h-12 rounded-xl bg-[#8A4FF7]/10 flex items-center justify-center mb-3">
+              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-3">
                 <Image src="/icons/star.svg" alt="" width={24} height={24} />
               </div>
               <h3 className="font-bold text-[#1A1A1A] mb-1">
@@ -129,7 +129,7 @@ function LoginPageContent() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="seu@email.com"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8A4FF7] focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1898DC] focus:border-transparent"
                   autoComplete="email"
                 />
               </div>
@@ -148,7 +148,7 @@ function LoginPageContent() {
                   onChange={(e) => setSenha(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8A4FF7] focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1898DC] focus:border-transparent"
                   autoComplete="current-password"
                 />
               </div>
@@ -162,7 +162,7 @@ function LoginPageContent() {
               <button
                 type="submit"
                 disabled={carregando}
-                className="w-full py-3 rounded-xl bg-[#8A4FF7] text-white font-medium hover:bg-[#7742e0] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full py-3 rounded-xl bg-[#1898DC] text-white font-medium hover:bg-[#147EB8] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {carregando ? "Entrando..." : "Entrar"}
               </button>
@@ -177,7 +177,7 @@ function LoginPageContent() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#F8F8FA]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-surface" />}>
       <LoginPageContent />
     </Suspense>
   );

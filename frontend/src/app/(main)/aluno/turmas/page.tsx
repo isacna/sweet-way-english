@@ -126,13 +126,13 @@ export default function AlunoTurmasPage() {
                 value={codigo}
                 onChange={(e) => setCodigo(e.target.value)}
                 placeholder="Ex.: SWB1-2025"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <button
               type="submit"
               disabled={entrando}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#8A4FF7] text-white font-medium px-6 py-3 hover:bg-[#7742e0] disabled:opacity-70"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-70"
             >
               {entrando ? (
                 "Entrando…"
@@ -195,7 +195,7 @@ export default function AlunoTurmasPage() {
                 </Button>
                 <Link
                   href={`/aluno/materiais?turma=${t.id}`}
-                  className="text-center text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+                  className="text-center text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
                 >
                   Materiais
                 </Link>

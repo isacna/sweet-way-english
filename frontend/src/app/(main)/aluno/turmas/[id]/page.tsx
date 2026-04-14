@@ -56,7 +56,7 @@ function statusCor(key: StatusFiltro): string {
   if (key === "reprovada") return "text-red-600";
   if (key === "corrigida") return "text-blue-600";
   if (key === "enviada") return "text-amber-700";
-  return "text-[#8A4FF7]";
+  return "text-[#1898DC]";
 }
 
 function ChipFiltro({
@@ -74,7 +74,7 @@ function ChipFiltro({
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
         ativo
-          ? "bg-[#8A4FF7] text-white"
+          ? "bg-[#1898DC] text-white"
           : "bg-gray-100 text-[#4A4A4A] hover:bg-gray-200"
       }`}
     >
@@ -208,12 +208,12 @@ export default function AlunoTurmaDetalhePage() {
 
       {/* Mural de Avisos */}
       {avisos.length > 0 && (
-        <section className="rounded-xl border border-[#8A4FF7]/20 bg-[#8A4FF7]/5 overflow-hidden">
-          <div className="px-6 py-4 border-b border-[#8A4FF7]/15 flex items-center gap-2">
+        <section className="rounded-xl border border-[#1898DC]/20 bg-[#1898DC]/5 overflow-hidden">
+          <div className="px-6 py-4 border-b border-[#1898DC]/15 flex items-center gap-2">
             <span>📌</span>
             <h2 className="text-base font-bold text-[#1A1A1A]">Mural de Avisos</h2>
           </div>
-          <ul className="divide-y divide-[#8A4FF7]/10">
+          <ul className="divide-y divide-[#1898DC]/10">
             {avisos.map((av) => (
               <li key={av.id} className="px-6 py-4 space-y-1">
                 <p className="font-semibold text-[#1A1A1A]">{av.titulo}</p>
@@ -225,7 +225,7 @@ export default function AlunoTurmaDetalhePage() {
                     href={av.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#8A4FF7] hover:underline break-all"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1898DC] hover:underline break-all"
                   >
                     🔗 {av.link}
                   </a>
@@ -273,7 +273,7 @@ export default function AlunoTurmaDetalhePage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0] flex items-center gap-2"
+                      className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8] flex items-center gap-2"
                     >
                       <Image src="/icons/file-document.svg" alt="" width={16} height={16} />
                       {m.titulo}{" "}

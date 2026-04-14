@@ -266,7 +266,7 @@ export default function ProfessorAlunosPage() {
           type="button"
           disabled={!podeAdicionar}
           onClick={abrirNovo}
-          className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#8A4FF7] text-white px-5 py-3 hover:bg-[#7742e0] transition-colors disabled:opacity-50 disabled:pointer-events-none"
+          className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-5 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-50 disabled:pointer-events-none"
         >
           <Image src="/icons/plus-white.svg" alt="" width={18} height={18} />
           Novo aluno
@@ -278,7 +278,7 @@ export default function ProfessorAlunosPage() {
           Crie uma{" "}
           <Link
             href="/professor/turmas/nova"
-            className="font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+            className="font-medium text-[#1898DC] hover:text-[#147EB8]"
           >
             turma
           </Link>{" "}
@@ -323,7 +323,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="button"
                 onClick={abrirNovo}
-                className="text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+                className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
               >
                 Cadastrar primeiro aluno
               </button>
@@ -365,7 +365,7 @@ export default function ProfessorAlunosPage() {
                           <Link
                             key={t.id}
                             href={`/professor/turmas/${t.id}`}
-                            className="inline-block px-2.5 py-0.5 rounded-full bg-[#8A4FF7]/10 text-[#8A4FF7] text-xs font-medium hover:bg-[#8A4FF7]/20"
+                            className="inline-block px-2.5 py-0.5 rounded-full bg-[#1898DC]/10 text-[#1898DC] text-xs font-medium hover:bg-[#1898DC]/20"
                           >
                             {t.nome}
                           </Link>
@@ -377,7 +377,7 @@ export default function ProfessorAlunosPage() {
                         <button
                           type="button"
                           onClick={() => abrirEditar(a)}
-                          className="text-xs font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+                          className="text-xs font-medium text-[#1898DC] hover:text-[#147EB8]"
                         >
                           Editar
                         </button>
@@ -414,7 +414,7 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -430,7 +430,7 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -445,7 +445,7 @@ export default function ProfessorAlunosPage() {
                 value={turmaId}
                 onChange={(e) => setTurmaId(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               >
                 {turmas.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -468,7 +468,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -485,7 +485,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setConfirmarSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             {erroForm && (
@@ -505,7 +505,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#8A4FF7] text-white px-5 py-2.5 hover:bg-[#7742e0] disabled:opacity-70"
+                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-5 py-2.5 hover:bg-[#147EB8] disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Cadastrar"}
               </button>
@@ -537,7 +537,7 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -553,7 +553,7 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             <div>
@@ -570,7 +570,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 minLength={6}
                 placeholder="Deixe em branco para manter"
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
               />
             </div>
             {senha ? (
@@ -587,7 +587,7 @@ export default function ProfessorAlunosPage() {
                   value={confirmarSenha}
                   onChange={(e) => setConfirmarSenha(e.target.value)}
                   minLength={6}
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
                 />
               </div>
             ) : null}
@@ -608,7 +608,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#8A4FF7] text-white px-5 py-2.5 hover:bg-[#7742e0] disabled:opacity-70"
+                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-5 py-2.5 hover:bg-[#147EB8] disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Salvar"}
               </button>

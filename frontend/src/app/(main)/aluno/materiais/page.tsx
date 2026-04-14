@@ -148,7 +148,7 @@ function MateriaisAlunoContent() {
         </select>
         {turmas.length === 0 && !carregandoTurmas && (
           <p className="text-sm text-[#4A4A4A]">
-            <Link href="/aluno/turmas" className="text-[#8A4FF7]">
+            <Link href="/aluno/turmas" className="text-[#1898DC]">
               Entre em uma turma
             </Link>{" "}
             para ver materiais.
@@ -170,7 +170,7 @@ function MateriaisAlunoContent() {
             placeholder="Buscar…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -181,7 +181,7 @@ function MateriaisAlunoContent() {
               onClick={() => setActiveFilter(f.label)}
               className={`px-4 py-2 rounded-lg text-sm font-medium ${
                 activeFilter === f.label
-                  ? "bg-[#8A4FF7] text-white"
+                  ? "bg-[#1898DC] text-white"
                   : "border border-gray-300 text-[#4A4A4A] hover:bg-gray-50"
               }`}
             >
@@ -227,7 +227,7 @@ function MateriaisAlunoContent() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-[#4A4A4A] hover:text-[#8A4FF7] rounded-lg shrink-0"
+                    className="p-2 text-[#4A4A4A] hover:text-[#1898DC] rounded-lg shrink-0"
                     aria-label="Abrir"
                   >
                     <Image src="/icons/download.svg" alt="" width={20} height={20} />

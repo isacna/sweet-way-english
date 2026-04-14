@@ -96,7 +96,7 @@ export default function AlunoFeedbacksPage() {
               </p>
               <p className="text-sm text-[#4A4A4A] mt-1">
                 {f.professor.nome} ·{" "}
-                <span className="font-medium text-[#8A4FF7]">
+                <span className="font-medium text-[#1898DC]">
                   Nota {f.nota}
                 </span>{" "}
                 · {tempoRelativoPt(f.criadoEm)}

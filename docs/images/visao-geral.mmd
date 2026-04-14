@@ -1,0 +1,11 @@
+graph TD
+    A[Browser] --> B["Frontend\nNext.js · porta 3000"]
+    B --> C["Backend REST API\nExpress · porta 3333"]
+    C --> D["SQLite\nPrisma ORM"]
+    C --> E["/uploads\narquivos em disco"]
+
+    style A fill:#e8e8e8,stroke:#555,color:#000
+    style B fill:#0070f3,stroke:#0050c0,color:#fff
+    style C fill:#22c55e,stroke:#16a34a,color:#fff
+    style D fill:#f59e0b,stroke:#d97706,color:#fff
+    style E fill:#f59e0b,stroke:#d97706,color:#fff

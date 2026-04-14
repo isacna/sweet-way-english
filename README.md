@@ -56,7 +56,6 @@ cp .env.example .env
 3. Preencha as variáveis no `.env`:
 ```env
 JWT_SECRET=sua-chave-secreta
-GEMINI_API_KEY=sua-chave-gemini
 APP_URL=http://localhost:3333
 NEXT_PUBLIC_API_URL=http://localhost:3333
 ```

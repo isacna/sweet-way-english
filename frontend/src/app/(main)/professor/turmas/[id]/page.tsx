@@ -56,7 +56,7 @@ function BlocoAnexoAluno({
         href={full}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm text-[#8A4FF7] font-medium hover:underline"
+        className="inline-flex items-center gap-2 text-sm text-[#1898DC] font-medium hover:underline"
       >
         <Image src="/icons/download.svg" alt="" width={16} height={16} />
         Baixar anexo do aluno
@@ -341,7 +341,7 @@ function TurmaDetalhePageContent() {
           <h2 className="text-lg font-bold text-[#1A1A1A]">Mural de Avisos</h2>
           <ul className="space-y-3">
             {avisos.map((av) => (
-              <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-gray-100 bg-[#F8F9FA]">
+              <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
                 <div className="flex-1 min-w-0 space-y-1">
                   <p className="font-medium text-[#1A1A1A]">{av.titulo}</p>
                   {av.conteudo && (
@@ -352,7 +352,7 @@ function TurmaDetalhePageContent() {
                       href={av.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-[#8A4FF7] hover:underline break-all"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-[#1898DC] hover:underline break-all"
                     >
                       🔗 {av.link}
                     </a>
@@ -406,7 +406,7 @@ function TurmaDetalhePageContent() {
                   placeholder="Ex: Aula ao vivo hoje às 19h"
                   required
                   autoFocus
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
                 />
               </div>
               <div>
@@ -416,7 +416,7 @@ function TurmaDetalhePageContent() {
                   onChange={(e) => setAvisoConteudo(e.target.value)}
                   placeholder="Informações adicionais…"
                   rows={3}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7] resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC] resize-none"
                 />
               </div>
               <div>
@@ -426,7 +426,7 @@ function TurmaDetalhePageContent() {
                   value={avisoLink}
                   onChange={(e) => setAvisoLink(e.target.value)}
                   placeholder="https://meet.google.com/..."
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
                 />
               </div>
               {avisoErro && (
@@ -443,7 +443,7 @@ function TurmaDetalhePageContent() {
                 <button
                   type="submit"
                   disabled={salvandoAviso || !avisoTitulo.trim()}
-                  className="flex-1 px-4 py-3 rounded-lg bg-[#8A4FF7] text-white text-sm font-medium hover:bg-[#7742e0] disabled:opacity-70 transition-colors"
+                  className="flex-1 px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-70 transition-colors"
                 >
                   {salvandoAviso ? "Publicando…" : "Publicar"}
                 </button>
@@ -491,7 +491,7 @@ function TurmaDetalhePageContent() {
                     href={`/professor/turmas/${turma.id}?atividade=${a.id}`}
                     className={`block p-3 rounded-lg border transition-colors ${
                       atividadeDestaque === String(a.id)
-                        ? "border-[#8A4FF7] bg-[#8A4FF7]/5"
+                        ? "border-[#1898DC] bg-[#1898DC]/5"
                         : "border-gray-100 hover:border-gray-200"
                     }`}
                   >
@@ -573,7 +573,7 @@ function TurmaDetalhePageContent() {
                   type="checkbox"
                   checked={editArquivoObrigatorio}
                   onChange={(e) => setEditArquivoObrigatorio(e.target.checked)}
-                  className="mt-1 rounded border-gray-300 text-[#8A4FF7] focus:ring-[#8A4FF7]"
+                  className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
                 />
                 <span className="text-sm text-[#1A1A1A]">
                   Exigir arquivo na entrega (submissão sem anexo é bloqueada)
@@ -617,7 +617,7 @@ function TurmaDetalhePageContent() {
                 !editTitulo.trim() ||
                 !editDescricao.trim()
               }
-              className="mt-4 inline-flex items-center rounded-lg bg-[#8A4FF7] text-white text-sm font-medium px-4 py-2 hover:bg-[#7742e0] disabled:opacity-70"
+              className="mt-4 inline-flex items-center rounded-lg bg-[#1898DC] text-white text-sm font-medium px-4 py-2 hover:bg-[#147EB8] disabled:opacity-70"
             >
               {salvandoGestao ? "Salvando…" : "Salvar alterações"}
             </button>
@@ -752,7 +752,7 @@ function TurmaDetalhePageContent() {
                           <button
                             type="button"
                             onClick={() => enviarFeedback(s.id)}
-                            className="px-4 py-2 rounded-lg bg-[#8A4FF7] text-white text-sm font-medium hover:bg-[#7742e0]"
+                            className="px-4 py-2 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8]"
                           >
                             Enviar feedback
                           </button>

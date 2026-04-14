@@ -197,7 +197,7 @@ function MateriaisPageContent() {
         </select>
         {turmas.length === 0 && !carregandoTurmas && (
           <p className="text-sm text-[#4A4A4A]">
-            <Link href="/professor/turmas/nova" className="text-[#8A4FF7]">
+            <Link href="/professor/turmas/nova" className="text-[#1898DC]">
               Crie uma turma
             </Link>{" "}
             para enviar materiais.
@@ -219,7 +219,7 @@ function MateriaisPageContent() {
             placeholder="Buscar materiais..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] placeholder:text-[#4A4A4A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] placeholder:text-[#4A4A4A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -230,7 +230,7 @@ function MateriaisPageContent() {
               onClick={() => setActiveFilter(filter.label)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 activeFilter === filter.label
-                  ? "bg-[#8A4FF7] text-white"
+                  ? "bg-[#1898DC] text-white"
                   : "border border-gray-300 text-[#4A4A4A] hover:bg-gray-50"
               }`}
             >
@@ -280,7 +280,7 @@ function MateriaisPageContent() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-[#4A4A4A] hover:text-[#8A4FF7] hover:bg-[#8A4FF7]/10 rounded-lg transition-colors flex-shrink-0"
+                      className="p-2 text-[#4A4A4A] hover:text-[#1898DC] hover:bg-[#1898DC]/10 rounded-lg transition-colors flex-shrink-0"
                       aria-label="Abrir material"
                     >
                       <Image
@@ -307,7 +307,7 @@ function MateriaisPageContent() {
 
       <form
         onSubmit={handleUpload}
-        className="p-6 rounded-xl border-2 border-dashed border-gray-200 bg-[#F8F9FA] space-y-4"
+        className="p-6 rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 space-y-4"
       >
         <div className="text-center mb-2">
           <Image
@@ -372,7 +372,7 @@ function MateriaisPageContent() {
           <button
             type="submit"
             disabled={enviando || !turmaId}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#8A4FF7] text-white font-medium px-6 py-3 hover:bg-[#7742e0] disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-60"
           >
             <Image src="/icons/upload-white.svg" alt="" width={18} height={18} />
             {enviando ? "Enviando…" : "Enviar material"}

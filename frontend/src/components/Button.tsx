@@ -4,7 +4,7 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "rounded-lg bg-[#8A4FF7] text-white font-medium hover:bg-[#7742e0] transition-colors",
+    "rounded-lg bg-[#1898DC] text-white font-medium hover:bg-[#147EB8] transition-colors",
   secondary:
     "rounded-lg bg-white border border-gray-300 text-[#1A1A1A] font-medium hover:bg-gray-50 transition-colors",
   ghost: "text-[#1A1A1A] hover:text-[#4A4A4A] transition-colors",

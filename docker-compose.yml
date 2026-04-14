@@ -8,7 +8,6 @@ services:
       DATABASE_URL: file:./prisma/data.db
       JWT_SECRET: ${JWT_SECRET:-sweet-way-secret-key}
       APP_URL: ${APP_URL:-http://localhost:3333}
-      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
     volumes:
       - db_data:/app/prisma
       - uploads_data:/app/uploads

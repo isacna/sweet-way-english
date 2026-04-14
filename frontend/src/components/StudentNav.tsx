@@ -62,12 +62,12 @@ export function StudentNav({
               vertical
                 ? `flex w-full items-center gap-3 px-3 py-3 text-sm font-medium transition-colors border-b border-gray-100 last:border-b-0 ${
                     isActive
-                      ? "text-[#8A4FF7] bg-[#8A4FF7]/10"
+                      ? "text-[#1898DC] bg-[#1898DC]/10"
                       : "text-[#1A1A1A] hover:bg-gray-50"
                   }`
                 : `flex shrink-0 items-center gap-2 whitespace-nowrap px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-[#8A4FF7] bg-[#8A4FF7]/10"
+                      ? "text-[#1898DC] bg-[#1898DC]/10"
                       : "text-[#4A4A4A] hover:bg-gray-100"
                   }`
             }

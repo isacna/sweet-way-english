@@ -1,30 +1,42 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Cores do design system */
-  --color-surface: #f8f8fa;
+  /* ── Design system ─────────────────────────────────────────────────────── */
+  --color-surface: #e8ecf5;           /* fundo geral — claramente ≠ branco    */
   --color-surface-alt: #ffffff;
   --color-primary: #1a1a1a;
   --color-muted: #4a4a4a;
-  --color-accent: #8a4ff7;
-  --color-accent-hover: #7742e0;
-  --color-accent-muted: rgb(138 79 247 / 0.1);
+  --color-accent: #1898DC;
+  --color-accent-hover: #147EB8;
+  --color-accent-muted: rgb(24 152 220 / 0.1);
   --color-teal: #1d7a9f;
-  --color-border: #e5e7eb;
-  --color-border-light: #f3f4f6;
+  --color-border: #c2c8d8;            /* token semântico de borda principal   */
+  --color-border-light: #d8dce8;      /* token de borda suave                 */
 
-  /* Espaçamentos semânticos */
-  --spacing-section: 5rem;
+  /* ── Override da escala de cinzas do Tailwind ──────────────────────────── */
+  /* gray-100 é usado em: border-gray-100, divide-gray-100, bg-gray-100.      */
+  /* O padrão (#f3f4f6) é invisível sobre surface branca — corrigido abaixo.  */
+  --color-gray-50:  #f2f4fb;          /* antes: #f9fafb  — hovers suaves      */
+  --color-gray-100: #dce0ed;          /* antes: #f3f4f6  — bordas e divisores */
+  --color-gray-200: #c3c9d9;          /* antes: #e5e7eb  — inputs e badges    */
+  --color-gray-300: #a2abc0;          /* antes: #d1d5db  — placeholders       */
+  --color-gray-400: #7d89a3;          /* antes: #9ca3af  — ícones             */
+
+  /* ── Sombra de card mais pronunciada ───────────────────────────────────── */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+
+  /* ── Espaçamentos semânticos ────────────────────────────────────────────── */
+  --spacing-section:    5rem;
   --spacing-section-sm: 1.25rem;
-  --spacing-card: 1.5rem;
-  --spacing-header-x: 2rem;
-  --spacing-header-y: 1.25rem;
-  --spacing-content: 2rem;
-  --spacing-stack-xs: 0.5rem;
-  --spacing-stack-sm: 1rem;
-  --spacing-stack-md: 1.5rem;
-  --spacing-stack-lg: 2rem;
-  --spacing-stack-xl: 2.5rem;
+  --spacing-card:       1.5rem;
+  --spacing-header-x:   2rem;
+  --spacing-header-y:   1.25rem;
+  --spacing-content:    2rem;
+  --spacing-stack-xs:   0.5rem;
+  --spacing-stack-sm:   1rem;
+  --spacing-stack-md:   1.5rem;
+  --spacing-stack-lg:   2rem;
+  --spacing-stack-xl:   2.5rem;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

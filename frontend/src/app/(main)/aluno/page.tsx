@@ -174,7 +174,7 @@ export default function AlunoDashboardPage() {
             label: "Minhas turmas",
             value: carregando ? "…" : String(turmas.length),
             icon: "users" as const,
-            color: "bg-[#8A4FF7]/10 text-[#8A4FF7]",
+            color: "bg-[#1898DC]/10 text-[#1898DC]",
           },
           {
             label: "Atividades a entregar",
@@ -274,7 +274,7 @@ export default function AlunoDashboardPage() {
                   </div>
                   <Link
                     href={`/aluno/atividades/${p.atividadeId}?turmaId=${p.turmaId}`}
-                    className="text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0] shrink-0"
+                    className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8] shrink-0"
                   >
                     {p.situacao === "a_entregar" ||
                     p.situacao === "aguardando"
@@ -305,7 +305,7 @@ export default function AlunoDashboardPage() {
               {feedbacksRecentes.map((f) => (
                 <li
                   key={f.id}
-                  className="p-3 rounded-lg border border-gray-100 bg-[#F8F9FA]/80"
+                  className="p-3 rounded-lg border border-gray-100 bg-gray-50/80"
                 >
                   <p className="text-sm font-medium text-[#1A1A1A]">
                     {f.submissao.atividade.titulo}
@@ -323,7 +323,7 @@ export default function AlunoDashboardPage() {
           )}
           <Link
             href="/aluno/feedbacks"
-            className="mt-4 inline-block text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+            className="mt-4 inline-block text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
           >
             Ver todos os feedbacks
           </Link>

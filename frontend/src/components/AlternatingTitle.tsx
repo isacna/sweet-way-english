@@ -56,10 +56,10 @@ export function AlternatingTitle() {
       aria-live="polite"
     >
       {part1}
-      {part2 && <span className="text-[#8A4FF7]">{part2}</span>}
+      {part2 && <span className="text-[#1898DC]">{part2}</span>}
       {phase === "typing" && length < fullText.length && (
         <span
-          className="inline-block w-0.5 h-[0.9em] bg-[#8A4FF7] ml-0.5 animate-pulse align-middle"
+          className="inline-block w-0.5 h-[0.9em] bg-[#1898DC] ml-0.5 animate-pulse align-middle"
           aria-hidden
         />
       )}

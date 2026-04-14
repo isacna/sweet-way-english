@@ -1,0 +1,88 @@
+erDiagram
+    Professor {
+        Int id PK
+        String nome
+        String email
+        String senha
+        DateTime criadoEm
+    }
+    Aluno {
+        Int id PK
+        String nome
+        String email
+        String senha
+        DateTime criadoEm
+    }
+    Turma {
+        Int id PK
+        String nome
+        String descricao
+        String codigoConvite
+        Int professorId FK
+        DateTime criadoEm
+    }
+    Matricula {
+        Int id PK
+        Int alunoId FK
+        Int turmaId FK
+        DateTime dataMatricula
+        String status
+    }
+    Atividade {
+        Int id PK
+        String titulo
+        String descricao
+        DateTime dataEntrega
+        Boolean arquivoObrigatorio
+        String link
+        Int turmaId FK
+        DateTime criadoEm
+    }
+    Submissao {
+        Int id PK
+        Int atividadeId FK
+        Int alunoId FK
+        String conteudo
+        String arquivoUrl
+        DateTime dataEnvio
+        StatusSubmissao status
+    }
+    Feedback {
+        Int id PK
+        Int submissaoId FK
+        Int professorId FK
+        String comentario
+        Float nota
+        DateTime criadoEm
+    }
+    MaterialApoio {
+        Int id PK
+        String titulo
+        String tipo
+        String urlArquivo
+        Int turmaId FK
+        DateTime criadoEm
+    }
+    Aviso {
+        Int id PK
+        String titulo
+        String conteudo
+        String link
+        Int turmaId FK
+        DateTime criadoEm
+    }
+    ConfiguracaoApp {
+        Int id PK
+        String logoUrl
+    }
+
+    Professor ||--o{ Turma : "cria"
+    Professor ||--o{ Feedback : "da"
+    Turma ||--o{ Matricula : "tem"
+    Turma ||--o{ Atividade : "tem"
+    Turma ||--o{ MaterialApoio : "tem"
+    Turma ||--o{ Aviso : "tem"
+    Aluno ||--o{ Matricula : "realiza"
+    Aluno ||--o{ Submissao : "envia"
+    Atividade ||--o{ Submissao : "recebe"
+    Submissao ||--o| Feedback : "tem"

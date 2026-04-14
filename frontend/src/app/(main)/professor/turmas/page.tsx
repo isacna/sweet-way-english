@@ -154,7 +154,7 @@ export default function TurmasPage() {
                 </Button>
                 <Link
                   href={`/professor/materiais?turma=${cls.id}`}
-                  className="text-center text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+                  className="text-center text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
                 >
                   Materiais desta turma
                 </Link>

@@ -4,7 +4,7 @@ import { Button } from "@/components/Button";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#F8F8FA]">
+    <div className="min-h-screen bg-surface">
       <main className="pt-12 pb-20 px-8 max-w-6xl mx-auto">
         <div className="flex justify-center mb-12">
           <Image
@@ -47,7 +47,7 @@ export default function HomePage() {
               />
             </div>
             <div className="absolute -bottom-6 -left-4 lg:left-0 right-4 lg:right-auto max-w-xs p-5 rounded-2xl bg-white shadow-lg border border-gray-100">
-              <div className="w-12 h-12 rounded-xl bg-[#8A4FF7]/10 flex items-center justify-center mb-3">
+              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-3">
                 <Image src="/icons/star.svg" alt="" width={24} height={24} />
               </div>
               <h3 className="font-bold text-[#1A1A1A] mb-1">
@@ -64,7 +64,7 @@ export default function HomePage() {
         <section>
           <div className="grid sm:grid-cols-3 gap-6">
             <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#8A4FF7]/10 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
                 <Image
                   src="/icons/book-open.svg"
                   alt=""
@@ -82,7 +82,7 @@ export default function HomePage() {
               </p>
             </article>
             <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#8A4FF7]/10 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
                 <Image
                   src="/icons/users-gear.svg"
                   alt=""
@@ -100,7 +100,7 @@ export default function HomePage() {
               </p>
             </article>
             <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#8A4FF7]/10 flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
                 <Image
                   src="/icons/star.svg"
                   alt=""

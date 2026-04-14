@@ -119,7 +119,7 @@ function NovaAtividadePageContent() {
             value={turmaId}
             onChange={(e) => setTurmaId(e.target.value)}
             disabled={carregandoTurmas || turmas.length === 0}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7] disabled:bg-gray-50"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC] disabled:bg-gray-50"
           >
             <option value="">
               {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -133,7 +133,7 @@ function NovaAtividadePageContent() {
           {!carregandoTurmas && turmas.length === 0 && (
             <p className="text-sm text-[#4A4A4A] mt-2">
               Crie uma turma antes.{" "}
-              <Link href="/professor/turmas/nova" className="text-[#8A4FF7]">
+              <Link href="/professor/turmas/nova" className="text-[#1898DC]">
                 Nova turma
               </Link>
             </p>
@@ -151,7 +151,7 @@ function NovaAtividadePageContent() {
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -167,7 +167,7 @@ function NovaAtividadePageContent() {
             onChange={(e) => setDescricao(e.target.value)}
             required
             rows={4}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -183,7 +183,7 @@ function NovaAtividadePageContent() {
             value={dataEntrega}
             onChange={(e) => setDataEntrega(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <label className="flex items-start gap-3 cursor-pointer">
@@ -191,7 +191,7 @@ function NovaAtividadePageContent() {
             type="checkbox"
             checked={arquivoObrigatorio}
             onChange={(e) => setArquivoObrigatorio(e.target.checked)}
-            className="mt-1 rounded border-gray-300 text-[#8A4FF7] focus:ring-[#8A4FF7]"
+            className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
           />
           <span className="text-sm text-[#1A1A1A]">
             Exigir arquivo na entrega (alunos precisam anexar um arquivo para enviar)
@@ -210,7 +210,7 @@ function NovaAtividadePageContent() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
             placeholder="https://youtube.com/... ou outro link"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
           {link.trim() && (
             <div className="mt-3">
@@ -234,7 +234,7 @@ function NovaAtividadePageContent() {
           <button
             type="submit"
             disabled={carregando || turmas.length === 0}
-            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#8A4FF7] text-white px-6 py-3 hover:bg-[#7742e0] transition-colors disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
           >
             {carregando ? (
               "Salvando…"

@@ -70,7 +70,7 @@ export default function NovaTurmaPage() {
             onChange={(e) => setNome(e.target.value)}
             required
             placeholder="Ex.: Inglês B1 — Tarde"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -85,7 +85,7 @@ export default function NovaTurmaPage() {
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
             rows={3}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           />
         </div>
         <div>
@@ -99,7 +99,7 @@ export default function NovaTurmaPage() {
             id="nivel"
             value={nivel}
             onChange={(e) => setNivel(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20 focus:border-[#8A4FF7]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
           >
             {NIVEIS.map((n) => (
               <option key={n} value={n}>
@@ -120,7 +120,7 @@ export default function NovaTurmaPage() {
           <button
             type="submit"
             disabled={carregando}
-            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#8A4FF7] text-white px-6 py-3 hover:bg-[#7742e0] transition-colors disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
           >
             {carregando ? (
               "Salvando…"

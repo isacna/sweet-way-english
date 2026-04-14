@@ -80,7 +80,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
         aria-haspopup="menu"
-        className="flex items-center gap-2 sm:gap-3 rounded-xl pl-1 pr-2 py-1.5 hover:bg-gray-50 border border-transparent hover:border-gray-200 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[#8A4FF7]/30"
+        className="flex items-center gap-2 sm:gap-3 rounded-xl pl-1 pr-2 py-1.5 hover:bg-gray-50 border border-transparent hover:border-gray-200 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-[#1898DC]/30"
       >
         <div className="text-right hidden sm:block min-w-0 max-w-[180px]">
           <p className="text-sm font-medium text-[#1A1A1A] truncate">
@@ -89,10 +89,10 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
           <p className="text-xs text-[#4A4A4A] text-left">{exibirPapel}</p>
         </div>
         <div
-          className="w-10 h-10 rounded-full bg-[#8A4FF7]/15 flex items-center justify-center shrink-0"
+          className="w-10 h-10 rounded-full bg-[#1898DC]/15 flex items-center justify-center shrink-0"
           aria-hidden
         >
-          <span className="text-[#8A4FF7] font-semibold text-sm">
+          <span className="text-[#1898DC] font-semibold text-sm">
             {nome ? iniciais(nome) : "…"}
           </span>
         </div>
@@ -117,7 +117,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
             {email && (
               <p className="text-xs text-[#4A4A4A] truncate mt-0.5">{email}</p>
             )}
-            <p className="text-xs text-[#8A4FF7] font-medium mt-1">
+            <p className="text-xs text-[#1898DC] font-medium mt-1">
               {exibirPapel}
             </p>
           </div>

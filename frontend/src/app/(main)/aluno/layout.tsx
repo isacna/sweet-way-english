@@ -8,7 +8,7 @@ export default function AlunoLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-[#F8F8FA]">
+    <div className="min-h-screen bg-surface">
       <Navbar
         variant="dashboard"
         logoHref="/aluno"

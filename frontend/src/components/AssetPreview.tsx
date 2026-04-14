@@ -44,7 +44,7 @@ function FallbackAbrir({
         href={fullUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm font-medium text-[#8A4FF7] hover:text-[#7742e0]"
+        className="inline-flex items-center gap-2 text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
       >
         <Image src="/icons/download.svg" alt="" width={16} height={16} />
         Abrir em nova aba
@@ -150,7 +150,7 @@ export function AssetPreview({
 
   return (
     <div
-      className={`rounded-xl border border-gray-200 bg-[#F8F9FA] overflow-hidden ${className}`}
+      className={`rounded-xl border border-gray-200 bg-gray-50 overflow-hidden ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-gray-100 bg-white">
         <span className="text-xs font-medium text-[#4A4A4A]">
@@ -162,7 +162,7 @@ export function AssetPreview({
               <button
                 type="button"
                 onClick={() => setAberto(false)}
-                className="text-xs font-medium text-[#8A4FF7] hover:text-[#7742e0] hover:underline"
+                className="text-xs font-medium text-[#1898DC] hover:text-[#147EB8] hover:underline"
               >
                 Ocultar
               </button>
@@ -175,7 +175,7 @@ export function AssetPreview({
             href={fullUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[#8A4FF7] font-medium hover:underline"
+            className="text-xs text-[#1898DC] font-medium hover:underline"
           >
             Abrir em nova aba
           </a>
@@ -186,7 +186,7 @@ export function AssetPreview({
         <button
           type="button"
           onClick={() => setAberto(true)}
-          className="w-full text-left px-3 py-4 text-sm text-[#4A4A4A] bg-[#F8F9FA] hover:bg-[#f0f0f4] transition-colors"
+          className="w-full text-left px-3 py-4 text-sm text-[#4A4A4A] bg-gray-50 hover:bg-gray-100 transition-colors"
         >
           <span className="inline-flex items-center gap-2">
             <Image

@@ -221,7 +221,7 @@ function AtividadeEntregaContent() {
             {historicoCronologico.map((s, index) => (
               <li
                 key={s.id}
-                className="p-5 rounded-xl bg-[#F8F9FA] border border-gray-200 space-y-3"
+                className="p-5 rounded-xl bg-gray-50 border border-gray-200 space-y-3"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-sm font-semibold text-[#1A1A1A]">
@@ -247,7 +247,7 @@ function AtividadeEntregaContent() {
                     href={assetUrl(s.arquivoUrl) ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-[#8A4FF7] font-medium hover:underline"
+                    className="inline-flex items-center gap-2 text-sm text-[#1898DC] font-medium hover:underline"
                   >
                     <Image
                       src="/icons/download.svg"
@@ -311,7 +311,7 @@ function AtividadeEntregaContent() {
             onChange={(e) => setConteudo(e.target.value)}
             rows={6}
             placeholder="Escreva sua resposta aqui…"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#8A4FF7]/20"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20"
           />
           <div>
             <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
@@ -337,7 +337,7 @@ function AtividadeEntregaContent() {
           <button
             type="submit"
             disabled={enviando}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#8A4FF7] text-white font-medium px-6 py-3 hover:bg-[#7742e0] disabled:opacity-70"
+            className="inline-flex items-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-70"
           >
             <Image src="/icons/upload-white.svg" alt="" width={18} height={18} />
             {enviando ? "Enviando…" : "Enviar entrega"}

@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant C as Cliente (Browser)
+    participant F as Frontend (Next.js)
+    participant B as Backend (Express)
+
+    C->>F: Preenche formulário de login
+    F->>B: POST /api/auth/login { email, senha, role }
+    B-->>F: { token, user: { id, nome, email, role } }
+    F->>F: localStorage.setItem("token", token)
+    F->>F: localStorage.setItem("user", JSON.stringify(user))
+    F-->>C: Redireciona para /professor ou /aluno
+
+    Note over C,B: Requisições subsequentes
+
+    C->>F: Navega para página protegida
+    F->>F: getStoredUser() — verifica localStorage
+    F->>B: GET /api/turmas (Authorization: Bearer token)
+    B->>B: authenticateToken() — valida JWT
+    B->>B: req.user = { id, role }
+    B-->>F: Dados da turma
+    F-->>C: Renderiza página
