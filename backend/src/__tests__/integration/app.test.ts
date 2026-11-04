@@ -1,11 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import request from 'supertest';
-import express from 'express';
 
 // ── Prisma mock ──────────────────────────────────────────────────────────────
 const prismaMock = vi.hoisted(() => ({
-  professor: { findUnique: vi.fn(), create: vi.fn() },
-  aluno: { findUnique: vi.fn(), create: vi.fn() },
+  usuario: { findUnique: vi.fn(), create: vi.fn() },
   turma: { findUnique: vi.fn(), findMany: vi.fn(), create: vi.fn(), count: vi.fn() },
   matricula: { findFirst: vi.fn(), findMany: vi.fn(), create: vi.fn() },
   atividade: { findUnique: vi.fn(), findMany: vi.fn(), create: vi.fn(), update: vi.fn() },
@@ -27,19 +25,14 @@ vi.mock('jsonwebtoken', () => ({
 }));
 
 // ── App factory ──────────────────────────────────────────────────────────────
-import { router } from '../../http/routes/index.js';
+import { createApp } from '../../app.js';
 import jwt from 'jsonwebtoken';
 
-function createTestApp() {
-  const app = express();
-  app.use(express.json());
-  app.use('/api', router);
-  return app;
-}
+const createTestApp = createApp;
 
 // Helper: make JWT verify succeed with a given payload
 function mockToken(payload: object) {
-  (jwt.verify as any).mockImplementation((_t: any, _s: any, cb: any) => cb(null, payload));
+  (jwt.verify as any).mockImplementation((_t: any, _s: any, cb: any) => cb(null, { exp: 9999999999, ...payload }));
   return 'Bearer test_token';
 }
 
@@ -53,19 +46,37 @@ describe('Integration — HTTP API', () => {
 
   // ── Auth ───────────────────────────────────────────────────────────────────
   describe('POST /api/auth/register/professor', () => {
-    it('returns 201 on success', async () => {
-      prismaMock.professor.create.mockResolvedValue({ id: 1 });
+    it('no longer exists (professors are created by the admin)', async () => {
       const res = await request(app)
         .post('/api/auth/register/professor')
-        .send({ nome: 'Ana', email: 'ana@t.com', senha: '123' });
+        .send({ nome: 'Ana', email: 'ana@t.com', senha: '123456' });
+      expect(res.status).toBe(404);
+      expect(prismaMock.usuario.create).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('POST /api/auth/register/aluno', () => {
+    it('returns 201 for an adult', async () => {
+      prismaMock.usuario.create.mockResolvedValue({ id: 2 });
+      const res = await request(app)
+        .post('/api/auth/register/aluno')
+        .send({ nome: 'Bob', email: 'bob@t.com', senha: '123456', dataNascimento: '1990-01-01' });
       expect(res.status).toBe(201);
     });
 
     it('returns 400 on duplicate email', async () => {
-      prismaMock.professor.create.mockRejectedValue(new Error('unique'));
+      prismaMock.usuario.create.mockRejectedValue(new Error('unique'));
       const res = await request(app)
-        .post('/api/auth/register/professor')
-        .send({ nome: 'Ana', email: 'dup@t.com', senha: '123' });
+        .post('/api/auth/register/aluno')
+        .send({ nome: 'Bob', email: 'dup@t.com', senha: '123456', dataNascimento: '1990-01-01' });
+      expect(res.status).toBe(400);
+    });
+
+    it('returns 400 for malformed JSON', async () => {
+      const res = await request(app)
+        .post('/api/auth/register/aluno')
+        .set('Content-Type', 'application/json')
+        .send('{"nome":');
       expect(res.status).toBe(400);
     });
   });
@@ -73,7 +84,9 @@ describe('Integration — HTTP API', () => {
   describe('POST /api/auth/login', () => {
     it('returns token for valid credentials', async () => {
       const { default: bcrypt } = await import('bcryptjs');
-      prismaMock.professor.findUnique.mockResolvedValue({ id: 1, nome: 'Ana', email: 'ana@t.com', senha: 'hashed' });
+      prismaMock.usuario.findUnique.mockResolvedValue({
+        id: 1, nome: 'Ana', email: 'ana@t.com', senha: 'hashed', papel: 'professor', admin: false,
+      });
       (bcrypt.compare as any).mockResolvedValue(true);
 
       const res = await request(app)
@@ -82,13 +95,12 @@ describe('Integration — HTTP API', () => {
 
       expect(res.status).toBe(200);
       expect(res.body).toHaveProperty('token');
-      expect(res.body.user).toMatchObject({ role: 'professor' });
+      expect(res.body.user).toMatchObject({ role: 'professor', admin: false });
     });
 
     it('returns 401 for wrong credentials', async () => {
       const { default: bcrypt } = await import('bcryptjs');
-      prismaMock.professor.findUnique.mockResolvedValue(null);
-      prismaMock.aluno.findUnique.mockResolvedValue(null);
+      prismaMock.usuario.findUnique.mockResolvedValue(null);
       (bcrypt.compare as any).mockResolvedValue(false);
 
       const res = await request(app)
@@ -96,6 +108,45 @@ describe('Integration — HTTP API', () => {
         .send({ email: 'x@t.com', senha: 'wrong' });
 
       expect(res.status).toBe(401);
+    });
+  });
+
+  // ── Admin ──────────────────────────────────────────────────────────────────
+  describe('admin routes', () => {
+    it('returns 403 for a professor who is not admin', async () => {
+      prismaMock.usuario.findUnique.mockResolvedValue({ admin: false });
+      const res = await request(app)
+        .get('/api/admin/professores')
+        .set('Authorization', mockToken({ id: 2, role: 'professor', email: 'p@t.com' }));
+      expect(res.status).toBe(403);
+    });
+
+    it('returns 403 for an aluno on /professor/me', async () => {
+      const res = await request(app)
+        .get('/api/professor/me')
+        .set('Authorization', mockToken({ id: 10, role: 'aluno', email: 's@t.com' }));
+      expect(res.status).toBe(403);
+    });
+  });
+
+  // ── Uploads ────────────────────────────────────────────────────────────────
+  describe('upload limits', () => {
+    it('rejects disallowed file types with 415', async () => {
+      prismaMock.usuario.findUnique.mockResolvedValue({ admin: true });
+      const res = await request(app)
+        .patch('/api/configuracoes/logo')
+        .set('Authorization', mockToken({ id: 1, role: 'professor', email: 'a@t.com' }))
+        .attach('logo', Buffer.from('MZ'), { filename: 'virus.exe', contentType: 'application/x-msdownload' });
+      expect(res.status).toBe(415);
+    });
+
+    it('rejects SVG images (can carry scripts)', async () => {
+      prismaMock.usuario.findUnique.mockResolvedValue({ admin: true });
+      const res = await request(app)
+        .patch('/api/configuracoes/logo')
+        .set('Authorization', mockToken({ id: 1, role: 'professor', email: 'a@t.com' }))
+        .attach('logo', Buffer.from('<svg/>'), { filename: 'logo.svg', contentType: 'image/svg+xml' });
+      expect(res.status).toBe(415);
     });
   });
 
@@ -169,6 +220,69 @@ describe('Integration — HTTP API', () => {
         .set('Authorization', mockToken({ id: 1, role: 'professor', email: 'a@t.com' }));
       expect(res.status).toBe(200);
       expect(Array.isArray(res.body)).toBe(true);
+    });
+  });
+
+  // ── Curso autoguiado: guardas de rota ─────────────────────────────────────
+  describe('course routes (role guards)', () => {
+    const aluno = () => mockToken({ id: 10, role: 'aluno', email: 's@t.com' });
+    const professor = () => mockToken({ id: 1, role: 'professor', email: 'a@t.com' });
+
+    const rotasAluno: [string, string][] = [
+      ['get', '/api/curso'],
+      ['get', '/api/curso/licoes/1'],
+      ['post', '/api/curso/exercicios/1/verificar'],
+      ['post', '/api/curso/licoes/1/quiz'],
+      ['get', '/api/curso/revisao'],
+      ['post', '/api/curso/revisao/1'],
+      ['post', '/api/curso/modulos/1/teste'],
+      ['post', '/api/curso/tentativas/1'],
+      ['patch', '/api/curso/perfil'],
+    ];
+    const rotasProfessor: [string, string][] = [
+      ['get', '/api/conteudo'],
+      ['get', '/api/conteudo/licoes/1'],
+      ['put', '/api/conteudo/licoes/1'],
+      ['patch', '/api/conteudo/licoes/1/status'],
+      ['patch', '/api/conteudo/modulos/1/status'],
+      ['get', '/api/conteudo/modulos/1/teste'],
+      ['post', '/api/conteudo/exercicios/verificar'],
+      ['get', '/api/professor/progresso'],
+    ];
+
+    it.each([...rotasAluno, ...rotasProfessor])('%s %s returns 401 without token', async (metodo, rota) => {
+      const res = await (request(app) as any)[metodo](rota);
+      expect(res.status).toBe(401);
+    });
+
+    it.each(rotasAluno)('%s %s returns 403 for a professor', async (metodo, rota) => {
+      const res = await (request(app) as any)[metodo](rota).set('Authorization', professor()).send({});
+      expect(res.status).toBe(403);
+    });
+
+    it.each(rotasProfessor)('%s %s returns 403 for an aluno', async (metodo, rota) => {
+      const res = await (request(app) as any)[metodo](rota).set('Authorization', aluno()).send({});
+      expect(res.status).toBe(403);
+    });
+
+    it('lets an aluno reach the controller (400 on invalid body)', async () => {
+      const res = await request(app).patch('/api/curso/perfil').set('Authorization', aluno()).send({ metodologia: 'xyz' });
+      expect(res.status).toBe(400);
+    });
+
+    it('lets a professor reach the controller (400 on invalid body)', async () => {
+      const res = await request(app)
+        .post('/api/conteudo/exercicios/verificar')
+        .set('Authorization', professor())
+        .send({ item: { tipo: 'mcq' }, resposta: 0 });
+      expect(res.status).toBe(400);
+    });
+
+    it('sends async controller errors to the error handler (500, not a crash)', async () => {
+      const silencio = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const res = await request(app).get('/api/conteudo').set('Authorization', professor());
+      expect(res.status).toBe(500); // prisma.nivel não existe no mock
+      silencio.mockRestore();
     });
   });
 

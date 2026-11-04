@@ -2,6 +2,7 @@ import 'dotenv/config';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../src/database/client.js';
 import { StatusSubmissao } from '../src/database/generated/prisma/client.js';
+import { importarConteudo } from '../src/domain/conteudo/importar.js';
 
 const PDF_WORKSHEET = '/uploads/1773977192408-Present_Simple_Worksheet.pdf';
 
@@ -10,31 +11,33 @@ async function main() {
 
   // ─── Usuários ──────────────────────────────────────────────────────────────
 
-  const professor = await prisma.professor.upsert({
+  const professor = await prisma.usuario.upsert({
     where: { email: 'professor@sweetway.com' },
     update: {},
     create: {
       nome: 'Maria Silva',
       email: 'professor@sweetway.com',
       senha: senhaHash,
+      papel: 'professor',
+      admin: true,
     },
   });
 
   const [aluno1, aluno2, aluno3] = await Promise.all([
-    prisma.aluno.upsert({
+    prisma.usuario.upsert({
       where: { email: 'ana@email.com' },
       update: {},
-      create: { nome: 'Ana Costa', email: 'ana@email.com', senha: senhaHash },
+      create: { nome: 'Ana Costa', email: 'ana@email.com', senha: senhaHash, papel: 'aluno' },
     }),
-    prisma.aluno.upsert({
+    prisma.usuario.upsert({
       where: { email: 'bruno@email.com' },
       update: {},
-      create: { nome: 'Bruno Lima', email: 'bruno@email.com', senha: senhaHash },
+      create: { nome: 'Bruno Lima', email: 'bruno@email.com', senha: senhaHash, papel: 'aluno' },
     }),
-    prisma.aluno.upsert({
+    prisma.usuario.upsert({
       where: { email: 'carla@email.com' },
       update: {},
-      create: { nome: 'Carla Santos', email: 'carla@email.com', senha: senhaHash },
+      create: { nome: 'Carla Santos', email: 'carla@email.com', senha: senhaHash, papel: 'aluno' },
     }),
   ]);
 
@@ -297,6 +300,12 @@ async function main() {
     ],
   });
 
+  // ─── Curso (prisma/conteudo) ───────────────────────────────────────────────
+  // Entra como "revisao": a professora publica em /professor/conteudo.
+  // SEED_PUBLICAR_CONTEUDO=1 publica direto (demonstração).
+
+  const curso = await importarConteudo(prisma, { publicar: process.env.SEED_PUBLICAR_CONTEUDO === '1' });
+
   // ─── Resumo ────────────────────────────────────────────────────────────────
 
   console.log('Seed concluído:');
@@ -306,6 +315,7 @@ async function main() {
   console.log('  - 8 submissões: 2 corrigidas/aprovadas com feedback, 6 pendentes de avaliação');
   console.log('  - 3 avisos (2 na turma 1, 1 na turma 2)');
   console.log('  - 6 materiais de apoio (3 por turma, PDF real incluído)');
+  console.log(`  - Curso: ${curso.modulos} módulos, ${curso.licoesCriadas} lições novas`);
   console.log('  Contas: professor@sweetway.com | ana@email.com | bruno@email.com | carla@email.com');
   console.log('  Senha: senha123');
 }
