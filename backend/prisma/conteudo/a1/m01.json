@@ -1,0 +1,3050 @@
+{
+  "slug": "a1-m01",
+  "ordem": 1,
+  "titulo": "Hello!",
+  "tema": "Cumprimentos e apresentações",
+  "descricao": "Os primeiros passos em inglês: cumprimentar, se apresentar, usar o verbo be, a e an, soletrar e contar até 20.",
+  "canDos": [
+    "Cumprimentar pessoas e me despedir de acordo com a hora do dia.",
+    "Me apresentar e dizer o nome, a profissão e a idade de alguém.",
+    "Usar o verbo be no afirmativo com todos os pronomes.",
+    "Usar a e an corretamente.",
+    "Soletrar nomes e dizer um endereço de e-mail.",
+    "Usar os números de 0 a 20."
+  ],
+  "gramatica": "Verbo be no afirmativo (I am, you are, he/she/it is, we/they are), pronomes pessoais, artigos a/an.",
+  "vocabulario": "Cumprimentos e despedidas, profissões, objetos do dia a dia, alfabeto, números de 0 a 20.",
+  "funcao": "Cumprimentar, apresentar-se, soletrar, dizer a idade.",
+  "pronuncia": "Nomes das letras que confundem brasileiros (A, E, I, G, J, H, R, W, Y).",
+  "licoes": [
+    {
+      "slug": "a1-m01-l1",
+      "ordem": 1,
+      "titulo": "Hi! I'm Ana",
+      "objetivo": "Cumprimentar, despedir-se e apresentar-se com I'm e My name is.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para cumprimentar alguém em inglês, usamos Hi ou Hello (oi, olá). Hi é mais informal; Hello serve para qualquer situação. Para se despedir, usamos Bye, Goodbye ou See you (até mais).",
+          "Para se apresentar, há duas formas simples: I'm Ana (Eu sou a Ana) ou My name is Ana (Meu nome é Ana). I'm é a forma curta de I am, muito usada na fala e em mensagens. Repare que em inglês não se usa artigo antes do nome: I'm Ana, e não I'm the Ana.",
+          "Os cumprimentos mudam com a hora do dia: Good morning (de manhã), Good afternoon (à tarde) e Good evening (à noite, ao chegar). Good night é só para se despedir à noite ou antes de dormir.",
+          "Quando conhecemos alguém, dizemos Nice to meet you (Prazer em conhecer você). A resposta mais comum é Nice to meet you, too."
+        ],
+        "regras": [
+          "Hi / Hello = oi, olá",
+          "I'm Ana = I am Ana = Eu sou a Ana",
+          "My name is Ana = Meu nome é Ana",
+          "Good morning / Good afternoon / Good evening = cumprimentos de chegada",
+          "Good night = boa noite (só na despedida)",
+          "Bye / Goodbye / See you = tchau, até mais"
+        ],
+        "notaContrastiva": "Não diga *Good night* ao chegar a uma festa à noite → diga *Good evening*. Good night é só para ir embora ou dormir. E não use artigo antes de nome: não diga *I'm the Ana* → diga *I'm Ana*.",
+        "exemplos": [
+          {
+            "en": "Hi, I'm Lucas.",
+            "pt": "Oi, eu sou o Lucas."
+          },
+          {
+            "en": "Hello, my name is Carla.",
+            "pt": "Olá, meu nome é Carla."
+          },
+          {
+            "en": "Good morning, Pedro!",
+            "pt": "Bom dia, Pedro!"
+          },
+          {
+            "en": "Nice to meet you.",
+            "pt": "Prazer em conhecer você."
+          },
+          {
+            "en": "Nice to meet you, too.",
+            "pt": "O prazer é meu. (Prazer em conhecer você também.)"
+          },
+          {
+            "en": "How are you? — I'm fine, thanks.",
+            "pt": "Como vai? — Estou bem, obrigado(a)."
+          },
+          {
+            "en": "Good night, Mom!",
+            "pt": "Boa noite, mãe! (antes de dormir)"
+          },
+          {
+            "en": "See you, Bruno!",
+            "pt": "Até mais, Bruno!"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "hi / hello",
+            "pt": "oi / olá"
+          },
+          {
+            "en": "bye / goodbye",
+            "pt": "tchau"
+          },
+          {
+            "en": "see you",
+            "pt": "até mais"
+          },
+          {
+            "en": "good morning",
+            "pt": "bom dia"
+          },
+          {
+            "en": "good afternoon",
+            "pt": "boa tarde"
+          },
+          {
+            "en": "good evening",
+            "pt": "boa noite (ao chegar)"
+          },
+          {
+            "en": "good night",
+            "pt": "boa noite (ao sair / dormir)"
+          },
+          {
+            "en": "name",
+            "pt": "nome"
+          },
+          {
+            "en": "nice to meet you",
+            "pt": "prazer em conhecer você"
+          },
+          {
+            "en": "thanks / thank you",
+            "pt": "obrigado(a)"
+          },
+          {
+            "en": "fine",
+            "pt": "bem"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Você chega a uma festa às 20h. Como cumprimenta as pessoas?",
+          "conteudo": {
+            "opcoes": [
+              "Good night!",
+              "Good evening!",
+              "Good morning!",
+              "Goodbye!"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Ao chegar à noite, dizemos Good evening. Good night parece \"boa noite\", mas só é usado na despedida ou antes de dormir."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra que completa a apresentação.",
+          "conteudo": {
+            "opcoes": [
+              "name",
+              "names",
+              "am",
+              "I"
+            ],
+            "texto": "Hello, my ___ is Bruno."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "My name is Bruno = Meu nome é Bruno. Name (nome) fica no singular, porque é um nome só."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com a palavra que falta.",
+          "conteudo": {
+            "texto": "Nice to ___ you."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "meet"
+              ]
+            ]
+          },
+          "explicacao": "Nice to meet you = Prazer em conhecer você. O verbo meet significa conhecer (alguém pela primeira vez)."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete a resposta.",
+          "conteudo": {
+            "texto": "A: Nice to meet you. B: Nice to meet you, ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "too"
+              ]
+            ]
+          },
+          "explicacao": "Respondemos Nice to meet you, too. Too no fim da frase significa \"também\"."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual destas expressões é uma despedida?",
+          "conteudo": {
+            "opcoes": [
+              "Hello!",
+              "Good morning!",
+              "See you!",
+              "Nice to meet you!"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "See you (até mais) é uma despedida. Hello e Good morning são cumprimentos de chegada, e Nice to meet you é dito quando conhecemos alguém."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "name",
+              "Rafael",
+              "is",
+              "my"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My name is Rafael."
+            ]
+          },
+          "explicacao": "A ordem é igual ao português: My name (meu nome) + is (é) + Rafael."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada expressão ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "Good morning",
+              "Good afternoon",
+              "Goodbye",
+              "Nice to meet you",
+              "Thank you"
+            ],
+            "direita": [
+              "Prazer em conhecer você",
+              "Bom dia",
+              "Obrigado(a)",
+              "Tchau",
+              "Boa tarde"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              4,
+              3,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Good morning = bom dia, Good afternoon = boa tarde, Goodbye = tchau, Nice to meet you = prazer em conhecer você, Thank you = obrigado(a)."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Hello, I'm the Camila."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Hello, I'm Camila.",
+              "Hello I'm Camila.",
+              "Hello. I'm Camila.",
+              "Hello! I'm Camila."
+            ]
+          },
+          "explicacao": "Em português dizemos \"eu sou a Camila\", mas em inglês não se usa artigo (the) antes de nome de pessoa: I'm Camila.",
+          "tagsErro": [
+            "artigo_nome"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Oi, meu nome é Paula.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Hi, my name is Paula.",
+              "Hi my name is Paula.",
+              "Hi. My name is Paula.",
+              "Hi! My name is Paula.",
+              "Hello, my name is Paula.",
+              "Hello my name is Paula.",
+              "Hello. My name is Paula.",
+              "Hello! My name is Paula.",
+              "Hey, my name is Paula.",
+              "Hey my name is Paula.",
+              "Hey. My name is Paula.",
+              "Hey! My name is Paula.",
+              "Hi, my name's Paula.",
+              "Hi my name's Paula.",
+              "Hi. My name's Paula.",
+              "Hi! My name's Paula.",
+              "Hello, my name's Paula.",
+              "Hello my name's Paula.",
+              "Hello. My name's Paula.",
+              "Hello! My name's Paula.",
+              "Hey, my name's Paula.",
+              "Hey my name's Paula.",
+              "Hey. My name's Paula.",
+              "Hey! My name's Paula.",
+              "Hi, I am Paula.",
+              "Hi I am Paula.",
+              "Hi. I am Paula.",
+              "Hi! I am Paula.",
+              "Hello, I am Paula.",
+              "Hello I am Paula.",
+              "Hello. I am Paula.",
+              "Hello! I am Paula.",
+              "Hey, I am Paula.",
+              "Hey I am Paula.",
+              "Hey. I am Paula.",
+              "Hey! I am Paula."
+            ]
+          },
+          "explicacao": "Oi = Hi ou Hello; meu nome é = my name is. Também aceitamos I'm Paula, que é outra forma de se apresentar."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Boa tarde, Marcos!",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Good afternoon, Marcos!",
+              "Good afternoon Marcos!",
+              "Good afternoon. Marcos!",
+              "Good afternoon! Marcos!"
+            ]
+          },
+          "explicacao": "Boa tarde = Good afternoon. Em inglês, afternoon é a tarde (depois do meio-dia)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Você vai dormir. O que diz para a sua mãe?",
+          "conteudo": {
+            "opcoes": [
+              "Good evening, Mom!",
+              "Good night, Mom!",
+              "Good afternoon, Mom!",
+              "Hello, Mom!"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Antes de dormir, dizemos Good night. Good evening é um cumprimento de chegada."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete a apresentação.",
+          "conteudo": {
+            "texto": "Hi! ___ Gabriel."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "I'm",
+                "I am"
+              ]
+            ]
+          },
+          "explicacao": "Para se apresentar: I'm Gabriel (= I am Gabriel). O sujeito I sempre aparece em inglês."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "you",
+              "to",
+              "meet",
+              "Nice"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Nice to meet you."
+            ]
+          },
+          "explicacao": "A expressão fixa é Nice to meet you (Prazer em conhecer você)."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Prazer em conhecer você.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Nice to meet you.",
+              "Pleased to meet you.",
+              "Nice meeting you.",
+              "It's nice to meet you."
+            ]
+          },
+          "explicacao": "A forma mais comum é Nice to meet you. Pleased to meet you é um pouco mais formal."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Hello, my name are Diego."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Hello, my name is Diego.",
+              "Hello my name is Diego.",
+              "Hello. My name is Diego.",
+              "Hello! My name is Diego.",
+              "Hello, my name's Diego.",
+              "Hello my name's Diego.",
+              "Hello. My name's Diego.",
+              "Hello! My name's Diego."
+            ]
+          },
+          "explicacao": "My name é singular (um nome), então o verbo é is: My name is Diego."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m01-l2",
+      "ordem": 2,
+      "titulo": "I am, you are, he is",
+      "objetivo": "Usar o verbo be no singular (I am, you are, he/she/it is) e os pronomes pessoais.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "O verbo be significa ser ou estar. No presente, ele muda de acordo com o pronome: I am, you are, he is, she is, it is. Por isso She is tired pode ser \"Ela está cansada\" e She is a teacher, \"Ela é professora\".",
+          "He é usado para homens e meninos, she para mulheres e meninas, e it para coisas, lugares, animais e para falar do tempo. O português não tem um equivalente direto de it.",
+          "Em inglês, o sujeito é obrigatório. Em português dizemos \"É grande\" ou \"Está frio\", mas em inglês precisamos dizer It is big e It is cold. O verbo nunca fica sozinho no começo da frase.",
+          "Na fala e em mensagens usamos contrações: I'm, you're, he's, she's, it's."
+        ],
+        "regras": [
+          "I am → I'm",
+          "You are → You're",
+          "He is → He's / She is → She's",
+          "It is → It's (coisas, animais, tempo)",
+          "Sujeito obrigatório: It is cold (não *Is cold*)"
+        ],
+        "notaContrastiva": "Não diga *Is cold today* → diga *It is cold today*. Em inglês o sujeito nunca some, nem quando em português ele fica escondido (\"Está frio\").",
+        "exemplos": [
+          {
+            "en": "I am tired.",
+            "pt": "Eu estou cansado(a)."
+          },
+          {
+            "en": "You're late!",
+            "pt": "Você está atrasado(a)!"
+          },
+          {
+            "en": "He is a student.",
+            "pt": "Ele é estudante."
+          },
+          {
+            "en": "She's happy.",
+            "pt": "Ela está feliz."
+          },
+          {
+            "en": "It is big.",
+            "pt": "É grande."
+          },
+          {
+            "en": "It's cold today.",
+            "pt": "Está frio hoje."
+          },
+          {
+            "en": "Lucas is busy. He is at school.",
+            "pt": "O Lucas está ocupado. Ele está na escola."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "I",
+            "pt": "eu"
+          },
+          {
+            "en": "you",
+            "pt": "você"
+          },
+          {
+            "en": "he",
+            "pt": "ele"
+          },
+          {
+            "en": "she",
+            "pt": "ela"
+          },
+          {
+            "en": "it",
+            "pt": "ele/ela (coisa, animal)"
+          },
+          {
+            "en": "happy",
+            "pt": "feliz"
+          },
+          {
+            "en": "tired",
+            "pt": "cansado(a)"
+          },
+          {
+            "en": "hungry",
+            "pt": "com fome"
+          },
+          {
+            "en": "busy",
+            "pt": "ocupado(a)"
+          },
+          {
+            "en": "late",
+            "pt": "atrasado(a)"
+          },
+          {
+            "en": "ready",
+            "pt": "pronto(a)"
+          },
+          {
+            "en": "cold",
+            "pt": "frio"
+          },
+          {
+            "en": "hot",
+            "pt": "quente"
+          },
+          {
+            "en": "big",
+            "pt": "grande"
+          },
+          {
+            "en": "small",
+            "pt": "pequeno(a)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "I ___ tired."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "am",
+                "'m"
+              ]
+            ]
+          },
+          "explicacao": "Com I, o verbo be é sempre am: I am (I'm)."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "She ___ happy."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Com he, she e it, usamos is: She is happy."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual pronome substitui \"Lucas\"?",
+          "conteudo": {
+            "opcoes": [
+              "He",
+              "She",
+              "It",
+              "I"
+            ],
+            "texto": "Lucas is hungry. → ___ is hungry."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Lucas é um homem, então usamos he (ele)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual pronome substitui \"the book\"?",
+          "conteudo": {
+            "opcoes": [
+              "He",
+              "She",
+              "It",
+              "You"
+            ],
+            "texto": "The book is new. → ___ is new."
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Para coisas usamos it. Em português o livro é \"ele\", mas em inglês objetos não têm masculino nem feminino."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "You ___ late."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are",
+                "'re"
+              ]
+            ]
+          },
+          "explicacao": "Com you, o verbo be é are: You are late."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "She",
+              "hungry"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is hungry."
+            ]
+          },
+          "explicacao": "Sujeito + verbo be + adjetivo: She is hungry (Ela está com fome)."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada forma completa à sua contração.",
+          "conteudo": {
+            "esquerda": [
+              "I am",
+              "You are",
+              "He is",
+              "She is",
+              "It is"
+            ],
+            "direita": [
+              "He's",
+              "It's",
+              "She's",
+              "You're",
+              "I'm"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              3,
+              0,
+              2,
+              1
+            ]
+          },
+          "explicacao": "Na contração, o apóstrofo substitui a letra que some: I am → I'm, you are → you're, he/she/it is → he's/she's/it's."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Is very cold today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is very cold today."
+            ]
+          },
+          "explicacao": "Em português dizemos \"Está muito frio\", sem sujeito. Em inglês o sujeito é obrigatório: It is very cold today.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela está cansada.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is tired."
+            ]
+          },
+          "explicacao": "Ela = she; está = is; cansada = tired. O adjetivo não muda no feminino em inglês."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você está atrasado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "You are late."
+            ]
+          },
+          "explicacao": "Você = you; com you o verbo be é are. Atrasado = late."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "Is big.",
+              "It is big.",
+              "It big.",
+              "It are big."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "É preciso ter sujeito (it) e verbo (is): It is big. Com it o verbo é is, não are.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "He ___ a teacher."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Com he, usamos is: He is a teacher."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "ready",
+              "am",
+              "I"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am ready."
+            ]
+          },
+          "explicacao": "Sujeito (I) + verbo (am) + adjetivo (ready): I am ready."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "É pequeno.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is small.",
+              "It is little."
+            ]
+          },
+          "explicacao": "Em português o sujeito fica escondido, mas em inglês precisamos de it: It is small.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "She are busy."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is busy."
+            ]
+          },
+          "explicacao": "Com she, o verbo be é is: She is busy. Are é para you, we e they."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m01-l3",
+      "ordem": 3,
+      "titulo": "We are, they are",
+      "objetivo": "Usar o verbo be no plural (we, you, they) e completar a tabela do verbo be.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No plural, o verbo be é sempre are: we are (nós somos/estamos), you are (vocês são/estão), they are (eles/elas são/estão).",
+          "You serve tanto para \"você\" quanto para \"vocês\". O verbo é o mesmo: are.",
+          "They é usado para pessoas e também para coisas no plural, e não tem masculino nem feminino: eles e elas são sempre they.",
+          "Quando o sujeito tem duas ou mais pessoas (Ana and Pedro, Carla and I), o verbo também é are. Contrações: we're, you're, they're."
+        ],
+        "regras": [
+          "We are → We're",
+          "You are (vocês) → You're",
+          "They are → They're (eles e elas)",
+          "Ana and I = we / Ana and Pedro = they",
+          "Sujeito no plural → are"
+        ],
+        "notaContrastiva": "Não diga *Ana and Bruno is happy* → diga *Ana and Bruno are happy*. Dois ou mais sujeitos pedem are. E não diga *I and Ana*: em inglês a pessoa que fala vem por último → *Ana and I*.",
+        "exemplos": [
+          {
+            "en": "We are friends.",
+            "pt": "Nós somos amigos."
+          },
+          {
+            "en": "They're students.",
+            "pt": "Eles são estudantes."
+          },
+          {
+            "en": "You are great!",
+            "pt": "Vocês são ótimos!"
+          },
+          {
+            "en": "Ana and Pedro are busy.",
+            "pt": "A Ana e o Pedro estão ocupados."
+          },
+          {
+            "en": "Lucas and I are hungry.",
+            "pt": "O Lucas e eu estamos com fome."
+          },
+          {
+            "en": "We're ready!",
+            "pt": "Estamos prontos!"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "we",
+            "pt": "nós"
+          },
+          {
+            "en": "you",
+            "pt": "vocês"
+          },
+          {
+            "en": "they",
+            "pt": "eles / elas"
+          },
+          {
+            "en": "friends",
+            "pt": "amigos"
+          },
+          {
+            "en": "students",
+            "pt": "estudantes"
+          },
+          {
+            "en": "nice",
+            "pt": "legal, simpático(a)"
+          },
+          {
+            "en": "cool",
+            "pt": "legal, bacana"
+          },
+          {
+            "en": "great",
+            "pt": "ótimo(a)"
+          },
+          {
+            "en": "and",
+            "pt": "e"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "We ___ hungry."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are",
+                "'re"
+              ]
+            ]
+          },
+          "explicacao": "Com we, o verbo be é are: We are hungry."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Ana and Pedro ___ busy."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "Ana and Pedro são duas pessoas (= they), então usamos are."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual pronome substitui \"Carla and I\"?",
+          "conteudo": {
+            "opcoes": [
+              "We",
+              "They",
+              "You",
+              "She"
+            ],
+            "texto": "Carla and I are happy. → ___ are happy."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Carla e eu = nós = we."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual pronome substitui \"Marcos and Paula\"?",
+          "conteudo": {
+            "opcoes": [
+              "We",
+              "They",
+              "He",
+              "She"
+            ],
+            "texto": "Marcos and Paula are nice. → ___ are nice."
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Marcos e Paula = eles = they. They serve para eles e para elas."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha as palavras que completam a frase.",
+          "conteudo": {
+            "opcoes": [
+              "is / are",
+              "are / is",
+              "is / is",
+              "are / are"
+            ],
+            "texto": "Lucas ___ tired, and Ana and Bruno ___ hungry."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Lucas é uma pessoa (he) → is. Ana and Bruno são duas pessoas (they) → are."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "friends",
+              "are",
+              "We"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are friends."
+            ]
+          },
+          "explicacao": "Sujeito (we) + verbo (are) + complemento (friends): We are friends."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada pronome ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "I",
+              "you",
+              "he",
+              "she",
+              "we",
+              "they"
+            ],
+            "direita": [
+              "nós",
+              "eu",
+              "eles / elas",
+              "você / vocês",
+              "ela",
+              "ele"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              5,
+              4,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Lembre: you é \"você\" e também \"vocês\"; they é \"eles\" e também \"elas\"."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Rafael and Thiago is ready."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Rafael and Thiago are ready."
+            ]
+          },
+          "explicacao": "Rafael e Thiago são duas pessoas (they), então o verbo é are, não is."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós estamos prontos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are ready."
+            ]
+          },
+          "explicacao": "Nós = we; estamos = are; prontos = ready (o adjetivo não vai para o plural em inglês)."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles são legais.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are nice.",
+              "They are cool.",
+              "They are great."
+            ]
+          },
+          "explicacao": "Eles = they, são = are. \"Legal\" pode ser nice ou cool."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "They ___ late."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are",
+                "'re"
+              ]
+            ]
+          },
+          "explicacao": "Com they, usamos are: They are late."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Qual é a contração de \"we are\"?",
+          "conteudo": {
+            "opcoes": [
+              "We're",
+              "Were",
+              "We'are",
+              "Wer'e"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Na contração, o a de are some e entra o apóstrofo: we are → we're. Cuidado: were (sem apóstrofo) é outra palavra."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "Camila",
+              "I",
+              "busy",
+              "and"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Camila and I are busy."
+            ]
+          },
+          "explicacao": "Em inglês, quem fala vem por último: Camila and I. Com duas pessoas, o verbo é are."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Vocês estão atrasados.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "You are late.",
+              "You guys are late.",
+              "You all are late."
+            ]
+          },
+          "explicacao": "Vocês = you (igual a \"você\"). O verbo é are: You are late."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "They is happy."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are happy."
+            ]
+          },
+          "explicacao": "Com they, o verbo be é sempre are: They are happy."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m01-l4",
+      "ordem": 4,
+      "titulo": "A teacher, an engineer",
+      "objetivo": "Usar a e an com profissões e objetos.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "A e an significam \"um\" ou \"uma\". Usamos a antes de palavras que começam com som de consoante (a book, a teacher) e an antes de som de vogal (an apple, an engineer).",
+          "O que importa é o som, e não a letra: dizemos an hour (o h não é pronunciado), mas a university (o u tem som de \"iu\").",
+          "Com profissões, o artigo é obrigatório em inglês. Em português dizemos \"Ela é professora\", sem artigo, mas em inglês é She is a teacher.",
+          "A e an só aparecem com uma coisa ou pessoa (singular). No plural, não há artigo: They are students. Nome de pessoa também não leva artigo: She is Ana."
+        ],
+        "regras": [
+          "a + som de consoante: a book, a doctor",
+          "an + som de vogal: an apple, an artist",
+          "Profissão sempre com a/an: He is a doctor.",
+          "Plural sem a/an: They are doctors.",
+          "Nome próprio sem artigo: She is Ana."
+        ],
+        "notaContrastiva": "Não diga *She is teacher* → diga *She is a teacher*. Em inglês a profissão precisa de a ou an.",
+        "exemplos": [
+          {
+            "en": "She is a teacher.",
+            "pt": "Ela é professora."
+          },
+          {
+            "en": "He is an engineer.",
+            "pt": "Ele é engenheiro."
+          },
+          {
+            "en": "I'm a student.",
+            "pt": "Eu sou estudante."
+          },
+          {
+            "en": "It is an apple.",
+            "pt": "É uma maçã."
+          },
+          {
+            "en": "It's a cell phone.",
+            "pt": "É um celular."
+          },
+          {
+            "en": "You are an artist!",
+            "pt": "Você é um artista!"
+          },
+          {
+            "en": "Bruno and Carla are doctors.",
+            "pt": "O Bruno e a Carla são médicos."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "teacher",
+            "pt": "professor(a)"
+          },
+          {
+            "en": "student",
+            "pt": "estudante, aluno(a)"
+          },
+          {
+            "en": "doctor",
+            "pt": "médico(a)"
+          },
+          {
+            "en": "nurse",
+            "pt": "enfermeiro(a)"
+          },
+          {
+            "en": "engineer",
+            "pt": "engenheiro(a)"
+          },
+          {
+            "en": "artist",
+            "pt": "artista"
+          },
+          {
+            "en": "driver",
+            "pt": "motorista"
+          },
+          {
+            "en": "apple",
+            "pt": "maçã"
+          },
+          {
+            "en": "orange",
+            "pt": "laranja"
+          },
+          {
+            "en": "egg",
+            "pt": "ovo"
+          },
+          {
+            "en": "umbrella",
+            "pt": "guarda-chuva"
+          },
+          {
+            "en": "book",
+            "pt": "livro"
+          },
+          {
+            "en": "pen",
+            "pt": "caneta"
+          },
+          {
+            "en": "bag",
+            "pt": "bolsa, mochila"
+          },
+          {
+            "en": "cell phone",
+            "pt": "celular"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "It is ___ umbrella.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ]
+            ]
+          },
+          "explicacao": "Umbrella começa com som de vogal, então usamos an: an umbrella."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "She is ___ nurse.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "a"
+              ]
+            ]
+          },
+          "explicacao": "Nurse começa com som de consoante (n), então usamos a. E lembre: profissão sempre leva artigo."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "He is ___ engineer.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ]
+            ]
+          },
+          "explicacao": "Engineer começa com som de vogal (e), então usamos an."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "I am a student.",
+              "I am student.",
+              "I am an student.",
+              "I a student."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Profissão ou ocupação precisa de artigo: I am a student. Student começa com som de consoante, por isso a.",
+          "tagsErro": [
+            "artigo_profissao"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual destas palavras vem depois de an?",
+          "conteudo": {
+            "opcoes": [
+              "book",
+              "egg",
+              "pen",
+              "bag"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Egg começa com som de vogal, então dizemos an egg. As outras começam com som de consoante: a book, a pen, a bag."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "an",
+              "Pedro",
+              "artist"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Pedro is an artist."
+            ]
+          },
+          "explicacao": "Nome + is + an + profissão: Pedro is an artist. Artist começa com vogal, por isso an."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada profissão ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "teacher",
+              "doctor",
+              "nurse",
+              "driver",
+              "engineer"
+            ],
+            "direita": [
+              "motorista",
+              "engenheiro(a)",
+              "professor(a)",
+              "enfermeiro(a)",
+              "médico(a)"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              3,
+              0,
+              1
+            ]
+          },
+          "explicacao": "Teacher = professor(a), doctor = médico(a), nurse = enfermeiro(a), driver = motorista, engineer = engenheiro(a)."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Paula is doctor."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Paula is a doctor."
+            ]
+          },
+          "explicacao": "Em português dizemos \"A Paula é médica\", sem artigo. Em inglês a profissão precisa de a/an: Paula is a doctor.",
+          "tagsErro": [
+            "artigo_profissao"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele é motorista.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is a driver."
+            ]
+          },
+          "explicacao": "Ele = he, é = is, e a profissão precisa de artigo: a driver.",
+          "tagsErro": [
+            "artigo_profissao"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "É uma laranja.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is an orange."
+            ]
+          },
+          "explicacao": "O sujeito é obrigatório (it), e orange começa com som de vogal: an orange.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "They are students.",
+              "They are a students.",
+              "They are an students.",
+              "They are student."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A e an só são usados no singular. No plural não há artigo: They are students."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "I am ___ teacher.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "a"
+              ]
+            ]
+          },
+          "explicacao": "Teacher começa com som de consoante: a teacher."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "phone",
+              "It",
+              "a",
+              "is",
+              "cell"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is a cell phone."
+            ]
+          },
+          "explicacao": "It + is + a + cell phone. No inglês americano, celular é cell phone."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu sou estudante.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am a student."
+            ]
+          },
+          "explicacao": "Em inglês precisamos do artigo: I am a student.",
+          "tagsErro": [
+            "artigo_profissao"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "It is a egg."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is an egg."
+            ]
+          },
+          "explicacao": "Egg começa com som de vogal, então o certo é an egg."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m01-l5",
+      "ordem": 5,
+      "titulo": "The alphabet",
+      "objetivo": "Conhecer os nomes das letras, soletrar nomes e dizer e-mails.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "O alfabeto inglês tem as mesmas 26 letras do português, mas os nomes das letras são diferentes. Três vogais confundem muito os brasileiros: a letra A se diz \"êi\", a letra E se diz \"í\" e a letra I se diz \"ai\".",
+          "Outras letras com nome diferente: G = \"dji\", J = \"djêi\", H = \"êitch\", R = \"ar\", W = \"dâbliu\", Y = \"uai\" e Z = \"zi\" (no inglês americano).",
+          "Para pedir que alguém soletre, use a expressão How do you spell that? (Como se soletra isso?). Para soletrar, diga as letras uma a uma: A-N-A. Letra repetida: double, como em Anna = A, double N, A.",
+          "Em e-mails, @ se diz at e o ponto se diz dot: ana@email.com = \"ana at email dot com\"."
+        ],
+        "regras": [
+          "A = \"êi\" / E = \"í\" / I = \"ai\"",
+          "G = \"dji\" / J = \"djêi\"",
+          "H = \"êitch\" / R = \"ar\"",
+          "W = \"dâbliu\" / Y = \"uai\" / Z = \"zi\"",
+          "Letra repetida: double (LL = double L)",
+          "E-mail: @ = at / . = dot"
+        ],
+        "notaContrastiva": "Não leia o ponto do e-mail como *point* → diga *dot*. E não confunda as letras: em inglês, E se diz \"í\" e I se diz \"ai\".",
+        "exemplos": [
+          {
+            "en": "How do you spell that? — A-N-A.",
+            "pt": "Como se soletra isso? — A-N-A."
+          },
+          {
+            "en": "My name is Bruno: B-R-U-N-O.",
+            "pt": "Meu nome é Bruno: B-R-U-N-O."
+          },
+          {
+            "en": "Anna: A, double N, A.",
+            "pt": "Anna: A, dois Ns, A."
+          },
+          {
+            "en": "My email is ana@email.com.",
+            "pt": "Meu e-mail é ana@email.com."
+          },
+          {
+            "en": "It is \"ana at email dot com\".",
+            "pt": "Lê-se \"ana arroba email ponto com\"."
+          },
+          {
+            "en": "How do you spell Recife? — R-E-C-I-F-E.",
+            "pt": "Como se soletra Recife? — R-E-C-I-F-E."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "letter",
+            "pt": "letra"
+          },
+          {
+            "en": "alphabet",
+            "pt": "alfabeto"
+          },
+          {
+            "en": "spell",
+            "pt": "soletrar"
+          },
+          {
+            "en": "double",
+            "pt": "duplo (letra repetida)"
+          },
+          {
+            "en": "at (@)",
+            "pt": "arroba"
+          },
+          {
+            "en": "dot (.)",
+            "pt": "ponto (em e-mail e site)"
+          },
+          {
+            "en": "email",
+            "pt": "e-mail"
+          },
+          {
+            "en": "first name",
+            "pt": "primeiro nome"
+          },
+          {
+            "en": "last name",
+            "pt": "sobrenome"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual letra tem o nome pronunciado \"ai\" em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "A",
+              "E",
+              "I",
+              "Y"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Em inglês, a letra I se diz \"ai\". A se diz \"êi\", E se diz \"í\" e Y se diz \"uai\"."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual letra tem o nome pronunciado \"í\" em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "E",
+              "I",
+              "A",
+              "Y"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A letra E se diz \"í\" em inglês. É fácil confundir com o I, que se diz \"ai\"."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Uma pessoa soletra: \"dji - êi - bi - ar - ai - í - el\". Qual nome ela soletrou?",
+          "conteudo": {
+            "opcoes": [
+              "GABRIEL",
+              "JABRIEL",
+              "GEBRAIEL",
+              "GABRAEL"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "G = \"dji\", A = \"êi\", B = \"bi\", R = \"ar\", I = \"ai\", E = \"í\", L = \"el\": G-A-B-R-I-E-L."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete como se lê o e-mail \"carla@email.com\".",
+          "conteudo": {
+            "texto": "carla ___ email ___ com"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "at"
+              ],
+              [
+                "dot"
+              ]
+            ]
+          },
+          "explicacao": "Em e-mails, @ se diz at e o ponto se diz dot."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete como se soletra \"Anna\".",
+          "conteudo": {
+            "texto": "A, ___ N, A"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "double"
+              ]
+            ]
+          },
+          "explicacao": "Quando a letra se repete, dizemos double: Anna = A, double N, A."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada letra ao jeito como se diz o seu nome em inglês.",
+          "conteudo": {
+            "esquerda": [
+              "H",
+              "W",
+              "Y",
+              "R",
+              "J",
+              "G"
+            ],
+            "direita": [
+              "dji",
+              "uai",
+              "êitch",
+              "djêi",
+              "dâbliu",
+              "ar"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              1,
+              5,
+              3,
+              0
+            ]
+          },
+          "explicacao": "H = \"êitch\", W = \"dâbliu\", Y = \"uai\", R = \"ar\", J = \"djêi\", G = \"dji\"."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "do",
+              "How",
+              "spell",
+              "you",
+              "that"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How do you spell that?"
+            ]
+          },
+          "explicacao": "How do you spell that? é uma expressão fixa para pedir que alguém soletre. Aprenda como um bloco."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My email is lucas at email point com."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My email is lucas at email dot com.",
+              "My e-mail is lucas at email dot com.",
+              "My email is lucas@email.com.",
+              "My e-mail is lucas@email.com."
+            ]
+          },
+          "explicacao": "Em e-mails e sites, o ponto se diz dot, não point."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Como se soletra isso?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How do you spell that?",
+              "How do you spell it?",
+              "How do you spell this?"
+            ]
+          },
+          "explicacao": "A expressão fixa é How do you spell that? (ou ...it?)."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu e-mail é bia arroba email ponto com.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My email is bia at email dot com.",
+              "My e-mail is bia at email dot com.",
+              "My email is bia@email.com.",
+              "My e-mail is bia@email.com.",
+              "My email's bia at email dot com.",
+              "My e-mail's bia at email dot com."
+            ]
+          },
+          "explicacao": "Meu e-mail = my email. Arroba = at; ponto = dot."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Como se diz \"@\" em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "at",
+              "arroba",
+              "dot",
+              "and"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O símbolo @ se diz at em inglês: ana@email.com = \"ana at email dot com\"."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Qual letra tem o nome pronunciado \"êi\" em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "A",
+              "E",
+              "I",
+              "H"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A letra A se diz \"êi\". O H se diz \"êitch\"."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Uma pessoa soletra: \"si - êi - ar - el - ou - és\". Escreva o nome.",
+          "conteudo": {
+            "texto": "The name is ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Carlos"
+              ]
+            ]
+          },
+          "explicacao": "C = \"si\", A = \"êi\", R = \"ar\", L = \"el\", O = \"ou\", S = \"és\": CARLOS."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "Recife",
+              "spell",
+              "you",
+              "How",
+              "do"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How do you spell Recife?"
+            ]
+          },
+          "explicacao": "How do you spell + a palavra? = Como se soletra...?"
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My email is ana arroba email dot com."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My email is ana at email dot com.",
+              "My e-mail is ana at email dot com.",
+              "My email is ana@email.com.",
+              "My e-mail is ana@email.com."
+            ]
+          },
+          "explicacao": "Em inglês, @ se diz at, não arroba."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m01-l6",
+      "ordem": 6,
+      "titulo": "Numbers 0–20",
+      "objetivo": "Usar os números de 0 a 20 e dizer a idade com o verbo be.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Os números de 0 a 12 têm nomes próprios: zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve.",
+          "De 13 a 19, os números terminam em -teen: thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen. Repare que three vira thirteen e five vira fifteen. E 20 é twenty.",
+          "Para dizer a idade, usamos o verbo be, e não have: I am fifteen ou I am fifteen years old. Em português \"tenho 15 anos\" usa o verbo ter, mas em inglês a idade é algo que você \"é\"."
+        ],
+        "regras": [
+          "0–5: zero, one, two, three, four, five",
+          "6–12: six, seven, eight, nine, ten, eleven, twelve",
+          "13–19: -teen (thirteen, fifteen, eighteen...)",
+          "20: twenty",
+          "Idade com be: I am 15 / I am 15 years old"
+        ],
+        "notaContrastiva": "Não diga *I have 15 years* → diga *I am 15* ou *I am 15 years old*. Em inglês, idade se diz com o verbo be.",
+        "exemplos": [
+          {
+            "en": "I am twelve.",
+            "pt": "Eu tenho doze anos."
+          },
+          {
+            "en": "She is eighteen years old.",
+            "pt": "Ela tem dezoito anos."
+          },
+          {
+            "en": "Lucas is nine.",
+            "pt": "O Lucas tem nove anos."
+          },
+          {
+            "en": "Two plus three is five.",
+            "pt": "Dois mais três é igual a cinco."
+          },
+          {
+            "en": "It is number seven.",
+            "pt": "É o número sete."
+          },
+          {
+            "en": "He's twenty years old.",
+            "pt": "Ele tem vinte anos."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "three",
+            "pt": "três"
+          },
+          {
+            "en": "five",
+            "pt": "cinco"
+          },
+          {
+            "en": "eight",
+            "pt": "oito"
+          },
+          {
+            "en": "eleven",
+            "pt": "onze"
+          },
+          {
+            "en": "twelve",
+            "pt": "doze"
+          },
+          {
+            "en": "thirteen",
+            "pt": "treze"
+          },
+          {
+            "en": "fifteen",
+            "pt": "quinze"
+          },
+          {
+            "en": "eighteen",
+            "pt": "dezoito"
+          },
+          {
+            "en": "twenty",
+            "pt": "vinte"
+          },
+          {
+            "en": "number",
+            "pt": "número"
+          },
+          {
+            "en": "years old",
+            "pt": "anos (de idade)"
+          },
+          {
+            "en": "plus",
+            "pt": "mais (+)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Como se escreve 15 em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "fifteen",
+              "fifty",
+              "fiveteen",
+              "fivety"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Five vira fif- em fifteen (15). Fifty é 50, que veremos no módulo 3."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Como se escreve 12 em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "twelve",
+              "twenty",
+              "eleven",
+              "twoteen"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "12 = twelve. Eleven é 11 e twenty é 20. 11 e 12 têm nomes próprios, sem -teen."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Escreva o resultado por extenso.",
+          "conteudo": {
+            "texto": "two + three = ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "five",
+                "5"
+              ]
+            ]
+          },
+          "explicacao": "Two (2) + three (3) = five (5)."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Escreva o resultado por extenso.",
+          "conteudo": {
+            "texto": "ten + ten = ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "twenty",
+                "20"
+              ]
+            ]
+          },
+          "explicacao": "Ten (10) + ten (10) = twenty (20)."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Pedro ___ thirteen."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Idade se diz com o verbo be. Com Pedro (he), usamos is: Pedro is thirteen.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada número à sua forma por extenso.",
+          "conteudo": {
+            "esquerda": [
+              "3",
+              "8",
+              "11",
+              "13",
+              "20",
+              "0"
+            ],
+            "direita": [
+              "twenty",
+              "eleven",
+              "zero",
+              "three",
+              "thirteen",
+              "eight"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              5,
+              1,
+              4,
+              0,
+              2
+            ]
+          },
+          "explicacao": "3 = three, 8 = eight, 11 = eleven, 13 = thirteen, 20 = twenty, 0 = zero."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "years",
+              "am",
+              "I",
+              "old",
+              "fourteen"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am fourteen years old."
+            ]
+          },
+          "explicacao": "Idade: I am + número + years old. Years old vem depois do número."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "I have twelve years."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am twelve.",
+              "I am twelve years old.",
+              "I am 12.",
+              "I am 12 years old."
+            ]
+          },
+          "explicacao": "Em inglês, idade se diz com o verbo be: I am twelve (years old). Have para idade é um erro muito comum de brasileiros.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela tem dezesseis anos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is sixteen.",
+              "She is 16.",
+              "She is sixteen years old.",
+              "She is 16 years old."
+            ]
+          },
+          "explicacao": "Idade com be: She is sixteen (years old). Não use have.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu tenho onze anos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am eleven.",
+              "I am 11.",
+              "I am eleven years old.",
+              "I am 11 years old."
+            ]
+          },
+          "explicacao": "Idade com be: I am eleven (years old).",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Que número é \"eighteen\"?",
+          "conteudo": {
+            "opcoes": [
+              "80",
+              "18",
+              "8",
+              "81"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Eighteen = 18 (eight + -teen). 80 seria eighty, que veremos no módulo 3."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Escreva o resultado por extenso.",
+          "conteudo": {
+            "texto": "nine + ten = ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "nineteen",
+                "19"
+              ]
+            ]
+          },
+          "explicacao": "Nine (9) + ten (10) = nineteen (19)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "He is ten years old.",
+              "He has ten years.",
+              "He is ten years.",
+              "He have ten years old."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Idade: be + número + years old (ou só o número). Years sozinho, sem old, não funciona.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós temos vinte anos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are twenty.",
+              "We are 20.",
+              "We are twenty years old.",
+              "We are 20 years old."
+            ]
+          },
+          "explicacao": "Idade com be: we are twenty (years old).",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Ana is fiveteen."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Ana is fifteen.",
+              "Ana is 15.",
+              "Ana is fifteen years old.",
+              "Ana is 15 years old."
+            ]
+          },
+          "explicacao": "O número 15 é fifteen: five muda para fif-."
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "opcoes": [
+            "am",
+            "is",
+            "are"
+          ],
+          "texto": "She ___ a nurse."
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Com she, o verbo be é is."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual pronome substitui \"Lucas and Ana\"?",
+        "conteudo": {
+          "opcoes": [
+            "They",
+            "We",
+            "He",
+            "It"
+          ],
+          "texto": "Lucas and Ana are ready. → ___ are ready."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Lucas e Ana = eles = they."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a ou an.",
+        "conteudo": {
+          "texto": "He is ___ engineer.",
+          "opcoesPorLacuna": [
+            [
+              "a",
+              "an"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "an"
+            ]
+          ]
+        },
+        "explicacao": "Engineer começa com som de vogal: an engineer."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "I ___ hungry."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "am",
+              "'m"
+            ]
+          ]
+        },
+        "explicacao": "Com I, o verbo be é am."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Você encontra uma pessoa às 15h. O que diz?",
+        "conteudo": {
+          "opcoes": [
+            "Good afternoon!",
+            "Good night!",
+            "Good morning!",
+            "Goodbye!"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Às 15h é de tarde: Good afternoon."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se escreve 13 em inglês?",
+        "conteudo": {
+          "opcoes": [
+            "thirteen",
+            "thirty",
+            "threeteen",
+            "three"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "13 = thirteen (three vira thir- + -teen). Thirty é 30."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "We ___ students."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are",
+              "'re"
+            ]
+          ]
+        },
+        "explicacao": "Com we, o verbo be é are."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "It is cold.",
+            "Is cold.",
+            "It cold.",
+            "It are cold."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Em inglês o sujeito é obrigatório (it) e o verbo com it é is.",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se diz o ponto (.) de um e-mail em inglês?",
+        "conteudo": {
+          "opcoes": [
+            "dot",
+            "at",
+            "point",
+            "and"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Em e-mails e sites, o ponto se diz dot."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o resultado por extenso.",
+        "conteudo": {
+          "texto": "eight + eight = ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "sixteen",
+              "16"
+            ]
+          ]
+        },
+        "explicacao": "Eight (8) + eight (8) = sixteen (16)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual é a profissão da Camila?",
+        "conteudo": {
+          "opcoes": [
+            "She is a nurse.",
+            "She is a teacher.",
+            "She is a student.",
+            "She is a doctor."
+          ],
+          "texto": "Good evening, everybody! I'm Camila. I'm twenty and I'm a nurse. Rafael and Bruno are teachers. Rafael is nineteen and Bruno is eighteen. We are friends. We are at a party now. We are happy, but we are very hungry!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"I'm a nurse\". Rafael e Bruno é que são professores."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem é o mais novo?",
+        "conteudo": {
+          "opcoes": [
+            "Camila",
+            "Rafael",
+            "Bruno"
+          ],
+          "texto": "Good evening, everybody! I'm Camila. I'm twenty and I'm a nurse. Rafael and Bruno are teachers. Rafael is nineteen and Bruno is eighteen. We are friends. We are at a party now. We are happy, but we are very hungry!"
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Camila tem 20 (twenty), Rafael 19 (nineteen) e Bruno 18 (eighteen)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quantos anos a Laura tem?",
+        "conteudo": {
+          "opcoes": [
+            "14",
+            "15",
+            "4",
+            "40"
+          ],
+          "texto": "Hello, everybody! My name is Diego: D-I-E-G-O. I'm a student and I'm fifteen. Laura is a student, too. She is fourteen. Laura and I are friends. Mr. Lima is the teacher. He is an engineer and a teacher. He is very nice!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"She is fourteen\" = 14. Quem tem 15 (fifteen) é o Diego."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual frase é verdadeira?",
+        "conteudo": {
+          "opcoes": [
+            "Diego and Laura are students.",
+            "Diego is fourteen.",
+            "Laura is a teacher.",
+            "Mr. Lima is a student."
+          ],
+          "texto": "Hello, everybody! My name is Diego: D-I-E-G-O. I'm a student and I'm fifteen. Laura is a student, too. She is fourteen. Laura and I are friends. Mr. Lima is the teacher. He is an engineer and a teacher. He is very nice!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Diego é estudante e Laura também (a student, too). O Mr. Lima é engenheiro e professor."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+        "conteudo": {
+          "palavras": [
+            "is",
+            "She",
+            "doctor",
+            "a"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "She is a doctor."
+          ]
+        },
+        "explicacao": "Sujeito + is + a + profissão."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós estamos cansados.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We are tired."
+          ]
+        },
+        "explicacao": "Nós = we; estamos = are; cansados = tired (sem plural no adjetivo)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "He are an artist."
+        },
+        "gabarito": {
+          "aceitas": [
+            "He is an artist."
+          ]
+        },
+        "explicacao": "Com he, o verbo be é is."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu tenho dez anos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I am ten.",
+            "I am 10.",
+            "I am ten years old.",
+            "I am 10 years old."
+          ]
+        },
+        "explicacao": "Idade se diz com be: I am ten (years old).",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "opcoes": [
+            "am",
+            "is",
+            "are"
+          ],
+          "texto": "They ___ friends."
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Com they, o verbo be é are."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual pronome substitui \"the cell phone\"?",
+        "conteudo": {
+          "opcoes": [
+            "It",
+            "He",
+            "She",
+            "They"
+          ],
+          "texto": "The cell phone is new. → ___ is new."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Para coisas usamos it."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a ou an.",
+        "conteudo": {
+          "texto": "It is ___ apple.",
+          "opcoesPorLacuna": [
+            [
+              "a",
+              "an"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "an"
+            ]
+          ]
+        },
+        "explicacao": "Apple começa com som de vogal: an apple."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "You ___ late."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are",
+              "'re"
+            ]
+          ]
+        },
+        "explicacao": "Com you, o verbo be é are."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Você encontra um colega às 8h da manhã. O que diz?",
+        "conteudo": {
+          "opcoes": [
+            "Good morning!",
+            "Good evening!",
+            "Good night!",
+            "Bye!"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "De manhã dizemos Good morning."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se escreve 20 em inglês?",
+        "conteudo": {
+          "opcoes": [
+            "twenty",
+            "twelve",
+            "twoteen",
+            "two"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "20 = twenty. Twelve é 12."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "He ___ hungry."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "is",
+              "'s"
+            ]
+          ]
+        },
+        "explicacao": "Com he, o verbo be é is."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "She is busy.",
+            "Is busy.",
+            "She busy.",
+            "She am busy."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Sujeito obrigatório (she) + verbo is.",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual letra tem o nome pronunciado \"ai\" em inglês?",
+        "conteudo": {
+          "opcoes": [
+            "E",
+            "I",
+            "A",
+            "Y"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "A letra I se diz \"ai\"; E se diz \"í\"."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o resultado por extenso.",
+        "conteudo": {
+          "texto": "six + five = ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "eleven",
+              "11"
+            ]
+          ]
+        },
+        "explicacao": "Six (6) + five (5) = eleven (11)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quantos anos o Lucas tem?",
+        "conteudo": {
+          "opcoes": [
+            "17",
+            "16",
+            "18",
+            "7"
+          ],
+          "texto": "Hello! I'm Lucas and I'm a student. I'm seventeen. Paula and Renata are students, too. Paula is sixteen and Renata is eighteen. Mr. Costa is a driver. He is nice. We are friends. It is cold today, but we are happy."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"I'm seventeen\" = 17."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual dos estudantes é o mais velho?",
+        "conteudo": {
+          "opcoes": [
+            "Lucas",
+            "Paula",
+            "Renata"
+          ],
+          "texto": "Hello! I'm Lucas and I'm a student. I'm seventeen. Paula and Renata are students, too. Paula is sixteen and Renata is eighteen. Mr. Costa is a driver. He is nice. We are friends. It is cold today, but we are happy."
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Lucas tem 17, Paula 16 (sixteen) e Renata 18 (eighteen)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual é a profissão do Felipe?",
+        "conteudo": {
+          "opcoes": [
+            "He is an engineer.",
+            "He is a doctor.",
+            "He is an artist.",
+            "He is a student."
+          ],
+          "texto": "Hi, everybody! I'm Sofia: S-O-F-I-A. I'm an artist and I'm twenty. Marcos is a doctor and Felipe is an engineer. They are busy, but they are great. We are friends and we are very happy! My email is sofia at art dot com."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"Felipe is an engineer\". Marcos é médico e Sofia é artista."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual é o e-mail da Sofia?",
+        "conteudo": {
+          "opcoes": [
+            "sofia@art.com",
+            "sofia.art@com",
+            "art@sofia.com",
+            "sofia@art.dot.com"
+          ],
+          "texto": "Hi, everybody! I'm Sofia: S-O-F-I-A. I'm an artist and I'm twenty. Marcos is a doctor and Felipe is an engineer. They are busy, but they are great. We are friends and we are very happy! My email is sofia at art dot com."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"sofia at art dot com\": at = @ e dot = ponto."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+        "conteudo": {
+          "palavras": [
+            "an",
+            "He",
+            "engineer",
+            "is"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "He is an engineer."
+          ]
+        },
+        "explicacao": "Sujeito + is + an + profissão (engineer começa com vogal)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eles estão prontos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "They are ready."
+          ]
+        },
+        "explicacao": "Eles = they; estão = are; prontos = ready."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "She is teacher."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She is a teacher."
+          ]
+        },
+        "explicacao": "Profissão precisa de artigo em inglês: a teacher.",
+        "tagsErro": [
+          "artigo_profissao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ela tem doze anos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "She is twelve.",
+            "She is 12.",
+            "She is twelve years old.",
+            "She is 12 years old."
+          ]
+        },
+        "explicacao": "Idade se diz com be: She is twelve (years old).",
+        "tagsErro": [
+          "have_idade"
+        ]
+      }
+    ]
+  }
+}

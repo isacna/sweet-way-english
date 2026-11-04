@@ -1,0 +1,3121 @@
+{
+  "slug": "a1-m02",
+  "ordem": 2,
+  "titulo": "My people",
+  "tema": "Família e pessoas próximas",
+  "descricao": "Apresentar a família e os amigos, dizer de quem são as coisas e descrever pessoas.",
+  "canDos": [
+    "Apresentar pessoas da minha família e dizer quem é quem.",
+    "Dizer de quem é algo com my, your, his, her, its, our, their e com o possessivo 's.",
+    "Descrever pessoas com o verbo be e adjetivos simples.",
+    "Formar plurais regulares e irregulares.",
+    "Mostrar pessoas e coisas com this, that, these e those."
+  ],
+  "gramatica": "Adjetivos possessivos (my, your, his, her, its, our, their), possessivo 's, this/that/these/those, plurais regulares e irregulares, be + adjetivo.",
+  "vocabulario": "Família, adjetivos para descrever pessoas, objetos pessoais e da casa.",
+  "funcao": "Apresentar a família, identificar objetos e descrever pessoas.",
+  "pronuncia": "Terminação do plural: -s e -es (boxes, watches com uma sílaba a mais).",
+  "licoes": [
+    {
+      "slug": "a1-m02-l1",
+      "ordem": 1,
+      "titulo": "My, your, his, her",
+      "objetivo": "Usar my, your, his e her para dizer de quem é algo.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Os adjetivos possessivos dizem de quem é alguma coisa: my (meu, minha), your (seu, sua — de você), his (dele) e her (dela).",
+          "Eles vêm sempre antes do substantivo e nunca mudam: não têm feminino nem plural. My brother, my sister e my friends usam o mesmo my.",
+          "A grande diferença do português: his e her concordam com o dono, e não com a coisa. \"A mãe do Pedro\" é his mother (a mãe dele), e \"o pai da Ana\" é her father (o pai dela). Em português, \"seu irmão\" não mostra se o dono é homem ou mulher; em inglês, isso sempre aparece."
+        ],
+        "regras": [
+          "I → my (meu, minha)",
+          "you → your (seu, sua)",
+          "he → his (dele)",
+          "she → her (dela)",
+          "His/her seguem o dono, não a coisa",
+          "Sem plural: my friends (não *mys*)"
+        ],
+        "notaContrastiva": "Não diga *Ana and his brother* → diga *Ana and her brother*. O possessivo segue o dono: a Ana é mulher, então é her (dela), mesmo que o irmão seja homem.",
+        "exemplos": [
+          {
+            "en": "My name is Larissa.",
+            "pt": "Meu nome é Larissa."
+          },
+          {
+            "en": "Your bag is new.",
+            "pt": "Sua bolsa é nova."
+          },
+          {
+            "en": "Davi is a student. His mother is a teacher.",
+            "pt": "O Davi é estudante. A mãe dele é professora."
+          },
+          {
+            "en": "Sofia is a nurse. Her father is a doctor.",
+            "pt": "A Sofia é enfermeira. O pai dela é médico."
+          },
+          {
+            "en": "Ana and her brother are tall.",
+            "pt": "A Ana e o irmão dela são altos."
+          },
+          {
+            "en": "My friends are nice.",
+            "pt": "Meus amigos são legais."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "mother / mom",
+            "pt": "mãe"
+          },
+          {
+            "en": "father / dad",
+            "pt": "pai"
+          },
+          {
+            "en": "brother",
+            "pt": "irmão"
+          },
+          {
+            "en": "sister",
+            "pt": "irmã"
+          },
+          {
+            "en": "friend",
+            "pt": "amigo(a)"
+          },
+          {
+            "en": "my",
+            "pt": "meu, minha"
+          },
+          {
+            "en": "your",
+            "pt": "seu, sua (de você)"
+          },
+          {
+            "en": "his",
+            "pt": "dele"
+          },
+          {
+            "en": "her",
+            "pt": "dela"
+          },
+          {
+            "en": "tall",
+            "pt": "alto(a)"
+          },
+          {
+            "en": "new",
+            "pt": "novo(a)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com his ou her.",
+          "conteudo": {
+            "texto": "Gabriel is a student. ___ sister is a nurse.",
+            "opcoesPorLacuna": [
+              [
+                "his",
+                "her"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "His"
+              ]
+            ]
+          },
+          "explicacao": "O dono é o Gabriel (homem), então usamos his: a irmã dele = his sister.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com his ou her.",
+          "conteudo": {
+            "texto": "Laura is a doctor. ___ brother is a driver.",
+            "opcoesPorLacuna": [
+              [
+                "his",
+                "her"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Her"
+              ]
+            ]
+          },
+          "explicacao": "A dona é a Laura (mulher), então usamos her: o irmão dela = her brother. Não importa que o irmão seja homem.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "my",
+              "his",
+              "your",
+              "I"
+            ],
+            "texto": "Hi! I'm Thiago and ___ mom is a teacher."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Quem fala é o Thiago (I), então a mãe é \"minha\": my mom."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "his",
+              "her",
+              "she",
+              "he"
+            ],
+            "texto": "Ana and ___ father are at home."
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Ana é mulher, então \"o pai dela\" é her father. She e he são pronomes sujeito, não indicam posse.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com my, your, his ou her.",
+          "conteudo": {
+            "texto": "You are Lucas, right? ___ cell phone is new."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Your"
+              ]
+            ]
+          },
+          "explicacao": "Falando com a pessoa (you), \"seu celular\" = your cell phone."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "brother",
+              "Her",
+              "is",
+              "tall"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Her brother is tall."
+            ]
+          },
+          "explicacao": "O possessivo vem antes do substantivo: her brother (o irmão dela) + is + tall."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada pronome ao seu possessivo.",
+          "conteudo": {
+            "esquerda": [
+              "I",
+              "you",
+              "he",
+              "she"
+            ],
+            "direita": [
+              "his",
+              "her",
+              "your",
+              "my"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "I → my, you → your, he → his, she → her."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Camila and his mother are nurses."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Camila and her mother are nurses."
+            ]
+          },
+          "explicacao": "Camila é mulher, então \"a mãe dela\" é her mother. O possessivo segue o dono, não a coisa.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O pai dela é médico.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Her father is a doctor.",
+              "Her dad is a doctor."
+            ]
+          },
+          "explicacao": "\"Dela\" = her, e vem antes do substantivo: her father. Profissão leva artigo: a doctor.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu irmão é estudante.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother is a student."
+            ]
+          },
+          "explicacao": "Meu irmão = my brother. Lembre do artigo com profissão/ocupação: a student."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "his",
+              "her",
+              "he",
+              "she"
+            ],
+            "texto": "Pedro and ___ sister are students."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O dono é o Pedro (homem): his sister (a irmã dele).",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com my, your, his ou her.",
+          "conteudo": {
+            "texto": "Hi! ___ name is Renata. I'm a nurse."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "My"
+              ]
+            ]
+          },
+          "explicacao": "Quem fala é a Renata (I), então \"meu nome\" = my name."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "dad",
+              "is",
+              "His",
+              "engineer",
+              "an"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "His dad is an engineer."
+            ]
+          },
+          "explicacao": "His dad (o pai dele) + is + an engineer (engineer começa com vogal)."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "A mãe dele é enfermeira.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "His mother is a nurse.",
+              "His mom is a nurse."
+            ]
+          },
+          "explicacao": "\"Dele\" = his, antes do substantivo: his mother. A mãe é mulher, mas o dono é homem, então é his.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Paula and his sister are teachers."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Paula and her sister are teachers."
+            ]
+          },
+          "explicacao": "Paula é mulher, então \"a irmã dela\" = her sister.",
+          "tagsErro": [
+            "possessivo_his_her"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m02-l2",
+      "ordem": 2,
+      "titulo": "Our, their, its",
+      "objetivo": "Completar os possessivos com our, their e its e não confundir its com it's.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Completando a lista de possessivos: we → our (nosso, nossa), they → their (deles, delas) e it → its (dele, dela, para coisas e animais).",
+          "Your também significa \"de vocês\": your house pode ser a casa de você ou a casa de vocês. E their serve para eles, para elas e para coisas no plural.",
+          "Cuidado com its e it's. Its, sem apóstrofo, é possessivo: The dog is happy. Its name is Max. It's, com apóstrofo, é sempre it is: It's a big dog.",
+          "Outra confusão comum: their (deles), there (lá) e they're (they are) têm som parecido, mas são palavras diferentes."
+        ],
+        "regras": [
+          "we → our (nosso, nossa)",
+          "they → their (deles, delas)",
+          "it → its (de coisa ou animal)",
+          "you (vocês) → your",
+          "its = possessivo / it's = it is",
+          "their ≠ there ≠ they're"
+        ],
+        "notaContrastiva": "Não escreva *It's name is Max* → escreva *Its name is Max*. It's sempre significa it is; o possessivo its não tem apóstrofo.",
+        "exemplos": [
+          {
+            "en": "Our house is small.",
+            "pt": "Nossa casa é pequena."
+          },
+          {
+            "en": "Ana and Bruno are here. Their car is new.",
+            "pt": "A Ana e o Bruno estão aqui. O carro deles é novo."
+          },
+          {
+            "en": "The dog is happy. Its name is Max.",
+            "pt": "O cachorro está feliz. O nome dele é Max."
+          },
+          {
+            "en": "Your teacher is nice!",
+            "pt": "O professor de vocês é legal!"
+          },
+          {
+            "en": "We are brothers. Our dad is a driver.",
+            "pt": "Nós somos irmãos. Nosso pai é motorista."
+          },
+          {
+            "en": "Their apartment is big.",
+            "pt": "O apartamento deles é grande."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "our",
+            "pt": "nosso(a)"
+          },
+          {
+            "en": "their",
+            "pt": "deles, delas"
+          },
+          {
+            "en": "its",
+            "pt": "dele, dela (coisa, animal)"
+          },
+          {
+            "en": "house",
+            "pt": "casa"
+          },
+          {
+            "en": "apartment",
+            "pt": "apartamento"
+          },
+          {
+            "en": "car",
+            "pt": "carro"
+          },
+          {
+            "en": "dog",
+            "pt": "cachorro"
+          },
+          {
+            "en": "cat",
+            "pt": "gato"
+          },
+          {
+            "en": "school",
+            "pt": "escola"
+          },
+          {
+            "en": "family",
+            "pt": "família"
+          },
+          {
+            "en": "room",
+            "pt": "quarto, sala"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com our ou their.",
+          "conteudo": {
+            "texto": "We are brothers. ___ mom is a nurse.",
+            "opcoesPorLacuna": [
+              [
+                "our",
+                "their"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Our"
+              ]
+            ]
+          },
+          "explicacao": "We (nós) → our (nossa): our mom."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com our ou their.",
+          "conteudo": {
+            "texto": "Larissa and Felipe are friends. ___ school is big.",
+            "opcoesPorLacuna": [
+              [
+                "our",
+                "their"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Their"
+              ]
+            ]
+          },
+          "explicacao": "Larissa e Felipe = they → their (a escola deles)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "Its",
+              "It's",
+              "Their",
+              "Our"
+            ],
+            "texto": "The dog is happy. ___ name is Thor."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Possessivo de it é its, sem apóstrofo. It's significa it is (\"It is name is Thor\" não faz sentido)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "It's a big apartment.",
+              "Its a big apartment.",
+              "It a big apartment.",
+              "It's an big apartment."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Aqui precisamos de it is, ou seja, it's com apóstrofo. E big começa com consoante: a big apartment."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com o possessivo certo.",
+          "conteudo": {
+            "texto": "Diego and I are brothers. ___ apartment is new."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Our"
+              ]
+            ]
+          },
+          "explicacao": "Diego and I = we → our (nosso apartamento)."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "house",
+              "is",
+              "Their",
+              "small"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Their house is small."
+            ]
+          },
+          "explicacao": "Their house (a casa deles) + is + small."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada pronome ao seu possessivo.",
+          "conteudo": {
+            "esquerda": [
+              "I",
+              "he",
+              "she",
+              "it",
+              "we",
+              "they"
+            ],
+            "direita": [
+              "its",
+              "their",
+              "his",
+              "my",
+              "her",
+              "our"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              4,
+              0,
+              5,
+              1
+            ]
+          },
+          "explicacao": "I → my, he → his, she → her, it → its, we → our, they → their."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "It's name is Luna."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Its name is Luna."
+            ]
+          },
+          "explicacao": "It's significa it is. O possessivo de it é its, sem apóstrofo: Its name is Luna."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nossa casa é grande.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Our house is big.",
+              "Our house is large.",
+              "Our home is big.",
+              "Our home is large."
+            ]
+          },
+          "explicacao": "Nossa = our (para nós). O possessivo não muda com o feminino: our house."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O apartamento deles é novo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Their apartment is new."
+            ]
+          },
+          "explicacao": "\"Deles\" = their, e vem antes do substantivo: their apartment."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "Their",
+              "Our",
+              "They",
+              "There"
+            ],
+            "texto": "Mariana and Rafael are students. ___ teacher is Mr. Lima."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Mariana e Rafael = they → their teacher. There significa \"lá\" e they é pronome sujeito."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com o possessivo certo.",
+          "conteudo": {
+            "texto": "We are a family. ___ dog is Bob."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Our"
+              ]
+            ]
+          },
+          "explicacao": "We → our: our dog (nosso cachorro)."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "car",
+              "new",
+              "is",
+              "Our"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Our car is new."
+            ]
+          },
+          "explicacao": "Our car (nosso carro) + is + new."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O carro deles é pequeno.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Their car is small.",
+              "Their car is little."
+            ]
+          },
+          "explicacao": "\"Deles\" = their: their car."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "There house is big."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Their house is big."
+            ]
+          },
+          "explicacao": "There significa \"lá\". Para \"a casa deles\" usamos their: Their house is big."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m02-l3",
+      "ordem": 3,
+      "titulo": "Ana's family",
+      "objetivo": "Usar o possessivo 's para falar da família e das coisas das pessoas.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dizer de quem é algo usando o nome da pessoa, usamos 's: Ana's book (o livro da Ana), Pedro's mother (a mãe do Pedro).",
+          "A ordem é o contrário do português: primeiro o dono, depois a coisa. \"O carro do meu pai\" = my father's car. Em inglês não dizemos the car of my father.",
+          "Se o dono é um plural terminado em -s, colocamos só o apóstrofo: my parents' house (a casa dos meus pais).",
+          "Atenção: o 's depois de um nome pode ser posse (Ana's bag = a bolsa da Ana). Depois de he, she e it, 's é o verbo is (She's a nurse = She is a nurse)."
+        ],
+        "regras": [
+          "dono + 's + coisa: Ana's bag",
+          "my father's car = o carro do meu pai",
+          "plural com -s: my parents' house",
+          "não use *the car of Ana* → Ana's car",
+          "Ana's book (posse) × She's a nurse (is)"
+        ],
+        "notaContrastiva": "Não diga *the house of my grandmother* → diga *my grandmother's house*. Em inglês o dono vem primeiro, com 's.",
+        "exemplos": [
+          {
+            "en": "Ana's brother is tall.",
+            "pt": "O irmão da Ana é alto."
+          },
+          {
+            "en": "Bruno's car is old.",
+            "pt": "O carro do Bruno é velho."
+          },
+          {
+            "en": "My mother's name is Rosa.",
+            "pt": "O nome da minha mãe é Rosa."
+          },
+          {
+            "en": "Lucas is Carla's son.",
+            "pt": "O Lucas é filho da Carla."
+          },
+          {
+            "en": "My parents' house is in Curitiba.",
+            "pt": "A casa dos meus pais é em Curitiba."
+          },
+          {
+            "en": "The teacher's bag is big.",
+            "pt": "A bolsa da professora é grande."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "grandmother / grandma",
+            "pt": "avó"
+          },
+          {
+            "en": "grandfather / grandpa",
+            "pt": "avô"
+          },
+          {
+            "en": "son",
+            "pt": "filho"
+          },
+          {
+            "en": "daughter",
+            "pt": "filha"
+          },
+          {
+            "en": "husband",
+            "pt": "marido"
+          },
+          {
+            "en": "wife",
+            "pt": "esposa"
+          },
+          {
+            "en": "aunt",
+            "pt": "tia"
+          },
+          {
+            "en": "uncle",
+            "pt": "tio"
+          },
+          {
+            "en": "cousin",
+            "pt": "primo(a)"
+          },
+          {
+            "en": "parents",
+            "pt": "pais (pai e mãe)"
+          },
+          {
+            "en": "grandparents",
+            "pt": "avós"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Como se diz \"o livro da Ana\"?",
+          "conteudo": {
+            "opcoes": [
+              "Ana's book",
+              "the book Ana's",
+              "Anas book",
+              "the Ana book"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Dono + 's + coisa: Ana's book. O apóstrofo é obrigatório.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Como se diz \"a casa dos meus pais\"?",
+          "conteudo": {
+            "opcoes": [
+              "my parents' house",
+              "my parent's house",
+              "my parents's house",
+              "the house my parents"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Parents é plural terminado em -s, então só colocamos o apóstrofo: my parents' house. My parent's house seria a casa de um só dos pais.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete em inglês.",
+          "conteudo": {
+            "texto": "o carro do Rafael = ___ car"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Rafael's"
+              ]
+            ]
+          },
+          "explicacao": "Dono + 's: Rafael's car.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete em inglês.",
+          "conteudo": {
+            "texto": "a esposa do meu tio = my ___ wife"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "uncle's"
+              ]
+            ]
+          },
+          "explicacao": "O dono é my uncle, então: my uncle's wife.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Complete a frase.",
+          "conteudo": {
+            "opcoes": [
+              "mother",
+              "father",
+              "sister",
+              "daughter"
+            ],
+            "texto": "Lucas is Ana's son. Ana is Lucas's ___."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Se o Lucas é filho (son) da Ana, a Ana é a mãe (mother) dele."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "Pedro's",
+              "tall",
+              "is",
+              "father"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Pedro's father is tall."
+            ]
+          },
+          "explicacao": "Pedro's father (o pai do Pedro) + is + tall."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada palavra ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "grandmother",
+              "uncle",
+              "aunt",
+              "cousin",
+              "son",
+              "daughter"
+            ],
+            "direita": [
+              "tia",
+              "avó",
+              "filho",
+              "filha",
+              "tio",
+              "primo(a)"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              4,
+              0,
+              5,
+              2,
+              3
+            ]
+          },
+          "explicacao": "Grandmother = avó, uncle = tio, aunt = tia, cousin = primo(a), son = filho, daughter = filha."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "The car of my father is old."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father's car is old.",
+              "My dad's car is old."
+            ]
+          },
+          "explicacao": "Em inglês o dono vem primeiro, com 's: my father's car. The car of my father é tradução palavra por palavra do português.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O irmão da Camila é alto.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Camila's brother is tall."
+            ]
+          },
+          "explicacao": "O irmão da Camila = Camila's brother (dono primeiro, com 's).",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "A casa da minha avó é pequena.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My grandmother's house is small.",
+              "My grandmother's house is little.",
+              "My grandmother's home is small.",
+              "My grandmother's home is little.",
+              "My grandma's house is small.",
+              "My grandma's house is little.",
+              "My grandma's home is small.",
+              "My grandma's home is little."
+            ]
+          },
+          "explicacao": "A casa da minha avó = my grandmother's house.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete em inglês.",
+          "conteudo": {
+            "texto": "a bolsa da professora = the ___ bag"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "teacher's"
+              ]
+            ]
+          },
+          "explicacao": "O dono é the teacher: the teacher's bag.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "Diego's sister is a doctor.",
+              "Diegos sister is a doctor.",
+              "Diego sister's is a doctor.",
+              "Sister's Diego is a doctor."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O 's vai no dono (Diego), e o dono vem antes da coisa: Diego's sister.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "aunt",
+              "is",
+              "Felipe's",
+              "nurse",
+              "a"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Felipe's aunt is a nurse."
+            ]
+          },
+          "explicacao": "Felipe's aunt (a tia do Felipe) + is + a nurse."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O cachorro do Bruno é pequeno.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Bruno's dog is small.",
+              "Bruno's dog is little."
+            ]
+          },
+          "explicacao": "O cachorro do Bruno = Bruno's dog.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Laura sister is a student."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Laura's sister is a student."
+            ]
+          },
+          "explicacao": "Para indicar posse com o nome da pessoa, precisamos de 's: Laura's sister.",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m02-l4",
+      "ordem": 4,
+      "titulo": "My family",
+      "objetivo": "Falar da família e descrever pessoas com be + adjetivo.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para descrever pessoas usamos o verbo be + adjetivo: My sister is tall. Our grandparents are old. Para reforçar, use very: She is very funny.",
+          "Quando o adjetivo acompanha um substantivo, ele vem antes: a tall man (um homem alto), a funny girl (uma menina engraçada). É o contrário do português.",
+          "O adjetivo nunca vai para o plural nem muda no feminino: a tall boy, tall girls, my cousins are tall.",
+          "Atenção ao falso cognato: parents significa pais (pai e mãe), e não parentes. Parentes, em geral, são relatives."
+        ],
+        "regras": [
+          "be + adjetivo: She is tall.",
+          "adjetivo + substantivo: a tall woman",
+          "adjetivo sem plural: tall girls (não *talls*)",
+          "very + adjetivo: very nice",
+          "parents = pais / relatives = parentes"
+        ],
+        "notaContrastiva": "Não diga *a woman beautiful* → diga *a beautiful woman*. Em inglês o adjetivo vem antes do substantivo. E cuidado: parents = pai e mãe; parentes = relatives.",
+        "exemplos": [
+          {
+            "en": "My grandfather is old, but he is very funny.",
+            "pt": "Meu avô é idoso, mas é muito engraçado."
+          },
+          {
+            "en": "Her brother is tall and thin.",
+            "pt": "O irmão dela é alto e magro."
+          },
+          {
+            "en": "Our aunt is a nice woman.",
+            "pt": "Nossa tia é uma mulher simpática."
+          },
+          {
+            "en": "Their cousins are young.",
+            "pt": "Os primos deles são jovens."
+          },
+          {
+            "en": "Bruno is a short man.",
+            "pt": "O Bruno é um homem baixo."
+          },
+          {
+            "en": "My parents are kind.",
+            "pt": "Meus pais são gentis."
+          },
+          {
+            "en": "She is a smart girl.",
+            "pt": "Ela é uma menina inteligente."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "tall",
+            "pt": "alto(a)"
+          },
+          {
+            "en": "short",
+            "pt": "baixo(a)"
+          },
+          {
+            "en": "young",
+            "pt": "jovem, novo(a)"
+          },
+          {
+            "en": "old",
+            "pt": "velho(a), idoso(a)"
+          },
+          {
+            "en": "thin",
+            "pt": "magro(a)"
+          },
+          {
+            "en": "nice",
+            "pt": "simpático(a), legal"
+          },
+          {
+            "en": "kind",
+            "pt": "gentil, bondoso(a)"
+          },
+          {
+            "en": "funny",
+            "pt": "engraçado(a)"
+          },
+          {
+            "en": "smart",
+            "pt": "inteligente"
+          },
+          {
+            "en": "beautiful",
+            "pt": "bonito(a), lindo(a)"
+          },
+          {
+            "en": "man",
+            "pt": "homem"
+          },
+          {
+            "en": "woman",
+            "pt": "mulher"
+          },
+          {
+            "en": "boy",
+            "pt": "menino"
+          },
+          {
+            "en": "girl",
+            "pt": "menina"
+          },
+          {
+            "en": "relatives",
+            "pt": "parentes"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "She is a funny girl.",
+              "She is a girl funny.",
+              "She is funny girl.",
+              "She a funny girl."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Em inglês o adjetivo vem antes do substantivo (a funny girl), e precisamos do verbo is e do artigo a.",
+          "tagsErro": [
+            "ordem_adjetivo"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "O que significa \"parents\"?",
+          "conteudo": {
+            "opcoes": [
+              "pais (pai e mãe)",
+              "parentes",
+              "primos",
+              "avós"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Parents é falso cognato: significa pai e mãe. Parentes em geral são relatives.",
+          "tagsErro": [
+            "falso_cognato"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com o adjetivo oposto.",
+          "conteudo": {
+            "texto": "My grandmother is old, but my sister is ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "young"
+              ]
+            ]
+          },
+          "explicacao": "O oposto de old (velho, idoso) para pessoas é young (jovem)."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com o adjetivo oposto.",
+          "conteudo": {
+            "texto": "Pedro is tall, but his brother is ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "short"
+              ]
+            ]
+          },
+          "explicacao": "O oposto de tall (alto) é short (baixo)."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "nice",
+              "nices",
+              "a nice",
+              "an nice"
+            ],
+            "texto": "My uncles are ___."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Adjetivo nunca vai para o plural em inglês: my uncles are nice. E sem artigo, porque não há substantivo depois.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "a",
+              "man",
+              "is",
+              "He",
+              "tall"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is a tall man."
+            ]
+          },
+          "explicacao": "He is + a + adjetivo + substantivo: He is a tall man. O adjetivo vem antes de man.",
+          "tagsErro": [
+            "ordem_adjetivo"
+          ]
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada adjetivo ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "tall",
+              "short",
+              "young",
+              "old",
+              "funny",
+              "smart"
+            ],
+            "direita": [
+              "engraçado(a)",
+              "idoso(a)",
+              "inteligente",
+              "baixo(a)",
+              "alto(a)",
+              "jovem"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              3,
+              5,
+              1,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Tall = alto, short = baixo, young = jovem, old = idoso, funny = engraçado, smart = inteligente."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My cousins are talls."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My cousins are tall."
+            ]
+          },
+          "explicacao": "Em inglês o adjetivo não tem plural: my cousins are tall.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Minha tia é muito engraçada.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My aunt is very funny."
+            ]
+          },
+          "explicacao": "Minha tia = my aunt; muito = very; engraçada = funny."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele é um menino inteligente.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is a smart boy.",
+              "He is an intelligent boy.",
+              "He is a clever boy.",
+              "He is a bright boy."
+            ]
+          },
+          "explicacao": "O adjetivo vem antes do substantivo: a smart boy. Repare: intelligent começa com vogal, por isso an intelligent boy.",
+          "tagsErro": [
+            "ordem_adjetivo"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Qual palavra significa \"parentes\"?",
+          "conteudo": {
+            "opcoes": [
+              "relatives",
+              "parents",
+              "cousins",
+              "fathers"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Parentes = relatives. Parents significa pais (pai e mãe).",
+          "tagsErro": [
+            "falso_cognato"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Our grandparents are very ___.",
+            "opcoesPorLacuna": [
+              [
+                "old",
+                "olds"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "old"
+              ]
+            ]
+          },
+          "explicacao": "O adjetivo não vai para o plural: very old.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "beautiful",
+              "is",
+              "a",
+              "She",
+              "woman"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is a beautiful woman."
+            ]
+          },
+          "explicacao": "O adjetivo vem antes do substantivo: a beautiful woman.",
+          "tagsErro": [
+            "ordem_adjetivo"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meus pais são altos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My parents are tall."
+            ]
+          },
+          "explicacao": "Meus pais = my parents (pai e mãe). Altos = tall, sem plural.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Carla is a girl smart."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Carla is a smart girl."
+            ]
+          },
+          "explicacao": "Em inglês o adjetivo vem antes do substantivo: a smart girl.",
+          "tagsErro": [
+            "ordem_adjetivo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m02-l5",
+      "ordem": 5,
+      "titulo": "Plurals",
+      "objetivo": "Formar plurais regulares e irregulares.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "A regra geral é colocar -s: book → books, sister → sisters, car → cars.",
+          "Palavras terminadas em s, sh, ch e x ganham -es: bus → buses, dish → dishes, watch → watches, box → boxes. Consoante + y vira -ies: baby → babies, city → cities. Mas vogal + y só ganha -s: boy → boys, key → keys.",
+          "Alguns plurais são irregulares e precisam ser memorizados: man → men, woman → women, child → children, person → people, foot → feet, tooth → teeth. E palavras em -fe costumam virar -ves: wife → wives.",
+          "Lembre: a/an só aparecem no singular, e o adjetivo não vai para o plural: two small children."
+        ],
+        "regras": [
+          "+s: cars, girls, sisters",
+          "+es depois de s, sh, ch, x: buses, dishes, watches, boxes",
+          "consoante + y → -ies: babies, cities",
+          "vogal + y → +s: boys, keys",
+          "irregulares: men, women, children, people, feet, teeth",
+          "-fe → -ves: wife → wives"
+        ],
+        "notaContrastiva": "Não diga *two childrens* nem *peoples* → diga *two children* e *people*. Children e people já são plurais.",
+        "exemplos": [
+          {
+            "en": "My sisters are nurses.",
+            "pt": "Minhas irmãs são enfermeiras."
+          },
+          {
+            "en": "The boxes are big.",
+            "pt": "As caixas são grandes."
+          },
+          {
+            "en": "Her babies are small.",
+            "pt": "Os bebês dela são pequenos."
+          },
+          {
+            "en": "Their children are young.",
+            "pt": "Os filhos deles são novos."
+          },
+          {
+            "en": "The men are tall.",
+            "pt": "Os homens são altos."
+          },
+          {
+            "en": "People are nice here.",
+            "pt": "As pessoas são simpáticas aqui."
+          },
+          {
+            "en": "My keys are new.",
+            "pt": "Minhas chaves são novas."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "child / children",
+            "pt": "criança / crianças; filho(s)"
+          },
+          {
+            "en": "person / people",
+            "pt": "pessoa / pessoas"
+          },
+          {
+            "en": "man / men",
+            "pt": "homem / homens"
+          },
+          {
+            "en": "woman / women",
+            "pt": "mulher / mulheres"
+          },
+          {
+            "en": "baby / babies",
+            "pt": "bebê / bebês"
+          },
+          {
+            "en": "box / boxes",
+            "pt": "caixa / caixas"
+          },
+          {
+            "en": "watch / watches",
+            "pt": "relógio / relógios"
+          },
+          {
+            "en": "city / cities",
+            "pt": "cidade / cidades"
+          },
+          {
+            "en": "key / keys",
+            "pt": "chave / chaves"
+          },
+          {
+            "en": "bus / buses",
+            "pt": "ônibus"
+          },
+          {
+            "en": "tooth / teeth",
+            "pt": "dente / dentes"
+          },
+          {
+            "en": "foot / feet",
+            "pt": "pé / pés"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Escreva o plural.",
+          "conteudo": {
+            "texto": "one baby → two ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "babies"
+              ]
+            ]
+          },
+          "explicacao": "Baby termina em consoante + y, então o y vira -ies: babies.",
+          "tagsErro": [
+            "plural"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Escreva o plural.",
+          "conteudo": {
+            "texto": "one box → three ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "boxes"
+              ]
+            ]
+          },
+          "explicacao": "Palavras terminadas em x ganham -es: boxes.",
+          "tagsErro": [
+            "plural"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Escreva o plural.",
+          "conteudo": {
+            "texto": "one child → four ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "children"
+              ]
+            ]
+          },
+          "explicacao": "Child tem plural irregular: children.",
+          "tagsErro": [
+            "plural_irregular"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual é o plural de \"woman\"?",
+          "conteudo": {
+            "opcoes": [
+              "women",
+              "womans",
+              "womens",
+              "woman's"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Woman tem plural irregular: women (como man → men). Womens não existe.",
+          "tagsErro": [
+            "plural_irregular"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Qual é o plural de \"boy\"?",
+          "conteudo": {
+            "opcoes": [
+              "boys",
+              "boies",
+              "boyes",
+              "boy"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Boy termina em vogal + y, então só ganha -s: boys. A troca para -ies só acontece com consoante + y (baby → babies).",
+          "tagsErro": [
+            "plural"
+          ]
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada singular ao seu plural.",
+          "conteudo": {
+            "esquerda": [
+              "man",
+              "foot",
+              "person",
+              "wife",
+              "tooth",
+              "city"
+            ],
+            "direita": [
+              "wives",
+              "cities",
+              "men",
+              "feet",
+              "people",
+              "teeth"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              4,
+              0,
+              5,
+              1
+            ]
+          },
+          "explicacao": "Man → men, foot → feet, person → people, wife → wives, tooth → teeth, city → cities."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "children",
+              "Their",
+              "young"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Their children are young."
+            ]
+          },
+          "explicacao": "Their children (os filhos deles) + are + young. Children já é plural, por isso are."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My cousins are nice peoples."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My cousins are nice people."
+            ]
+          },
+          "explicacao": "People já é o plural de person. Peoples não é usado com esse sentido.",
+          "tagsErro": [
+            "plural_irregular"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Os bebês da minha tia são pequenos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My aunt's babies are small.",
+              "My aunt's babies are little."
+            ]
+          },
+          "explicacao": "Os bebês da minha tia = my aunt's babies (baby → babies). Pequenos = small, sem plural.",
+          "tagsErro": [
+            "plural"
+          ]
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "As duas mulheres são médicas.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The two women are doctors.",
+              "Both women are doctors.",
+              "Both of the women are doctors."
+            ]
+          },
+          "explicacao": "Mulheres = women (plural irregular). No plural, a profissão não leva a: doctors.",
+          "tagsErro": [
+            "plural_irregular"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Qual é o plural de \"person\"?",
+          "conteudo": {
+            "opcoes": [
+              "people",
+              "peoples",
+              "persones",
+              "personies"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O plural de person é people.",
+          "tagsErro": [
+            "plural_irregular"
+          ]
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Escreva o plural.",
+          "conteudo": {
+            "texto": "one watch → two ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watches"
+              ]
+            ]
+          },
+          "explicacao": "Palavras terminadas em ch ganham -es: watches.",
+          "tagsErro": [
+            "plural"
+          ]
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "The",
+              "tall",
+              "men"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "The men are tall."
+            ]
+          },
+          "explicacao": "The men (os homens) + are + tall. Men é o plural de man."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles são meus filhos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are my children.",
+              "They are my kids.",
+              "They are my sons."
+            ]
+          },
+          "explicacao": "Filhos = children (ou kids, mais informal). Se forem só meninos, sons também está certo."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "They are two nices boys."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are two nice boys."
+            ]
+          },
+          "explicacao": "O adjetivo não vai para o plural: two nice boys.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m02-l6",
+      "ordem": 6,
+      "titulo": "This, that, these, those",
+      "objetivo": "Usar this, that, these e those para mostrar pessoas e coisas.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Usamos this (este, esta, isto) para algo perto de nós e that (aquele, aquela, aquilo, esse, essa) para algo longe.",
+          "No plural, this vira these (estes, estas) e that vira those (aqueles, aquelas). Com this e that o verbo é is; com these e those, are.",
+          "Eles podem vir sozinhos (This is my car.) ou antes de um substantivo (this car, those boys).",
+          "Para apresentar alguém, dizemos This is...: This is my sister, Ana. (Esta é a minha irmã, Ana.)"
+        ],
+        "regras": [
+          "perto + singular: this",
+          "longe + singular: that",
+          "perto + plural: these",
+          "longe + plural: those",
+          "this/that + is / these/those + are",
+          "Apresentar: This is my brother, Lucas."
+        ],
+        "notaContrastiva": "Não diga *These is my parents* → diga *These are my parents*. These e those são plurais e pedem are.",
+        "exemplos": [
+          {
+            "en": "This is my mom.",
+            "pt": "Esta é a minha mãe."
+          },
+          {
+            "en": "That is my school.",
+            "pt": "Aquela é a minha escola."
+          },
+          {
+            "en": "These are my cousins.",
+            "pt": "Estes são os meus primos."
+          },
+          {
+            "en": "Those boys are tall.",
+            "pt": "Aqueles meninos são altos."
+          },
+          {
+            "en": "This book is new.",
+            "pt": "Este livro é novo."
+          },
+          {
+            "en": "That's my car.",
+            "pt": "Aquele é o meu carro."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "this",
+            "pt": "este, esta, isto"
+          },
+          {
+            "en": "that",
+            "pt": "aquele, aquela, aquilo"
+          },
+          {
+            "en": "these",
+            "pt": "estes, estas"
+          },
+          {
+            "en": "those",
+            "pt": "aqueles, aquelas"
+          },
+          {
+            "en": "photo",
+            "pt": "foto"
+          },
+          {
+            "en": "key",
+            "pt": "chave"
+          },
+          {
+            "en": "over there",
+            "pt": "ali, lá"
+          },
+          {
+            "en": "here",
+            "pt": "aqui"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com this ou these (perto de você).",
+          "conteudo": {
+            "texto": "___ is my brother.",
+            "opcoesPorLacuna": [
+              [
+                "this",
+                "these"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "This"
+              ]
+            ]
+          },
+          "explicacao": "Uma pessoa (singular) e perto: this. O verbo is confirma o singular."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com this ou these (perto de você).",
+          "conteudo": {
+            "texto": "___ are my cousins.",
+            "opcoesPorLacuna": [
+              [
+                "this",
+                "these"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "These"
+              ]
+            ]
+          },
+          "explicacao": "Várias pessoas (plural) e perto: these. O verbo are confirma o plural."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "controlada",
+          "enunciado": "Complete com that ou those (longe de você).",
+          "conteudo": {
+            "texto": "___ boys are tall.",
+            "opcoesPorLacuna": [
+              [
+                "that",
+                "those"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Those"
+              ]
+            ]
+          },
+          "explicacao": "Boys é plural e está longe: those boys."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "opcoes": [
+              "That",
+              "These",
+              "Those",
+              "This"
+            ],
+            "texto": "Look! ___ woman over there is my aunt."
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Uma mulher (singular) e longe (over there): that woman. These e those são para plural."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "controlada",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "These are my keys.",
+              "These is my keys.",
+              "This are my keys.",
+              "These are my key."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "These é plural: precisa de are e de um substantivo no plural (keys)."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "semicontrolada",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "parents",
+              "These",
+              "my"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "These are my parents.",
+              "My parents are these."
+            ]
+          },
+          "explicacao": "These (estes) + are + my parents. These é plural, por isso are."
+        },
+        {
+          "tipo": "match",
+          "etapa": "semicontrolada",
+          "enunciado": "Ligue cada palavra ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "this",
+              "that",
+              "these",
+              "those"
+            ],
+            "direita": [
+              "estes, estas (perto)",
+              "aqueles, aquelas (longe)",
+              "aquele, aquela (longe)",
+              "este, esta (perto)"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "This = este (perto, singular); that = aquele (longe, singular); these = estes (perto, plural); those = aqueles (longe, plural)."
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "semicontrolada",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Those is my grandparents."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Those are my grandparents."
+            ]
+          },
+          "explicacao": "Those é plural, então o verbo é are."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Esta é minha irmã.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is my sister."
+            ]
+          },
+          "explicacao": "Esta (perto, singular) = this. Para apresentar alguém usamos This is..."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "producao",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Aqueles livros são novos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Those books are new."
+            ]
+          },
+          "explicacao": "Aqueles (longe, plural) = those. Com plural, o verbo é are. New não vai para o plural."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "quiz",
+          "enunciado": "Qual é o plural de \"this\"?",
+          "conteudo": {
+            "opcoes": [
+              "these",
+              "those",
+              "thises",
+              "that"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "This (perto) → these (perto, plural). Those é o plural de that."
+        },
+        {
+          "tipo": "cloze",
+          "etapa": "quiz",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "That ___ my school."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "That é singular, então o verbo é is."
+        },
+        {
+          "tipo": "word_order",
+          "etapa": "quiz",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "children",
+              "are",
+              "those",
+              "Her"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Those are her children.",
+              "Her children are those."
+            ]
+          },
+          "explicacao": "Those (aqueles) + are + her children (os filhos dela)."
+        },
+        {
+          "tipo": "translate",
+          "etapa": "quiz",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Este é o carro do Rafael.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is Rafael's car."
+            ]
+          },
+          "explicacao": "Este = this; o carro do Rafael = Rafael's car (dono primeiro, com 's).",
+          "tagsErro": [
+            "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "error_correction",
+          "etapa": "quiz",
+          "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "This are my photos."
+          },
+          "gabarito": {
+            "aceitas": [
+              "These are my photos."
+            ]
+          },
+          "explicacao": "Photos é plural, então precisamos de these (e não this): These are my photos."
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com his ou her.",
+        "conteudo": {
+          "texto": "Gabriel is a student. ___ mother is a nurse.",
+          "opcoesPorLacuna": [
+            [
+              "his",
+              "her"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "His"
+            ]
+          ]
+        },
+        "explicacao": "O dono é o Gabriel (homem): his mother.",
+        "tagsErro": [
+          "possessivo_his_her"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "opcoes": [
+            "Our",
+            "Their",
+            "We",
+            "Us"
+          ],
+          "texto": "We are sisters. ___ dad is a driver."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "We → our: our dad (nosso pai)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o plural.",
+        "conteudo": {
+          "texto": "one city → two ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "cities"
+            ]
+          ]
+        },
+        "explicacao": "Consoante + y → -ies: cities.",
+        "tagsErro": [
+          "plural"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é o plural de \"man\"?",
+        "conteudo": {
+          "opcoes": [
+            "men",
+            "mans",
+            "mens",
+            "man's"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Man tem plural irregular: men.",
+        "tagsErro": [
+          "plural_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se diz \"o carro da Paula\"?",
+        "conteudo": {
+          "opcoes": [
+            "Paula's car",
+            "the car Paula's",
+            "Paulas car",
+            "car's Paula"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Dono + 's + coisa: Paula's car.",
+        "tagsErro": [
+          "possessivo_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com this ou these (perto de você).",
+        "conteudo": {
+          "texto": "___ are my keys.",
+          "opcoesPorLacuna": [
+            [
+              "this",
+              "these"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "These"
+            ]
+          ]
+        },
+        "explicacao": "Keys é plural e está perto: these."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "They are tall girls.",
+            "They are talls girls.",
+            "They are girls tall.",
+            "They are a tall girls."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Adjetivo antes do substantivo e sem plural; sem a no plural.",
+        "tagsErro": [
+          "adjetivo_plural"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "O que significa \"relatives\"?",
+        "conteudo": {
+          "opcoes": [
+            "parentes",
+            "pais (pai e mãe)",
+            "primos",
+            "irmãos"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Relatives = parentes. Pais (pai e mãe) = parents.",
+        "tagsErro": [
+          "falso_cognato"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com its ou it's.",
+        "conteudo": {
+          "texto": "The dog is happy. ___ name is Rex.",
+          "opcoesPorLacuna": [
+            [
+              "its",
+              "it's"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Its"
+            ]
+          ]
+        },
+        "explicacao": "Possessivo de it: its, sem apóstrofo. It's = it is."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é o oposto de \"tall\"?",
+        "conteudo": {
+          "opcoes": [
+            "short",
+            "young",
+            "old",
+            "funny"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O oposto de tall (alto) é short (baixo)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem é o Marcos?",
+        "conteudo": {
+          "opcoes": [
+            "Beatriz's father",
+            "Beatriz's brother",
+            "Renata's son",
+            "Beatriz's dog"
+          ],
+          "texto": "This is my family. My name is Beatriz and I am fourteen. My mother, Renata, is a doctor. She is tall and very funny. My father's name is Marcos. He is a teacher. These are my brothers, Davi and Felipe. They are twelve. Our dog is Max. Its bed is in my room!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"My father's name is Marcos\" — o Marcos é o pai da Beatriz."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual frase é verdadeira?",
+        "conteudo": {
+          "opcoes": [
+            "Davi and Felipe are twelve.",
+            "Renata is a teacher.",
+            "Max is Beatriz's brother.",
+            "Beatriz is twelve."
+          ],
+          "texto": "This is my family. My name is Beatriz and I am fourteen. My mother, Renata, is a doctor. She is tall and very funny. My father's name is Marcos. He is a teacher. These are my brothers, Davi and Felipe. They are twelve. Our dog is Max. Its bed is in my room!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Davi e Felipe têm doze anos (They are twelve). Renata é médica, Max é o cachorro e Beatriz tem 14."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem é o Thiago?",
+        "conteudo": {
+          "opcoes": [
+            "Diego's uncle",
+            "Diego's cousin",
+            "Paula's son",
+            "Diego's brother"
+          ],
+          "texto": "Hi! I'm Diego. That is my aunt's house. My aunt Paula is a nurse and her husband, Thiago, is an engineer. Their children are Laura and Sofia. Laura is six and Sofia is three. They are my cousins. They are small, but they are very smart!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O Thiago é marido (husband) da tia Paula, então é tio (uncle) do Diego."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem são Laura e Sofia?",
+        "conteudo": {
+          "opcoes": [
+            "Paula's daughters",
+            "Diego's sisters",
+            "Thiago's sisters",
+            "Diego's aunts"
+          ],
+          "texto": "Hi! I'm Diego. That is my aunt's house. My aunt Paula is a nurse and her husband, Thiago, is an engineer. Their children are Laura and Sofia. Laura is six and Sofia is three. They are my cousins. They are small, but they are very smart!"
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"Their children are Laura and Sofia\" — são filhas da Paula e do Thiago, primas do Diego."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+        "conteudo": {
+          "palavras": [
+            "is",
+            "Her",
+            "teacher",
+            "brother",
+            "a"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Her brother is a teacher."
+          ]
+        },
+        "explicacao": "Her brother (o irmão dela) + is + a teacher."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Os pais dela são simpáticos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Her parents are nice.",
+            "Her parents are kind.",
+            "Her parents are friendly."
+          ]
+        },
+        "explicacao": "Os pais dela = her parents. Adjetivo sem plural.",
+        "tagsErro": [
+          "possessivo_his_her"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "Lucas and her sister are tall."
+        },
+        "gabarito": {
+          "aceitas": [
+            "Lucas and his sister are tall."
+          ]
+        },
+        "explicacao": "Lucas é homem: \"a irmã dele\" = his sister.",
+        "tagsErro": [
+          "possessivo_his_her"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Aquelas crianças são minhas primas.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Those children are my cousins.",
+            "Those kids are my cousins."
+          ]
+        },
+        "explicacao": "Aquelas (longe, plural) = those; crianças = children; primas = cousins (serve para primos e primas)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com his ou her.",
+        "conteudo": {
+          "texto": "Mariana is a nurse. ___ brother is a student.",
+          "opcoesPorLacuna": [
+            [
+              "his",
+              "her"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Her"
+            ]
+          ]
+        },
+        "explicacao": "A dona é a Mariana (mulher): her brother.",
+        "tagsErro": [
+          "possessivo_his_her"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "opcoes": [
+            "Their",
+            "Our",
+            "They",
+            "There"
+          ],
+          "texto": "Ana and Bruno are married. ___ apartment is small."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Ana e Bruno = they → their apartment."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o plural.",
+        "conteudo": {
+          "texto": "one bus → two ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "buses"
+            ]
+          ]
+        },
+        "explicacao": "Palavras terminadas em s ganham -es: buses.",
+        "tagsErro": [
+          "plural"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é o plural de \"child\"?",
+        "conteudo": {
+          "opcoes": [
+            "children",
+            "childs",
+            "childrens",
+            "child's"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Child tem plural irregular: children.",
+        "tagsErro": [
+          "plural_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se diz \"a mãe do Gabriel\"?",
+        "conteudo": {
+          "opcoes": [
+            "Gabriel's mother",
+            "the mother Gabriel's",
+            "Gabriels mother",
+            "mother's Gabriel"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Dono + 's + coisa: Gabriel's mother.",
+        "tagsErro": [
+          "possessivo_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com that ou those (longe de você).",
+        "conteudo": {
+          "texto": "___ are my grandparents.",
+          "opcoesPorLacuna": [
+            [
+              "that",
+              "those"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Those"
+            ]
+          ]
+        },
+        "explicacao": "Grandparents é plural e está longe: those."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "He is a young man.",
+            "He is a man young.",
+            "He is young man.",
+            "He is an young man."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Adjetivo antes do substantivo, com artigo: a young man (young começa com consoante).",
+        "tagsErro": [
+          "ordem_adjetivo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual palavra significa \"filha\"?",
+        "conteudo": {
+          "opcoes": [
+            "daughter",
+            "son",
+            "sister",
+            "aunt"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Daughter = filha. Son = filho, sister = irmã, aunt = tia."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com its ou it's.",
+        "conteudo": {
+          "texto": "The cat is small. ___ name is Mia.",
+          "opcoesPorLacuna": [
+            [
+              "its",
+              "it's"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Its"
+            ]
+          ]
+        },
+        "explicacao": "Possessivo de it: its, sem apóstrofo. It's = it is."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é o oposto de \"old\" quando falamos de pessoas?",
+        "conteudo": {
+          "opcoes": [
+            "young",
+            "new",
+            "short",
+            "tall"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Para pessoas, o oposto de old é young. New é o oposto de old para coisas."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem é a Rosa?",
+        "conteudo": {
+          "opcoes": [
+            "Rafael's grandmother",
+            "Rafael's aunt",
+            "Rafael's mother",
+            "Pedro's daughter"
+          ],
+          "texto": "Hello! I'm Rafael. This is a photo of my family. That tall man is my grandfather, Pedro. He is old, but he is very funny. My grandmother's name is Rosa. She is a nice woman. These two women are my mother and my aunt. My mother is short and my aunt is tall."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"My grandmother's name is Rosa\" — a Rosa é avó do Rafael."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual frase é verdadeira?",
+        "conteudo": {
+          "opcoes": [
+            "Rafael's aunt is tall.",
+            "Rafael's mother is tall.",
+            "Pedro is young.",
+            "Rosa is Rafael's aunt."
+          ],
+          "texto": "Hello! I'm Rafael. This is a photo of my family. That tall man is my grandfather, Pedro. He is old, but he is very funny. My grandmother's name is Rosa. She is a nice woman. These two women are my mother and my aunt. My mother is short and my aunt is tall."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"My mother is short and my aunt is tall.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem é o Gabriel?",
+        "conteudo": {
+          "opcoes": [
+            "Larissa's brother",
+            "Camila's brother",
+            "Larissa's father",
+            "Camila's teacher"
+          ],
+          "texto": "My name is Camila. I am a student in Fortaleza. My best friend is Larissa. Her parents are doctors. Her brother, Gabriel, is twenty. He is smart and funny. Larissa's house is big and her room is new. Our teacher is Mr. Souza. He is very kind."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"Her brother, Gabriel\" — ele é irmão da Larissa."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual é a profissão dos pais da Larissa?",
+        "conteudo": {
+          "opcoes": [
+            "They are doctors.",
+            "They are teachers.",
+            "They are students.",
+            "They are nurses."
+          ],
+          "texto": "My name is Camila. I am a student in Fortaleza. My best friend is Larissa. Her parents are doctors. Her brother, Gabriel, is twenty. He is smart and funny. Larissa's house is big and her room is new. Our teacher is Mr. Souza. He is very kind."
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No texto: \"Her parents are doctors.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma frase afirmativa.",
+        "conteudo": {
+          "palavras": [
+            "sister",
+            "is",
+            "His",
+            "nurse",
+            "a"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "His sister is a nurse."
+          ]
+        },
+        "explicacao": "His sister (a irmã dele) + is + a nurse."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Os filhos deles são pequenos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Their children are small.",
+            "Their children are little.",
+            "Their children are young.",
+            "Their kids are small.",
+            "Their kids are little.",
+            "Their kids are young.",
+            "Their sons are small.",
+            "Their sons are little.",
+            "Their sons are young."
+          ]
+        },
+        "explicacao": "Os filhos deles = their children (plural irregular). Pequenos = small, sem plural.",
+        "tagsErro": [
+          "plural_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "Her childrens are young."
+        },
+        "gabarito": {
+          "aceitas": [
+            "Her children are young."
+          ]
+        },
+        "explicacao": "Children já é plural; childrens não existe.",
+        "tagsErro": [
+          "plural_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Estas são minhas chaves.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "These are my keys."
+          ]
+        },
+        "explicacao": "Estas (perto, plural) = these, com are."
+      }
+    ]
+  }
+}

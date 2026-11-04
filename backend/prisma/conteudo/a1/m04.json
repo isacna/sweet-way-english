@@ -1,0 +1,3194 @@
+{
+  "slug": "a1-m04",
+  "ordem": 4,
+  "titulo": "My day",
+  "tema": "Rotina diária",
+  "descricao": "Fale da sua rotina e da rotina de outras pessoas, diga as horas e use os dias da semana com at, on e in.",
+  "canDos": [
+    "Descrever minha rotina diária",
+    "Falar da rotina de outra pessoa (she works, he watches)",
+    "Perguntar e dizer as horas",
+    "Dizer quando faço as coisas com dias da semana, horas e partes do dia"
+  ],
+  "gramatica": "Presente simples afirmativo (I work / she works); grafia -s, -es, -ies; have → has; preposições de tempo at, on, in.",
+  "vocabulario": "Verbos de rotina, horas, dias da semana e partes do dia.",
+  "funcao": "Descrever rotinas e dizer as horas.",
+  "pronuncia": "Terminação -s/-es: works /s/, lives /z/, watches /ɪz/.",
+  "licoes": [
+    {
+      "slug": "a1-m04-l1",
+      "ordem": 1,
+      "titulo": "I work, you study",
+      "objetivo": "Falar de hábitos e rotina com I, you, we e they no presente simples.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "O presente simples (simple present) serve para falar de hábitos, rotinas e fatos: I work in an office. We live in Brasília. They study English.",
+          "Com I, you, we e they, o verbo fica na forma básica, igual ao dicionário: I work, you work, we work, they work. Não use o verbo be junto: diga I work, e não I am work.",
+          "Muitas ações da rotina são expressões com mais de uma palavra: get up (levantar), take a shower (tomar banho), have breakfast (tomar café da manhã), go to work (ir para o trabalho), go home (ir para casa, sem to) e go to bed (ir dormir)."
+        ],
+        "regras": [
+          "I / you / we / they + verbo básico: I work",
+          "Sem be antes do verbo: I work (não I am work)",
+          "have breakfast / lunch / dinner = tomar café / almoçar / jantar",
+          "go to work · go to school · go to bed",
+          "go home (sem to)"
+        ],
+        "notaContrastiva": "Não diga *I am work in a bank* → diga *I work in a bank*. No presente simples não se coloca o verbo be antes do verbo principal.",
+        "exemplos": [
+          {
+            "en": "I work in a bank.",
+            "pt": "Eu trabalho em um banco."
+          },
+          {
+            "en": "We have breakfast together.",
+            "pt": "Nós tomamos café da manhã juntos."
+          },
+          {
+            "en": "They go to school by bus.",
+            "pt": "Eles vão para a escola de ônibus."
+          },
+          {
+            "en": "You speak English very well.",
+            "pt": "Você fala inglês muito bem."
+          },
+          {
+            "en": "I take a shower and go to work.",
+            "pt": "Eu tomo banho e vou para o trabalho."
+          },
+          {
+            "en": "My parents live in Salvador.",
+            "pt": "Meus pais moram em Salvador."
+          },
+          {
+            "en": "We go home after class.",
+            "pt": "Nós vamos para casa depois da aula."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "wake up",
+            "pt": "acordar"
+          },
+          {
+            "en": "get up",
+            "pt": "levantar(-se)"
+          },
+          {
+            "en": "take a shower",
+            "pt": "tomar banho"
+          },
+          {
+            "en": "have breakfast",
+            "pt": "tomar café da manhã"
+          },
+          {
+            "en": "have lunch",
+            "pt": "almoçar"
+          },
+          {
+            "en": "have dinner",
+            "pt": "jantar"
+          },
+          {
+            "en": "go to work",
+            "pt": "ir para o trabalho"
+          },
+          {
+            "en": "go to school",
+            "pt": "ir para a escola"
+          },
+          {
+            "en": "go home",
+            "pt": "ir para casa"
+          },
+          {
+            "en": "go to bed",
+            "pt": "ir dormir"
+          },
+          {
+            "en": "work",
+            "pt": "trabalhar"
+          },
+          {
+            "en": "study",
+            "pt": "estudar"
+          },
+          {
+            "en": "live",
+            "pt": "morar"
+          },
+          {
+            "en": "watch TV",
+            "pt": "ver TV"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "I ___ in a bank.",
+            "opcoes": [
+              "work",
+              "works",
+              "am work"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Com I, o verbo fica na forma básica: I work. Não se usa am antes de outro verbo, e o -s é só para he, she e it.",
+          "tagsErro": [
+            "be_com_verbo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha o verbo correto.",
+          "conteudo": {
+            "texto": "We ___ breakfast together.",
+            "opcoesPorLacuna": [
+              [
+                "make",
+                "take",
+                "have"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have"
+              ]
+            ]
+          },
+          "explicacao": "Tomar café da manhã em inglês é have breakfast. O mesmo vale para have lunch e have dinner."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "They ___ to school by bus.",
+            "opcoesPorLacuna": [
+              [
+                "are go",
+                "go",
+                "goes"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "go"
+              ]
+            ]
+          },
+          "explicacao": "Com they, o verbo fica na forma básica: they go. Goes é para he, she e it, e are go está errado.",
+          "tagsErro": [
+            "be_com_verbo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "O que significa get up?",
+          "conteudo": {
+            "opcoes": [
+              "ir dormir",
+              "acordar",
+              "levantar(-se)"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Get up é sair da cama, levantar. Acordar é wake up e ir dormir é go to bed."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "watch",
+              "after",
+              "They",
+              "dinner",
+              "TV"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "They watch TV after dinner.",
+              "After dinner they watch TV."
+            ]
+          },
+          "explicacao": "Ordem básica: sujeito (They) + verbo (watch) + complemento (TV) + quando (after dinner). Também é possível começar com After dinner."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada expressão ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "wake up",
+              "get up",
+              "take a shower",
+              "have lunch",
+              "go to bed",
+              "go home"
+            ],
+            "direita": [
+              "tomar banho",
+              "almoçar",
+              "levantar(-se)",
+              "ir para casa",
+              "ir dormir",
+              "acordar"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              2,
+              0,
+              1,
+              4,
+              3
+            ]
+          },
+          "explicacao": "São expressões fixas da rotina. Repare que go home não leva to."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "I am study English every day."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I study English every day.",
+              "I am studying English every day."
+            ]
+          },
+          "explicacao": "No presente simples não usamos am antes do verbo: I study.",
+          "tagsErro": [
+            "be_com_verbo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu moro em Curitiba.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I live in Curitiba."
+            ]
+          },
+          "explicacao": "Morar = live. Com I, o verbo fica na forma básica: I live in Curitiba."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós jantamos em casa.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We have dinner at home.",
+              "We eat dinner at home.",
+              "We have dinner home.",
+              "We eat dinner home."
+            ]
+          },
+          "explicacao": "Jantar = have dinner (ou eat dinner). Em casa = at home."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ English at school.",
+            "opcoesPorLacuna": [
+              [
+                "study",
+                "studies",
+                "am study"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "study"
+              ]
+            ]
+          },
+          "explicacao": "Com I, o verbo fica na forma básica: I study.",
+          "tagsErro": [
+            "be_com_verbo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "We go to home after work.",
+              "We go home after work.",
+              "We are go home after work."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Ir para casa é go home, sem to. E não se usa are antes do verbo go.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "They are live in Manaus."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They live in Manaus.",
+              "They are living in Manaus."
+            ]
+          },
+          "explicacao": "No presente simples não se coloca are antes do verbo: They live in Manaus.",
+          "tagsErro": [
+            "be_com_verbo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "go",
+              "to",
+              "I",
+              "bed",
+              "late"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I go to bed late."
+            ]
+          },
+          "explicacao": "Sujeito (I) + verbo (go to bed) + late (tarde)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "O que significa have breakfast?",
+          "conteudo": {
+            "opcoes": [
+              "jantar",
+              "tomar café da manhã",
+              "almoçar"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Breakfast é o café da manhã. Lunch é o almoço e dinner é o jantar."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m04-l2",
+      "ordem": 2,
+      "titulo": "She works in a hospital",
+      "objetivo": "Usar o presente simples com he, she e it (verbo + -s).",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Com he, she e it (e com qualquer sujeito no singular, como Ana ou my father), o verbo no presente simples ganha -s: I work → she works; I live → he lives; I sleep → it sleeps.",
+          "Em português o verbo muda em quase todas as pessoas (eu trabalho, ela trabalha, nós trabalhamos). Em inglês só muda na terceira pessoa do singular, e a mudança é só esse -s. Esquecer o -s (She work) é o erro mais comum de brasileiros neste ponto.",
+          "O -s vai só no verbo e só com um sujeito no singular. Com sujeito no plural (my parents, Ana and Rui) o verbo fica sem -s: My parents work."
+        ],
+        "regras": [
+          "I / you / we / they work",
+          "he / she / it works",
+          "Sujeito no singular = he/she/it: Ana lives, my dad works",
+          "Sujeito no plural, sem -s: my parents work"
+        ],
+        "notaContrastiva": "Não diga *She work in a hospital* → diga *She works in a hospital*. Com he, she e it, o verbo sempre ganha -s.",
+        "exemplos": [
+          {
+            "en": "My mother works in a hospital.",
+            "pt": "Minha mãe trabalha em um hospital."
+          },
+          {
+            "en": "Rafael lives in Belém.",
+            "pt": "O Rafael mora em Belém."
+          },
+          {
+            "en": "She speaks English and Spanish.",
+            "pt": "Ela fala inglês e espanhol."
+          },
+          {
+            "en": "He drinks coffee after lunch.",
+            "pt": "Ele toma café depois do almoço."
+          },
+          {
+            "en": "My cat sleeps a lot.",
+            "pt": "Meu gato dorme muito."
+          },
+          {
+            "en": "Our teacher drives to school.",
+            "pt": "Nossa professora vai de carro para a escola."
+          },
+          {
+            "en": "My parents work in a store.",
+            "pt": "Meus pais trabalham em uma loja."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "work / works",
+            "pt": "trabalhar"
+          },
+          {
+            "en": "live / lives",
+            "pt": "morar"
+          },
+          {
+            "en": "speak / speaks",
+            "pt": "falar (um idioma)"
+          },
+          {
+            "en": "drink / drinks",
+            "pt": "beber, tomar"
+          },
+          {
+            "en": "eat / eats",
+            "pt": "comer"
+          },
+          {
+            "en": "sleep / sleeps",
+            "pt": "dormir"
+          },
+          {
+            "en": "drive / drives",
+            "pt": "dirigir"
+          },
+          {
+            "en": "read / reads",
+            "pt": "ler"
+          },
+          {
+            "en": "cook / cooks",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "walk / walks",
+            "pt": "caminhar, ir a pé"
+          },
+          {
+            "en": "hospital",
+            "pt": "hospital"
+          },
+          {
+            "en": "store",
+            "pt": "loja"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "My mother ___ in a hospital. (work)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "works"
+              ]
+            ]
+          },
+          "explicacao": "My mother = she, então o verbo ganha -s: works.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "Rafael ___ in Belém. (live)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "lives"
+              ]
+            ]
+          },
+          "explicacao": "Rafael = he, então o verbo ganha -s: lives.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My parents ___ in a store.",
+            "opcoes": [
+              "work",
+              "is work",
+              "works"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "My parents é plural (they), então o verbo fica sem -s: work.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "She ___ English and Spanish.",
+            "opcoes": [
+              "speaks",
+              "is speak",
+              "speak"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Com she, o verbo ganha -s: speaks. Não se usa is antes do verbo.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "I ___ coffee, but my sister ___ tea. (drink)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "drink"
+              ],
+              [
+                "drinks"
+              ]
+            ]
+          },
+          "explicacao": "Com I, forma básica: drink. Com my sister (she), verbo + -s: drinks.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "brother",
+              "every",
+              "day",
+              "cooks",
+              "My",
+              "dinner"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother cooks dinner every day.",
+              "Every day my brother cooks dinner."
+            ]
+          },
+          "explicacao": "Sujeito (My brother) + verbo com -s (cooks) + complemento (dinner) + every day.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "He work in a school."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He works in a school.",
+              "He works at a school."
+            ]
+          },
+          "explicacao": "Com he, o verbo ganha -s: He works.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Ana and Leo lives in Recife."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Ana and Leo live in Recife."
+            ]
+          },
+          "explicacao": "Ana and Leo são duas pessoas (they), então o verbo fica sem -s: live.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela trabalha em um banco.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She works in a bank.",
+              "She works at a bank."
+            ]
+          },
+          "explicacao": "Com she, o verbo ganha -s: She works in a bank.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu pai lê o jornal.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father reads the newspaper.",
+              "My father reads the paper.",
+              "My dad reads the newspaper.",
+              "My dad reads the paper."
+            ]
+          },
+          "explicacao": "My father = he, então read ganha -s: reads. Jornal = newspaper.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Lucas ___ to work.",
+            "opcoes": [
+              "walk",
+              "walks",
+              "is walk"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Lucas = he, então o verbo ganha -s: walks.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "My cat ___ a lot. (sleep)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "sleeps"
+              ]
+            ]
+          },
+          "explicacao": "My cat = it, então o verbo ganha -s: sleeps.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My sister speak French."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My sister speaks French."
+            ]
+          },
+          "explicacao": "My sister = she, então o verbo ganha -s: speaks.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "teacher",
+              "languages",
+              "three",
+              "Our",
+              "speaks"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Our teacher speaks three languages."
+            ]
+          },
+          "explicacao": "Sujeito (Our teacher) + speaks (com -s, porque é he/she) + three languages.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "We ___ in Brasília, and our son ___ in São Paulo. (live)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "live"
+              ],
+              [
+                "lives"
+              ]
+            ]
+          },
+          "explicacao": "Com we, forma básica: live. Com our son (he), verbo + -s: lives.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m04-l3",
+      "ordem": 3,
+      "titulo": "He watches, she studies",
+      "objetivo": "Escrever corretamente o verbo com he, she e it: -es, -ies e has.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Alguns verbos mudam um pouco mais com he, she e it. Verbos terminados em -ch, -sh, -ss, -x e -o ganham -es: watch → watches, wash → washes, fix → fixes, go → goes, do → does.",
+          "Verbos terminados em consoante + y trocam o y por -ies: study → studies. Mas se antes do y houver uma vogal, é só acrescentar -s: play → plays, buy → buys.",
+          "O verbo have é irregular: com he, she e it vira has. Assim: I have lunch at home, mas she has lunch at work."
+        ],
+        "regras": [
+          "-ch, -sh, -ss, -x, -o + es: watches, washes, fixes, goes, does",
+          "consoante + y → -ies: study → studies",
+          "vogal + y → só -s: play → plays, buy → buys",
+          "have → has"
+        ],
+        "notaContrastiva": "Não diga *She have a car* nem *She haves a car* → diga *She has a car*. E cuidado com a grafia: *he studys* ✗ → *he studies*; *he playes* ✗ → *he plays*.",
+        "exemplos": [
+          {
+            "en": "My son watches TV after school.",
+            "pt": "Meu filho vê TV depois da escola."
+          },
+          {
+            "en": "She goes to work by bus.",
+            "pt": "Ela vai para o trabalho de ônibus."
+          },
+          {
+            "en": "Pedro studies medicine.",
+            "pt": "O Pedro estuda medicina."
+          },
+          {
+            "en": "Ana has breakfast at home.",
+            "pt": "A Ana toma café da manhã em casa."
+          },
+          {
+            "en": "He plays soccer with his friends.",
+            "pt": "Ele joga futebol com os amigos."
+          },
+          {
+            "en": "My dad does the dishes.",
+            "pt": "Meu pai lava a louça."
+          },
+          {
+            "en": "The class finishes late.",
+            "pt": "A aula termina tarde."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "watch / watches",
+            "pt": "assistir"
+          },
+          {
+            "en": "wash / washes",
+            "pt": "lavar"
+          },
+          {
+            "en": "finish / finishes",
+            "pt": "terminar"
+          },
+          {
+            "en": "fix / fixes",
+            "pt": "consertar"
+          },
+          {
+            "en": "go / goes",
+            "pt": "ir"
+          },
+          {
+            "en": "do / does",
+            "pt": "fazer"
+          },
+          {
+            "en": "study / studies",
+            "pt": "estudar"
+          },
+          {
+            "en": "play / plays",
+            "pt": "jogar, brincar, tocar"
+          },
+          {
+            "en": "buy / buys",
+            "pt": "comprar"
+          },
+          {
+            "en": "have / has",
+            "pt": "ter; tomar (café, almoço)"
+          },
+          {
+            "en": "do the dishes",
+            "pt": "lavar a louça"
+          },
+          {
+            "en": "homework",
+            "pt": "lição de casa"
+          },
+          {
+            "en": "soccer",
+            "pt": "futebol"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "My son ___ TV after school. (watch)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watches"
+              ]
+            ]
+          },
+          "explicacao": "Watch termina em -ch, então com he ganha -es: watches.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "Pedro ___ medicine. (study)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "studies"
+              ]
+            ]
+          },
+          "explicacao": "Study termina em consoante + y: troque o y por -ies → studies.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "He ___ soccer with his friends.",
+            "opcoes": [
+              "plays",
+              "playes",
+              "plaies"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Play tem vogal antes do y, então é só acrescentar -s: plays.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Ana ___ breakfast at home.",
+            "opcoes": [
+              "haves",
+              "have",
+              "has"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Have é irregular: com he, she e it vira has.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com os verbos entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "She ___ to work by bus, and her husband ___ the dishes. (go / do)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "goes"
+              ],
+              [
+                "does"
+              ]
+            ]
+          },
+          "explicacao": "Go e do terminam em -o, então ganham -es: goes, does.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo à forma usada com he, she e it.",
+          "conteudo": {
+            "esquerda": [
+              "watch",
+              "study",
+              "play",
+              "have",
+              "go",
+              "fix"
+            ],
+            "direita": [
+              "goes",
+              "studies",
+              "has",
+              "plays",
+              "watches",
+              "fixes"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              1,
+              3,
+              2,
+              0,
+              5
+            ]
+          },
+          "explicacao": "-ch/-x/-o → -es; consoante + y → -ies; vogal + y → -s; have → has."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My brother haves two dogs."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother has two dogs."
+            ]
+          },
+          "explicacao": "Have é irregular: com he, a forma é has (não haves).",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "father",
+              "the",
+              "My",
+              "car",
+              "washes"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father washes the car."
+            ]
+          },
+          "explicacao": "Sujeito (My father) + washes (wash + -es) + the car.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela estuda inglês.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She studies English."
+            ]
+          },
+          "explicacao": "Study com she: studies (y → -ies). English sempre com maiúscula.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele tem dois filhos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He has two children.",
+              "He has two kids.",
+              "He has two sons."
+            ]
+          },
+          "explicacao": "Have com he vira has. Filhos = children (ou kids; sons se forem meninos).",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "The class ___ late.",
+            "opcoes": [
+              "finishs",
+              "finishes",
+              "finish"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Finish termina em -sh, então com it ganha -es: finishes.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "My grandma ___ a cat. (have)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "has"
+              ]
+            ]
+          },
+          "explicacao": "My grandma = she; have com she vira has.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Julia studys at home."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Julia studies at home."
+            ]
+          },
+          "explicacao": "Study termina em consoante + y: troque por -ies → studies.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "does",
+              "after",
+              "Marcos",
+              "his",
+              "homework",
+              "dinner"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Marcos does his homework after dinner.",
+              "After dinner Marcos does his homework."
+            ]
+          },
+          "explicacao": "Sujeito (Marcos) + does (do + -es) + his homework + after dinner.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "She buies bread.",
+              "She buys bread.",
+              "She buy bread."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Buy tem vogal antes do y, então é só acrescentar -s: buys.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m04-l4",
+      "ordem": 4,
+      "titulo": "What time is it?",
+      "objetivo": "Perguntar e dizer as horas.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar as horas: What time is it? (Que horas são?). Para responder, comece sempre com It's: It's three o'clock. Em inglês a frase precisa de sujeito, por isso o it é obrigatório, mesmo sem significado.",
+          "O jeito mais fácil de dizer as horas é ler os números: 7:15 = seven fifteen, 7:30 = seven thirty, 7:45 = seven forty-five. Para hora cheia, use o'clock: It's eight o'clock. Para minutos de 1 a 9, diga oh antes: 7:05 = seven oh five.",
+          "Também existem formas com past e to: 7:30 = half past seven, 7:15 = a quarter past seven (nos EUA também a quarter after seven), 7:45 = a quarter to eight. Nos Estados Unidos se usa o relógio de 12 horas com a.m. (da meia-noite ao meio-dia) e p.m. (do meio-dia à meia-noite). 12:00 do dia é noon; 12:00 da noite é midnight."
+        ],
+        "regras": [
+          "What time is it? → It's…",
+          "Hora cheia: It's nine o'clock",
+          "9:20 = nine twenty · 9:05 = nine oh five",
+          "9:30 = nine thirty = half past nine",
+          "9:15 = a quarter past nine · 8:45 = a quarter to nine",
+          "a.m. = manhã · p.m. = tarde/noite · noon = meio-dia · midnight = meia-noite"
+        ],
+        "notaContrastiva": "Não diga *Is ten o'clock* nem *Are ten hours* → diga *It's ten o'clock*. A frase precisa do sujeito it, e as horas não usam are nem hours.",
+        "exemplos": [
+          {
+            "en": "What time is it? It's nine o'clock.",
+            "pt": "Que horas são? São nove horas."
+          },
+          {
+            "en": "It's 6:30 a.m. (six thirty a.m.)",
+            "pt": "São seis e meia da manhã."
+          },
+          {
+            "en": "It's half past four.",
+            "pt": "São quatro e meia."
+          },
+          {
+            "en": "It's a quarter to eight.",
+            "pt": "São quinze para as oito."
+          },
+          {
+            "en": "It's 10:45 p.m. (ten forty-five p.m.)",
+            "pt": "São dez e quarenta e cinco da noite."
+          },
+          {
+            "en": "It's two fifteen.",
+            "pt": "São duas e quinze."
+          },
+          {
+            "en": "It's noon. Lunch time!",
+            "pt": "É meio-dia. Hora do almoço!"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "time",
+            "pt": "hora, tempo"
+          },
+          {
+            "en": "What time is it?",
+            "pt": "Que horas são?"
+          },
+          {
+            "en": "o'clock",
+            "pt": "em ponto (hora cheia)"
+          },
+          {
+            "en": "half past",
+            "pt": "e meia"
+          },
+          {
+            "en": "a quarter past / after",
+            "pt": "e quinze"
+          },
+          {
+            "en": "a quarter to",
+            "pt": "quinze para"
+          },
+          {
+            "en": "noon",
+            "pt": "meio-dia"
+          },
+          {
+            "en": "midnight",
+            "pt": "meia-noite"
+          },
+          {
+            "en": "a.m.",
+            "pt": "da manhã (0h–12h)"
+          },
+          {
+            "en": "p.m.",
+            "pt": "da tarde/noite (12h–24h)"
+          },
+          {
+            "en": "hour",
+            "pt": "hora (duração)"
+          },
+          {
+            "en": "minute",
+            "pt": "minuto"
+          },
+          {
+            "en": "clock",
+            "pt": "relógio"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "What time is it? (8:00) Escolha a resposta correta.",
+          "conteudo": {
+            "opcoes": [
+              "It's eight hours.",
+              "It's eight o'clock.",
+              "Is eight o'clock."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "A resposta precisa do sujeito it: It's eight o'clock. Hours não é usado para dizer as horas.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se diz 4:30 lendo os números?",
+          "conteudo": {
+            "opcoes": [
+              "four three",
+              "thirty four",
+              "four thirty"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "4:30 se lê hora + minutos: four thirty (também half past four)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com as palavras que faltam.",
+          "conteudo": {
+            "texto": "9:15 = nine ___ · 9:05 = nine ___ five"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "fifteen"
+              ],
+              [
+                "oh",
+                "zero"
+              ]
+            ]
+          },
+          "explicacao": "9:15 = nine fifteen. Para minutos de 1 a 9, dizemos oh antes: nine oh five."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra correta.",
+          "conteudo": {
+            "texto": "It's 12:00 p.m. It's ___. Lunch time!",
+            "opcoesPorLacuna": [
+              [
+                "midnight",
+                "night",
+                "noon"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "noon"
+              ]
+            ]
+          },
+          "explicacao": "12:00 p.m. é meio-dia: noon. Midnight é meia-noite (12:00 a.m.)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada horário à forma escrita.",
+          "conteudo": {
+            "esquerda": [
+              "7:00",
+              "7:30",
+              "7:15",
+              "6:45",
+              "12:00 a.m.",
+              "7:05"
+            ],
+            "direita": [
+              "seven o'clock",
+              "midnight",
+              "half past seven",
+              "a quarter past seven",
+              "a quarter to seven",
+              "seven oh five"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              2,
+              3,
+              4,
+              1,
+              5
+            ]
+          },
+          "explicacao": "half past = e meia; a quarter past = e quinze; a quarter to = quinze para; midnight = meia-noite."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a resposta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "nine",
+              "a",
+              "to",
+              "quarter",
+              "is",
+              "It"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is a quarter to nine."
+            ]
+          },
+          "explicacao": "A resposta começa com It is + a quarter to + hora. 8:45 = a quarter to nine.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Is ten thirty."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's ten thirty.",
+              "It's half past ten."
+            ]
+          },
+          "explicacao": "Em inglês a frase precisa de sujeito: It's ten thirty. Em português dizemos só \"São dez e meia\".",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Que horas são?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What time is it?",
+              "What's the time?",
+              "What time is it now?"
+            ]
+          },
+          "explicacao": "Que horas são? = What time is it? (it obrigatório, verbo is).",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "São três horas.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's three.",
+              "It's 3.",
+              "It's 3:00.",
+              "It's three o'clock.",
+              "It's 3 o'clock."
+            ]
+          },
+          "explicacao": "Hora cheia: It's three o'clock (ou só It's three). Não use are nem hours.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual é a forma correta para 11:45?",
+          "conteudo": {
+            "opcoes": [
+              "a quarter past eleven",
+              "a quarter to twelve",
+              "eleven fifteen"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "11:45 faltam quinze minutos para o meio-dia: a quarter to twelve (ou eleven forty-five)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a palavra que falta.",
+          "conteudo": {
+            "texto": "It's 2:30. It's half ___ two."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "past"
+              ]
+            ]
+          },
+          "explicacao": "Meia hora depois = half past: half past two."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "São 7 horas da manhã. Qual opção está correta?",
+          "conteudo": {
+            "opcoes": [
+              "It's 7 a.m.",
+              "It's 7 p.m.",
+              "It's 7 noon."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A.m. é para os horários da meia-noite ao meio-dia (manhã). P.m. é tarde e noite."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Are five o'clock."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's five o'clock."
+            ]
+          },
+          "explicacao": "Para as horas usamos It's (it + is), nunca are: It's five o'clock.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "É meio-dia.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's noon.",
+              "It's midday.",
+              "It's 12 noon.",
+              "It's twelve noon.",
+              "It's twelve.",
+              "It's 12.",
+              "It's 12:00.",
+              "It's twelve o'clock.",
+              "It's 12 o'clock.",
+              "It's 12 p.m..",
+              "It's twelve p.m.."
+            ]
+          },
+          "explicacao": "Meio-dia = noon (ou twelve o'clock). A frase começa com It's.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m04-l5",
+      "ordem": 5,
+      "titulo": "On Monday, at seven, in the morning",
+      "objetivo": "Usar os dias da semana e as preposições de tempo at, on e in.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Os dias da semana em inglês sempre começam com letra maiúscula: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. Saturday e Sunday formam o weekend (fim de semana).",
+          "Para dizer quando algo acontece, usamos três preposições: at para horas e momentos exatos (at 7 o'clock, at noon, at night); on para dias (on Monday, on the weekend); in para partes do dia (in the morning, in the afternoon, in the evening).",
+          "Em português dizemos \"na segunda\", \"às sete\", \"de manhã\", \"à noite\", e as preposições não correspondem às do inglês. Por isso, memorize em blocos: on Monday, at 7, in the morning, at night. Para hábitos, on Mondays (com -s) = às segundas."
+        ],
+        "regras": [
+          "at + hora: at 8 o'clock, at noon, at midnight",
+          "on + dia: on Friday, on Mondays, on the weekend",
+          "in + parte do dia: in the morning / afternoon / evening",
+          "Exceção: at night (não in the night)",
+          "Dias da semana com maiúscula: Monday"
+        ],
+        "notaContrastiva": "Não diga *in Monday* nem *in 7 o'clock* → diga *on Monday* e *at 7 o'clock*. E \"à noite\" é *at night*, não *in the night*.",
+        "exemplos": [
+          {
+            "en": "I have English class on Tuesday.",
+            "pt": "Eu tenho aula de inglês na terça."
+          },
+          {
+            "en": "She gets up at 6:30 in the morning.",
+            "pt": "Ela se levanta às 6h30 da manhã."
+          },
+          {
+            "en": "We go to the beach on the weekend.",
+            "pt": "Nós vamos à praia no fim de semana."
+          },
+          {
+            "en": "My dad works at night.",
+            "pt": "Meu pai trabalha à noite."
+          },
+          {
+            "en": "The store opens at 9 a.m.",
+            "pt": "A loja abre às 9 da manhã."
+          },
+          {
+            "en": "He plays soccer on Saturdays.",
+            "pt": "Ele joga futebol aos sábados."
+          },
+          {
+            "en": "They have dinner at 8 in the evening.",
+            "pt": "Eles jantam às 8 da noite."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "Monday",
+            "pt": "segunda-feira"
+          },
+          {
+            "en": "Tuesday",
+            "pt": "terça-feira"
+          },
+          {
+            "en": "Wednesday",
+            "pt": "quarta-feira"
+          },
+          {
+            "en": "Thursday",
+            "pt": "quinta-feira"
+          },
+          {
+            "en": "Friday",
+            "pt": "sexta-feira"
+          },
+          {
+            "en": "Saturday",
+            "pt": "sábado"
+          },
+          {
+            "en": "Sunday",
+            "pt": "domingo"
+          },
+          {
+            "en": "weekend",
+            "pt": "fim de semana"
+          },
+          {
+            "en": "morning",
+            "pt": "manhã"
+          },
+          {
+            "en": "afternoon",
+            "pt": "tarde"
+          },
+          {
+            "en": "evening",
+            "pt": "noite (início)"
+          },
+          {
+            "en": "night",
+            "pt": "noite"
+          },
+          {
+            "en": "open / close",
+            "pt": "abrir / fechar"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com at, on ou in.",
+          "conteudo": {
+            "texto": "I have English class ___ Tuesday."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "on"
+              ]
+            ]
+          },
+          "explicacao": "Com dias da semana usamos on: on Tuesday. Em português é \"na terça\", mas em inglês não é in.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com at, on ou in.",
+          "conteudo": {
+            "texto": "She gets up ___ 6:30."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "at"
+              ]
+            ]
+          },
+          "explicacao": "Com horas usamos at: at 6:30.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com at, on ou in.",
+          "conteudo": {
+            "texto": "We study ___ the morning."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "in"
+              ]
+            ]
+          },
+          "explicacao": "Com partes do dia usamos in: in the morning, in the afternoon, in the evening.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My dad works ___ night.",
+            "opcoes": [
+              "at",
+              "on",
+              "in"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Night é exceção: at night. Compare com in the morning e in the evening.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada dia ao seu nome em português.",
+          "conteudo": {
+            "esquerda": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "direita": [
+              "segunda-feira",
+              "sábado",
+              "quinta-feira",
+              "sexta-feira",
+              "quarta-feira",
+              "terça-feira"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              5,
+              4,
+              2,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Cuidado com Tuesday (terça) e Thursday (quinta), que são parecidos. Em inglês os dias sempre têm letra maiúscula."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "soccer",
+              "He",
+              "Saturdays",
+              "on",
+              "plays"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "He plays soccer on Saturdays.",
+              "On Saturdays he plays soccer."
+            ]
+          },
+          "explicacao": "Sujeito (He) + plays + soccer + on Saturdays. Também é possível começar com On Saturdays.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "The party is in Friday."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The party is on Friday."
+            ]
+          },
+          "explicacao": "Com dias da semana a preposição é on: on Friday.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu trabalho de manhã.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I work in the morning.",
+              "I work in the mornings.",
+              "In the morning I work.",
+              "In the morning, I work."
+            ]
+          },
+          "explicacao": "\"De manhã\" = in the morning. Com I, o verbo fica na forma básica: I work.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela vai à academia às segundas.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She goes to the gym on Mondays.",
+              "She goes to the gym on Monday.",
+              "She goes to the gym every Monday.",
+              "Every Monday she goes to the gym.",
+              "Every Monday, she goes to the gym.",
+              "On Mondays she goes to the gym.",
+              "On Mondays, she goes to the gym.",
+              "On Monday she goes to the gym.",
+              "On Monday, she goes to the gym."
+            ]
+          },
+          "explicacao": "Com she, go vira goes. \"Às segundas\" = on Mondays. Academia = the gym.",
+          "tagsErro": [
+            "preposicao",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "The store opens ___ 9 a.m. ___ Sunday.",
+            "opcoes": [
+              "at / on",
+              "in / in",
+              "on / at"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Horas com at (at 9 a.m.); dias com on (on Sunday).",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com at, on ou in.",
+          "conteudo": {
+            "texto": "They watch TV ___ the evening."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "in"
+              ]
+            ]
+          },
+          "explicacao": "Partes do dia com in: in the evening.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "I go to bed at 11 in the night."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I go to bed at 11 at night.",
+              "I go to bed at eleven at night.",
+              "I go to bed at 11 p.m.",
+              "I go to bed at eleven p.m."
+            ]
+          },
+          "explicacao": "\"À noite\" é at night, não in the night.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual é o dia depois de Wednesday?",
+          "conteudo": {
+            "opcoes": [
+              "Tuesday",
+              "Friday",
+              "Thursday"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Wednesday (quarta) → Thursday (quinta). Tuesday é terça."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Escolha a preposição correta.",
+          "conteudo": {
+            "texto": "We go to the beach ___ the weekend.",
+            "opcoesPorLacuna": [
+              [
+                "to",
+                "in",
+                "on"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "on"
+              ]
+            ]
+          },
+          "explicacao": "No inglês americano dizemos on the weekend (no fim de semana).",
+          "tagsErro": [
+            "preposicao"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m04-l6",
+      "ordem": 6,
+      "titulo": "A day in my life",
+      "objetivo": "Descrever um dia inteiro, o seu e o de outra pessoa, em sequência.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Nesta lição você junta tudo o que aprendeu no módulo para descrever um dia inteiro: o presente simples (I work / she works), as horas e as preposições at, on e in.",
+          "Para ligar as ações em sequência, use then (depois, então) e after that (depois disso): I get up at 7. Then I take a shower. After that, I have breakfast. Para hábitos diários, use every day (todos os dias), normalmente no fim da frase.",
+          "Quando o texto é sobre outra pessoa, o -s de he e she aparece em todas as frases, não só na primeira. É comum esquecer o -s no meio do texto: Ana gets up at 6, then she take… ✗ → then she takes."
+        ],
+        "regras": [
+          "then = depois, então",
+          "after that = depois disso",
+          "every day = todos os dias (no fim da frase)",
+          "before / after + refeição: after lunch, before dinner",
+          "Mantenha o -s com he/she/it em todo o texto"
+        ],
+        "notaContrastiva": "Não diga *All the days I wake up at 6* → diga *I wake up at 6 every day*. \"Todos os dias\" é *every day*.",
+        "exemplos": [
+          {
+            "en": "I wake up at 6:30 every day.",
+            "pt": "Eu acordo às 6h30 todos os dias."
+          },
+          {
+            "en": "Then I take a shower and have breakfast.",
+            "pt": "Depois eu tomo banho e tomo café da manhã."
+          },
+          {
+            "en": "After that, I go to work by bus.",
+            "pt": "Depois disso, vou para o trabalho de ônibus."
+          },
+          {
+            "en": "Bruna starts work at 8 and finishes at 6.",
+            "pt": "A Bruna começa a trabalhar às 8 e termina às 6."
+          },
+          {
+            "en": "She has lunch at noon.",
+            "pt": "Ela almoça ao meio-dia."
+          },
+          {
+            "en": "In the evening, she cooks dinner and watches TV.",
+            "pt": "À noite, ela faz o jantar e vê TV."
+          },
+          {
+            "en": "She goes to bed at 11 every day.",
+            "pt": "Ela vai dormir às 11 todos os dias."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "every day",
+            "pt": "todos os dias"
+          },
+          {
+            "en": "then",
+            "pt": "depois, então"
+          },
+          {
+            "en": "after that",
+            "pt": "depois disso"
+          },
+          {
+            "en": "before",
+            "pt": "antes (de)"
+          },
+          {
+            "en": "after",
+            "pt": "depois (de)"
+          },
+          {
+            "en": "start",
+            "pt": "começar"
+          },
+          {
+            "en": "finish",
+            "pt": "terminar"
+          },
+          {
+            "en": "by bus",
+            "pt": "de ônibus"
+          },
+          {
+            "en": "by car",
+            "pt": "de carro"
+          },
+          {
+            "en": "dentist",
+            "pt": "dentista"
+          },
+          {
+            "en": "kids",
+            "pt": "filhos, crianças"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Bruna ___ work at 8.",
+            "opcoes": [
+              "is start",
+              "start",
+              "starts"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Bruna = she, então o verbo ganha -s: starts.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a palavra que falta.",
+          "conteudo": {
+            "texto": "I wake up at 6:30 every ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "day"
+              ]
+            ]
+          },
+          "explicacao": "Todos os dias = every day."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra correta.",
+          "conteudo": {
+            "texto": "I get up. ___ I take a shower.",
+            "opcoesPorLacuna": [
+              [
+                "Every",
+                "Then",
+                "Before"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Then"
+              ]
+            ]
+          },
+          "explicacao": "Then (depois, então) liga uma ação à seguinte."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete as lacunas.",
+          "conteudo": {
+            "texto": "She has lunch ___ noon and ___ dinner at 8."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "at"
+              ],
+              [
+                "has",
+                "eats",
+                "cooks",
+                "makes",
+                "prepares"
+              ]
+            ]
+          },
+          "explicacao": "Com noon usamos at (at noon). Para o jantar, com she: has dinner (ou eats/cooks/makes dinner), sempre com -s.",
+          "tagsErro": [
+            "preposicao",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "goes",
+              "My",
+              "bed",
+              "to",
+              "midnight",
+              "at",
+              "brother"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother goes to bed at midnight.",
+              "At midnight my brother goes to bed."
+            ]
+          },
+          "explicacao": "Sujeito (My brother) + goes to bed + at midnight.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "All the days she gets up at 7."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Every day she gets up at 7.",
+              "Every day, she gets up at 7.",
+              "She gets up at 7 every day."
+            ]
+          },
+          "explicacao": "\"Todos os dias\" em inglês é every day, não all the days.",
+          "tagsErro": [
+            "every_day"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Carlos get up at 5 and goes to work."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Carlos gets up at 5 and goes to work."
+            ]
+          },
+          "explicacao": "Carlos = he, então todos os verbos ganham -s: gets up… goes.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela almoça ao meio-dia.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has lunch at noon.",
+              "She has lunch at midday.",
+              "She has lunch at 12.",
+              "She has lunch at twelve.",
+              "She has lunch at 12:00.",
+              "She has lunch at 12 noon.",
+              "She has lunch at twelve noon.",
+              "She has lunch at 12 o'clock.",
+              "She has lunch at twelve o'clock.",
+              "She has lunch at 12 p.m..",
+              "She eats lunch at noon.",
+              "She eats lunch at midday.",
+              "She eats lunch at 12.",
+              "She eats lunch at twelve.",
+              "She eats lunch at 12:00.",
+              "She eats lunch at 12 noon.",
+              "She eats lunch at twelve noon.",
+              "She eats lunch at 12 o'clock.",
+              "She eats lunch at twelve o'clock.",
+              "She eats lunch at 12 p.m.."
+            ]
+          },
+          "explicacao": "Almoçar = have lunch; com she, has lunch. Ao meio-dia = at noon.",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu vou para o trabalho de ônibus.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I go to work by bus.",
+              "I take the bus to work.",
+              "I take a bus to work."
+            ]
+          },
+          "explicacao": "Ir para o trabalho = go to work; de ônibus = by bus (sem artigo)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Leia o texto. A que horas a Bruna começa a trabalhar?",
+          "conteudo": {
+            "texto": "Bruna is a dentist in Goiânia. She gets up at 6:30 and has breakfast with her kids. She starts work at 8. She has lunch at noon and finishes work at 6. In the evening, she cooks dinner and reads a book.",
+            "opcoes": [
+              "At noon.",
+              "At 8.",
+              "At 6:30."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O texto diz: She starts work at 8. Às 6:30 ela se levanta."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Leia o texto. O que a Bruna faz à noite?",
+          "conteudo": {
+            "texto": "Bruna is a dentist in Goiânia. She gets up at 6:30 and has breakfast with her kids. She starts work at 8. She has lunch at noon and finishes work at 6. In the evening, she cooks dinner and reads a book.",
+            "opcoes": [
+              "Ela vê TV.",
+              "Ela faz o jantar e lê um livro.",
+              "Ela vai para o trabalho."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O texto diz: In the evening, she cooks dinner and reads a book."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "He ___ TV in the evening. (watch)"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watches"
+              ]
+            ]
+          },
+          "explicacao": "Watch termina em -ch; com he, ganha -es: watches.",
+          "tagsErro": [
+            "ortografia_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "have",
+              "8",
+              "dinner",
+              "day",
+              "We",
+              "at",
+              "every"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We have dinner at 8 every day.",
+              "Every day we have dinner at 8.",
+              "We have dinner every day at 8."
+            ]
+          },
+          "explicacao": "Sujeito (We) + have dinner + at 8 + every day."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My mom cook dinner on Sundays."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My mom cooks dinner on Sundays."
+            ]
+          },
+          "explicacao": "My mom = she, então o verbo ganha -s: cooks.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My sister ___ in a school.",
+          "opcoes": [
+            "work",
+            "works",
+            "is work"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "My sister = she → works.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "Paulo ___ TV after dinner. (watch)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "watches"
+            ]
+          ]
+        },
+        "explicacao": "Watch + -es com he: watches.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "I have class ___ Monday.",
+          "opcoes": [
+            "at",
+            "in",
+            "on"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Dias da semana com on.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "She ___ English at college. (study)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "studies"
+            ]
+          ]
+        },
+        "explicacao": "Study com she: studies.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "What time is it? (5:30) Escolha a resposta correta.",
+        "conteudo": {
+          "opcoes": [
+            "Is five thirty.",
+            "It's five thirty.",
+            "It's five three."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "5:30 = It's five thirty (com o sujeito it).",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com at, on ou in.",
+        "conteudo": {
+          "texto": "We get up ___ 7 ___ the morning."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "at"
+            ],
+            [
+              "in"
+            ]
+          ]
+        },
+        "explicacao": "Horas com at; partes do dia com in.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My grandfather ___ a big house.",
+          "opcoes": [
+            "has",
+            "have",
+            "haves"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Have com he vira has.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "They ___ to school by bus. (go)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "go"
+            ]
+          ]
+        },
+        "explicacao": "Com they, forma básica: go.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é a forma correta para 4:45?",
+        "conteudo": {
+          "opcoes": [
+            "a quarter to five",
+            "four fifteen",
+            "a quarter past four"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "4:45 = a quarter to five (quinze para as cinco)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "He ___ soccer on Saturdays. (play)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "plays"
+            ]
+          ]
+        },
+        "explicacao": "Play (vogal + y) com he: plays.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Qual é a profissão do Tiago?",
+        "conteudo": {
+          "texto": "Hi, I'm Tiago. I'm a cook in a restaurant in Florianópolis. I get up at 9 a.m. every day. I go to work at 11. The restaurant closes at midnight, so I go to bed late, at 1 a.m. My wife, Lara, is a teacher. She gets up at 6 and goes to bed at 10.",
+          "opcoes": [
+            "He's a cook.",
+            "He's a teacher.",
+            "He's a waiter."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: I'm a cook in a restaurant."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. A que horas o Tiago vai para o trabalho?",
+        "conteudo": {
+          "texto": "Hi, I'm Tiago. I'm a cook in a restaurant in Florianópolis. I get up at 9 a.m. every day. I go to work at 11. The restaurant closes at midnight, so I go to bed late, at 1 a.m. My wife, Lara, is a teacher. She gets up at 6 and goes to bed at 10.",
+          "opcoes": [
+            "At midnight.",
+            "At 11.",
+            "At 9 a.m."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: I go to work at 11."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Quem se levanta mais cedo?",
+        "conteudo": {
+          "texto": "Hi, I'm Tiago. I'm a cook in a restaurant in Florianópolis. I get up at 9 a.m. every day. I go to work at 11. The restaurant closes at midnight, so I go to bed late, at 1 a.m. My wife, Lara, is a teacher. She gets up at 6 and goes to bed at 10.",
+          "opcoes": [
+            "Lara.",
+            "Os dois se levantam no mesmo horário.",
+            "Tiago."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Lara gets up at 6; Tiago gets up at 9 a.m."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. A que horas o restaurante fecha?",
+        "conteudo": {
+          "texto": "Hi, I'm Tiago. I'm a cook in a restaurant in Florianópolis. I get up at 9 a.m. every day. I go to work at 11. The restaurant closes at midnight, so I go to bed late, at 1 a.m. My wife, Lara, is a teacher. She gets up at 6 and goes to bed at 10.",
+          "opcoes": [
+            "At 1 a.m.",
+            "At 10.",
+            "At midnight."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: The restaurant closes at midnight."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase com as palavras.",
+        "conteudo": {
+          "palavras": [
+            "My",
+            "has",
+            "lunch",
+            "noon",
+            "at",
+            "mother"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "My mother has lunch at noon.",
+            "At noon my mother has lunch."
+          ]
+        },
+        "explicacao": "Sujeito + has lunch + at noon.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ele trabalha aos sábados.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "He works on Saturdays.",
+            "He works on Saturday.",
+            "He works every Saturday.",
+            "On Saturdays he works.",
+            "On Saturdays, he works.",
+            "On Saturday he works.",
+            "On Saturday, he works."
+          ]
+        },
+        "explicacao": "Com he: works. \"Aos sábados\" = on Saturdays.",
+        "tagsErro": [
+          "terceira_pessoa_s",
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "She go to the gym in the evening."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She goes to the gym in the evening."
+          ]
+        },
+        "explicacao": "Com she, go vira goes.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "São oito e meia.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "It's eight thirty.",
+            "It's 8:30.",
+            "It's half past eight.",
+            "It's half past 8."
+          ]
+        },
+        "explicacao": "8:30 = It's eight thirty (ou half past eight).",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My uncle ___ in a bank.",
+          "opcoes": [
+            "works",
+            "work",
+            "is work"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "My uncle = he → works.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "Clara ___ the dishes after dinner. (wash)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "washes"
+            ]
+          ]
+        },
+        "explicacao": "Wash + -es com she: washes.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "The party is ___ Saturday.",
+          "opcoes": [
+            "in",
+            "on",
+            "at"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Dias da semana com on.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "My son ___ math at home. (study)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "studies"
+            ]
+          ]
+        },
+        "explicacao": "Study com he: studies.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "What time is it? (10:15) Escolha a resposta correta.",
+        "conteudo": {
+          "opcoes": [
+            "It's ten fifty.",
+            "Is ten fifteen.",
+            "It's ten fifteen."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "10:15 = It's ten fifteen. Fifty é 50.",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com at, on ou in.",
+        "conteudo": {
+          "texto": "I go to bed ___ 11 ___ night."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "at"
+            ],
+            [
+              "at"
+            ]
+          ]
+        },
+        "explicacao": "Horas com at, e \"à noite\" = at night.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "Our teacher ___ a new car.",
+          "opcoes": [
+            "have",
+            "has",
+            "haves"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Have com he/she vira has.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "We ___ lunch at home. (have)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "have"
+            ]
+          ]
+        },
+        "explicacao": "Com we, forma básica: have.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é a forma correta para 6:30?",
+        "conteudo": {
+          "opcoes": [
+            "half past seven",
+            "half past six",
+            "six thirteen"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "6:30 = half past six (ou six thirty)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+        "conteudo": {
+          "texto": "She ___ to work by car. (go)"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "goes"
+            ]
+          ]
+        },
+        "explicacao": "Go com she: goes.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Em que dias a Helena trabalha?",
+        "conteudo": {
+          "texto": "My name is Helena and I'm a nurse. I work at night, from 7 p.m. to 7 a.m., on Mondays, Wednesdays and Fridays. I get home at 8 in the morning and I go to bed. I get up at 3 in the afternoon. On the weekend, I have lunch with my parents.",
+          "opcoes": [
+            "Terça e quinta.",
+            "Segunda, quarta e sexta.",
+            "Sábado e domingo."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: on Mondays, Wednesdays and Fridays."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. A que horas a Helena começa a trabalhar?",
+        "conteudo": {
+          "texto": "My name is Helena and I'm a nurse. I work at night, from 7 p.m. to 7 a.m., on Mondays, Wednesdays and Fridays. I get home at 8 in the morning and I go to bed. I get up at 3 in the afternoon. On the weekend, I have lunch with my parents.",
+          "opcoes": [
+            "At 3 p.m.",
+            "At 7 a.m.",
+            "At 7 p.m."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Ela trabalha from 7 p.m. to 7 a.m.: começa às 7 da noite."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. A que horas a Helena se levanta?",
+        "conteudo": {
+          "texto": "My name is Helena and I'm a nurse. I work at night, from 7 p.m. to 7 a.m., on Mondays, Wednesdays and Fridays. I get home at 8 in the morning and I go to bed. I get up at 3 in the afternoon. On the weekend, I have lunch with my parents.",
+          "opcoes": [
+            "At 8 in the morning.",
+            "At 3 in the afternoon.",
+            "At 7 in the evening."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: I get up at 3 in the afternoon. Às 8 da manhã ela chega em casa."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. O que a Helena faz no fim de semana?",
+        "conteudo": {
+          "texto": "My name is Helena and I'm a nurse. I work at night, from 7 p.m. to 7 a.m., on Mondays, Wednesdays and Fridays. I get home at 8 in the morning and I go to bed. I get up at 3 in the afternoon. On the weekend, I have lunch with my parents.",
+          "opcoes": [
+            "Almoça com os pais.",
+            "Vai para a escola.",
+            "Trabalha à noite."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: On the weekend, I have lunch with my parents."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase com as palavras.",
+        "conteudo": {
+          "palavras": [
+            "class",
+            "thirty",
+            "seven",
+            "Our",
+            "starts",
+            "at"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Our class starts at seven thirty.",
+            "At seven thirty our class starts."
+          ]
+        },
+        "explicacao": "Sujeito (Our class = it) + starts + at seven thirty.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ela acorda às seis.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "She wakes up at six.",
+            "She wakes up at 6.",
+            "She wakes up at 6:00.",
+            "She wakes up at six o'clock.",
+            "She wakes up at 6 o'clock.",
+            "She wakes up at 6 a.m..",
+            "She wakes up at six a.m..",
+            "She gets up at six.",
+            "She gets up at 6.",
+            "She gets up at 6:00.",
+            "She gets up at six o'clock.",
+            "She gets up at 6 o'clock.",
+            "She gets up at 6 a.m..",
+            "She gets up at six a.m.."
+          ]
+        },
+        "explicacao": "Acordar = wake up; com she, wakes up. Às seis = at six.",
+        "tagsErro": [
+          "terceira_pessoa_s",
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "My father watchs the news on TV."
+        },
+        "gabarito": {
+          "aceitas": [
+            "My father watches the news on TV."
+          ]
+        },
+        "explicacao": "Watch termina em -ch; com he, ganha -es: watches.",
+        "tagsErro": [
+          "ortografia_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós estudamos à noite.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We study at night.",
+            "We study in the evening.",
+            "We study in the evenings.",
+            "At night we study.",
+            "At night, we study."
+          ]
+        },
+        "explicacao": "\"À noite\" = at night (ou in the evening). Com we, forma básica: study.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      }
+    ]
+  }
+}

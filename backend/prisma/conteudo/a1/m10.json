@@ -1,0 +1,3118 @@
+{
+  "slug": "a1-m10",
+  "ordem": 10,
+  "titulo": "Yesterday & tomorrow",
+  "tema": "O fim de semana passado e os planos para o próximo",
+  "descricao": "Conte o que você fez ontem e no fim de semana, faça perguntas sobre o passado e fale dos seus planos para amanhã e para a próxima semana.",
+  "canDos": [
+    "Dizer onde eu estava e como as coisas estavam no passado.",
+    "Contar o que fiz ontem e no fim de semana passado.",
+    "Perguntar e responder sobre ações no passado.",
+    "Falar dos meus planos para o futuro próximo.",
+    "Usar expressões de tempo de passado e de futuro."
+  ],
+  "gramatica": "Was/were; passado simples de verbos regulares (ortografia do -ed) e irregulares comuns; perguntas e negativas com did; be going to para planos.",
+  "vocabulario": "Verbos irregulares comuns e expressões de tempo (yesterday, last week, ago, tomorrow, next weekend).",
+  "funcao": "Contar o fim de semana passado e falar de planos.",
+  "pronuncia": "Terminação -ed: /t/ em worked, /d/ em played e sílaba extra /ɪd/ só depois de t ou d (wanted, needed).",
+  "licoes": [
+    {
+      "slug": "a1-m10-l1",
+      "ordem": 1,
+      "titulo": "Where were you yesterday?",
+      "objetivo": "Dizer onde você estava e como as coisas estavam no passado com was e were.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Was e were são o passado do verbo be. Com I, he, she e it usamos was; com you, we e they usamos were: I was at home. They were at school.",
+          "Em português, \"eu estava\", \"eu era\" e \"eu fiquei\" (cansado, feliz) muitas vezes viram was em inglês: I was tired yesterday = Eu estava cansado ontem.",
+          "Para negar, use wasn't e weren't. Para perguntar, coloque was/were antes do sujeito: Were you at the party? — Yes, I was. / No, I wasn't."
+        ],
+        "regras": [
+          "I / He / She / It was → I was at home.",
+          "You / We / They were → We were at the beach.",
+          "Negativa: wasn't / weren't → It wasn't cold.",
+          "Pergunta: Was she...? / Were you...? → Yes, I was. / No, they weren't.",
+          "Tempo passado: yesterday, last night, last week, last Saturday."
+        ],
+        "notaContrastiva": "Cuidado com a concordância: não diga *We was at the party* → diga *We were at the party*. E não esqueça o sujeito: não diga *Was cold yesterday* → diga *It was cold yesterday*.",
+        "exemplos": [
+          {
+            "en": "I was at home last night.",
+            "pt": "Eu estava em casa ontem à noite."
+          },
+          {
+            "en": "My parents were in Rio last week.",
+            "pt": "Meus pais estavam no Rio semana passada."
+          },
+          {
+            "en": "It was very hot yesterday.",
+            "pt": "Estava muito quente ontem."
+          },
+          {
+            "en": "The movie wasn't good.",
+            "pt": "O filme não era bom."
+          },
+          {
+            "en": "Were you at school yesterday? — No, I wasn't.",
+            "pt": "Você estava na escola ontem? — Não."
+          },
+          {
+            "en": "Where were you on Sunday?",
+            "pt": "Onde você estava no domingo?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "was / were",
+            "pt": "era, estava, foi (passado de be)"
+          },
+          {
+            "en": "yesterday",
+            "pt": "ontem"
+          },
+          {
+            "en": "last night",
+            "pt": "ontem à noite"
+          },
+          {
+            "en": "last week",
+            "pt": "semana passada"
+          },
+          {
+            "en": "last Saturday",
+            "pt": "sábado passado"
+          },
+          {
+            "en": "tired",
+            "pt": "cansado"
+          },
+          {
+            "en": "sick",
+            "pt": "doente"
+          },
+          {
+            "en": "party",
+            "pt": "festa"
+          },
+          {
+            "en": "game",
+            "pt": "jogo"
+          },
+          {
+            "en": "movie",
+            "pt": "filme"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "I ___ at home last night.",
+            "opcoes": [
+              "am",
+              "were",
+              "was"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Last night indica passado. Com I, o passado de be é was: I was at home."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "My parents ___ in Rio last week.",
+            "opcoes": [
+              "are",
+              "were",
+              "was"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "My parents = they → were. Last week indica passado."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com was, wasn't, were ou weren't.",
+          "conteudo": {
+            "texto": "Bia ___ at school yesterday because she was sick. She ___ at home."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "wasn't",
+                "was not"
+              ],
+              [
+                "was"
+              ]
+            ]
+          },
+          "explicacao": "Ela estava doente, então não estava na escola: wasn't. Ela estava em casa: was. Com she usamos was/wasn't.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta e a resposta curta.",
+          "conteudo": {
+            "texto": "___ you at the party last Saturday? — Yes, I ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Were"
+              ],
+              [
+                "was"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta com you → Were you...? Na resposta, o sujeito é I → Yes, I was.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "Where",
+              "last",
+              "were",
+              "night",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where were you last night?"
+            ]
+          },
+          "explicacao": "Palavra interrogativa + were + sujeito + expressão de tempo: Where were you last night?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Were you tired yesterday?",
+              "Was the movie good?",
+              "Where were you on Sunday?",
+              "Was Pedro at work?",
+              "Were your parents at home?"
+            ],
+            "direita": [
+              "No, it wasn't.",
+              "No, they weren't.",
+              "Yes, I was.",
+              "At my grandma's house.",
+              "Yes, he was."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              3,
+              4,
+              1
+            ]
+          },
+          "explicacao": "A resposta curta repete was/were concordando com o sujeito: you → I was; the movie → it wasn't; Pedro → he was; your parents → they weren't."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We was at the beach last weekend."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We were at the beach last weekend."
+            ]
+          },
+          "explicacao": "Com we, o passado de be é were: We were at the beach."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu estava cansado ontem.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I was tired yesterday.",
+              "Yesterday I was tired.",
+              "Yesterday, I was tired."
+            ]
+          },
+          "explicacao": "\"Eu estava\" = I was. Cansado = tired. Yesterday pode ficar no fim ou no começo."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles não estavam em casa.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They were not at home.",
+              "They were not home."
+            ]
+          },
+          "explicacao": "They + weren't (were not) + at home. Em inglês americano também se diz They weren't home.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "It ___ very hot yesterday.",
+            "opcoes": [
+              "were",
+              "was",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Yesterday = passado; it → was: It was very hot yesterday."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta e a resposta curta.",
+          "conteudo": {
+            "texto": "___ your brother at the game last night? — No, he ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Was"
+              ],
+              [
+                "wasn't",
+                "was not"
+              ]
+            ]
+          },
+          "explicacao": "Your brother = he → Was...? / No, he wasn't.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa.",
+          "conteudo": {
+            "palavras": [
+              "I",
+              "wasn't",
+              "yesterday",
+              "school",
+              "at"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I wasn't at school yesterday.",
+              "Yesterday I wasn't at school."
+            ]
+          },
+          "explicacao": "I + wasn't + lugar + tempo. Yesterday pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você estava na escola ontem?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Were you at school yesterday?",
+              "Were you in school yesterday?"
+            ]
+          },
+          "explicacao": "Pergunta: Were + you + ...? Na escola = at school.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Was very cold last night."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It was very cold last night.",
+              "Last night it was very cold."
+            ]
+          },
+          "explicacao": "Para falar do tempo, o sujeito it é obrigatório também no passado: It was very cold.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m10-l2",
+      "ordem": 2,
+      "titulo": "I watched a movie",
+      "objetivo": "Contar o que você fez no passado com verbos regulares (-ed).",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "O passado simples fala de ações que começaram e terminaram no passado. Nos verbos regulares, acrescentamos -ed: work → worked, play → played, watch → watched.",
+          "O verbo é igual para todas as pessoas: I worked, she worked, they worked. Nada de -s na terceira pessoa no passado.",
+          "Atenção à escrita: verbos terminados em -e só ganham -d (live → lived); consoante + y vira -ied (study → studied); verbos curtos com consoante + vogal + consoante dobram a última letra (stop → stopped). No inglês americano, travel → traveled (com um l só)."
+        ],
+        "regras": [
+          "Regra geral: + -ed → worked, played, watched.",
+          "Terminado em -e: + -d → lived, danced.",
+          "Consoante + y: -y vira -ied → study → studied, try → tried.",
+          "Consoante + vogal + consoante: dobre → stop → stopped.",
+          "Mesma forma para todas as pessoas: I/she/they worked."
+        ],
+        "notaContrastiva": "Não diga *He studyed* → diga *He studied*. E na pronúncia, o -ed só é uma sílaba extra depois de t ou d (wanted, needed); em worked e played ele não vira sílaba: diga \"workt\", não \"work-ed\".",
+        "exemplos": [
+          {
+            "en": "I watched a movie last night.",
+            "pt": "Eu assisti a um filme ontem à noite."
+          },
+          {
+            "en": "She studied for the test yesterday.",
+            "pt": "Ela estudou para a prova ontem."
+          },
+          {
+            "en": "We lived in Fortaleza in 2019.",
+            "pt": "Nós moramos em Fortaleza em 2019."
+          },
+          {
+            "en": "They played volleyball last Sunday.",
+            "pt": "Eles jogaram vôlei domingo passado."
+          },
+          {
+            "en": "The bus stopped near the bakery.",
+            "pt": "O ônibus parou perto da padaria."
+          },
+          {
+            "en": "My parents traveled to Chile last year.",
+            "pt": "Meus pais viajaram para o Chile ano passado."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "work → worked",
+            "pt": "trabalhar"
+          },
+          {
+            "en": "play → played",
+            "pt": "jogar, brincar"
+          },
+          {
+            "en": "watch → watched",
+            "pt": "assistir"
+          },
+          {
+            "en": "study → studied",
+            "pt": "estudar"
+          },
+          {
+            "en": "live → lived",
+            "pt": "morar"
+          },
+          {
+            "en": "stop → stopped",
+            "pt": "parar"
+          },
+          {
+            "en": "visit → visited",
+            "pt": "visitar"
+          },
+          {
+            "en": "walk → walked",
+            "pt": "caminhar"
+          },
+          {
+            "en": "cook → cooked",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "listen → listened",
+            "pt": "ouvir"
+          },
+          {
+            "en": "travel → traveled",
+            "pt": "viajar"
+          },
+          {
+            "en": "clean → cleaned",
+            "pt": "limpar"
+          },
+          {
+            "en": "call → called",
+            "pt": "ligar, telefonar"
+          },
+          {
+            "en": "last year",
+            "pt": "ano passado"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual é o passado correto do verbo study?",
+          "conteudo": {
+            "opcoes": [
+              "studed",
+              "studied",
+              "studyed"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Consoante + y: o y vira -ied → studied.",
+          "tagsErro": [
+            "ortografia_ed"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Last Saturday, Carla ___ her grandparents.",
+            "opcoes": [
+              "visit",
+              "visited",
+              "visits"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Last Saturday indica passado → visited."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "Yesterday I ___ (watch) a movie and my sister ___ (clean) her room."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watched"
+              ],
+              [
+                "cleaned"
+              ]
+            ]
+          },
+          "explicacao": "Verbos regulares ganham -ed: watched, cleaned. A forma é a mesma para I e para my sister."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "We ___ (live) in Salvador in 2020. Yesterday the bus ___ (stop) near my house."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "lived"
+              ],
+              [
+                "stopped"
+              ]
+            ]
+          },
+          "explicacao": "Live termina em -e → só -d: lived. Stop dobra o p: stopped.",
+          "tagsErro": [
+            "ortografia_ed"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "played",
+              "Sunday",
+              "They",
+              "soccer",
+              "last"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "They played soccer last Sunday.",
+              "Last Sunday they played soccer."
+            ]
+          },
+          "explicacao": "Sujeito + verbo no passado + complemento + tempo. Last Sunday pode ficar no fim ou no começo."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo ao seu passado.",
+          "conteudo": {
+            "esquerda": [
+              "dance",
+              "travel",
+              "stop",
+              "try",
+              "cook",
+              "want"
+            ],
+            "direita": [
+              "danced",
+              "tried",
+              "stopped",
+              "traveled",
+              "cooked",
+              "wanted"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              3,
+              2,
+              1,
+              4,
+              5
+            ]
+          },
+          "explicacao": "Dance → danced (só -d); travel → traveled (inglês americano, um l); stop → stopped (dobra); try → tried (y → ied); cook → cooked e want → wanted (regra geral).",
+          "tagsErro": [
+            "ortografia_ed"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "He studyed English last night."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He studied English last night."
+            ]
+          },
+          "explicacao": "Consoante + y vira -ied no passado: study → studied.",
+          "tagsErro": [
+            "ortografia_ed"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu trabalhei muito ontem.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I worked a lot yesterday.",
+              "Yesterday I worked a lot.",
+              "Yesterday, I worked a lot.",
+              "I worked hard yesterday.",
+              "Yesterday I worked hard.",
+              "Yesterday, I worked hard.",
+              "I worked very hard yesterday.",
+              "Yesterday I worked very hard.",
+              "Yesterday, I worked very hard."
+            ]
+          },
+          "explicacao": "Trabalhei = worked. \"Muito\" pode ser a lot ou hard: I worked a lot yesterday."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós assistimos a um filme ontem à noite.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We watched a movie last night.",
+              "Last night we watched a movie.",
+              "Last night, we watched a movie.",
+              "We watched a film last night.",
+              "Last night we watched a film.",
+              "Last night, we watched a film.",
+              "We saw a movie last night.",
+              "Last night we saw a movie.",
+              "Last night, we saw a movie."
+            ]
+          },
+          "explicacao": "Assistir a um filme = watch a movie. \"Ontem à noite\" é last night (não \"yesterday night\").",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "She ___ to music after dinner yesterday.",
+            "opcoes": [
+              "listens",
+              "listen",
+              "listened"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Yesterday indica passado → listened."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "They ___ (travel) to Chile last year."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "traveled",
+                "travelled"
+              ]
+            ]
+          },
+          "explicacao": "No inglês americano: traveled (um l). A forma britânica travelled também é aceita.",
+          "tagsErro": [
+            "ortografia_ed"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "called",
+              "I",
+              "Ana",
+              "night",
+              "last"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I called Ana last night.",
+              "Last night I called Ana."
+            ]
+          },
+          "explicacao": "I + called + Ana + last night. A expressão de tempo pode ir para o começo."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela morou em Recife.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She lived in Recife."
+            ]
+          },
+          "explicacao": "Morar = live; no passado, lived (live termina em -e, então só ganha -d)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Yesterday we walk to the park."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Yesterday we walked to the park.",
+              "Yesterday, we walked to the park.",
+              "We walked to the park yesterday."
+            ]
+          },
+          "explicacao": "Yesterday pede passado: walk → walked."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m10-l3",
+      "ordem": 3,
+      "titulo": "I went to the beach",
+      "objetivo": "Usar os verbos irregulares mais comuns no passado.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Muitos verbos muito usados são irregulares: o passado não termina em -ed e precisa ser memorizado. Por exemplo: go → went, have → had, see → saw, eat → ate.",
+          "Assim como os regulares, os irregulares têm a mesma forma para todas as pessoas: I went, she went, they went.",
+          "Uma boa estratégia é aprender os verbos em grupos e usá-los em frases sobre a sua vida: Last weekend I went to the beach, ate fish and saw my friends."
+        ],
+        "regras": [
+          "go → went · have → had · see → saw · eat → ate",
+          "make → made · get → got · come → came · do → did",
+          "buy → bought · take → took · drink → drank · write → wrote",
+          "read → read · sleep → slept · meet → met · give → gave",
+          "say → said · sit → sat · run → ran · swim → swam"
+        ],
+        "notaContrastiva": "Não acrescente -ed em verbos irregulares: não diga *I goed* nem *I buyed* → diga *I went* e *I bought*.",
+        "exemplos": [
+          {
+            "en": "Last weekend we went to the beach.",
+            "pt": "No fim de semana passado nós fomos à praia."
+          },
+          {
+            "en": "I had pizza for dinner.",
+            "pt": "Eu comi pizza no jantar."
+          },
+          {
+            "en": "She saw her friends at the mall.",
+            "pt": "Ela viu os amigos no shopping."
+          },
+          {
+            "en": "My mom made a chocolate cake.",
+            "pt": "Minha mãe fez um bolo de chocolate."
+          },
+          {
+            "en": "They bought new sneakers.",
+            "pt": "Eles compraram tênis novos."
+          },
+          {
+            "en": "He took the bus to work.",
+            "pt": "Ele pegou o ônibus para o trabalho."
+          },
+          {
+            "en": "I slept nine hours last night.",
+            "pt": "Eu dormi nove horas ontem à noite."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "go → went",
+            "pt": "ir"
+          },
+          {
+            "en": "have → had",
+            "pt": "ter, comer/tomar"
+          },
+          {
+            "en": "see → saw",
+            "pt": "ver"
+          },
+          {
+            "en": "eat → ate",
+            "pt": "comer"
+          },
+          {
+            "en": "make → made",
+            "pt": "fazer"
+          },
+          {
+            "en": "get → got",
+            "pt": "pegar, receber, chegar"
+          },
+          {
+            "en": "come → came",
+            "pt": "vir"
+          },
+          {
+            "en": "do → did",
+            "pt": "fazer"
+          },
+          {
+            "en": "buy → bought",
+            "pt": "comprar"
+          },
+          {
+            "en": "take → took",
+            "pt": "pegar, levar"
+          },
+          {
+            "en": "drink → drank",
+            "pt": "beber"
+          },
+          {
+            "en": "write → wrote",
+            "pt": "escrever"
+          },
+          {
+            "en": "sleep → slept",
+            "pt": "dormir"
+          },
+          {
+            "en": "meet → met",
+            "pt": "conhecer, encontrar"
+          },
+          {
+            "en": "give → gave",
+            "pt": "dar"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Last weekend we ___ to the beach.",
+            "opcoes": [
+              "goed",
+              "go",
+              "went"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Go é irregular: o passado é went. \"Goed\" não existe.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ a sandwich for lunch yesterday.",
+            "opcoes": [
+              "ate",
+              "eats",
+              "eated",
+              "eating"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Eat é irregular: o passado é ate.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "Yesterday I ___ (see) my friends and we ___ (have) pizza."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "saw"
+              ],
+              [
+                "had"
+              ]
+            ]
+          },
+          "explicacao": "See → saw; have → had. Os dois são irregulares.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "Last night Mom ___ (make) a chocolate cake and my brother ___ (eat) half of it!"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "made"
+              ],
+              [
+                "ate"
+              ]
+            ]
+          },
+          "explicacao": "Make → made; eat → ate. Nada de \"maked\" ou \"eated\".",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "dress",
+              "red",
+              "She",
+              "a",
+              "bought"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She bought a red dress."
+            ]
+          },
+          "explicacao": "Sujeito + bought (passado de buy) + a + cor + roupa: She bought a red dress."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo ao seu passado.",
+          "conteudo": {
+            "esquerda": [
+              "go",
+              "buy",
+              "take",
+              "come",
+              "get",
+              "do"
+            ],
+            "direita": [
+              "came",
+              "bought",
+              "got",
+              "did",
+              "took",
+              "went"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              1,
+              4,
+              0,
+              2,
+              3
+            ]
+          },
+          "explicacao": "Todos esses verbos são irregulares e precisam ser memorizados.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We goed to the movies last Friday."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We went to the movies last Friday."
+            ]
+          },
+          "explicacao": "Go é irregular: o passado é went.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu comi pizza ontem à noite.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I ate pizza last night.",
+              "Last night I ate pizza.",
+              "Last night, I ate pizza.",
+              "I had pizza last night.",
+              "Last night I had pizza.",
+              "Last night, I had pizza."
+            ]
+          },
+          "explicacao": "Comi = ate (ou had, muito comum para refeições). Ontem à noite = last night.",
+          "tagsErro": [
+            "verbo_irregular",
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela escreveu uma carta para a avó.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She wrote a letter to her grandmother.",
+              "She wrote a letter to her grandma.",
+              "She wrote her grandmother a letter.",
+              "She wrote her grandma a letter."
+            ]
+          },
+          "explicacao": "Write → wrote. Escrever para alguém = write to someone. \"A avó\" dela = her grandmother (ou her grandma): em inglês usamos o possessivo.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Paulo ___ the bus to school yesterday.",
+            "opcoes": [
+              "took",
+              "takes",
+              "taked"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Take é irregular: o passado é took.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": {
+            "texto": "I ___ (sleep) nine hours last night."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "slept"
+              ]
+            ]
+          },
+          "explicacao": "Sleep → slept (irregular).",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "came",
+              "cousins",
+              "My",
+              "Sunday",
+              "on"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My cousins came on Sunday.",
+              "On Sunday my cousins came."
+            ]
+          },
+          "explicacao": "Come → came. On Sunday pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós fizemos o dever de casa.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We did our homework.",
+              "We did the homework.",
+              "We did homework."
+            ]
+          },
+          "explicacao": "Fazer dever de casa = do homework; no passado, did. Em inglês é comum usar o possessivo: our homework.",
+          "tagsErro": [
+            "verbo_irregular",
+            "make_do"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I buyed a new cell phone last week."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I bought a new cell phone last week.",
+              "Last week I bought a new cell phone."
+            ]
+          },
+          "explicacao": "Buy é irregular: o passado é bought.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m10-l4",
+      "ordem": 4,
+      "titulo": "Did you have a good weekend?",
+      "objetivo": "Fazer perguntas e frases negativas no passado com did e didn't.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "No passado simples, as perguntas e as negativas usam o auxiliar did, que serve para todas as pessoas. É o mesmo raciocínio do do/does do presente simples (Módulo 5).",
+          "Depois de did e didn't, o verbo principal volta para a forma base, porque o did já mostra que é passado: I didn't go (não \"didn't went\"); Did you see...? (não \"Did you saw...?\").",
+          "As respostas curtas são Yes, I did. / No, I didn't. Para perguntas abertas: Where did you go? What did you eat? Lembre: com was/were não usamos did (Were you tired?)."
+        ],
+        "regras": [
+          "Negativa: sujeito + didn't + verbo base → I didn't go.",
+          "Pergunta: Did + sujeito + verbo base? → Did you see it?",
+          "Respostas curtas: Yes, I did. / No, she didn't.",
+          "Wh- + did + sujeito + verbo base? → Where did you go?",
+          "Com was/were não se usa did → Were you at home?"
+        ],
+        "notaContrastiva": "Depois de did/didn't, o verbo fica na forma base. Não diga *I didn't went* → diga *I didn't go*. Não diga *Did you saw the game?* → diga *Did you see the game?*",
+        "exemplos": [
+          {
+            "en": "Did you have a good weekend? — Yes, I did.",
+            "pt": "Você teve um bom fim de semana? — Sim."
+          },
+          {
+            "en": "I didn't go to school yesterday.",
+            "pt": "Eu não fui à escola ontem."
+          },
+          {
+            "en": "Where did you go on vacation?",
+            "pt": "Aonde você foi nas férias?"
+          },
+          {
+            "en": "What did you eat for lunch?",
+            "pt": "O que você comeu no almoço?"
+          },
+          {
+            "en": "She didn't like the movie.",
+            "pt": "Ela não gostou do filme."
+          },
+          {
+            "en": "Did they call you? — No, they didn't.",
+            "pt": "Eles ligaram para você? — Não."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "did / didn't",
+            "pt": "auxiliar do passado (pergunta / negativa)"
+          },
+          {
+            "en": "weekend",
+            "pt": "fim de semana"
+          },
+          {
+            "en": "vacation",
+            "pt": "férias"
+          },
+          {
+            "en": "lunch",
+            "pt": "almoço"
+          },
+          {
+            "en": "arrive",
+            "pt": "chegar"
+          },
+          {
+            "en": "when",
+            "pt": "quando"
+          },
+          {
+            "en": "like",
+            "pt": "gostar"
+          },
+          {
+            "en": "call",
+            "pt": "ligar, telefonar"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I didn't ___ to school yesterday.",
+            "opcoes": [
+              "went",
+              "go",
+              "goes"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Depois de didn't, o verbo fica na forma base: I didn't go.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que começa a pergunta.",
+          "conteudo": {
+            "texto": "___ you see the game last night?",
+            "opcoes": [
+              "Was",
+              "Did",
+              "Do",
+              "Were"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "See é um verbo comum (não é be), e last night é passado → Did you see...?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta e a resposta curta.",
+          "conteudo": {
+            "texto": "___ Lucas call you yesterday? — No, he ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Did"
+              ],
+              [
+                "didn't",
+                "did not"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta no passado: Did + sujeito + verbo base. Resposta curta: No, he didn't.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete as perguntas com uma palavra.",
+          "conteudo": {
+            "texto": "Where ___ you go last weekend? — To Ouro Preto. What ___ you buy there? — A T-shirt."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "did"
+              ],
+              [
+                "did"
+              ]
+            ]
+          },
+          "explicacao": "Wh- + did + sujeito + verbo base: Where did you go? What did you buy?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa.",
+          "conteudo": {
+            "palavras": [
+              "TV",
+              "We",
+              "yesterday",
+              "didn't",
+              "watch"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We didn't watch TV yesterday.",
+              "Yesterday we didn't watch TV."
+            ]
+          },
+          "explicacao": "Sujeito + didn't + verbo base + complemento. Yesterday pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Did you like the movie?",
+              "Where did they go?",
+              "What did she eat?",
+              "Did he call you?",
+              "When did you arrive?"
+            ],
+            "direita": [
+              "No, he didn't.",
+              "Yes, I did. It was great.",
+              "A salad.",
+              "Last night.",
+              "To the beach."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              4,
+              2,
+              0,
+              3
+            ]
+          },
+          "explicacao": "Where → lugar; What → coisa; When → tempo. Perguntas com Did pedem resposta curta com did/didn't."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She didn't came to the party."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She didn't come to the party."
+            ]
+          },
+          "explicacao": "Depois de didn't, o verbo fica na forma base: come, não came.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não fui à escola ontem.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I did not go to school yesterday.",
+              "Yesterday I did not go to school.",
+              "Yesterday, I did not go to school."
+            ]
+          },
+          "explicacao": "Negativa no passado: didn't + go (forma base). \"Fui à escola\" = went to school; na negativa, didn't go to school.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você comeu no almoço?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What did you eat for lunch?",
+              "What did you have for lunch?",
+              "What did you eat at lunch?"
+            ]
+          },
+          "explicacao": "Wh- + did + you + verbo base: What did you eat for lunch? \"No almoço\" = for lunch.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta.",
+          "conteudo": {
+            "texto": "Did your parents travel last summer? — Yes, they ___.",
+            "opcoes": [
+              "traveled",
+              "did",
+              "were",
+              "do"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "A pergunta usa did, então a resposta curta também: Yes, they did."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma negativa do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "My sister ___ (not / like) the movie."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "didn't like",
+                "did not like"
+              ]
+            ]
+          },
+          "explicacao": "Negativa no passado: didn't + verbo base → didn't like.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "What",
+              "did",
+              "buy",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What did you buy?"
+            ]
+          },
+          "explicacao": "What + did + you + buy (forma base)?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você viu a Maria ontem?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Did you see Maria yesterday?"
+            ]
+          },
+          "explicacao": "Did + you + see (forma base) + Maria + yesterday? Sem artigo antes do nome.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": {
+            "frase": "Did you went to the party?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Did you go to the party?"
+            ]
+          },
+          "explicacao": "Depois de did, o verbo fica na forma base: go, não went.",
+          "tagsErro": [
+            "do_support"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m10-l5",
+      "ordem": 5,
+      "titulo": "I'm going to travel",
+      "objetivo": "Falar de planos para o futuro com be going to.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de planos e intenções, usamos be going to + verbo na forma base: I'm going to travel next month. É como o nosso \"vou viajar\".",
+          "O be (am/is/are) muda conforme o sujeito, como no present continuous: I'm going to, she's going to, they're going to. Para negar: I'm not going to, he isn't going to.",
+          "Para perguntar, o be vai para antes do sujeito: Are you going to study tonight? What are you going to do tomorrow?"
+        ],
+        "regras": [
+          "I am / He is / They are + going to + verbo base.",
+          "Negativa: I'm not / She isn't / We aren't going to + verbo.",
+          "Pergunta: Are you going to + verbo? → Yes, I am. / No, I'm not.",
+          "What are you going to do...?",
+          "Pistas: tomorrow, tonight, next week, next weekend, this weekend."
+        ],
+        "notaContrastiva": "Não esqueça o be: não diga *I going to study* → diga *I'm going to study*. E depois de going to o verbo fica na forma base: não diga *She's going to plays* → diga *She's going to play*.",
+        "exemplos": [
+          {
+            "en": "I'm going to travel next month.",
+            "pt": "Eu vou viajar no mês que vem."
+          },
+          {
+            "en": "She's going to cook tonight.",
+            "pt": "Ela vai cozinhar hoje à noite."
+          },
+          {
+            "en": "We aren't going to work tomorrow.",
+            "pt": "Nós não vamos trabalhar amanhã."
+          },
+          {
+            "en": "Are you going to watch the game? — Yes, I am.",
+            "pt": "Você vai assistir ao jogo? — Sim."
+          },
+          {
+            "en": "What are you going to do this weekend?",
+            "pt": "O que você vai fazer neste fim de semana?"
+          },
+          {
+            "en": "My parents are going to buy a new car next year.",
+            "pt": "Meus pais vão comprar um carro novo no ano que vem."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "be going to",
+            "pt": "ir + verbo (planos)"
+          },
+          {
+            "en": "tomorrow",
+            "pt": "amanhã"
+          },
+          {
+            "en": "tonight",
+            "pt": "hoje à noite"
+          },
+          {
+            "en": "next week",
+            "pt": "semana que vem"
+          },
+          {
+            "en": "next weekend",
+            "pt": "no próximo fim de semana"
+          },
+          {
+            "en": "next month",
+            "pt": "mês que vem"
+          },
+          {
+            "en": "next year",
+            "pt": "ano que vem"
+          },
+          {
+            "en": "this weekend",
+            "pt": "neste fim de semana"
+          },
+          {
+            "en": "plan",
+            "pt": "plano"
+          },
+          {
+            "en": "holiday",
+            "pt": "feriado"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "Tomorrow I ___ going to visit my aunt.",
+            "opcoes": [
+              "is",
+              "are",
+              "am"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Com I usamos am: I am going to (I'm going to).",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "They're going to ___ a party next Saturday.",
+            "opcoes": [
+              "had",
+              "have",
+              "has",
+              "having"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Depois de going to, o verbo fica na forma base: have."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "We ___ going to watch a movie tonight. Pedro ___ going to come too."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ],
+              [
+                "is"
+              ]
+            ]
+          },
+          "explicacao": "We → are going to. Pedro = he → is going to.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra para formar a negativa.",
+          "conteudo": {
+            "texto": "I'm ___ going to work tomorrow. It's a holiday!"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "not"
+              ]
+            ]
+          },
+          "explicacao": "Negativa: I'm not going to work. O not vem logo depois do be.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "tomorrow",
+              "you",
+              "What",
+              "to",
+              "do",
+              "are",
+              "going"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What are you going to do tomorrow?"
+            ]
+          },
+          "explicacao": "What + are + you + going to + do + tomorrow?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada situação ao plano.",
+          "conteudo": {
+            "esquerda": [
+              "I'm hungry.",
+              "It's very hot.",
+              "My cell phone is very old.",
+              "Ana has a test tomorrow.",
+              "The kids are tired."
+            ],
+            "direita": [
+              "We're going to swim in the pool.",
+              "She's going to study tonight.",
+              "I'm going to buy a new one.",
+              "I'm going to make a sandwich.",
+              "They're going to sleep early."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              0,
+              2,
+              1,
+              4
+            ]
+          },
+          "explicacao": "Cada plano responde à situação, e o be concorda com o sujeito: she's going to, they're going to, we're going to."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I going to study tonight."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm going to study tonight.",
+              "Tonight I'm going to study."
+            ]
+          },
+          "explicacao": "Faltou o be: I'm going to study. O going to sempre vem com am/is/are.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu vou viajar no próximo mês.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am going to travel next month.",
+              "Next month I am going to travel.",
+              "Next month, I am going to travel."
+            ]
+          },
+          "explicacao": "Plano → am going to + travel. \"No próximo mês\" = next month, sem preposição.",
+          "tagsErro": [
+            "be_omitido",
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela vai cozinhar hoje à noite.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is going to cook tonight.",
+              "Tonight she is going to cook.",
+              "Tonight, she is going to cook.",
+              "She is going to cook this evening.",
+              "This evening she is going to cook.",
+              "This evening, she is going to cook."
+            ]
+          },
+          "explicacao": "She is going to + cook. Hoje à noite = tonight (ou this evening).",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta.",
+          "conteudo": {
+            "texto": "Are you going to play soccer tomorrow? — Yes, I ___.",
+            "opcoes": [
+              "am",
+              "will",
+              "going",
+              "do"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A pergunta começa com Are, então a resposta curta usa o be: Yes, I am."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "My parents ___ going to buy a new car next year."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "My parents = they → are going to.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa.",
+          "conteudo": {
+            "palavras": [
+              "going",
+              "work",
+              "isn't",
+              "to",
+              "tomorrow",
+              "She"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She isn't going to work tomorrow.",
+              "Tomorrow she isn't going to work."
+            ]
+          },
+          "explicacao": "She + isn't + going to + work. Tomorrow pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós vamos visitar o Lucas amanhã.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are going to visit Lucas tomorrow.",
+              "Tomorrow we are going to visit Lucas.",
+              "Tomorrow, we are going to visit Lucas."
+            ]
+          },
+          "explicacao": "We are going to + visit. Sem artigo antes do nome: visit Lucas.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "He is going to plays tennis on Saturday."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is going to play tennis on Saturday."
+            ]
+          },
+          "explicacao": "Depois de going to, o verbo fica na forma base: play, sem -s.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m10-l6",
+      "ordem": 6,
+      "titulo": "Last weekend, next weekend",
+      "objetivo": "Usar expressões de tempo para contar o que você fez e o que vai fazer.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "As expressões de tempo mostram se falamos do passado ou do futuro. Passado: yesterday, last night, last week, last Saturday, two days ago. Futuro (planos): tomorrow, tonight, next week, next weekend.",
+          "Last e next não levam artigo nem preposição: last week (não \"the last week\" nem \"in the last week\"), next Saturday (não \"on next Saturday\"). \"Ontem à noite\" é last night, e não \"yesterday night\".",
+          "Ago significa \"atrás\" e vem depois do período: two days ago (há dois dias), a week ago. Com essas expressões, usamos o passado simples; com tomorrow e next, usamos going to."
+        ],
+        "regras": [
+          "Passado: yesterday, last night, last week, last Saturday.",
+          "Período + ago: two days ago, three weeks ago.",
+          "Futuro: tomorrow, tonight, next week, next weekend.",
+          "Sem the e sem preposição: last week, next Saturday.",
+          "Ontem à noite = last night (não \"yesterday night\")."
+        ],
+        "notaContrastiva": "Não diga *in the last week* nem *in the next weekend* → diga *last week* e *next weekend*, sem preposição e sem the. E não diga *yesterday night* → diga *last night*.",
+        "exemplos": [
+          {
+            "en": "Last weekend I went to a party. Next weekend I'm going to stay home.",
+            "pt": "No fim de semana passado eu fui a uma festa. No próximo vou ficar em casa."
+          },
+          {
+            "en": "I met Ana two days ago.",
+            "pt": "Eu encontrei a Ana há dois dias."
+          },
+          {
+            "en": "We saw the game last night.",
+            "pt": "Nós vimos o jogo ontem à noite."
+          },
+          {
+            "en": "They're going to play volleyball next Saturday.",
+            "pt": "Eles vão jogar vôlei no próximo sábado."
+          },
+          {
+            "en": "I bought this book last week.",
+            "pt": "Eu comprei este livro semana passada."
+          },
+          {
+            "en": "Tomorrow I'm going to call my grandma.",
+            "pt": "Amanhã vou ligar para minha avó."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "yesterday",
+            "pt": "ontem"
+          },
+          {
+            "en": "last night",
+            "pt": "ontem à noite"
+          },
+          {
+            "en": "last week",
+            "pt": "semana passada"
+          },
+          {
+            "en": "two days ago",
+            "pt": "há dois dias"
+          },
+          {
+            "en": "tomorrow",
+            "pt": "amanhã"
+          },
+          {
+            "en": "tonight",
+            "pt": "hoje à noite"
+          },
+          {
+            "en": "next week",
+            "pt": "semana que vem"
+          },
+          {
+            "en": "next weekend",
+            "pt": "no próximo fim de semana"
+          },
+          {
+            "en": "stay home",
+            "pt": "ficar em casa"
+          },
+          {
+            "en": "arrive",
+            "pt": "chegar"
+          },
+          {
+            "en": "volleyball",
+            "pt": "vôlei"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a expressão de tempo correta.",
+          "conteudo": {
+            "texto": "I visited my grandparents ___.",
+            "opcoes": [
+              "last week",
+              "tomorrow",
+              "next week"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Visited está no passado, então precisamos de uma expressão de passado: last week.",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a expressão de tempo correta.",
+          "conteudo": {
+            "texto": "We're going to play volleyball ___.",
+            "opcoes": [
+              "last weekend",
+              "next weekend",
+              "yesterday"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Going to fala de planos para o futuro: next weekend.",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta para cada lacuna.",
+          "conteudo": {
+            "texto": "Last Sunday we ___ to the zoo. Next Sunday we're going to ___ to the beach.",
+            "opcoesPorLacuna": [
+              [
+                "going",
+                "go",
+                "went"
+              ],
+              [
+                "going",
+                "went",
+                "go"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "went"
+              ],
+              [
+                "go"
+              ]
+            ]
+          },
+          "explicacao": "Last Sunday → passado: went. Depois de going to → forma base: go."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "Last night I ___ (watch) a soccer game. Tomorrow I'm going to ___ (watch) a movie."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watched"
+              ],
+              [
+                "watch"
+              ]
+            ]
+          },
+          "explicacao": "Last night → passado: watched. Going to + forma base: watch."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "game",
+              "We",
+              "the",
+              "saw",
+              "last",
+              "night"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We saw the game last night.",
+              "Last night we saw the game."
+            ]
+          },
+          "explicacao": "See → saw. Last night pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada expressão à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "last night",
+              "last week",
+              "two days ago",
+              "tomorrow",
+              "tonight",
+              "next weekend"
+            ],
+            "direita": [
+              "ontem à noite",
+              "no próximo fim de semana",
+              "amanhã",
+              "há dois dias",
+              "semana passada",
+              "hoje à noite"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              4,
+              3,
+              2,
+              5,
+              1
+            ]
+          },
+          "explicacao": "Last = passado; next = futuro; ago = \"atrás\", depois do período (two days ago).",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I saw her yesterday night."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I saw her last night.",
+              "Last night I saw her."
+            ]
+          },
+          "explicacao": "Em inglês, \"ontem à noite\" é last night. \"Yesterday night\" não é usado.",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu comprei este livro semana passada.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I bought this book last week.",
+              "Last week I bought this book.",
+              "Last week, I bought this book."
+            ]
+          },
+          "explicacao": "Buy → bought. Semana passada = last week, sem the e sem preposição.",
+          "tagsErro": [
+            "verbo_irregular",
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós vamos jogar vôlei no próximo sábado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are going to play volleyball next Saturday.",
+              "Next Saturday we are going to play volleyball.",
+              "Next Saturday, we are going to play volleyball."
+            ]
+          },
+          "explicacao": "Plano → are going to play. \"No próximo sábado\" = next Saturday, sem on.",
+          "tagsErro": [
+            "expressao_tempo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "I met Ana two days ago.",
+              "I met Ana before two days.",
+              "I meet Ana two days ago.",
+              "I met Ana ago two days."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Ago vem depois do período (two days ago) e pede verbo no passado (met).",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo come na forma correta.",
+          "conteudo": {
+            "texto": "My cousins ___ to my house yesterday, and they're going to ___ again next week."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "came"
+              ],
+              [
+                "come"
+              ]
+            ]
+          },
+          "explicacao": "Yesterday → passado: came. Going to + forma base: come.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "going",
+              "visit",
+              "I'm",
+              "month",
+              "to",
+              "next",
+              "Salvador"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm going to visit Salvador next month.",
+              "Next month I'm going to visit Salvador."
+            ]
+          },
+          "explicacao": "I'm going to + visit + lugar + next month. A expressão de tempo pode ir para o começo."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela chegou ontem à noite.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She arrived last night.",
+              "Last night she arrived.",
+              "Last night, she arrived.",
+              "She got here last night.",
+              "She came last night."
+            ]
+          },
+          "explicacao": "Chegar = arrive → arrived (regular). Ontem à noite = last night.",
+          "tagsErro": [
+            "expressao_tempo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We are going to travel in the next week."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are going to travel next week.",
+              "Next week we are going to travel."
+            ]
+          },
+          "explicacao": "Next week não leva preposição nem the: We're going to travel next week.",
+          "tagsErro": [
+            "preposicao",
+            "expressao_tempo"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "My sister ___ at the mall yesterday.",
+          "opcoes": [
+            "is",
+            "were",
+            "was"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Yesterday = passado; my sister = she → was."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "We ___ a great movie last night.",
+          "opcoes": [
+            "seed",
+            "saw",
+            "see",
+            "seen"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "See é irregular: o passado simples é saw.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": {
+          "texto": "They ___ (study) for the test last Monday."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "studied"
+            ]
+          ]
+        },
+        "explicacao": "Consoante + y → -ied: studied.",
+        "tagsErro": [
+          "ortografia_ed"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que começa a pergunta.",
+        "conteudo": {
+          "texto": "___ you at home last Sunday?",
+          "opcoes": [
+            "Did",
+            "Was",
+            "Were"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "A frase não tem outro verbo: at home pede o be. Com you, o passado é were.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": {
+          "texto": "I didn't ___ (have) breakfast this morning."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "have"
+            ]
+          ]
+        },
+        "explicacao": "Depois de didn't, o verbo fica na forma base: have.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta curta correta.",
+        "conteudo": {
+          "texto": "Did she like the party? — No, she ___.",
+          "opcoes": [
+            "didn't",
+            "not",
+            "wasn't",
+            "doesn't"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "A pergunta usa did, então a resposta curta também: No, she didn't."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a pergunta com uma palavra.",
+        "conteudo": {
+          "texto": "Where ___ you go on vacation last year?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "did"
+            ]
+          ]
+        },
+        "explicacao": "Wh- + did + sujeito + verbo base: Where did you go?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Next weekend, I'm going to ___ my cousins in Natal.",
+          "opcoes": [
+            "visit",
+            "visiting",
+            "visits",
+            "visited"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Depois de going to, o verbo fica na forma base: visit."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "Tomorrow we ___ going to clean the house."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "We → are going to.",
+        "tagsErro": [
+          "be_omitido"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a expressão de tempo correta.",
+        "conteudo": {
+          "texto": "I called my grandmother ___.",
+          "opcoes": [
+            "two days ago",
+            "ago two days",
+            "next week",
+            "tomorrow"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Called está no passado → two days ago. Ago vem depois do período.",
+        "tagsErro": [
+          "expressao_tempo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que a pessoa fez no sábado?",
+        "conteudo": {
+          "texto": "Last weekend was great! On Saturday, I went to the beach with my friends Duda and Igor. The weather was hot and sunny. We played volleyball on the sand and ate fish and rice at a small restaurant. On Sunday, I was very tired, so I stayed at home and watched movies. I didn't go out.",
+          "opcoes": [
+            "Foi ao cinema.",
+            "Visitou os avós.",
+            "Foi à praia com amigos.",
+            "Ficou em casa vendo filmes."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"On Saturday, I went to the beach with my friends Duda and Igor.\" Ver filmes foi no domingo."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que a pessoa ficou em casa no domingo?",
+        "conteudo": {
+          "texto": "Last weekend was great! On Saturday, I went to the beach with my friends Duda and Igor. The weather was hot and sunny. We played volleyball on the sand and ate fish and rice at a small restaurant. On Sunday, I was very tired, so I stayed at home and watched movies. I didn't go out.",
+          "opcoes": [
+            "Porque estava muito cansada.",
+            "Porque estava chovendo.",
+            "Porque estava doente.",
+            "Porque não tinha dinheiro."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"On Sunday, I was very tired, so I stayed at home.\" So = por isso."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Quando vai ser a festa?",
+        "conteudo": {
+          "texto": "Hi Tom, I'm going to have a birthday party next Saturday at my apartment. It's going to start at 7 p.m. My mom is going to make a big chocolate cake, and my brother is going to play the guitar. Are you going to come? Please bring your sister too! See you, Marina",
+          "opcoes": [
+            "Ontem, às 7 da noite.",
+            "Hoje, às 7 da manhã.",
+            "No próximo sábado, às 7 da noite.",
+            "No próximo domingo, à tarde."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"I'm going to have a birthday party next Saturday... It's going to start at 7 p.m.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Quem vai fazer o bolo?",
+        "conteudo": {
+          "texto": "Hi Tom, I'm going to have a birthday party next Saturday at my apartment. It's going to start at 7 p.m. My mom is going to make a big chocolate cake, and my brother is going to play the guitar. Are you going to come? Please bring your sister too! See you, Marina",
+          "opcoes": [
+            "O Tom.",
+            "O irmão da Marina.",
+            "A mãe da Marina.",
+            "A irmã do Tom."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"My mom is going to make a big chocolate cake.\" O irmão vai tocar violão."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta.",
+        "conteudo": {
+          "palavras": [
+            "they",
+            "did",
+            "Where",
+            "go"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Where did they go?"
+          ]
+        },
+        "explicacao": "Where + did + they + go (forma base)?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu não vi o filme.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I did not see the movie.",
+            "I did not see the film."
+          ]
+        },
+        "explicacao": "Negativa no passado: didn't + see (forma base).",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "She didn't went to work yesterday."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She didn't go to work yesterday.",
+            "Yesterday she didn't go to work."
+          ]
+        },
+        "explicacao": "Depois de didn't, o verbo fica na forma base: go.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós vamos estudar amanhã.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We are going to study tomorrow.",
+            "Tomorrow we are going to study.",
+            "Tomorrow, we are going to study."
+          ]
+        },
+        "explicacao": "Plano → We are going to study. Amanhã = tomorrow.",
+        "tagsErro": [
+          "be_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "The kids ___ very happy at the party yesterday.",
+          "opcoes": [
+            "was",
+            "were",
+            "are"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Yesterday = passado; the kids = they → were."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I ___ a new jacket last Friday.",
+          "opcoes": [
+            "buyed",
+            "buy",
+            "bought",
+            "buys"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Buy é irregular: o passado é bought.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": {
+          "texto": "This morning my dad ___ (stop) the car near the bakery."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "stopped"
+            ]
+          ]
+        },
+        "explicacao": "Stop dobra o p no passado: stopped.",
+        "tagsErro": [
+          "ortografia_ed"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que começa a pergunta.",
+        "conteudo": {
+          "texto": "___ your brother at work yesterday?",
+          "opcoes": [
+            "Were",
+            "Did",
+            "Was"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "A frase não tem outro verbo: at work pede o be. Your brother = he → Was.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": {
+          "texto": "We didn't ___ (eat) meat at the barbecue last Sunday."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "eat"
+            ]
+          ]
+        },
+        "explicacao": "Depois de didn't, o verbo fica na forma base: eat.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta curta correta.",
+        "conteudo": {
+          "texto": "Did you call Pedro? — Yes, I ___.",
+          "opcoes": [
+            "was",
+            "called",
+            "do",
+            "did"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "A pergunta usa did, então a resposta curta também: Yes, I did."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a pergunta com uma palavra.",
+        "conteudo": {
+          "texto": "What ___ you do last weekend?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "did"
+            ]
+          ]
+        },
+        "explicacao": "Wh- + did + sujeito + verbo base: What did you do?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Tonight, we're going to ___ pizza at home.",
+          "opcoes": [
+            "makes",
+            "make",
+            "made",
+            "making"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Depois de going to, o verbo fica na forma base: make."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com am, is ou are.",
+        "conteudo": {
+          "texto": "Ana ___ going to travel to Chile next month."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "is"
+            ]
+          ]
+        },
+        "explicacao": "Ana = she → is going to.",
+        "tagsErro": [
+          "be_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a expressão de tempo correta.",
+        "conteudo": {
+          "texto": "We visited the museum ___.",
+          "opcoes": [
+            "tomorrow",
+            "in last Saturday",
+            "last Saturday",
+            "next Saturday"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Visited está no passado → last Saturday, sem preposição.",
+        "tagsErro": [
+          "expressao_tempo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Onde o Gabriel almoçou?",
+        "conteudo": {
+          "texto": "Yesterday was a busy day for Gabriel. He got up at 6 a.m. and took the bus to work. At lunchtime, he ate a sandwich in the park because it was a beautiful day. After work, he went to the supermarket and bought rice, eggs and fruit. He came home at 8 p.m., made dinner and went to bed early.",
+          "opcoes": [
+            "No supermercado.",
+            "Em casa.",
+            "No parque.",
+            "No trabalho."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"At lunchtime, he ate a sandwich in the park.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Gabriel comprou no supermercado?",
+        "conteudo": {
+          "texto": "Yesterday was a busy day for Gabriel. He got up at 6 a.m. and took the bus to work. At lunchtime, he ate a sandwich in the park because it was a beautiful day. After work, he went to the supermarket and bought rice, eggs and fruit. He came home at 8 p.m., made dinner and went to bed early.",
+          "opcoes": [
+            "Arroz, ovos e frutas.",
+            "Nada.",
+            "Pão e leite.",
+            "Um sanduíche."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"He went to the supermarket and bought rice, eggs and fruit.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que eles vão fazer na terça-feira?",
+        "conteudo": {
+          "texto": "Next week is our school trip! On Monday, we're going to travel to São Paulo by bus. On Tuesday, we're going to visit two museums, and on Wednesday we're going to see a soccer game. Our teacher, Mr. Costa, is going to take a lot of photos. We aren't going to sleep at a hotel. We're going to stay with families.",
+          "opcoes": [
+            "Voltar para casa.",
+            "Visitar dois museus.",
+            "Viajar para São Paulo.",
+            "Ver um jogo de futebol."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"On Tuesday, we're going to visit two museums.\" O jogo é na quarta e a viagem é na segunda."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Onde eles vão dormir?",
+        "conteudo": {
+          "texto": "Next week is our school trip! On Monday, we're going to travel to São Paulo by bus. On Tuesday, we're going to visit two museums, and on Wednesday we're going to see a soccer game. Our teacher, Mr. Costa, is going to take a lot of photos. We aren't going to sleep at a hotel. We're going to stay with families.",
+          "opcoes": [
+            "Em um hotel.",
+            "Na escola.",
+            "Na casa de famílias.",
+            "No ônibus."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"We aren't going to sleep at a hotel. We're going to stay with families.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta.",
+        "conteudo": {
+          "palavras": [
+            "did",
+            "you",
+            "What",
+            "eat"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What did you eat?"
+          ]
+        },
+        "explicacao": "What + did + you + eat (forma base)?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ele não foi à festa.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "He did not go to the party."
+          ]
+        },
+        "explicacao": "Negativa no passado: didn't + go (forma base).",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "I goed to the bank last Monday."
+        },
+        "gabarito": {
+          "aceitas": [
+            "I went to the bank last Monday.",
+            "Last Monday I went to the bank."
+          ]
+        },
+        "explicacao": "Go é irregular: o passado é went.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eles vão jogar futebol amanhã.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "They are going to play soccer tomorrow.",
+            "Tomorrow they are going to play soccer.",
+            "Tomorrow, they are going to play soccer."
+          ]
+        },
+        "explicacao": "Plano → They are going to play. No inglês americano, futebol é soccer.",
+        "tagsErro": [
+          "be_omitido"
+        ]
+      }
+    ]
+  }
+}
