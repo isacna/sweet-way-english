@@ -126,13 +126,13 @@ export default function AlunoTurmasPage() {
                 value={codigo}
                 onChange={(e) => setCodigo(e.target.value)}
                 placeholder="Ex.: SWB1-2025"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
               />
             </div>
             <button
               type="submit"
               disabled={entrando}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-70"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-grape text-white font-semibold px-6 py-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.16)] hover:bg-grape-strong disabled:opacity-70"
             >
               {entrando ? (
                 "Entrando…"
@@ -146,7 +146,7 @@ export default function AlunoTurmasPage() {
           </form>
           {msgConvite && (
             <p
-              className={`text-sm px-4 py-3 rounded-xl ${msgConvite.includes("sucesso") ? "bg-green-50 text-green-800" : "bg-red-50 text-red-700"}`}
+              className={`text-sm px-4 py-3 rounded-xl ${msgConvite.includes("sucesso") ? "bg-success-soft text-success-ink" : "bg-danger-soft text-danger-ink"}`}
             >
               {msgConvite}
             </p>
@@ -190,7 +190,7 @@ export default function AlunoTurmasPage() {
                 </Button>
                 <Link
                   href={`/aluno/materiais?turma=${t.id}`}
-                  className="text-center text-sm font-medium text-accent hover:text-accent-strong"
+                  className="text-center text-sm font-medium text-grape hover:opacity-80"
                 >
                   Materiais
                 </Link>

@@ -102,13 +102,13 @@ export function classeBotao(
     "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-2xl px-5 py-3 font-display text-[1.05rem] font-semibold tracking-wide transition-all focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/30 disabled:cursor-not-allowed";
   const pressionar = "active:translate-y-[3px] active:shadow-none";
   if (variante === "primario")
-    return `${base} ${pressionar} bg-grape text-white shadow-[0_4px_0_0_var(--color-grape-strong)] hover:bg-grape-strong disabled:bg-gray-200 disabled:text-ink-faint disabled:shadow-[0_4px_0_0_var(--color-gray-300)] disabled:translate-y-0`;
+    return `${base} ${pressionar} bg-grape text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.18),0_4px_0_0_var(--color-grape-strong)] hover:bg-grape-strong disabled:bg-gray-200 disabled:text-ink-faint disabled:shadow-[0_4px_0_0_var(--color-gray-300)] disabled:translate-y-0`;
   if (variante === "sucesso")
     return `${base} ${pressionar} bg-success text-white shadow-[0_4px_0_0_var(--color-success-strong)] hover:bg-success-strong`;
   if (variante === "erro")
     return `${base} ${pressionar} bg-danger text-white shadow-[0_4px_0_0_var(--color-danger-strong)] hover:bg-danger-strong`;
   if (variante === "secundario")
-    return `${base} ${pressionar} border-2 border-line-strong bg-white text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:bg-gray-50 disabled:opacity-50`;
+    return `${base} ${pressionar} border-2 border-line-strong bg-card text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:bg-gray-50 disabled:opacity-50`;
   return `${base} text-ink-soft hover:bg-gray-100 hover:text-ink disabled:opacity-50`;
 }
 
@@ -119,10 +119,10 @@ export function BarraAcao({ children, tom = "neutro" }: { children: React.ReactN
       ? "border-success-bright/40 bg-success-soft/95"
       : tom === "errado"
         ? "border-danger-bright/40 bg-danger-soft/95"
-        : "border-line bg-white/95";
+        : "border-line bg-card/90";
   return (
     <div className="sticky bottom-0 z-30 -mx-4 mt-2 sm:mx-0">
-      <div className={`pb-safe border-t-2 px-4 pt-3 backdrop-blur-md sm:rounded-2xl sm:border-2 sm:pb-3 ${fundo}`}>
+      <div className={`pb-safe border-t-2 px-4 pt-3 backdrop-blur-xl backdrop-saturate-150 sm:rounded-2xl sm:border-2 sm:pb-3 ${fundo}`}>
         {children}
       </div>
     </div>

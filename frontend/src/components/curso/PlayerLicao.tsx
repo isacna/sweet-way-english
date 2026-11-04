@@ -76,7 +76,7 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
     <div className="space-y-4 sm:space-y-5">
       <div className="card relative overflow-hidden p-5 sm:p-6">
         <span
-          className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-candy-soft to-grape-soft"
+          className="pointer-events-none absolute -right-14 -top-16 h-40 w-40 rounded-full bg-grape/25 blur-3xl"
           aria-hidden
         />
         <div className="relative space-y-3">
@@ -119,12 +119,12 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
       )}
 
       {ap.exemplos.length > 0 && (
-        <CartaoSecao icone={<MessagesSquare className="h-5 w-5" />} titulo="Exemplos" tom="sky">
+        <CartaoSecao icone={<MessagesSquare className="h-5 w-5" />} titulo="Exemplos">
           <ul className="space-y-2.5">
             {ap.exemplos.map((ex, i) => (
               <li
                 key={i}
-                className="flex items-center justify-between gap-3 rounded-2xl border border-sky/15 bg-sky-soft/50 p-3 pl-4"
+                className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-gray-50 p-3 pl-4"
               >
                 <div className="min-w-0">
                   <p className="text-[1.05rem] font-semibold text-ink" lang="en">
@@ -467,7 +467,7 @@ function AnelPercentual({ pct, aprovado }: { pct: number; aprovado: boolean }) {
   return (
     <div className="relative mx-auto h-36 w-36">
       <svg viewBox="0 0 120 120" className="h-full w-full -rotate-90" aria-hidden>
-        <circle cx="60" cy="60" r={r} fill="none" strokeWidth="12" className="stroke-white/80" />
+        <circle cx="60" cy="60" r={r} fill="none" strokeWidth="12" className="stroke-gray-100" />
         <circle
           cx="60"
           cy="60"
@@ -513,8 +513,8 @@ function ResultadoQuizTela({
       <div
         className={`relative animate-pop-in overflow-hidden rounded-[1.75rem] border-2 p-6 text-center sm:p-8 ${
           resultado.aprovado
-            ? "border-success-bright/40 bg-gradient-to-b from-success-soft to-white"
-            : "border-sun/50 bg-gradient-to-b from-sun-soft to-white"
+            ? "border-success-bright/30 bg-gradient-to-b from-success-soft to-card"
+            : "border-sun/40 bg-gradient-to-b from-sun-soft to-card"
         }`}
       >
         <p className="mb-2 text-4xl" aria-hidden>
@@ -530,7 +530,7 @@ function ResultadoQuizTela({
             : `Você precisa de ${LIMIAR_QUIZ}% para concluir. Revise as respostas abaixo e tente outra vez.`}
         </p>
         {resultado.xpGanho > 0 && (
-          <p className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-sun px-4 py-1.5 font-display text-lg font-semibold text-ink shadow-[0_3px_0_0_var(--color-sun-ink)]">
+          <p className="mt-4 inline-flex items-center gap-1.5 rounded-full bg-sun px-4 py-1.5 font-display text-lg font-semibold text-gray-950 shadow-[0_3px_0_0_var(--color-sun-ink)]">
             <Zap className="h-5 w-5 fill-current" aria-hidden />+{resultado.xpGanho} XP
           </p>
         )}
@@ -655,7 +655,7 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
         </h1>
         <p className="mt-1.5 text-ink-soft">{licao.objetivo}</p>
         <div className="mt-2.5 flex flex-wrap items-center gap-2 text-xs font-semibold">
-          <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 text-ink-soft ring-1 ring-line">
+          <span className="inline-flex items-center gap-1 rounded-full bg-card px-2.5 py-1 text-ink-soft ring-1 ring-line">
             <Clock className="h-3.5 w-3.5" aria-hidden />
             <span>
               <span className="sr-only">· </span>
@@ -672,7 +672,7 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
       </div>
 
       <nav aria-label="Etapas da lição">
-        <ol className="grid grid-cols-3 gap-1.5 rounded-2xl bg-white p-1.5 ring-1 ring-line">
+        <ol className="grid grid-cols-3 gap-1.5 rounded-2xl bg-card p-1.5 ring-1 ring-line">
           {passos.map((p, i) => {
             const atual = i === indiceAtual;
             const liberado = i <= alcancada || licao.progresso.concluida;

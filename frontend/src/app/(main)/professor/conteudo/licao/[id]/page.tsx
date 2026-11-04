@@ -211,7 +211,7 @@ export default function EditorLicaoPage() {
   }
 
   if (carregando) {
-    return <p className="max-w-5xl mx-auto p-8 rounded-xl bg-white border border-gray-100 text-ink-soft">Carregando lição…</p>;
+    return <p className="max-w-5xl mx-auto p-8 rounded-xl bg-card border border-line text-ink-soft">Carregando lição…</p>;
   }
 
   if (!form || !licao) {
@@ -244,7 +244,7 @@ export default function EditorLicaoPage() {
             <p className="text-sm text-ink-soft">
               {licao.modulo.titulo} · Lição {licao.ordem}
             </p>
-            <h1 className="text-2xl font-bold text-ink break-words">{form.titulo || licao.titulo}</h1>
+            <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink break-words">{form.titulo || licao.titulo}</h1>
             <div className="flex flex-wrap items-center gap-2 mt-2">
               <StatusBadge status={licao.status} />
               <span className="text-xs text-ink-soft">{licao.slug}</span>
@@ -277,14 +277,14 @@ export default function EditorLicaoPage() {
                   type="button"
                   disabled={alterado || mudandoStatus}
                   onClick={() => void mudarStatus("publicado")}
-                  className="inline-flex items-center justify-center font-medium rounded-lg bg-emerald-600 text-white px-4 py-2 text-sm hover:bg-emerald-700 disabled:opacity-50 disabled:pointer-events-none"
+                  className="inline-flex items-center justify-center font-medium rounded-lg bg-success text-white px-4 py-2 text-sm hover:bg-success-strong disabled:opacity-50 disabled:pointer-events-none"
                 >
                   Publicar
                 </button>
               )}
             </div>
             {alterado && (
-              <p className="text-xs text-amber-800">Salve as alterações antes de mudar o status.</p>
+              <p className="text-xs text-sun-ink">Salve as alterações antes de mudar o status.</p>
             )}
             {licao.status === "publicado" && (
               <p className="text-xs text-ink-soft">
@@ -295,7 +295,7 @@ export default function EditorLicaoPage() {
         </div>
       </div>
 
-      <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+      <div className="rounded-xl border border-sun/40 bg-sun-soft px-4 py-3 text-sm text-sun-ink">
         Esta página mostra o <strong>gabarito</strong> (destacado em verde). Ele nunca é enviado aos alunos antes
         de eles responderem.
       </div>
@@ -303,7 +303,7 @@ export default function EditorLicaoPage() {
       {erroCarregar && <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">{erroCarregar}</p>}
 
       <section className="card p-5 space-y-4">
-        <h2 className="text-lg font-bold text-ink">Dados da lição</h2>
+        <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Dados da lição</h2>
         <div className="grid gap-4 sm:grid-cols-[1fr_10rem]">
           <Campo rotulo="Título" htmlFor="licao-titulo">
             <input
@@ -338,7 +338,7 @@ export default function EditorLicaoPage() {
 
       <section className="card p-5 space-y-4">
         <div>
-          <h2 className="text-lg font-bold text-ink">Apresentação</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Apresentação</h2>
           <p className="text-sm text-ink-soft">Explicação da gramática mostrada antes dos exercícios.</p>
         </div>
         <EditorApresentacao
@@ -349,7 +349,7 @@ export default function EditorLicaoPage() {
 
       <section className="space-y-6">
         <div>
-          <h2 className="text-lg font-bold text-ink">Exercícios</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Exercícios</h2>
           <p className="text-sm text-ink-soft">
             {totalPratica} de prática (recomendado: 6 ou mais) · {totalQuiz} no mini-quiz (mínimo: 4)
           </p>
@@ -358,7 +358,7 @@ export default function EditorLicaoPage() {
         {ORDEM_ETAPAS.map((etapa) => {
           const daEtapa = form.exercicios.filter((e) => e.etapa === etapa);
           return (
-            <div key={etapa} className="rounded-xl bg-gray-50 border border-gray-100 p-4 space-y-3">
+            <div key={etapa} className="rounded-xl bg-gray-50 border border-line p-4 space-y-3">
               <div>
                 <h3 className="font-semibold text-ink">
                   {rotuloEtapa[etapa]} <span className="text-sm font-normal text-ink-soft">({daEtapa.length})</span>
@@ -381,7 +381,7 @@ export default function EditorLicaoPage() {
                   aria-label={`Tipo do novo exercício (${rotuloEtapa[etapa]})`}
                   value={novoTipo[etapa]}
                   onChange={(e) => setNovoTipo((t) => ({ ...t, [etapa]: e.target.value as TipoExercicio }))}
-                  className="px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm"
+                  className="px-3 py-2 rounded-xl border border-line-strong bg-card text-sm text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 >
                   {TIPOS.map((t) => (
                     <option key={t} value={t}>
@@ -402,18 +402,18 @@ export default function EditorLicaoPage() {
         })}
       </section>
 
-      <div className="fixed bottom-0 inset-x-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur">
+      <div className="fixed bottom-0 inset-x-0 z-40 border-t border-line bg-card/90 backdrop-blur-md shadow-[0_-8px_24px_-16px_rgb(34_27_58/0.25)]">
         <div className="max-w-5xl mx-auto px-4 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex-1 min-w-0 text-sm">
             {erroSalvar ? (
-              <p className="text-red-700 bg-red-50 border border-red-100 rounded-lg px-3 py-2 whitespace-pre-line break-words max-h-32 overflow-y-auto">
+              <p className="text-danger-ink bg-danger-soft border border-danger-bright/40 rounded-lg px-3 py-2 whitespace-pre-line break-words max-h-32 overflow-y-auto">
                 <strong>Não foi salvo: </strong>
                 {erroSalvar}
               </p>
             ) : alterado ? (
-              <p className="text-amber-800">Há alterações não salvas.</p>
+              <p className="text-sun-ink">Há alterações não salvas.</p>
             ) : mensagem ? (
-              <p className="text-emerald-700">{mensagem}</p>
+              <p className="text-success-ink">{mensagem}</p>
             ) : (
               <p className="text-ink-soft">Tudo salvo.</p>
             )}

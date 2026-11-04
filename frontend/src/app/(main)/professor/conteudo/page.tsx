@@ -119,13 +119,13 @@ export default function ProfessorConteudoPage() {
         >
           ← Voltar ao painel
         </Link>
-        <h1 className="text-2xl font-bold text-ink">Conteúdo do curso</h1>
+        <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Conteúdo do curso</h1>
         <p className="text-ink-soft mt-1">
           Revise e publique as lições do curso autoguiado. O conteúdo é o mesmo para todas as turmas.
         </p>
       </div>
 
-      <div className="rounded-[var(--radius-card)] border border-sky/20 bg-sky-soft/70 px-5 py-4 text-sm text-ink space-y-1">
+      <div className="rounded-[var(--radius-card)] border border-grape-soft bg-grape-mist px-5 py-4 text-sm text-ink space-y-1">
         <p className="font-semibold">Nada aparece para os alunos antes de ser publicado.</p>
         <p className="text-ink-soft">
           Um aluno só vê uma lição quando ela <strong>e</strong> o módulo dela estão com o status
@@ -140,7 +140,7 @@ export default function ProfessorConteudoPage() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex flex-wrap gap-2 text-sm">
             {STATUS.map((s) => (
-              <span key={s} className="inline-flex items-center gap-2 rounded-xl bg-white border border-line px-3 py-1.5 shadow-sm">
+              <span key={s} className="inline-flex items-center gap-2 rounded-xl bg-card border border-line px-3 py-1.5 shadow-sm">
                 <StatusBadge status={s} />
                 <span className="font-semibold text-ink">{totais[s]}</span>
                 <span className="text-ink-soft">{totais[s] === 1 ? "lição" : "lições"}</span>
@@ -155,19 +155,19 @@ export default function ProfessorConteudoPage() {
       )}
 
       {carregando ? (
-        <p className="p-8 rounded-xl bg-white border border-gray-100 text-ink-soft">Carregando conteúdo…</p>
+        <p className="p-8 rounded-xl bg-card border border-line text-ink-soft">Carregando conteúdo…</p>
       ) : painel && painel.niveis.length === 0 ? (
-        <p className="p-8 rounded-xl bg-white border border-gray-100 text-ink-soft">
+        <p className="p-8 rounded-xl bg-card border border-line text-ink-soft">
           Nenhum conteúdo importado ainda. Rode <code>npm run conteudo:importar</code> no backend.
         </p>
       ) : soPendentes && niveisVisiveis.length === 0 ? (
-        <p className="p-8 rounded-xl bg-white border border-gray-100 text-center text-ink-soft">
+        <p className="p-8 rounded-xl bg-card border border-line text-center text-ink-soft">
           Tudo revisado e publicado.
         </p>
       ) : (
         niveisVisiveis.map((nivel) => (
           <section key={nivel.id} className="space-y-4">
-            <h2 className="text-lg font-bold text-ink">
+            <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">
               {nivel.codigo} · {nivel.nome}
             </h2>
             {nivel.modulos.map((m) => {
@@ -177,20 +177,20 @@ export default function ProfessorConteudoPage() {
               const tudoPublicado = m.status === "publicado" && contagem.publicado === original.licoes.length;
               return (
                 <div key={m.id} className="card overflow-hidden">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 px-5 py-4 border-b border-gray-100">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 px-5 py-4 border-b border-line">
                     <div className="min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
                         <span className="text-xs font-semibold text-ink-soft">Módulo {m.ordem}</span>
                         <StatusBadge status={m.status} />
                       </div>
-                      <h3 className="text-base font-bold text-ink mt-1">{m.titulo}</h3>
+                      <h3 className="text-base font-semibold text-ink mt-1">{m.titulo}</h3>
                       <p className="text-sm text-ink-soft">{m.tema}</p>
                       <p className="text-xs text-ink-soft mt-2">
                         {original.licoes.length} {original.licoes.length === 1 ? "lição" : "lições"}:{" "}
                         {STATUS.map((s) => `${contagem[s]} ${rotuloStatus[s].toLowerCase()}`).join(" · ")}
                       </p>
                       {m.status !== "publicado" && contagem.publicado > 0 && (
-                        <p className="text-xs text-amber-800 mt-1">
+                        <p className="text-xs text-sun-ink mt-1">
                           O módulo não está publicado: os alunos ainda não veem nenhuma lição dele.
                         </p>
                       )}
@@ -212,7 +212,7 @@ export default function ProfessorConteudoPage() {
                         <button
                           type="button"
                           onClick={() => setConfirmando({ modulo: original, status: "rascunho" })}
-                          className="inline-flex min-h-[40px] items-center justify-center font-semibold rounded-xl border-2 border-danger-bright/40 text-danger-ink px-4 py-2 text-sm hover:bg-danger-soft"
+                          className="inline-flex min-h-[40px] items-center justify-center font-semibold rounded-xl border border-danger-bright/50 bg-card text-danger-ink px-4 py-2 text-sm hover:bg-danger-soft"
                         >
                           Despublicar
                         </button>
@@ -220,7 +220,7 @@ export default function ProfessorConteudoPage() {
                     </div>
                   </div>
                   {m.licoes.length > 0 && (
-                    <ul className="divide-y divide-gray-100">
+                    <ul className="divide-y divide-line">
                       {m.licoes.map((l) => (
                         <li
                           key={l.id}
@@ -279,7 +279,7 @@ export default function ProfessorConteudoPage() {
                 como revisora.
               </p>
               {confirmando.modulo.licoes.some((l) => l.status !== "revisao" && l.status !== "publicado") && (
-                <p className="text-amber-800">
+                <p className="text-sun-ink">
                   Atenção: há lições ainda em rascunho neste módulo. Confirme apenas se já revisou todas.
                 </p>
               )}

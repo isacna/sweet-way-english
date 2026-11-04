@@ -18,10 +18,10 @@ type Props = {
 export function FeedbackResultado({ resultado, suaResposta, compacto, ouvir, children }: Props) {
   const parcial = !resultado.correto && resultado.pontuacao > 0;
   const tom = resultado.correto
-    ? { caixa: "border-success-bright/50 bg-success-soft", icone: "bg-success", titulo: "text-success-ink" }
+    ? { caixa: "border-success-bright/50 bg-success-soft", icone: "bg-success text-white", titulo: "text-success-ink" }
     : parcial
-      ? { caixa: "border-sun/60 bg-sun-soft", icone: "bg-sun-ink", titulo: "text-sun-ink" }
-      : { caixa: "border-danger-bright/50 bg-danger-soft", icone: "bg-danger", titulo: "text-danger-ink" };
+      ? { caixa: "border-sun/60 bg-sun-soft", icone: "bg-sun text-gray-950", titulo: "text-sun-ink" }
+      : { caixa: "border-danger-bright/50 bg-danger-soft", icone: "bg-danger text-white", titulo: "text-danger-ink" };
 
   return (
     <div
@@ -33,7 +33,7 @@ export function FeedbackResultado({ resultado, suaResposta, compacto, ouvir, chi
     >
       <div className="flex items-center gap-3">
         <span
-          className={`flex shrink-0 items-center justify-center rounded-full text-white ${tom.icone} ${
+          className={`flex shrink-0 items-center justify-center rounded-full ${tom.icone} ${
             compacto ? "h-7 w-7" : "h-9 w-9"
           }`}
           aria-hidden
@@ -68,7 +68,7 @@ export function FeedbackResultado({ resultado, suaResposta, compacto, ouvir, chi
         {(!resultado.correto || suaResposta !== undefined) && (
           <p className="break-words text-sm text-ink">
             Resposta esperada:{" "}
-            <strong lang="en" className="rounded-lg bg-white/80 px-1.5 py-0.5 font-semibold">
+            <strong lang="en" className="rounded-lg bg-card/70 px-1.5 py-0.5 font-semibold">
               {resultado.respostaEsperada}
             </strong>
           </p>
@@ -80,7 +80,7 @@ export function FeedbackResultado({ resultado, suaResposta, compacto, ouvir, chi
           </p>
         )}
         {resultado.explicacao && (
-          <p className="flex gap-2 rounded-xl bg-white/70 p-3 text-sm leading-relaxed text-ink">
+          <p className="flex gap-2 rounded-xl bg-card/60 p-3 text-sm leading-relaxed text-ink">
             <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-sun-ink" aria-hidden />
             <span>{resultado.explicacao}</span>
           </p>

@@ -114,8 +114,8 @@ Parallel requests use `Promise.all`. Batch state updates use `queueMicrotask`.
 Tailwind CSS v4 design tokens live in `src/styles/globals.css` (`@theme`, not inline) — use them instead of hex values:
 - Text `ink` / `ink-soft` / `ink-faint`; surfaces `canvas`, `card`; borders `line` / `line-strong`
 - `grape` (violet, student/course actions), `sky` (logo blue; audio buttons, teacher area), `candy` (pink highlights), `sun` (XP), `flame` (streak), `success` / `danger` (+ `-soft`, `-strong`, `-bright`, `-ink` variants)
-- `accent` follows the area: violet by default, sky blue under `[data-area="professor"]` (set in the teacher layout)
-- Fonts: Fredoka (`font-display`, headings/buttons) + Figtree (body), via `next/font` in `app/layout.tsx`
+- `accent` is violet everywhere (sky blue only for the audio button). Dark theme: the tokens are redefined under `[data-tema="escuro"]` (public video screens), `[data-area="aluno"]` (student area, unless the viewer picks "claro") and `html[data-preferencia-tema="escuro"]` (`src/lib/tema.ts`); teacher area is light by default. Use tokens, not `bg-white`/palette colors, or the dark theme breaks
+- Font: Inter (`--font-sans` and `--font-display`), via `next/font` on `<html>` in `app/layout.tsx`; the public screens (`components/publico/HeroVideo.tsx`, `AuthShell`) use CSS modules
 - Helpers: `.card`, `.eyebrow`, `.bg-cotton`, `.pb-safe`; icons from `lucide-react` (pinned)
 - Course UI: `classeBotao` (3D buttons ≥ 48px) and `BarraAcao` (sticky bottom action bar) in `components/curso/ui.tsx`; form classes in `components/formStyles.ts`; login/cadastro share `AuthShell`
 - Mobile: students get a bottom tab bar (`StudentNav variant="bottom"`, hidden on lesson/review/test focus screens); teachers get a scrollable tab strip under the header

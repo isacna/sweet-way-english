@@ -76,7 +76,7 @@ export default function AlunoFeedbacksPage() {
       {carregando ? (
         <p className="text-ink-soft">Carregando…</p>
       ) : lista.length === 0 ? (
-        <div className="p-8 rounded-xl bg-white border border-gray-100 text-center">
+        <div className="p-8 rounded-xl bg-card border border-line text-center">
           <p className="text-ink-soft mb-4">
             Você ainda não recebeu feedbacks.
           </p>
@@ -96,7 +96,7 @@ export default function AlunoFeedbacksPage() {
               </p>
               <p className="text-sm text-ink-soft mt-1">
                 {f.professor.nome} ·{" "}
-                <span className="font-medium text-accent">
+                <span className="font-medium text-grape">
                   Nota {f.nota}
                 </span>{" "}
                 · {tempoRelativoPt(f.criadoEm)}

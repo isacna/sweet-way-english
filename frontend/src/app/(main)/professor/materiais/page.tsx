@@ -168,7 +168,7 @@ function MateriaisPageContent() {
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-ink">
+          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">
             Materiais de Apoio
           </h1>
           <p className="text-ink-soft mt-1">
@@ -185,7 +185,7 @@ function MateriaisPageContent() {
           value={turmaId}
           onChange={(e) => setManualTurmaId(e.target.value)}
           disabled={carregandoTurmas}
-          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-ink"
+          className="w-full max-w-md px-4 py-3 rounded-xl border border-line-strong text-ink bg-card focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
         >
           <option value="">
             {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -214,7 +214,7 @@ function MateriaisPageContent() {
             placeholder="Buscar materiais..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-line-strong bg-card text-ink placeholder:text-ink-soft focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -223,10 +223,10 @@ function MateriaisPageContent() {
               key={filter.label}
               type="button"
               onClick={() => setActiveFilter(filter.label)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
                 activeFilter === filter.label
-                  ? "bg-accent text-white"
-                  : "border border-gray-300 text-ink-soft hover:bg-gray-50"
+                  ? "bg-accent text-white shadow-sm"
+                  : "border border-line-strong bg-card text-ink-soft hover:bg-gray-50 hover:text-ink"
               }`}
             >
               {filter.label}
@@ -297,7 +297,7 @@ function MateriaisPageContent() {
 
       <form
         onSubmit={handleUpload}
-        className="p-6 rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 space-y-4"
+        className="p-6 rounded-xl border-2 border-dashed border-line-strong bg-gray-50 space-y-4"
       >
         <div className="text-center mb-2">
           <Upload aria-hidden className="h-[48px] w-[48px] shrink-0 text-grape mx-auto mb-2" />
@@ -313,14 +313,14 @@ function MateriaisPageContent() {
               placeholder="Título"
               value={uploadTitulo}
               onChange={(e) => setUploadTitulo(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300"
+              className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
             />
           </div>
           <div>
             <select
               value={uploadTipo}
               onChange={(e) => setUploadTipo(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300"
+              className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
             >
               <option value="pdf">PDF</option>
               <option value="audio">Áudio</option>
@@ -334,7 +334,7 @@ function MateriaisPageContent() {
               placeholder="URL (opcional se enviar arquivo)"
               value={uploadUrl}
               onChange={(e) => setUploadUrl(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300"
+              className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
             />
           </div>
           <div className="sm:col-span-2">
@@ -347,7 +347,7 @@ function MateriaisPageContent() {
         </div>
         {msg && (
           <p
-            className={`text-sm text-center ${msg.includes("Erro") || msg.includes("Selecione") || msg.includes("Informe") ? "text-red-600" : "text-green-700"}`}
+            className={`text-sm text-center ${msg.includes("Erro") || msg.includes("Selecione") || msg.includes("Informe") ? "text-danger-ink" : "text-success-ink"}`}
           >
             {msg}
           </p>
@@ -356,7 +356,7 @@ function MateriaisPageContent() {
           <button
             type="submit"
             disabled={enviando || !turmaId}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 font-semibold px-6 py-3 disabled:opacity-60"
           >
             <Upload aria-hidden className="h-[18px] w-[18px] shrink-0" />
             {enviando ? "Enviando…" : "Enviar material"}

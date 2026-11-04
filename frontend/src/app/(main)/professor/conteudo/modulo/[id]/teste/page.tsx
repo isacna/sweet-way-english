@@ -59,7 +59,7 @@ export default function TesteModuloPage() {
         >
           ← Voltar ao conteúdo
         </Link>
-        <h1 className="text-2xl font-bold text-ink">
+        <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">
           Teste do módulo{teste ? `: ${teste.modulo.titulo}` : ""}
         </h1>
         <p className="text-ink-soft mt-1">
@@ -71,9 +71,9 @@ export default function TesteModuloPage() {
       {erro && <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">{erro}</p>}
 
       {carregando ? (
-        <p className="p-8 rounded-xl bg-white border border-gray-100 text-ink-soft">Carregando teste…</p>
+        <p className="p-8 rounded-xl bg-card border border-line text-ink-soft">Carregando teste…</p>
       ) : teste && teste.formas.length === 0 ? (
-        <p className="p-8 rounded-xl bg-white border border-gray-100 text-ink-soft">Este módulo ainda não tem teste.</p>
+        <p className="p-8 rounded-xl bg-card border border-line text-ink-soft">Este módulo ainda não tem teste.</p>
       ) : teste ? (
         <>
           <div className="flex flex-wrap gap-2" role="tablist" aria-label="Formas do teste">
@@ -84,10 +84,10 @@ export default function TesteModuloPage() {
                 role="tab"
                 aria-selected={f.forma === formaAtiva}
                 onClick={() => setFormaAtiva(f.forma)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors ${
                   f.forma === formaAtiva
-                    ? "bg-accent text-white"
-                    : "bg-white border border-gray-200 text-ink hover:bg-gray-50"
+                    ? "bg-accent text-white shadow-sm"
+                    : "bg-card border border-line-strong text-ink hover:bg-gray-50"
                 }`}
               >
                 Forma {f.forma} ({f.itens.length} itens)
@@ -99,7 +99,7 @@ export default function TesteModuloPage() {
             <>
               <div className="flex flex-wrap gap-2 text-xs">
                 {HABILIDADES.map((h) => (
-                  <span key={h} className="px-2.5 py-1 rounded-full bg-white border border-gray-200 text-ink-soft">
+                  <span key={h} className="px-2.5 py-1 rounded-full bg-card border border-gray-200 text-ink-soft">
                     {rotuloHabilidade[h]}: {itens.filter((i) => i.habilidade === h).length}
                   </span>
                 ))}
