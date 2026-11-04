@@ -61,23 +61,23 @@ export default function AlunoFeedbacksPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Meus feedbacks</h1>
-        <p className="text-[#4A4A4A] mt-1">
+        <h1 className="text-2xl font-bold text-ink">Meus feedbacks</h1>
+        <p className="text-ink-soft mt-1">
           Comentários e notas dos professores nas suas entregas.
         </p>
       </div>
 
       {erro && (
-        <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl">
+        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
           {erro}
         </p>
       )}
 
       {carregando ? (
-        <p className="text-[#4A4A4A]">Carregando…</p>
+        <p className="text-ink-soft">Carregando…</p>
       ) : lista.length === 0 ? (
         <div className="p-8 rounded-xl bg-white border border-gray-100 text-center">
-          <p className="text-[#4A4A4A] mb-4">
+          <p className="text-ink-soft mb-4">
             Você ainda não recebeu feedbacks.
           </p>
           <Button href="/aluno/turmas" variant="secondary" size="md">
@@ -89,19 +89,19 @@ export default function AlunoFeedbacksPage() {
           {lista.map((f) => (
             <li
               key={f.id}
-              className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm"
+              className="card p-6"
             >
-              <p className="font-semibold text-[#1A1A1A]">
+              <p className="font-semibold text-ink">
                 {f.submissao.atividade.titulo}
               </p>
-              <p className="text-sm text-[#4A4A4A] mt-1">
+              <p className="text-sm text-ink-soft mt-1">
                 {f.professor.nome} ·{" "}
-                <span className="font-medium text-[#1898DC]">
+                <span className="font-medium text-accent">
                   Nota {f.nota}
                 </span>{" "}
                 · {tempoRelativoPt(f.criadoEm)}
               </p>
-              <p className="text-sm text-[#1A1A1A] mt-4 whitespace-pre-wrap">
+              <p className="text-sm text-ink mt-4 whitespace-pre-wrap">
                 {f.comentario}
               </p>
             </li>

@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { apiFetch, getStoredUser } from "@/lib/api";
+import { Plus } from "lucide-react";
 
 type Turma = {
   id: number;
@@ -98,9 +98,9 @@ export default function AlunoTurmasPage() {
   return (
     <div className="max-w-6xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Minhas turmas</h1>
+        <h1 className="text-2xl font-bold text-ink">Minhas turmas</h1>
         {!carregando && (
-          <p className="text-[#4A4A4A] mt-1">
+          <p className="text-ink-soft mt-1">
             {turmas.length > 0
               ? "Suas turmas matriculadas. Não é possível entrar em outra turma enquanto estiver em uma."
               : "Use o código que o professor passou para se matricular."}
@@ -112,12 +112,12 @@ export default function AlunoTurmasPage() {
         <>
           <form
             onSubmit={handleEntrar}
-            className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col sm:flex-row gap-4 sm:items-end"
+            className="card p-6 flex flex-col sm:flex-row gap-4 sm:items-end"
           >
             <div className="flex-1">
               <label
                 htmlFor="codigo"
-                className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                className="block text-sm font-medium text-ink mb-2"
               >
                 Código de convite
               </label>
@@ -126,24 +126,19 @@ export default function AlunoTurmasPage() {
                 value={codigo}
                 onChange={(e) => setCodigo(e.target.value)}
                 placeholder="Ex.: SWB1-2025"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <button
               type="submit"
               disabled={entrando}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-70"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-70"
             >
               {entrando ? (
                 "Entrando…"
               ) : (
                 <>
-                  <Image
-                    src="/icons/plus-white.svg"
-                    alt=""
-                    width={18}
-                    height={18}
-                  />
+                  <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
                   Entrar na turma
                 </>
               )}
@@ -159,29 +154,29 @@ export default function AlunoTurmasPage() {
         </>
       )}
       {erro && (
-        <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl">
+        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
           {erro}
         </p>
       )}
 
       {carregando ? (
-        <p className="text-[#4A4A4A]">Carregando…</p>
+        <p className="text-ink-soft">Carregando…</p>
       ) : turmas.length > 0 ? (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {turmas.map((t) => (
             <article
               key={t.id}
-              className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col"
+              className="card p-6 flex flex-col"
             >
-              <h3 className="font-bold text-[#1A1A1A] mb-2">{t.nome}</h3>
+              <h3 className="font-bold text-ink mb-2">{t.nome}</h3>
               {t.descricao && (
-                <p className="text-sm text-[#4A4A4A] mb-3 line-clamp-3">
+                <p className="text-sm text-ink-soft mb-3 line-clamp-3">
                   {t.descricao}
                 </p>
               )}
-              <p className="text-sm text-[#4A4A4A] mb-4">
+              <p className="text-sm text-ink-soft mb-4">
                 Professor:{" "}
-                <span className="font-medium text-[#1A1A1A]">
+                <span className="font-medium text-ink">
                   {t.professor?.nome ?? "—"}
                 </span>
               </p>
@@ -195,7 +190,7 @@ export default function AlunoTurmasPage() {
                 </Button>
                 <Link
                   href={`/aluno/materiais?turma=${t.id}`}
-                  className="text-center text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+                  className="text-center text-sm font-medium text-accent hover:text-accent-strong"
                 >
                   Materiais
                 </Link>

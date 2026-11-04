@@ -1,36 +1,20 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandMark } from "./BrandMark";
 
 type NavbarVariant = "home" | "dashboard";
 
-const variantStyles: Record<NavbarVariant, string> = {
-  home:
-    "fixed top-0 left-0 right-0 px-4 sm:px-8 py-5 bg-white/95 backdrop-blur-sm border-b border-gray-100",
-  dashboard:
-    "sticky top-0 px-4 sm:px-8 py-3 sm:py-4 bg-white border-b border-gray-200",
-};
-
-function Logo({ variant, logoUrl }: { variant: NavbarVariant; logoUrl?: string | null }) {
-  const className =
-    variant === "home"
-      ? "h-14 w-auto max-w-[min(90vw,320px)] object-contain object-left sm:h-16 sm:max-w-[400px] md:h-[4.5rem] md:max-w-[460px]"
-      : "h-12 w-auto max-w-[min(55vw,260px)] object-contain object-left sm:h-14 sm:max-w-[300px] md:h-16 md:max-w-[360px] lg:max-w-[400px]";
-
+function Logo({ logoUrl }: { logoUrl?: string | null }) {
   if (logoUrl) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={logoUrl} alt="Sweet Way English" className={className} />;
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={logoUrl}
+        alt="Sweet Way English"
+        className="h-10 w-auto max-w-[55vw] object-contain object-left sm:h-12"
+      />
+    );
   }
-
-  return (
-    <Image
-      src="/logo-sweet.png"
-      alt="Sweet Way English"
-      width={400}
-      height={120}
-      className={className}
-      priority
-    />
-  );
+  return <BrandMark />;
 }
 
 type NavbarProps = {
@@ -42,6 +26,8 @@ type NavbarProps = {
   logoHref?: string;
   /** URL do logo customizado (substitui o logo estático padrão) */
   logoUrl?: string | null;
+  /** Conteúdo extra abaixo da barra, só no mobile (ex.: abas roláveis da professora). */
+  mobileBelow?: React.ReactNode;
 };
 
 export function Navbar({
@@ -51,26 +37,20 @@ export function Navbar({
   className = "",
   logoHref: logoHrefProp,
   logoUrl,
+  mobileBelow,
 }: NavbarProps) {
-  const logoHref =
-    logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/home");
+  const logoHref = logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/home");
 
   return (
-    <header
-      className={`z-50 flex flex-wrap md:flex-nowrap items-center justify-between gap-x-3 gap-y-3 md:gap-6 lg:gap-10 ${variantStyles[variant]} ${className}`}
-    >
-      <Link
-        href={logoHref}
-        className="order-1 flex items-center gap-2 shrink-0 min-w-0"
-      >
-        <Logo variant={variant} logoUrl={logoUrl} />
-      </Link>
-      {center ? (
-        <div className="order-3 hidden w-full min-w-0 basis-full justify-start border-t border-gray-100 pt-3 md:order-2 md:flex md:basis-auto md:flex-1 md:justify-center md:border-t-0 md:pt-0 md:overflow-x-auto [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]">
-          {center}
-        </div>
-      ) : null}
-      <div className="order-2 shrink-0 md:order-3">{right}</div>
+    <header className={`sticky top-0 z-50 border-b border-line bg-white/85 backdrop-blur-md ${className}`}>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:gap-8">
+        <Link href={logoHref} className="flex min-w-0 shrink-0 items-center rounded-xl">
+          <Logo logoUrl={logoUrl} />
+        </Link>
+        {center ? <div className="hidden min-w-0 flex-1 justify-center md:flex">{center}</div> : null}
+        <div className="shrink-0">{right}</div>
+      </div>
+      {mobileBelow ? <div className="md:hidden">{mobileBelow}</div> : null}
     </header>
   );
 }

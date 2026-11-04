@@ -1,15 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 
-import { API_URL } from "@/lib/api";
+import { AuthShell } from "@/components/AuthShell";
+import { classeBotao } from "@/components/curso/ui";
+import { classeBotaoProfessor, classeCampo, classeRotulo } from "@/components/formStyles";
+import { apiUrl } from "@/lib/api";
 
 function LoginPageContent() {
   const searchParams = useSearchParams();
   const tipo = searchParams.get("tipo") ?? "aluno";
+  const cadastroOk = searchParams.get("cadastro") === "ok";
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -22,7 +25,7 @@ function LoginPageContent() {
     setCarregando(true);
 
     try {
-      const res = await fetch(`${API_URL}/api/auth/login`, {
+      const res = await fetch(`${apiUrl()}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
@@ -53,131 +56,107 @@ function LoginPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-surface">
-      <main className="pt-12 pb-20 px-8 max-w-6xl mx-auto">
-        <div className="flex justify-center mb-12">
-          <Link href="/home">
-            <Image
-              src="/logo-sweet.png"
-              alt="Sweet Way English - Learn. Speak. Achieve."
-              width={340}
-              height={340}
-              className="w-auto h-auto max-w-[min(92vw,380px)] sm:max-w-[440px] md:max-w-[500px] object-contain"
-              priority
-            />
+    <AuthShell voltarHref="/home">
+      <div
+        className="mb-6 grid grid-cols-2 gap-1 rounded-2xl bg-gray-100 p-1 text-sm font-semibold"
+        aria-label="Tipo de conta"
+      >
+        {(["aluno", "professor"] as const).map((t) => {
+          const ativo = (tipo === "professor" ? "professor" : "aluno") === t;
+          return (
+            <Link
+              key={t}
+              href={`/login?tipo=${t}`}
+              aria-current={ativo ? "page" : undefined}
+              className={`flex min-h-[40px] items-center justify-center rounded-xl transition-colors ${
+                ativo
+                  ? `bg-white shadow-sm ${t === "professor" ? "text-sky-ink" : "text-grape"}`
+                  : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              {t === "professor" ? "Sou professor" : "Sou aluno"}
+            </Link>
+          );
+        })}
+      </div>
+
+      <h1 className="text-3xl font-semibold text-ink">Entrar</h1>
+      <p className="mt-1 mb-6 text-ink-soft">
+        {tipo === "professor" ? "Acesse sua conta de professor" : "Acesse sua conta de aluno"}
+      </p>
+
+      {cadastroOk && (
+        <p
+          role="status"
+          className="mb-6 rounded-2xl border border-success-bright/40 bg-success-soft px-4 py-3 text-sm font-medium text-success-ink"
+        >
+          Conta criada com sucesso! Entre com seu e-mail e senha.
+        </p>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="email" className={classeRotulo}>
+            E-mail
+          </label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="seu@email.com"
+            required
+            className={classeCampo}
+            autoComplete="email"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="senha" className={classeRotulo}>
+            Senha
+          </label>
+          <input
+            id="senha"
+            type="password"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            placeholder="••••••••"
+            required
+            className={classeCampo}
+            autoComplete="current-password"
+          />
+        </div>
+
+        {erro && (
+          <p className="rounded-2xl bg-danger-soft px-4 py-3 text-sm font-medium text-danger-ink" role="alert">
+            {erro}
+          </p>
+        )}
+
+        <button
+          type="submit"
+          disabled={carregando}
+          className={`${tipo === "professor" ? classeBotaoProfessor : classeBotao("primario")} w-full`}
+        >
+          {carregando ? "Entrando..." : "Entrar"}
+        </button>
+      </form>
+
+      {tipo !== "professor" && (
+        <p className="mt-6 text-center text-sm text-ink-soft">
+          Ainda não tem conta?{" "}
+          <Link href="/cadastro" className="inline-flex min-h-[44px] items-center font-semibold text-grape hover:underline">
+            Criar conta
           </Link>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Esquerda: box da cidade (contido, não maximizado) */}
-          <div className="relative order-2 lg:order-1 hidden lg:block">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] max-h-[560px]">
-            <Image
-              src="/hero-city.png"
-              alt=""
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              priority
-            />
-            </div>
-            <div className="absolute -bottom-6 -left-4 lg:left-0 right-4 lg:right-auto max-w-xs p-5 rounded-2xl bg-white shadow-lg border border-gray-100">
-              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-3">
-                <Image src="/icons/star.svg" alt="" width={24} height={24} />
-              </div>
-              <h3 className="font-bold text-[#1A1A1A] mb-1">
-                Feedback em tempo real
-              </h3>
-              <p className="text-sm text-[#4A4A4A]">
-                Acompanhe o progresso dos seus alunos com avaliações detalhadas e
-                notas.
-              </p>
-            </div>
-          </div>
-
-          {/* Direita: formulário */}
-          <div className="flex flex-col justify-center order-1 lg:order-2">
-            <div className="max-w-md w-full mx-auto lg:mx-0">
-              <Link
-                href="/home"
-                className="inline-flex items-center gap-2 text-[#4A4A4A] hover:text-[#1A1A1A] mb-12 transition-colors"
-              >
-                <span className="text-lg">←</span>
-                Voltar
-              </Link>
-
-              <h1 className="text-2xl font-bold text-[#1A1A1A] mb-2">
-                Entrar
-              </h1>
-              <p className="text-[#4A4A4A] mb-8">
-                {tipo === "professor"
-                  ? "Acesse sua conta de professor"
-                  : "Acesse sua conta de aluno"}
-              </p>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
-                >
-                  E-mail
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="seu@email.com"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1898DC] focus:border-transparent"
-                  autoComplete="email"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="senha"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
-                >
-                  Senha
-                </label>
-                <input
-                  id="senha"
-                  type="password"
-                  value={senha}
-                  onChange={(e) => setSenha(e.target.value)}
-                  placeholder="••••••••"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-[#1A1A1A] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1898DC] focus:border-transparent"
-                  autoComplete="current-password"
-                />
-              </div>
-
-              {erro && (
-                <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl">
-                  {erro}
-                </p>
-              )}
-
-              <button
-                type="submit"
-                disabled={carregando}
-                className="w-full py-3 rounded-xl bg-[#1898DC] text-white font-medium hover:bg-[#147EB8] transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {carregando ? "Entrando..." : "Entrar"}
-              </button>
-            </form>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
+        </p>
+      )}
+    </AuthShell>
   );
 }
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-surface" />}>
+    <Suspense fallback={<div className="bg-cotton min-h-screen" />}>
       <LoginPageContent />
     </Suspense>
   );

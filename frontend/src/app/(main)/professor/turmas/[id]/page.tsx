@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
@@ -12,6 +11,7 @@ import {
   rotuloStatusSubmissaoPt,
   tempoRelativoPt,
 } from "@/lib/timePt";
+import { Download, Play } from "lucide-react";
 
 type TurmaDetalhe = {
   id: number;
@@ -56,9 +56,9 @@ function BlocoAnexoAluno({
         href={full}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm text-[#1898DC] font-medium hover:underline"
+        className="inline-flex items-center gap-2 text-sm text-accent font-medium hover:underline"
       >
-        <Image src="/icons/download.svg" alt="" width={16} height={16} />
+        <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
         Baixar anexo do aluno
       </a>
       <AssetPreview fullUrl={full} title={`Anexo — ${nomeAluno}`} />
@@ -270,7 +270,7 @@ function TurmaDetalhePageContent() {
   if (carregando) {
     return (
       <div className="max-w-6xl mx-auto">
-        <p className="text-[#4A4A4A]">Carregando…</p>
+        <p className="text-ink-soft">Carregando…</p>
       </div>
     );
   }
@@ -291,21 +291,21 @@ function TurmaDetalhePageContent() {
       <div>
         <Link
           href="/professor/turmas"
-          className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-4"
+          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
         >
           ← Todas as turmas
         </Link>
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-[#1A1A1A]">{turma.nome}</h1>
-            <p className="text-[#4A4A4A] mt-1">
+            <h1 className="text-2xl font-bold text-ink">{turma.nome}</h1>
+            <p className="text-ink-soft mt-1">
               Prof. {turma.professor.nome} · Código{" "}
               <code className="text-sm bg-gray-100 px-2 py-0.5 rounded">
                 {turma.codigoConvite}
               </code>
             </p>
             {turma.descricao && (
-              <p className="text-sm text-[#4A4A4A] mt-2">{turma.descricao}</p>
+              <p className="text-sm text-ink-soft mt-2">{turma.descricao}</p>
             )}
           </div>
           <div className="flex flex-wrap gap-2">
@@ -314,13 +314,13 @@ function TurmaDetalhePageContent() {
               variant="primary"
               size="md"
             >
-              <Image src="/icons/play-white.svg" alt="" width={18} height={18} />
+              <Play aria-hidden className="h-[18px] w-[18px] shrink-0 fill-current" />
               Nova atividade
             </Button>
             <button
               type="button"
               onClick={() => { setModalAviso(true); setAvisoErro(""); }}
-              className="inline-flex items-center gap-2 font-medium rounded-lg border border-gray-300 text-[#1A1A1A] px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center gap-2 font-medium rounded-lg border border-gray-300 text-ink px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
             >
               📌 Novo aviso
             </button>
@@ -337,27 +337,27 @@ function TurmaDetalhePageContent() {
 
       {/* Mural de Avisos — lista */}
       {avisos.length > 0 && (
-        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-3">
-          <h2 className="text-lg font-bold text-[#1A1A1A]">Mural de Avisos</h2>
+        <section className="card p-6 space-y-3">
+          <h2 className="text-lg font-bold text-ink">Mural de Avisos</h2>
           <ul className="space-y-3">
             {avisos.map((av) => (
               <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
                 <div className="flex-1 min-w-0 space-y-1">
-                  <p className="font-medium text-[#1A1A1A]">{av.titulo}</p>
+                  <p className="font-medium text-ink">{av.titulo}</p>
                   {av.conteudo && (
-                    <p className="text-sm text-[#4A4A4A]">{av.conteudo}</p>
+                    <p className="text-sm text-ink-soft">{av.conteudo}</p>
                   )}
                   {av.link && (
                     <a
                       href={av.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium text-[#1898DC] hover:underline break-all"
+                      className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline break-all"
                     >
                       🔗 {av.link}
                     </a>
                   )}
-                  <p className="text-xs text-[#4A4A4A]">
+                  <p className="text-xs text-ink-soft">
                     {new Date(av.criadoEm).toLocaleString("pt-BR")}
                   </p>
                 </div>
@@ -386,11 +386,11 @@ function TurmaDetalhePageContent() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
-              <h2 className="text-lg font-bold text-[#1A1A1A]">Novo aviso</h2>
+              <h2 className="text-lg font-bold text-ink">Novo aviso</h2>
               <button
                 type="button"
                 onClick={() => setModalAviso(false)}
-                className="p-2 rounded-lg text-[#4A4A4A] hover:bg-gray-100"
+                className="p-2 rounded-lg text-ink-soft hover:bg-gray-100"
                 aria-label="Fechar"
               >
                 ×
@@ -398,7 +398,7 @@ function TurmaDetalhePageContent() {
             </div>
             <form onSubmit={publicarAviso} className="p-6 space-y-4">
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Título *</label>
+                <label className="block text-sm font-medium text-ink mb-1">Título *</label>
                 <input
                   type="text"
                   value={avisoTitulo}
@@ -406,44 +406,44 @@ function TurmaDetalhePageContent() {
                   placeholder="Ex: Aula ao vivo hoje às 19h"
                   required
                   autoFocus
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Mensagem <span className="font-normal text-[#4A4A4A]">(opcional)</span></label>
+                <label className="block text-sm font-medium text-ink mb-1">Mensagem <span className="font-normal text-ink-soft">(opcional)</span></label>
                 <textarea
                   value={avisoConteudo}
                   onChange={(e) => setAvisoConteudo(e.target.value)}
                   placeholder="Informações adicionais…"
                   rows={3}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC] resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent resize-none"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Link <span className="font-normal text-[#4A4A4A]">(opcional)</span></label>
+                <label className="block text-sm font-medium text-ink mb-1">Link <span className="font-normal text-ink-soft">(opcional)</span></label>
                 <input
                   type="text"
                   value={avisoLink}
                   onChange={(e) => setAvisoLink(e.target.value)}
                   placeholder="https://meet.google.com/..."
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
                 />
               </div>
               {avisoErro && (
-                <p className="text-sm text-red-600 bg-red-50 px-4 py-2 rounded-lg">{avisoErro}</p>
+                <p className="text-sm text-danger-ink bg-danger-soft px-4 py-2 rounded-2xl font-medium">{avisoErro}</p>
               )}
               <div className="flex gap-3 pt-1">
                 <button
                   type="button"
                   onClick={() => setModalAviso(false)}
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-[#4A4A4A] hover:bg-gray-50"
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-ink-soft hover:bg-gray-50"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
                   disabled={salvandoAviso || !avisoTitulo.trim()}
-                  className="flex-1 px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-70 transition-colors"
+                  className="flex-1 px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-70 transition-colors"
                 >
                   {salvandoAviso ? "Publicando…" : "Publicar"}
                 </button>
@@ -454,10 +454,10 @@ function TurmaDetalhePageContent() {
       )}
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-4">Alunos</h2>
+        <section className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-4">Alunos</h2>
           {turma.matriculas.length === 0 ? (
-            <p className="text-sm text-[#4A4A4A]">
+            <p className="text-sm text-ink-soft">
               Nenhum aluno matriculado ainda.
             </p>
           ) : (
@@ -467,20 +467,20 @@ function TurmaDetalhePageContent() {
                   key={m.aluno.id}
                   className="py-3 flex justify-between gap-2 text-sm"
                 >
-                  <span className="font-medium text-[#1A1A1A]">
+                  <span className="font-medium text-ink">
                     {m.aluno.nome}
                   </span>
-                  <span className="text-[#4A4A4A] truncate">{m.aluno.email}</span>
+                  <span className="text-ink-soft truncate">{m.aluno.email}</span>
                 </li>
               ))}
             </ul>
           )}
         </section>
 
-        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-4">Atividades</h2>
+        <section className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-4">Atividades</h2>
           {turma.atividades.length === 0 ? (
-            <p className="text-sm text-[#4A4A4A] mb-4">
+            <p className="text-sm text-ink-soft mb-4">
               Nenhuma atividade. Crie a primeira.
             </p>
           ) : (
@@ -491,15 +491,15 @@ function TurmaDetalhePageContent() {
                     href={`/professor/turmas/${turma.id}?atividade=${a.id}`}
                     className={`block p-3 rounded-lg border transition-colors ${
                       atividadeDestaque === String(a.id)
-                        ? "border-[#1898DC] bg-[#1898DC]/5"
+                        ? "border-accent bg-accent/5"
                         : "border-gray-100 hover:border-gray-200"
                     }`}
                   >
-                    <p className="font-medium text-[#1A1A1A]">{a.titulo}</p>
-                    <p className="text-xs text-[#4A4A4A] mt-1 line-clamp-2">
+                    <p className="font-medium text-ink">{a.titulo}</p>
+                    <p className="text-xs text-ink-soft mt-1 line-clamp-2">
                       {a.descricao}
                     </p>
-                    <p className="text-xs text-[#4A4A4A] mt-2">
+                    <p className="text-xs text-ink-soft mt-2">
                       Entrega:{" "}
                       {new Date(a.dataEntrega).toLocaleString("pt-BR")}
                     </p>
@@ -517,16 +517,16 @@ function TurmaDetalhePageContent() {
       </div>
 
       {atividadeDestaque && (
-        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-8">
+        <section className="card p-6 space-y-8">
           <div>
-            <h2 className="text-lg font-bold text-[#1A1A1A] mb-4">
+            <h2 className="text-lg font-bold text-ink mb-4">
               Gestão da atividade
             </h2>
             <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
               <div className="sm:col-span-2">
                 <label
                   htmlFor="gestao-titulo"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  className="block text-sm font-medium text-ink mb-2"
                 >
                   Título
                 </label>
@@ -535,13 +535,13 @@ function TurmaDetalhePageContent() {
                   type="text"
                   value={editTitulo}
                   onChange={(e) => setEditTitulo(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-[#1A1A1A]"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
                 />
               </div>
               <div className="sm:col-span-2">
                 <label
                   htmlFor="gestao-descricao"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  className="block text-sm font-medium text-ink mb-2"
                 >
                   Descrição
                 </label>
@@ -550,13 +550,13 @@ function TurmaDetalhePageContent() {
                   value={editDescricao}
                   onChange={(e) => setEditDescricao(e.target.value)}
                   rows={3}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-[#1A1A1A]"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
                 />
               </div>
               <div>
                 <label
                   htmlFor="gestao-data-entrega"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  className="block text-sm font-medium text-ink mb-2"
                 >
                   Data e hora de entrega
                 </label>
@@ -565,7 +565,7 @@ function TurmaDetalhePageContent() {
                   type="datetime-local"
                   value={editDataEntrega}
                   onChange={(e) => setEditDataEntrega(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-[#1A1A1A]"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
                 />
               </div>
               <label className="flex items-start gap-3 cursor-pointer sm:col-span-2">
@@ -573,16 +573,16 @@ function TurmaDetalhePageContent() {
                   type="checkbox"
                   checked={editArquivoObrigatorio}
                   onChange={(e) => setEditArquivoObrigatorio(e.target.checked)}
-                  className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
+                  className="mt-1 rounded border-gray-300 text-accent focus:ring-accent"
                 />
-                <span className="text-sm text-[#1A1A1A]">
+                <span className="text-sm text-ink">
                   Exigir arquivo na entrega (submissão sem anexo é bloqueada)
                 </span>
               </label>
               <div className="sm:col-span-2">
                 <label
                   htmlFor="gestao-link"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-2"
+                  className="block text-sm font-medium text-ink mb-2"
                 >
                   Link (opcional)
                 </label>
@@ -592,7 +592,7 @@ function TurmaDetalhePageContent() {
                   value={editLink}
                   onChange={(e) => setEditLink(e.target.value)}
                   placeholder="https://youtube.com/... ou outro link"
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-[#1A1A1A]"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
                 />
                 {editLink.trim() && (
                   <div className="mt-3">
@@ -617,17 +617,17 @@ function TurmaDetalhePageContent() {
                 !editTitulo.trim() ||
                 !editDescricao.trim()
               }
-              className="mt-4 inline-flex items-center rounded-lg bg-[#1898DC] text-white text-sm font-medium px-4 py-2 hover:bg-[#147EB8] disabled:opacity-70"
+              className="mt-4 inline-flex items-center rounded-lg bg-accent text-white text-sm font-medium px-4 py-2 hover:bg-accent-strong disabled:opacity-70"
             >
               {salvandoGestao ? "Salvando…" : "Salvar alterações"}
             </button>
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-[#1A1A1A] mb-2">
+            <h2 className="text-lg font-bold text-ink mb-2">
               Quem já entregou
             </h2>
-            <p className="text-sm text-[#4A4A4A] mb-4">
+            <p className="text-sm text-ink-soft mb-4">
               {turma.matriculas.length === 0
                 ? "Nenhum aluno matriculado nesta turma."
                 : (() => {
@@ -650,14 +650,14 @@ function TurmaDetalhePageContent() {
                       key={m.aluno.id}
                       className="flex items-center justify-between gap-2 py-2.5 px-3 text-sm"
                     >
-                      <span className="font-medium text-[#1A1A1A]">
+                      <span className="font-medium text-ink">
                         {m.aluno.nome}
                       </span>
                       <span
                         className={
                           entregou
                             ? "text-green-700 font-medium"
-                            : "text-[#4A4A4A]"
+                            : "text-ink-soft"
                         }
                       >
                         {entregou ? "Entregou" : "Pendente"}
@@ -670,13 +670,13 @@ function TurmaDetalhePageContent() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-[#1A1A1A] mb-4">
+            <h2 className="text-lg font-bold text-ink mb-4">
               Submissões desta atividade
             </h2>
             {carregandoSub ? (
-              <p className="text-sm text-[#4A4A4A]">Carregando submissões…</p>
+              <p className="text-sm text-ink-soft">Carregando submissões…</p>
             ) : submissoes.length === 0 ? (
-              <p className="text-sm text-[#4A4A4A]">
+              <p className="text-sm text-ink-soft">
                 Nenhuma submissão ainda.
               </p>
             ) : (
@@ -687,16 +687,16 @@ function TurmaDetalhePageContent() {
                     className="p-4 rounded-lg border border-gray-100 space-y-3"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="font-medium text-[#1A1A1A]">
+                      <span className="font-medium text-ink">
                         {s.aluno.nome}
                       </span>
-                      <span className="text-xs text-[#4A4A4A]">
+                      <span className="text-xs text-ink-soft">
                         {tempoRelativoPt(s.dataEnvio)} ·{" "}
                         {rotuloStatusSubmissaoPt(s.status)}
                       </span>
                     </div>
                     {s.conteudo && (
-                      <p className="text-sm text-[#4A4A4A] whitespace-pre-wrap">
+                      <p className="text-sm text-ink-soft whitespace-pre-wrap">
                         {s.conteudo}
                       </p>
                     )}
@@ -752,7 +752,7 @@ function TurmaDetalhePageContent() {
                           <button
                             type="button"
                             onClick={() => enviarFeedback(s.id)}
-                            className="px-4 py-2 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8]"
+                            className="px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong"
                           >
                             Enviar feedback
                           </button>
@@ -760,7 +760,7 @@ function TurmaDetalhePageContent() {
                       </div>
                     ) : null}
                     {(s.status === "aprovado" || s.status === "reprovado") && (
-                      <p className="text-xs text-[#4A4A4A] border border-gray-100 rounded-lg px-3 py-2 bg-gray-50">
+                      <p className="text-xs text-ink-soft border border-gray-100 rounded-lg px-3 py-2 bg-gray-50">
                         {s.status === "aprovado"
                           ? "Esta entrega foi aprovada. A avaliação com Aprovar/Reprovar não pode ser alterada."
                           : "Esta entrega foi reprovada. O aluno pode enviar nova versão. Esta decisão não pode ser alterada."}
@@ -821,7 +821,7 @@ function TurmaDetalhePageContent() {
                             ? "…"
                             : "Reprovar (remove nota e libera nova entrega)"}
                         </button>
-                        <span className="text-xs text-[#4A4A4A]">
+                        <span className="text-xs text-ink-soft">
                           Só é possível reprovar para pedir nova entrega; a nota
                           não pode ser alterada de outro modo.
                         </span>
@@ -842,7 +842,7 @@ export default function TurmaDetalhePage() {
   return (
     <Suspense
       fallback={
-        <div className="max-w-6xl mx-auto p-8 text-[#4A4A4A]">Carregando…</div>
+        <div className="max-w-6xl mx-auto p-8 text-ink-soft">Carregando…</div>
       }
     >
       <TurmaDetalhePageContent />

@@ -52,14 +52,14 @@ export function AlternatingTitle() {
 
   return (
     <h1
-      className="text-4xl sm:text-5xl font-bold text-[#1A1A1A] leading-tight mb-4"
+      className="mb-5 text-[2.4rem] font-semibold leading-[1.08] text-ink sm:text-5xl lg:min-h-[2.2em] lg:text-6xl"
       aria-live="polite"
     >
       {part1}
-      {part2 && <span className="text-[#1898DC]">{part2}</span>}
+      {part2 && <span className="bg-gradient-to-r from-grape to-candy bg-clip-text text-transparent">{part2}</span>}
       {phase === "typing" && length < fullText.length && (
         <span
-          className="inline-block w-0.5 h-[0.9em] bg-[#1898DC] ml-0.5 animate-pulse align-middle"
+          className="inline-block w-0.5 h-[0.9em] bg-accent ml-0.5 animate-pulse align-middle"
           aria-hidden
         />
       )}

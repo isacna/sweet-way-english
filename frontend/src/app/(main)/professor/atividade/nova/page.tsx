@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { AssetPreview } from "@/components/AssetPreview";
 import { Button } from "@/components/Button";
 import { apiFetch } from "@/lib/api";
+import { Play } from "lucide-react";
 
 type Turma = { id: number; nome: string };
 
@@ -92,24 +92,24 @@ function NovaAtividadePageContent() {
       <div>
         <Link
           href="/professor"
-          className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-4"
+          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
         >
           ← Painel
         </Link>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Nova atividade</h1>
-        <p className="text-[#4A4A4A] mt-1">
+        <h1 className="text-2xl font-bold text-ink">Nova atividade</h1>
+        <p className="text-ink-soft mt-1">
           A atividade ficará visível para todos os alunos da turma.
         </p>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-5"
+        className="card p-6 space-y-5"
       >
         <div>
           <label
             htmlFor="turma"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Turma
           </label>
@@ -119,7 +119,7 @@ function NovaAtividadePageContent() {
             value={turmaId}
             onChange={(e) => setTurmaId(e.target.value)}
             disabled={carregandoTurmas || turmas.length === 0}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC] disabled:bg-gray-50"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent disabled:bg-gray-50"
           >
             <option value="">
               {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -131,9 +131,9 @@ function NovaAtividadePageContent() {
             ))}
           </select>
           {!carregandoTurmas && turmas.length === 0 && (
-            <p className="text-sm text-[#4A4A4A] mt-2">
+            <p className="text-sm text-ink-soft mt-2">
               Crie uma turma antes.{" "}
-              <Link href="/professor/turmas/nova" className="text-[#1898DC]">
+              <Link href="/professor/turmas/nova" className="text-accent">
                 Nova turma
               </Link>
             </p>
@@ -142,7 +142,7 @@ function NovaAtividadePageContent() {
         <div>
           <label
             htmlFor="titulo"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Título
           </label>
@@ -151,13 +151,13 @@ function NovaAtividadePageContent() {
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
           <label
             htmlFor="descricao"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Descrição / instruções
           </label>
@@ -167,13 +167,13 @@ function NovaAtividadePageContent() {
             onChange={(e) => setDescricao(e.target.value)}
             required
             rows={4}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
           <label
             htmlFor="dataEntrega"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Data e hora de entrega
           </label>
@@ -183,7 +183,7 @@ function NovaAtividadePageContent() {
             value={dataEntrega}
             onChange={(e) => setDataEntrega(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <label className="flex items-start gap-3 cursor-pointer">
@@ -191,16 +191,16 @@ function NovaAtividadePageContent() {
             type="checkbox"
             checked={arquivoObrigatorio}
             onChange={(e) => setArquivoObrigatorio(e.target.checked)}
-            className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
+            className="mt-1 rounded border-gray-300 text-accent focus:ring-accent"
           />
-          <span className="text-sm text-[#1A1A1A]">
+          <span className="text-sm text-ink">
             Exigir arquivo na entrega (alunos precisam anexar um arquivo para enviar)
           </span>
         </label>
         <div>
           <label
             htmlFor="link"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Link (opcional)
           </label>
@@ -210,7 +210,7 @@ function NovaAtividadePageContent() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
             placeholder="https://youtube.com/... ou outro link"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
           {link.trim() && (
             <div className="mt-3">
@@ -223,7 +223,7 @@ function NovaAtividadePageContent() {
           )}
         </div>
         {erro && (
-          <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
+          <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
             {erro}
           </p>
         )}
@@ -234,13 +234,13 @@ function NovaAtividadePageContent() {
           <button
             type="submit"
             disabled={carregando || turmas.length === 0}
-            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
           >
             {carregando ? (
               "Salvando…"
             ) : (
               <>
-                <Image src="/icons/play-white.svg" alt="" width={18} height={18} />
+                <Play aria-hidden className="h-[18px] w-[18px] shrink-0 fill-current" />
                 Publicar atividade
               </>
             )}
@@ -255,7 +255,7 @@ export default function NovaAtividadePage() {
   return (
     <Suspense
       fallback={
-        <div className="max-w-lg mx-auto p-8 text-[#4A4A4A]">Carregando…</div>
+        <div className="max-w-lg mx-auto p-8 text-ink-soft">Carregando…</div>
       }
     >
       <NovaAtividadePageContent />

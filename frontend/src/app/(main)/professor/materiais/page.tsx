@@ -7,6 +7,7 @@ import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AssetPreview } from "@/components/AssetPreview";
 import { apiFetch, assetUrl } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
+import { Download, Search, Upload } from "lucide-react";
 
 type Turma = { id: number; nome: string };
 
@@ -167,24 +168,24 @@ function MateriaisPageContent() {
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1A1A1A]">
+          <h1 className="text-2xl font-bold text-ink">
             Materiais de Apoio
           </h1>
-          <p className="text-[#4A4A4A] mt-1">
+          <p className="text-ink-soft mt-1">
             Materiais são organizados por turma (como na API).
           </p>
         </div>
       </div>
 
-      <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-sm space-y-3">
-        <label className="block text-sm font-medium text-[#1A1A1A]">
+      <div className="card p-4 space-y-3">
+        <label className="block text-sm font-medium text-ink">
           Turma
         </label>
         <select
           value={turmaId}
           onChange={(e) => setManualTurmaId(e.target.value)}
           disabled={carregandoTurmas}
-          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A]"
+          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-ink"
         >
           <option value="">
             {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -196,8 +197,8 @@ function MateriaisPageContent() {
           ))}
         </select>
         {turmas.length === 0 && !carregandoTurmas && (
-          <p className="text-sm text-[#4A4A4A]">
-            <Link href="/professor/turmas/nova" className="text-[#1898DC]">
+          <p className="text-sm text-ink-soft">
+            <Link href="/professor/turmas/nova" className="text-accent">
               Crie uma turma
             </Link>{" "}
             para enviar materiais.
@@ -207,19 +208,13 @@ function MateriaisPageContent() {
 
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Image
-            src="/icons/search.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5"
-          />
+          <Search aria-hidden className="h-[20px] w-[20px] shrink-0 text-ink-faint absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" />
           <input
             type="search"
             placeholder="Buscar materiais..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] placeholder:text-[#4A4A4A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-ink placeholder:text-ink-soft focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -230,8 +225,8 @@ function MateriaisPageContent() {
               onClick={() => setActiveFilter(filter.label)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                 activeFilter === filter.label
-                  ? "bg-[#1898DC] text-white"
-                  : "border border-gray-300 text-[#4A4A4A] hover:bg-gray-50"
+                  ? "bg-accent text-white"
+                  : "border border-gray-300 text-ink-soft hover:bg-gray-50"
               }`}
             >
               {filter.label}
@@ -242,11 +237,11 @@ function MateriaisPageContent() {
 
       <div className="space-y-4">
         {!turmaId ? (
-          <p className="text-sm text-[#4A4A4A]">Selecione uma turma.</p>
+          <p className="text-sm text-ink-soft">Selecione uma turma.</p>
         ) : carregandoMat ? (
-          <p className="text-sm text-[#4A4A4A]">Carregando materiais…</p>
+          <p className="text-sm text-ink-soft">Carregando materiais…</p>
         ) : filtrados.length === 0 ? (
-          <p className="text-sm text-[#4A4A4A]">
+          <p className="text-sm text-ink-soft">
             Nenhum material nesta turma (ou nenhum resultado no filtro).
           </p>
         ) : (
@@ -255,7 +250,7 @@ function MateriaisPageContent() {
             return (
               <div
                 key={mat.id}
-                className="p-4 rounded-xl bg-white border border-gray-100 shadow-sm space-y-4"
+                className="card p-4 space-y-4"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
@@ -267,10 +262,10 @@ function MateriaisPageContent() {
                     />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-[#1A1A1A] truncate">
+                    <p className="font-medium text-ink truncate">
                       {mat.titulo}
                     </p>
-                    <p className="text-sm text-[#4A4A4A]">
+                    <p className="text-sm text-ink-soft">
                       {mat.tipo.toUpperCase()} •{" "}
                       {tempoRelativoPt(mat.criadoEm)}
                     </p>
@@ -280,15 +275,10 @@ function MateriaisPageContent() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 text-[#4A4A4A] hover:text-[#1898DC] hover:bg-[#1898DC]/10 rounded-lg transition-colors flex-shrink-0"
+                      className="p-2 text-ink-soft hover:text-accent hover:bg-accent/10 rounded-lg transition-colors flex-shrink-0"
                       aria-label="Abrir material"
                     >
-                      <Image
-                        src="/icons/download.svg"
-                        alt=""
-                        width={20}
-                        height={20}
-                      />
+                      <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />
                     </a>
                   )}
                 </div>
@@ -310,15 +300,9 @@ function MateriaisPageContent() {
         className="p-6 rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 space-y-4"
       >
         <div className="text-center mb-2">
-          <Image
-            src="/icons/upload-purple.svg"
-            alt=""
-            width={48}
-            height={48}
-            className="mx-auto mb-2 opacity-60"
-          />
-          <p className="font-medium text-[#1A1A1A]">Adicionar material</p>
-          <p className="text-sm text-[#4A4A4A]">
+          <Upload aria-hidden className="h-[48px] w-[48px] shrink-0 text-grape mx-auto mb-2" />
+          <p className="font-medium text-ink">Adicionar material</p>
+          <p className="text-sm text-ink-soft">
             Arquivo ou link (tipo &quot;link&quot; usa só a URL).
           </p>
         </div>
@@ -357,7 +341,7 @@ function MateriaisPageContent() {
             <input
               type="file"
               onChange={(e) => setArquivo(e.target.files?.[0] ?? null)}
-              className="w-full text-sm text-[#4A4A4A]"
+              className="w-full text-sm text-ink-soft"
             />
           </div>
         </div>
@@ -372,9 +356,9 @@ function MateriaisPageContent() {
           <button
             type="submit"
             disabled={enviando || !turmaId}
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-60"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-60"
           >
-            <Image src="/icons/upload-white.svg" alt="" width={18} height={18} />
+            <Upload aria-hidden className="h-[18px] w-[18px] shrink-0" />
             {enviando ? "Enviando…" : "Enviar material"}
           </button>
         </div>
@@ -387,7 +371,7 @@ export default function MateriaisPage() {
   return (
     <Suspense
       fallback={
-        <div className="max-w-4xl mx-auto p-8 text-[#4A4A4A]">Carregando…</div>
+        <div className="max-w-4xl mx-auto p-8 text-ink-soft">Carregando…</div>
       }
     >
       <MateriaisPageContent />

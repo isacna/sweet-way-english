@@ -1,14 +1,25 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
 import { FiltroLista } from "@/components/FiltroLista";
 import { apiFetch, apiPaths } from "@/lib/api";
+import { Plus } from "lucide-react";
 
 type TurmaOpcao = { id: number; nome: string };
+
+/** Idade em anos completos a partir de "AAAA-MM-DD" (null se a data for inválida). */
+function idadeEmAnos(data: string): number | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(data);
+  if (!m) return null;
+  const hoje = new Date();
+  const [ano, mes, dia] = [Number(m[1]), Number(m[2]), Number(m[3])];
+  let idade = hoje.getFullYear() - ano;
+  if (hoje.getMonth() + 1 < mes || (hoje.getMonth() + 1 === mes && hoje.getDate() < dia)) idade -= 1;
+  return idade;
+}
 
 type AlunoLista = {
   id: number;
@@ -42,14 +53,14 @@ function Modal({
         <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
           <h2
             id="modal-alunos-titulo"
-            className="text-lg font-bold text-[#1A1A1A]"
+            className="text-lg font-bold text-ink"
           >
             {titulo}
           </h2>
           <button
             type="button"
             onClick={onFechar}
-            className="p-2 rounded-lg text-[#4A4A4A] hover:bg-gray-100"
+            className="p-2 rounded-lg text-ink-soft hover:bg-gray-100"
             aria-label="Fechar"
           >
             ×
@@ -93,6 +104,10 @@ export default function ProfessorAlunosPage() {
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
   const [turmaId, setTurmaId] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [responsavelNome, setResponsavelNome] = useState("");
+  const [responsavelEmail, setResponsavelEmail] = useState("");
+  const [consentimentoResponsavel, setConsentimentoResponsavel] = useState(false);
   const [erroForm, setErroForm] = useState("");
   const [salvando, setSalvando] = useState(false);
 
@@ -133,6 +148,10 @@ export default function ProfessorAlunosPage() {
     setSenha("");
     setConfirmarSenha("");
     setTurmaId(turmas[0] ? String(turmas[0].id) : "");
+    setDataNascimento("");
+    setResponsavelNome("");
+    setResponsavelEmail("");
+    setConsentimentoResponsavel(false);
     setErroForm("");
     setModalNovo(true);
   }
@@ -161,6 +180,22 @@ export default function ProfessorAlunosPage() {
       setErroForm("Selecione uma turma.");
       return;
     }
+    const idade = dataNascimento ? idadeEmAnos(dataNascimento) : null;
+    if (dataNascimento && (idade === null || idade < 0)) {
+      setErroForm("Data de nascimento inválida.");
+      return;
+    }
+    const menor = idade !== null && idade < 18;
+    if (menor) {
+      if (!responsavelNome.trim() || !responsavelEmail.trim()) {
+        setErroForm("Informe o nome e o e-mail do responsável (aluno menor de 18 anos).");
+        return;
+      }
+      if (!consentimentoResponsavel) {
+        setErroForm("É preciso confirmar o consentimento do responsável.");
+        return;
+      }
+    }
     setSalvando(true);
     const res = await apiFetch(apiPaths.professorAlunos, {
       method: "POST",
@@ -169,6 +204,14 @@ export default function ProfessorAlunosPage() {
         email,
         senha,
         turmaId: parseInt(turmaId, 10),
+        ...(dataNascimento ? { dataNascimento } : {}),
+        ...(menor
+          ? {
+              responsavelNome: responsavelNome.trim(),
+              responsavelEmail: responsavelEmail.trim(),
+              consentimentoResponsavel: true,
+            }
+          : {}),
       }),
     });
     setSalvando(false);
@@ -245,6 +288,8 @@ export default function ProfessorAlunosPage() {
   }
 
   const podeAdicionar = turmas.length > 0;
+  const idadeNovo = dataNascimento ? idadeEmAnos(dataNascimento) : null;
+  const novoMenor = idadeNovo !== null && idadeNovo >= 0 && idadeNovo < 18;
 
   return (
     <div className="max-w-6xl mx-auto space-y-8">
@@ -252,12 +297,12 @@ export default function ProfessorAlunosPage() {
         <div>
           <Link
             href="/professor"
-            className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-2"
+            className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-2"
           >
             ← Voltar ao painel
           </Link>
-          <h1 className="text-2xl font-bold text-[#1A1A1A]">Alunos</h1>
-          <p className="text-[#4A4A4A] mt-1">
+          <h1 className="text-2xl font-bold text-ink">Alunos</h1>
+          <p className="text-ink-soft mt-1">
             Alunos matriculados nas suas turmas. Novos cadastros são vinculados a
             uma turma para aparecerem aqui.
           </p>
@@ -266,9 +311,9 @@ export default function ProfessorAlunosPage() {
           type="button"
           disabled={!podeAdicionar}
           onClick={abrirNovo}
-          className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-5 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-50 disabled:pointer-events-none"
+          className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-accent text-white px-5 py-3 hover:bg-accent-strong transition-colors disabled:opacity-50 disabled:pointer-events-none"
         >
-          <Image src="/icons/plus-white.svg" alt="" width={18} height={18} />
+          <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
           Novo aluno
         </button>
       </div>
@@ -278,7 +323,7 @@ export default function ProfessorAlunosPage() {
           Crie uma{" "}
           <Link
             href="/professor/turmas/nova"
-            className="font-medium text-[#1898DC] hover:text-[#147EB8]"
+            className="font-medium text-accent hover:text-accent-strong"
           >
             turma
           </Link>{" "}
@@ -287,7 +332,7 @@ export default function ProfessorAlunosPage() {
       )}
 
       {erroLista && (
-        <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl">
+        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
           {erroLista}
         </p>
       )}
@@ -311,26 +356,26 @@ export default function ProfessorAlunosPage() {
         />
       )}
 
-      <div className="rounded-xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+      <div className="card overflow-hidden">
         {carregando ? (
-          <p className="p-8 text-[#4A4A4A]">Carregando alunos…</p>
+          <p className="p-8 text-ink-soft">Carregando alunos…</p>
         ) : alunos.length === 0 ? (
           <div className="p-8 text-center">
-            <p className="text-[#4A4A4A] mb-4">
+            <p className="text-ink-soft mb-4">
               Nenhum aluno nas suas turmas ainda.
             </p>
             {podeAdicionar && (
               <button
                 type="button"
                 onClick={abrirNovo}
-                className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+                className="text-sm font-medium text-accent hover:text-accent-strong"
               >
                 Cadastrar primeiro aluno
               </button>
             )}
           </div>
         ) : alunosFiltrados.length === 0 ? (
-          <p className="p-8 text-center text-[#4A4A4A] text-sm">
+          <p className="p-8 text-center text-ink-soft text-sm">
             Nenhum aluno encontrado para os filtros aplicados.
           </p>
         ) : (
@@ -338,16 +383,16 @@ export default function ProfessorAlunosPage() {
             <table className="w-full text-left text-sm">
               <thead className="bg-gray-50 border-b border-gray-100">
                 <tr>
-                  <th className="px-6 py-3 font-semibold text-[#1A1A1A]">
+                  <th className="px-6 py-3 font-semibold text-ink">
                     Nome
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#1A1A1A]">
+                  <th className="px-6 py-3 font-semibold text-ink">
                     Email
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#1A1A1A]">
+                  <th className="px-6 py-3 font-semibold text-ink">
                     Turmas
                   </th>
-                  <th className="px-6 py-3 font-semibold text-[#1A1A1A] w-40">
+                  <th className="px-6 py-3 font-semibold text-ink w-40">
                     Ações
                   </th>
                 </tr>
@@ -355,17 +400,17 @@ export default function ProfessorAlunosPage() {
               <tbody className="divide-y divide-gray-100">
                 {alunosFiltrados.map((a) => (
                   <tr key={a.id} className="hover:bg-gray-50/80">
-                    <td className="px-6 py-4 font-medium text-[#1A1A1A]">
+                    <td className="px-6 py-4 font-medium text-ink">
                       {a.nome}
                     </td>
-                    <td className="px-6 py-4 text-[#4A4A4A]">{a.email}</td>
+                    <td className="px-6 py-4 text-ink-soft">{a.email}</td>
                     <td className="px-6 py-4">
                       <div className="flex flex-wrap gap-1.5">
                         {a.turmas.map((t) => (
                           <Link
                             key={t.id}
                             href={`/professor/turmas/${t.id}`}
-                            className="inline-block px-2.5 py-0.5 rounded-full bg-[#1898DC]/10 text-[#1898DC] text-xs font-medium hover:bg-[#1898DC]/20"
+                            className="inline-block px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-xs font-medium hover:bg-accent/20"
                           >
                             {t.nome}
                           </Link>
@@ -377,7 +422,7 @@ export default function ProfessorAlunosPage() {
                         <button
                           type="button"
                           onClick={() => abrirEditar(a)}
-                          className="text-xs font-medium text-[#1898DC] hover:text-[#147EB8]"
+                          className="text-xs font-medium text-accent hover:text-accent-strong"
                         >
                           Editar
                         </button>
@@ -405,7 +450,7 @@ export default function ProfessorAlunosPage() {
             <div>
               <label
                 htmlFor="novo-nome"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Nome completo
               </label>
@@ -414,13 +459,13 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
               <label
                 htmlFor="novo-email"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Email
               </label>
@@ -430,13 +475,13 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
               <label
                 htmlFor="novo-turma"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Turma
               </label>
@@ -445,7 +490,7 @@ export default function ProfessorAlunosPage() {
                 value={turmaId}
                 onChange={(e) => setTurmaId(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               >
                 {turmas.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -456,8 +501,76 @@ export default function ProfessorAlunosPage() {
             </div>
             <div>
               <label
+                htmlFor="novo-nascimento"
+                className="block text-sm font-medium text-ink mb-1.5"
+              >
+                Data de nascimento (opcional)
+              </label>
+              <input
+                id="novo-nascimento"
+                type="date"
+                value={dataNascimento}
+                max={new Date().toISOString().slice(0, 10)}
+                onChange={(e) => setDataNascimento(e.target.value)}
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+              />
+            </div>
+            {novoMenor && (
+              <div className="space-y-4 rounded-lg border border-amber-200 bg-amber-50/60 p-4">
+                <p className="text-xs text-amber-900">
+                  Aluno menor de 18 anos: os dados do responsável e o consentimento
+                  dele são obrigatórios (LGPD, art. 14).
+                </p>
+                <div>
+                  <label
+                    htmlFor="novo-resp-nome"
+                    className="block text-sm font-medium text-ink mb-1.5"
+                  >
+                    Nome do responsável
+                  </label>
+                  <input
+                    id="novo-resp-nome"
+                    value={responsavelNome}
+                    onChange={(e) => setResponsavelNome(e.target.value)}
+                    required
+                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="novo-resp-email"
+                    className="block text-sm font-medium text-ink mb-1.5"
+                  >
+                    E-mail do responsável
+                  </label>
+                  <input
+                    id="novo-resp-email"
+                    type="email"
+                    value={responsavelEmail}
+                    onChange={(e) => setResponsavelEmail(e.target.value)}
+                    required
+                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  />
+                </div>
+                <label className="flex items-start gap-2 text-sm text-ink">
+                  <input
+                    type="checkbox"
+                    checked={consentimentoResponsavel}
+                    onChange={(e) => setConsentimentoResponsavel(e.target.checked)}
+                    required
+                    className="mt-0.5"
+                  />
+                  <span>
+                    Confirmo que o responsável autorizou o cadastro e o uso da
+                    plataforma por este aluno.
+                  </span>
+                </label>
+              </div>
+            )}
+            <div>
+              <label
                 htmlFor="novo-senha"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Senha inicial
               </label>
@@ -468,13 +581,13 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
               <label
                 htmlFor="novo-confirmar"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Confirmar senha
               </label>
@@ -485,11 +598,11 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setConfirmarSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             {erroForm && (
-              <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">
+              <p className="text-sm text-danger-ink bg-danger-soft px-3 py-2 rounded-2xl font-medium">
                 {erroForm}
               </p>
             )}
@@ -505,7 +618,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-5 py-2.5 hover:bg-[#147EB8] disabled:opacity-70"
+                className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-5 py-2.5 hover:bg-accent-strong disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Cadastrar"}
               </button>
@@ -520,7 +633,7 @@ export default function ProfessorAlunosPage() {
           onFechar={() => setEditando(null)}
         >
           <form onSubmit={submitEditar} className="space-y-4">
-            <p className="text-xs text-[#4A4A4A]">
+            <p className="text-xs text-ink-soft">
               Turmas:{" "}
               {editando.turmas.map((t) => t.nome).join(", ") || "—"} — para
               mudar matrícula, use a página da turma.
@@ -528,7 +641,7 @@ export default function ProfessorAlunosPage() {
             <div>
               <label
                 htmlFor="edit-nome"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Nome
               </label>
@@ -537,13 +650,13 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
               <label
                 htmlFor="edit-email"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Email
               </label>
@@ -553,13 +666,13 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
               <label
                 htmlFor="edit-senha"
-                className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                className="block text-sm font-medium text-ink mb-1.5"
               >
                 Nova senha (opcional)
               </label>
@@ -570,14 +683,14 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 minLength={6}
                 placeholder="Deixe em branco para manter"
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             {senha ? (
               <div>
                 <label
                   htmlFor="edit-confirmar"
-                  className="block text-sm font-medium text-[#1A1A1A] mb-1.5"
+                  className="block text-sm font-medium text-ink mb-1.5"
                 >
                   Confirmar nova senha
                 </label>
@@ -587,12 +700,12 @@ export default function ProfessorAlunosPage() {
                   value={confirmarSenha}
                   onChange={(e) => setConfirmarSenha(e.target.value)}
                   minLength={6}
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
                 />
               </div>
             ) : null}
             {erroForm && (
-              <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">
+              <p className="text-sm text-danger-ink bg-danger-soft px-3 py-2 rounded-2xl font-medium">
                 {erroForm}
               </p>
             )}
@@ -608,7 +721,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-5 py-2.5 hover:bg-[#147EB8] disabled:opacity-70"
+                className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-5 py-2.5 hover:bg-accent-strong disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Salvar"}
               </button>
@@ -619,7 +732,7 @@ export default function ProfessorAlunosPage() {
 
       {excluindo && (
         <Modal titulo="Excluir aluno" onFechar={() => setExcluindo(null)}>
-          <p className="text-[#4A4A4A] text-sm mb-6">
+          <p className="text-ink-soft text-sm mb-6">
             Tem certeza que deseja excluir <strong>{excluindo.nome}</strong>?
             Todas as matrículas, submissões e dados vinculados a este aluno
             serão removidos. Esta ação não pode ser desfeita.

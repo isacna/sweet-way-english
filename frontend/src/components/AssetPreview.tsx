@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import {
   getAssetPreviewKind,
   youtubeEmbedUrl,
   type AssetPreviewKind,
 } from "@/lib/assetPreviewKind";
+import { Download, FileText } from "lucide-react";
 
 type AssetPreviewProps = {
   /** URL absoluta (use `assetUrl` para caminhos `/uploads/...`). */
@@ -29,14 +29,8 @@ function FallbackAbrir({
 }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-200">
-      <Image
-        src="/icons/file-document-green.svg"
-        alt=""
-        width={40}
-        height={40}
-        className="opacity-50"
-      />
-      <p className="text-sm text-[#4A4A4A] max-w-sm">
+      <FileText aria-hidden className="h-[40px] w-[40px] shrink-0" />
+      <p className="text-sm text-ink-soft max-w-sm">
         Não há pré-visualização embutida para este arquivo ou link. Abra em
         nova aba para ver o conteúdo.
       </p>
@@ -44,9 +38,9 @@ function FallbackAbrir({
         href={fullUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+        className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-strong"
       >
-        <Image src="/icons/download.svg" alt="" width={16} height={16} />
+        <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
         Abrir em nova aba
       </a>
       <span className="sr-only">{title}</span>
@@ -122,7 +116,7 @@ function PreviewBody({
   if (kind === "audio") {
     return (
       <div className="flex flex-col items-stretch gap-2 p-4 bg-white rounded-lg border border-gray-100">
-        <p className="text-xs text-[#4A4A4A] truncate">{title}</p>
+        <p className="text-xs text-ink-soft truncate">{title}</p>
         <audio src={fullUrl} controls className="w-full" preload="metadata" />
       </div>
     );
@@ -153,7 +147,7 @@ export function AssetPreview({
       className={`rounded-xl border border-gray-200 bg-gray-50 overflow-hidden ${className}`}
     >
       <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-gray-100 bg-white">
-        <span className="text-xs font-medium text-[#4A4A4A]">
+        <span className="text-xs font-medium text-ink-soft">
           {aberto ? "Pré-visualização" : "Pré-visualização oculta"}
         </span>
         <div className="flex items-center gap-2 shrink-0">
@@ -162,7 +156,7 @@ export function AssetPreview({
               <button
                 type="button"
                 onClick={() => setAberto(false)}
-                className="text-xs font-medium text-[#1898DC] hover:text-[#147EB8] hover:underline"
+                className="text-xs font-medium text-accent hover:text-accent-strong hover:underline"
               >
                 Ocultar
               </button>
@@ -175,7 +169,7 @@ export function AssetPreview({
             href={fullUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-[#1898DC] font-medium hover:underline"
+            className="text-xs text-accent font-medium hover:underline"
           >
             Abrir em nova aba
           </a>
@@ -186,16 +180,10 @@ export function AssetPreview({
         <button
           type="button"
           onClick={() => setAberto(true)}
-          className="w-full text-left px-3 py-4 text-sm text-[#4A4A4A] bg-gray-50 hover:bg-gray-100 transition-colors"
+          className="w-full text-left px-3 py-4 text-sm text-ink-soft bg-gray-50 hover:bg-gray-100 transition-colors"
         >
           <span className="inline-flex items-center gap-2">
-            <Image
-              src="/icons/file-document-green.svg"
-              alt=""
-              width={18}
-              height={18}
-              className="opacity-70 shrink-0"
-            />
+            <FileText aria-hidden className="h-[18px] w-[18px] shrink-0 shrink-0" />
             Clique aqui para exibir a mídia nesta página.
           </span>
         </button>

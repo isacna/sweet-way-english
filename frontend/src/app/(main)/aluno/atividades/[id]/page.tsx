@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
 import { rotuloStatusSubmissaoPt, tempoRelativoPt } from "@/lib/timePt";
+import { Download, Upload } from "lucide-react";
 
 type FeedbackItem = {
   comentario: string;
@@ -159,7 +159,7 @@ function AtividadeEntregaContent() {
   if (carregando) {
     return (
       <div className="max-w-2xl mx-auto">
-        <p className="text-[#4A4A4A]">Carregando…</p>
+        <p className="text-ink-soft">Carregando…</p>
       </div>
     );
   }
@@ -190,12 +190,12 @@ function AtividadeEntregaContent() {
       <div>
         <Link
           href={voltarHref}
-          className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-4"
+          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
         >
           ← Voltar à turma
         </Link>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">{atividade.titulo}</h1>
-        <p className="text-sm text-[#4A4A4A] mt-2">
+        <h1 className="text-2xl font-bold text-ink">{atividade.titulo}</h1>
+        <p className="text-sm text-ink-soft mt-2">
           Prazo: {new Date(atividade.dataEntrega).toLocaleString("pt-BR")}
           {atividade.arquivoObrigatorio && (
             <span className="block mt-1 text-amber-800 font-medium">
@@ -203,17 +203,17 @@ function AtividadeEntregaContent() {
             </span>
           )}
         </p>
-        <div className="mt-4 p-4 rounded-xl bg-white border border-gray-100 text-sm text-[#4A4A4A] whitespace-pre-wrap">
+        <div className="mt-4 p-4 rounded-xl bg-white border border-gray-100 text-sm text-ink-soft whitespace-pre-wrap">
           {atividade.descricao}
         </div>
       </div>
 
       {submissoes.length > 0 && (
         <section className="space-y-4">
-          <h2 className="text-lg font-bold text-[#1A1A1A]">
+          <h2 className="text-lg font-bold text-ink">
             Suas entregas e feedbacks do professor
           </h2>
-          <p className="text-sm text-[#4A4A4A]">
+          <p className="text-sm text-ink-soft">
             Cada envio aparece abaixo. Quando o professor corrigir com nota, o
             comentário e a nota ficam registrados nesta mesma atividade.
           </p>
@@ -224,21 +224,21 @@ function AtividadeEntregaContent() {
                 className="p-5 rounded-xl bg-gray-50 border border-gray-200 space-y-3"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="text-sm font-semibold text-[#1A1A1A]">
+                  <span className="text-sm font-semibold text-ink">
                     Entrega {index + 1}
                   </span>
-                  <span className="text-xs text-[#4A4A4A]">
+                  <span className="text-xs text-ink-soft">
                     {new Date(s.dataEnvio).toLocaleString("pt-BR")} ·{" "}
                     {tempoRelativoPt(s.dataEnvio)} ·{" "}
                     {rotuloStatusSubmissaoPt(s.status)}
                   </span>
                 </div>
                 {s.conteudo ? (
-                  <p className="text-sm text-[#1A1A1A] whitespace-pre-wrap">
+                  <p className="text-sm text-ink whitespace-pre-wrap">
                     {s.conteudo}
                   </p>
                 ) : (
-                  <p className="text-sm text-[#4A4A4A] italic">
+                  <p className="text-sm text-ink-soft italic">
                     (sem texto na entrega)
                   </p>
                 )}
@@ -247,14 +247,9 @@ function AtividadeEntregaContent() {
                     href={assetUrl(s.arquivoUrl) ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-[#1898DC] font-medium hover:underline"
+                    className="inline-flex items-center gap-2 text-sm text-accent font-medium hover:underline"
                   >
-                    <Image
-                      src="/icons/download.svg"
-                      alt=""
-                      width={16}
-                      height={16}
-                    />
+                    <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
                     Baixar anexo desta entrega
                   </a>
                 )}
@@ -266,7 +261,7 @@ function AtividadeEntregaContent() {
                     <p className="text-green-900/90 mt-2 whitespace-pre-wrap">
                       {s.feedback.comentario}
                     </p>
-                    <p className="text-xs text-[#4A4A4A] mt-3">
+                    <p className="text-xs text-ink-soft mt-3">
                       {s.feedback.professor.nome}
                       {s.feedback.criadoEm
                         ? ` · ${new Date(s.feedback.criadoEm).toLocaleString("pt-BR")}`
@@ -295,9 +290,9 @@ function AtividadeEntregaContent() {
       {podeNovaEntrega ? (
         <form
           onSubmit={handleSubmit}
-          className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-4"
+          className="card p-6 space-y-4"
         >
-          <h2 className="text-lg font-bold text-[#1A1A1A]">
+          <h2 className="text-lg font-bold text-ink">
             {ultima ? "Nova entrega" : "Sua resposta"}
           </h2>
           {ultima?.status === "reprovado" && (
@@ -311,21 +306,21 @@ function AtividadeEntregaContent() {
             onChange={(e) => setConteudo(e.target.value)}
             rows={6}
             placeholder="Escreva sua resposta aqui…"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20"
           />
           <div>
-            <label className="block text-sm font-medium text-[#1A1A1A] mb-2">
+            <label className="block text-sm font-medium text-ink mb-2">
               Anexo{" "}
               {atividade.arquivoObrigatorio ? "(obrigatório)" : "(opcional)"}
             </label>
             <input
               type="file"
               onChange={(e) => setArquivo(e.target.files?.[0] ?? null)}
-              className="w-full text-sm text-[#4A4A4A]"
+              className="w-full text-sm text-ink-soft"
             />
           </div>
           {erro && (
-            <p className="text-sm text-red-600 bg-red-50 px-3 py-2 rounded-lg">
+            <p className="text-sm text-danger-ink bg-danger-soft px-3 py-2 rounded-2xl font-medium">
               {erro}
             </p>
           )}
@@ -337,18 +332,18 @@ function AtividadeEntregaContent() {
           <button
             type="submit"
             disabled={enviando}
-            className="inline-flex items-center gap-2 rounded-lg bg-[#1898DC] text-white font-medium px-6 py-3 hover:bg-[#147EB8] disabled:opacity-70"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-70"
           >
-            <Image src="/icons/upload-white.svg" alt="" width={18} height={18} />
+            <Upload aria-hidden className="h-[18px] w-[18px] shrink-0" />
             {enviando ? "Enviando…" : "Enviar entrega"}
           </button>
         </form>
       ) : (
-        <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-2">
+        <section className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-2">
             Nova entrega indisponível
           </h2>
-          <p className="text-sm text-[#4A4A4A]">
+          <p className="text-sm text-ink-soft">
             {ultima
               ? mensagemBloqueioEntrega(ultima.status)
               : "Não é possível enviar neste momento."}
@@ -363,7 +358,7 @@ export default function AlunoAtividadePage() {
   return (
     <Suspense
       fallback={
-        <div className="max-w-2xl mx-auto p-8 text-[#4A4A4A]">Carregando…</div>
+        <div className="max-w-2xl mx-auto p-8 text-ink-soft">Carregando…</div>
       }
     >
       <AtividadeEntregaContent />

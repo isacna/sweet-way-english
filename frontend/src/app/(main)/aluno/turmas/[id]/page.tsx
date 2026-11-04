@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
+import { FileText } from "lucide-react";
 
 type TurmaDetalhe = {
   id: number;
@@ -56,7 +56,7 @@ function statusCor(key: StatusFiltro): string {
   if (key === "reprovada") return "text-red-600";
   if (key === "corrigida") return "text-blue-600";
   if (key === "enviada") return "text-amber-700";
-  return "text-[#1898DC]";
+  return "text-accent";
 }
 
 function ChipFiltro({
@@ -74,8 +74,8 @@ function ChipFiltro({
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
         ativo
-          ? "bg-[#1898DC] text-white"
-          : "bg-gray-100 text-[#4A4A4A] hover:bg-gray-200"
+          ? "bg-accent text-white"
+          : "bg-gray-100 text-ink-soft hover:bg-gray-200"
       }`}
     >
       {children}
@@ -165,7 +165,7 @@ export default function AlunoTurmaDetalhePage() {
   if (carregando) {
     return (
       <div className="max-w-4xl mx-auto">
-        <p className="text-[#4A4A4A]">Carregando…</p>
+        <p className="text-ink-soft">Carregando…</p>
       </div>
     );
   }
@@ -195,42 +195,42 @@ export default function AlunoTurmaDetalhePage() {
       <div>
         <Link
           href="/aluno/turmas"
-          className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-4"
+          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
         >
           ← Minhas turmas
         </Link>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">{turma.nome}</h1>
-        <p className="text-[#4A4A4A] mt-1">Professor {turma.professor.nome}</p>
+        <h1 className="text-2xl font-bold text-ink">{turma.nome}</h1>
+        <p className="text-ink-soft mt-1">Professor {turma.professor.nome}</p>
         {turma.descricao && (
-          <p className="text-sm text-[#4A4A4A] mt-3 max-w-2xl">{turma.descricao}</p>
+          <p className="text-sm text-ink-soft mt-3 max-w-2xl">{turma.descricao}</p>
         )}
       </div>
 
       {/* Mural de Avisos */}
       {avisos.length > 0 && (
-        <section className="rounded-xl border border-[#1898DC]/20 bg-[#1898DC]/5 overflow-hidden">
-          <div className="px-6 py-4 border-b border-[#1898DC]/15 flex items-center gap-2">
+        <section className="rounded-xl border border-accent/20 bg-accent/5 overflow-hidden">
+          <div className="px-6 py-4 border-b border-accent/15 flex items-center gap-2">
             <span>📌</span>
-            <h2 className="text-base font-bold text-[#1A1A1A]">Mural de Avisos</h2>
+            <h2 className="text-base font-bold text-ink">Mural de Avisos</h2>
           </div>
-          <ul className="divide-y divide-[#1898DC]/10">
+          <ul className="divide-y divide-accent/10">
             {avisos.map((av) => (
               <li key={av.id} className="px-6 py-4 space-y-1">
-                <p className="font-semibold text-[#1A1A1A]">{av.titulo}</p>
+                <p className="font-semibold text-ink">{av.titulo}</p>
                 {av.conteudo && (
-                  <p className="text-sm text-[#4A4A4A]">{av.conteudo}</p>
+                  <p className="text-sm text-ink-soft">{av.conteudo}</p>
                 )}
                 {av.link && (
                   <a
                     href={av.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1898DC] hover:underline break-all"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline break-all"
                   >
                     🔗 {av.link}
                   </a>
                 )}
-                <p className="text-xs text-[#4A4A4A]">
+                <p className="text-xs text-ink-soft">
                   {new Date(av.criadoEm).toLocaleString("pt-BR")}
                 </p>
               </li>
@@ -240,9 +240,9 @@ export default function AlunoTurmaDetalhePage() {
       )}
 
       {/* Materiais */}
-      <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-4">
+      <section className="card p-6 space-y-4">
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          <h2 className="text-lg font-bold text-[#1A1A1A]">Materiais</h2>
+          <h2 className="text-lg font-bold text-ink">Materiais</h2>
           {materiais.length > 0 && (
             <div className="flex items-center gap-2 flex-wrap">
               {tiposMaterial.map((t) => (
@@ -259,9 +259,9 @@ export default function AlunoTurmaDetalhePage() {
         </div>
 
         {materiais.length === 0 ? (
-          <p className="text-sm text-[#4A4A4A]">Nenhum material publicado.</p>
+          <p className="text-sm text-ink-soft">Nenhum material publicado.</p>
         ) : materiaisFiltrados.length === 0 ? (
-          <p className="text-sm text-[#4A4A4A]">Nenhum material do tipo selecionado.</p>
+          <p className="text-sm text-ink-soft">Nenhum material do tipo selecionado.</p>
         ) : (
           <ul className="space-y-2">
             {materiaisFiltrados.map((m) => {
@@ -273,14 +273,14 @@ export default function AlunoTurmaDetalhePage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8] flex items-center gap-2"
+                      className="text-sm font-medium text-accent hover:text-accent-strong flex items-center gap-2"
                     >
-                      <Image src="/icons/file-document.svg" alt="" width={16} height={16} />
+                      <FileText aria-hidden className="h-[16px] w-[16px] shrink-0" />
                       {m.titulo}{" "}
-                      <span className="text-[#4A4A4A] font-normal capitalize">({m.tipo})</span>
+                      <span className="text-ink-soft font-normal capitalize">({m.tipo})</span>
                     </a>
                   ) : (
-                    <span className="text-sm text-[#1A1A1A]">{m.titulo}</span>
+                    <span className="text-sm text-ink">{m.titulo}</span>
                   )}
                 </li>
               );
@@ -290,9 +290,9 @@ export default function AlunoTurmaDetalhePage() {
       </section>
 
       {/* Atividades */}
-      <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-4">
+      <section className="card p-6 space-y-4">
         <div className="flex items-center justify-between gap-4 flex-wrap">
-          <h2 className="text-lg font-bold text-[#1A1A1A]">Atividades</h2>
+          <h2 className="text-lg font-bold text-ink">Atividades</h2>
           {atividades.length > 0 && (
             <div className="flex items-center gap-2 flex-wrap">
               {statusFiltros.map((f) => (
@@ -309,9 +309,9 @@ export default function AlunoTurmaDetalhePage() {
         </div>
 
         {atividades.length === 0 ? (
-          <p className="text-sm text-[#4A4A4A]">Nenhuma atividade nesta turma.</p>
+          <p className="text-sm text-ink-soft">Nenhuma atividade nesta turma.</p>
         ) : atividadesFiltradas.length === 0 ? (
-          <p className="text-sm text-[#4A4A4A]">Nenhuma atividade com esse status.</p>
+          <p className="text-sm text-ink-soft">Nenhuma atividade com esse status.</p>
         ) : (
           <ul className="space-y-3">
             {atividadesFiltradas.map((a) => {
@@ -322,9 +322,9 @@ export default function AlunoTurmaDetalhePage() {
                   className="p-4 rounded-lg border border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
                 >
                   <div className="min-w-0">
-                    <p className="font-medium text-[#1A1A1A]">{a.titulo}</p>
-                    <p className="text-xs text-[#4A4A4A] mt-1 line-clamp-2">{a.descricao}</p>
-                    <p className="text-xs text-[#4A4A4A] mt-2">
+                    <p className="font-medium text-ink">{a.titulo}</p>
+                    <p className="text-xs text-ink-soft mt-1 line-clamp-2">{a.descricao}</p>
+                    <p className="text-xs text-ink-soft mt-2">
                       Entrega: {new Date(a.dataEntrega).toLocaleString("pt-BR")}
                     </p>
                     {a.arquivoObrigatorio && (
