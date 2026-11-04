@@ -46,7 +46,8 @@ jobs:
 
   e2e:
     name: E2E error check
-    runs-on: ubuntu-latest
+    # Fixo em 24.04: o Playwright 1.58 não instala navegadores no ubuntu-latest (26.04)
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
