@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/Button";
 import { FiltroLista } from "@/components/FiltroLista";
 import { apiFetch } from "@/lib/api";
+import { Plus, UsersRound } from "lucide-react";
 
 type Turma = {
   id: number;
@@ -68,19 +68,19 @@ export default function TurmasPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1A1A1A]">Minhas Turmas</h1>
-          <p className="text-[#4A4A4A] mt-1">
+          <h1 className="text-2xl font-bold text-ink">Minhas Turmas</h1>
+          <p className="text-ink-soft mt-1">
             Gerencie seus alunos e materiais por turma.
           </p>
         </div>
         <Button href="/professor/turmas/nova" variant="primary" size="md">
-          <Image src="/icons/plus-white.svg" alt="" width={18} height={18} />
+          <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
           Nova Turma
         </Button>
       </div>
 
       {erro && (
-        <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-xl">
+        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
           {erro}
         </p>
       )}
@@ -96,16 +96,16 @@ export default function TurmasPage() {
       )}
 
       {carregando ? (
-        <p className="text-[#4A4A4A]">Carregando turmas…</p>
+        <p className="text-ink-soft">Carregando turmas…</p>
       ) : turmas.length === 0 ? (
         <div className="p-8 rounded-xl bg-white border border-gray-100 text-center">
-          <p className="text-[#4A4A4A] mb-4">Nenhuma turma ainda.</p>
+          <p className="text-ink-soft mb-4">Nenhuma turma ainda.</p>
           <Button href="/professor/turmas/nova" variant="primary" size="md">
             Criar primeira turma
           </Button>
         </div>
       ) : turmasFiltradas.length === 0 ? (
-        <p className="text-[#4A4A4A] text-sm">
+        <p className="text-ink-soft text-sm">
           Nenhuma turma encontrada para "{busca}".
         </p>
       ) : (
@@ -113,28 +113,23 @@ export default function TurmasPage() {
           {turmasFiltradas.map((cls) => (
             <article
               key={cls.id}
-              className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm flex flex-col"
+              className="card p-6 flex flex-col"
             >
               <div className="flex items-start justify-between mb-4">
-                <h3 className="font-bold text-[#1A1A1A]">{cls.nome}</h3>
+                <h3 className="font-bold text-ink">{cls.nome}</h3>
               </div>
               {cls.descricao && (
-                <p className="text-sm text-[#4A4A4A] mb-3 line-clamp-2">
+                <p className="text-sm text-ink-soft mb-3 line-clamp-2">
                   {cls.descricao}
                 </p>
               )}
-              <div className="space-y-3 text-sm text-[#4A4A4A] mb-4">
+              <div className="space-y-3 text-sm text-ink-soft mb-4">
                 <p className="flex items-center gap-2">
-                  <Image
-                    src="/icons/users.svg"
-                    alt=""
-                    width={16}
-                    height={16}
-                  />
+                  <UsersRound aria-hidden className="h-[16px] w-[16px] shrink-0" />
                   {cls._count?.matriculas ?? 0} alunos
                 </p>
                 <p>
-                  <span className="font-medium text-[#1A1A1A]">Código: </span>
+                  <span className="font-medium text-ink">Código: </span>
                   <code className="text-xs bg-gray-100 px-2 py-0.5 rounded">
                     {cls.codigoConvite}
                   </code>
@@ -154,7 +149,7 @@ export default function TurmasPage() {
                 </Button>
                 <Link
                   href={`/professor/materiais?turma=${cls.id}`}
-                  className="text-center text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+                  className="text-center text-sm font-medium text-accent hover:text-accent-strong"
                 >
                   Materiais desta turma
                 </Link>

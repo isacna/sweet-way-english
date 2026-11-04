@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
+import { ContinuarCursoCard } from "@/components/curso/ContinuarCursoCard";
 import { apiFetch, apiPaths, getStoredUser } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
+import { CalendarDays, Plus, SquareCheckBig, UsersRound } from "lucide-react";
 
 type Turma = {
   id: number;
@@ -153,28 +154,30 @@ export default function AlunoDashboardPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1A1A1A]">
+          <h1 className="text-2xl font-bold text-ink">
             Olá! Seu painel
           </h1>
-          <p className="text-[#4A4A4A] mt-1">
+          <p className="text-ink-soft mt-1">
             Turmas, prazos e feedbacks dos professores.
           </p>
         </div>
         {!carregando && turmas.length === 0 && (
           <Button href="/aluno/turmas" variant="primary" size="md">
-            <Image src="/icons/plus-white.svg" alt="" width={18} height={18} />
+            <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
             Entrar em turma
           </Button>
         )}
       </div>
 
-      <div className="grid sm:grid-cols-3 gap-6">
+      <ContinuarCursoCard />
+
+      <div className="grid grid-cols-3 gap-2.5 sm:gap-6">
         {[
           {
             label: "Minhas turmas",
             value: carregando ? "…" : String(turmas.length),
             icon: "users" as const,
-            color: "bg-[#1898DC]/10 text-[#1898DC]",
+            color: "bg-accent/10 text-accent",
           },
           {
             label: "Atividades a entregar",
@@ -191,54 +194,39 @@ export default function AlunoDashboardPage() {
         ].map((stat) => (
           <div
             key={stat.label}
-            className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm"
+            className="card p-3.5 sm:p-6"
           >
             <div
-              className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${stat.color}`}
+              className={`mb-3 flex h-10 w-10 items-center justify-center rounded-2xl sm:mb-4 sm:h-12 sm:w-12 ${stat.color}`}
             >
               {stat.icon === "users" && (
-                <Image
-                  src="/icons/users-purple.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <UsersRound aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
               {stat.icon === "check" && (
-                <Image
-                  src="/icons/check-square-orange.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <SquareCheckBig aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
               {stat.icon === "calendar" && (
-                <Image
-                  src="/icons/calendar-green.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <CalendarDays aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
             </div>
-            <p className="text-2xl font-bold text-[#1A1A1A]">{stat.value}</p>
-            <p className="text-sm text-[#4A4A4A]">{stat.label}</p>
+            <p className="font-display text-2xl font-semibold text-ink sm:text-3xl">{stat.value}</p>
+            <p className="text-xs leading-snug text-ink-soft sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <div className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-1">
+        <div className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-1">
             Prazos e status
           </h2>
-          <p className="text-sm text-[#4A4A4A] mb-4">
+          <p className="text-sm text-ink-soft mb-4">
             Por data de entrega
           </p>
           {carregando ? (
-            <p className="text-sm text-[#4A4A4A]">Carregando…</p>
+            <p className="text-sm text-ink-soft">Carregando…</p>
           ) : prazos.length === 0 ? (
-            <p className="text-sm text-[#4A4A4A]">
+            <p className="text-sm text-ink-soft">
               Nenhuma atividade. Entre em uma turma com código de convite.
             </p>
           ) : (
@@ -249,10 +237,10 @@ export default function AlunoDashboardPage() {
                   className="py-3 first:pt-0 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
                 >
                   <div className="min-w-0">
-                    <p className="font-medium text-[#1A1A1A] truncate">
+                    <p className="font-medium text-ink truncate">
                       {p.titulo}
                     </p>
-                    <p className="text-xs text-[#4A4A4A]">
+                    <p className="text-xs text-ink-soft">
                       {p.turmaNome} · Entrega{" "}
                       {new Date(p.dataEntrega).toLocaleString("pt-BR")}
                     </p>
@@ -274,7 +262,7 @@ export default function AlunoDashboardPage() {
                   </div>
                   <Link
                     href={`/aluno/atividades/${p.atividadeId}?turmaId=${p.turmaId}`}
-                    className="text-sm font-medium text-[#1898DC] hover:text-[#147EB8] shrink-0"
+                    className="text-sm font-medium text-accent hover:text-accent-strong shrink-0"
                   >
                     {p.situacao === "a_entregar" ||
                     p.situacao === "aguardando"
@@ -287,17 +275,17 @@ export default function AlunoDashboardPage() {
           )}
         </div>
 
-        <div className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-1">
+        <div className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-1">
             Feedbacks recentes
           </h2>
-          <p className="text-sm text-[#4A4A4A] mb-4">
+          <p className="text-sm text-ink-soft mb-4">
             Notas e comentários dos professores
           </p>
           {carregando ? (
-            <p className="text-sm text-[#4A4A4A]">Carregando…</p>
+            <p className="text-sm text-ink-soft">Carregando…</p>
           ) : feedbacksRecentes.length === 0 ? (
-            <p className="text-sm text-[#4A4A4A]">
+            <p className="text-sm text-ink-soft">
               Ainda não há feedbacks nas suas entregas.
             </p>
           ) : (
@@ -307,14 +295,14 @@ export default function AlunoDashboardPage() {
                   key={f.id}
                   className="p-3 rounded-lg border border-gray-100 bg-gray-50/80"
                 >
-                  <p className="text-sm font-medium text-[#1A1A1A]">
+                  <p className="text-sm font-medium text-ink">
                     {f.submissao.atividade.titulo}
                   </p>
-                  <p className="text-xs text-[#4A4A4A] mt-0.5">
+                  <p className="text-xs text-ink-soft mt-0.5">
                     {f.professor.nome} · Nota {f.nota} ·{" "}
                     {tempoRelativoPt(f.criadoEm)}
                   </p>
-                  <p className="text-sm text-[#4A4A4A] mt-2 line-clamp-2">
+                  <p className="text-sm text-ink-soft mt-2 line-clamp-2">
                     {f.comentario}
                   </p>
                 </li>
@@ -323,7 +311,7 @@ export default function AlunoDashboardPage() {
           )}
           <Link
             href="/aluno/feedbacks"
-            className="mt-4 inline-block text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+            className="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-strong"
           >
             Ver todos os feedbacks
           </Link>

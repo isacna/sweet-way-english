@@ -7,58 +7,69 @@ datasource db {
   provider = "sqlite"
 }
 
-model Professor {
-  id        Int      @id @default(autoincrement())
-  nome      String
-  email     String   @unique
-  senha     String
-  criadoEm DateTime @default(now())
-  turmas    Turma[]
-  feedbacks Feedback[]
+enum Papel {
+  aluno
+  professor
+}
+
+// Professores e alunos na mesma tabela. `admin` é um privilégio à parte do papel
+// (o dono da plataforma pode ser admin e estudar como aluno).
+model Usuario {
+  id                         Int              @id @default(autoincrement())
+  nome                       String
+  email                      String           @unique
+  senha                      String
+  papel                      Papel
+  admin                      Boolean          @default(false)
+  // LGPD art. 14: menores de 18 precisam de consentimento do responsável
+  dataNascimento             DateTime?
+  responsavelNome            String?
+  responsavelEmail           String?
+  consentimentoResponsavelEm DateTime?
+  criadoEm                   DateTime         @default(now())
+  turmas                     Turma[]
+  feedbacks                  Feedback[]
+  matriculas                 Matricula[]
+  submissoes                 Submissao[]
+  perfilAprendiz             PerfilAprendiz?
+  progressosLicao            ProgressoLicao[]
+  revisoes                   RevisaoItem[]
+  tentativasTeste            TentativaTeste[]
 }
 
 model Turma {
-  id             Int              @id @default(autoincrement())
-  nome           String
-  descricao      String?
-  codigoConvite  String           @unique
-  professorId    Int
-  criadoEm       DateTime         @default(now())
-  professor      Professor        @relation(fields: [professorId], references: [id])
-  matriculas     Matricula[]
-  atividades     Atividade[]
-  materiais      MaterialApoio[]
-  avisos         Aviso[]
+  id            Int             @id @default(autoincrement())
+  nome          String
+  descricao     String?
+  codigoConvite String          @unique
+  professorId   Int
+  criadoEm      DateTime        @default(now())
+  professor     Usuario         @relation(fields: [professorId], references: [id])
+  matriculas    Matricula[]
+  atividades    Atividade[]
+  materiais     MaterialApoio[]
+  avisos        Aviso[]
 }
 
 model Aviso {
-  id        Int      @id @default(autoincrement())
-  titulo    String
-  conteudo  String?
-  link      String?
-  turmaId   Int
-  criadoEm  DateTime @default(now())
-  turma     Turma    @relation(fields: [turmaId], references: [id])
-}
-
-model Aluno {
-  id         Int         @id @default(autoincrement())
-  nome       String
-  email      String      @unique
-  senha      String
-  criadoEm  DateTime    @default(now())
-  matriculas Matricula[]
-  submissoes Submissao[]
+  id       Int      @id @default(autoincrement())
+  titulo   String
+  conteudo String?
+  link     String?
+  turmaId  Int
+  criadoEm DateTime @default(now())
+  turma    Turma    @relation(fields: [turmaId], references: [id])
 }
 
 model Matricula {
-  id             Int      @id @default(autoincrement())
-  alunoId        Int
-  turmaId        Int
-  dataMatricula  DateTime @default(now())
-  status         String   @default("ativa")
-  aluno          Aluno    @relation(fields: [alunoId], references: [id])
-  turma          Turma    @relation(fields: [turmaId], references: [id])
+  id            Int      @id @default(autoincrement())
+  alunoId       Int
+  turmaId       Int
+  dataMatricula DateTime @default(now())
+  status        String   @default("ativa")
+  aluno         Usuario  @relation(fields: [alunoId], references: [id])
+  turma         Turma    @relation(fields: [turmaId], references: [id])
+
   @@unique([alunoId, turmaId])
 }
 
@@ -91,19 +102,19 @@ model Submissao {
   dataEnvio   DateTime        @default(now())
   status      StatusSubmissao @default(pendente)
   atividade   Atividade       @relation(fields: [atividadeId], references: [id])
-  aluno       Aluno           @relation(fields: [alunoId], references: [id])
+  aluno       Usuario         @relation(fields: [alunoId], references: [id])
   feedback    Feedback?
 }
 
 model Feedback {
-  id           Int       @id @default(autoincrement())
-  submissaoId  Int       @unique
-  professorId  Int
-  comentario   String
-  nota         Float
+  id          Int       @id @default(autoincrement())
+  submissaoId Int       @unique
+  professorId Int
+  comentario  String
+  nota        Float
   criadoEm    DateTime  @default(now())
-  submissao    Submissao @relation(fields: [submissaoId], references: [id])
-  professor    Professor @relation(fields: [professorId], references: [id])
+  submissao   Submissao @relation(fields: [submissaoId], references: [id])
+  professor   Usuario   @relation(fields: [professorId], references: [id])
 }
 
 model ConfiguracaoApp {
@@ -114,9 +125,163 @@ model ConfiguracaoApp {
 model MaterialApoio {
   id         Int      @id @default(autoincrement())
   titulo     String
-  tipo       String   // "pdf" | "audio" | "video" | "link"
+  tipo       String // "pdf" | "audio" | "video" | "link"
   urlArquivo String
   turmaId    Int
-  criadoEm  DateTime @default(now())
+  criadoEm   DateTime @default(now())
   turma      Turma    @relation(fields: [turmaId], references: [id])
+}
+
+// ─── Curso autoguiado (A1 → B1) ──────────────────────────────────────────────
+// Conteúdo-fonte em prisma/conteudo/<nivel>/*.json (formato em src/domain/conteudo/schema.ts).
+// Nada aparece para o aluno sem status `publicado` (aprovação da professora).
+
+enum StatusConteudo {
+  rascunho
+  revisao
+  publicado
+}
+
+model Nivel {
+  id        Int      @id @default(autoincrement())
+  codigo    String   @unique // "A1"
+  nome      String
+  descricao String?
+  ordem     Int
+  modulos   Modulo[]
+}
+
+model Modulo {
+  id              Int              @id @default(autoincrement())
+  nivelId         Int
+  ordem           Int
+  slug            String           @unique // "a1-m01"
+  titulo          String
+  tema            String
+  descricao       String
+  canDos          Json // string[]
+  gramatica       String
+  vocabulario     String
+  funcao          String
+  pronuncia       String?
+  status          StatusConteudo   @default(revisao)
+  atualizadoEm    DateTime         @updatedAt
+  nivel           Nivel            @relation(fields: [nivelId], references: [id])
+  licoes          Licao[]
+  itensTeste      ItemTeste[]
+  tentativasTeste TentativaTeste[]
+
+  @@unique([nivelId, ordem])
+}
+
+model Licao {
+  id               Int              @id @default(autoincrement())
+  moduloId         Int
+  ordem            Int
+  slug             String           @unique // "a1-m01-l1"
+  titulo           String
+  objetivo         String
+  minutosEstimados Int
+  apresentacao     Json // Apresentacao (schema.ts)
+  status           StatusConteudo   @default(revisao)
+  revisadoPorId    Int?
+  revisadoEm       DateTime?
+  atualizadoEm     DateTime         @updatedAt
+  modulo           Modulo           @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+  exercicios       Exercicio[]
+  progressos       ProgressoLicao[]
+
+  @@unique([moduloId, ordem])
+}
+
+// Etapas do fluxo PPP: controlada → semicontrolada → producao → quiz
+model Exercicio {
+  id         Int           @id @default(autoincrement())
+  licaoId    Int
+  ordem      Int
+  etapa      String // controlada | semicontrolada | producao | quiz
+  tipo       String // mcq | cloze | word_order | match | translate | error_correction
+  enunciado  String
+  conteudo   Json // parte pública (vai para o navegador)
+  gabarito   Json // NUNCA vai para o navegador do aluno
+  explicacao String // feedback em PT mostrado após responder
+  tagsErro   Json? // string[] — erros típicos de brasileiros (ex.: "terceira_pessoa_s")
+  licao      Licao         @relation(fields: [licaoId], references: [id], onDelete: Cascade)
+  revisoes   RevisaoItem[]
+}
+
+model ItemTeste {
+  id         Int    @id @default(autoincrement())
+  moduloId   Int
+  forma      Int // formas paralelas: 1, 2…
+  ordem      Int
+  habilidade String // gramatica_vocabulario | leitura | escrita
+  tipo       String
+  enunciado  String
+  conteudo   Json
+  gabarito   Json
+  explicacao String
+  modulo     Modulo @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+}
+
+// ─── Estado do aprendiz ─────────────────────────────────────────────────────
+
+model PerfilAprendiz {
+  id             Int       @id @default(autoincrement())
+  usuarioId      Int       @unique
+  metodologia    String    @default("gramatica") // gramatica | comunicativa | gamificada | input (só "gramatica" na v1)
+  xp             Int       @default(0)
+  ofensivaAtual  Int       @default(0)
+  ofensivaMaxima Int       @default(0)
+  ultimoEstudoEm DateTime?
+  usuario        Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+}
+
+model ProgressoLicao {
+  id               Int       @id @default(autoincrement())
+  usuarioId        Int
+  licaoId          Int
+  concluida        Boolean   @default(false)
+  melhorPercentual Int       @default(0)
+  tentativas       Int       @default(0)
+  concluidaEm      DateTime?
+  atualizadoEm     DateTime  @updatedAt
+  usuario          Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  licao            Licao     @relation(fields: [licaoId], references: [id], onDelete: Cascade)
+
+  @@unique([usuarioId, licaoId])
+}
+
+// Repetição espaçada (Leitner, caixas 1–5) dos exercícios que o aluno errou
+model RevisaoItem {
+  id          Int       @id @default(autoincrement())
+  usuarioId   Int
+  exercicioId Int
+  caixa       Int       @default(1)
+  proximaEm   DateTime
+  acertos     Int       @default(0)
+  erros       Int       @default(0)
+  usuario     Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  exercicio   Exercicio @relation(fields: [exercicioId], references: [id], onDelete: Cascade)
+
+  @@unique([usuarioId, exercicioId])
+  @@index([usuarioId, proximaEm])
+}
+
+model TentativaTeste {
+  id            Int       @id @default(autoincrement())
+  usuarioId     Int
+  moduloId      Int
+  forma         Int
+  itemIds       Json // number[] na ordem apresentada
+  respostas     Json?
+  percentual    Int?
+  porHabilidade Json? // { [habilidade]: percentual }
+  aprovado      Boolean?
+  iniciadaEm    DateTime  @default(now())
+  finalizadaEm  DateTime?
+  usuario       Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  modulo        Modulo    @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+
+  @@index([usuarioId, moduloId])
 }

@@ -8,6 +8,8 @@ import { feedbackRouter, studentFeedbackRouter } from './feedback.routes.js';
 import { materialRouter } from './material.routes.js';
 import { adminRouter } from './admin.routes.js';
 import { avisoRouter } from './aviso.routes.js';
+import { cursoRouter } from './curso.routes.js';
+import { conteudoRouter, progressoRouter } from './conteudo.routes.js';
 
 const router = Router();
 
@@ -24,6 +26,9 @@ router.use('/professor/submissoes', professorSubmissionRouter);
 router.use('/atividades/:id/submissoes', submissionRouter);
 router.use('/submissoes/:id/feedback', feedbackRouter);
 router.use('/alunos', studentFeedbackRouter);
+router.use('/curso', cursoRouter);
+router.use('/conteudo', conteudoRouter);
+router.use('/professor/progresso', progressoRouter);
 router.use('/', adminRouter);
 
 export { router };

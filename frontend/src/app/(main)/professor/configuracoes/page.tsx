@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { apiFetch } from "@/lib/api";
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { apiFetch, getStoredUser } from "@/lib/api";
+import { Plus, Upload } from "lucide-react";
 
 // ─── Tipos ───────────────────────────────────────────────────────────────────
 
@@ -32,11 +32,11 @@ function Modal({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-[#1A1A1A]">{titulo}</h2>
+          <h2 className="text-lg font-bold text-ink">{titulo}</h2>
           <button
             type="button"
             onClick={onFechar}
-            className="p-2 rounded-lg text-[#4A4A4A] hover:bg-gray-100"
+            className="p-2 rounded-lg text-ink-soft hover:bg-gray-100"
             aria-label="Fechar"
           >
             ×
@@ -102,11 +102,11 @@ function SecaoMinhaConta() {
   }
 
   return (
-    <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-5">
-      <h2 className="text-lg font-bold text-[#1A1A1A]">Minha conta</h2>
+    <section className="card p-6 space-y-5">
+      <h2 className="text-lg font-bold text-ink">Minha conta</h2>
       <form onSubmit={salvar} className="space-y-4 max-w-md">
         <div>
-          <label htmlFor="cfg-nome" className="block text-sm font-medium text-[#1A1A1A] mb-1">
+          <label htmlFor="cfg-nome" className="block text-sm font-medium text-ink mb-1">
             Nome
           </label>
           <input
@@ -115,11 +115,11 @@ function SecaoMinhaConta() {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
-          <label htmlFor="cfg-email" className="block text-sm font-medium text-[#1A1A1A] mb-1">
+          <label htmlFor="cfg-email" className="block text-sm font-medium text-ink mb-1">
             Email
           </label>
           <input
@@ -128,12 +128,12 @@ function SecaoMinhaConta() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
-          <label htmlFor="cfg-senha" className="block text-sm font-medium text-[#1A1A1A] mb-1">
-            Nova senha <span className="text-[#4A4A4A] font-normal">(deixe em branco para manter)</span>
+          <label htmlFor="cfg-senha" className="block text-sm font-medium text-ink mb-1">
+            Nova senha <span className="text-ink-soft font-normal">(deixe em branco para manter)</span>
           </label>
           <input
             id="cfg-senha"
@@ -141,7 +141,7 @@ function SecaoMinhaConta() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             placeholder="••••••••"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         {msg && (
@@ -158,7 +158,7 @@ function SecaoMinhaConta() {
         <button
           type="submit"
           disabled={salvando}
-          className="inline-flex items-center justify-center font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
+          className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
         >
           {salvando ? "Salvando…" : "Salvar alterações"}
         </button>
@@ -232,11 +232,11 @@ function SecaoAparencia() {
   }
 
   return (
-    <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-5">
-      <h2 className="text-lg font-bold text-[#1A1A1A]">Aparência</h2>
+    <section className="card p-6 space-y-5">
+      <h2 className="text-lg font-bold text-ink">Aparência</h2>
 
       <div className="space-y-3">
-        <p className="text-sm font-medium text-[#1A1A1A]">Logo atual</p>
+        <p className="text-sm font-medium text-ink">Logo atual</p>
         <div className="flex items-center justify-center p-4 rounded-lg bg-gray-50 border border-dashed border-gray-200 max-w-xs">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -246,13 +246,13 @@ function SecaoAparencia() {
           />
         </div>
         {preview && (
-          <p className="text-xs text-[#4A4A4A]">Pré-visualização do novo logo</p>
+          <p className="text-xs text-ink-soft">Pré-visualização do novo logo</p>
         )}
       </div>
 
       <form onSubmit={enviarLogo} className="space-y-4 max-w-md">
         <div>
-          <label htmlFor="cfg-logo" className="block text-sm font-medium text-[#1A1A1A] mb-1">
+          <label htmlFor="cfg-logo" className="block text-sm font-medium text-ink mb-1">
             Selecionar novo logo
           </label>
           <input
@@ -261,9 +261,9 @@ function SecaoAparencia() {
             type="file"
             accept="image/*"
             onChange={onSelecionarArquivo}
-            className="block w-full text-sm text-[#4A4A4A] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#1898DC]/10 file:text-[#1898DC] hover:file:bg-[#1898DC]/20 cursor-pointer"
+            className="block w-full text-sm text-ink-soft file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-accent/10 file:text-accent hover:file:bg-accent/20 cursor-pointer"
           />
-          <p className="text-xs text-[#4A4A4A] mt-1">PNG, JPG ou SVG recomendado. Máx. 5 MB.</p>
+          <p className="text-xs text-ink-soft mt-1">PNG, JPG ou SVG recomendado. Máx. 5 MB.</p>
         </div>
         {msg && (
           <p
@@ -279,9 +279,9 @@ function SecaoAparencia() {
         <button
           type="submit"
           disabled={enviando || !arquivo}
-          className="inline-flex items-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
+          className="inline-flex items-center gap-2 font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
         >
-          <Image src="/icons/upload-white.svg" alt="" width={16} height={16} />
+          <Upload aria-hidden className="h-[16px] w-[16px] shrink-0" />
           {enviando ? "Enviando…" : "Enviar logo"}
         </button>
       </form>
@@ -401,45 +401,45 @@ function SecaoProfessores() {
   }
 
   return (
-    <section className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-5">
+    <section className="card p-6 space-y-5">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-lg font-bold text-[#1A1A1A]">Professores</h2>
+        <h2 className="text-lg font-bold text-ink">Professores</h2>
         <div className="flex gap-2">
           <button
             type="button"
             onClick={() => setModalPromover(true)}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-[#1898DC] text-[#1898DC] hover:bg-[#1898DC]/5 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg border border-accent text-accent hover:bg-accent/5 transition-colors"
           >
             Promover aluno
           </button>
           <button
             type="button"
             onClick={abrirCriar}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-[#1898DC] text-white hover:bg-[#147EB8] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent-strong transition-colors"
           >
-            <Image src="/icons/plus-white.svg" alt="" width={14} height={14} />
+            <Plus aria-hidden className="h-[14px] w-[14px] shrink-0" />
             Novo professor
           </button>
         </div>
       </div>
 
       {carregando ? (
-        <p className="text-sm text-[#4A4A4A]">Carregando…</p>
+        <p className="text-sm text-ink-soft">Carregando…</p>
       ) : professores.length === 0 ? (
-        <p className="text-sm text-[#4A4A4A]">Nenhum professor cadastrado.</p>
+        <p className="text-sm text-ink-soft">Nenhum professor cadastrado.</p>
       ) : (
         <ul className="divide-y divide-gray-100 rounded-lg border border-gray-100">
           {professores.map((p) => (
             <li key={p.id} className="flex items-center justify-between gap-3 px-4 py-3">
               <div className="min-w-0">
-                <p className="text-sm font-medium text-[#1A1A1A] truncate">{p.nome}</p>
-                <p className="text-xs text-[#4A4A4A] truncate">{p.email}</p>
+                <p className="text-sm font-medium text-ink truncate">{p.nome}</p>
+                <p className="text-xs text-ink-soft truncate">{p.email}</p>
               </div>
               <div className="flex gap-2 shrink-0">
                 <button
                   type="button"
                   onClick={() => abrirEditar(p)}
-                  className="text-xs font-medium text-[#1898DC] hover:underline"
+                  className="text-xs font-medium text-accent hover:underline"
                 >
                   Editar
                 </button>
@@ -464,27 +464,27 @@ function SecaoProfessores() {
         >
           <form onSubmit={salvarForm} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Nome</label>
+              <label className="block text-sm font-medium text-ink mb-1">Nome</label>
               <input
                 type="text"
                 value={fNome}
                 onChange={(e) => setFNome(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Email</label>
+              <label className="block text-sm font-medium text-ink mb-1">Email</label>
               <input
                 type="email"
                 value={fEmail}
                 onChange={(e) => setFEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[#1A1A1A] mb-1">
+              <label className="block text-sm font-medium text-ink mb-1">
                 {modalForm.modo === "criar" ? "Senha" : "Nova senha (deixe em branco para manter)"}
               </label>
               <input
@@ -493,22 +493,22 @@ function SecaoProfessores() {
                 onChange={(e) => setFSenha(e.target.value)}
                 required={modalForm.modo === "criar"}
                 placeholder={modalForm.modo === "editar" ? "••••••••" : undefined}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               />
             </div>
-            {fErro && <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">{fErro}</p>}
+            {fErro && <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">{fErro}</p>}
             <div className="flex gap-3 pt-2">
               <button
                 type="button"
                 onClick={() => setModalForm(null)}
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-[#4A4A4A] hover:bg-gray-50"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-ink-soft hover:bg-gray-50"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
                 disabled={fSalvando}
-                className="flex-1 px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-70"
+                className="flex-1 px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-70"
               >
                 {fSalvando ? "Salvando…" : "Salvar"}
               </button>
@@ -522,19 +522,19 @@ function SecaoProfessores() {
         <Modal titulo="Promover aluno a professor" onFechar={() => setModalPromover(false)}>
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-[#1A1A1A] mb-1">Email do aluno</label>
+              <label className="block text-sm font-medium text-ink mb-1">Email do aluno</label>
               <div className="flex gap-2">
                 <input
                   type="email"
                   value={buscaEmail}
                   onChange={(e) => { setBuscaEmail(e.target.value); setAlunoEncontrado(null); setBuscaErro(""); setPromoverMsg(null); }}
                   placeholder="aluno@email.com"
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
                 />
                 <button
                   type="button"
                   onClick={() => void buscarAluno()}
-                  className="px-4 py-3 rounded-lg bg-gray-100 text-sm font-medium text-[#1A1A1A] hover:bg-gray-200"
+                  className="px-4 py-3 rounded-lg bg-gray-100 text-sm font-medium text-ink hover:bg-gray-200"
                 >
                   Buscar
                 </button>
@@ -545,8 +545,8 @@ function SecaoProfessores() {
             {alunoEncontrado && (
               <div className="space-y-4">
                 <div className="px-4 py-3 rounded-lg bg-gray-50 border border-gray-200">
-                  <p className="text-sm font-medium text-[#1A1A1A]">{alunoEncontrado.nome}</p>
-                  <p className="text-xs text-[#4A4A4A]">{alunoEncontrado.email}</p>
+                  <p className="text-sm font-medium text-ink">{alunoEncontrado.nome}</p>
+                  <p className="text-xs text-ink-soft">{alunoEncontrado.email}</p>
                 </div>
 
                 <div className="px-4 py-3 rounded-lg bg-amber-50 border border-amber-200">
@@ -562,9 +562,9 @@ function SecaoProfessores() {
                     type="checkbox"
                     checked={promoverConfirmado}
                     onChange={(e) => setPromoverConfirmado(e.target.checked)}
-                    className="mt-1 rounded border-gray-300 text-[#1898DC] focus:ring-[#1898DC]"
+                    className="mt-1 rounded border-gray-300 text-accent focus:ring-accent"
                   />
-                  <span className="text-sm text-[#1A1A1A]">
+                  <span className="text-sm text-ink">
                     Entendo que os dados do aluno serão perdidos e confirmo a promoção.
                   </span>
                 </label>
@@ -579,7 +579,7 @@ function SecaoProfessores() {
                   type="button"
                   onClick={() => void promover()}
                   disabled={!promoverConfirmado || promovendo}
-                  className="w-full px-4 py-3 rounded-lg bg-[#1898DC] text-white text-sm font-medium hover:bg-[#147EB8] disabled:opacity-50 transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-50 transition-colors"
                 >
                   {promovendo ? "Promovendo…" : "Confirmar promoção"}
                 </button>
@@ -595,15 +595,24 @@ function SecaoProfessores() {
 // ─── Página principal ─────────────────────────────────────────────────────────
 
 export default function ConfiguracoesPage() {
+  // No servidor não há localStorage: renderiza como não-admin e corrige na hidratação
+  const admin = useSyncExternalStore(
+    () => () => {},
+    () => getStoredUser()?.admin === true,
+    () => false,
+  );
+
   return (
     <div className="max-w-2xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Configurações</h1>
-        <p className="text-[#4A4A4A] mt-1">Gerencie sua conta, aparência e professores da plataforma.</p>
+        <h1 className="text-2xl font-bold text-ink">Configurações</h1>
+        <p className="text-ink-soft mt-1">
+          {admin ? "Gerencie sua conta, aparência e professores da plataforma." : "Gerencie sua conta."}
+        </p>
       </div>
       <SecaoMinhaConta />
-      <SecaoAparencia />
-      <SecaoProfessores />
+      {admin && <SecaoAparencia />}
+      {admin && <SecaoProfessores />}
     </div>
   );
 }

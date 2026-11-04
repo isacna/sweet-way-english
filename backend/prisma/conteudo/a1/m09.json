@@ -1,0 +1,3121 @@
+{
+  "slug": "a1-m09",
+  "ordem": 9,
+  "titulo": "Right now",
+  "tema": "O que está acontecendo agora: roupas, cores e clima",
+  "descricao": "Descreva o que as pessoas estão fazendo neste momento, o que estão vestindo e como está o tempo, e aprenda a diferença entre rotina e \"agora\".",
+  "canDos": [
+    "Dizer o que eu e outras pessoas estamos fazendo agora.",
+    "Perguntar e responder sobre ações em andamento.",
+    "Descrever roupas e cores.",
+    "Perguntar e dizer como está o tempo.",
+    "Diferenciar rotina (presente simples) de ações do momento (present continuous)."
+  ],
+  "gramatica": "Present continuous (afirmativa, negativa, perguntas e respostas curtas; ortografia do -ing); presente simples × present continuous.",
+  "vocabulario": "Roupas, cores, clima e verbos de ação do dia a dia.",
+  "funcao": "Descrever uma cena e falar do que está acontecendo agora.",
+  "pronuncia": "Terminação -ing pronunciada /ɪŋ/, sem vogal extra no fim (\"working\", não \"workingui\").",
+  "licoes": [
+    {
+      "slug": "a1-m09-l1",
+      "ordem": 1,
+      "titulo": "What are you doing?",
+      "objetivo": "Dizer o que você e outras pessoas estão fazendo agora com am/is/are + verbo com -ing.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "O present continuous descreve ações que estão acontecendo agora, no momento em que falamos. Ele corresponde ao nosso \"estou estudando\", \"ela está cozinhando\".",
+          "A estrutura é: sujeito + am/is/are + verbo com -ing. O verbo be muda conforme o sujeito, exatamente como você aprendeu no Módulo 1: I am, he/she/it is, you/we/they are.",
+          "Na fala, as contrações são muito comuns: I'm reading, she's cooking, they're playing. Expressões como now, right now e at the moment costumam acompanhar esse tempo verbal."
+        ],
+        "regras": [
+          "I am + verbo-ing → I'm reading.",
+          "He / She / It is + verbo-ing → She's cooking.",
+          "You / We / They are + verbo-ing → They're playing.",
+          "Na maioria dos verbos, basta acrescentar -ing: work → working, read → reading.",
+          "Pistas de \"agora\": now, right now, at the moment."
+        ],
+        "notaContrastiva": "Não esqueça o verbo be. Não diga *I working now* → diga *I am working now* (ou *I'm working now*). Em português o \"estou\" parece fazer parte do verbo, mas em inglês o am/is/are é obrigatório.",
+        "exemplos": [
+          {
+            "en": "I'm reading a book right now.",
+            "pt": "Estou lendo um livro agora mesmo."
+          },
+          {
+            "en": "She's talking on the phone.",
+            "pt": "Ela está falando ao telefone."
+          },
+          {
+            "en": "We are watching TV.",
+            "pt": "Nós estamos assistindo TV."
+          },
+          {
+            "en": "They're playing soccer in the park.",
+            "pt": "Eles estão jogando futebol no parque."
+          },
+          {
+            "en": "My dad is cooking dinner.",
+            "pt": "Meu pai está fazendo o jantar."
+          },
+          {
+            "en": "The baby is sleeping.",
+            "pt": "O bebê está dormindo."
+          },
+          {
+            "en": "Lucas is studying English at the moment.",
+            "pt": "O Lucas está estudando inglês no momento."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "read",
+            "pt": "ler"
+          },
+          {
+            "en": "watch",
+            "pt": "assistir"
+          },
+          {
+            "en": "cook",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "sleep",
+            "pt": "dormir"
+          },
+          {
+            "en": "talk",
+            "pt": "conversar, falar"
+          },
+          {
+            "en": "study",
+            "pt": "estudar"
+          },
+          {
+            "en": "listen to",
+            "pt": "ouvir, escutar"
+          },
+          {
+            "en": "wait for",
+            "pt": "esperar (alguém/algo)"
+          },
+          {
+            "en": "play",
+            "pt": "jogar, brincar, tocar"
+          },
+          {
+            "en": "eat",
+            "pt": "comer"
+          },
+          {
+            "en": "drink",
+            "pt": "beber"
+          },
+          {
+            "en": "now",
+            "pt": "agora"
+          },
+          {
+            "en": "right now",
+            "pt": "agora mesmo"
+          },
+          {
+            "en": "at the moment",
+            "pt": "no momento"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "I ___ reading a book right now.",
+            "opcoes": [
+              "am",
+              "is",
+              "are"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Com I, o verbo be é sempre am: I am reading (I'm reading). Is é para he/she/it e are para you/we/they."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "My parents ___ watching TV.",
+            "opcoes": [
+              "am",
+              "are",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "My parents é plural (= they), então usamos are: My parents are watching TV."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Ana ___ cooking dinner and her brothers ___ playing video games."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ],
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "Ana = she → is. Her brothers = they → are. No present continuous, o be concorda com o sujeito, como no Módulo 1."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses + -ing.",
+          "conteudo": {
+            "texto": "We are ___ (watch) a movie and Pedro is ___ (eat) popcorn."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watching"
+              ],
+              [
+                "eating"
+              ]
+            ]
+          },
+          "explicacao": "Nesses verbos basta acrescentar -ing: watch → watching, eat → eating. O am/is/are já está na frase."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "My",
+              "is",
+              "a",
+              "right",
+              "reading",
+              "book",
+              "now",
+              "sister"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My sister is reading a book right now.",
+              "Right now my sister is reading a book."
+            ]
+          },
+          "explicacao": "Ordem: sujeito (My sister) + is + verbo-ing (reading) + complemento. A expressão right now pode ficar no fim ou no começo da frase."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "I'm cooking.",
+              "She's sleeping.",
+              "We're eating.",
+              "They're talking.",
+              "He's studying."
+            ],
+            "direita": [
+              "Nós estamos comendo.",
+              "Eles estão conversando.",
+              "Ele está estudando.",
+              "Estou cozinhando.",
+              "Ela está dormindo."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              4,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "Observe as contrações: I'm = I am, she's/he's = she is/he is, we're/they're = we are/they are."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My brother playing soccer now."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother is playing soccer now.",
+              "My brother's playing soccer now."
+            ]
+          },
+          "explicacao": "Faltou o verbo be. O present continuous precisa de am/is/are antes do verbo com -ing: My brother is playing soccer now.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu estou estudando inglês.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am studying English."
+            ]
+          },
+          "explicacao": "\"Estou estudando\" = am studying. Lembre: English (o idioma) sempre com letra maiúscula em inglês.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles estão jogando futebol no parque.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are playing soccer in the park.",
+              "They are playing soccer at the park."
+            ]
+          },
+          "explicacao": "They + are + playing. No inglês americano, futebol é soccer (football é o futebol americano). \"No parque\" pode ser in the park ou at the park.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "He is working now.",
+              "He is work now.",
+              "He working now.",
+              "He are working now."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A forma completa é sujeito + be + verbo-ing: He is working now. Sem is a frase fica incompleta; are não combina com he; e o verbo precisa do -ing.",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Right now, I ___ listening to music."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "am"
+              ]
+            ]
+          },
+          "explicacao": "Com I usamos am: I am listening (I'm listening)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "dinner",
+              "eating",
+              "We",
+              "are"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are eating dinner."
+            ]
+          },
+          "explicacao": "Sujeito + are + verbo-ing + complemento: We are eating dinner."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela está lendo um livro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is reading a book."
+            ]
+          },
+          "explicacao": "She + is + reading. Não esqueça o artigo a antes de book (um livro).",
+          "tagsErro": [
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "They is waiting for the bus."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are waiting for the bus."
+            ]
+          },
+          "explicacao": "They pede are, não is: They are waiting for the bus (They're waiting for the bus)."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m09-l2",
+      "ordem": 2,
+      "titulo": "I'm not sleeping!",
+      "objetivo": "Escrever corretamente a forma -ing dos verbos e dizer o que não está acontecendo agora.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "A maioria dos verbos só ganha -ing, mas alguns mudam a escrita. Verbos terminados em -e perdem o e: write → writing, dance → dancing, make → making.",
+          "Verbos curtos que terminam em consoante + vogal + consoante dobram a última letra: run → running, swim → swimming, sit → sitting, get → getting, stop → stopping. Verbos terminados em -y só ganham -ing: study → studying, play → playing.",
+          "Para negar, coloque not depois do be: I'm not working, she isn't working, they aren't working. Não usamos don't nem doesn't no present continuous."
+        ],
+        "regras": [
+          "Terminado em -e: tire o e → write → writing, dance → dancing.",
+          "Consoante + vogal + consoante: dobre a última → run → running, sit → sitting.",
+          "Terminado em -y: mantenha o y → study → studying, play → playing.",
+          "I'm not + verbo-ing → I'm not sleeping.",
+          "He / She / It isn't + verbo-ing → She isn't cooking.",
+          "You / We / They aren't + verbo-ing → They aren't playing."
+        ],
+        "notaContrastiva": "Não use don't nem no para negar o present continuous. Não diga *I don't working* nem *I no am working* → diga *I'm not working*.",
+        "exemplos": [
+          {
+            "en": "I'm not sleeping. I'm reading.",
+            "pt": "Não estou dormindo. Estou lendo."
+          },
+          {
+            "en": "She isn't working today.",
+            "pt": "Ela não está trabalhando hoje."
+          },
+          {
+            "en": "We aren't watching TV.",
+            "pt": "Nós não estamos assistindo TV."
+          },
+          {
+            "en": "Look! The kids are running.",
+            "pt": "Olha! As crianças estão correndo."
+          },
+          {
+            "en": "He's writing an email.",
+            "pt": "Ele está escrevendo um e-mail."
+          },
+          {
+            "en": "They're swimming in the pool.",
+            "pt": "Eles estão nadando na piscina."
+          },
+          {
+            "en": "My mom is making a cake.",
+            "pt": "Minha mãe está fazendo um bolo."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "write → writing",
+            "pt": "escrever"
+          },
+          {
+            "en": "dance → dancing",
+            "pt": "dançar"
+          },
+          {
+            "en": "make → making",
+            "pt": "fazer"
+          },
+          {
+            "en": "run → running",
+            "pt": "correr"
+          },
+          {
+            "en": "swim → swimming",
+            "pt": "nadar"
+          },
+          {
+            "en": "sit → sitting",
+            "pt": "sentar"
+          },
+          {
+            "en": "get → getting",
+            "pt": "pegar, ficar"
+          },
+          {
+            "en": "stop → stopping",
+            "pt": "parar"
+          },
+          {
+            "en": "study → studying",
+            "pt": "estudar"
+          },
+          {
+            "en": "have → having",
+            "pt": "ter (uma refeição, uma festa)"
+          },
+          {
+            "en": "pool",
+            "pt": "piscina"
+          },
+          {
+            "en": "kitchen",
+            "pt": "cozinha"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual é a forma -ing correta do verbo write?",
+          "conteudo": {
+            "opcoes": [
+              "writeing",
+              "writing",
+              "writting",
+              "wrighting"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Verbos terminados em -e perdem o e antes do -ing: write → writing. A forma \"writting\" (com tt) também é um erro comum.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual é a forma -ing correta do verbo swim?",
+          "conteudo": {
+            "opcoes": [
+              "swimeing",
+              "swimming",
+              "swiming"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Swim termina em consoante + vogal + consoante (s-w-I-M), então dobramos o m: swimming.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escreva o verbo entre parênteses com -ing.",
+          "conteudo": {
+            "texto": "Look! The kids are ___ (run) and Julia is ___ (dance)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "running"
+              ],
+              [
+                "dancing"
+              ]
+            ]
+          },
+          "explicacao": "Run dobra o n (consoante + vogal + consoante): running. Dance perde o e: dancing.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma negativa do verbo be.",
+          "conteudo": {
+            "texto": "Paulo ___ working today. He's at home. I ___ sleeping. I'm reading."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "isn't",
+                "is not"
+              ],
+              [
+                "am not",
+                "'m not"
+              ]
+            ]
+          },
+          "explicacao": "Paulo = he → isn't (is not). Com I usamos am not (I'm not). Não existe \"I amn't\".",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa.",
+          "conteudo": {
+            "palavras": [
+              "watching",
+              "TV",
+              "She",
+              "isn't"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She isn't watching TV."
+            ]
+          },
+          "explicacao": "Sujeito + isn't + verbo-ing + complemento: She isn't watching TV.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo à sua forma com -ing.",
+          "conteudo": {
+            "esquerda": [
+              "make",
+              "sit",
+              "study",
+              "get",
+              "play",
+              "have"
+            ],
+            "direita": [
+              "playing",
+              "sitting",
+              "having",
+              "getting",
+              "studying",
+              "making"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              1,
+              4,
+              3,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Make e have perdem o e (making, having). Sit e get dobram a consoante (sitting, getting). Study e play só ganham -ing.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I don't working today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm not working today.",
+              "I am not working today."
+            ]
+          },
+          "explicacao": "No present continuous a negativa é feita com o be + not, não com don't: I'm not working today.",
+          "tagsErro": [
+            "negativa",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não estou dormindo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am not sleeping."
+            ]
+          },
+          "explicacao": "I + am not + sleeping. A contração I'm not também está certa.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O Lucas não está trabalhando hoje.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Lucas is not working today.",
+              "Today Lucas is not working.",
+              "Today, Lucas is not working."
+            ]
+          },
+          "explicacao": "Lucas = he → is not (isn't). Em inglês não usamos artigo antes de nome de pessoa: Lucas, não \"The Lucas\".",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "She isn't cook now.",
+              "She isn't cooking now.",
+              "She not cooking now.",
+              "She doesn't cooking now."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Negativa do present continuous: be + not + verbo-ing → She isn't cooking now. Doesn't é do presente simples.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Escreva o verbo entre parênteses com -ing.",
+          "conteudo": {
+            "texto": "We are ___ (sit) in the kitchen."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "sitting"
+              ]
+            ]
+          },
+          "explicacao": "Sit termina em consoante + vogal + consoante, então dobra o t: sitting.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa.",
+          "conteudo": {
+            "palavras": [
+              "bus",
+              "waiting",
+              "They",
+              "aren't",
+              "the",
+              "for"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "They aren't waiting for the bus."
+            ]
+          },
+          "explicacao": "Sujeito + aren't + verbo-ing + complemento. Lembre que em inglês é wait for (esperar alguém/algo).",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele não está estudando.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is not studying."
+            ]
+          },
+          "explicacao": "He + is not (isn't) + studying. Study mantém o y: studying.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "They are swiming in the pool."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are swimming in the pool."
+            ]
+          },
+          "explicacao": "Swim dobra o m antes do -ing: swimming.",
+          "tagsErro": [
+            "ortografia_ing"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m09-l3",
+      "ordem": 3,
+      "titulo": "Are you working?",
+      "objetivo": "Fazer e responder perguntas sobre o que está acontecendo agora.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar no present continuous, o be vai para antes do sujeito: You are working → Are you working? She is sleeping → Is she sleeping?",
+          "As respostas curtas repetem o be: Yes, I am. / No, I'm not. Yes, she is. / No, she isn't. Na resposta afirmativa curta não usamos contração: diga Yes, I am (e não \"Yes, I'm\").",
+          "Para perguntas abertas, coloque a palavra interrogativa no começo: What are you doing? Where is she going? Who are you talking to?"
+        ],
+        "regras": [
+          "Am I / Is he / Is she / Is it + verbo-ing...?",
+          "Are you / Are we / Are they + verbo-ing...?",
+          "Respostas curtas: Yes, I am. / No, I'm not. / Yes, he is. / No, they aren't.",
+          "What / Where / Who + am/is/are + sujeito + verbo-ing?",
+          "Resposta afirmativa curta sem contração: Yes, she is (não \"Yes, she's\")."
+        ],
+        "notaContrastiva": "Em português a pergunta é feita só com a entonação: \"Você está trabalhando?\". Em inglês o be troca de lugar com o sujeito. Não diga *You are working?* → diga *Are you working?*",
+        "exemplos": [
+          {
+            "en": "Are you working now? — No, I'm not.",
+            "pt": "Você está trabalhando agora? — Não."
+          },
+          {
+            "en": "Is it raining? — Yes, it is.",
+            "pt": "Está chovendo? — Sim."
+          },
+          {
+            "en": "What are you doing?",
+            "pt": "O que você está fazendo?"
+          },
+          {
+            "en": "Where is Carla going?",
+            "pt": "Aonde a Carla está indo?"
+          },
+          {
+            "en": "Who are you talking to?",
+            "pt": "Com quem você está falando?"
+          },
+          {
+            "en": "Are the kids sleeping? — Yes, they are.",
+            "pt": "As crianças estão dormindo? — Sim."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "What are you doing?",
+            "pt": "O que você está fazendo?"
+          },
+          {
+            "en": "go → going",
+            "pt": "ir"
+          },
+          {
+            "en": "wash → washing",
+            "pt": "lavar"
+          },
+          {
+            "en": "wear → wearing",
+            "pt": "usar, vestir (roupa)"
+          },
+          {
+            "en": "look for",
+            "pt": "procurar"
+          },
+          {
+            "en": "talk to",
+            "pt": "falar com"
+          },
+          {
+            "en": "on vacation",
+            "pt": "de férias"
+          },
+          {
+            "en": "homework",
+            "pt": "dever de casa"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que começa a pergunta.",
+          "conteudo": {
+            "texto": "___ you studying right now?",
+            "opcoes": [
+              "Is",
+              "Am",
+              "Are",
+              "Do"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Na pergunta, o be vem antes do sujeito. Com you, usamos are: Are you studying? Do é para o presente simples.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta.",
+          "conteudo": {
+            "texto": "Is Maria cooking? — Yes, ___.",
+            "opcoes": [
+              "she's",
+              "she cooking",
+              "she does",
+              "she is"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "A resposta curta repete o be da pergunta: Yes, she is. Na afirmativa curta não usamos contração (\"she's\" sozinho no fim não é usado)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta e a resposta curta.",
+          "conteudo": {
+            "texto": "___ they playing video games? — No, they ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Are"
+              ],
+              [
+                "aren't",
+                "are not"
+              ]
+            ]
+          },
+          "explicacao": "They pede are: Are they playing...? A resposta curta negativa é No, they aren't (ou No, they're not).",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra interrogativa correta.",
+          "conteudo": {
+            "texto": "___ is Carla going? — To the supermarket. ___ are you talking to? — My mom.",
+            "opcoesPorLacuna": [
+              [
+                "What",
+                "Where",
+                "Who"
+              ],
+              [
+                "What",
+                "Who",
+                "Where"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Where"
+              ],
+              [
+                "Who"
+              ]
+            ]
+          },
+          "explicacao": "Where pergunta lugar (to the supermarket). Who pergunta pessoa (my mom). What pergunta coisa ou ação."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "What",
+              "are",
+              "doing",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What are you doing?"
+            ]
+          },
+          "explicacao": "Palavra interrogativa + be + sujeito + verbo-ing: What are you doing?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Are you working?",
+              "What is he eating?",
+              "Where are they going?",
+              "Is the baby sleeping?",
+              "Who is she talking to?"
+            ],
+            "direita": [
+              "Yes, she is.",
+              "To the beach.",
+              "No, I'm not. I'm on vacation.",
+              "A sandwich.",
+              "Her teacher."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              1,
+              0,
+              4
+            ]
+          },
+          "explicacao": "What → coisa (a sandwich); Where → lugar (to the beach); Who → pessoa (her teacher). Perguntas de sim/não pedem resposta curta com o be."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": {
+            "frase": "You are listening to me?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are you listening to me?"
+            ]
+          },
+          "explicacao": "Em inglês a pergunta não se faz só com a entonação: o be vem antes do sujeito. Are you listening to me?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você está trabalhando agora?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are you working now?",
+              "Are you working right now?",
+              "Are you working at the moment?"
+            ]
+          },
+          "explicacao": "Pergunta no present continuous: Are + you + working? \"Agora\" pode ser now ou right now.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que ela está comendo?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What is she eating?"
+            ]
+          },
+          "explicacao": "What + is + she + eating? A contração What's she eating? também está certa.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta.",
+          "conteudo": {
+            "texto": "Are your friends playing soccer? — No, ___.",
+            "opcoes": [
+              "they isn't",
+              "they not",
+              "they aren't",
+              "they don't"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Your friends = they. A resposta curta repete o be: No, they aren't. Don't é do presente simples."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a palavra interrogativa.",
+          "conteudo": {
+            "texto": "___ is your dad doing? — He's washing the car."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "What"
+              ]
+            ]
+          },
+          "explicacao": "A resposta é uma ação (washing the car), então a pergunta é What is your dad doing?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "Paulo",
+              "going",
+              "is",
+              "Where"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where is Paulo going?"
+            ]
+          },
+          "explicacao": "Where + is + Paulo + going? Nome próprio continua com letra maiúscula.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles estão estudando?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are they studying?"
+            ]
+          },
+          "explicacao": "Are + they + studying? O be vai para o começo da pergunta.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": {
+            "frase": "Is she sleep now?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is she sleeping now?"
+            ]
+          },
+          "explicacao": "Depois do be, o verbo precisa do -ing: Is she sleeping now?"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m09-l4",
+      "ordem": 4,
+      "titulo": "What are you wearing?",
+      "objetivo": "Descrever as roupas e as cores do que as pessoas estão usando.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de roupas que alguém está usando, o verbo é wear: I'm wearing jeans. Não use \"use\" para roupas: em inglês, use é usar uma ferramenta ou objeto.",
+          "Em inglês o adjetivo (inclusive a cor) vem antes do substantivo e nunca vai para o plural: a blue shirt, red shoes. Em português dizemos \"camisa azul\" e \"sapatos vermelhos\", com a cor depois e no plural.",
+          "Algumas roupas são sempre plurais em inglês, porque têm \"duas pernas\": pants, jeans, shorts. Por isso dizemos My jeans are new (are, não is)."
+        ],
+        "regras": [
+          "wear = usar/vestir roupa → She's wearing a dress.",
+          "Cor antes do substantivo → a white T-shirt (não a T-shirt white).",
+          "Adjetivo não tem plural → black shoes (não blacks shoes).",
+          "pants, jeans, shorts são plurais → My pants are gray.",
+          "What color is your bag? / What color are your sneakers?"
+        ],
+        "notaContrastiva": "Não diga *She's using a blue dress* nem *reds shoes* → diga *She's wearing a blue dress* e *red shoes*. A cor vem antes e não vai para o plural.",
+        "exemplos": [
+          {
+            "en": "I'm wearing a white T-shirt and jeans.",
+            "pt": "Estou usando uma camiseta branca e calça jeans."
+          },
+          {
+            "en": "She's wearing a red dress.",
+            "pt": "Ela está usando um vestido vermelho."
+          },
+          {
+            "en": "My sneakers are black.",
+            "pt": "Meu tênis é preto."
+          },
+          {
+            "en": "He isn't wearing a jacket.",
+            "pt": "Ele não está usando jaqueta."
+          },
+          {
+            "en": "What color are your pants? — They're gray.",
+            "pt": "De que cor é sua calça? — É cinza."
+          },
+          {
+            "en": "Are you wearing your new cap?",
+            "pt": "Você está usando seu boné novo?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "shirt",
+            "pt": "camisa"
+          },
+          {
+            "en": "T-shirt",
+            "pt": "camiseta"
+          },
+          {
+            "en": "pants",
+            "pt": "calça"
+          },
+          {
+            "en": "jeans",
+            "pt": "calça jeans"
+          },
+          {
+            "en": "dress",
+            "pt": "vestido"
+          },
+          {
+            "en": "skirt",
+            "pt": "saia"
+          },
+          {
+            "en": "shoes / sneakers",
+            "pt": "sapatos / tênis"
+          },
+          {
+            "en": "jacket",
+            "pt": "jaqueta"
+          },
+          {
+            "en": "sweater",
+            "pt": "suéter, blusa de lã"
+          },
+          {
+            "en": "cap",
+            "pt": "boné"
+          },
+          {
+            "en": "socks",
+            "pt": "meias"
+          },
+          {
+            "en": "red, blue, green, yellow",
+            "pt": "vermelho, azul, verde, amarelo"
+          },
+          {
+            "en": "black, white, gray, brown",
+            "pt": "preto, branco, cinza, marrom"
+          },
+          {
+            "en": "pink, orange, purple",
+            "pt": "rosa, laranja, roxo"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "She's using a red dress.",
+              "She's wearing a reds dress.",
+              "She's wearing a dress red.",
+              "She's wearing a red dress."
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Roupa se \"usa\" com wear; a cor vem antes do substantivo e não vai para o plural: a red dress.",
+          "tagsErro": [
+            "adjetivo_plural",
+            "wear_use"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "My new jeans ___ blue.",
+            "opcoes": [
+              "are",
+              "is",
+              "am"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Jeans é sempre plural em inglês (como pants e shorts), então usamos are: My jeans are blue."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete as frases com uma palavra em cada lacuna.",
+          "conteudo": {
+            "texto": "Today I'm ___ (usar) a white T-shirt and my sisters ___ wearing pink dresses."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "wearing"
+              ],
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "Para roupa usamos wear → wearing. My sisters = they → are wearing.",
+          "tagsErro": [
+            "wear_use"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escreva a cor em inglês.",
+          "conteudo": {
+            "texto": "The sky is ___ (azul) and bananas are ___ (amarelo)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "blue"
+              ],
+              [
+                "yellow"
+              ]
+            ]
+          },
+          "explicacao": "Azul = blue; amarelo = yellow. Repare que yellow não muda no plural: bananas are yellow."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "Carlos",
+              "white",
+              "is",
+              "wearing",
+              "sneakers"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Carlos is wearing white sneakers."
+            ]
+          },
+          "explicacao": "Sujeito + is wearing + cor + roupa. A cor (white) vem antes de sneakers e fica no singular.",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada roupa à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "jacket",
+              "skirt",
+              "socks",
+              "pants",
+              "sweater",
+              "dress"
+            ],
+            "direita": [
+              "vestido",
+              "meias",
+              "jaqueta",
+              "calça",
+              "saia",
+              "suéter"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              1,
+              3,
+              5,
+              0
+            ]
+          },
+          "explicacao": "Atenção: pants é calça no inglês americano (sempre plural). Dress é vestido."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I'm wearing blacks shoes today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm wearing black shoes today."
+            ]
+          },
+          "explicacao": "Em inglês o adjetivo não vai para o plural: black shoes, não \"blacks shoes\".",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela está usando um vestido azul.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is wearing a blue dress."
+            ]
+          },
+          "explicacao": "Para roupa, \"usar\" é wear: She is wearing... A cor vem antes: a blue dress.",
+          "tagsErro": [
+            "wear_use",
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meus sapatos são pretos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My shoes are black."
+            ]
+          },
+          "explicacao": "Shoes é plural → are. A cor não vai para o plural: black (não \"blacks\").",
+          "tagsErro": [
+            "adjetivo_plural"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a pergunta.",
+          "conteudo": {
+            "texto": "What color ___ your sneakers?",
+            "opcoes": [
+              "do",
+              "is",
+              "are"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Sneakers é plural, então: What color are your sneakers?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Escreva a palavra em inglês.",
+          "conteudo": {
+            "texto": "He's wearing a green ___ (boné)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "cap"
+              ]
+            ]
+          },
+          "explicacao": "Boné = cap (hat é chapéu). A cor green vem antes: a green cap."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "a",
+              "gray",
+              "jacket",
+              "wearing",
+              "I'm"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm wearing a gray jacket."
+            ]
+          },
+          "explicacao": "I'm wearing + a + cor + roupa: I'm wearing a gray jacket. No inglês americano, cinza é gray."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu estou usando uma camiseta branca.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I am wearing a white T-shirt.",
+              "I am wearing a white tshirt.",
+              "I am wearing a white T shirt.",
+              "I am wearing a white tee."
+            ]
+          },
+          "explicacao": "I am wearing a white T-shirt. Camiseta = T-shirt; camisa (de botão) = shirt.",
+          "tagsErro": [
+            "wear_use"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Ana is wearing a skirt red."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Ana is wearing a red skirt.",
+              "Ana's wearing a red skirt."
+            ]
+          },
+          "explicacao": "A cor vem antes do substantivo em inglês: a red skirt."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m09-l5",
+      "ordem": 5,
+      "titulo": "What's the weather like?",
+      "objetivo": "Perguntar e dizer como está o tempo agora.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar do tempo (clima), o inglês sempre usa o sujeito it: It's sunny. It's cold. Em português dizemos \"Está frio\" sem sujeito, mas em inglês o it é obrigatório.",
+          "Com adjetivos usamos it's + adjetivo: It's hot, It's cloudy, It's windy. Para o que está acontecendo agora usamos o present continuous: It's raining, It's snowing.",
+          "Para perguntar, diga What's the weather like? ou How's the weather? Para a temperatura: It's 30 degrees."
+        ],
+        "regras": [
+          "Sempre com it: It's sunny. It's cold.",
+          "Agora: It's raining. / It's snowing.",
+          "Adjetivos: sunny, cloudy, windy, rainy, hot, warm, cool, cold.",
+          "Perguntas: What's the weather like? / Is it raining?",
+          "Temperatura: It's 25 degrees."
+        ],
+        "notaContrastiva": "Em português dizemos \"Está chovendo\" sem sujeito. Em inglês o sujeito it é obrigatório: não diga *Is raining* → diga *It's raining*. Também não diga *Is hot* → diga *It's hot*.",
+        "exemplos": [
+          {
+            "en": "It's sunny and hot today.",
+            "pt": "Está ensolarado e quente hoje."
+          },
+          {
+            "en": "Look! It's raining.",
+            "pt": "Olha! Está chovendo."
+          },
+          {
+            "en": "It's snowing in Canada.",
+            "pt": "Está nevando no Canadá."
+          },
+          {
+            "en": "What's the weather like in Porto Alegre?",
+            "pt": "Como está o tempo em Porto Alegre?"
+          },
+          {
+            "en": "It isn't cold. It's warm.",
+            "pt": "Não está frio. Está morno/agradável."
+          },
+          {
+            "en": "Is it windy? — Yes, it is.",
+            "pt": "Está ventando? — Sim."
+          },
+          {
+            "en": "It's 15 degrees and cloudy.",
+            "pt": "Está fazendo 15 graus e está nublado."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "weather",
+            "pt": "tempo, clima"
+          },
+          {
+            "en": "sunny",
+            "pt": "ensolarado"
+          },
+          {
+            "en": "cloudy",
+            "pt": "nublado"
+          },
+          {
+            "en": "windy",
+            "pt": "com vento, ventando"
+          },
+          {
+            "en": "rainy",
+            "pt": "chuvoso"
+          },
+          {
+            "en": "hot",
+            "pt": "quente"
+          },
+          {
+            "en": "warm",
+            "pt": "morno, agradável"
+          },
+          {
+            "en": "cool",
+            "pt": "fresco"
+          },
+          {
+            "en": "cold",
+            "pt": "frio"
+          },
+          {
+            "en": "rain → raining",
+            "pt": "chover"
+          },
+          {
+            "en": "snow → snowing",
+            "pt": "nevar"
+          },
+          {
+            "en": "umbrella",
+            "pt": "guarda-chuva"
+          },
+          {
+            "en": "sunglasses",
+            "pt": "óculos de sol"
+          },
+          {
+            "en": "degrees",
+            "pt": "graus"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "It's raining in São Paulo.",
+              "Is raining in São Paulo.",
+              "Are raining in São Paulo.",
+              "It raining in São Paulo."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Para o tempo, o sujeito it é obrigatório, e o present continuous precisa do be: It is raining (It's raining).",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "Take your sunglasses. It's very ___ today.",
+            "opcoes": [
+              "sunny",
+              "snowing",
+              "cloud",
+              "rainy"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Óculos de sol combinam com sol: sunny. Cloud é substantivo (nuvem); o adjetivo é cloudy."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "Take an umbrella. It ___ raining. Look outside! It's ___ (nevar) in New York."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ],
+              [
+                "snowing"
+              ]
+            ]
+          },
+          "explicacao": "It is raining: o be é obrigatório no present continuous. Nevar = snow → snowing.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "In Salvador, it's usually ___ in January. In Gramado, it's usually ___ in July.",
+            "opcoesPorLacuna": [
+              [
+                "snowing",
+                "cold",
+                "hot"
+              ],
+              [
+                "raining",
+                "cold",
+                "hot"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "hot"
+              ],
+              [
+                "cold"
+              ]
+            ]
+          },
+          "explicacao": "Salvador em janeiro: hot (quente). Gramado em julho, no inverno: cold (frio)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "What's",
+              "weather",
+              "today",
+              "like",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What's the weather like today?",
+              "What's the weather today like?"
+            ]
+          },
+          "explicacao": "What's the weather like? é a pergunta mais comum sobre o tempo. Today fica no fim."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "sunny",
+              "cloudy",
+              "windy",
+              "rainy",
+              "hot",
+              "cold"
+            ],
+            "direita": [
+              "com vento",
+              "frio",
+              "nublado",
+              "ensolarado",
+              "quente",
+              "chuvoso"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              0,
+              5,
+              4,
+              1
+            ]
+          },
+          "explicacao": "Muitos adjetivos de clima se formam com -y: sun → sunny, cloud → cloudy, wind → windy, rain → rainy."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Is very hot today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's very hot today.",
+              "It is very hot today."
+            ]
+          },
+          "explicacao": "Em inglês a frase precisa de sujeito. Para o tempo, o sujeito é it: It's very hot today.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Está chovendo agora.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is raining now.",
+              "It is raining right now.",
+              "Now it is raining.",
+              "Right now it is raining.",
+              "Now, it is raining.",
+              "Right now, it is raining."
+            ]
+          },
+          "explicacao": "It + is + raining. O sujeito it é obrigatório, mesmo que o português não tenha sujeito.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Está frio hoje.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is cold today.",
+              "Today it is cold.",
+              "Today, it is cold."
+            ]
+          },
+          "explicacao": "Para o tempo: It is (It's) + adjetivo. Frio = cold.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha o começo correto da pergunta.",
+          "conteudo": {
+            "texto": "___ snowing in Canada right now?",
+            "opcoes": [
+              "Is",
+              "It is",
+              "Does it",
+              "Is it"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Na pergunta, o be vem antes do sujeito, e o sujeito it não pode faltar: Is it snowing?",
+          "tagsErro": [
+            "sujeito_omitido",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "It's 35 degrees today. It's very ___.",
+            "opcoesPorLacuna": [
+              [
+                "snowing",
+                "hot",
+                "cold"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "hot"
+              ]
+            ]
+          },
+          "explicacao": "35 graus é muito quente: hot. Snowing não combina com very nem com 35 graus."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "cloudy",
+              "windy",
+              "It's",
+              "and"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "It's windy and cloudy.",
+              "It's cloudy and windy."
+            ]
+          },
+          "explicacao": "It's + adjetivo + and + adjetivo. Os dois adjetivos podem aparecer em qualquer ordem."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Está ensolarado em Recife.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is sunny in Recife.",
+              "In Recife it is sunny.",
+              "In Recife, it is sunny."
+            ]
+          },
+          "explicacao": "It's sunny in Recife. Ensolarado = sunny, e o sujeito it é obrigatório.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Today is raining a lot."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Today it's raining a lot.",
+              "Today it is raining a lot.",
+              "Today, it's raining a lot.",
+              "It's raining a lot today."
+            ]
+          },
+          "explicacao": "Falta o sujeito it: Today it's raining a lot. Today não pode ser o sujeito de raining.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m09-l6",
+      "ordem": 6,
+      "titulo": "Every day or right now?",
+      "objetivo": "Escolher entre o presente simples (rotina) e o present continuous (agora).",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "O presente simples fala de rotina, hábitos e fatos: I work every day. She usually drinks coffee. O present continuous fala do que está acontecendo agora: I'm working now. Today she's drinking tea.",
+          "As palavras-pista ajudam: every day, usually, always, never, on Mondays pedem o presente simples; now, right now, at the moment, Look! e Listen! pedem o present continuous.",
+          "Alguns verbos de sentimento e estado, como like, love, want e know, normalmente não vão para -ing: I like this song (e não \"I'm liking this song\")."
+        ],
+        "regras": [
+          "Rotina → presente simples: He plays soccer on Saturdays.",
+          "Agora → present continuous: He's playing soccer now.",
+          "Pistas do simples: every day, usually, always, never, on Mondays.",
+          "Pistas do continuous: now, right now, at the moment, Look!, Listen!",
+          "like, love, want, know: sem -ing → I want a sandwich."
+        ],
+        "notaContrastiva": "Não use o present continuous para rotina: não diga *I'm playing soccer every Saturday* → diga *I play soccer every Saturday*. E não diga *I'm liking it* → diga *I like it*.",
+        "exemplos": [
+          {
+            "en": "I usually drink coffee, but today I'm drinking tea.",
+            "pt": "Eu normalmente tomo café, mas hoje estou tomando chá."
+          },
+          {
+            "en": "She works at a bank. Right now she's having lunch.",
+            "pt": "Ela trabalha num banco. Agora ela está almoçando."
+          },
+          {
+            "en": "We play volleyball on Sundays.",
+            "pt": "Nós jogamos vôlei aos domingos."
+          },
+          {
+            "en": "Look! They're dancing.",
+            "pt": "Olha! Eles estão dançando."
+          },
+          {
+            "en": "My dad never cooks, but he's cooking today.",
+            "pt": "Meu pai nunca cozinha, mas hoje ele está cozinhando."
+          },
+          {
+            "en": "I like this song.",
+            "pt": "Eu gosto desta música."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "every day",
+            "pt": "todo dia"
+          },
+          {
+            "en": "usually",
+            "pt": "normalmente"
+          },
+          {
+            "en": "always",
+            "pt": "sempre"
+          },
+          {
+            "en": "never",
+            "pt": "nunca"
+          },
+          {
+            "en": "on Saturdays",
+            "pt": "aos sábados"
+          },
+          {
+            "en": "today",
+            "pt": "hoje"
+          },
+          {
+            "en": "at the moment",
+            "pt": "no momento"
+          },
+          {
+            "en": "Look!",
+            "pt": "Olha!"
+          },
+          {
+            "en": "Listen!",
+            "pt": "Escuta!"
+          },
+          {
+            "en": "sing",
+            "pt": "cantar"
+          },
+          {
+            "en": "shower",
+            "pt": "chuveiro, banho"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "My mom ___ at a hospital every day.",
+            "opcoes": [
+              "works",
+              "work",
+              "is working"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Every day indica rotina → presente simples. Com my mom (= she) o verbo ganha -s: works.",
+          "tagsErro": [
+            "simples_continuo",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Shh! The baby ___.",
+            "opcoes": [
+              "sleeps",
+              "sleep",
+              "is sleeping"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Shh! mostra que a ação está acontecendo agora → present continuous: The baby is sleeping.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta para cada lacuna.",
+          "conteudo": {
+            "texto": "I usually ___ coffee, but today I ___ tea.",
+            "opcoesPorLacuna": [
+              [
+                "drink",
+                "am drinking"
+              ],
+              [
+                "am drinking",
+                "drink"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "drink"
+              ],
+              [
+                "am drinking"
+              ]
+            ]
+          },
+          "explicacao": "Usually = rotina → drink (presente simples). Today, neste momento, é uma exceção → am drinking (present continuous).",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta para cada lacuna.",
+          "conteudo": {
+            "texto": "Pedro ___ soccer on Saturdays. Look! He ___ now.",
+            "opcoesPorLacuna": [
+              [
+                "plays",
+                "is playing"
+              ],
+              [
+                "is playing",
+                "plays"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "plays"
+              ],
+              [
+                "is playing"
+              ]
+            ]
+          },
+          "explicacao": "On Saturdays = rotina → plays. Look! ... now = agora → is playing.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase sobre a rotina.",
+          "conteudo": {
+            "palavras": [
+              "day",
+              "every",
+              "goes",
+              "to",
+              "She",
+              "school"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She goes to school every day.",
+              "Every day she goes to school."
+            ]
+          },
+          "explicacao": "Rotina → presente simples: She goes (go + -es com she). Every day pode ficar no fim ou no começo.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue o começo ao final de cada frase.",
+          "conteudo": {
+            "esquerda": [
+              "Every Sunday, we",
+              "Right now, we",
+              "Listen! Someone",
+              "My dad never",
+              "At the moment, Julia"
+            ],
+            "direita": [
+              "eat lunch with my grandparents.",
+              "drinks coffee.",
+              "is singing.",
+              "is reading in her room.",
+              "are eating pizza."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              4,
+              2,
+              1,
+              3
+            ]
+          },
+          "explicacao": "Every Sunday e never pedem presente simples; right now, Listen! e at the moment pedem present continuous. Someone e Julia são 3ª pessoa do singular → is.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Ana is liking chocolate."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Ana likes chocolate."
+            ]
+          },
+          "explicacao": "Like é um verbo de sentimento e normalmente não vai para -ing. Gosto é algo permanente: Ana likes chocolate.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele joga futebol aos sábados.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He plays soccer on Saturdays.",
+              "On Saturdays he plays soccer.",
+              "On Saturdays, he plays soccer.",
+              "He plays soccer every Saturday.",
+              "Every Saturday he plays soccer.",
+              "Every Saturday, he plays soccer."
+            ]
+          },
+          "explicacao": "Aos sábados = rotina → presente simples, com -s para he: He plays soccer on Saturdays. Futebol no inglês americano é soccer.",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Agora ela está dormindo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Now she is sleeping.",
+              "She is sleeping now.",
+              "Right now she is sleeping.",
+              "She is sleeping right now.",
+              "Now, she is sleeping.",
+              "Right now, she is sleeping."
+            ]
+          },
+          "explicacao": "Agora = ação em andamento → present continuous: She is sleeping now.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "We ___ English on Tuesdays and Thursdays.",
+            "opcoes": [
+              "studies",
+              "study",
+              "are studying"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "On Tuesdays and Thursdays = rotina → presente simples. Com we, sem -s: study.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no present continuous.",
+          "conteudo": {
+            "texto": "Listen! My sister ___ (sing) in the shower."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is singing",
+                "'s singing"
+              ]
+            ]
+          },
+          "explicacao": "Listen! mostra que está acontecendo agora → is singing.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "cooking",
+              "moment",
+              "the",
+              "My",
+              "at",
+              "dad"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My dad is cooking at the moment.",
+              "At the moment my dad is cooking."
+            ]
+          },
+          "explicacao": "At the moment = agora → present continuous: My dad is cooking. A expressão pode ficar no fim ou no começo."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não gosto de chuva.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I do not like rain.",
+              "I do not like the rain."
+            ]
+          },
+          "explicacao": "Like não vai para -ing e a negativa do presente simples usa don't: I don't like rain. Em inglês não existe \"like of\".",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "The children play in the street right now."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The children are playing in the street right now."
+            ]
+          },
+          "explicacao": "Right now pede present continuous: The children are playing. Children é plural → are.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "My brother ___ watching a movie right now.",
+          "opcoes": [
+            "are",
+            "is",
+            "am"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "My brother = he → is watching."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é a forma -ing correta do verbo make?",
+        "conteudo": {
+          "opcoes": [
+            "makeing",
+            "making",
+            "makking"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Verbos terminados em -e perdem o e: make → making.",
+        "tagsErro": [
+          "ortografia_ing"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a forma negativa do verbo be.",
+        "conteudo": {
+          "texto": "They ___ playing cards. They're reading."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "aren't",
+              "are not"
+            ]
+          ]
+        },
+        "explicacao": "They + aren't + verbo-ing: They aren't playing cards.",
+        "tagsErro": [
+          "negativa"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que começa a pergunta.",
+        "conteudo": {
+          "texto": "___ your parents working today?",
+          "opcoes": [
+            "Do",
+            "Is",
+            "Are"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Your parents = they → Are your parents working?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a pergunta.",
+        "conteudo": {
+          "texto": "What ___ you doing? — I'm writing an email."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "What + are + you + verbo-ing? → What are you doing?"
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta curta correta.",
+        "conteudo": {
+          "texto": "Is Lucas sleeping? — No, he ___.",
+          "opcoes": [
+            "isn't",
+            "not",
+            "aren't",
+            "doesn't"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "A resposta curta repete o be da pergunta: No, he isn't."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual frase está correta?",
+        "conteudo": {
+          "opcoes": [
+            "She's using black pants.",
+            "She's wearing pants black.",
+            "She's wearing blacks pants.",
+            "She's wearing black pants."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Wear para roupa; a cor vem antes e não vai para o plural: black pants.",
+        "tagsErro": [
+          "adjetivo_plural",
+          "wear_use"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o verbo entre parênteses com -ing.",
+        "conteudo": {
+          "texto": "Take an umbrella. It's ___ (rain)."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "raining"
+            ]
+          ]
+        },
+        "explicacao": "It's raining = está chovendo (agora)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I usually ___ the bus to work.",
+          "opcoes": [
+            "takes",
+            "take",
+            "am taking"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Usually = rotina → presente simples. Com I, sem -s: take.",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Look! Julia ___ with her dog.",
+          "opcoes": [
+            "is running",
+            "runs",
+            "run"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Look! = agora → present continuous: Julia is running.",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Onde a Camila está?",
+        "conteudo": {
+          "texto": "Hi, Mom! I'm at the beach with Bia and Leo. It's sunny and very hot today. Bia is swimming in the sea and Leo is sleeping under an umbrella. I'm not swimming. I'm sitting on the sand and reading a book. I'm wearing my new yellow hat. We're having a great time! Love, Camila",
+          "opcoes": [
+            "No parque.",
+            "Na escola.",
+            "Na praia.",
+            "Em casa."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"I'm at the beach with Bia and Leo\"."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Leo está fazendo?",
+        "conteudo": {
+          "texto": "Hi, Mom! I'm at the beach with Bia and Leo. It's sunny and very hot today. Bia is swimming in the sea and Leo is sleeping under an umbrella. I'm not swimming. I'm sitting on the sand and reading a book. I'm wearing my new yellow hat. We're having a great time! Love, Camila",
+          "opcoes": [
+            "Está lendo um livro.",
+            "Está dormindo.",
+            "Está comendo.",
+            "Está nadando."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"Leo is sleeping under an umbrella\". Quem está nadando é a Bia, e quem está lendo é a Camila."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Rafael normalmente faz de segunda a sexta?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a bus driver in Curitiba. I usually work from Monday to Friday. I start at 6 a.m. and finish at 3 p.m. But today is Saturday, and I'm not working. Right now, I'm in the kitchen. I'm cooking lunch for my family. It's cold and cloudy outside, so we're staying at home.",
+          "opcoes": [
+            "Trabalha como motorista de ônibus.",
+            "Cozinha para a família.",
+            "Fica em casa.",
+            "Estuda na escola."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"I'm a bus driver... I usually work from Monday to Friday.\" Cozinhar é o que ele está fazendo hoje, sábado."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Como está o tempo hoje?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a bus driver in Curitiba. I usually work from Monday to Friday. I start at 6 a.m. and finish at 3 p.m. But today is Saturday, and I'm not working. Right now, I'm in the kitchen. I'm cooking lunch for my family. It's cold and cloudy outside, so we're staying at home.",
+          "opcoes": [
+            "Chuvoso e com vento.",
+            "Frio e nublado.",
+            "Quente e ensolarado.",
+            "Está nevando."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"It's cold and cloudy outside\"."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta.",
+        "conteudo": {
+          "palavras": [
+            "is",
+            "What",
+            "she",
+            "wearing"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What is she wearing?"
+          ]
+        },
+        "explicacao": "What + is + she + wearing? Wear é o verbo para roupas.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós estamos esperando o ônibus.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We are waiting for the bus."
+          ]
+        },
+        "explicacao": "Esperar alguém/algo = wait for: We are waiting for the bus.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "He are reading a magazine now."
+        },
+        "gabarito": {
+          "aceitas": [
+            "He is reading a magazine now."
+          ]
+        },
+        "explicacao": "He pede is: He is reading (He's reading)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Está nublado hoje.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "It is cloudy today.",
+            "Today it is cloudy.",
+            "Today, it is cloudy."
+          ]
+        },
+        "explicacao": "Para o tempo: It's + adjetivo. Nublado = cloudy.",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "My friends ___ eating pizza right now.",
+          "opcoes": [
+            "is",
+            "am",
+            "are"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "My friends = they → are eating."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é a forma -ing correta do verbo stop?",
+        "conteudo": {
+          "opcoes": [
+            "stopping",
+            "stoping",
+            "stopeing"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Stop termina em consoante + vogal + consoante → dobra o p: stopping.",
+        "tagsErro": [
+          "ortografia_ing"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a forma negativa do verbo be.",
+        "conteudo": {
+          "texto": "I ___ watching TV. I'm doing my homework."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "am not",
+              "'m not"
+            ]
+          ]
+        },
+        "explicacao": "I + am not (I'm not) + verbo-ing.",
+        "tagsErro": [
+          "negativa"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que começa a pergunta.",
+        "conteudo": {
+          "texto": "___ Carla studying in her room?",
+          "opcoes": [
+            "Are",
+            "Does",
+            "Is"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Carla = she → Is Carla studying?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a pergunta.",
+        "conteudo": {
+          "texto": "Where ___ you going? — To the supermarket."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "Where + are + you + going? → Where are you going?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta curta correta.",
+        "conteudo": {
+          "texto": "Are you working? — Yes, I ___.",
+          "opcoes": [
+            "are",
+            "do",
+            "is",
+            "am"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "A resposta curta repete o be, concordando com I: Yes, I am."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual frase está correta?",
+        "conteudo": {
+          "opcoes": [
+            "He's wearing a green jacket.",
+            "He's wearing a jacket green.",
+            "He's using a green jacket.",
+            "He's wearing a greens jacket."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Wear para roupa; a cor vem antes e não vai para o plural: a green jacket.",
+        "tagsErro": [
+          "adjetivo_plural",
+          "wear_use"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva a palavra em inglês.",
+        "conteudo": {
+          "texto": "Wear a coat. It's very ___ (frio) today."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "cold"
+            ]
+          ]
+        },
+        "explicacao": "Frio = cold. Para o tempo: It's cold."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "My dad ___ coffee every morning.",
+          "opcoes": [
+            "is drinking",
+            "drink",
+            "drinks"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Every morning = rotina → presente simples. My dad = he → drinks.",
+        "tagsErro": [
+          "simples_continuo",
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Listen! The baby ___.",
+          "opcoes": [
+            "is crying",
+            "cry",
+            "cries"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Listen! = agora → present continuous: The baby is crying.",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Como está o tempo em Nova York?",
+        "conteudo": {
+          "texto": "Hello, Grandma! I'm in New York with Dad. It's very cold here and it's snowing! I'm wearing my blue coat and a gray hat. Right now, Dad is taking photos of the buildings, and I'm drinking hot chocolate in a small café. I love this city! Kisses, Lara",
+          "opcoes": [
+            "Frio, e está nevando.",
+            "Quente e nublado.",
+            "Chuvoso e com vento.",
+            "Quente e ensolarado."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: \"It's very cold here and it's snowing!\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que a Lara está fazendo agora?",
+        "conteudo": {
+          "texto": "Hello, Grandma! I'm in New York with Dad. It's very cold here and it's snowing! I'm wearing my blue coat and a gray hat. Right now, Dad is taking photos of the buildings, and I'm drinking hot chocolate in a small café. I love this city! Kisses, Lara",
+          "opcoes": [
+            "Está comprando um casaco.",
+            "Está dormindo.",
+            "Está tomando chocolate quente.",
+            "Está tirando fotos."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"I'm drinking hot chocolate in a small café.\" Quem está tirando fotos é o pai dela."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Tiago normalmente usa para trabalhar?",
+        "conteudo": {
+          "texto": "This is my friend Tiago. He's a teacher, and he usually wears a shirt and black pants to work. But today is Sunday, so he's wearing shorts and a T-shirt. He's at the park with his dog, Bob. Tiago is reading on a bench, and Bob is running and playing with a ball. It's a beautiful sunny day.",
+          "opcoes": [
+            "Short e camiseta.",
+            "Camisa e calça preta.",
+            "Uma jaqueta cinza.",
+            "Um uniforme azul."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"He usually wears a shirt and black pants to work.\" Short e camiseta são o que ele está usando hoje, domingo."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Bob está fazendo?",
+        "conteudo": {
+          "texto": "This is my friend Tiago. He's a teacher, and he usually wears a shirt and black pants to work. But today is Sunday, so he's wearing shorts and a T-shirt. He's at the park with his dog, Bob. Tiago is reading on a bench, and Bob is running and playing with a ball. It's a beautiful sunny day.",
+          "opcoes": [
+            "Está dormindo.",
+            "Está lendo num banco.",
+            "Está nadando.",
+            "Está correndo e brincando com uma bola."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"Bob is running and playing with a ball.\" Quem está lendo é o Tiago."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta.",
+        "conteudo": {
+          "palavras": [
+            "are",
+            "What",
+            "doing",
+            "they"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What are they doing?"
+          ]
+        },
+        "explicacao": "What + are + they + doing?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eles estão esperando o trem.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "They are waiting for the train."
+          ]
+        },
+        "explicacao": "Esperar alguém/algo = wait for: They are waiting for the train.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "She is play the guitar now."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She is playing the guitar now."
+          ]
+        },
+        "explicacao": "Depois do be, o verbo precisa do -ing: She is playing."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Está ventando hoje.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "It is windy today.",
+            "Today it is windy.",
+            "Today, it is windy.",
+            "The wind is blowing today."
+          ]
+        },
+        "explicacao": "Para o tempo: It's windy (com vento). O sujeito it é obrigatório.",
+        "tagsErro": [
+          "sujeito_omitido"
+        ]
+      }
+    ]
+  }
+}

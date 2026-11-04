@@ -1,42 +1,75 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FolderOpen, MessageSquareText, Star, UsersRound, Volume2, Zap } from "lucide-react";
 import { AlternatingTitle } from "@/components/AlternatingTitle";
+import { BrandMark } from "@/components/BrandMark";
 import { Button } from "@/components/Button";
+
+const recursos = [
+  {
+    icone: FolderOpen,
+    titulo: "Materiais Centralizados",
+    texto: "Tudo em um só lugar. Acesse exercícios, leituras e recursos quando precisar.",
+    cor: "bg-sky-soft text-sky-ink",
+  },
+  {
+    icone: UsersRound,
+    titulo: "Turmas Organizadas",
+    texto: "Crie turmas, adicione alunos e gerencie suas aulas de forma simples.",
+    cor: "bg-grape-soft text-grape",
+  },
+  {
+    icone: Star,
+    titulo: "Avaliações Detalhadas",
+    texto: "Feedback em tempo real para acompanhar a evolução de cada aluno.",
+    cor: "bg-candy-soft text-candy",
+  },
+];
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-surface">
-      <main className="pt-12 pb-20 px-8 max-w-6xl mx-auto">
-        <div className="flex justify-center mb-12">
-          <Image
-            src="/logo-sweet.png"
-            alt="Sweet Way English - Learn. Speak. Achieve."
-            width={340}
-            height={340}
-            className="w-auto h-auto max-w-[min(92vw,380px)] sm:max-w-[440px] md:max-w-[500px] object-contain"
-            priority
-          />
-        </div>
-        <section className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
-          <div className="order-2 lg:order-1">
-            <AlternatingTitle />
-            <p className="text-lg text-[#4A4A4A] mb-8 max-w-xl">
-              Sweet Way English centraliza seus materiais, atividades e feedbacks
-              em um único lugar. Feito para professores que buscam excelência e
-              alunos que querem resultados. Novos alunos são cadastrados pelo
-              professor na turma.
+    <div className="bg-cotton min-h-screen overflow-x-hidden">
+      <header className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-8">
+        <Link href="/home" className="rounded-xl">
+          <BrandMark />
+        </Link>
+        <Link
+          href="/login?tipo=aluno"
+          className="inline-flex min-h-[44px] items-center rounded-full px-4 text-sm font-semibold text-ink-soft transition-colors hover:bg-white hover:text-ink"
+        >
+          Entrar
+        </Link>
+      </header>
+
+      <main className="mx-auto max-w-6xl px-4 pb-20 pt-4 sm:px-8 sm:pt-10">
+        <section className="mb-20 grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+          <div className="animate-rise">
+            <p className="eyebrow mb-4 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-grape shadow-sm ring-1 ring-line">
+              <span className="h-2 w-2 rounded-full bg-candy-bright" aria-hidden />
+              Learn · Speak · Achieve
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button href="/login?tipo=aluno" variant="primary" size="md" className="rounded-xl">
+            <AlternatingTitle />
+            <p className="mb-8 max-w-xl text-lg leading-relaxed text-ink-soft">
+              Sweet Way English reúne um curso de inglês no seu ritmo, do básico ao intermediário, com as turmas,
+              materiais, atividades e feedbacks da sua professora. Crie sua conta e comece agora, ou entre com o
+              acesso que recebeu na sua turma.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button href="/login?tipo=aluno" variant="primary" size="md" className="!rounded-2xl text-[1.05rem]">
                 Entrar como Aluno
               </Button>
-              <Button href="/login?tipo=professor" variant="secondary" size="md" className="rounded-xl">
+              <Button href="/login?tipo=professor" variant="secondary" size="md" className="!rounded-2xl text-[1.05rem]">
                 Entrar como Professor
               </Button>
             </div>
           </div>
 
-          <div className="order-1 lg:order-2 relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] max-h-[560px]">
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+            <div
+              className="absolute -inset-4 rotate-3 rounded-[2.5rem] bg-gradient-to-br from-candy-bright/50 via-grape-bright/40 to-sky-bright/50"
+              aria-hidden
+            />
+            <div className="relative aspect-[4/5] max-h-[560px] overflow-hidden rounded-[2rem] shadow-lg ring-4 ring-white">
               <Image
                 src="/hero-city.png"
                 alt=""
@@ -46,77 +79,66 @@ export default function HomePage() {
                 priority
               />
             </div>
-            <div className="absolute -bottom-6 -left-4 lg:left-0 right-4 lg:right-auto max-w-xs p-5 rounded-2xl bg-white shadow-lg border border-gray-100">
-              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-3">
-                <Image src="/icons/star.svg" alt="" width={24} height={24} />
-              </div>
-              <h3 className="font-bold text-[#1A1A1A] mb-1">
-                Feedback em tempo real
-              </h3>
-              <p className="text-sm text-[#4A4A4A]">
-                Acompanhe o progresso dos seus alunos com avaliações detalhadas e
-                notas.
+
+            {/* Bolha de fala */}
+            <div
+              className="absolute -right-2 top-6 max-w-[13rem] animate-pop-in rounded-3xl rounded-br-md bg-white px-4 py-3 shadow-lg sm:-right-6"
+              aria-hidden
+            >
+              <p className="flex items-center gap-2 font-display text-lg font-semibold text-ink" lang="en">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-sky text-white">
+                  <Volume2 className="h-4 w-4" />
+                </span>
+                Nice to meet you!
               </p>
+              <p className="mt-0.5 text-xs text-ink-faint">Prazer em te conhecer!</p>
+            </div>
+
+            <div className="absolute -bottom-6 left-2 right-10 max-w-xs rounded-3xl bg-white p-4 shadow-lg sm:-left-6 sm:right-auto sm:p-5">
+              <div className="flex items-start gap-3">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sun text-ink">
+                  <Zap className="h-5 w-5 fill-current" aria-hidden />
+                </div>
+                <div>
+                  <h3 className="mb-0.5 font-semibold text-ink">Feedback em tempo real</h3>
+                  <p className="text-sm text-ink-soft">
+                    Acompanhe o progresso dos seus alunos com avaliações detalhadas e notas.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         <section>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
-                <Image
-                  src="/icons/book-open.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="opacity-90"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
-                Materiais Centralizados
-              </h3>
-              <p className="text-[#4A4A4A]">
-                Tudo em um só lugar. Acesse exercícios, leituras e recursos quando
-                precisar.
-              </p>
-            </article>
-            <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
-                <Image
-                  src="/icons/users-gear.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="opacity-90"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
-                Turmas Organizadas
-              </h3>
-              <p className="text-[#4A4A4A]">
-                Crie turmas, adicione alunos e gerencie suas aulas de forma
-                simples.
-              </p>
-            </article>
-            <article className="p-6 rounded-2xl bg-white border border-gray-100 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#1898DC]/10 flex items-center justify-center mb-4">
-                <Image
-                  src="/icons/star.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="opacity-90"
-                />
-              </div>
-              <h3 className="text-lg font-bold text-[#1A1A1A] mb-2">
-                Avaliações Detalhadas
-              </h3>
-              <p className="text-[#4A4A4A]">
-                Feedback em tempo real para acompanhar a evolução de cada aluno.
-              </p>
-            </article>
+          <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
+            {recursos.map(({ icone: Icone, titulo, texto, cor }) => (
+              <article key={titulo} className="card p-6 transition-shadow hover:shadow-md">
+                <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-2xl ${cor}`}>
+                  <Icone className="h-6 w-6" aria-hidden />
+                </div>
+                <h3 className="mb-2 text-xl font-semibold text-ink">{titulo}</h3>
+                <p className="leading-relaxed text-ink-soft">{texto}</p>
+              </article>
+            ))}
           </div>
+        </section>
+
+        <section className="mt-12 flex flex-col items-start gap-4 rounded-[1.75rem] bg-ink p-6 text-white sm:flex-row sm:items-center sm:justify-between sm:p-8">
+          <div className="flex items-center gap-4">
+            <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-candy-bright">
+              <MessageSquareText className="h-6 w-6" aria-hidden />
+            </span>
+            <p className="font-display text-xl font-semibold leading-snug sm:text-2xl">
+              Ainda não tem conta? Crie a sua e comece o curso A1.
+            </p>
+          </div>
+          <Link
+            href="/cadastro"
+            className="inline-flex min-h-[48px] w-full items-center justify-center rounded-2xl bg-white px-6 font-display text-[1.05rem] font-semibold text-ink transition-colors hover:bg-grape-soft sm:w-auto"
+          >
+            Criar conta
+          </Link>
         </section>
       </main>
     </div>

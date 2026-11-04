@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const prismaMock = vi.hoisted(() => ({
   turma: { findFirst: vi.fn() },
   matricula: { findFirst: vi.fn(), findMany: vi.fn(), create: vi.fn(), deleteMany: vi.fn() },
-  aluno: { create: vi.fn(), update: vi.fn(), delete: vi.fn() },
+  usuario: { create: vi.fn(), update: vi.fn(), delete: vi.fn() },
   submissao: { findMany: vi.fn(), deleteMany: vi.fn() },
   feedback: { deleteMany: vi.fn() },
   $transaction: vi.fn(),
@@ -82,7 +82,7 @@ describe('StudentController', () => {
       prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
       const aluno = { id: 3, nome: 'Bob', email: 'b@t.com' };
       prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
-      prismaMock.aluno.create.mockResolvedValue(aluno);
+      prismaMock.usuario.create.mockResolvedValue(aluno);
       prismaMock.matricula.create.mockResolvedValue({});
 
       await createStudent(professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123', turmaId: 1 } }), res);
@@ -91,6 +91,58 @@ describe('StudentController', () => {
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
         aluno: expect.objectContaining({ nome: 'Bob' }),
       }));
+    });
+
+    it('returns 400 for a minor without guardian consent', async () => {
+      prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
+      const nascimento = `${new Date().getFullYear() - 12}-01-01`;
+      await createStudent(
+        professorReq({ body: { nome: 'Bia', email: 'bia@t.com', senha: '123', turmaId: 1, dataNascimento: nascimento } }),
+        res,
+      );
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.usuario.create).not.toHaveBeenCalled();
+    });
+
+    it('stores guardian data and consent date for a minor', async () => {
+      prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      prismaMock.usuario.create.mockResolvedValue({ id: 4, nome: 'Bia', email: 'bia@t.com' });
+      prismaMock.matricula.create.mockResolvedValue({});
+      const nascimento = `${new Date().getFullYear() - 12}-01-01`;
+
+      await createStudent(
+        professorReq({
+          body: {
+            nome: 'Bia', email: 'bia@t.com', senha: '123', turmaId: 1, dataNascimento: nascimento,
+            responsavelNome: 'Rita', responsavelEmail: 'Rita@T.com', consentimentoResponsavel: true,
+          },
+        }),
+        res,
+      );
+
+      expect(res.status).toHaveBeenCalledWith(201);
+      const data = prismaMock.usuario.create.mock.calls[0][0].data;
+      expect(data).toMatchObject({ responsavelNome: 'Rita', responsavelEmail: 'rita@t.com' });
+      expect(data.dataNascimento).toBeInstanceOf(Date);
+      expect(data.consentimentoResponsavelEm).toBeInstanceOf(Date);
+    });
+
+    it('does not store guardian data for an adult', async () => {
+      prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      prismaMock.usuario.create.mockResolvedValue({ id: 5, nome: 'Rui', email: 'rui@t.com' });
+      prismaMock.matricula.create.mockResolvedValue({});
+
+      await createStudent(
+        professorReq({ body: { nome: 'Rui', email: 'rui@t.com', senha: '123', turmaId: 1, dataNascimento: '1990-05-01', responsavelNome: '' } }),
+        res,
+      );
+
+      expect(res.status).toHaveBeenCalledWith(201);
+      const data = prismaMock.usuario.create.mock.calls[0][0].data;
+      expect(data.consentimentoResponsavelEm).toBeUndefined();
+      expect(data.responsavelNome).toBeUndefined();
     });
 
     it('returns 400 on duplicate email', async () => {
@@ -128,14 +180,14 @@ describe('StudentController', () => {
     it('updates student name and returns 200', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       const updated = { id: 2, nome: 'New Name', email: 'b@t.com', criadoEm: new Date() };
-      prismaMock.aluno.update.mockResolvedValue(updated);
+      prismaMock.usuario.update.mockResolvedValue(updated);
       await updateStudent(professorReq({ params: { id: '2' }, body: { nome: 'New Name' } }), res);
       expect(res.json).toHaveBeenCalledWith(updated);
     });
 
     it('hashes password when senha is provided', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
-      prismaMock.aluno.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
+      prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
       await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
       expect(bcrypt.hash).toHaveBeenCalledWith('newpass', 10);
     });
@@ -166,7 +218,7 @@ describe('StudentController', () => {
       prismaMock.feedback.deleteMany.mockResolvedValue({});
       prismaMock.submissao.deleteMany.mockResolvedValue({});
       prismaMock.matricula.deleteMany.mockResolvedValue({});
-      prismaMock.aluno.delete.mockResolvedValue({});
+      prismaMock.usuario.delete.mockResolvedValue({});
 
       await deleteStudent(professorReq({ params: { id: '2' } }), res);
 

@@ -26,14 +26,15 @@ export default async function ProfessorLayout({
   const logoUrl = await getLogoUrl();
 
   return (
-    <div className="min-h-screen bg-surface">
+    <div data-area="professor" className="min-h-screen bg-canvas">
       <Navbar
         variant="dashboard"
         logoUrl={logoUrl}
         center={<TeacherNav />}
+        mobileBelow={<TeacherNav variant="tabs" />}
         right={<NavbarUser mobileNav={<TeacherNav variant="vertical" />} />}
       />
-      <main className="p-8">{children}</main>
+      <main className="mx-auto max-w-7xl px-4 pt-5 pb-16 sm:px-6 sm:pt-8">{children}</main>
     </div>
   );
 }

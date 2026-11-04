@@ -1,0 +1,3031 @@
+{
+  "slug": "a1-m03",
+  "ordem": 3,
+  "titulo": "Where I'm from",
+  "tema": "Origem e dados pessoais",
+  "descricao": "Diga de onde você é, fale sua idade, troque telefone e e-mail e preencha formulários. Aprenda a negar e a perguntar com o verbo be.",
+  "canDos": [
+    "Dizer de onde sou e qual é minha nacionalidade",
+    "Fazer frases negativas e perguntas de sim ou não com o verbo be",
+    "Dizer e perguntar a idade usando números até 100",
+    "Pedir e dar telefone e e-mail",
+    "Preencher um formulário simples com dados pessoais"
+  ],
+  "gramatica": "Verbo be: negativa (I'm not, isn't, aren't), perguntas de sim ou não e respostas curtas; perguntas com where, what e how old.",
+  "vocabulario": "Países e nacionalidades, números de 20 a 100, idade, telefone, e-mail e campos de formulário.",
+  "funcao": "Trocar informações pessoais.",
+  "pronuncia": "Diferença entre -teen e -ty (thirteen × thirty); o zero lido como \"oh\" em telefones.",
+  "licoes": [
+    {
+      "slug": "a1-m03-l1",
+      "ordem": 1,
+      "titulo": "Where are you from?",
+      "objetivo": "Dizer de onde você é e qual é a sua nacionalidade.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para dizer de onde você é, use o verbo be + from + país: I'm from Brazil. Para perguntar, use Where are you from? (De onde você é?). Repare que a palavra from fica no final da pergunta.",
+          "Para dizer a nacionalidade, use o verbo be + nacionalidade, sem from: I'm Brazilian. She's Mexican. Em inglês, países e nacionalidades sempre começam com letra maiúscula, mesmo no meio da frase.",
+          "Muitas nacionalidades terminam em -an ou -ian (American, Mexican, Brazilian, Italian, Canadian). Outras terminam em -ese (Japanese, Chinese, Portuguese) ou em -ish (Spanish, English). Algumas são diferentes, como French (França)."
+        ],
+        "regras": [
+          "be + from + país: I'm from Brazil.",
+          "be + nacionalidade: I'm Brazilian.",
+          "Where are you from? / Where is he from?",
+          "País e nacionalidade com letra maiúscula: Brazil, Brazilian",
+          "-an/-ian: Mexican, Italian · -ese: Japanese · -ish: Spanish"
+        ],
+        "notaContrastiva": "Não diga *I'm from Brazilian* → diga *I'm from Brazil* ou *I'm Brazilian*. E escreva *Brazilian* com letra maiúscula: em inglês, nacionalidade não é escrita com minúscula como em português.",
+        "exemplos": [
+          {
+            "en": "Where are you from?",
+            "pt": "De onde você é?"
+          },
+          {
+            "en": "I'm from Brazil. I'm Brazilian.",
+            "pt": "Eu sou do Brasil. Sou brasileiro(a)."
+          },
+          {
+            "en": "Yuki is from Japan. She's Japanese.",
+            "pt": "A Yuki é do Japão. Ela é japonesa."
+          },
+          {
+            "en": "Where is Diego from? He's from Mexico.",
+            "pt": "De onde o Diego é? Ele é do México."
+          },
+          {
+            "en": "We're from Portugal. We're Portuguese.",
+            "pt": "Nós somos de Portugal. Somos portugueses."
+          },
+          {
+            "en": "Emma and Jack are from Canada. They're Canadian.",
+            "pt": "A Emma e o Jack são do Canadá. Eles são canadenses."
+          },
+          {
+            "en": "My teacher is American. She's from Chicago.",
+            "pt": "Minha professora é americana. Ela é de Chicago."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "country",
+            "pt": "país"
+          },
+          {
+            "en": "nationality",
+            "pt": "nacionalidade"
+          },
+          {
+            "en": "Brazil / Brazilian",
+            "pt": "Brasil / brasileiro(a)"
+          },
+          {
+            "en": "the United States / American",
+            "pt": "Estados Unidos / americano(a)"
+          },
+          {
+            "en": "Mexico / Mexican",
+            "pt": "México / mexicano(a)"
+          },
+          {
+            "en": "Canada / Canadian",
+            "pt": "Canadá / canadense"
+          },
+          {
+            "en": "Japan / Japanese",
+            "pt": "Japão / japonês, japonesa"
+          },
+          {
+            "en": "China / Chinese",
+            "pt": "China / chinês, chinesa"
+          },
+          {
+            "en": "Portugal / Portuguese",
+            "pt": "Portugal / português, portuguesa"
+          },
+          {
+            "en": "Spain / Spanish",
+            "pt": "Espanha / espanhol(a)"
+          },
+          {
+            "en": "Italy / Italian",
+            "pt": "Itália / italiano(a)"
+          },
+          {
+            "en": "France / French",
+            "pt": "França / francês, francesa"
+          },
+          {
+            "en": "Argentina / Colombia / Chile",
+            "pt": "Argentina / Colômbia / Chile"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "I'm from ___.",
+            "opcoes": [
+              "Brazilian",
+              "Brazil",
+              "the Brazil"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Depois de from vem o nome do país: from Brazil. Brazilian é a nacionalidade (I'm Brazilian, sem from). E Brazil não leva artigo em inglês: não se diz the Brazil.",
+          "tagsErro": [
+            "pais_nacionalidade"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a nacionalidade.",
+          "conteudo": {
+            "texto": "Yuki is from Japan. She's ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Japanese"
+              ]
+            ]
+          },
+          "explicacao": "Quem é do Japão (Japan) é Japanese. Lembre: nacionalidade em inglês vem com letra maiúscula."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Where ___ you from? Where ___ Diego from?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ],
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Com you usamos are (Where are you from?). Com Diego, que é he, usamos is (Where is Diego from?). Na pergunta com where, o verbo be vem antes do sujeito."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Emma and Jack are from Canada. They're ___.",
+            "opcoes": [
+              "Canadian",
+              "Canada",
+              "from Canadian"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Para nacionalidade usamos be + Canadian, sem from. Canada é o país: They're from Canada = They're Canadian.",
+          "tagsErro": [
+            "pais_nacionalidade"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "teacher",
+              "is",
+              "from",
+              "your",
+              "Where"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where is your teacher from?"
+            ]
+          },
+          "explicacao": "Na pergunta, a ordem é: Where + is + sujeito (your teacher) + from. A preposição from fica no final, diferente do português (De onde é a sua professora?).",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada país à sua nacionalidade.",
+          "conteudo": {
+            "esquerda": [
+              "Brazil",
+              "Japan",
+              "Spain",
+              "Italy",
+              "the United States"
+            ],
+            "direita": [
+              "Japanese",
+              "Italian",
+              "American",
+              "Spanish",
+              "Brazilian"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              0,
+              3,
+              1,
+              2
+            ]
+          },
+          "explicacao": "Brazil → Brazilian, Japan → Japanese, Spain → Spanish, Italy → Italian, the United States → American. As terminações mais comuns são -an/-ian, -ese e -ish."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "I'm from Brazilian."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm from Brazil.",
+              "I'm Brazilian."
+            ]
+          },
+          "explicacao": "Depois de from vem o país (from Brazil). Para usar a nacionalidade, tire o from: I'm Brazilian.",
+          "tagsErro": [
+            "pais_nacionalidade"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu sou do Brasil.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm from Brazil.",
+              "I'm Brazilian."
+            ]
+          },
+          "explicacao": "\"Ser de um país\" em inglês é be + from + país: I'm from Brazil. Também aceitamos I'm Brazilian, que dá a mesma informação."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela é mexicana.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She's Mexican.",
+              "She's from Mexico."
+            ]
+          },
+          "explicacao": "Nacionalidade com o verbo be: She's Mexican (com M maiúsculo). Em inglês o sujeito she é obrigatório; não dá para começar com Is Mexican.",
+          "tagsErro": [
+            "sujeito_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Where ___ they from?",
+            "opcoes": [
+              "are",
+              "am",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Com they usamos are: Where are they from?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a nacionalidade.",
+          "conteudo": {
+            "texto": "Paolo is from Italy. He's ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Italian"
+              ]
+            ]
+          },
+          "explicacao": "Quem é da Itália (Italy) é Italian, com letra maiúscula."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Where you are from?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where are you from?"
+            ]
+          },
+          "explicacao": "Em perguntas com where, o verbo be vem antes do sujeito: Where are you from? Em português a ordem não muda, mas em inglês muda.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase afirmativa com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "parents",
+              "Portugal",
+              "My",
+              "are",
+              "from"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My parents are from Portugal."
+            ]
+          },
+          "explicacao": "Frase afirmativa: sujeito (My parents) + are + from + país. Com sujeito no plural, o verbo é are."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "A Yuki é do Japão. Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "She's Japan.",
+              "She's Japanese.",
+              "She's from Japanese."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Nacionalidade sem from: She's Japanese. Com from, use o país: She's from Japan.",
+          "tagsErro": [
+            "pais_nacionalidade"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m03-l2",
+      "ordem": 2,
+      "titulo": "I'm not from here",
+      "objetivo": "Fazer frases negativas com o verbo be (I'm not, isn't, aren't).",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para fazer a negativa do verbo be, coloque not depois de am, is ou are: I am not, she is not, they are not. Não é preciso nenhuma outra palavra.",
+          "Na fala e na escrita informal usamos contrações: I'm not, he isn't, she isn't, it isn't, you aren't, we aren't, they aren't. Também é possível dizer he's not, you're not, they're not. Atenção: com I, a única contração é I'm not (não existe amn't).",
+          "Em português o \"não\" vem antes do verbo (Eu não sou). Em inglês o not vem depois do verbo be (I am not). Por isso, frases como I no am ou She no is são erros comuns de brasileiros."
+        ],
+        "regras": [
+          "I am not = I'm not",
+          "He/She/It is not = isn't (ou he's not)",
+          "You/We/They are not = aren't (ou you're not)",
+          "O not vem DEPOIS de am/is/are",
+          "Não existe amn't: use I'm not"
+        ],
+        "notaContrastiva": "Não diga *I no am Mexican* → diga *I'm not Mexican*. Em inglês, o not vem depois do verbo be.",
+        "exemplos": [
+          {
+            "en": "I'm not American. I'm Brazilian.",
+            "pt": "Eu não sou americano(a). Sou brasileiro(a)."
+          },
+          {
+            "en": "She isn't from Spain. She's from Mexico.",
+            "pt": "Ela não é da Espanha. Ela é do México."
+          },
+          {
+            "en": "We aren't teachers. We're students.",
+            "pt": "Nós não somos professores. Somos alunos."
+          },
+          {
+            "en": "It isn't my cell phone.",
+            "pt": "Não é o meu celular."
+          },
+          {
+            "en": "They're not from Rio. They're from Salvador.",
+            "pt": "Eles não são do Rio. São de Salvador."
+          },
+          {
+            "en": "My brother isn't at home. He's at work.",
+            "pt": "Meu irmão não está em casa. Ele está no trabalho."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "not",
+            "pt": "não"
+          },
+          {
+            "en": "teacher",
+            "pt": "professor(a)"
+          },
+          {
+            "en": "student",
+            "pt": "aluno(a), estudante"
+          },
+          {
+            "en": "doctor",
+            "pt": "médico(a)"
+          },
+          {
+            "en": "engineer",
+            "pt": "engenheiro(a)"
+          },
+          {
+            "en": "at home",
+            "pt": "em casa"
+          },
+          {
+            "en": "at work",
+            "pt": "no trabalho"
+          },
+          {
+            "en": "married",
+            "pt": "casado(a)"
+          },
+          {
+            "en": "single",
+            "pt": "solteiro(a)"
+          },
+          {
+            "en": "tired",
+            "pt": "cansado(a)"
+          },
+          {
+            "en": "cell phone",
+            "pt": "celular"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma negativa do verbo be (pode usar contração).",
+          "conteudo": {
+            "texto": "She ___ from Spain. She's from Mexico."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "isn't",
+                "is not"
+              ]
+            ]
+          },
+          "explicacao": "Com she usamos is; na negativa, is not ou a contração isn't.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma negativa do verbo be (pode usar contração).",
+          "conteudo": {
+            "texto": "We ___ teachers. We're students."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't",
+                "are not"
+              ]
+            ]
+          },
+          "explicacao": "Com we usamos are; na negativa, are not ou a contração aren't.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "I ___ from Chile.",
+            "opcoes": [
+              "no am",
+              "am not",
+              "not am"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O not vem depois do verbo be: I am not (I'm not). Em português dizemos \"não sou\", mas em inglês a ordem é verbo + not.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Paulo and Rita ___ married. They're single.",
+            "opcoesPorLacuna": [
+              [
+                "aren't",
+                "isn't",
+                "am not"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't"
+              ]
+            ]
+          },
+          "explicacao": "Paulo and Rita = they, então o verbo é are; na negativa, aren't.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual é a contração correta de I am not?",
+          "conteudo": {
+            "opcoes": [
+              "I amn't",
+              "I'm not",
+              "I'm no"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Com I, a contração é sempre I'm not. A forma amn't não existe, e no não substitui not depois do verbo.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "a",
+              "mother",
+              "not",
+              "is",
+              "teacher",
+              "My"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My mother is not a teacher."
+            ]
+          },
+          "explicacao": "Na negativa, a ordem é: sujeito (My mother) + is + not + resto da frase (a teacher).",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "He no is from Argentina."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He isn't from Argentina.",
+              "He is not from Argentina."
+            ]
+          },
+          "explicacao": "Em inglês não usamos no antes do verbo. A negativa do be é is not (isn't), com o not depois do verbo.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada forma à sua contração.",
+          "conteudo": {
+            "esquerda": [
+              "I am not",
+              "he is not",
+              "they are not",
+              "it is not",
+              "you are not"
+            ],
+            "direita": [
+              "it isn't",
+              "they aren't",
+              "I'm not",
+              "he isn't",
+              "you aren't"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              1,
+              0,
+              4
+            ]
+          },
+          "explicacao": "Is not → isn't; are not → aren't. Com I, a contração é I'm not."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não sou casado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm not married."
+            ]
+          },
+          "explicacao": "Negativa com I: I am not (I'm not) + married.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles não são da Argentina.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They aren't from Argentina.",
+              "They aren't Argentinian.",
+              "They aren't Argentine."
+            ]
+          },
+          "explicacao": "Com they usamos are not (aren't ou they're not). \"Ser de um país\" = be from + país.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "It ___ my cell phone.",
+            "opcoes": [
+              "not is",
+              "isn't",
+              "aren't"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Com it usamos is; a negativa é is not (isn't).",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma negativa do verbo be (pode usar contração).",
+          "conteudo": {
+            "texto": "You ___ a student. You're a teacher."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't",
+                "are not"
+              ]
+            ]
+          },
+          "explicacao": "Com you, o verbo be é are; na negativa, are not (aren't).",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "I no am tired."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm not tired."
+            ]
+          },
+          "explicacao": "Em inglês não usamos no antes do verbo: o not vem depois do be → I am not (I'm not) tired.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase negativa com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "They",
+              "Canada",
+              "not",
+              "from"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are not from Canada."
+            ]
+          },
+          "explicacao": "Ordem da negativa: sujeito + are + not + from + país.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "She isn't Brazilian.",
+              "She not Brazilian.",
+              "She no is Brazilian."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A negativa precisa do verbo be + not: She is not (isn't) Brazilian. Sem o verbo (She not) ou com no antes do verbo, a frase fica errada.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m03-l3",
+      "ordem": 3,
+      "titulo": "Are you Brazilian?",
+      "objetivo": "Fazer perguntas de sim ou não com o verbo be e dar respostas curtas.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para fazer uma pergunta de sim ou não com o verbo be, troque a ordem: o verbo vem antes do sujeito. You are Brazilian → Are you Brazilian? She is a doctor → Is she a doctor?",
+          "Em português, muitas vezes só mudamos a entonação (Você é brasileiro?). Em inglês isso não basta: a ordem das palavras precisa mudar.",
+          "As respostas curtas repetem o pronome e o verbo be: Yes, I am. / No, I'm not. Yes, she is. / No, she isn't. Na resposta curta afirmativa não usamos contração: diga Yes, I am (e não Yes, I'm)."
+        ],
+        "regras": [
+          "Am I…? / Are you…? / Is he/she/it…? / Are we/they…?",
+          "Yes, I am. / No, I'm not.",
+          "Yes, he is. / No, he isn't.",
+          "Yes, they are. / No, they aren't.",
+          "Sem contração no \"yes\": Yes, she is (não Yes, she's)"
+        ],
+        "notaContrastiva": "Não escreva *You are from Brazil?* para perguntar → escreva *Are you from Brazil?* E não responda *Yes, I'm* → responda *Yes, I am*.",
+        "exemplos": [
+          {
+            "en": "Are you from Brazil? Yes, I am.",
+            "pt": "Você é do Brasil? Sim, sou."
+          },
+          {
+            "en": "Is Marta a teacher? No, she isn't. She's a doctor.",
+            "pt": "A Marta é professora? Não, não é. Ela é médica."
+          },
+          {
+            "en": "Are they Brazilian? Yes, they are.",
+            "pt": "Eles são brasileiros? Sim, são."
+          },
+          {
+            "en": "Is it your bag? No, it isn't.",
+            "pt": "É a sua bolsa? Não, não é."
+          },
+          {
+            "en": "Are you and Lia sisters? Yes, we are.",
+            "pt": "Você e a Lia são irmãs? Sim, somos."
+          },
+          {
+            "en": "Am I late? No, you aren't.",
+            "pt": "Estou atrasado(a)? Não, não está."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "yes",
+            "pt": "sim"
+          },
+          {
+            "en": "no",
+            "pt": "não"
+          },
+          {
+            "en": "late",
+            "pt": "atrasado(a)"
+          },
+          {
+            "en": "ready",
+            "pt": "pronto(a)"
+          },
+          {
+            "en": "hungry",
+            "pt": "com fome"
+          },
+          {
+            "en": "friend",
+            "pt": "amigo(a)"
+          },
+          {
+            "en": "classmate",
+            "pt": "colega de classe"
+          },
+          {
+            "en": "sister",
+            "pt": "irmã"
+          },
+          {
+            "en": "bag",
+            "pt": "bolsa, mochila"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "Is you Brazilian?",
+              "Are you Brazilian?",
+              "You are Brazilian?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Na pergunta, o verbo be vem antes do sujeito: Are you…? Com you, o verbo é sempre are.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "___ she your sister?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Is"
+              ]
+            ]
+          },
+          "explicacao": "Com she, o verbo é is. Na pergunta, ele vai para o início: Is she your sister?"
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Is Pedro from Recife? — Yes, ___.",
+            "opcoes": [
+              "he's",
+              "he is",
+              "is he"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Resposta curta afirmativa: Yes, he is. Não usamos contração no final da resposta curta (Yes, he's está errado)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta (pode usar contração).",
+          "conteudo": {
+            "texto": "Are they your friends? — No, they ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't",
+                "are not"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta negativa com they: No, they aren't (ou No, they are not)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha as palavras corretas.",
+          "conteudo": {
+            "texto": "___ you ready? — Yes, I ___.",
+            "opcoesPorLacuna": [
+              [
+                "Am",
+                "Is",
+                "Are"
+              ],
+              [
+                "are",
+                "is",
+                "am"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Are"
+              ],
+              [
+                "am"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta com you: Are you…? Resposta com I: Yes, I am."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "father",
+              "a",
+              "your",
+              "doctor",
+              "Is"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is your father a doctor?"
+            ]
+          },
+          "explicacao": "Pergunta de sim ou não: Is + sujeito (your father) + a doctor. O verbo be vem antes do sujeito.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta curta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Are you a student?",
+              "Is she married?",
+              "Are they Canadian?",
+              "Is it your phone?",
+              "Am I late?"
+            ],
+            "direita": [
+              "Yes, they are.",
+              "No, you aren't.",
+              "No, she isn't.",
+              "Yes, I am.",
+              "No, it isn't."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              0,
+              4,
+              1
+            ]
+          },
+          "explicacao": "A resposta curta usa o pronome que corresponde ao sujeito da pergunta: you → I, she → she, they → they, it → it, I → you."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "You are from Curitiba?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are you from Curitiba?"
+            ]
+          },
+          "explicacao": "Em inglês, a pergunta de sim ou não troca a ordem: Are you…? Só a entonação, como em português, não basta.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você é americano?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are you American?",
+              "Are you from the United States?",
+              "Are you from the US?",
+              "Are you from the U.S.?",
+              "Are you from the USA?"
+            ]
+          },
+          "explicacao": "Pergunta com be: Are + you + American? Lembre a letra maiúscula em American.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela é sua irmã?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is she your sister?"
+            ]
+          },
+          "explicacao": "Pergunta com be: o verbo vem antes do sujeito → Is she your sister? Só a entonação, como em português, não basta.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Are you hungry? — No, ___.",
+            "opcoes": [
+              "I'm not",
+              "I amn't",
+              "I not"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Resposta curta negativa com I: No, I'm not. Não existe amn't.",
+          "tagsErro": [
+            "negativa_be"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "___ Tom and Ana Brazilian? — Yes, they ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Are"
+              ],
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "Tom and Ana = they, então usamos are na pergunta e na resposta."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "Your brother is at home?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is your brother at home?"
+            ]
+          },
+          "explicacao": "Para perguntar, o verbo be vai para antes do sujeito: Is your brother at home?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "friends",
+              "Are",
+              "Bahia",
+              "your",
+              "from"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are your friends from Bahia?"
+            ]
+          },
+          "explicacao": "Com sujeito no plural (your friends), usamos Are, no início da pergunta.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Am I late? — No, ___.",
+            "opcoes": [
+              "you aren't",
+              "you isn't",
+              "I'm not"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A pergunta é sobre \"eu\" (I), então quem responde fala de \"você\" (you): No, you aren't. Com you, o verbo é are."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m03-l4",
+      "ordem": 4,
+      "titulo": "How old are you?",
+      "objetivo": "Falar e perguntar a idade e usar os números de 20 a 100.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar a idade em inglês usamos o verbo be, e não have: I'm 25. My son is 8. Também podemos dizer I'm 25 years old, mas nunca I have 25 years. Para perguntar: How old are you? How old is your sister?",
+          "As dezenas terminam em -ty: twenty (20), thirty (30), forty (40), fifty (50), sixty (60), seventy (70), eighty (80), ninety (90). Atenção à grafia: forty não tem u (não é fourty). 100 é one hundred (ou a hundred).",
+          "Entre a dezena e a unidade usamos hífen: twenty-one, thirty-five, ninety-nine. Não confunda -teen e -ty: thirteen (13) e thirty (30), fifteen (15) e fifty (50). Na fala, o -teen é mais longo e forte."
+        ],
+        "regras": [
+          "How old are you? → I'm 30. / I'm 30 years old.",
+          "Idade = be, nunca have",
+          "20 twenty · 30 thirty · 40 forty · 50 fifty · 60 sixty · 70 seventy · 80 eighty · 90 ninety · 100 one hundred",
+          "Hífen: twenty-one, forty-six",
+          "-teen (13 a 19) ≠ -ty (30, 40, 50…)"
+        ],
+        "notaContrastiva": "Não diga *I have 20 years* → diga *I'm 20* (ou *I'm 20 years old*). E não pare no meio: *I'm 20 years* está errado; use só o número ou *years old* completo.",
+        "exemplos": [
+          {
+            "en": "How old are you? I'm 34.",
+            "pt": "Quantos anos você tem? Tenho 34."
+          },
+          {
+            "en": "My grandmother is 82 years old.",
+            "pt": "Minha avó tem 82 anos."
+          },
+          {
+            "en": "How old is your son? He's 9.",
+            "pt": "Quantos anos tem o seu filho? Ele tem 9."
+          },
+          {
+            "en": "Lucas is twenty-one.",
+            "pt": "O Lucas tem vinte e um anos."
+          },
+          {
+            "en": "My parents are 56 and 58.",
+            "pt": "Meus pais têm 56 e 58 anos."
+          },
+          {
+            "en": "Thirteen, thirty. Fifteen, fifty.",
+            "pt": "Treze, trinta. Quinze, cinquenta."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "twenty / thirty / forty",
+            "pt": "vinte / trinta / quarenta"
+          },
+          {
+            "en": "fifty / sixty / seventy",
+            "pt": "cinquenta / sessenta / setenta"
+          },
+          {
+            "en": "eighty / ninety",
+            "pt": "oitenta / noventa"
+          },
+          {
+            "en": "one hundred",
+            "pt": "cem"
+          },
+          {
+            "en": "twenty-one",
+            "pt": "vinte e um"
+          },
+          {
+            "en": "age",
+            "pt": "idade"
+          },
+          {
+            "en": "old",
+            "pt": "velho(a); em How old: quantos anos"
+          },
+          {
+            "en": "years old",
+            "pt": "anos (de idade)"
+          },
+          {
+            "en": "grandmother / grandfather",
+            "pt": "avó / avô"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "I'm 25 years.",
+              "I'm 25.",
+              "I have 25 years."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Idade em inglês usa o verbo be: I'm 25 (ou I'm 25 years old). Have não é usado para idade, e years sozinho, sem old, fica incompleto.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo be.",
+          "conteudo": {
+            "texto": "How old ___ your sister? — She ___ 17."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ],
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Com your sister (she) usamos is, tanto na pergunta (How old is…?) quanto na resposta (She is 17).",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se escreve 40 em inglês?",
+          "conteudo": {
+            "opcoes": [
+              "fourteen",
+              "forty",
+              "fourty"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "40 é forty, sem u (apesar de four ter u). Fourteen é 14."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escreva os números por extenso.",
+          "conteudo": {
+            "texto": "30 = ___ · 90 = ___"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "thirty"
+              ],
+              [
+                "ninety"
+              ]
+            ]
+          },
+          "explicacao": "30 = thirty e 90 = ninety. As dezenas terminam em -ty."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada número à sua forma escrita.",
+          "conteudo": {
+            "esquerda": [
+              "13",
+              "30",
+              "15",
+              "50",
+              "88",
+              "100"
+            ],
+            "direita": [
+              "one hundred",
+              "eighty-eight",
+              "thirteen",
+              "fifty",
+              "thirty",
+              "fifteen"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              5,
+              3,
+              1,
+              0
+            ]
+          },
+          "explicacao": "Os números de 13 a 19 terminam em -teen; as dezenas (30, 50…) terminam em -ty. 100 = one hundred."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "old",
+              "is",
+              "grandfather",
+              "How",
+              "your"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How old is your grandfather?"
+            ]
+          },
+          "explicacao": "Pergunta de idade: How old + is + sujeito (your grandfather). How old fica junto, no início.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My brother has 15 years."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother is 15.",
+              "My brother is 15 years old.",
+              "My brother is fifteen.",
+              "My brother is fifteen years old."
+            ]
+          },
+          "explicacao": "Em inglês a idade usa be: My brother is 15 (years old). Have + years é tradução literal do português.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu tenho 30 anos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm 30.",
+              "I'm 30 years old.",
+              "I'm thirty.",
+              "I'm thirty years old."
+            ]
+          },
+          "explicacao": "Idade com be: I'm 30 ou I'm 30 years old. Nunca I have 30 years.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quantos anos você tem?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How old are you?"
+            ]
+          },
+          "explicacao": "Para perguntar a idade: How old are you? (literalmente, \"quão velho você é?\"). Não use How many years…",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual número é fifty-four?",
+          "conteudo": {
+            "opcoes": [
+              "54",
+              "14",
+              "45"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Fifty = 50 e four = 4, então fifty-four = 54."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o número por extenso (60).",
+          "conteudo": {
+            "texto": "My mom is ___ years old."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "sixty",
+                "60"
+              ]
+            ]
+          },
+          "explicacao": "60 = sixty. Idade com be: My mom is sixty years old."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "How old is he? Escolha a resposta correta.",
+          "conteudo": {
+            "opcoes": [
+              "He's twelve.",
+              "He's twelve years.",
+              "He has twelve."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Idade com be: He's twelve (ou He's twelve years old).",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "father",
+              "My",
+              "is",
+              "years",
+              "fifty",
+              "old"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father is fifty years old."
+            ]
+          },
+          "explicacao": "Ordem: sujeito + is + número + years old.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela tem 21 anos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She's 21.",
+              "She's 21 years old.",
+              "She's twenty-one.",
+              "She's twenty-one years old.",
+              "She's twenty one.",
+              "She's twenty one years old."
+            ]
+          },
+          "explicacao": "Idade com be: She's 21 (twenty-one) ou She's 21 years old. Não use has.",
+          "tagsErro": [
+            "have_idade"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m03-l5",
+      "ordem": 5,
+      "titulo": "What's your phone number?",
+      "objetivo": "Fazer perguntas com what, where e how old e trocar telefone e e-mail.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Perguntas com palavras interrogativas (wh- questions) começam com a palavra interrogativa, seguida do verbo be e do sujeito: What is your name? Where is she from? How old are they? A ordem é sempre: palavra interrogativa + be + sujeito.",
+          "What's é a contração de What is. Use What's your…? para pedir informações: What's your phone number? What's your email address? What's your last name?",
+          "Para dizer um número de telefone, falamos os algarismos um por um: 555-2091 = five five five, two oh nine one. O zero normalmente é lido como oh. Em e-mails, @ é at e o ponto é dot: ana@mail.com = ana at mail dot com."
+        ],
+        "regras": [
+          "Palavra interrogativa + be + sujeito: Where are you from?",
+          "What's = What is",
+          "What's your name / phone number / email address?",
+          "Telefone: um algarismo por vez; 0 = oh (ou zero)",
+          "@ = at · . = dot"
+        ],
+        "notaContrastiva": "Não pergunte *What your name is?* nem *Where you are from?* → em perguntas, o verbo be vem antes do sujeito: *What's your name?* *Where are you from?*",
+        "exemplos": [
+          {
+            "en": "What's your name? My name is Júlia.",
+            "pt": "Qual é o seu nome? Meu nome é Júlia."
+          },
+          {
+            "en": "What's your phone number? It's 555-0193.",
+            "pt": "Qual é o seu telefone? É 555-0193."
+          },
+          {
+            "en": "What's your email address? It's julia@mail.com.",
+            "pt": "Qual é o seu e-mail? É julia@mail.com."
+          },
+          {
+            "en": "Where is your school? It's in Belo Horizonte.",
+            "pt": "Onde fica a sua escola? Fica em Belo Horizonte."
+          },
+          {
+            "en": "How old are your children? They're 6 and 9.",
+            "pt": "Quantos anos têm os seus filhos? Eles têm 6 e 9."
+          },
+          {
+            "en": "What's your last name? It's Santos.",
+            "pt": "Qual é o seu sobrenome? É Santos."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "what",
+            "pt": "o que, qual"
+          },
+          {
+            "en": "where",
+            "pt": "onde"
+          },
+          {
+            "en": "how old",
+            "pt": "quantos anos"
+          },
+          {
+            "en": "phone number",
+            "pt": "número de telefone"
+          },
+          {
+            "en": "cell phone",
+            "pt": "celular"
+          },
+          {
+            "en": "email address",
+            "pt": "endereço de e-mail"
+          },
+          {
+            "en": "first name",
+            "pt": "nome"
+          },
+          {
+            "en": "last name",
+            "pt": "sobrenome"
+          },
+          {
+            "en": "at (@)",
+            "pt": "arroba"
+          },
+          {
+            "en": "dot (.)",
+            "pt": "ponto"
+          },
+          {
+            "en": "oh (0)",
+            "pt": "zero (em telefones)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ is your phone number?",
+            "opcoes": [
+              "How old",
+              "Where",
+              "What"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Para pedir uma informação como telefone, nome ou e-mail, usamos What: What is your phone number?"
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ are you from? — I'm from Natal.",
+            "opcoes": [
+              "What",
+              "How old",
+              "Where"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "A resposta fala de origem (from Natal), então a pergunta é Where are you from?"
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra interrogativa correta.",
+          "conteudo": {
+            "texto": "___ is your son? — He's 12.",
+            "opcoesPorLacuna": [
+              [
+                "Where",
+                "What",
+                "How old"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "How old"
+              ]
+            ]
+          },
+          "explicacao": "A resposta é uma idade (He's 12), então a pergunta é How old is your son?"
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo be.",
+          "conteudo": {
+            "texto": "What ___ your email address? — It ___ pedro@mail.com."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is",
+                "'s"
+              ],
+              [
+                "is",
+                "'s"
+              ]
+            ]
+          },
+          "explicacao": "Your email address e it estão no singular: What is…? It is… (What's / It's)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "your",
+              "name",
+              "What",
+              "last",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What is your last name?"
+            ]
+          },
+          "explicacao": "Ordem: What + is + your last name. O verbo be vem logo depois da palavra interrogativa.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "What's your name?",
+              "Where are you from?",
+              "How old are you?",
+              "What's your phone number?",
+              "What's your email address?"
+            ],
+            "direita": [
+              "I'm from Manaus.",
+              "It's carla@mail.com.",
+              "It's 555-0148.",
+              "I'm 27.",
+              "My name is Carla."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              0,
+              3,
+              2,
+              1
+            ]
+          },
+          "explicacao": "What → nome, telefone, e-mail; Where → origem; How old → idade."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "What your name is?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What's your name?"
+            ]
+          },
+          "explicacao": "Em perguntas com what, o verbo be vem antes do sujeito: What is (What's) your name?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Qual é o seu sobrenome?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What's your last name?",
+              "What's your surname?",
+              "What's your family name?"
+            ]
+          },
+          "explicacao": "\"Qual é o seu…?\" vira What's your…? (e não Which is). Sobrenome = last name (também surname ou family name)."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "De onde eles são?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where are they from?"
+            ]
+          },
+          "explicacao": "Where + are + they + from? O from vai para o final da pergunta.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Como se lê ana@mail.com?",
+          "conteudo": {
+            "opcoes": [
+              "ana and mail dot com",
+              "ana at mail point com",
+              "ana at mail dot com"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Em e-mails, @ se lê at e o ponto se lê dot."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com am, is ou are.",
+          "conteudo": {
+            "texto": "Where ___ Carlos and Bia from?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "Carlos and Bia = they, então o verbo é are."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "How old your daughter is?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How old is your daughter?"
+            ]
+          },
+          "explicacao": "Depois de How old vem o verbo be e depois o sujeito: How old is your daughter?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "How",
+              "cousins",
+              "are",
+              "old",
+              "your"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How old are your cousins?"
+            ]
+          },
+          "explicacao": "How old + are (sujeito no plural) + your cousins.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Como se lê o telefone 555-3082?",
+          "conteudo": {
+            "opcoes": [
+              "five five five, three eight two",
+              "five five five, three oh eight two",
+              "five hundred fifty-five, thirty eighty-two"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Telefones são lidos algarismo por algarismo, e o zero normalmente vira oh: three oh eight two. Não pule o zero."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m03-l6",
+      "ordem": 6,
+      "titulo": "Filling in a form",
+      "objetivo": "Pedir e dar dados pessoais para preencher um formulário.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Em cadastros e fichas de inscrição aparecem sempre os mesmos campos: first name (nome), last name (sobrenome), age (idade), nationality (nacionalidade), address (endereço), zip code (CEP), phone number, email address, job (profissão) e marital status (estado civil: single ou married).",
+          "Para pedir esses dados, use What's your…? (What's your address?) ou perguntas de sim ou não (Are you married?). As respostas costumam ser curtas: It's 45 Palm Street. / No, I'm not. I'm single.",
+          "Em endereços americanos o número vem antes do nome da rua: 45 Palm Street. Para dizer com quem a pessoa é casada, use married to: She's married to Rafael."
+        ],
+        "regras": [
+          "first name = nome · last name = sobrenome",
+          "What's your address? It's 12 Ocean Avenue.",
+          "Are you married? No, I'm not. I'm single.",
+          "married to + pessoa",
+          "zip code = CEP · job = profissão"
+        ],
+        "notaContrastiva": "Não diga *I'm married with Paulo* → diga *I'm married to Paulo*. Em português é \"casada com\", mas em inglês a preposição é to.",
+        "exemplos": [
+          {
+            "en": "What's your first name? It's Beatriz.",
+            "pt": "Qual é o seu nome? É Beatriz."
+          },
+          {
+            "en": "What's your last name? It's Oliveira.",
+            "pt": "Qual é o seu sobrenome? É Oliveira."
+          },
+          {
+            "en": "What's your address? It's 210 Lake Street.",
+            "pt": "Qual é o seu endereço? É Lake Street, 210."
+          },
+          {
+            "en": "Are you married? Yes, I am. I'm married to Rafael.",
+            "pt": "Você é casada? Sim, sou. Sou casada com o Rafael."
+          },
+          {
+            "en": "What's your job? I'm a nurse.",
+            "pt": "Qual é a sua profissão? Sou enfermeira."
+          },
+          {
+            "en": "What's your nationality? I'm Brazilian.",
+            "pt": "Qual é a sua nacionalidade? Sou brasileira."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "form",
+            "pt": "formulário"
+          },
+          {
+            "en": "first name",
+            "pt": "nome"
+          },
+          {
+            "en": "last name",
+            "pt": "sobrenome"
+          },
+          {
+            "en": "address",
+            "pt": "endereço"
+          },
+          {
+            "en": "street",
+            "pt": "rua"
+          },
+          {
+            "en": "avenue",
+            "pt": "avenida"
+          },
+          {
+            "en": "zip code",
+            "pt": "CEP"
+          },
+          {
+            "en": "job",
+            "pt": "profissão, emprego"
+          },
+          {
+            "en": "nurse",
+            "pt": "enfermeiro(a)"
+          },
+          {
+            "en": "married",
+            "pt": "casado(a)"
+          },
+          {
+            "en": "single",
+            "pt": "solteiro(a)"
+          },
+          {
+            "en": "age",
+            "pt": "idade"
+          },
+          {
+            "en": "nationality",
+            "pt": "nacionalidade"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Nome completo: Beatriz Oliveira. Qual é o last name?",
+          "conteudo": {
+            "opcoes": [
+              "Beatriz Oliveira",
+              "Beatriz",
+              "Oliveira"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Last name é o sobrenome (Oliveira). First name é o primeiro nome (Beatriz)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a preposição correta.",
+          "conteudo": {
+            "texto": "I'm married ___ Rafael."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "to"
+              ]
+            ]
+          },
+          "explicacao": "Em inglês, \"casado com\" é married to. A tradução literal married with está errada.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Are you married? — No, ___. I'm single.",
+            "opcoes": [
+              "I'm not",
+              "I am",
+              "I not"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A pessoa é solteira, então a resposta é negativa: No, I'm not."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra correta.",
+          "conteudo": {
+            "texto": "What's your ___? — It's 150 Pine Street.",
+            "opcoesPorLacuna": [
+              [
+                "address",
+                "job",
+                "zip code"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "address"
+              ]
+            ]
+          },
+          "explicacao": "150 Pine Street é um endereço (address). Repare: o número vem antes do nome da rua."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada campo do formulário a um exemplo.",
+          "conteudo": {
+            "esquerda": [
+              "First name",
+              "Last name",
+              "Age",
+              "Nationality",
+              "Email address",
+              "Job"
+            ],
+            "direita": [
+              "42",
+              "daniel@mail.com",
+              "Brazilian",
+              "engineer",
+              "Costa",
+              "Daniel"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              4,
+              0,
+              2,
+              1,
+              3
+            ]
+          },
+          "explicacao": "First name = nome; last name = sobrenome; age = idade; nationality = nacionalidade; email address = e-mail; job = profissão."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "address",
+              "your",
+              "email",
+              "is",
+              "What"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What is your email address?"
+            ]
+          },
+          "explicacao": "What + is + your email address. O verbo be vem logo depois de What.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "She is married with a doctor."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is married to a doctor."
+            ]
+          },
+          "explicacao": "\"Casada com\" em inglês é married to, não married with.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Qual é o seu endereço?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What's your address?"
+            ]
+          },
+          "explicacao": "\"Qual é o seu…?\" = What's your…? Endereço = address (com dois d e dois s)."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu sou solteira.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'm single."
+            ]
+          },
+          "explicacao": "Estado civil com o verbo be: I'm single. Em inglês o adjetivo não muda para masculino ou feminino."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o nome correto.",
+          "conteudo": {
+            "texto": "Name: Mariana Costa. Her first name is ___. Her last name is ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Mariana"
+              ],
+              [
+                "Costa"
+              ]
+            ]
+          },
+          "explicacao": "First name é o primeiro nome (Mariana); last name é o sobrenome (Costa)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual pergunta serve para o campo Nationality?",
+          "conteudo": {
+            "opcoes": [
+              "Where's your nationality?",
+              "How old is your nationality?",
+              "What's your nationality?"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Para pedir uma informação do formulário usamos What's your…? → What's your nationality?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+          "conteudo": {
+            "frase": "My last name are Santos."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My last name is Santos."
+            ]
+          },
+          "explicacao": "My last name é singular (it), então o verbo é is."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta com as palavras.",
+          "conteudo": {
+            "palavras": [
+              "Lucas",
+              "married",
+              "Are",
+              "you",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Are you married to Lucas?"
+            ]
+          },
+          "explicacao": "Pergunta de sim ou não: Are + you + married to + pessoa.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Leia a ficha e escolha a frase verdadeira.",
+          "conteudo": {
+            "texto": "Name: Kenji Sato · Age: 29 · Nationality: Japanese · Job: engineer",
+            "opcoes": [
+              "Kenji is American.",
+              "Kenji is a doctor.",
+              "Kenji is 29."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Na ficha, Age: 29 → Kenji is 29. Ele é japonês (Japanese) e engenheiro (engineer)."
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "She ___ from Peru. She's from Chile.",
+          "opcoes": [
+            "isn't",
+            "aren't",
+            "not is"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Com she, a negativa do be é is not (isn't).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo be.",
+        "conteudo": {
+          "texto": "___ you Canadian? — No, I ___ not."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Are"
+            ],
+            [
+              "am",
+              "'m"
+            ]
+          ]
+        },
+        "explicacao": "Pergunta com you: Are you…? Resposta com I: No, I am not (I'm not)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "How old are you? Escolha a resposta correta.",
+        "conteudo": {
+          "opcoes": [
+            "I have 19 years.",
+            "I have 19.",
+            "I'm 19."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Idade usa be: I'm 19.",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a nacionalidade.",
+        "conteudo": {
+          "texto": "Miguel is from Mexico. He's ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Mexican"
+            ]
+          ]
+        },
+        "explicacao": "Quem é do México é Mexican."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "Is your mom a teacher? — Yes, ___.",
+          "opcoes": [
+            "is she",
+            "she is",
+            "she's"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Resposta curta afirmativa sem contração: Yes, she is."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o número por extenso.",
+        "conteudo": {
+          "texto": "45 = ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "forty-five",
+              "forty five"
+            ]
+          ]
+        },
+        "explicacao": "45 = forty-five (forty sem u)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ is your phone number?",
+          "opcoes": [
+            "How old",
+            "What",
+            "Where"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Para pedir telefone usamos What: What is your phone number?"
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a forma negativa do verbo be (pode usar contração).",
+        "conteudo": {
+          "texto": "They ___ from Italy. They're from Spain."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "aren't",
+              "are not"
+            ]
+          ]
+        },
+        "explicacao": "Com they, a negativa é are not (aren't).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "Emily is from the United States. She's ___.",
+          "opcoes": [
+            "Americas",
+            "American",
+            "the United States"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "A nacionalidade de quem é dos Estados Unidos é American.",
+        "tagsErro": [
+          "pais_nacionalidade"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a preposição correta.",
+        "conteudo": {
+          "texto": "I'm married ___ Julia."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "to"
+            ]
+          ]
+        },
+        "explicacao": "\"Casado com\" = married to.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where is Sofia from?",
+        "conteudo": {
+          "texto": "Hi! My name is Sofia Reyes. I'm 23 years old and I'm from Colombia, so I'm Colombian. I'm not a student. I'm a nurse in Miami. My best friend is Lena. She isn't Colombian. She's from Germany. Her phone number is 555-0172.",
+          "opcoes": [
+            "Colombia",
+            "the United States",
+            "Germany"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: I'm from Colombia. Ela trabalha em Miami, mas é colombiana."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What is Sofia's job?",
+        "conteudo": {
+          "texto": "Hi! My name is Sofia Reyes. I'm 23 years old and I'm from Colombia, so I'm Colombian. I'm not a student. I'm a nurse in Miami. My best friend is Lena. She isn't Colombian. She's from Germany. Her phone number is 555-0172.",
+          "opcoes": [
+            "She's a student.",
+            "She's a nurse.",
+            "She's a teacher."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: I'm not a student. I'm a nurse in Miami."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Is Lena Colombian?",
+        "conteudo": {
+          "texto": "Hi! My name is Sofia Reyes. I'm 23 years old and I'm from Colombia, so I'm Colombian. I'm not a student. I'm a nurse in Miami. My best friend is Lena. She isn't Colombian. She's from Germany. Her phone number is 555-0172.",
+          "opcoes": [
+            "Yes, she is.",
+            "Yes, they are.",
+            "No, she isn't."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: She isn't Colombian. She's from Germany."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How old is Sofia?",
+        "conteudo": {
+          "texto": "Hi! My name is Sofia Reyes. I'm 23 years old and I'm from Colombia, so I'm Colombian. I'm not a student. I'm a nurse in Miami. My best friend is Lena. She isn't Colombian. She's from Germany. Her phone number is 555-0172.",
+          "opcoes": [
+            "23",
+            "32",
+            "13"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: I'm 23 years old."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta com as palavras.",
+        "conteudo": {
+          "palavras": [
+            "brother",
+            "How",
+            "is",
+            "old",
+            "your"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "How old is your brother?"
+          ]
+        },
+        "explicacao": "How old + is + your brother.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós não somos americanos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We aren't American.",
+            "We aren't Americans."
+          ]
+        },
+        "explicacao": "Com we, a negativa é are not (aren't / we're not).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "I have 40 years."
+        },
+        "gabarito": {
+          "aceitas": [
+            "I'm 40.",
+            "I'm 40 years old.",
+            "I'm forty.",
+            "I'm forty years old."
+          ]
+        },
+        "explicacao": "Idade com be: I'm 40 (years old).",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Qual é o seu nome?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "What's your name?"
+          ]
+        },
+        "explicacao": "\"Qual é o seu nome?\" = What's your name?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "We ___ from Brazil. We're from Portugal.",
+          "opcoes": [
+            "aren't",
+            "isn't",
+            "not are"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Com we, a negativa do be é are not (aren't).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo be.",
+        "conteudo": {
+          "texto": "___ he Brazilian? — Yes, he ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Is"
+            ],
+            [
+              "is"
+            ]
+          ]
+        },
+        "explicacao": "Pergunta com he: Is he…? Resposta curta: Yes, he is."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "How old is your son? Escolha a resposta correta.",
+        "conteudo": {
+          "opcoes": [
+            "He's 7.",
+            "He has 7.",
+            "He has 7 years."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Idade usa be: He's 7.",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a nacionalidade.",
+        "conteudo": {
+          "texto": "Akira is from Japan. He's ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Japanese"
+            ]
+          ]
+        },
+        "explicacao": "Quem é do Japão é Japanese."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "Are you a student? — No, ___.",
+          "opcoes": [
+            "I'm not",
+            "I amn't",
+            "I no"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Resposta curta negativa: No, I'm not.",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escreva o número por extenso.",
+        "conteudo": {
+          "texto": "62 = ___"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "sixty-two",
+              "sixty two"
+            ]
+          ]
+        },
+        "explicacao": "62 = sixty-two."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ are you from? — I'm from Recife.",
+          "opcoes": [
+            "Where",
+            "How old",
+            "What"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Origem → Where are you from?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a forma negativa do verbo be (pode usar contração).",
+        "conteudo": {
+          "texto": "My dad ___ a doctor. He's an engineer."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "isn't",
+              "is not"
+            ]
+          ]
+        },
+        "explicacao": "My dad = he, então a negativa é is not (isn't).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "Marie is from France. She's ___.",
+          "opcoes": [
+            "France",
+            "Francian",
+            "French"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Quem é da França é French.",
+        "tagsErro": [
+          "pais_nacionalidade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a pergunta.",
+        "conteudo": {
+          "texto": "How ___ are you? — I'm 33."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "old"
+            ]
+          ]
+        },
+        "explicacao": "Para perguntar a idade: How old are you?",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where are Daniel's parents from?",
+        "conteudo": {
+          "texto": "This is Daniel Park. He's 31 and he's from Canada. His parents are from South Korea. Daniel isn't a teacher. He's a doctor in Toronto. His wife is Brazilian. Her name is Camila and she's from Fortaleza. Their email address is parkfamily@mail.com.",
+          "opcoes": [
+            "Brazil",
+            "Canada",
+            "South Korea"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: His parents are from South Korea."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What is Daniel's job?",
+        "conteudo": {
+          "texto": "This is Daniel Park. He's 31 and he's from Canada. His parents are from South Korea. Daniel isn't a teacher. He's a doctor in Toronto. His wife is Brazilian. Her name is Camila and she's from Fortaleza. Their email address is parkfamily@mail.com.",
+          "opcoes": [
+            "He's a teacher.",
+            "He's a doctor.",
+            "He's a nurse."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: Daniel isn't a teacher. He's a doctor."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Is Camila Canadian?",
+        "conteudo": {
+          "texto": "This is Daniel Park. He's 31 and he's from Canada. His parents are from South Korea. Daniel isn't a teacher. He's a doctor in Toronto. His wife is Brazilian. Her name is Camila and she's from Fortaleza. Their email address is parkfamily@mail.com.",
+          "opcoes": [
+            "No, he isn't.",
+            "Yes, she is.",
+            "No, she isn't."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: His wife is Brazilian… she's from Fortaleza. A resposta curta fala de Camila (she)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How old is Daniel?",
+        "conteudo": {
+          "texto": "This is Daniel Park. He's 31 and he's from Canada. His parents are from South Korea. Daniel isn't a teacher. He's a doctor in Toronto. His wife is Brazilian. Her name is Camila and she's from Fortaleza. Their email address is parkfamily@mail.com.",
+          "opcoes": [
+            "31",
+            "13",
+            "30"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: He's 31."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta com as palavras.",
+        "conteudo": {
+          "palavras": [
+            "Where",
+            "parents",
+            "are",
+            "from",
+            "your"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Where are your parents from?"
+          ]
+        },
+        "explicacao": "Where + are + your parents + from.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ele não é casado.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "He isn't married."
+          ]
+        },
+        "explicacao": "Com he, a negativa é is not (isn't / he's not).",
+        "tagsErro": [
+          "negativa_be"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Encontre e corrija o erro. Escreva a frase inteira corrigida.",
+        "conteudo": {
+          "frase": "She has 12 years."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She's 12.",
+            "She's 12 years old.",
+            "She's twelve.",
+            "She's twelve years old."
+          ]
+        },
+        "explicacao": "Idade com be: She's 12 (years old).",
+        "tagsErro": [
+          "have_idade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "De onde você é?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Where are you from?"
+          ]
+        },
+        "explicacao": "\"De onde você é?\" = Where are you from? (from no final).",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      }
+    ]
+  }
+}

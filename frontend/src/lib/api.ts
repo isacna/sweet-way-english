@@ -1,5 +1,16 @@
-export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3333";
+const API_PORTA = 3333;
+
+/**
+ * URL do backend. Com `NEXT_PUBLIC_API_URL` definida, usa ela; senão, usa o mesmo host
+ * pelo qual a página foi aberta (localhost, IP da rede…) na porta 3333 — assim a troca
+ * de IP do computador não exige editar o .env.
+ */
+export function apiUrl(): string {
+  const configurada = process.env.NEXT_PUBLIC_API_URL?.trim();
+  if (configurada) return configurada.replace(/\/$/, "");
+  if (typeof window === "undefined") return `http://localhost:${API_PORTA}`;
+  return `${window.location.protocol}//${window.location.hostname}:${API_PORTA}`;
+}
 
 /** Rotas REST do backend (`server.ts` monta em `/api`). Ver `backend/src/http/routes/index.ts`. */
 export const apiPaths = {
@@ -19,6 +30,7 @@ export function getStoredUser(): {
   nome: string;
   email: string;
   role: string;
+  admin?: boolean;
 } | null {
   if (typeof window === "undefined") return null;
   const raw = localStorage.getItem("user");
@@ -40,12 +52,17 @@ export async function apiFetch(path: string, init: RequestInit = {}) {
   if (token) {
     headers.set("Authorization", `Bearer ${token}`);
   }
-  const res = await fetch(`${API_URL}/api${path}`, { ...init, headers });
+  const res = await fetch(`${apiUrl()}/api${path}`, { ...init, headers });
+  // Token expirado ou inválido: limpa a sessão para a página mandar ao login
+  if (res.status === 401 && token) {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  }
   return res;
 }
 
 export function assetUrl(path: string | null | undefined): string | null {
   if (!path) return null;
   if (path.startsWith("http")) return path;
-  return `${API_URL}${path}`;
+  return `${apiUrl()}${path}`;
 }

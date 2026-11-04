@@ -1,0 +1,3120 @@
+{
+  "slug": "a1-m08",
+  "ordem": 8,
+  "titulo": "Abilities & free time",
+  "tema": "Habilidades, hobbies e tempo livre",
+  "descricao": "Diga o que você sabe fazer, faça pedidos educados e converse sobre esportes, hobbies e preferências.",
+  "canDos": [
+    "Consigo dizer o que sei e o que não sei fazer com can e can't.",
+    "Consigo perguntar sobre habilidades e fazer pedidos com Can you…? e Can I…?",
+    "Consigo dizer do que gosto, adoro e odeio fazer com like, love, hate e enjoy + -ing.",
+    "Consigo falar de esportes e hobbies usando play, go e do."
+  ],
+  "gramatica": "Can / can't (habilidade, pedidos e permissão), perguntas e respostas curtas com can, like / love / hate / enjoy + -ing, ortografia do -ing, play / go / do com atividades.",
+  "vocabulario": "Habilidades (swim, cook, drive, ride a bike), hobbies e esportes (soccer, volleyball, chess, yoga, karate, hiking, shopping), free time, favorite.",
+  "funcao": "Falar sobre habilidades, pedir ajuda ou permissão e conversar sobre preferências e tempo livre.",
+  "pronuncia": "Can fraco (/kən/) na afirmativa e can't forte (/kænt/) na negativa.",
+  "licoes": [
+    {
+      "slug": "a1-m08-l1",
+      "ordem": 1,
+      "titulo": "I can swim!",
+      "objetivo": "Dizer o que você e outras pessoas sabem e não sabem fazer com can e can't.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Usamos can para falar de habilidade, o que alguém sabe ou consegue fazer: I can swim (eu sei nadar). She can speak English (ela sabe falar inglês).",
+          "Can é igual para todas as pessoas: I can, you can, he can, she can, we can, they can. Nunca coloque -s (she cans) e nunca use to depois de can (I can to swim). O verbo seguinte fica na forma básica: He can play, e não he can plays.",
+          "Na negativa, use can't (ou cannot, escrito junto): My brother can't cook. Repare que \"eu sei nadar\" em inglês é I can swim, e não I know swim."
+        ],
+        "regras": [
+          "Sujeito + can + verbo: She can swim.",
+          "Negativa: can't / cannot: He can't cook.",
+          "Sem -s: she can (nunca \"she cans\")",
+          "Sem to: I can dance (nunca \"can to dance\")",
+          "saber fazer algo = can: I can drive."
+        ],
+        "notaContrastiva": "Não diga *She cans swim*, *I can to swim* nem *I know swim* → diga *She can swim* e *I can swim*.",
+        "exemplos": [
+          {
+            "en": "I can swim.",
+            "pt": "Eu sei nadar."
+          },
+          {
+            "en": "My brother can't cook.",
+            "pt": "Meu irmão não sabe cozinhar."
+          },
+          {
+            "en": "She can speak English and Spanish.",
+            "pt": "Ela sabe falar inglês e espanhol."
+          },
+          {
+            "en": "We can play the guitar.",
+            "pt": "Nós sabemos tocar violão."
+          },
+          {
+            "en": "They can't drive.",
+            "pt": "Eles não sabem dirigir."
+          },
+          {
+            "en": "My grandmother can dance samba.",
+            "pt": "Minha avó sabe dançar samba."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "swim",
+            "pt": "nadar"
+          },
+          {
+            "en": "cook",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "dance",
+            "pt": "dançar"
+          },
+          {
+            "en": "sing",
+            "pt": "cantar"
+          },
+          {
+            "en": "drive",
+            "pt": "dirigir"
+          },
+          {
+            "en": "ride a bike",
+            "pt": "andar de bicicleta"
+          },
+          {
+            "en": "speak",
+            "pt": "falar (um idioma)"
+          },
+          {
+            "en": "draw",
+            "pt": "desenhar"
+          },
+          {
+            "en": "run",
+            "pt": "correr"
+          },
+          {
+            "en": "skate",
+            "pt": "andar de skate / patinar"
+          },
+          {
+            "en": "play the guitar",
+            "pt": "tocar violão"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My sister ___ swim very well.",
+            "opcoes": [
+              "cans",
+              "can",
+              "can to",
+              "is can"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Can é igual para todas as pessoas (sem -s) e vem direto antes do verbo, sem to.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com can ou can't. (Eu não sei dirigir.)",
+          "conteudo": {
+            "texto": "I ___ drive. I'm only 15."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "can't"
+              ]
+            ]
+          },
+          "explicacao": "Negativa de habilidade: can't (= cannot).",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "He can ___ the guitar.",
+            "opcoes": [
+              "play",
+              "plays",
+              "to play",
+              "playing"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Depois de can, o verbo fica na forma básica: can play. Sem -s e sem to.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com can ou can't.",
+          "conteudo": {
+            "texto": "Pedro is a great cook. He ___ cook Japanese food."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "can"
+              ]
+            ]
+          },
+          "explicacao": "Pedro é um ótimo cozinheiro, então ele sabe: he can cook.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (Eu sei falar inglês.)",
+          "conteudo": {
+            "texto": "I ___ speak English.",
+            "opcoes": [
+              "know",
+              "am",
+              "do",
+              "can"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "\"Saber fazer algo\" = can: I can speak English. \"I know speak\" é tradução literal e está errado.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "my",
+              "can't",
+              "a",
+              "ride",
+              "bike",
+              "father"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father can't ride a bike."
+            ]
+          },
+          "explicacao": "Sujeito + can't + verbo + complemento.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "She cans dance samba."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She can dance samba."
+            ]
+          },
+          "explicacao": "Can não recebe -s na terceira pessoa: she can.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "I can to speak a little English."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I can speak a little English."
+            ]
+          },
+          "explicacao": "Depois de can não usamos to: I can speak.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu irmão sabe cozinhar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother can cook.",
+              "My brother knows how to cook."
+            ]
+          },
+          "explicacao": "Habilidade = can + verbo: My brother can cook.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela não sabe dirigir.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She can't drive.",
+              "She doesn't know how to drive."
+            ]
+          },
+          "explicacao": "Negativa de habilidade: She can't drive.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "They don't can sing.",
+              "They can't to sing.",
+              "They can't sing.",
+              "They no can sing."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Negativa com can: can't + verbo. Can não usa do/don't nem to.",
+          "tagsErro": [
+            "modal_can",
+            "do_support"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com can ou can't. (Ela não sabe usar celular.)",
+          "conteudo": {
+            "texto": "My grandmother ___ use a cell phone."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "can't"
+              ]
+            ]
+          },
+          "explicacao": "\"Não sabe\" = can't.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "can",
+              "Spanish",
+              "English",
+              "speak",
+              "and",
+              "we"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We can speak English and Spanish.",
+              "We can speak Spanish and English."
+            ]
+          },
+          "explicacao": "Sujeito + can + verbo + complemento. Nomes de idiomas sempre com letra maiúscula.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu sei nadar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I can swim.",
+              "I know how to swim."
+            ]
+          },
+          "explicacao": "\"Saber fazer\" = can: I can swim. Não diga \"I know swim\".",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "Ana ___ play soccer, but she can play volleyball.",
+            "opcoes": [
+              "cans",
+              "can't",
+              "don't",
+              "isn't"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O \"but\" mostra contraste: ela não sabe jogar futebol (can't), mas sabe jogar vôlei.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m08-l2",
+      "ordem": 2,
+      "titulo": "Can you…?",
+      "objetivo": "Perguntar sobre habilidades e responder com Yes, I can / No, I can't.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar, coloque can antes do sujeito: Can you swim? Can your brother cook? Não use do/does com can.",
+          "Nas respostas curtas, repita can: Yes, I can. / No, I can't. Yes, she can. / No, they can't.",
+          "Com palavras de pergunta, a ordem é: palavra interrogativa + can + sujeito + verbo. What can you cook? What languages can you speak?"
+        ],
+        "regras": [
+          "Can + sujeito + verbo? Can you swim?",
+          "Yes, I can. / No, I can't.",
+          "What + can + sujeito + verbo? What can you cook?",
+          "Nunca: \"Do you can…?\""
+        ],
+        "notaContrastiva": "Não diga *Do you can swim?* → diga *Can you swim?* E a resposta curta é *Yes, I can*, não *Yes, I swim*.",
+        "exemplos": [
+          {
+            "en": "Can you swim? Yes, I can.",
+            "pt": "Você sabe nadar? Sim, sei."
+          },
+          {
+            "en": "Can your sister drive? No, she can't.",
+            "pt": "Sua irmã sabe dirigir? Não, não sabe."
+          },
+          {
+            "en": "What can you cook?",
+            "pt": "O que você sabe cozinhar?"
+          },
+          {
+            "en": "What languages can you speak?",
+            "pt": "Que idiomas você sabe falar?"
+          },
+          {
+            "en": "Can they play the piano? Yes, they can.",
+            "pt": "Eles sabem tocar piano? Sim, sabem."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "piano",
+            "pt": "piano"
+          },
+          {
+            "en": "ride a horse",
+            "pt": "andar a cavalo"
+          },
+          {
+            "en": "language",
+            "pt": "idioma, língua"
+          },
+          {
+            "en": "French",
+            "pt": "francês"
+          },
+          {
+            "en": "Italian",
+            "pt": "italiano"
+          },
+          {
+            "en": "Japanese",
+            "pt": "japonês"
+          },
+          {
+            "en": "well",
+            "pt": "bem"
+          },
+          {
+            "en": "a little",
+            "pt": "um pouco"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ you play the piano?",
+            "opcoes": [
+              "Can",
+              "Are",
+              "Is",
+              "Does"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Pergunta de habilidade: Can + you + verbo? Are/Is/Does não combinam com \"you play\" aqui.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Can your sister speak French? Yes, she ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "can"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta com can: Yes, she can.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Can they skate? No, they ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "can't"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta negativa: No, they can't.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "What ___ cook?",
+            "opcoes": [
+              "you can",
+              "do you can",
+              "can you to",
+              "can you"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Pergunta com what: What + can + sujeito + verbo? Sem do e sem to.",
+          "tagsErro": [
+            "modal_can",
+            "ordem_pergunta"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "guitar",
+              "your",
+              "can",
+              "play",
+              "brother",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can your brother play the guitar?"
+            ]
+          },
+          "explicacao": "Can vem antes do sujeito na pergunta: Can your brother play…?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "speak",
+              "can",
+              "languages",
+              "what",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What languages can you speak?"
+            ]
+          },
+          "explicacao": "What languages + can + you + speak?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Do you can ride a horse?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you ride a horse?"
+            ]
+          },
+          "explicacao": "Com can não usamos do: Can you ride a horse?",
+          "tagsErro": [
+            "modal_can",
+            "do_support"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você sabe dançar?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you dance?",
+              "Do you know how to dance?"
+            ]
+          },
+          "explicacao": "Pergunta de habilidade: Can you + verbo?",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza a resposta curta para a pergunta \"Can you swim?\".",
+          "conteudo": {
+            "frase": "Sim, eu sei.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Yes, I can.",
+              "Yes I can.",
+              "Yes. I can.",
+              "Yes, I can swim.",
+              "Yes I can swim.",
+              "Yes. I can swim."
+            ]
+          },
+          "explicacao": "Resposta curta com can: Yes, I can.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Can Maria drive?\"",
+          "conteudo": {
+            "opcoes": [
+              "No, she doesn't.",
+              "No, she can.",
+              "No, she can't.",
+              "No, she isn't."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Pergunta com can → resposta com can: No, she can't.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta.",
+          "conteudo": {
+            "texto": "___ your parents speak English? Yes, they can."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Can"
+              ]
+            ]
+          },
+          "explicacao": "A resposta \"Yes, they can\" mostra que a pergunta usa can.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Can she speaks Italian?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can she speak Italian?"
+            ]
+          },
+          "explicacao": "Depois de can, o verbo fica na forma básica: speak, sem -s.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você sabe cozinhar?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What can you cook?",
+              "What do you know how to cook?"
+            ]
+          },
+          "explicacao": "What + can + you + cook?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Can you swim?",
+              "Can your mom drive?",
+              "What can you play?",
+              "Can your friends dance?"
+            ],
+            "direita": [
+              "Yes, I can.",
+              "Yes, they can.",
+              "No, she can't.",
+              "The guitar."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              2,
+              3,
+              1
+            ]
+          },
+          "explicacao": "A resposta curta repete o sujeito (como pronome) e o can: you → I, your mom → she, your friends → they.",
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m08-l3",
+      "ordem": 3,
+      "titulo": "Can I…? Can you…, please?",
+      "objetivo": "Fazer pedidos e pedir permissão com can.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Can também serve para pedir coisas. Can you…? é um pedido para outra pessoa fazer algo: Can you help me, please? (Você pode me ajudar?)",
+          "Can I…? é um pedido de permissão para você fazer algo: Can I open the window? (Posso abrir a janela?) Você já conhece Can I have…? do café.",
+          "Para responder: Sure! / Of course! / Yes, no problem. Para recusar com educação: Sorry, you can't. ou Sorry, I can't. Em português dizemos \"Você pode me ajudar?\" só mudando a entonação; em inglês é obrigatório inverter: Can you…?"
+        ],
+        "regras": [
+          "Pedido: Can you + verbo…, please?",
+          "Permissão: Can I + verbo…?",
+          "Respostas: Sure! / Of course! / No problem.",
+          "Recusa: Sorry, you can't. / Sorry, I can't."
+        ],
+        "notaContrastiva": "Não diga *You can help me?* → diga *Can you help me?* Em inglês, a pergunta muda a ordem: can vem antes do sujeito.",
+        "exemplos": [
+          {
+            "en": "Can you help me, please?",
+            "pt": "Você pode me ajudar, por favor?"
+          },
+          {
+            "en": "Can I open the window?",
+            "pt": "Posso abrir a janela?"
+          },
+          {
+            "en": "Can you repeat that, please?",
+            "pt": "Você pode repetir, por favor?"
+          },
+          {
+            "en": "Can I use your pen?",
+            "pt": "Posso usar sua caneta?"
+          },
+          {
+            "en": "Can you speak slowly, please?",
+            "pt": "Você pode falar devagar, por favor?"
+          },
+          {
+            "en": "Sure! / Of course!",
+            "pt": "Claro!"
+          },
+          {
+            "en": "Sorry, you can't.",
+            "pt": "Desculpe, você não pode."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "help",
+            "pt": "ajudar"
+          },
+          {
+            "en": "open / close",
+            "pt": "abrir / fechar"
+          },
+          {
+            "en": "use",
+            "pt": "usar"
+          },
+          {
+            "en": "borrow",
+            "pt": "pegar emprestado"
+          },
+          {
+            "en": "repeat",
+            "pt": "repetir"
+          },
+          {
+            "en": "wait",
+            "pt": "esperar"
+          },
+          {
+            "en": "come in",
+            "pt": "entrar"
+          },
+          {
+            "en": "slowly",
+            "pt": "devagar"
+          },
+          {
+            "en": "window / door",
+            "pt": "janela / porta"
+          },
+          {
+            "en": "bathroom",
+            "pt": "banheiro"
+          },
+          {
+            "en": "Sure! / Of course!",
+            "pt": "Claro!"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Você quer pedir permissão para abrir a janela. O que você diz?",
+          "conteudo": {
+            "opcoes": [
+              "Can you open the window?",
+              "Can I open the window?",
+              "I can open the window?",
+              "Do I can open the window?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Permissão para você fazer algo = Can I…? \"Can you…?\" pede que a outra pessoa abra.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Você quer pedir que o professor repita. O que você diz?",
+          "conteudo": {
+            "opcoes": [
+              "Can you repeat that, please?",
+              "Can I repeat that, please?",
+              "You can repeat that, please?",
+              "Do you can repeat that?"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Pedido para outra pessoa = Can you…, please?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete o pedido de permissão.",
+          "conteudo": {
+            "texto": "___ I use your pen, please?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Can",
+                "May",
+                "Could"
+              ]
+            ]
+          },
+          "explicacao": "Permissão: Can I…? (May I e Could I também são corretos e mais formais.)",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Can I sit here?\"",
+          "conteudo": {
+            "opcoes": [
+              "Yes, I can.",
+              "No, I can't.",
+              "Yes, I sit.",
+              "Sure!"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Para dar permissão: Sure! / Of course! / Yes, you can. \"Yes, I can\" responderia sobre você, não sobre a outra pessoa.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "me",
+              "you",
+              "can",
+              "help",
+              "please"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you help me please?",
+              "Can you please help me?"
+            ]
+          },
+          "explicacao": "Pedido: Can you + verbo + please? Please pode vir no fim ou antes do verbo.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "You can close the door, please?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you close the door, please?",
+              "Can you close the door please?",
+              "Can you close the door. please?",
+              "Can you please close the door?"
+            ]
+          },
+          "explicacao": "Em inglês o pedido é uma pergunta de verdade: can vem antes de you.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada situação ao pedido certo.",
+          "conteudo": {
+            "esquerda": [
+              "Pedir para entrar",
+              "Pedir ajuda",
+              "Pedir para falar devagar",
+              "Pedir para ir ao banheiro",
+              "Pedir para alguém esperar"
+            ],
+            "direita": [
+              "Can you wait a minute?",
+              "Can I come in?",
+              "Can you speak slowly, please?",
+              "Can you help me?",
+              "Can I go to the bathroom?"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              2,
+              4,
+              0
+            ]
+          },
+          "explicacao": "Can I…? quando você quer fazer algo; Can you…? quando você quer que a outra pessoa faça.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Posso usar seu celular?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I use your cell phone?",
+              "Can I use your cellphone?",
+              "Can I use your phone?",
+              "May I use your cell phone?",
+              "May I use your cellphone?",
+              "May I use your phone?",
+              "Could I use your cell phone?",
+              "Could I use your cellphone?",
+              "Could I use your phone?"
+            ]
+          },
+          "explicacao": "Pedido de permissão: Can I + verbo? Celular = cell phone.",
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você pode me ajudar, por favor?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you help me, please?",
+              "Can you help me please?",
+              "Can you help me. please?",
+              "Could you help me, please?",
+              "Could you help me please?",
+              "Could you help me. please?",
+              "Can you please help me?",
+              "Could you please help me?"
+            ]
+          },
+          "explicacao": "Pedido: Can you help me, please?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa. (Sim, claro.) \"Can I borrow your book?\"",
+          "conteudo": {
+            "opcoes": [
+              "Of course no.",
+              "Yes, I can.",
+              "Of course.",
+              "Sure, I can."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Para permitir: Of course / Sure. \"Yes, I can\" falaria da sua própria permissão, não da do colega.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (eu)",
+          "conteudo": {
+            "texto": "Can ___ go to the bathroom, please?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "I"
+              ]
+            ]
+          },
+          "explicacao": "Permissão para você mesmo: Can I…? Em inglês, I é sempre maiúsculo.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Can you to open the window, please?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can you open the window, please?",
+              "Can you open the window please?",
+              "Can you open the window. please?",
+              "Can you please open the window?"
+            ]
+          },
+          "explicacao": "Depois de can não usamos to.",
+          "tagsErro": [
+            "modal_can"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Posso entrar?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I come in?",
+              "May I come in?",
+              "Could I come in?",
+              "Can I enter?",
+              "Can I go in?"
+            ]
+          },
+          "explicacao": "Permissão: Can I come in? (come in = entrar).",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual é um pedido educado e correto?",
+          "conteudo": {
+            "opcoes": [
+              "You close the door.",
+              "Can you close the door, please?",
+              "Do you can close the door?",
+              "Close you the door?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Pedido educado: Can you + verbo…, please?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m08-l4",
+      "ordem": 4,
+      "titulo": "I love dancing!",
+      "objetivo": "Dizer do que você gosta, adora e odeia fazer com like, love, hate e enjoy + -ing.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de atividades de que você gosta ou não, use like (gostar), love (adorar), hate (odiar) ou enjoy (curtir) + verbo com -ing: I like dancing. She loves reading. He hates cooking. We enjoy swimming.",
+          "Com like, love e hate também é correto usar to + verbo: I like to dance. Mas com enjoy, só -ing: I enjoy dancing (nunca enjoy to dance).",
+          "Ortografia do -ing: na maioria, basta acrescentar -ing (read → reading). Verbos terminados em -e perdem o e (dance → dancing, write → writing). Verbos curtos terminados em consoante + vogal + consoante dobram a última letra (swim → swimming, run → running, shop → shopping).",
+          "Lembre do presente simples: she likes, he loves, my mom hates (com -s), e a negativa com don't/doesn't: I don't like running."
+        ],
+        "regras": [
+          "like / love / hate / enjoy + verbo-ing",
+          "like / love / hate + to + verbo também vale",
+          "enjoy + -ing apenas",
+          "dance → dancing · swim → swimming · read → reading",
+          "She likes… / He doesn't like…"
+        ],
+        "notaContrastiva": "Não diga *I enjoy to dance* → diga *I enjoy dancing*. E \"ela gosta de ler\" é *She likes reading* (likes com -s; nada de \"of\").",
+        "exemplos": [
+          {
+            "en": "I love reading.",
+            "pt": "Eu adoro ler."
+          },
+          {
+            "en": "My dad hates cooking.",
+            "pt": "Meu pai odeia cozinhar."
+          },
+          {
+            "en": "Do you like dancing?",
+            "pt": "Você gosta de dançar?"
+          },
+          {
+            "en": "We enjoy watching movies.",
+            "pt": "Nós curtimos assistir a filmes."
+          },
+          {
+            "en": "She doesn't like running.",
+            "pt": "Ela não gosta de correr."
+          },
+          {
+            "en": "They love listening to music.",
+            "pt": "Eles adoram ouvir música."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "like",
+            "pt": "gostar de"
+          },
+          {
+            "en": "love",
+            "pt": "adorar, amar"
+          },
+          {
+            "en": "hate",
+            "pt": "odiar"
+          },
+          {
+            "en": "enjoy",
+            "pt": "curtir, gostar de"
+          },
+          {
+            "en": "reading",
+            "pt": "ler, leitura"
+          },
+          {
+            "en": "dancing",
+            "pt": "dançar"
+          },
+          {
+            "en": "swimming",
+            "pt": "nadar, natação"
+          },
+          {
+            "en": "running",
+            "pt": "correr, corrida"
+          },
+          {
+            "en": "cooking",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "watching movies",
+            "pt": "assistir a filmes"
+          },
+          {
+            "en": "listening to music",
+            "pt": "ouvir música"
+          },
+          {
+            "en": "shopping",
+            "pt": "fazer compras"
+          },
+          {
+            "en": "traveling",
+            "pt": "viajar"
+          },
+          {
+            "en": "playing video games",
+            "pt": "jogar videogame"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "I enjoy ___ to music.",
+            "opcoes": [
+              "listening",
+              "to listen",
+              "listen",
+              "listens"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Depois de enjoy, use sempre verbo + -ing: enjoy listening.",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma certa.",
+          "conteudo": {
+            "texto": "She loves ___ (read)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "reading",
+                "to read"
+              ]
+            ]
+          },
+          "explicacao": "Love + -ing: loves reading (love to read também é correto).",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma certa.",
+          "conteudo": {
+            "texto": "My brother hates ___ (run) in the morning."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "running",
+                "to run"
+              ]
+            ]
+          },
+          "explicacao": "Run termina em consoante + vogal + consoante: dobra o n → running.",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma escrita corretamente.",
+          "conteudo": {
+            "texto": "We like ___.",
+            "opcoes": [
+              "danceing",
+              "dancing",
+              "dancinng"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Verbos terminados em -e perdem o e antes de -ing: dance → dancing.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My mom ___ cooking.",
+            "opcoes": [
+              "like",
+              "is like",
+              "likes",
+              "liking"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Terceira pessoa (my mom = she) no presente simples: likes, com -s.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "my",
+              "doesn't",
+              "sister",
+              "swimming",
+              "like"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My sister doesn't like swimming."
+            ]
+          },
+          "explicacao": "Negativa no presente simples: sujeito + doesn't like + verbo-ing.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "I enjoy to watch movies."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I enjoy watching movies."
+            ]
+          },
+          "explicacao": "Enjoy só aceita -ing: enjoy watching.",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo à sua forma com -ing.",
+          "conteudo": {
+            "esquerda": [
+              "swim",
+              "dance",
+              "read",
+              "run",
+              "write",
+              "shop"
+            ],
+            "direita": [
+              "reading",
+              "running",
+              "writing",
+              "dancing",
+              "shopping",
+              "swimming"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              3,
+              0,
+              1,
+              2,
+              4
+            ]
+          },
+          "explicacao": "Regras: + ing (reading); -e cai (dancing, writing); consoante dobra em verbos curtos CVC (swimming, running, shopping).",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu adoro dançar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I love dancing.",
+              "I love to dance."
+            ]
+          },
+          "explicacao": "Adorar = love + -ing (ou to + verbo).",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu pai odeia cozinhar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My father hates cooking.",
+              "My father hates to cook.",
+              "My dad hates cooking.",
+              "My dad hates to cook."
+            ]
+          },
+          "explicacao": "Terceira pessoa: hates, com -s. Hate + -ing (ou to + verbo).",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "gerundio"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma certa.",
+          "conteudo": {
+            "texto": "Do you like ___ (swim)?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "swimming",
+                "to swim"
+              ]
+            ]
+          },
+          "explicacao": "Swim é curto e termina em consoante + vogal + consoante: dobra o m → swimming.",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "He enjoy playing video games.",
+              "He enjoys playing video games.",
+              "He enjoys to play video games.",
+              "He enjoys play video games."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "He → enjoys (com -s), e enjoy + -ing.",
+          "tagsErro": [
+            "gerundio",
+            "terceira_pessoa_s"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "She like reading books."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She likes reading books."
+            ]
+          },
+          "explicacao": "Terceira pessoa do presente simples: she likes.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós gostamos de viajar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We like traveling.",
+              "We like travelling.",
+              "We like to travel."
+            ]
+          },
+          "explicacao": "Gostar de + verbo = like + -ing (ou to + verbo). Não traduza o \"de\".",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "they",
+              "TV",
+              "like",
+              "watching",
+              "don't"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "They don't like watching TV."
+            ]
+          },
+          "explicacao": "Negativa: sujeito + don't like + verbo-ing.",
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m08-l5",
+      "ordem": 5,
+      "titulo": "Play, go or do?",
+      "objetivo": "Falar de esportes e hobbies usando play, go e do.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Em português dizemos \"jogar futebol\", \"fazer natação\", \"fazer ioga\". Em inglês, o verbo depende da atividade.",
+          "Play: esportes com bola ou com adversário e jogos (play soccer, play volleyball, play chess, play video games). Também para instrumentos musicais: play the guitar, play the piano.",
+          "Go: atividades que terminam em -ing (go swimming, go running, go shopping, go hiking). Do: outras atividades, como artes marciais e exercícios (do yoga, do karate, do gymnastics, do exercise)."
+        ],
+        "regras": [
+          "play + esporte com bola / jogo: play soccer",
+          "play + the + instrumento: play the guitar",
+          "go + atividade-ing: go swimming",
+          "do + yoga, karate, gymnastics, exercise",
+          "He plays / She goes / She does (terceira pessoa)"
+        ],
+        "notaContrastiva": "Não diga *I make yoga* nem *She plays swimming* → diga *I do yoga* e *She goes swimming*. \"Fazer\" nem sempre é make!",
+        "exemplos": [
+          {
+            "en": "I play soccer on Saturdays.",
+            "pt": "Eu jogo futebol aos sábados."
+          },
+          {
+            "en": "She goes swimming every morning.",
+            "pt": "Ela nada (vai nadar) toda manhã."
+          },
+          {
+            "en": "My dad does yoga.",
+            "pt": "Meu pai faz ioga."
+          },
+          {
+            "en": "We go hiking on weekends.",
+            "pt": "Nós fazemos trilha nos fins de semana."
+          },
+          {
+            "en": "Can you play the piano?",
+            "pt": "Você sabe tocar piano?"
+          },
+          {
+            "en": "They play chess at school.",
+            "pt": "Eles jogam xadrez na escola."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "soccer",
+            "pt": "futebol"
+          },
+          {
+            "en": "volleyball",
+            "pt": "vôlei"
+          },
+          {
+            "en": "basketball",
+            "pt": "basquete"
+          },
+          {
+            "en": "tennis",
+            "pt": "tênis"
+          },
+          {
+            "en": "chess",
+            "pt": "xadrez"
+          },
+          {
+            "en": "video games",
+            "pt": "videogame"
+          },
+          {
+            "en": "go hiking",
+            "pt": "fazer trilha"
+          },
+          {
+            "en": "go shopping",
+            "pt": "fazer compras"
+          },
+          {
+            "en": "go swimming",
+            "pt": "ir nadar"
+          },
+          {
+            "en": "do yoga",
+            "pt": "fazer ioga"
+          },
+          {
+            "en": "do karate",
+            "pt": "fazer caratê"
+          },
+          {
+            "en": "do gymnastics",
+            "pt": "fazer ginástica"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My brother ___ soccer on Saturdays.",
+            "opcoes": [
+              "plays",
+              "goes",
+              "does",
+              "makes"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Esporte com bola = play. My brother = he → plays.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "I ___ yoga in the morning.",
+            "opcoes": [
+              "play",
+              "go",
+              "make",
+              "do"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Yoga usa do: do yoga. \"Make yoga\" é tradução literal de \"fazer\".",
+          "tagsErro": [
+            "play_go_do",
+            "make_do"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Escolha o verbo certo.",
+          "conteudo": {
+            "texto": "We ___ swimming on weekends.",
+            "opcoesPorLacuna": [
+              [
+                "go",
+                "play",
+                "do"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "go"
+              ]
+            ]
+          },
+          "explicacao": "Atividade terminada em -ing = go: go swimming.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Can you play ___ guitar?",
+            "opcoesPorLacuna": [
+              [
+                "the",
+                "to",
+                "of"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "the"
+              ]
+            ]
+          },
+          "explicacao": "Instrumentos musicais: play the guitar, play the piano.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "She ___ shopping with her friends on Sundays.",
+            "opcoes": [
+              "plays",
+              "does",
+              "goes",
+              "go"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Shopping é atividade com -ing: go shopping. She → goes.",
+          "tagsErro": [
+            "play_go_do",
+            "terceira_pessoa_s"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada atividade à tradução em inglês.",
+          "conteudo": {
+            "esquerda": [
+              "jogar vôlei",
+              "fazer trilha",
+              "fazer caratê",
+              "tocar piano",
+              "fazer compras",
+              "fazer ginástica"
+            ],
+            "direita": [
+              "play volleyball",
+              "do karate",
+              "do gymnastics",
+              "go shopping",
+              "play the piano",
+              "go hiking"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              5,
+              1,
+              4,
+              3,
+              2
+            ]
+          },
+          "explicacao": "Play para jogos e instrumentos; go para atividades com -ing; do para artes marciais e ginástica.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "I make karate on Tuesdays."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I do karate on Tuesdays."
+            ]
+          },
+          "explicacao": "Artes marciais usam do: do karate. \"Make\" é fazer no sentido de fabricar.",
+          "tagsErro": [
+            "make_do",
+            "play_go_do"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "friends",
+              "park",
+              "in",
+              "the",
+              "running",
+              "go",
+              "my"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My friends go running in the park."
+            ]
+          },
+          "explicacao": "Go + atividade-ing: go running.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu jogo vôlei com meus amigos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I play volleyball with my friends."
+            ]
+          },
+          "explicacao": "Esporte com bola = play: play volleyball.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela faz ioga às segundas.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She does yoga on Mondays.",
+              "She does yoga on Monday.",
+              "She does yoga every Monday."
+            ]
+          },
+          "explicacao": "Yoga = do yoga; she → does. Dias da semana usam on.",
+          "tagsErro": [
+            "play_go_do",
+            "terceira_pessoa_s"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "They ___ hiking in the mountains.",
+            "opcoes": [
+              "play",
+              "go",
+              "do",
+              "make"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Hiking termina em -ing: go hiking.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Escolha o verbo certo.",
+          "conteudo": {
+            "texto": "My dad ___ chess with my grandfather.",
+            "opcoesPorLacuna": [
+              [
+                "plays",
+                "does",
+                "goes"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "plays"
+              ]
+            ]
+          },
+          "explicacao": "Jogos = play; my dad = he → plays.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "She plays swimming every day."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She goes swimming every day."
+            ]
+          },
+          "explicacao": "Atividade com -ing usa go: she goes swimming.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós fazemos compras no sábado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We go shopping on Saturday.",
+              "We go shopping on Saturdays."
+            ]
+          },
+          "explicacao": "Fazer compras = go shopping (e não \"make shopping\").",
+          "tagsErro": [
+            "play_go_do",
+            "make_do"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "I do karate.",
+              "I play karate.",
+              "I go karate.",
+              "I make karate."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Artes marciais usam do: do karate.",
+          "tagsErro": [
+            "play_go_do"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m08-l6",
+      "ordem": 6,
+      "titulo": "What do you like doing?",
+      "objetivo": "Perguntar e falar sobre preferências e tempo livre.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Para conversar sobre tempo livre, pergunte: What do you like doing in your free time? (O que você gosta de fazer no seu tempo livre?) ou What's your favorite sport? (Qual é o seu esporte favorito?).",
+          "Para perguntas de sim ou não, use do/does: Do you like dancing? Yes, I do. / No, I don't. Does your brother like soccer? Yes, he does. Não responda \"Yes, I like\" sozinho.",
+          "Para intensificar, use really ou very much: I really like reading. I like reading very much (very much vai no fim). Para preferências: I prefer reading. I prefer tea to coffee (prefiro chá a café)."
+        ],
+        "regras": [
+          "What do you like doing in your free time?",
+          "Do you like…? → Yes, I do. / No, I don't.",
+          "I really like… / I like… very much.",
+          "I prefer A to B.",
+          "favorite (inglês americano)"
+        ],
+        "notaContrastiva": "Não diga *I like very much soccer* → diga *I like soccer very much*. E a resposta curta é *Yes, I do*, não *Yes, I like*.",
+        "exemplos": [
+          {
+            "en": "What do you like doing in your free time?",
+            "pt": "O que você gosta de fazer no seu tempo livre?"
+          },
+          {
+            "en": "I really like playing video games.",
+            "pt": "Eu gosto muito de jogar videogame."
+          },
+          {
+            "en": "Do you like cooking? No, I don't.",
+            "pt": "Você gosta de cozinhar? Não, não gosto."
+          },
+          {
+            "en": "My favorite sport is volleyball.",
+            "pt": "Meu esporte favorito é vôlei."
+          },
+          {
+            "en": "I prefer tea to coffee.",
+            "pt": "Eu prefiro chá a café."
+          },
+          {
+            "en": "She likes soccer very much.",
+            "pt": "Ela gosta muito de futebol."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "free time",
+            "pt": "tempo livre"
+          },
+          {
+            "en": "hobby",
+            "pt": "hobby, passatempo"
+          },
+          {
+            "en": "favorite",
+            "pt": "favorito"
+          },
+          {
+            "en": "prefer",
+            "pt": "preferir"
+          },
+          {
+            "en": "really",
+            "pt": "realmente, muito"
+          },
+          {
+            "en": "very much",
+            "pt": "muito"
+          },
+          {
+            "en": "weekend",
+            "pt": "fim de semana"
+          },
+          {
+            "en": "sport",
+            "pt": "esporte"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "What do you like ___ in your free time?",
+            "opcoes": [
+              "do",
+              "does",
+              "to doing",
+              "doing"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Like + -ing: like doing (like to do também é correto, mas não está entre as opções).",
+          "tagsErro": [
+            "gerundio"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Do you like playing tennis? Yes, I ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "do"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta com do → resposta curta com do: Yes, I do.",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Does Paulo like cooking? No, he ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "doesn't"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta com does → No, he doesn't.",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "My ___ hobby is drawing.",
+            "opcoes": [
+              "like",
+              "prefer",
+              "favorite",
+              "love"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Antes de um substantivo (hobby) precisamos de um adjetivo: favorite (favorito).",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "like",
+              "soccer",
+              "much",
+              "I",
+              "very"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I like soccer very much.",
+              "I very much like soccer."
+            ]
+          },
+          "explicacao": "Very much costuma ir no fim da frase: I like soccer very much.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "I like very much reading."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I like reading very much."
+            ]
+          },
+          "explicacao": "Very much não fica entre o verbo e o objeto: I like reading very much.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "What do you like doing on weekends?",
+              "Do you like dancing?",
+              "What's your favorite sport?",
+              "Can you play the guitar?",
+              "Does your sister like reading?"
+            ],
+            "direita": [
+              "Yes, she does.",
+              "Yes, I can.",
+              "I like going to the beach.",
+              "No, I don't.",
+              "Volleyball."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              4,
+              1,
+              0
+            ]
+          },
+          "explicacao": "A resposta curta repete o auxiliar da pergunta: do → I do/don't; does → she does; can → I can.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você gosta de fazer no seu tempo livre?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What do you like doing in your free time?",
+              "What do you like doing in your spare time?",
+              "What do you like to do in your free time?",
+              "What do you like to do in your spare time?"
+            ]
+          },
+          "explicacao": "What do you like doing…? Tempo livre = free time.",
+          "tagsErro": [
+            "gerundio",
+            "do_support"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu prefiro ler.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I prefer reading.",
+              "I prefer to read."
+            ]
+          },
+          "explicacao": "Prefer + -ing (ou to + verbo).",
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Do you like swimming?\"",
+          "conteudo": {
+            "opcoes": [
+              "Yes, I like.",
+              "Yes, I do.",
+              "Yes, I am.",
+              "Yes, I can."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Pergunta com do → Yes, I do.",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "I prefer tea ___ coffee."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "to",
+                "over"
+              ]
+            ]
+          },
+          "explicacao": "Prefer A to B = preferir A a B. Não use than com prefer.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "She don't like playing video games."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She doesn't like playing video games."
+            ]
+          },
+          "explicacao": "Terceira pessoa (she) usa doesn't na negativa.",
+          "tagsErro": [
+            "do_support",
+            "terceira_pessoa_s"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu esporte favorito é vôlei.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My favorite sport is volleyball.",
+              "My favourite sport is volleyball."
+            ]
+          },
+          "explicacao": "Favorite vem antes do substantivo: my favorite sport.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "like",
+              "do",
+              "what",
+              "doing",
+              "on",
+              "you",
+              "weekends"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What do you like doing on weekends?"
+            ]
+          },
+          "explicacao": "What + do + you + like + -ing…?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My cousin ___ speak three languages.",
+          "opcoes": [
+            "can",
+            "cans",
+            "can to",
+            "does can"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Can é igual para todas as pessoas e vem direto antes do verbo.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com can ou can't. (Eu não sei nadar.)",
+        "conteudo": {
+          "texto": "I'm sorry, I ___ swim."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "can't"
+            ]
+          ]
+        },
+        "explicacao": "Negativa de habilidade: can't.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ you ride a bike? Yes, I can.",
+          "opcoes": [
+            "Do",
+            "Are",
+            "Does",
+            "Can"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "A resposta \"Yes, I can\" mostra que a pergunta usa can.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Can your parents dance? No, they ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "can't"
+            ]
+          ]
+        },
+        "explicacao": "Resposta curta negativa com can: No, they can't.",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção certa. (Pedido de permissão)",
+        "conteudo": {
+          "texto": "___ I open the window?",
+          "opcoes": [
+            "Is",
+            "Am",
+            "Can",
+            "Does"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Permissão: Can I…?",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "I enjoy ___ in the park.",
+          "opcoes": [
+            "to walk",
+            "walking",
+            "walk",
+            "walks"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Enjoy + -ing: enjoy walking.",
+        "tagsErro": [
+          "gerundio"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma certa.",
+        "conteudo": {
+          "texto": "She loves ___ (dance)."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "dancing",
+              "to dance"
+            ]
+          ]
+        },
+        "explicacao": "Love + -ing; dance perde o e: dancing.",
+        "tagsErro": [
+          "gerundio"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "We ___ volleyball at school.",
+          "opcoes": [
+            "play",
+            "go",
+            "do",
+            "make"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Esporte com bola = play.",
+        "tagsErro": [
+          "play_go_do"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Escolha o verbo certo.",
+        "conteudo": {
+          "texto": "My mom ___ yoga every morning.",
+          "opcoesPorLacuna": [
+            [
+              "does",
+              "plays",
+              "goes",
+              "makes"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "does"
+            ]
+          ]
+        },
+        "explicacao": "Yoga usa do; my mom = she → does.",
+        "tagsErro": [
+          "play_go_do"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta certa para: \"Does Rafael like cooking?\"",
+        "conteudo": {
+          "opcoes": [
+            "Yes, he likes.",
+            "Yes, he is.",
+            "Yes, he do.",
+            "Yes, he does."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Pergunta com does → Yes, he does.",
+        "tagsErro": [
+          "do_support"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Can Bianca sing?",
+        "conteudo": {
+          "texto": "Meet Bianca. She is 13 and she lives in Recife. Bianca can swim very well, and she goes swimming three times a week. She can play the guitar, but she can't sing. In her free time, she loves drawing and reading comics. She doesn't like playing video games. On Saturdays, she plays volleyball with her friends on the beach.",
+          "opcoes": [
+            "Yes, she can.",
+            "No, she doesn't.",
+            "No, she can't.",
+            "Yes, she does."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"she can't sing\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What does Bianca love doing in her free time?",
+        "conteudo": {
+          "texto": "Meet Bianca. She is 13 and she lives in Recife. Bianca can swim very well, and she goes swimming three times a week. She can play the guitar, but she can't sing. In her free time, she loves drawing and reading comics. She doesn't like playing video games. On Saturdays, she plays volleyball with her friends on the beach.",
+          "opcoes": [
+            "Playing video games.",
+            "Drawing and reading comics.",
+            "Singing.",
+            "Playing the guitar on the beach."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"she loves drawing and reading comics\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How often does Bianca go swimming?",
+        "conteudo": {
+          "texto": "Meet Bianca. She is 13 and she lives in Recife. Bianca can swim very well, and she goes swimming three times a week. She can play the guitar, but she can't sing. In her free time, she loves drawing and reading comics. She doesn't like playing video games. On Saturdays, she plays volleyball with her friends on the beach.",
+          "opcoes": [
+            "Three times a week.",
+            "Every day.",
+            "Never.",
+            "Only on Saturdays."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: \"she goes swimming three times a week\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where does Bianca play volleyball?",
+        "conteudo": {
+          "texto": "Meet Bianca. She is 13 and she lives in Recife. Bianca can swim very well, and she goes swimming three times a week. She can play the guitar, but she can't sing. In her free time, she loves drawing and reading comics. She doesn't like playing video games. On Saturdays, she plays volleyball with her friends on the beach.",
+          "opcoes": [
+            "At school.",
+            "In the park.",
+            "At home.",
+            "On the beach."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "O texto diz: \"she plays volleyball with her friends on the beach\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+        "conteudo": {
+          "palavras": [
+            "you",
+            "piano",
+            "the",
+            "can",
+            "play"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Can you play the piano?"
+          ]
+        },
+        "explicacao": "Pergunta com can: Can + you + verbo?",
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Meu avô não sabe nadar.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "My grandfather can't swim.",
+            "My grandpa can't swim.",
+            "My grandfather doesn't know how to swim.",
+            "My grandpa doesn't know how to swim."
+          ]
+        },
+        "explicacao": "Habilidade na negativa: can't + verbo.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+        "conteudo": {
+          "frase": "He enjoys to play chess."
+        },
+        "gabarito": {
+          "aceitas": [
+            "He enjoys playing chess."
+          ]
+        },
+        "explicacao": "Enjoy só aceita -ing: enjoys playing.",
+        "tagsErro": [
+          "gerundio"
+        ],
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eles fazem trilha nos fins de semana.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "They go hiking on weekends.",
+            "They go hiking on the weekends.",
+            "They go hiking on the weekend.",
+            "They go hiking at weekends.",
+            "They go hiking at the weekend."
+          ]
+        },
+        "explicacao": "Fazer trilha = go hiking. Fins de semana = on weekends.",
+        "tagsErro": [
+          "play_go_do"
+        ],
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My little brother ___ read. He's only three.",
+          "opcoes": [
+            "don't can",
+            "cannot to",
+            "can't",
+            "no can"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Negativa de can: can't + verbo, sem do e sem to.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com can ou can't.",
+        "conteudo": {
+          "texto": "My aunt is a singer. She ___ sing very well."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "can"
+            ]
+          ]
+        },
+        "explicacao": "Ela é cantora, então sabe cantar: she can sing.",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ your sister speak Spanish? No, she can't.",
+          "opcoes": [
+            "Does",
+            "Can",
+            "Is",
+            "Do"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "A resposta \"No, she can't\" mostra que a pergunta usa can.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Can you cook? Yes, I ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "can"
+            ]
+          ]
+        },
+        "explicacao": "Resposta curta com can: Yes, I can.",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção certa. (Pedido)",
+        "conteudo": {
+          "texto": "___ you help me, please?",
+          "opcoes": [
+            "Can",
+            "Are",
+            "Is",
+            "Does"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Pedido: Can you…, please?",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "My father hates ___ the dishes.",
+          "opcoes": [
+            "wash",
+            "washes",
+            "to washing",
+            "washing"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Hate + -ing: hates washing.",
+        "tagsErro": [
+          "gerundio"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma certa.",
+        "conteudo": {
+          "texto": "Do you enjoy ___ (read)?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "reading"
+            ]
+          ]
+        },
+        "explicacao": "Enjoy + -ing: enjoy reading.",
+        "tagsErro": [
+          "gerundio"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "They ___ running in the park every morning.",
+          "opcoes": [
+            "play",
+            "do",
+            "go",
+            "make"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Atividade com -ing: go running.",
+        "tagsErro": [
+          "play_go_do"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Escolha o verbo certo.",
+        "conteudo": {
+          "texto": "I ___ karate on Tuesdays and Thursdays.",
+          "opcoesPorLacuna": [
+            [
+              "do",
+              "play",
+              "go",
+              "make"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "do"
+            ]
+          ]
+        },
+        "explicacao": "Artes marciais usam do: do karate.",
+        "tagsErro": [
+          "play_go_do"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a resposta certa para: \"Do you like cooking?\"",
+        "conteudo": {
+          "opcoes": [
+            "No, I don't like.",
+            "No, I don't.",
+            "No, I not.",
+            "No, I can't."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Pergunta com do → No, I don't.",
+        "tagsErro": [
+          "do_support"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Can Diego swim?",
+        "conteudo": {
+          "texto": "This is Diego. He is 14 and he lives in Manaus. Diego can't swim, but he can ride a bike very well. He goes cycling with his father every Sunday. He loves playing chess and he enjoys cooking with his mom. He hates shopping! Diego can speak Portuguese and a little Spanish. After school, he does karate at a gym near his house.",
+          "opcoes": [
+            "No, he can't.",
+            "Yes, he can.",
+            "No, he doesn't.",
+            "Yes, he does."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: \"Diego can't swim\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What does Diego do every Sunday?",
+        "conteudo": {
+          "texto": "This is Diego. He is 14 and he lives in Manaus. Diego can't swim, but he can ride a bike very well. He goes cycling with his father every Sunday. He loves playing chess and he enjoys cooking with his mom. He hates shopping! Diego can speak Portuguese and a little Spanish. After school, he does karate at a gym near his house.",
+          "opcoes": [
+            "He goes shopping.",
+            "He does karate.",
+            "He goes swimming.",
+            "He goes cycling with his father."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "O texto diz: \"He goes cycling with his father every Sunday\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What does Diego hate?",
+        "conteudo": {
+          "texto": "This is Diego. He is 14 and he lives in Manaus. Diego can't swim, but he can ride a bike very well. He goes cycling with his father every Sunday. He loves playing chess and he enjoys cooking with his mom. He hates shopping! Diego can speak Portuguese and a little Spanish. After school, he does karate at a gym near his house.",
+          "opcoes": [
+            "Cooking.",
+            "Playing chess.",
+            "Shopping.",
+            "Riding a bike."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"He hates shopping!\"",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where does Diego do karate?",
+        "conteudo": {
+          "texto": "This is Diego. He is 14 and he lives in Manaus. Diego can't swim, but he can ride a bike very well. He goes cycling with his father every Sunday. He loves playing chess and he enjoys cooking with his mom. He hates shopping! Diego can speak Portuguese and a little Spanish. After school, he does karate at a gym near his house.",
+          "opcoes": [
+            "At school.",
+            "At a gym near his house.",
+            "In the park.",
+            "At home with his mom."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"he does karate at a gym near his house\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+        "conteudo": {
+          "palavras": [
+            "can",
+            "your",
+            "brother",
+            "cook",
+            "what"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What can your brother cook?"
+          ]
+        },
+        "explicacao": "What + can + sujeito + verbo?",
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Minha irmã sabe tocar violão.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "My sister can play the guitar.",
+            "My sister can play guitar.",
+            "My sister knows how to play the guitar.",
+            "My sister knows how to play guitar."
+          ]
+        },
+        "explicacao": "Habilidade: can + verbo. Tocar instrumento = play the guitar.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+        "conteudo": {
+          "frase": "She cans ride a horse."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She can ride a horse."
+          ]
+        },
+        "explicacao": "Can não recebe -s: she can.",
+        "tagsErro": [
+          "modal_can"
+        ],
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós adoramos jogar futebol.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We love playing soccer.",
+            "We love to play soccer."
+          ]
+        },
+        "explicacao": "Adorar = love + -ing (ou to + verbo). Futebol = soccer no inglês americano.",
+        "tagsErro": [
+          "gerundio",
+          "play_go_do"
+        ],
+        "forma": 2,
+        "habilidade": "escrita"
+      }
+    ]
+  }
+}

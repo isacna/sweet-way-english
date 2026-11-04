@@ -1,0 +1,3110 @@
+{
+  "slug": "a1-m07",
+  "ordem": 7,
+  "titulo": "My town",
+  "tema": "Minha cidade: lugares, localização e direções",
+  "descricao": "Descreva o seu bairro e a sua cidade, diga onde ficam os lugares e peça e dê informações de caminho.",
+  "canDos": [
+    "Consigo dizer o que existe e o que não existe na minha cidade com there is / there are.",
+    "Consigo perguntar se existe um lugar por perto e entender respostas curtas.",
+    "Consigo dizer onde fica um lugar usando preposições como next to, between e across from.",
+    "Consigo pedir e dar instruções simples de caminho (turn left, go straight)."
+  ],
+  "gramatica": "There is / there are (afirmativa, negativa e perguntas), How many… are there?, preposições de lugar (in, on, under, next to, between, across from, near) e imperativo para direções.",
+  "vocabulario": "Lugares da cidade (bank, bakery, drugstore, library, movie theater, mall, subway, bus stop…) e expressões de direção (turn left/right, go straight, corner, block, traffic light).",
+  "funcao": "Descrever o bairro, perguntar onde ficam os lugares e dar informações de caminho.",
+  "pronuncia": "O th sonoro de there e this (/ð/, com a língua entre os dentes) e a contração there's.",
+  "licoes": [
+    {
+      "slug": "a1-m07-l1",
+      "ordem": 1,
+      "titulo": "There is / There are",
+      "objetivo": "Dizer o que existe na sua cidade e no seu bairro com there is e there are.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Em português, usamos \"tem\" ou \"há\" para dizer que alguma coisa existe em um lugar: \"Tem uma padaria na minha rua\". Em inglês, usamos there is (singular) e there are (plural).",
+          "Use there is com um substantivo no singular (There is a bank) ou incontável (There is some water). Use there are com substantivos no plural (There are two schools).",
+          "Não use have para isso. Have indica posse: I have a car (eu tenho um carro). Para dizer que algo existe em um lugar, use sempre there is ou there are. Na fala, there is quase sempre vira there's.",
+          "Repare nas preposições: na minha cidade = in my town; na minha rua = on my street (em inglês americano, rua usa on)."
+        ],
+        "regras": [
+          "There is + singular: There is a bank.",
+          "There are + plural: There are two parks.",
+          "There is + incontável: There is some water.",
+          "There's = There is",
+          "in my town / in my neighborhood · on my street"
+        ],
+        "notaContrastiva": "Não diga *Have a bank on my street* → diga *There is a bank on my street*. O \"tem\" de existência é there is / there are, não have.",
+        "exemplos": [
+          {
+            "en": "There is a bakery on my street.",
+            "pt": "Tem uma padaria na minha rua."
+          },
+          {
+            "en": "There are two parks in my neighborhood.",
+            "pt": "Há dois parques no meu bairro."
+          },
+          {
+            "en": "There's a big supermarket in my town.",
+            "pt": "Tem um supermercado grande na minha cidade."
+          },
+          {
+            "en": "There are a lot of restaurants in São Paulo.",
+            "pt": "Tem muitos restaurantes em São Paulo."
+          },
+          {
+            "en": "There is a library in my school.",
+            "pt": "Tem uma biblioteca na minha escola."
+          },
+          {
+            "en": "There are three banks on Paulista Avenue.",
+            "pt": "Há três bancos na Avenida Paulista."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "town / city",
+            "pt": "cidade"
+          },
+          {
+            "en": "neighborhood",
+            "pt": "bairro"
+          },
+          {
+            "en": "street",
+            "pt": "rua"
+          },
+          {
+            "en": "bank",
+            "pt": "banco"
+          },
+          {
+            "en": "bakery",
+            "pt": "padaria"
+          },
+          {
+            "en": "supermarket",
+            "pt": "supermercado"
+          },
+          {
+            "en": "drugstore / pharmacy",
+            "pt": "farmácia"
+          },
+          {
+            "en": "park",
+            "pt": "parque"
+          },
+          {
+            "en": "school",
+            "pt": "escola"
+          },
+          {
+            "en": "hospital",
+            "pt": "hospital"
+          },
+          {
+            "en": "library",
+            "pt": "biblioteca (não é livraria!)"
+          },
+          {
+            "en": "bookstore",
+            "pt": "livraria"
+          },
+          {
+            "en": "movie theater",
+            "pt": "cinema"
+          },
+          {
+            "en": "post office",
+            "pt": "correio"
+          },
+          {
+            "en": "mall",
+            "pt": "shopping center"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ a bank on my street.",
+            "opcoes": [
+              "There are",
+              "There is",
+              "Have",
+              "Is"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Para dizer que algo existe em um lugar, use there is (singular). \"Have\" é posse, e \"Is\" sozinho fica sem sujeito. \"Tem um banco\" = There is a bank.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "There ___ two schools in my neighborhood."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "\"Two schools\" é plural, então usamos there are.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "There ___ a hospital in my town."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ]
+            ]
+          },
+          "explicacao": "\"A hospital\" é singular, então usamos there is.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "There ___ a lot of restaurants on this street.",
+            "opcoes": [
+              "are",
+              "is",
+              "have",
+              "has"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"A lot of restaurants\" é plural: there are. Não use have/has para dizer que algo existe em um lugar.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "town",
+              "supermarkets",
+              "there",
+              "my",
+              "in",
+              "two"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "There are two supermarkets in my town."
+            ]
+          },
+          "explicacao": "A ordem é: There are + o que existe + o lugar. \"Two supermarkets\" é plural, por isso are.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada lugar à sua tradução.",
+          "conteudo": {
+            "esquerda": [
+              "bakery",
+              "drugstore",
+              "library",
+              "bookstore",
+              "movie theater",
+              "post office"
+            ],
+            "direita": [
+              "farmácia",
+              "correio",
+              "livraria",
+              "biblioteca",
+              "cinema",
+              "padaria"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              5,
+              0,
+              3,
+              2,
+              4,
+              1
+            ]
+          },
+          "explicacao": "Cuidado com o falso cognato: library é biblioteca; livraria é bookstore.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Have a supermarket on my street."
+          },
+          "gabarito": {
+            "aceitas": [
+              "There is a supermarket on my street."
+            ]
+          },
+          "explicacao": "Em português, \"tem\" pode indicar existência. Em inglês, existência é there is / there are; have é só posse.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Tem uma farmácia na minha rua.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There is a drugstore on my street.",
+              "There is a pharmacy on my street.",
+              "My street has a drugstore.",
+              "My street has a pharmacy."
+            ]
+          },
+          "explicacao": "Existência em um lugar = there is. Farmácia = drugstore ou pharmacy. \"Na minha rua\" = on my street (rua usa on no inglês americano).",
+          "tagsErro": [
+            "there_be",
+            "preposicao"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Há três escolas na minha cidade.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There are three schools in my town.",
+              "There are three schools in my city.",
+              "My town has three schools.",
+              "My city has three schools."
+            ]
+          },
+          "explicacao": "\"Três escolas\" é plural: there are. \"Na minha cidade\" = in my town (ou in my city).",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "There ___ some water on the table.",
+            "opcoes": [
+              "are",
+              "have",
+              "be",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Water é incontável e funciona como singular: there is some water.",
+          "tagsErro": [
+            "incontavel"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "There ___ two banks in my neighborhood."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "\"Two banks\" é plural: there are.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "Have a library in my town.",
+              "There are a library in my town.",
+              "There is a library in my town.",
+              "Is a library in my town."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "\"A library\" é singular: there is. \"Have\" não indica existência e \"Is a library...\" fica sem o there.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "There is three parks in Curitiba."
+          },
+          "gabarito": {
+            "aceitas": [
+              "There are three parks in Curitiba."
+            ]
+          },
+          "explicacao": "\"Three parks\" é plural, então o verbo é are: there are.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Tem um cinema no shopping.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There is a movie theater in the mall.",
+              "There is a movie theater in the shopping mall.",
+              "There is a movie theater at the mall.",
+              "There is a movie theater at the shopping mall.",
+              "There is a cinema in the mall.",
+              "There is a cinema in the shopping mall.",
+              "There is a cinema at the mall.",
+              "There is a cinema at the shopping mall.",
+              "The mall has a movie theater.",
+              "The mall has a cinema.",
+              "The shopping mall has a movie theater.",
+              "The shopping mall has a cinema."
+            ]
+          },
+          "explicacao": "Existência = there is. Shopping center em inglês é mall (\"shopping\" é o ato de fazer compras). Cinema = movie theater no inglês americano.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m07-l2",
+      "ordem": 2,
+      "titulo": "There isn't / There aren't",
+      "objetivo": "Dizer o que não existe na sua cidade, usando there isn't, there aren't e any.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para a negativa, basta colocar not depois de is ou are: there isn't (= there is not) e there aren't (= there are not).",
+          "Com substantivos no singular, use a/an: There isn't a hospital. Com plural ou incontável, use any, como você viu no módulo de comida: There aren't any parks. There isn't any milk.",
+          "Também é possível dizer there's no + substantivo: There's no subway in my town. O sentido é o mesmo de there isn't a subway."
+        ],
+        "regras": [
+          "There isn't a/an + singular: There isn't a bank.",
+          "There aren't any + plural: There aren't any parks.",
+          "There isn't any + incontável: There isn't any milk.",
+          "There's no subway. = There isn't a subway.",
+          "Some na afirmativa, any na negativa."
+        ],
+        "notaContrastiva": "Não diga *Don't have a subway in my town* → diga *There isn't a subway in my town*. E na negativa use any, não some: *There aren't any parks*.",
+        "exemplos": [
+          {
+            "en": "There isn't a hospital in my neighborhood.",
+            "pt": "Não tem hospital no meu bairro."
+          },
+          {
+            "en": "There aren't any parks on this street.",
+            "pt": "Não há parques nesta rua."
+          },
+          {
+            "en": "There isn't any milk in the fridge.",
+            "pt": "Não tem leite na geladeira."
+          },
+          {
+            "en": "There are some cafés, but there isn't a bank.",
+            "pt": "Tem alguns cafés, mas não tem banco."
+          },
+          {
+            "en": "There's no subway in my town.",
+            "pt": "Não tem metrô na minha cidade."
+          },
+          {
+            "en": "There aren't any hotels in this neighborhood.",
+            "pt": "Não há hotéis neste bairro."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "subway",
+            "pt": "metrô"
+          },
+          {
+            "en": "bus stop",
+            "pt": "ponto de ônibus"
+          },
+          {
+            "en": "gas station",
+            "pt": "posto de gasolina"
+          },
+          {
+            "en": "church",
+            "pt": "igreja"
+          },
+          {
+            "en": "square",
+            "pt": "praça"
+          },
+          {
+            "en": "museum",
+            "pt": "museu"
+          },
+          {
+            "en": "hotel",
+            "pt": "hotel"
+          },
+          {
+            "en": "train station",
+            "pt": "estação de trem"
+          },
+          {
+            "en": "airport",
+            "pt": "aeroporto"
+          },
+          {
+            "en": "café",
+            "pt": "café, cafeteria"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com isn't ou aren't.",
+          "conteudo": {
+            "texto": "There ___ a bus stop on my street."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "isn't"
+              ]
+            ]
+          },
+          "explicacao": "\"A bus stop\" é singular: there isn't (= there is not).",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com isn't ou aren't.",
+          "conteudo": {
+            "texto": "There ___ any museums in my town."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't"
+              ]
+            ]
+          },
+          "explicacao": "\"Museums\" é plural: there aren't (= there are not).",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "There aren't ___ restaurants on this street.",
+            "opcoes": [
+              "some",
+              "any",
+              "a",
+              "an"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Na negativa, com plural, usamos any. Some é para frases afirmativas; a/an só com singular.",
+          "tagsErro": [
+            "quantificador"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "There isn't ___ airport in my town.",
+            "opcoes": [
+              "an",
+              "a",
+              "any",
+              "some"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"Airport\" é singular e começa com som de vogal, então usamos an: there isn't an airport.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com isn't ou aren't.",
+          "conteudo": {
+            "texto": "There ___ any water in the bottle."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "isn't"
+              ]
+            ]
+          },
+          "explicacao": "Water é incontável e funciona como singular: there isn't any water.",
+          "tagsErro": [
+            "incontavel"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "my",
+              "town",
+              "isn't",
+              "subway",
+              "a",
+              "in",
+              "there"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "There isn't a subway in my town."
+            ]
+          },
+          "explicacao": "Negativa: There isn't + a + singular + lugar.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "There aren't some parks in my neighborhood."
+          },
+          "gabarito": {
+            "aceitas": [
+              "There aren't any parks in my neighborhood.",
+              "There are no parks in my neighborhood."
+            ]
+          },
+          "explicacao": "Em frases negativas usamos any, não some: there aren't any parks.",
+          "tagsErro": [
+            "quantificador"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "There isn't any banks on this street."
+          },
+          "gabarito": {
+            "aceitas": [
+              "There aren't any banks on this street.",
+              "There are no banks on this street."
+            ]
+          },
+          "explicacao": "\"Banks\" é plural, então o verbo é are: there aren't any banks.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Não tem metrô na minha cidade.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There isn't a subway in my town.",
+              "There isn't a subway in my city.",
+              "There is no subway in my town.",
+              "There is no subway in my city.",
+              "My town doesn't have a subway.",
+              "My city doesn't have a subway.",
+              "My town has no subway.",
+              "My city has no subway."
+            ]
+          },
+          "explicacao": "Para dizer que algo não existe em um lugar: there isn't a subway (ou there's no subway). Metrô = subway no inglês americano.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Não há parques no meu bairro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There aren't any parks in my neighborhood.",
+              "There are no parks in my neighborhood.",
+              "There aren't parks in my neighborhood.",
+              "My neighborhood doesn't have any parks.",
+              "My neighborhood has no parks."
+            ]
+          },
+          "explicacao": "Plural na negativa: there aren't any parks (ou there are no parks). Bairro = neighborhood.",
+          "tagsErro": [
+            "there_be",
+            "quantificador"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "There isn't any cafés on this street.",
+              "There aren't a café on this street.",
+              "There no are cafés on this street.",
+              "There aren't any cafés on this street."
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "\"Cafés\" é plural: there aren't any cafés. O not vem depois de are.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com isn't ou aren't.",
+          "conteudo": {
+            "texto": "There ___ a gas station in my neighborhood, but there are two drugstores."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "isn't"
+              ]
+            ]
+          },
+          "explicacao": "\"A gas station\" é singular: there isn't.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "There isn't ___ bread for breakfast.",
+            "opcoes": [
+              "a",
+              "some",
+              "any",
+              "many"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Bread é incontável. Na negativa usamos any: there isn't any bread.",
+          "tagsErro": [
+            "incontavel",
+            "quantificador"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "aren't",
+              "this",
+              "street",
+              "hotels",
+              "on",
+              "any",
+              "there"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "There aren't any hotels on this street."
+            ]
+          },
+          "explicacao": "Negativa no plural: There aren't any + plural + lugar.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Não tem ponto de ônibus aqui.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "There isn't a bus stop here.",
+              "There is no bus stop here."
+            ]
+          },
+          "explicacao": "Singular na negativa: there isn't a bus stop (ou there's no bus stop). Ponto de ônibus = bus stop.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m07-l3",
+      "ordem": 3,
+      "titulo": "Is there…? Are there…?",
+      "objetivo": "Perguntar o que existe em um lugar e responder com respostas curtas.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar, invertemos a ordem: is there? e are there? Is there a gym in your neighborhood? Are there any parks in your town?",
+          "Nas respostas curtas, repetimos there + is/are: Yes, there is. / No, there isn't. Yes, there are. / No, there aren't. Na resposta afirmativa curta não usamos contração: diga Yes, there is (e não Yes, there's).",
+          "Para perguntar a quantidade, use How many + plural + are there? How many schools are there in your town? Resposta: There are three."
+        ],
+        "regras": [
+          "Is there a/an + singular? → Yes, there is. / No, there isn't.",
+          "Are there any + plural? → Yes, there are. / No, there aren't.",
+          "How many + plural + are there?",
+          "Pergunta: is/are vem antes de there."
+        ],
+        "notaContrastiva": "Não diga *Have a gym near here?* nem *There is a gym?* → diga *Is there a gym near here?* Em inglês a pergunta muda a ordem das palavras.",
+        "exemplos": [
+          {
+            "en": "Is there a gym in your neighborhood?",
+            "pt": "Tem academia no seu bairro?"
+          },
+          {
+            "en": "Yes, there is.",
+            "pt": "Sim, tem."
+          },
+          {
+            "en": "Are there any good restaurants in Salvador?",
+            "pt": "Há bons restaurantes em Salvador?"
+          },
+          {
+            "en": "No, there aren't.",
+            "pt": "Não, não há."
+          },
+          {
+            "en": "How many beaches are there in Rio?",
+            "pt": "Quantas praias há no Rio?"
+          },
+          {
+            "en": "Is there a pool in the hotel?",
+            "pt": "Tem piscina no hotel?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "gym",
+            "pt": "academia"
+          },
+          {
+            "en": "beach",
+            "pt": "praia"
+          },
+          {
+            "en": "zoo",
+            "pt": "zoológico"
+          },
+          {
+            "en": "pool",
+            "pt": "piscina"
+          },
+          {
+            "en": "stadium",
+            "pt": "estádio"
+          },
+          {
+            "en": "parking lot",
+            "pt": "estacionamento"
+          },
+          {
+            "en": "hotel",
+            "pt": "hotel"
+          },
+          {
+            "en": "How many…?",
+            "pt": "Quantos/Quantas…?"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ a gym in your neighborhood?",
+            "opcoes": [
+              "Are there",
+              "Is there",
+              "Have",
+              "There is"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Pergunta com singular: Is there + a + substantivo? \"Have\" não indica existência.",
+          "tagsErro": [
+            "there_be",
+            "ordem_pergunta"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "___ any good restaurants in Salvador?",
+            "opcoes": [
+              "Are there",
+              "Is there",
+              "There are",
+              "Have"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"Restaurants\" é plural: Are there any…?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Is there a beach in your city? Yes, there ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta afirmativa: Yes, there is (sem contração).",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Are there any hotels on this street? No, there ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't"
+              ]
+            ]
+          },
+          "explicacao": "A pergunta usa are (plural), então a resposta negativa é No, there aren't.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "How many schools ___ there in your town?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "How many + plural + are there? Schools é plural.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "city",
+              "zoo",
+              "your",
+              "a",
+              "in",
+              "is",
+              "there"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is there a zoo in your city?"
+            ]
+          },
+          "explicacao": "Na pergunta, is vem antes de there: Is there a zoo…?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "how",
+              "in",
+              "parks",
+              "many",
+              "town",
+              "there",
+              "your"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many parks are there in your town?"
+            ]
+          },
+          "explicacao": "How many + plural + are there + lugar?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Is there a bank in your town?",
+              "Are there any cafés on this street?",
+              "How many hotels are there?",
+              "Where is the bank?"
+            ],
+            "direita": [
+              "There are three.",
+              "It's on Rio Street.",
+              "No, there aren't.",
+              "Yes, there is."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "Is there → there is/isn't; Are there → there are/aren't; How many → um número; Where → um lugar.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Tem uma academia no seu bairro?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is there a gym in your neighborhood?",
+              "Does your neighborhood have a gym?"
+            ]
+          },
+          "explicacao": "Pergunta sobre existência: Is there a gym…? Academia = gym.",
+          "tagsErro": [
+            "there_be",
+            "ordem_pergunta"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quantos hospitais há na sua cidade?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many hospitals are there in your city?",
+              "How many hospitals are there in your town?",
+              "How many hospitals does your city have?",
+              "How many hospitals does your town have?"
+            ]
+          },
+          "explicacao": "How many + plural + are there + lugar?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Are there any museums in your town?\"",
+          "conteudo": {
+            "opcoes": [
+              "Yes, there is.",
+              "Yes, they are.",
+              "Yes, it is.",
+              "Yes, there are."
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "A pergunta usa are there (plural), então a resposta curta é Yes, there are.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Have a drugstore on this street?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is there a drugstore on this street?"
+            ]
+          },
+          "explicacao": "Para perguntar se algo existe, use Is there…? e não have.",
+          "tagsErro": [
+            "there_be"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "___ there any buses at night?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Are"
+              ]
+            ]
+          },
+          "explicacao": "\"Buses\" é plural: Are there any buses…?",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "How many banks there are in your town?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many banks are there in your town?"
+            ]
+          },
+          "explicacao": "Na pergunta, are vem antes de there: How many banks are there…?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Is there a pool in the hotel?\"",
+          "conteudo": {
+            "opcoes": [
+              "No, there aren't.",
+              "No, isn't there.",
+              "No, there isn't.",
+              "No, not there."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "A pergunta usa is there (singular): No, there isn't.",
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m07-l4",
+      "ordem": 4,
+      "titulo": "Where is it? Prepositions of place",
+      "objetivo": "Dizer onde estão lugares e objetos com in, on, under, next to, between, across from e near.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "As preposições de lugar dizem onde alguma coisa está. In = dentro de (in the bag, in Recife). On = em cima de, sobre (on the table) e também para ruas (on Rio Street). Under = embaixo de.",
+          "Next to = ao lado de. Between = entre (between the bank and the school). Across from = em frente a, do outro lado da rua. Near = perto de.",
+          "Atenção: near não tem \"of\". Diga near the beach, e não near of the beach. Next to usa to, e não of.",
+          "Cuidado com \"em frente\": in front of é \"na frente de\" (colado, do mesmo lado); across from é \"em frente, do outro lado da rua\"."
+        ],
+        "regras": [
+          "in = dentro de · on = em cima de · under = embaixo de",
+          "next to = ao lado de",
+          "between A and B = entre A e B",
+          "across from = em frente a (do outro lado)",
+          "near = perto de (sem of!)"
+        ],
+        "notaContrastiva": "Não diga *near of the bank* nem *next of the bank* → diga *near the bank* e *next to the bank*. E \"em cima da mesa\" é *on the table*, não *in the table*.",
+        "exemplos": [
+          {
+            "en": "The keys are on the table.",
+            "pt": "As chaves estão em cima da mesa."
+          },
+          {
+            "en": "The cat is under the bed.",
+            "pt": "O gato está embaixo da cama."
+          },
+          {
+            "en": "My cell phone is in my bag.",
+            "pt": "Meu celular está na minha bolsa."
+          },
+          {
+            "en": "The bank is next to the supermarket.",
+            "pt": "O banco fica ao lado do supermercado."
+          },
+          {
+            "en": "The café is between the bank and the bookstore.",
+            "pt": "O café fica entre o banco e a livraria."
+          },
+          {
+            "en": "The school is across from the park.",
+            "pt": "A escola fica em frente ao parque."
+          },
+          {
+            "en": "My apartment is near the beach.",
+            "pt": "Meu apartamento fica perto da praia."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "in",
+            "pt": "em, dentro de"
+          },
+          {
+            "en": "on",
+            "pt": "em cima de, sobre"
+          },
+          {
+            "en": "under",
+            "pt": "embaixo de"
+          },
+          {
+            "en": "next to",
+            "pt": "ao lado de"
+          },
+          {
+            "en": "between",
+            "pt": "entre"
+          },
+          {
+            "en": "across from",
+            "pt": "em frente a (do outro lado)"
+          },
+          {
+            "en": "near",
+            "pt": "perto de"
+          },
+          {
+            "en": "in front of",
+            "pt": "na frente de"
+          },
+          {
+            "en": "table",
+            "pt": "mesa"
+          },
+          {
+            "en": "bed",
+            "pt": "cama"
+          },
+          {
+            "en": "bag",
+            "pt": "bolsa, sacola"
+          },
+          {
+            "en": "apartment",
+            "pt": "apartamento"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a preposição certa. (As chaves estão em cima da mesa.)",
+          "conteudo": {
+            "texto": "The keys are ___ the table.",
+            "opcoes": [
+              "in",
+              "on",
+              "between",
+              "next"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Em cima de uma superfície = on. \"In\" seria dentro da mesa.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (O banco fica ao lado do supermercado.)",
+          "conteudo": {
+            "texto": "The bank is ___ ___ the supermarket."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "next"
+              ],
+              [
+                "to"
+              ]
+            ]
+          },
+          "explicacao": "Ao lado de = next to (e não next of).",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a preposição certa. (O café fica entre o banco e a livraria.)",
+          "conteudo": {
+            "texto": "The café is ___ the bank and the bookstore.",
+            "opcoes": [
+              "between",
+              "next to",
+              "under",
+              "in"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Entre duas coisas = between A and B.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (O gato está embaixo da cama.)",
+          "conteudo": {
+            "texto": "The cat is ___ the bed."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "under",
+                "underneath",
+                "beneath"
+              ]
+            ]
+          },
+          "explicacao": "Embaixo de = under.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (A escola fica em frente ao parque, do outro lado da rua.)",
+          "conteudo": {
+            "texto": "The school is ___ the park.",
+            "opcoes": [
+              "across of",
+              "near of",
+              "between",
+              "across from"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Em frente, do outro lado da rua = across from. Near não leva of.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "My apartment is near of the beach."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My apartment is near the beach."
+            ]
+          },
+          "explicacao": "Near já significa \"perto de\". Não use of depois de near.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "drugstore",
+              "to",
+              "the",
+              "the",
+              "bank",
+              "next"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "The drugstore is next to the bank.",
+              "The bank is next to the drugstore."
+            ]
+          },
+          "explicacao": "Ao lado de = next to. Estrutura: lugar + is + next to + outro lugar.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada preposição ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "in",
+              "on",
+              "under",
+              "next to",
+              "between",
+              "across from"
+            ],
+            "direita": [
+              "ao lado de",
+              "entre",
+              "dentro de",
+              "em cima de",
+              "embaixo de",
+              "em frente a (do outro lado)"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              4,
+              0,
+              1,
+              5
+            ]
+          },
+          "explicacao": "Revise as sete preposições de lugar: in, on, under, next to, between, across from, near.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O banco fica ao lado da padaria.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The bank is next to the bakery."
+            ]
+          },
+          "explicacao": "\"Fica\" para localização = is. Ao lado de = next to.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu celular está na minha bolsa.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My cell phone is in my bag.",
+              "My cell phone is in my purse.",
+              "My cellphone is in my bag.",
+              "My cellphone is in my purse.",
+              "My phone is in my bag.",
+              "My phone is in my purse."
+            ]
+          },
+          "explicacao": "Dentro de = in. Celular = cell phone (ou phone).",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete com a preposição certa.",
+          "conteudo": {
+            "texto": "I live ___ Recife."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "in"
+              ]
+            ]
+          },
+          "explicacao": "Cidades usam in: in Recife, in São Paulo.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção correta.",
+          "conteudo": {
+            "texto": "The supermarket is ___ the bank and the school.",
+            "opcoes": [
+              "next to",
+              "across from",
+              "between",
+              "under"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Quando há duas referências (the bank and the school), usamos between.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva corrigida. (Os livros estão em cima da mesa.)",
+          "conteudo": {
+            "frase": "The books are in the table."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The books are on the table."
+            ]
+          },
+          "explicacao": "Em cima de uma superfície = on the table.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "A farmácia fica perto da escola.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The drugstore is near the school.",
+              "The drugstore is close to the school.",
+              "The pharmacy is near the school.",
+              "The pharmacy is close to the school."
+            ]
+          },
+          "explicacao": "Perto de = near (sem of) ou close to.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (Minha casa fica perto da praia.)",
+          "conteudo": {
+            "texto": "My house is ___ the beach.",
+            "opcoes": [
+              "near of",
+              "near",
+              "next",
+              "between"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Perto de = near, sem of.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m07-l5",
+      "ordem": 5,
+      "titulo": "Turn left! Giving directions",
+      "objetivo": "Dar instruções de caminho com o imperativo: turn left, go straight, cross the street.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para dar instruções, usamos o imperativo: o verbo na forma básica, sem sujeito. Turn left. (Vire à esquerda.) Go straight. (Siga em frente.) Cross the street. (Atravesse a rua.)",
+          "Para a negativa, use Don't + verbo: Don't turn right. (Não vire à direita.) Não use \"no\" na frente do verbo.",
+          "Expressões úteis: take the first/second street on the left (pegue a primeira/segunda rua à esquerda), at the traffic light (no semáforo), at the corner (na esquina), it's on your left/right (fica à sua esquerda/direita)."
+        ],
+        "regras": [
+          "Imperativo = verbo sem sujeito: Turn left.",
+          "Negativa: Don't + verbo: Don't turn right.",
+          "turn left / turn right (sem \"to the\" e sem \"in\")",
+          "go straight · cross the street · take the second street",
+          "It's on your left / on your right."
+        ],
+        "notaContrastiva": "Não diga *No turn left* → diga *Don't turn left*. E \"vire à esquerda\" é só *turn left*, não *turn in the left*.",
+        "exemplos": [
+          {
+            "en": "Turn left at the bank.",
+            "pt": "Vire à esquerda no banco."
+          },
+          {
+            "en": "Go straight for two blocks.",
+            "pt": "Siga em frente por dois quarteirões."
+          },
+          {
+            "en": "Take the second street on the right.",
+            "pt": "Pegue a segunda rua à direita."
+          },
+          {
+            "en": "Cross the street at the traffic light.",
+            "pt": "Atravesse a rua no semáforo."
+          },
+          {
+            "en": "Don't turn right here.",
+            "pt": "Não vire à direita aqui."
+          },
+          {
+            "en": "The museum is on your left.",
+            "pt": "O museu fica à sua esquerda."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "turn left",
+            "pt": "virar à esquerda"
+          },
+          {
+            "en": "turn right",
+            "pt": "virar à direita"
+          },
+          {
+            "en": "go straight",
+            "pt": "seguir em frente"
+          },
+          {
+            "en": "cross",
+            "pt": "atravessar"
+          },
+          {
+            "en": "take",
+            "pt": "pegar (uma rua)"
+          },
+          {
+            "en": "block",
+            "pt": "quarteirão"
+          },
+          {
+            "en": "corner",
+            "pt": "esquina"
+          },
+          {
+            "en": "traffic light",
+            "pt": "semáforo"
+          },
+          {
+            "en": "first / second / third",
+            "pt": "primeiro / segundo / terceiro"
+          },
+          {
+            "en": "on your left / on your right",
+            "pt": "à sua esquerda / à sua direita"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (Vire à esquerda.)",
+          "conteudo": {
+            "texto": "___ left.",
+            "opcoes": [
+              "Turn",
+              "Turns",
+              "To turn",
+              "Turning"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O imperativo usa o verbo na forma básica, sem sujeito e sem to: Turn left.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (Não vire à direita.)",
+          "conteudo": {
+            "texto": "___ turn right. The bank is on the left."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Don't"
+              ]
+            ]
+          },
+          "explicacao": "Imperativo negativo: Don't + verbo.",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (Siga em frente.)",
+          "conteudo": {
+            "texto": "Go ___.",
+            "opcoes": [
+              "cross",
+              "turn",
+              "corner",
+              "straight"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Seguir em frente = go straight.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (Pegue a segunda rua à esquerda.)",
+          "conteudo": {
+            "texto": "Take the ___ street on the left."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "second",
+                "2nd"
+              ]
+            ]
+          },
+          "explicacao": "Segunda = second (ordinal de two).",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (Atravesse a rua.)",
+          "conteudo": {
+            "texto": "___ the street.",
+            "opcoes": [
+              "Take",
+              "Turn",
+              "Cross",
+              "Go"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Atravessar = cross. \"Go the street\" não existe.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "turn",
+              "traffic",
+              "right",
+              "light",
+              "at",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Turn right at the traffic light.",
+              "At the traffic light turn right."
+            ]
+          },
+          "explicacao": "Imperativo + direção + lugar: Turn right at the traffic light.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "No turn left here."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Don't turn left here."
+            ]
+          },
+          "explicacao": "Imperativo negativo em inglês é Don't + verbo, não \"no\".",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada instrução à sua tradução.",
+          "conteudo": {
+            "esquerda": [
+              "Turn left.",
+              "Turn right.",
+              "Go straight.",
+              "Cross the street.",
+              "Take the first street."
+            ],
+            "direita": [
+              "Vire à direita.",
+              "Siga em frente.",
+              "Atravesse a rua.",
+              "Pegue a primeira rua.",
+              "Vire à esquerda."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "explicacao": "Instruções usam o verbo sem sujeito: turn, go, cross, take.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Vire à direita no banco.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Turn right at the bank.",
+              "Turn to the right at the bank."
+            ]
+          },
+          "explicacao": "Imperativo: Turn right. \"No banco\" (ponto de referência) = at the bank.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Não atravesse a rua aqui.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Don't cross the street here.",
+              "Don't cross the road here."
+            ]
+          },
+          "explicacao": "Imperativo negativo: Don't + verbo. Atravessar = cross.",
+          "tagsErro": [
+            "do_support"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Qual frase dá uma instrução corretamente?",
+          "conteudo": {
+            "opcoes": [
+              "You goes straight for two blocks.",
+              "Go straight for two blocks.",
+              "Going straight for two blocks.",
+              "To go straight for two blocks."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O imperativo é o verbo na forma básica, sem sujeito: Go straight.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (O banco fica à sua esquerda.)",
+          "conteudo": {
+            "texto": "The bank is on your ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "left"
+              ]
+            ]
+          },
+          "explicacao": "À sua esquerda = on your left.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "turn",
+              "Rio",
+              "on",
+              "left",
+              "don't",
+              "Street"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Don't turn left on Rio Street.",
+              "On Rio Street don't turn left."
+            ]
+          },
+          "explicacao": "Imperativo negativo: Don't + verbo + direção + lugar.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Siga em frente e vire à esquerda.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Go straight and turn left.",
+              "Go straight and then turn left.",
+              "Go straight ahead and turn left.",
+              "Go straight ahead and then turn left.",
+              "Go straight on and turn left.",
+              "Go straight on and then turn left.",
+              "Go straight, then turn left.",
+              "Go straight then turn left.",
+              "Go straight. then turn left.",
+              "Go straight ahead, then turn left.",
+              "Go straight ahead then turn left.",
+              "Go straight ahead. then turn left.",
+              "Go straight on, then turn left.",
+              "Go straight on then turn left.",
+              "Go straight on. then turn left.",
+              "Keep going straight and turn left."
+            ]
+          },
+          "explicacao": "Imperativo: Go straight (siga em frente) and turn left (vire à esquerda).",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Turn in the left at the corner."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Turn left at the corner."
+            ]
+          },
+          "explicacao": "\"Vire à esquerda\" em inglês é só turn left, sem preposição.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m07-l6",
+      "ordem": 6,
+      "titulo": "Excuse me, where is…?",
+      "objetivo": "Pedir e dar informações de caminho em uma conversa curta na rua.",
+      "minutosEstimados": 25,
+      "apresentacao": {
+        "explicacao": [
+          "Para chamar a atenção de alguém na rua, diga Excuse me (com licença). Depois pergunte: Is there a bank near here? (Tem um banco aqui perto?), Where is the train station? (Onde fica a estação?) ou How do I get to the beach? (Como eu chego à praia?).",
+          "Para responder, junte tudo o que você aprendeu: Yes, there is. Go straight and turn left. It's on your right, next to the bakery.",
+          "Outras expressões úteis: It's near here (é aqui perto), It's far from here (é longe daqui), on the corner (na esquina). Para agradecer: Thank you! Resposta: You're welcome."
+        ],
+        "regras": [
+          "Excuse me = com licença (para chamar alguém)",
+          "Is there a … near here?",
+          "How do I get to …?",
+          "It's on the corner. · It's far from here.",
+          "Thank you! → You're welcome."
+        ],
+        "notaContrastiva": "Não diga *near of here* → diga *near here*. E \"na esquina\" é *on the corner* (rua), não *in the corner* (canto de uma sala).",
+        "exemplos": [
+          {
+            "en": "Excuse me, is there a bank near here?",
+            "pt": "Com licença, tem um banco aqui perto?"
+          },
+          {
+            "en": "Yes, there is. It's on Bahia Street.",
+            "pt": "Sim, tem. Fica na Rua Bahia."
+          },
+          {
+            "en": "How do I get to the beach?",
+            "pt": "Como eu chego à praia?"
+          },
+          {
+            "en": "Go straight for three blocks and turn right.",
+            "pt": "Siga em frente por três quarteirões e vire à direita."
+          },
+          {
+            "en": "The bakery is on the corner.",
+            "pt": "A padaria fica na esquina."
+          },
+          {
+            "en": "Is it far from here? No, it isn't.",
+            "pt": "É longe daqui? Não, não é."
+          },
+          {
+            "en": "Thank you! You're welcome.",
+            "pt": "Obrigado! De nada."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "Excuse me",
+            "pt": "Com licença"
+          },
+          {
+            "en": "near here",
+            "pt": "aqui perto"
+          },
+          {
+            "en": "far (from)",
+            "pt": "longe (de)"
+          },
+          {
+            "en": "How do I get to…?",
+            "pt": "Como eu chego a…?"
+          },
+          {
+            "en": "on the corner",
+            "pt": "na esquina"
+          },
+          {
+            "en": "downtown",
+            "pt": "centro da cidade"
+          },
+          {
+            "en": "avenue",
+            "pt": "avenida"
+          },
+          {
+            "en": "map",
+            "pt": "mapa"
+          },
+          {
+            "en": "You're welcome.",
+            "pt": "De nada."
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "tipo": "mcq",
+          "enunciado": "Como chamar a atenção de alguém na rua para pedir informação?",
+          "conteudo": {
+            "opcoes": [
+              "Excuse me.",
+              "Permission.",
+              "With license.",
+              "Sorry me."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"Com licença\" para chamar alguém = Excuse me. \"Permission\" e \"with license\" são traduções ao pé da letra que não funcionam.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (Como eu chego à estação de trem?)",
+          "conteudo": {
+            "texto": "___ do I get to the train station?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "How"
+              ]
+            ]
+          },
+          "explicacao": "\"Como\" = how. How do I get to…? = Como eu chego a…?",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a preposição certa. (A padaria fica na esquina.)",
+          "conteudo": {
+            "texto": "The bakery is ___ the corner.",
+            "opcoes": [
+              "in",
+              "under",
+              "between",
+              "on"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Esquina de rua = on the corner. \"In the corner\" é o canto de dentro de uma sala.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Is there a drugstore near here? Yes, there ___. It's next to the bank."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ]
+            ]
+          },
+          "explicacao": "Is there…? → Yes, there is.",
+          "etapa": "controlada"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "to",
+              "how",
+              "do",
+              "museum",
+              "get",
+              "the",
+              "I"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How do I get to the museum?"
+            ]
+          },
+          "explicacao": "Estrutura fixa: How do I get to + lugar?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "error_correction",
+          "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+          "conteudo": {
+            "frase": "Is there a bank near of here?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is there a bank near here?"
+            ]
+          },
+          "explicacao": "\"Aqui perto\" = near here, sem of.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "match",
+          "enunciado": "Ligue cada fala à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Excuse me, is there a café near here?",
+              "Thank you!",
+              "How do I get to the beach?",
+              "Is it far from here?"
+            ],
+            "direita": [
+              "No, it isn't. It's near here.",
+              "You're welcome.",
+              "Yes, there is. It's on Bahia Street.",
+              "Go straight for three blocks."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              1,
+              3,
+              0
+            ]
+          },
+          "explicacao": "Is there…? pede Yes/No; How do I get to…? pede instruções; Thank you pede You're welcome.",
+          "etapa": "semicontrolada"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Com licença, tem um banco perto daqui?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Excuse me, is there a bank near here?",
+              "Excuse me is there a bank near here?",
+              "Excuse me. is there a bank near here?",
+              "Excuse me, is there a bank nearby?",
+              "Excuse me is there a bank nearby?",
+              "Excuse me. is there a bank nearby?",
+              "Excuse me, is there a bank around here?",
+              "Excuse me is there a bank around here?",
+              "Excuse me. is there a bank around here?"
+            ]
+          },
+          "explicacao": "Excuse me + pergunta de existência: is there a bank near here?",
+          "tagsErro": [
+            "there_be",
+            "preposicao"
+          ],
+          "etapa": "producao"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Siga em frente. O museu fica à sua direita.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Go straight. The museum is on your right.",
+              "Go straight ahead. The museum is on your right.",
+              "Go straight on. The museum is on your right."
+            ]
+          },
+          "explicacao": "Imperativo: Go straight. À sua direita = on your right.",
+          "etapa": "producao"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta certa para: \"Thank you!\"",
+          "conteudo": {
+            "opcoes": [
+              "Of nothing.",
+              "Nothing.",
+              "You're welcome.",
+              "Yes, there is."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "\"De nada\" em inglês é You're welcome. \"Of nothing\" é tradução literal.",
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "cloze",
+          "enunciado": "Complete. (Vire à esquerda no semáforo.)",
+          "conteudo": {
+            "texto": "Turn left ___ the traffic light.",
+            "opcoesPorLacuna": [
+              [
+                "at",
+                "in",
+                "of"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "at"
+              ]
+            ]
+          },
+          "explicacao": "Ponto de referência no caminho = at: at the traffic light, at the corner.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "mcq",
+          "enunciado": "Escolha a opção certa. (A praia é longe daqui?)",
+          "conteudo": {
+            "texto": "Is the beach far ___ here?",
+            "opcoes": [
+              "of",
+              "from",
+              "to",
+              "in"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Longe de = far from.",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "A estação de trem fica na esquina.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The train station is on the corner.",
+              "The train station is at the corner."
+            ]
+          },
+          "explicacao": "Na esquina = on the corner (também at the corner).",
+          "tagsErro": [
+            "preposicao"
+          ],
+          "etapa": "quiz"
+        },
+        {
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+          "conteudo": {
+            "palavras": [
+              "hotel",
+              "a",
+              "near",
+              "here",
+              "there",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Is there a hotel near here?"
+            ]
+          },
+          "explicacao": "Pergunta de existência: Is there + a + lugar + near here?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ],
+          "etapa": "quiz"
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "There ___ two banks on my street.",
+          "opcoes": [
+            "are",
+            "is",
+            "have",
+            "has"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"Two banks\" é plural: there are.",
+        "tagsErro": [
+          "there_be"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com is ou are.",
+        "conteudo": {
+          "texto": "There ___ a gym in my neighborhood."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "is"
+            ]
+          ]
+        },
+        "explicacao": "\"A gym\" é singular: there is.",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "There aren't ___ hotels in this town.",
+          "opcoes": [
+            "some",
+            "a",
+            "an",
+            "any"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Negativa com plural: any.",
+        "tagsErro": [
+          "quantificador"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Is there a beach in Belo Horizonte? No, there ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "isn't"
+            ]
+          ]
+        },
+        "explicacao": "Is there…? → No, there isn't.",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ any cafés near here?",
+          "opcoes": [
+            "Is there",
+            "There are",
+            "Are there",
+            "Have"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"Cafés\" é plural: Are there any…?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com is ou are.",
+        "conteudo": {
+          "texto": "How many students ___ there in your class?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "How many + plural + are there?",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a preposição certa. (Suas chaves estão em cima do sofá.)",
+        "conteudo": {
+          "texto": "Your keys are ___ the sofa.",
+          "opcoes": [
+            "in",
+            "on",
+            "under",
+            "between"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Em cima de = on.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "The bakery is ___ the bank and the drugstore.",
+          "opcoes": [
+            "between",
+            "next to",
+            "across from",
+            "near"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Duas referências (A and B) = between.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com uma preposição. (Minha escola fica perto do parque.)",
+        "conteudo": {
+          "texto": "My school is ___ the park."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "near",
+              "by"
+            ]
+          ]
+        },
+        "explicacao": "Perto de = near (sem of).",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção certa. (Vire à esquerda no semáforo.)",
+        "conteudo": {
+          "texto": "___ left at the traffic light.",
+          "opcoes": [
+            "Turns",
+            "To turn",
+            "Turning",
+            "Turn"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Imperativo = verbo na forma básica: Turn left.",
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How many cafés are there on Paula's street?",
+        "conteudo": {
+          "texto": "My name is Paula and I live in Florianópolis. My neighborhood is small, but it's nice. There is a supermarket on my street and there are two cafés. There isn't a movie theater, but there is a big mall near my house. The bus stop is across from the bakery. There are a lot of beaches in Florianópolis, and my favorite beach is near the airport.",
+          "opcoes": [
+            "One.",
+            "Three.",
+            "Two.",
+            "There aren't any."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"there are two cafés\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Is there a movie theater in Paula's neighborhood?",
+        "conteudo": {
+          "texto": "My name is Paula and I live in Florianópolis. My neighborhood is small, but it's nice. There is a supermarket on my street and there are two cafés. There isn't a movie theater, but there is a big mall near my house. The bus stop is across from the bakery. There are a lot of beaches in Florianópolis, and my favorite beach is near the airport.",
+          "opcoes": [
+            "Yes, there is.",
+            "No, there isn't.",
+            "Yes, there are.",
+            "No, there aren't."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"There isn't a movie theater\". Singular → No, there isn't.",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where is the bus stop?",
+        "conteudo": {
+          "texto": "My name is Paula and I live in Florianópolis. My neighborhood is small, but it's nice. There is a supermarket on my street and there are two cafés. There isn't a movie theater, but there is a big mall near my house. The bus stop is across from the bakery. There are a lot of beaches in Florianópolis, and my favorite beach is near the airport.",
+          "opcoes": [
+            "Across from the bakery.",
+            "Next to the bakery.",
+            "Near the airport.",
+            "In the mall."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: \"The bus stop is across from the bakery\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where is Paula's favorite beach?",
+        "conteudo": {
+          "texto": "My name is Paula and I live in Florianópolis. My neighborhood is small, but it's nice. There is a supermarket on my street and there are two cafés. There isn't a movie theater, but there is a big mall near my house. The bus stop is across from the bakery. There are a lot of beaches in Florianópolis, and my favorite beach is near the airport.",
+          "opcoes": [
+            "Next to her house.",
+            "Across from the mall.",
+            "On her street.",
+            "Near the airport."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "O texto diz: \"my favorite beach is near the airport\".",
+        "forma": 1,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa.",
+        "conteudo": {
+          "palavras": [
+            "are",
+            "house",
+            "near",
+            "two",
+            "my",
+            "there",
+            "parks"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "There are two parks near my house."
+          ]
+        },
+        "explicacao": "There are + plural + lugar.",
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Tem um hospital na minha cidade.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "There is a hospital in my town.",
+            "There is a hospital in my city.",
+            "My town has a hospital.",
+            "My city has a hospital."
+          ]
+        },
+        "explicacao": "Existência = there is. Cidade = town ou city.",
+        "tagsErro": [
+          "there_be"
+        ],
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+        "conteudo": {
+          "frase": "Have a drugstore near here?"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Is there a drugstore near here?"
+          ]
+        },
+        "explicacao": "Pergunta de existência: Is there…? e não have.",
+        "tagsErro": [
+          "there_be"
+        ],
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Vire à direita na esquina.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Turn right at the corner.",
+            "Turn right on the corner.",
+            "Turn to the right at the corner."
+          ]
+        },
+        "explicacao": "Imperativo: Turn right. Na esquina = at the corner.",
+        "forma": 1,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "There ___ a museum in my town.",
+          "opcoes": [
+            "are",
+            "have",
+            "is",
+            "be"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"A museum\" é singular: there is.",
+        "tagsErro": [
+          "there_be"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com is ou are.",
+        "conteudo": {
+          "texto": "There ___ three supermarkets in my neighborhood."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "\"Three supermarkets\" é plural: there are.",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "There isn't ___ milk in the fridge.",
+          "opcoes": [
+            "a",
+            "any",
+            "some",
+            "many"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Milk é incontável; na negativa usamos any.",
+        "tagsErro": [
+          "incontavel",
+          "quantificador"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Are there any parks near your house? Yes, there ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "are"
+            ]
+          ]
+        },
+        "explicacao": "Are there…? → Yes, there are.",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção correta.",
+        "conteudo": {
+          "texto": "___ a post office on this street?",
+          "opcoes": [
+            "Is there",
+            "Are there",
+            "There is",
+            "Have"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"A post office\" é singular: Is there…?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "How many hotels are ___ in your city?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "there"
+            ]
+          ]
+        },
+        "explicacao": "How many + plural + are there?",
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a preposição certa. (O gato está embaixo da mesa.)",
+        "conteudo": {
+          "texto": "The cat is ___ the table.",
+          "opcoes": [
+            "on",
+            "between",
+            "next",
+            "under"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Embaixo de = under.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção certa. (O banco fica em frente à escola, do outro lado da rua.)",
+        "conteudo": {
+          "texto": "The bank is ___ the school.",
+          "opcoes": [
+            "between",
+            "near of",
+            "across from",
+            "under"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Do outro lado da rua = across from.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "cloze",
+        "enunciado": "Complete. (A farmácia fica ao lado da padaria.)",
+        "conteudo": {
+          "texto": "The drugstore is ___ to the bakery."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "next"
+            ]
+          ]
+        },
+        "explicacao": "Ao lado de = next to.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Escolha a opção certa. (Não atravesse a rua aqui.)",
+        "conteudo": {
+          "texto": "___ cross the street here.",
+          "opcoes": [
+            "No",
+            "Don't",
+            "Not",
+            "Doesn't"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Imperativo negativo: Don't + verbo.",
+        "tagsErro": [
+          "do_support"
+        ],
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where is Lucas's apartment?",
+        "conteudo": {
+          "texto": "Hi! I'm Lucas and I live in Porto Alegre. There are a lot of parks in my city. My apartment is on Ipiranga Avenue, next to a big drugstore. There is a small bakery across from my building, and the bread there is great. There aren't any museums in my neighborhood, but there are two museums downtown. My school is near the bus station.",
+          "opcoes": [
+            "On Ipiranga Avenue.",
+            "Downtown.",
+            "Near the bus station.",
+            "Across from a park."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O texto diz: \"My apartment is on Ipiranga Avenue\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What is across from Lucas's building?",
+        "conteudo": {
+          "texto": "Hi! I'm Lucas and I live in Porto Alegre. There are a lot of parks in my city. My apartment is on Ipiranga Avenue, next to a big drugstore. There is a small bakery across from my building, and the bread there is great. There aren't any museums in my neighborhood, but there are two museums downtown. My school is near the bus station.",
+          "opcoes": [
+            "A big drugstore.",
+            "A museum.",
+            "His school.",
+            "A small bakery."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "O texto diz: \"There is a small bakery across from my building\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Are there any museums in Lucas's neighborhood?",
+        "conteudo": {
+          "texto": "Hi! I'm Lucas and I live in Porto Alegre. There are a lot of parks in my city. My apartment is on Ipiranga Avenue, next to a big drugstore. There is a small bakery across from my building, and the bread there is great. There aren't any museums in my neighborhood, but there are two museums downtown. My school is near the bus station.",
+          "opcoes": [
+            "Yes, there are.",
+            "Yes, there is.",
+            "No, there aren't.",
+            "No, there isn't."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"There aren't any museums in my neighborhood\". Plural → No, there aren't.",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where is Lucas's school?",
+        "conteudo": {
+          "texto": "Hi! I'm Lucas and I live in Porto Alegre. There are a lot of parks in my city. My apartment is on Ipiranga Avenue, next to a big drugstore. There is a small bakery across from my building, and the bread there is great. There aren't any museums in my neighborhood, but there are two museums downtown. My school is near the bus station.",
+          "opcoes": [
+            "Next to the drugstore.",
+            "Near the bus station.",
+            "Across from the bakery.",
+            "On Ipiranga Avenue."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"My school is near the bus station\".",
+        "forma": 2,
+        "habilidade": "leitura"
+      },
+      {
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa para formar uma pergunta.",
+        "conteudo": {
+          "palavras": [
+            "is",
+            "there",
+            "your",
+            "house",
+            "near",
+            "a",
+            "bank"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Is there a bank near your house?"
+          ]
+        },
+        "explicacao": "Pergunta de existência: Is there + a + lugar?",
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Não tem cinema no meu bairro.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "There isn't a movie theater in my neighborhood.",
+            "There isn't a cinema in my neighborhood.",
+            "There is no movie theater in my neighborhood.",
+            "There is no cinema in my neighborhood.",
+            "My neighborhood doesn't have a movie theater.",
+            "My neighborhood doesn't have a cinema.",
+            "My neighborhood has no movie theater.",
+            "My neighborhood has no cinema."
+          ]
+        },
+        "explicacao": "Negativa de existência: there isn't a… (ou there's no…). Cinema = movie theater no inglês americano.",
+        "tagsErro": [
+          "there_be"
+        ],
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "error_correction",
+        "enunciado": "A frase tem um erro. Reescreva a frase corrigida.",
+        "conteudo": {
+          "frase": "The supermarket is next of the bank."
+        },
+        "gabarito": {
+          "aceitas": [
+            "The supermarket is next to the bank."
+          ]
+        },
+        "explicacao": "Ao lado de = next to, não next of.",
+        "tagsErro": [
+          "preposicao"
+        ],
+        "forma": 2,
+        "habilidade": "escrita"
+      },
+      {
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Pegue a segunda rua à esquerda.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Take the second street on the left.",
+            "Take the second street on your left.",
+            "Take the second road on the left.",
+            "Take the second road on your left.",
+            "Take the second left."
+          ]
+        },
+        "explicacao": "Imperativo: Take the second street on the left.",
+        "forma": 2,
+        "habilidade": "escrita"
+      }
+    ]
+  }
+}

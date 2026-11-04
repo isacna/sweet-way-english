@@ -1,76 +1,79 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
+import { iconesNav } from "./navIcons";
 
 const navItems = [
-  { href: "/professor", label: "Painel", icon: "grid" },
-  { href: "/professor/turmas", label: "Turmas", icon: "users" },
-  { href: "/professor/alunos", label: "Alunos", icon: "users" },
-  { href: "/professor/materiais", label: "Materiais", icon: "folder" },
+  { href: "/professor", label: "Painel", icon: "painel" },
+  { href: "/professor/turmas", label: "Turmas", icon: "turmas" },
+  { href: "/professor/alunos", label: "Alunos", icon: "alunos" },
+  { href: "/professor/materiais", label: "Materiais", icon: "materiais" },
+  { href: "/professor/conteudo", label: "Conteúdo", icon: "conteudo" },
+  { href: "/professor/progresso", label: "Progresso", icon: "progresso" },
 ];
 
-const iconsWithActive = ["grid", "folder", "users", "graduation-cap"];
-
-function NavIcon({ icon, active }: { icon: string; active: boolean }) {
-  const hasActive = iconsWithActive.includes(icon);
-  const src = hasActive && active ? `/icons/${icon}-active.svg` : `/icons/${icon}.svg`;
-  return (
-    <Image
-      src={src}
-      alt=""
-      width={18}
-      height={18}
-      className="w-[18px] h-[18px]"
-    />
-  );
-}
-
-export type TeacherNavVariant = "horizontal" | "vertical";
+/** horizontal = cabeçalho no desktop; vertical = dentro do menu do perfil; tabs = faixa rolável no mobile. */
+export type TeacherNavVariant = "horizontal" | "vertical" | "tabs";
 
 export function TeacherNav({
   variant = "horizontal",
 }: {
   variant?: TeacherNavVariant;
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const vertical = variant === "vertical";
+  const tabs = variant === "tabs";
+  const ref = useRef<HTMLElement>(null);
+
+  // Na faixa rolável do mobile, traz a aba ativa para a área visível
+  useEffect(() => {
+    if (!tabs) return;
+    const ativo = ref.current?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (ativo && ref.current) ref.current.scrollLeft = ativo.offsetLeft - ref.current.clientWidth / 2 + ativo.clientWidth / 2;
+  }, [tabs, pathname]);
 
   return (
     <nav
-      aria-label={vertical ? "Menu principal" : undefined}
+      ref={ref}
+      aria-label={vertical ? "Menu principal" : tabs ? "Navegação da professora" : undefined}
       className={
         vertical
-          ? "flex w-full flex-col"
-          : "flex w-max max-w-none items-center gap-1 flex-nowrap md:w-full md:max-w-full md:justify-center"
+          ? "flex w-full flex-col py-1"
+          : tabs
+            ? "relative flex gap-1.5 overflow-x-auto px-4 pb-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            : "flex items-center gap-1"
       }
     >
       {navItems.map((item) => {
-        const isActive =
-          item.href === "/professor"
-            ? pathname === "/professor"
-            : pathname.startsWith(item.href);
+        const Icone = iconesNav[item.icon];
+        const isActive = item.href === "/professor" ? pathname === "/professor" : pathname.startsWith(item.href);
         return (
           <Link
             key={item.href}
             href={item.href}
             role={vertical ? "menuitem" : undefined}
+            aria-current={isActive ? "page" : undefined}
             className={
               vertical
-                ? `flex w-full items-center gap-3 px-3 py-3 text-sm font-medium transition-colors border-b border-gray-100 last:border-b-0 ${
-                    isActive
-                      ? "text-[#1898DC] bg-[#1898DC]/10"
-                      : "text-[#1A1A1A] hover:bg-gray-50"
+                ? `flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors ${
+                    isActive ? "bg-sky-soft text-sky-ink" : "text-ink hover:bg-gray-50"
                   }`
-                : `flex shrink-0 items-center gap-2 whitespace-nowrap px-3 py-2 sm:px-4 rounded-lg text-sm font-medium transition-colors ${
+                : `flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-colors ${
+                    tabs ? "min-h-[40px] px-3.5" : "px-3 py-2 xl:px-3.5"
+                  } ${
                     isActive
-                      ? "text-[#1898DC] bg-[#1898DC]/10"
-                      : "text-[#4A4A4A] hover:bg-gray-100"
+                      ? tabs
+                        ? "bg-sky text-white shadow-sm"
+                        : "bg-sky-soft text-sky-ink"
+                      : tabs
+                        ? "bg-white text-ink-soft ring-1 ring-line"
+                        : "text-ink-soft hover:bg-gray-100 hover:text-ink"
                   }`
             }
           >
-            <NavIcon icon={item.icon} active={isActive} />
+            <Icone className="h-[18px] w-[18px]" strokeWidth={isActive ? 2.4 : 2} aria-hidden />
             {item.label}
           </Link>
         );

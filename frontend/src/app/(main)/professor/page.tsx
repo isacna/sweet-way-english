@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
 import { apiFetch } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
+import { CalendarDays, Play, SquareCheckBig, UsersRound } from "lucide-react";
 
 type TurmaResumo = {
   id: number;
@@ -111,7 +111,7 @@ export default function ProfessorDashboardPage() {
       label: "Total de Alunos",
       value: carregando ? "…" : String(totalAlunos),
       icon: "users" as const,
-      color: "bg-[#1898DC]/10 text-[#1898DC]",
+      color: "bg-accent/10 text-accent",
     },
     {
       label: "Para Corrigir",
@@ -131,72 +131,57 @@ export default function ProfessorDashboardPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[#1A1A1A]">
+          <h1 className="text-2xl font-bold text-ink">
             Painel do Professor
           </h1>
-          <p className="text-[#4A4A4A] mt-1">
+          <p className="text-ink-soft mt-1">
             Visão geral das suas turmas e atividades.
           </p>
         </div>
         <Button href="/professor/atividade/nova" variant="primary" size="md">
-          <Image src="/icons/play-white.svg" alt="" width={18} height={18} />
+          <Play aria-hidden className="h-[18px] w-[18px] shrink-0 fill-current" />
           Nova Atividade
         </Button>
       </div>
 
-      <div className="grid sm:grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-2.5 sm:gap-6">
         {stats.map((stat) => (
           <div
             key={stat.label}
-            className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm"
+            className="card p-3.5 sm:p-6"
           >
             <div
-              className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${stat.color}`}
+              className={`mb-3 flex h-10 w-10 items-center justify-center rounded-2xl sm:mb-4 sm:h-12 sm:w-12 ${stat.color}`}
             >
               {stat.icon === "users" && (
-                <Image
-                  src="/icons/users-purple.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <UsersRound aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
               {stat.icon === "check" && (
-                <Image
-                  src="/icons/check-square-orange.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <SquareCheckBig aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
               {stat.icon === "calendar" && (
-                <Image
-                  src="/icons/calendar-green.svg"
-                  alt=""
-                  width={24}
-                  height={24}
-                />
+                <CalendarDays aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
             </div>
-            <p className="text-2xl font-bold text-[#1A1A1A]">{stat.value}</p>
-            <p className="text-sm text-[#4A4A4A]">{stat.label}</p>
+            <p className="font-display text-2xl font-semibold text-ink sm:text-3xl">{stat.value}</p>
+            <p className="text-xs leading-snug text-ink-soft sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8">
-        <div className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-1">
+        <div className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-1">
             Submissões Recentes
           </h2>
-          <p className="text-sm text-[#4A4A4A] mb-6">
+          <p className="text-sm text-ink-soft mb-6">
             Atividades aguardando o seu feedback
           </p>
           <div className="divide-y divide-gray-100">
             {carregando ? (
-              <p className="text-sm text-[#4A4A4A] py-4">Carregando…</p>
+              <p className="text-sm text-ink-soft py-4">Carregando…</p>
             ) : submissoesRecentes.length === 0 ? (
-              <p className="text-sm text-[#4A4A4A] py-4">
+              <p className="text-sm text-ink-soft py-4">
                 Nenhuma submissão pendente.
               </p>
             ) : (
@@ -209,18 +194,18 @@ export default function ProfessorDashboardPage() {
                   >
                     <div className="flex items-center gap-4 min-w-0">
                       <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
-                        <span className="text-sm font-medium text-[#4A4A4A]">
+                        <span className="text-sm font-medium text-ink-soft">
                           {inicial}
                         </span>
                       </div>
                       <div className="min-w-0">
-                        <p className="font-medium text-[#1A1A1A] truncate">
+                        <p className="font-medium text-ink truncate">
                           {sub.aluno?.nome ?? "Aluno"}
                         </p>
-                        <p className="text-sm text-[#4A4A4A] truncate">
+                        <p className="text-sm text-ink-soft truncate">
                           {sub.atividadeTitulo} • {sub.turmaNome}
                         </p>
-                        <p className="text-xs text-[#4A4A4A] mt-0.5">
+                        <p className="text-xs text-ink-soft mt-0.5">
                           {tempoRelativoPt(sub.dataEnvio)}
                         </p>
                       </div>
@@ -239,19 +224,19 @@ export default function ProfessorDashboardPage() {
           </div>
         </div>
 
-        <div className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm">
-          <h2 className="text-lg font-bold text-[#1A1A1A] mb-6">
+        <div className="card p-6">
+          <h2 className="text-lg font-bold text-ink mb-6">
             Minhas Turmas
           </h2>
           <div className="space-y-4">
             {carregando ? (
-              <p className="text-sm text-[#4A4A4A]">Carregando…</p>
+              <p className="text-sm text-ink-soft">Carregando…</p>
             ) : turmas.length === 0 ? (
-              <p className="text-sm text-[#4A4A4A]">
+              <p className="text-sm text-ink-soft">
                 Você ainda não criou turmas.{" "}
                 <Link
                   href="/professor/turmas/nova"
-                  className="text-[#1898DC] font-medium hover:text-[#147EB8]"
+                  className="text-accent font-medium hover:text-accent-strong"
                 >
                   Criar turma
                 </Link>
@@ -263,12 +248,12 @@ export default function ProfessorDashboardPage() {
                   className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
                 >
                   <div>
-                    <p className="font-medium text-[#1A1A1A]">{cls.nome}</p>
-                    <p className="text-sm text-[#4A4A4A]">
+                    <p className="font-medium text-ink">{cls.nome}</p>
+                    <p className="text-sm text-ink-soft">
                       Código: {cls.codigoConvite}
                     </p>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-gray-100 text-sm text-[#4A4A4A]">
+                  <span className="px-3 py-1 rounded-full bg-gray-100 text-sm text-ink-soft">
                     {cls._count?.matriculas ?? 0} alunos
                   </span>
                 </div>
@@ -277,7 +262,7 @@ export default function ProfessorDashboardPage() {
           </div>
           <Link
             href="/professor/turmas"
-            className="mt-4 inline-block text-sm font-medium text-[#1898DC] hover:text-[#147EB8]"
+            className="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-strong"
           >
             Ver todas as turmas
           </Link>

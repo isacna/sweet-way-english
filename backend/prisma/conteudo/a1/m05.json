@@ -1,0 +1,3030 @@
+{
+  "slug": "a1-m05",
+  "ordem": 5,
+  "titulo": "Do you…?",
+  "tema": "Hábitos e tempo livre",
+  "descricao": "Diga o que você não faz, faça perguntas sobre a rotina das pessoas e conte com que frequência você faz suas atividades de tempo livre.",
+  "canDos": [
+    "Consigo dizer o que eu e outras pessoas não fazemos (I don't…, she doesn't…).",
+    "Consigo fazer e responder perguntas de sim/não com do/does.",
+    "Consigo perguntar sobre a rotina com what, where, when, what time e how.",
+    "Consigo dizer com que frequência faço algo usando always, usually, often, sometimes e never.",
+    "Consigo conversar sobre atividades de tempo livre com How often…?"
+  ],
+  "gramatica": "Present simple: negativa (don't/doesn't), perguntas de sim/não e com wh- (do/does), respostas curtas, advérbios de frequência e sua posição, How often…?",
+  "vocabulario": "Atividades de tempo livre (watch TV, play soccer, play video games, go to the movies, go to the gym, listen to music, go shopping, ride a bike, visit friends) e expressões de frequência (every day, once a week, twice a week).",
+  "funcao": "Perguntar e responder sobre hábitos, rotina e tempo livre.",
+  "pronuncia": "does soa /dʌz/ e doesn't /ˈdʌzənt/; don't soa /doʊnt/. Em perguntas, do fica fraco: Do you…? soa /də jə/.",
+  "licoes": [
+    {
+      "slug": "a1-m05-l1",
+      "ordem": 1,
+      "titulo": "I don't… — negativa com I, you, we, they",
+      "objetivo": "Dizer o que você e outras pessoas não fazem usando don't + verbo.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Em português, para negar basta colocar \"não\" antes do verbo: \"Eu não trabalho\". Em inglês, no present simple, precisamos de um verbo auxiliar: do. Na negativa usamos do not, quase sempre contraído para don't.",
+          "Com I, you, we e they, a estrutura é: sujeito + don't + verbo na forma base. Exemplos: I don't work on Sundays. They don't eat meat.",
+          "Depois de don't, o verbo principal fica sempre na forma base, sem -s e sem \"to\". E \"not\" sozinho não funciona com verbos comuns: \"I not work\" está errado.",
+          "Atenção: com o verbo be (am, is, are) não usamos don't. Dizemos I'm not tired e They aren't at home."
+        ],
+        "regras": [
+          "I / You / We / They + don't + verbo",
+          "don't = do not",
+          "Depois de don't: verbo na forma base (work, play, eat)",
+          "Verbo be não usa don't: I'm not, they aren't"
+        ],
+        "notaContrastiva": "Não diga *I no like coffee* nem *I not like coffee* → diga *I don't like coffee*. O \"não\" do português vira don't + verbo.",
+        "exemplos": [
+          {
+            "en": "I don't watch TV in the morning.",
+            "pt": "Eu não assisto TV de manhã."
+          },
+          {
+            "en": "We don't work on Saturdays.",
+            "pt": "Nós não trabalhamos aos sábados."
+          },
+          {
+            "en": "They don't live in São Paulo.",
+            "pt": "Eles não moram em São Paulo."
+          },
+          {
+            "en": "You don't drink coffee.",
+            "pt": "Você não bebe café."
+          },
+          {
+            "en": "I don't play video games.",
+            "pt": "Eu não jogo videogame."
+          },
+          {
+            "en": "My parents don't speak English.",
+            "pt": "Meus pais não falam inglês."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "watch TV",
+            "pt": "assistir TV"
+          },
+          {
+            "en": "play video games",
+            "pt": "jogar videogame"
+          },
+          {
+            "en": "play soccer",
+            "pt": "jogar futebol"
+          },
+          {
+            "en": "listen to music",
+            "pt": "ouvir música"
+          },
+          {
+            "en": "read books",
+            "pt": "ler livros"
+          },
+          {
+            "en": "go to the gym",
+            "pt": "ir à academia"
+          },
+          {
+            "en": "go to the movies",
+            "pt": "ir ao cinema"
+          },
+          {
+            "en": "drink coffee",
+            "pt": "beber café"
+          },
+          {
+            "en": "eat meat",
+            "pt": "comer carne"
+          },
+          {
+            "en": "speak",
+            "pt": "falar (um idioma)"
+          },
+          {
+            "en": "like",
+            "pt": "gostar de"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "I no like soccer.",
+              "I don't like soccer.",
+              "I not like soccer.",
+              "I doesn't like soccer."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Com verbos comuns, a negativa de I usa don't + verbo. \"No\" e \"not\" sozinhos não negam verbos em inglês, e doesn't é só para he, she e it.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a negativa: \"Nós não trabalhamos aos domingos.\"",
+          "conteudo": {
+            "texto": "We ___ work on Sundays."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't"
+              ]
+            ]
+          },
+          "explicacao": "Com we, a negativa é don't + verbo na forma base: We don't work.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com aren't ou don't.",
+          "conteudo": {
+            "texto": "My friends ___ hungry. They ___ want pizza.",
+            "opcoesPorLacuna": [
+              [
+                "aren't",
+                "don't"
+              ],
+              [
+                "aren't",
+                "don't"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "aren't"
+              ],
+              [
+                "don't"
+              ]
+            ]
+          },
+          "explicacao": "Hungry é adjetivo, então usamos o verbo be: They aren't hungry. Want é verbo comum, então usamos don't: They don't want pizza.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual é a negativa de \"I play video games\"?",
+          "conteudo": {
+            "opcoes": [
+              "I don't play video games.",
+              "I don't plays video games.",
+              "I'm not play video games.",
+              "I play don't video games."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A negativa é sujeito + don't + verbo na forma base. O don't vem antes do verbo, e não usamos am com outro verbo comum.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo na forma correta: \"Você não bebe café.\" (drink)",
+          "conteudo": {
+            "texto": "You don't ___ coffee."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "drink"
+              ]
+            ]
+          },
+          "explicacao": "Depois de don't, o verbo fica na forma base, sem -s e sem to: You don't drink coffee."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "the",
+              "morning",
+              "watch",
+              "TV",
+              "I",
+              "in",
+              "don't"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I don't watch TV in the morning.",
+              "In the morning I don't watch TV."
+            ]
+          },
+          "explicacao": "Ordem: sujeito + don't + verbo + complemento. A expressão de tempo (in the morning) geralmente vai no fim, mas também pode abrir a frase."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase à sua tradução.",
+          "conteudo": {
+            "esquerda": [
+              "We don't eat meat.",
+              "They don't speak English.",
+              "I don't go to the gym.",
+              "You don't listen to music."
+            ],
+            "direita": [
+              "Você não ouve música.",
+              "Eu não vou à academia.",
+              "Nós não comemos carne.",
+              "Eles não falam inglês."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              1,
+              0
+            ]
+          },
+          "explicacao": "Em todas as frases, o \"não\" do português corresponde a don't antes do verbo."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I no work on Saturdays."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I don't work on Saturdays."
+            ]
+          },
+          "explicacao": "Em inglês, \"no\" não nega verbos. A negativa do present simple com I é don't + verbo: I don't work.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não gosto de café.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I don't like coffee."
+            ]
+          },
+          "explicacao": "Negativa com I: I don't + like. Repare que \"gostar de\" é só like, sem preposição.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós não moramos em Curitiba.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We don't live in Curitiba."
+            ]
+          },
+          "explicacao": "Negativa com we: We don't + live. Morar em uma cidade = live in.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "They ___ play soccer on Mondays.",
+            "opcoes": [
+              "doesn't",
+              "don't",
+              "aren't",
+              "not"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "They é usado com don't. Doesn't é para he, she e it; aren't é do verbo be; not sozinho não nega verbos comuns.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a negativa: \"Eu não leio livros à noite.\"",
+          "conteudo": {
+            "texto": "I ___ read books at night."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't"
+              ]
+            ]
+          },
+          "explicacao": "Com I, a negativa de um verbo comum é don't + verbo: I don't read.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "on",
+              "Fridays",
+              "don't",
+              "we",
+              "go",
+              "movies",
+              "the",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We don't go to the movies on Fridays.",
+              "On Fridays we don't go to the movies."
+            ]
+          },
+          "explicacao": "Sujeito + don't + verbo + complemento. On Fridays pode ficar no fim ou no começo da frase."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My parents not speak English."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My parents don't speak English."
+            ]
+          },
+          "explicacao": "\"Not\" sozinho não nega verbos comuns. Com my parents (= they), use don't + verbo.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles não assistem TV.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They don't watch TV.",
+              "They don't watch television."
+            ]
+          },
+          "explicacao": "Negativa com they: They don't + watch. Assistir TV = watch TV (sem preposição).",
+          "tagsErro": [
+            "do_support"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m05-l2",
+      "ordem": 2,
+      "titulo": "She doesn't… — negativa com he, she, it",
+      "objetivo": "Dizer o que outra pessoa não faz usando doesn't + verbo na forma base.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Com he, she e it (e com nomes ou pessoas como Ana, my dad, the cat), a negativa do present simple usa does not, quase sempre contraído para doesn't.",
+          "O ponto mais importante: o -s da terceira pessoa passa para o auxiliar. Na afirmativa dizemos She works; na negativa, She doesn't work. O verbo volta para a forma base, sem -s.",
+          "O mesmo vale para have: He has a car → He doesn't have a car (e não \"doesn't has\")."
+        ],
+        "regras": [
+          "He / She / It + doesn't + verbo",
+          "doesn't = does not",
+          "She works → She doesn't work (o -s sai do verbo)",
+          "He has → He doesn't have",
+          "I / you / we / they → don't · he / she / it → doesn't"
+        ],
+        "notaContrastiva": "Não diga *She don't like pizza* nem *She doesn't likes pizza* → diga *She doesn't like pizza*.",
+        "exemplos": [
+          {
+            "en": "My mom doesn't drink coffee.",
+            "pt": "Minha mãe não bebe café."
+          },
+          {
+            "en": "Pedro doesn't play soccer.",
+            "pt": "Pedro não joga futebol."
+          },
+          {
+            "en": "She doesn't work on Fridays.",
+            "pt": "Ela não trabalha às sextas."
+          },
+          {
+            "en": "He doesn't have a car.",
+            "pt": "Ele não tem carro."
+          },
+          {
+            "en": "The café doesn't open on Mondays.",
+            "pt": "O café não abre às segundas."
+          },
+          {
+            "en": "My brother doesn't watch TV.",
+            "pt": "Meu irmão não assiste TV."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "open",
+            "pt": "abrir"
+          },
+          {
+            "en": "close",
+            "pt": "fechar"
+          },
+          {
+            "en": "cook",
+            "pt": "cozinhar"
+          },
+          {
+            "en": "dance",
+            "pt": "dançar"
+          },
+          {
+            "en": "drive",
+            "pt": "dirigir"
+          },
+          {
+            "en": "ride a bike",
+            "pt": "andar de bicicleta"
+          },
+          {
+            "en": "go shopping",
+            "pt": "fazer compras"
+          },
+          {
+            "en": "visit friends",
+            "pt": "visitar amigos"
+          },
+          {
+            "en": "study",
+            "pt": "estudar"
+          },
+          {
+            "en": "have",
+            "pt": "ter"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Complete: \"Ela não fala espanhol.\"",
+          "conteudo": {
+            "texto": "She ___ speak Spanish.",
+            "opcoes": [
+              "don't",
+              "doesn't",
+              "isn't",
+              "not"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Com she, a negativa de um verbo comum é doesn't + verbo: She doesn't speak. Isn't é do verbo be.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com don't ou doesn't.",
+          "conteudo": {
+            "texto": "My dad ___ cook. My parents ___ dance.",
+            "opcoesPorLacuna": [
+              [
+                "don't",
+                "doesn't"
+              ],
+              [
+                "don't",
+                "doesn't"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "doesn't"
+              ],
+              [
+                "don't"
+              ]
+            ]
+          },
+          "explicacao": "My dad = he → doesn't. My parents = they → don't.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está correta?",
+          "conteudo": {
+            "opcoes": [
+              "He doesn't has a car.",
+              "He don't have a car.",
+              "He doesn't have a car.",
+              "He not has a car."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Na negativa, o auxiliar doesn't já marca a terceira pessoa, então o verbo volta para a forma base: have (e não has).",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo na forma correta: \"Julia não dirige.\" (drive)",
+          "conteudo": {
+            "texto": "Julia doesn't ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "drive"
+              ]
+            ]
+          },
+          "explicacao": "Depois de doesn't, o verbo fica na forma base, sem -s: Julia doesn't drive.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "Mondays",
+              "on",
+              "doesn't",
+              "open",
+              "the",
+              "café"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "The café doesn't open on Mondays.",
+              "On Mondays the café doesn't open."
+            ]
+          },
+          "explicacao": "The café = it → doesn't + open (sem -s). On Mondays pode ir no fim ou no começo."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She doesn't likes pizza."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She doesn't like pizza."
+            ]
+          },
+          "explicacao": "Depois de doesn't, o verbo não leva -s: doesn't like. O -s já está em does.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My brother don't study at night."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother doesn't study at night."
+            ]
+          },
+          "explicacao": "My brother = he, então a negativa é doesn't, não don't.",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela não trabalha aos sábados.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She doesn't work on Saturdays.",
+              "She doesn't work on Saturday."
+            ]
+          },
+          "explicacao": "She → doesn't + work (sem -s). Dias da semana usam on: on Saturdays.",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu pai não tem carro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My dad doesn't have a car.",
+              "My father doesn't have a car.",
+              "My dad has no car.",
+              "My father has no car."
+            ]
+          },
+          "explicacao": "My dad = he → doesn't have (nunca doesn't has). Em inglês, carro precisa do artigo a: a car.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual é a negativa de \"Ana plays volleyball\"?",
+          "conteudo": {
+            "opcoes": [
+              "Ana doesn't play volleyball.",
+              "Ana doesn't plays volleyball.",
+              "Ana don't play volleyball.",
+              "Ana isn't play volleyball."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Ana = she → doesn't + verbo na forma base: doesn't play.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a negativa: \"Lucas não vai à academia.\"",
+          "conteudo": {
+            "texto": "Lucas ___ go to the gym."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "doesn't"
+              ]
+            ]
+          },
+          "explicacao": "Lucas = he → doesn't + go.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele não gosta de pizza.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He doesn't like pizza."
+            ]
+          },
+          "explicacao": "He → doesn't + like. Gostar de = like, sem preposição.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual é a negativa de \"My mom has a cat\"?",
+          "conteudo": {
+            "opcoes": [
+              "My mom doesn't have a cat.",
+              "My mom doesn't has a cat.",
+              "My mom hasn't a cat.",
+              "My mom don't have a cat."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "No inglês americano, a negativa de has (ter) é doesn't have. \"Hasn't a cat\" soa antigo, e \"doesn't has\" está errado.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "ride",
+              "a",
+              "my",
+              "bike",
+              "doesn't",
+              "brother"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother doesn't ride a bike."
+            ]
+          },
+          "explicacao": "My brother = he → doesn't + ride (forma base) + a bike."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m05-l3",
+      "ordem": 3,
+      "titulo": "Do you…? Does she…? — perguntas e respostas curtas",
+      "objetivo": "Fazer perguntas de sim/não com do/does e responder com respostas curtas.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Em português, muitas vezes a pergunta é igual à afirmação, só muda a entonação: \"Você gosta de café?\". Em inglês, no present simple, a pergunta começa com o auxiliar Do ou Does.",
+          "Use Do com I, you, we e they, e Does com he, she e it: Do you like coffee? Does she work here? Depois de Does, o verbo também fica na forma base: Does he play soccer? (e não \"Does he plays\").",
+          "Nas respostas curtas repetimos o auxiliar, não o verbo principal: Yes, I do. / No, I don't. Yes, she does. / No, she doesn't.",
+          "Com o verbo be não usamos do: Are you tired? Is she Brazilian?"
+        ],
+        "regras": [
+          "Do + I / you / we / they + verbo…?",
+          "Does + he / she / it + verbo…?",
+          "Yes, I do. / No, I don't.",
+          "Yes, she does. / No, she doesn't.",
+          "Com be, sem do: Are you…? Is he…?"
+        ],
+        "notaContrastiva": "Não pergunte *You like pizza?* nem *Like you pizza?* → pergunte *Do you like pizza?*",
+        "exemplos": [
+          {
+            "en": "Do you like pizza? – Yes, I do.",
+            "pt": "Você gosta de pizza? – Sim, gosto."
+          },
+          {
+            "en": "Does she speak English? – No, she doesn't.",
+            "pt": "Ela fala inglês? – Não, não fala."
+          },
+          {
+            "en": "Do they live in Recife? – Yes, they do.",
+            "pt": "Eles moram em Recife? – Sim, moram."
+          },
+          {
+            "en": "Does your brother play video games?",
+            "pt": "Seu irmão joga videogame?"
+          },
+          {
+            "en": "Do we have class on Friday?",
+            "pt": "Nós temos aula na sexta?"
+          },
+          {
+            "en": "Does the store open on Sundays?",
+            "pt": "A loja abre aos domingos?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "Do you…?",
+            "pt": "Você…? (pergunta)"
+          },
+          {
+            "en": "Does he / she…?",
+            "pt": "Ele / Ela…? (pergunta)"
+          },
+          {
+            "en": "Yes, I do.",
+            "pt": "Sim."
+          },
+          {
+            "en": "No, I don't.",
+            "pt": "Não."
+          },
+          {
+            "en": "class",
+            "pt": "aula"
+          },
+          {
+            "en": "store",
+            "pt": "loja"
+          },
+          {
+            "en": "weekend",
+            "pt": "fim de semana"
+          },
+          {
+            "en": "on the weekend",
+            "pt": "no fim de semana"
+          },
+          {
+            "en": "sing",
+            "pt": "cantar"
+          },
+          {
+            "en": "swim",
+            "pt": "nadar"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com Do ou Does.",
+          "conteudo": {
+            "texto": "___ you like chocolate? ___ your sister like chocolate?",
+            "opcoesPorLacuna": [
+              [
+                "Do",
+                "Does"
+              ],
+              [
+                "Do",
+                "Does"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Do"
+              ],
+              [
+                "Does"
+              ]
+            ]
+          },
+          "explicacao": "You → Do. Your sister = she → Does.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "You play soccer?",
+              "Do you play soccer?",
+              "Does you play soccer?",
+              "Are you play soccer?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Perguntas no present simple começam com Do (I/you/we/they) ou Does (he/she/it). Are é do verbo be e não se junta a outro verbo comum.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta: \"Does Carla swim?\" (Sim.)",
+          "conteudo": {
+            "opcoes": [
+              "Yes, she does.",
+              "Yes, she do.",
+              "Yes, she is.",
+              "Yes, she doesn't."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Na resposta curta repetimos o auxiliar da pergunta: Does → Yes, she does."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Do your parents speak English? – No, they ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't"
+              ]
+            ]
+          },
+          "explicacao": "A pergunta usa Do, então a resposta negativa curta é No, they don't."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "your",
+              "brother",
+              "video",
+              "play",
+              "games",
+              "does"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Does your brother play video games?"
+            ]
+          },
+          "explicacao": "Pergunta: Does + sujeito + verbo na forma base + complemento."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Do you like coffee?",
+              "Does Ana work here?",
+              "Do your friends play soccer?",
+              "Is Pedro Brazilian?",
+              "Does the store open on Sundays?"
+            ],
+            "direita": [
+              "Yes, they do.",
+              "Yes, I do.",
+              "No, it doesn't.",
+              "No, she doesn't.",
+              "Yes, he is."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              0,
+              4,
+              2
+            ]
+          },
+          "explicacao": "A resposta curta repete o auxiliar e o pronome da pergunta: Do you → I do; Does Ana → she doesn't; Is Pedro → he is."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Does she plays tennis?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Does she play tennis?"
+            ]
+          },
+          "explicacao": "Depois de Does, o verbo fica na forma base, sem -s: Does she play?",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você gosta de música brasileira?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Do you like Brazilian music?"
+            ]
+          },
+          "explicacao": "Pergunta com you: Do you + like? Em inglês, o adjetivo vem antes do substantivo e nacionalidade tem letra maiúscula: Brazilian music.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela mora em Salvador?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Does she live in Salvador?"
+            ]
+          },
+          "explicacao": "Pergunta com she: Does she + live (sem -s)?",
+          "tagsErro": [
+            "do_support",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "___ Bruno cook on the weekend?",
+            "opcoes": [
+              "Do",
+              "Does",
+              "Is",
+              "Are"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Bruno = he → Does + verbo na forma base: Does Bruno cook?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta.",
+          "conteudo": {
+            "texto": "Do you swim? – Yes, I ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "do"
+              ]
+            ]
+          },
+          "explicacao": "A pergunta usa Do, então a resposta curta afirmativa é Yes, I do."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "You like pizza?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Do you like pizza?"
+            ]
+          },
+          "explicacao": "Em inglês a pergunta no present simple precisa do auxiliar: Do you like…? Só a entonação não basta.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "in",
+              "they",
+              "Recife",
+              "do",
+              "live"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Do they live in Recife?"
+            ]
+          },
+          "explicacao": "Pergunta: Do + they + live + in Recife?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "Do you tired?",
+              "Are you tired?",
+              "Does you tired?",
+              "Is you tired?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Tired é adjetivo, então a pergunta usa o verbo be: Are you tired? Do/does só aparecem com verbos comuns."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m05-l4",
+      "ordem": 4,
+      "titulo": "Where do you live? — perguntas com wh-",
+      "objetivo": "Fazer perguntas com what, where, when, what time e how no present simple.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntas com palavras interrogativas (what, where, when, what time, how), a ordem é: palavra interrogativa + do/does + sujeito + verbo na forma base.",
+          "Exemplos: Where do you live? What time does she get up? What do they eat for breakfast? A ordem é diferente do português (\"Onde você mora?\"): em inglês, o auxiliar vem antes do sujeito.",
+          "Lembre-se: does já carrega a marca da terceira pessoa, então o verbo não leva -s: Where does he work? (e não \"Where does he works?\")."
+        ],
+        "regras": [
+          "Wh- + do/does + sujeito + verbo…?",
+          "Where do you live?",
+          "What time does she get up?",
+          "What do they eat for lunch?",
+          "How do you go to school? – By bus."
+        ],
+        "notaContrastiva": "Não diga *Where you live?* nem *Where does she lives?* → diga *Where do you live?* / *Where does she live?*",
+        "exemplos": [
+          {
+            "en": "Where do you live? – I live in Belo Horizonte.",
+            "pt": "Onde você mora? – Moro em Belo Horizonte."
+          },
+          {
+            "en": "What time does your class start? – At seven.",
+            "pt": "A que horas sua aula começa? – Às sete."
+          },
+          {
+            "en": "What do you eat for breakfast?",
+            "pt": "O que você come no café da manhã?"
+          },
+          {
+            "en": "When do they go to the beach? – On the weekend.",
+            "pt": "Quando eles vão à praia? – No fim de semana."
+          },
+          {
+            "en": "Where does your sister work?",
+            "pt": "Onde sua irmã trabalha?"
+          },
+          {
+            "en": "How do you go to school? – By bus.",
+            "pt": "Como você vai para a escola? – De ônibus."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "what",
+            "pt": "o que / qual"
+          },
+          {
+            "en": "where",
+            "pt": "onde"
+          },
+          {
+            "en": "when",
+            "pt": "quando"
+          },
+          {
+            "en": "what time",
+            "pt": "a que horas"
+          },
+          {
+            "en": "how",
+            "pt": "como"
+          },
+          {
+            "en": "start",
+            "pt": "começar"
+          },
+          {
+            "en": "finish",
+            "pt": "terminar"
+          },
+          {
+            "en": "get up",
+            "pt": "levantar-se"
+          },
+          {
+            "en": "breakfast",
+            "pt": "café da manhã"
+          },
+          {
+            "en": "lunch",
+            "pt": "almoço"
+          },
+          {
+            "en": "by bus",
+            "pt": "de ônibus"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra interrogativa.",
+          "conteudo": {
+            "texto": "___ do you live? – In Fortaleza.",
+            "opcoes": [
+              "What",
+              "Where",
+              "When",
+              "What time"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "A resposta é um lugar (In Fortaleza), então a pergunta é Where (onde)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra interrogativa.",
+          "conteudo": {
+            "texto": "___ does the movie start? – At 8 o'clock.",
+            "opcoes": [
+              "Where",
+              "What time",
+              "What",
+              "How"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "A resposta é um horário (At 8 o'clock), então perguntamos What time (a que horas)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com do ou does.",
+          "conteudo": {
+            "texto": "Where ___ your parents work? What time ___ Julia get up?",
+            "opcoesPorLacuna": [
+              [
+                "do",
+                "does"
+              ],
+              [
+                "do",
+                "does"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "do"
+              ],
+              [
+                "does"
+              ]
+            ]
+          },
+          "explicacao": "Your parents = they → do. Julia = she → does.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo na forma base: \"Onde ele trabalha?\" (work)",
+          "conteudo": {
+            "texto": "Where does he ___?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "work"
+              ]
+            ]
+          },
+          "explicacao": "Depois de does, o verbo fica na forma base, sem -s: Where does he work?",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "up",
+              "get",
+              "you",
+              "time",
+              "do",
+              "what"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What time do you get up?"
+            ]
+          },
+          "explicacao": "Ordem da pergunta: What time + do + you + get up?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "does",
+              "sister",
+              "work",
+              "where",
+              "your"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where does your sister work?"
+            ]
+          },
+          "explicacao": "Ordem: Where + does + your sister + work (sem -s)?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Where you live?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where do you live?"
+            ]
+          },
+          "explicacao": "Perguntas com wh- no present simple precisam do auxiliar: Where do you live?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você come no café da manhã?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What do you eat for breakfast?",
+              "What do you have for breakfast?",
+              "What do you eat at breakfast?"
+            ]
+          },
+          "explicacao": "What + do + you + eat? \"No café da manhã\" = for breakfast.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Onde eles trabalham?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where do they work?"
+            ]
+          },
+          "explicacao": "Where + do + they + work? O auxiliar do vem antes do sujeito.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Where do you live?",
+              "What time does the class start?",
+              "How do you go to work?",
+              "What do you study?"
+            ],
+            "direita": [
+              "At 7:30.",
+              "In Manaus.",
+              "English.",
+              "By bus."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              0,
+              3,
+              2
+            ]
+          },
+          "explicacao": "Where pede um lugar, what time um horário, how um modo (by bus) e what uma coisa."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "What time does she gets up?",
+              "What time she gets up?",
+              "What time does she get up?",
+              "What time do she get up?"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "She → does, e depois de does o verbo fica na forma base: What time does she get up?",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Quando eles vão à praia?\"",
+          "conteudo": {
+            "texto": "When ___ they go to the beach?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "do"
+              ]
+            ]
+          },
+          "explicacao": "They → do: When do they go…?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "What does he wants for dinner?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What does he want for dinner?"
+            ]
+          },
+          "explicacao": "Depois de does, o verbo fica na forma base: does he want.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Onde sua mãe trabalha?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where does your mom work?",
+              "Where does your mother work?"
+            ]
+          },
+          "explicacao": "Your mom = she → Where does your mom work? (work sem -s).",
+          "tagsErro": [
+            "do_support",
+            "terceira_pessoa_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m05-l5",
+      "ordem": 5,
+      "titulo": "Always, sometimes, never — advérbios de frequência",
+      "objetivo": "Dizer com que frequência você faz algo e colocar o advérbio na posição certa.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para dizer com que frequência fazemos algo, usamos advérbios de frequência: always (sempre), usually (geralmente), often (com frequência), sometimes (às vezes) e never (nunca).",
+          "Posição: o advérbio vem ANTES do verbo principal (I always drink coffee. She never eats meat.), mas DEPOIS do verbo be (I'm always tired. He is never late.).",
+          "Never já é negativo: She never watches TV (e não \"She doesn't never watch\"). Em português dizemos \"não… nunca\", mas em inglês não usamos duas negações.",
+          "Sometimes e usually também podem abrir a frase: Sometimes I go to the beach."
+        ],
+        "regras": [
+          "always (100%) → usually → often → sometimes → never (0%)",
+          "Advérbio + verbo: I usually walk to school.",
+          "be + advérbio: She is always happy.",
+          "never já é negativo: I never eat fish.",
+          "Sometimes / Usually podem abrir a frase."
+        ],
+        "notaContrastiva": "Não diga *I go always to the beach* nem *I don't never eat fish* → diga *I always go to the beach* / *I never eat fish*.",
+        "exemplos": [
+          {
+            "en": "I always have breakfast at seven.",
+            "pt": "Eu sempre tomo café da manhã às sete."
+          },
+          {
+            "en": "She usually walks to school.",
+            "pt": "Ela geralmente vai a pé para a escola."
+          },
+          {
+            "en": "We often go to the beach.",
+            "pt": "Nós vamos à praia com frequência."
+          },
+          {
+            "en": "They sometimes play video games.",
+            "pt": "Eles às vezes jogam videogame."
+          },
+          {
+            "en": "My dad never drinks soda.",
+            "pt": "Meu pai nunca bebe refrigerante."
+          },
+          {
+            "en": "He is always happy.",
+            "pt": "Ele está sempre feliz."
+          },
+          {
+            "en": "I'm never late.",
+            "pt": "Eu nunca me atraso."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "always",
+            "pt": "sempre"
+          },
+          {
+            "en": "usually",
+            "pt": "geralmente"
+          },
+          {
+            "en": "often",
+            "pt": "com frequência"
+          },
+          {
+            "en": "sometimes",
+            "pt": "às vezes"
+          },
+          {
+            "en": "never",
+            "pt": "nunca"
+          },
+          {
+            "en": "late",
+            "pt": "atrasado"
+          },
+          {
+            "en": "early",
+            "pt": "cedo"
+          },
+          {
+            "en": "walk to school",
+            "pt": "ir a pé para a escola"
+          },
+          {
+            "en": "go to the beach",
+            "pt": "ir à praia"
+          },
+          {
+            "en": "soda",
+            "pt": "refrigerante"
+          },
+          {
+            "en": "busy",
+            "pt": "ocupado"
+          },
+          {
+            "en": "happy",
+            "pt": "feliz"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase com o advérbio na posição correta.",
+          "conteudo": {
+            "opcoes": [
+              "I eat always breakfast.",
+              "I always eat breakfast.",
+              "Always I eat breakfast.",
+              "I always eats breakfast."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Com verbos comuns, o advérbio de frequência vem antes do verbo: I always eat. Com I, o verbo não leva -s."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "She is always happy.",
+              "She always happy.",
+              "She does always happy.",
+              "Always she happy is."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Com o verbo be, o advérbio vem depois dele: She is always happy. Happy é adjetivo, então o verbo be é obrigatório."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Eu nunca bebo refrigerante.\"",
+          "conteudo": {
+            "texto": "I ___ drink soda."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "never"
+              ]
+            ]
+          },
+          "explicacao": "Nunca = never, antes do verbo principal: I never drink."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Nós geralmente almoçamos ao meio-dia.\"",
+          "conteudo": {
+            "texto": "We ___ have lunch at noon."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "usually",
+                "normally",
+                "generally"
+              ]
+            ]
+          },
+          "explicacao": "Geralmente = usually, antes do verbo: We usually have lunch."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada advérbio ao significado.",
+          "conteudo": {
+            "esquerda": [
+              "always",
+              "usually",
+              "often",
+              "sometimes",
+              "never"
+            ],
+            "direita": [
+              "geralmente",
+              "às vezes",
+              "nunca",
+              "com frequência",
+              "sempre"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              0,
+              3,
+              1,
+              2
+            ]
+          },
+          "explicacao": "Do mais frequente para o menos frequente: always → usually → often → sometimes → never."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "school",
+              "he",
+              "to",
+              "walks",
+              "usually"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "He usually walks to school.",
+              "Usually he walks to school."
+            ]
+          },
+          "explicacao": "Usually vem antes do verbo principal (walks), mas também pode abrir a frase."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I don't never eat fish."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I never eat fish.",
+              "I don't ever eat fish.",
+              "I don't eat fish."
+            ]
+          },
+          "explicacao": "Never já é negativo; em inglês não se usa don't + never. Diga I never eat fish.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela nunca assiste TV.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She never watches TV.",
+              "She never watches television."
+            ]
+          },
+          "explicacao": "Never vem antes do verbo, e o verbo continua com -s porque o sujeito é she: She never watches. Não use doesn't com never.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eles estão sempre ocupados.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are always busy."
+            ]
+          },
+          "explicacao": "Com o verbo be, o advérbio vem depois: They are always busy."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "My mom drinks often coffee.",
+              "My mom often drinks coffee.",
+              "My mom often drink coffee.",
+              "Often my mom drink coffee."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Often vem antes do verbo principal, e my mom = she, então o verbo leva -s: often drinks.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo play na forma correta: \"Ele às vezes joga videogame.\"",
+          "conteudo": {
+            "texto": "He sometimes ___ video games."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "plays"
+              ]
+            ]
+          },
+          "explicacao": "O advérbio não muda a regra da terceira pessoa: he → plays.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "always",
+              "friends",
+              "late",
+              "are",
+              "my"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My friends are always late."
+            ]
+          },
+          "explicacao": "Com o verbo be, o advérbio vem depois dele: are always late."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She goes always to the gym."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She always goes to the gym."
+            ]
+          },
+          "explicacao": "O advérbio de frequência vem antes do verbo principal: She always goes."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós às vezes vamos ao cinema.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We sometimes go to the movies.",
+              "Sometimes we go to the movies.",
+              "Sometimes, we go to the movies.",
+              "We go to the movies sometimes.",
+              "We sometimes go to the cinema.",
+              "Sometimes we go to the cinema.",
+              "Sometimes, we go to the cinema.",
+              "We go to the cinema sometimes."
+            ]
+          },
+          "explicacao": "Sometimes pode ficar antes do verbo, no começo ou no fim da frase. Ir ao cinema = go to the movies (inglês americano)."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m05-l6",
+      "ordem": 6,
+      "titulo": "How often…? — tempo livre",
+      "objetivo": "Perguntar e responder com que frequência alguém faz atividades de tempo livre.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar sobre frequência, use How often + do/does: How often do you go to the gym? (Com que frequência você vai à academia?)",
+          "Na resposta, use um advérbio de frequência ou expressões como every day (todo dia), every week (toda semana), once a week (uma vez por semana), twice a week (duas vezes por semana) e three times a week. Essas expressões costumam ficar no fim da frase: I go to the gym twice a week.",
+          "Para falar do tempo livre, use o present simple: What do you do on the weekend? – I usually visit my grandparents."
+        ],
+        "regras": [
+          "How often + do/does + sujeito + verbo…?",
+          "every day / every week / every Saturday",
+          "once a week (1x) · twice a week (2x) · three times a week (3x)",
+          "Expressões de frequência vão no fim: I swim every day."
+        ],
+        "notaContrastiva": "Não diga *I go to the gym two times for week* → diga *I go to the gym twice a week*. \"Por semana\" vira *a week*.",
+        "exemplos": [
+          {
+            "en": "How often do you go to the gym? – Twice a week.",
+            "pt": "Com que frequência você vai à academia? – Duas vezes por semana."
+          },
+          {
+            "en": "I play soccer every Saturday.",
+            "pt": "Eu jogo futebol todo sábado."
+          },
+          {
+            "en": "She visits her grandma once a week.",
+            "pt": "Ela visita a avó uma vez por semana."
+          },
+          {
+            "en": "What do you do on the weekend?",
+            "pt": "O que você faz no fim de semana?"
+          },
+          {
+            "en": "How often does he play video games? – Every day.",
+            "pt": "Com que frequência ele joga videogame? – Todo dia."
+          },
+          {
+            "en": "We go to the park three times a week.",
+            "pt": "Nós vamos ao parque três vezes por semana."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "How often…?",
+            "pt": "Com que frequência…?"
+          },
+          {
+            "en": "every day",
+            "pt": "todo dia"
+          },
+          {
+            "en": "every weekend",
+            "pt": "todo fim de semana"
+          },
+          {
+            "en": "once a week",
+            "pt": "uma vez por semana"
+          },
+          {
+            "en": "twice a week",
+            "pt": "duas vezes por semana"
+          },
+          {
+            "en": "three times a week",
+            "pt": "três vezes por semana"
+          },
+          {
+            "en": "once a month",
+            "pt": "uma vez por mês"
+          },
+          {
+            "en": "free time",
+            "pt": "tempo livre"
+          },
+          {
+            "en": "go to the park",
+            "pt": "ir ao parque"
+          },
+          {
+            "en": "visit my grandparents",
+            "pt": "visitar meus avós"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a expressão certa.",
+          "conteudo": {
+            "texto": "___ do you go to the movies? – Once a month.",
+            "opcoes": [
+              "How often",
+              "What time",
+              "Where",
+              "How"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A resposta é uma frequência (Once a month), então a pergunta é How often."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se diz \"duas vezes por semana\"?",
+          "conteudo": {
+            "opcoes": [
+              "two times for week",
+              "twice a week",
+              "two for week",
+              "twice for week"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "\"Por semana\" = a week. Duas vezes = twice (ou two times): twice a week.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Eu vou à academia três vezes por semana.\"",
+          "conteudo": {
+            "texto": "I go to the gym three times ___ week."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "a",
+                "per"
+              ]
+            ]
+          },
+          "explicacao": "\"Por semana\" = a week (também se diz per week). Nunca use for aqui.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com do ou does.",
+          "conteudo": {
+            "texto": "How often ___ your brother play soccer?",
+            "opcoesPorLacuna": [
+              [
+                "do",
+                "does"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "does"
+              ]
+            ]
+          },
+          "explicacao": "Your brother = he → does: How often does your brother play?",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "you",
+              "grandparents",
+              "how",
+              "your",
+              "do",
+              "often",
+              "visit"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How often do you visit your grandparents?"
+            ]
+          },
+          "explicacao": "How often + do + you + visit + complemento?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada expressão ao significado.",
+          "conteudo": {
+            "esquerda": [
+              "every day",
+              "once a week",
+              "twice a week",
+              "every weekend",
+              "three times a week"
+            ],
+            "direita": [
+              "uma vez por semana",
+              "duas vezes por semana",
+              "todo fim de semana",
+              "três vezes por semana",
+              "todo dia"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "explicacao": "Once = uma vez, twice = duas vezes; a partir de três: three times, four times… \"Por semana\" = a week."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How often she goes to the park?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How often does she go to the park?"
+            ]
+          },
+          "explicacao": "How often também precisa do auxiliar: How often does she go…? (go sem -s depois de does).",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Com que frequência você joga videogame?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How often do you play video games?",
+              "How often do you play videogames?"
+            ]
+          },
+          "explicacao": "How often + do + you + play? Jogar videogame = play video games.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu visito meus avós todo domingo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I visit my grandparents every Sunday.",
+              "Every Sunday I visit my grandparents.",
+              "Every Sunday, I visit my grandparents.",
+              "I visit my grandparents on Sundays."
+            ]
+          },
+          "explicacao": "Todo domingo = every Sunday (sem on). Avós = grandparents."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual resposta combina com \"How often do you go shopping?\"",
+          "conteudo": {
+            "opcoes": [
+              "At the mall.",
+              "Once a month.",
+              "At 3 o'clock.",
+              "With my mom."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "How often pergunta frequência, então a resposta é Once a month. At the mall responde where; at 3 o'clock responde what time."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Ela nada todo dia.\"",
+          "conteudo": {
+            "texto": "She swims every ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "day"
+              ]
+            ]
+          },
+          "explicacao": "Todo dia = every day."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "goes",
+              "the",
+              "twice",
+              "a",
+              "park",
+              "she",
+              "week",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She goes to the park twice a week.",
+              "Twice a week she goes to the park."
+            ]
+          },
+          "explicacao": "A expressão de frequência twice a week geralmente fica no fim, mas pode abrir a frase."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I play soccer two times for week."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I play soccer two times a week.",
+              "I play soccer twice a week.",
+              "I play soccer two times per week."
+            ]
+          },
+          "explicacao": "\"Por semana\" é a week, não for week.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você faz no fim de semana?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What do you do on the weekend?",
+              "What do you do on weekends?",
+              "What do you do on the weekends?",
+              "What do you do at the weekend?",
+              "What do you do at weekends?"
+            ]
+          },
+          "explicacao": "What + do (auxiliar) + you + do (verbo fazer)? No fim de semana = on the weekend (inglês americano).",
+          "tagsErro": [
+            "do_support"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "She ___ like fish.",
+          "opcoes": [
+            "don't",
+            "doesn't",
+            "isn't",
+            "not"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "She → doesn't + verbo na forma base.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "___ you work on Saturdays?",
+          "opcoes": [
+            "Do",
+            "Does",
+            "Are",
+            "Is"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "You → Do: Do you work…?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Do your parents live in Brasília? – Yes, they ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "do"
+            ]
+          ]
+        },
+        "explicacao": "A pergunta usa Do, então: Yes, they do."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "Where ___ your brother study?",
+          "opcoes": [
+            "do",
+            "does",
+            "is",
+            "are"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Your brother = he → does: Where does your brother study?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "He never drinks soda.",
+            "He drinks never soda.",
+            "He doesn't never drink soda.",
+            "Never he drinks soda."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Never vem antes do verbo principal e já é negativo (sem doesn't)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo na forma correta: \"Meu pai não cozinha.\" (cook)",
+        "conteudo": {
+          "texto": "My dad doesn't ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "cook"
+            ]
+          ]
+        },
+        "explicacao": "Depois de doesn't, o verbo fica na forma base: cook.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a expressão certa.",
+        "conteudo": {
+          "texto": "___ do you go to the gym? – Three times a week.",
+          "opcoes": [
+            "How often",
+            "What time",
+            "Where",
+            "What"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "A resposta é uma frequência, então perguntamos How often."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "They are usually busy on Mondays.",
+            "They are busy usually on Mondays.",
+            "They busy usually on Mondays.",
+            "Usually they busy on Mondays."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Com o verbo be, o advérbio vem depois dele: They are usually busy."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Does Carla speak French? – No, she ___.",
+          "opcoesPorLacuna": [
+            [
+              "don't",
+              "doesn't",
+              "isn't"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "doesn't"
+            ]
+          ]
+        },
+        "explicacao": "A pergunta usa Does, então: No, she doesn't."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual expressão significa \"ir ao cinema\"?",
+        "conteudo": {
+          "opcoes": [
+            "go to the movies",
+            "go to the gym",
+            "go shopping",
+            "go to the park"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Ir ao cinema = go to the movies (inglês americano)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What does Rafael usually do on Saturdays?",
+        "conteudo": {
+          "texto": "Hi, I'm Rafael. I'm 15 and I live in Florianópolis. On weekdays, I get up at 6:30 and go to school by bus. I don't have classes on the weekend. On Saturdays, I usually go to the beach with my friends. I never watch TV in the morning. My sister, Bia, doesn't like the beach. She often goes to the movies.",
+          "opcoes": [
+            "He goes to school.",
+            "He goes to the beach.",
+            "He watches TV.",
+            "He goes to the movies."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"On Saturdays, I usually go to the beach with my friends.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Qual frase é verdadeira?",
+        "conteudo": {
+          "texto": "Hi, I'm Rafael. I'm 15 and I live in Florianópolis. On weekdays, I get up at 6:30 and go to school by bus. I don't have classes on the weekend. On Saturdays, I usually go to the beach with my friends. I never watch TV in the morning. My sister, Bia, doesn't like the beach. She often goes to the movies.",
+          "opcoes": [
+            "Bia likes the beach.",
+            "Rafael has classes on Saturdays.",
+            "Bia often goes to the movies.",
+            "Rafael watches TV in the morning."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"She often goes to the movies.\" Bia não gosta de praia, Rafael não tem aula no fim de semana e nunca assiste TV de manhã."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How often does Marcos play soccer?",
+        "conteudo": {
+          "texto": "My name is Lúcia. I work at a bakery in Porto Alegre. The bakery opens at 6 a.m., so I always get up early. I don't work on Sundays. On Sundays, I visit my parents. My husband, Marcos, doesn't work at the bakery. He is a teacher. He plays soccer twice a week.",
+          "opcoes": [
+            "Every day.",
+            "Twice a week.",
+            "On Sundays.",
+            "Never."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"He plays soccer twice a week.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Does Lúcia work on Sundays?",
+        "conteudo": {
+          "texto": "My name is Lúcia. I work at a bakery in Porto Alegre. The bakery opens at 6 a.m., so I always get up early. I don't work on Sundays. On Sundays, I visit my parents. My husband, Marcos, doesn't work at the bakery. He is a teacher. He plays soccer twice a week.",
+          "opcoes": [
+            "Yes, she does.",
+            "No, she doesn't.",
+            "Yes, she is.",
+            "No, she isn't."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"I don't work on Sundays.\" A resposta curta usa does: No, she doesn't."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa.",
+        "conteudo": {
+          "palavras": [
+            "sister",
+            "your",
+            "video",
+            "play",
+            "games",
+            "does"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Does your sister play video games?"
+          ]
+        },
+        "explicacao": "Pergunta: Does + sujeito + verbo na forma base + complemento."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós não moramos no Rio.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We don't live in Rio.",
+            "We don't live in Rio de Janeiro."
+          ]
+        },
+        "explicacao": "We → don't + live.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "My brother don't like soccer."
+        },
+        "gabarito": {
+          "aceitas": [
+            "My brother doesn't like soccer."
+          ]
+        },
+        "explicacao": "My brother = he → doesn't.",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Com que frequência ela vai à praia?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "How often does she go to the beach?"
+          ]
+        },
+        "explicacao": "How often + does + she + go (sem -s)?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "We ___ watch TV at night.",
+          "opcoes": [
+            "doesn't",
+            "don't",
+            "aren't",
+            "not"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "We → don't + verbo.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "___ your mom drive?",
+          "opcoes": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Your mom = she → Does: Does your mom drive?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Does Pedro like pizza? – Yes, he ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "does"
+            ]
+          ]
+        },
+        "explicacao": "A pergunta usa Does, então: Yes, he does."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "What time ___ you have lunch?",
+          "opcoes": [
+            "do",
+            "does",
+            "are",
+            "is"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "You → do: What time do you have lunch?",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "I always walk to school.",
+            "I walk always to school.",
+            "Always I walk to school.",
+            "I always walks to school."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "O advérbio vem antes do verbo principal, e com I o verbo não leva -s."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo na forma correta: \"Ela não tem bicicleta.\" (have)",
+        "conteudo": {
+          "texto": "She doesn't ___ a bike."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "have"
+            ]
+          ]
+        },
+        "explicacao": "Depois de doesn't, use have (nunca has).",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra interrogativa.",
+        "conteudo": {
+          "texto": "___ do you live? – In Belém.",
+          "opcoes": [
+            "Where",
+            "What",
+            "When",
+            "How often"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "A resposta é um lugar, então a pergunta é Where."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "He is never late.",
+            "He never late.",
+            "He is late never.",
+            "Never he is late."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Com o verbo be, o advérbio vem depois dele: He is never late."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta.",
+        "conteudo": {
+          "texto": "Do you speak Spanish? – No, I ___.",
+          "opcoesPorLacuna": [
+            [
+              "don't",
+              "doesn't",
+              "am not"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "don't"
+            ]
+          ]
+        },
+        "explicacao": "A pergunta usa Do, então: No, I don't."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual é a tradução de \"às vezes\"?",
+        "conteudo": {
+          "opcoes": [
+            "sometimes",
+            "always",
+            "never",
+            "usually"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Às vezes = sometimes."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Where does Tom work?",
+        "conteudo": {
+          "texto": "This is my friend Tom. He is from Chicago, but he lives in São Paulo now. He works at an English school. He doesn't work in the morning. He usually starts work at 2 p.m. In his free time, he plays volleyball and cooks Brazilian food. He doesn't drink coffee, but he often drinks tea.",
+          "opcoes": [
+            "At a restaurant.",
+            "At an English school.",
+            "At a café.",
+            "At home."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"He works at an English school.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Qual frase é verdadeira?",
+        "conteudo": {
+          "texto": "This is my friend Tom. He is from Chicago, but he lives in São Paulo now. He works at an English school. He doesn't work in the morning. He usually starts work at 2 p.m. In his free time, he plays volleyball and cooks Brazilian food. He doesn't drink coffee, but he often drinks tea.",
+          "opcoes": [
+            "Tom works in the morning.",
+            "Tom often drinks tea.",
+            "Tom is from São Paulo.",
+            "Tom drinks coffee every day."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"he often drinks tea.\" Tom é de Chicago, não trabalha de manhã e não bebe café."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. What does Paula's grandma do?",
+        "conteudo": {
+          "texto": "Hi! I'm Paula. I live with my grandparents in Natal. My grandpa gets up at 5 a.m. every day. He always walks in the park. My grandma doesn't walk in the park. She reads books and listens to music. On Fridays, we eat pizza together. I never cook on Fridays!",
+          "opcoes": [
+            "She walks in the park.",
+            "She reads books and listens to music.",
+            "She gets up at 5 a.m.",
+            "She cooks pizza."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"She reads books and listens to music.\" Quem caminha no parque e acorda às 5 é o avô."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Does Paula cook on Fridays?",
+        "conteudo": {
+          "texto": "Hi! I'm Paula. I live with my grandparents in Natal. My grandpa gets up at 5 a.m. every day. He always walks in the park. My grandma doesn't walk in the park. She reads books and listens to music. On Fridays, we eat pizza together. I never cook on Fridays!",
+          "opcoes": [
+            "Yes, she does.",
+            "No, she doesn't.",
+            "Yes, she is.",
+            "No, she isn't."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"I never cook on Fridays!\" Resposta curta com does: No, she doesn't."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa.",
+        "conteudo": {
+          "palavras": [
+            "open",
+            "time",
+            "does",
+            "store",
+            "what",
+            "the"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What time does the store open?"
+          ]
+        },
+        "explicacao": "What time + does + the store + open?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ele não bebe café.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "He doesn't drink coffee."
+          ]
+        },
+        "explicacao": "He → doesn't + drink (sem -s).",
+        "tagsErro": [
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "Do she work on Saturdays?"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Does she work on Saturdays?"
+          ]
+        },
+        "explicacao": "She → Does: Does she work…?",
+        "tagsErro": [
+          "terceira_pessoa_s",
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu nunca vou à academia.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I never go to the gym."
+          ]
+        },
+        "explicacao": "Never vem antes do verbo e já é negativo: I never go (sem don't)."
+      }
+    ]
+  }
+}

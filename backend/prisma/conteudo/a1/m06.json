@@ -1,0 +1,3062 @@
+{
+  "slug": "a1-m06",
+  "ordem": 6,
+  "titulo": "Food & café",
+  "tema": "Comida, bebida e pedidos no café",
+  "descricao": "Fale sobre comida e bebida, entenda a diferença entre substantivos contáveis e incontáveis, pergunte quantidades e preços e faça seu pedido em um café.",
+  "canDos": [
+    "Consigo falar de comidas e bebidas usando a/an, some e any corretamente.",
+    "Consigo perguntar quantidades com How much e How many.",
+    "Consigo pedir comida e bebida educadamente com I'd like… e Can I have…?",
+    "Consigo perguntar e entender preços em dólares e centavos.",
+    "Consigo participar de um diálogo simples em um café."
+  ],
+  "gramatica": "Substantivos contáveis e incontáveis, a/an, some/any, How much/How many, I'd like / Can I have…?, How much is/are…? para preços.",
+  "vocabulario": "Comida e bebida (water, milk, coffee, tea, juice, bread, rice, beans, cheese, eggs, fruit, cake), recipientes (a cup of, a glass of, a bottle of), preços (dollars, cents) e expressões de café (for here, to go, Anything else?, Here you go).",
+  "funcao": "Fazer pedidos em um café, perguntar quantidades e preços.",
+  "pronuncia": "I'd like soa /aɪd laɪk/ com o d bem curto; some soa /sʌm/. Preços: $3.50 = \"three fifty\"; cents termina em /nts/.",
+  "licoes": [
+    {
+      "slug": "a1-m06-l1",
+      "ordem": 1,
+      "titulo": "Rice, eggs, bread — contáveis e incontáveis",
+      "objetivo": "Diferenciar substantivos contáveis e incontáveis e usar a/an corretamente com comida e bebida.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Em inglês, os substantivos se dividem em contáveis e incontáveis. Contáveis são coisas que podemos contar: an apple, two apples, a sandwich, three eggs. Eles têm singular e plural.",
+          "Incontáveis são coisas que vemos como massa, líquido ou conjunto: water, milk, rice, bread, cheese, sugar, money. Eles não têm plural e não usam a/an quando falamos deles em geral: I drink water (e não \"I drink a water every day\"), bread (e não \"breads\").",
+          "Cuidado com palavras que são contáveis em português e incontáveis em inglês, como bread e information. Para contar incontáveis, usamos um recipiente ou uma porção: a cup of coffee, a glass of milk, a bottle of water."
+        ],
+        "regras": [
+          "Contável: a/an + singular (an egg) ou plural (eggs)",
+          "Incontável: sem a/an e sem plural (water, rice, bread)",
+          "a cup of coffee · a glass of milk · a bottle of water",
+          "a + som de consoante (a banana) · an + som de vogal (an apple, an egg)"
+        ],
+        "notaContrastiva": "Não diga *I eat breads* nem *rices* → diga *I eat bread* / *rice*. Em inglês, bread e rice são incontáveis e não têm plural.",
+        "exemplos": [
+          {
+            "en": "I eat an apple every day.",
+            "pt": "Eu como uma maçã todo dia."
+          },
+          {
+            "en": "We need two eggs.",
+            "pt": "Nós precisamos de dois ovos."
+          },
+          {
+            "en": "I drink water with lunch.",
+            "pt": "Eu bebo água no almoço."
+          },
+          {
+            "en": "Brazilians eat rice and beans.",
+            "pt": "Os brasileiros comem arroz e feijão."
+          },
+          {
+            "en": "She drinks a glass of milk at night.",
+            "pt": "Ela bebe um copo de leite à noite."
+          },
+          {
+            "en": "My mom buys bread every morning.",
+            "pt": "Minha mãe compra pão toda manhã."
+          },
+          {
+            "en": "He has a cup of coffee after lunch.",
+            "pt": "Ele toma uma xícara de café depois do almoço."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "apple",
+            "pt": "maçã"
+          },
+          {
+            "en": "egg",
+            "pt": "ovo"
+          },
+          {
+            "en": "banana",
+            "pt": "banana"
+          },
+          {
+            "en": "orange",
+            "pt": "laranja"
+          },
+          {
+            "en": "sandwich",
+            "pt": "sanduíche"
+          },
+          {
+            "en": "cookie",
+            "pt": "biscoito / cookie"
+          },
+          {
+            "en": "water",
+            "pt": "água"
+          },
+          {
+            "en": "milk",
+            "pt": "leite"
+          },
+          {
+            "en": "rice",
+            "pt": "arroz"
+          },
+          {
+            "en": "beans",
+            "pt": "feijão"
+          },
+          {
+            "en": "bread",
+            "pt": "pão"
+          },
+          {
+            "en": "cheese",
+            "pt": "queijo"
+          },
+          {
+            "en": "sugar",
+            "pt": "açúcar"
+          },
+          {
+            "en": "a cup of",
+            "pt": "uma xícara de"
+          },
+          {
+            "en": "a glass of",
+            "pt": "um copo de"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual palavra é incontável?",
+          "conteudo": {
+            "opcoes": [
+              "apple",
+              "egg",
+              "rice",
+              "sandwich"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Rice (arroz) é incontável: não dizemos \"a rice\" nem \"two rices\". Apple, egg e sandwich são contáveis.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "I drink a water every day.",
+              "I drink water every day.",
+              "I drink waters every day.",
+              "I drink an water every day."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Water é incontável: falando de água em geral, não usamos a/an nem plural.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "I eat ___ orange and ___ banana every morning.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ],
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ],
+              [
+                "a"
+              ]
+            ]
+          },
+          "explicacao": "Orange começa com som de vogal → an orange. Banana começa com som de consoante → a banana."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "My mom buys breads every day.",
+              "My mom buys bread every day.",
+              "My mom buys a breads every day.",
+              "My mom buys an bread every day."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Bread é incontável em inglês: sem plural e sem a/an.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Ela bebe um copo de leite à noite.\"",
+          "conteudo": {
+            "texto": "She drinks a ___ of milk at night."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "glass"
+              ]
+            ]
+          },
+          "explicacao": "Copo = glass. Cup é xícara (para café ou chá)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "rice",
+              "beans",
+              "bread",
+              "cheese",
+              "sugar",
+              "egg"
+            ],
+            "direita": [
+              "feijão",
+              "queijo",
+              "arroz",
+              "ovo",
+              "pão",
+              "açúcar"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              4,
+              1,
+              5,
+              3
+            ]
+          },
+          "explicacao": "Rice, bread, cheese e sugar são incontáveis. Beans (feijão) é contável e normalmente aparece no plural; egg é contável."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Brazilians eat rices and beans."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Brazilians eat rice and beans."
+            ]
+          },
+          "explicacao": "Rice é incontável e não tem plural. Já beans é contável, por isso fica no plural.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "drinks",
+              "night",
+              "a",
+              "of",
+              "glass",
+              "she",
+              "milk",
+              "at"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She drinks a glass of milk at night.",
+              "At night she drinks a glass of milk."
+            ]
+          },
+          "explicacao": "A glass of + incontável: a glass of milk. At night pode ir no fim ou no começo."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu bebo água todo dia.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I drink water every day.",
+              "Every day I drink water.",
+              "Every day, I drink water."
+            ]
+          },
+          "explicacao": "Água em geral é incontável: I drink water (sem a).",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela come uma maçã no almoço.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She eats an apple at lunch.",
+              "She eats an apple for lunch.",
+              "She eats an apple at lunchtime.",
+              "She has an apple for lunch.",
+              "She has an apple at lunch."
+            ]
+          },
+          "explicacao": "Apple é contável e começa com som de vogal → an apple. She → eats.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual é o plural correto de sandwich?",
+          "conteudo": {
+            "opcoes": [
+              "sandwichs",
+              "sandwiches",
+              "sandwich's",
+              "sandwiche"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Palavras terminadas em -ch fazem o plural com -es: sandwiches."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a ou an.",
+          "conteudo": {
+            "texto": "He eats ___ egg for breakfast.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ]
+            ]
+          },
+          "explicacao": "Egg começa com som de vogal → an egg."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual palavra é contável?",
+          "conteudo": {
+            "opcoes": [
+              "milk",
+              "cheese",
+              "cookie",
+              "sugar"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Cookie é contável (a cookie, two cookies). Milk, cheese e sugar são incontáveis.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I drink two cup of coffee every day."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I drink two cups of coffee every day."
+            ]
+          },
+          "explicacao": "Cup é contável: two cups. O que fica sem plural é coffee."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Os brasileiros comem arroz e feijão.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Brazilians eat rice and beans.",
+              "Brazilian people eat rice and beans.",
+              "People in Brazil eat rice and beans."
+            ]
+          },
+          "explicacao": "Para falar de um grupo em geral, o inglês não usa the: Brazilians eat… Rice fica sem plural; beans fica no plural.",
+          "tagsErro": [
+            "artigo_generico",
+            "incontavel"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m06-l2",
+      "ordem": 2,
+      "titulo": "Some and any",
+      "objetivo": "Usar some em frases afirmativas e any em negativas e perguntas.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Some e any indicam uma quantidade não exata (\"um pouco de\", \"alguns\"). Usamos com incontáveis (some milk) e com contáveis no plural (some apples).",
+          "Regra básica: some em frases afirmativas (We have some cheese.) e any em negativas e perguntas (We don't have any eggs. Do you have any sugar?).",
+          "Com don't, any equivale ao \"nenhum\" do português: I don't have any money = Não tenho dinheiro nenhum. Com contáveis no singular, use a/an: an apple, a banana.",
+          "Exceção útil: em pedidos e ofertas usamos some mesmo em perguntas: Can I have some water? Você vai praticar isso na lição 4."
+        ],
+        "regras": [
+          "Afirmativa: some → I have some apples.",
+          "Negativa: any → I don't have any milk.",
+          "Pergunta: any → Do you have any eggs?",
+          "some/any + incontável ou plural (some bread, any cookies)",
+          "Contável no singular: a/an (a sandwich)"
+        ],
+        "notaContrastiva": "Não diga *I don't have some money* → diga *I don't have any money*. \"Não… nenhum\" vira don't + any.",
+        "exemplos": [
+          {
+            "en": "We have some cheese in the fridge.",
+            "pt": "Temos um pouco de queijo na geladeira."
+          },
+          {
+            "en": "I don't have any money.",
+            "pt": "Eu não tenho dinheiro nenhum."
+          },
+          {
+            "en": "Do you have any eggs?",
+            "pt": "Você tem ovos?"
+          },
+          {
+            "en": "She buys some bananas every week.",
+            "pt": "Ela compra bananas toda semana."
+          },
+          {
+            "en": "They don't eat any meat.",
+            "pt": "Eles não comem carne nenhuma."
+          },
+          {
+            "en": "Do we have any milk?",
+            "pt": "Nós temos leite?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "some",
+            "pt": "algum / um pouco de"
+          },
+          {
+            "en": "any",
+            "pt": "algum (em perguntas) / nenhum (com not)"
+          },
+          {
+            "en": "fridge",
+            "pt": "geladeira"
+          },
+          {
+            "en": "money",
+            "pt": "dinheiro"
+          },
+          {
+            "en": "meat",
+            "pt": "carne"
+          },
+          {
+            "en": "chicken",
+            "pt": "frango"
+          },
+          {
+            "en": "fish",
+            "pt": "peixe"
+          },
+          {
+            "en": "juice",
+            "pt": "suco"
+          },
+          {
+            "en": "butter",
+            "pt": "manteiga"
+          },
+          {
+            "en": "tomatoes",
+            "pt": "tomates"
+          },
+          {
+            "en": "chocolate",
+            "pt": "chocolate"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com some ou any.",
+          "conteudo": {
+            "texto": "We have ___ apples, but we don't have ___ bananas.",
+            "opcoesPorLacuna": [
+              [
+                "some",
+                "any"
+              ],
+              [
+                "some",
+                "any"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "some"
+              ],
+              [
+                "any"
+              ]
+            ]
+          },
+          "explicacao": "Frase afirmativa → some apples. Frase negativa (don't have) → any bananas."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Do you have ___ juice?",
+            "opcoes": [
+              "any",
+              "a",
+              "an",
+              "many"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Em perguntas usamos any: Do you have any juice? Juice é incontável, então a/an não servem."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com some ou any: \"Eu não tenho dinheiro nenhum.\"",
+          "conteudo": {
+            "texto": "I don't have ___ money."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "any"
+              ]
+            ]
+          },
+          "explicacao": "Negativa → any: I don't have any money."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase correta.",
+          "conteudo": {
+            "opcoes": [
+              "I have any cookies.",
+              "I have some cookies.",
+              "I have a cookies.",
+              "I have an cookies."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Frase afirmativa com plural → some cookies. A/an não se usam com plural."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "any",
+              "have",
+              "don't",
+              "we",
+              "milk"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We don't have any milk."
+            ]
+          },
+          "explicacao": "Negativa: sujeito + don't have + any + incontável."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My brother doesn't eat some meat."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother doesn't eat any meat.",
+              "My brother doesn't eat meat."
+            ]
+          },
+          "explicacao": "Em frases negativas usamos any (ou nada): doesn't eat any meat."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "I have some eggs.",
+              "I don't have any eggs.",
+              "Do you have any eggs?",
+              "I have an egg."
+            ],
+            "direita": [
+              "Eu tenho um ovo.",
+              "Você tem ovos?",
+              "Eu não tenho nenhum ovo.",
+              "Eu tenho alguns ovos."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              2,
+              1,
+              0
+            ]
+          },
+          "explicacao": "Afirmativa → some; negativa e pergunta → any; um só ovo → an egg."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós temos um pouco de queijo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We have some cheese.",
+              "We have a little cheese."
+            ]
+          },
+          "explicacao": "\"Um pouco de\" + incontável em frase afirmativa = some: We have some cheese."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você tem açúcar?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Do you have any sugar?",
+              "Do you have sugar?",
+              "Do you have some sugar?"
+            ]
+          },
+          "explicacao": "Pergunta no present simple: Do you have…? Com incontável, o mais comum é any sugar.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "They don't have ___ bread.",
+            "opcoes": [
+              "some",
+              "any",
+              "a",
+              "an"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Frase negativa (don't have) → any. Bread é incontável, então a/an não servem.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com some ou any: \"Ela compra algumas laranjas toda semana.\"",
+          "conteudo": {
+            "texto": "She buys ___ oranges every week.",
+            "opcoesPorLacuna": [
+              [
+                "some",
+                "any"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "some"
+              ]
+            ]
+          },
+          "explicacao": "Frase afirmativa → some oranges."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have any chocolate in my bag."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have some chocolate in my bag."
+            ]
+          },
+          "explicacao": "Em frase afirmativa usamos some: I have some chocolate."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "any",
+              "you",
+              "eggs",
+              "have",
+              "do"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Do you have any eggs?"
+            ]
+          },
+          "explicacao": "Pergunta: Do + you + have + any + plural?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu não tenho leite.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I don't have any milk.",
+              "I don't have milk.",
+              "I have no milk."
+            ]
+          },
+          "explicacao": "Negativa: I don't have (any) milk. Milk é incontável: sem a e sem plural.",
+          "tagsErro": [
+            "do_support"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a1-m06-l3",
+      "ordem": 3,
+      "titulo": "How much? How many?",
+      "objetivo": "Perguntar quantidades com How much (incontáveis) e How many (contáveis).",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar quantidade, usamos How many com contáveis no plural e How much com incontáveis: How many eggs do you need? How much water do you drink?",
+          "Em português os dois são \"quantos/quanto\". A dica é pensar: dá para contar (one, two, three…)? Então é How many + plural.",
+          "A estrutura é: How many/How much + substantivo + do/does + sujeito + verbo: How many cookies does she eat? How much sugar do you want?",
+          "How much também serve para perguntar preço. Você vai ver isso na lição 5."
+        ],
+        "regras": [
+          "How many + contável no plural: How many apples…?",
+          "How much + incontável: How much milk…?",
+          "How many/much + substantivo + do/does + sujeito + verbo?",
+          "Respostas: Two. / A lot. / Not much. / Not many."
+        ],
+        "notaContrastiva": "Não diga *How much eggs do you need?* → diga *How many eggs do you need?* Em português, quanto/quantos muda com o gênero e o número; em inglês, muda conforme o substantivo é contável ou não.",
+        "exemplos": [
+          {
+            "en": "How many eggs do you need? – Six.",
+            "pt": "Quantos ovos você precisa? – Seis."
+          },
+          {
+            "en": "How much water do you drink? – A lot.",
+            "pt": "Quanta água você bebe? – Muita."
+          },
+          {
+            "en": "How many brothers do you have?",
+            "pt": "Quantos irmãos você tem?"
+          },
+          {
+            "en": "How much sugar does she want? – Not much.",
+            "pt": "Quanto açúcar ela quer? – Não muito."
+          },
+          {
+            "en": "How many cookies do they eat?",
+            "pt": "Quantos biscoitos eles comem?"
+          },
+          {
+            "en": "How much milk do we need?",
+            "pt": "De quanto leite nós precisamos?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "How many…?",
+            "pt": "Quantos/Quantas…? (contáveis)"
+          },
+          {
+            "en": "How much…?",
+            "pt": "Quanto/Quanta…? (incontáveis)"
+          },
+          {
+            "en": "a lot",
+            "pt": "muito / muitos"
+          },
+          {
+            "en": "not much",
+            "pt": "não muito"
+          },
+          {
+            "en": "not many",
+            "pt": "não muitos"
+          },
+          {
+            "en": "need",
+            "pt": "precisar de"
+          },
+          {
+            "en": "want",
+            "pt": "querer"
+          },
+          {
+            "en": "buy",
+            "pt": "comprar"
+          },
+          {
+            "en": "potato",
+            "pt": "batata"
+          },
+          {
+            "en": "tomato",
+            "pt": "tomate"
+          },
+          {
+            "en": "carrot",
+            "pt": "cenoura"
+          },
+          {
+            "en": "onion",
+            "pt": "cebola"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com How much ou How many.",
+          "conteudo": {
+            "texto": "___ cookies do you want?",
+            "opcoesPorLacuna": [
+              [
+                "How much",
+                "How many"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "How many"
+              ]
+            ]
+          },
+          "explicacao": "Cookies é contável e está no plural → How many."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com How much ou How many.",
+          "conteudo": {
+            "texto": "___ juice do you drink?",
+            "opcoesPorLacuna": [
+              [
+                "How much",
+                "How many"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "How much"
+              ]
+            ]
+          },
+          "explicacao": "Juice é incontável → How much.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual palavra completa a pergunta?",
+          "conteudo": {
+            "texto": "How many ___ do you need?",
+            "opcoes": [
+              "milk",
+              "rice",
+              "tomatoes",
+              "sugar"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "How many pede um contável no plural: tomatoes. Milk, rice e sugar são incontáveis (usam How much).",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "How much eggs do you need?",
+              "How many eggs do you need?",
+              "How many egg do you need?",
+              "How many eggs you need?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Eggs é contável → How many + plural, e a pergunta precisa do auxiliar do."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "do",
+              "drink",
+              "how",
+              "much",
+              "you",
+              "water"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much water do you drink?"
+            ]
+          },
+          "explicacao": "How much + incontável (water) + do + you + drink?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How many sugar do you want?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much sugar do you want?"
+            ]
+          },
+          "explicacao": "Sugar é incontável → How much.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "potato",
+              "tomato",
+              "carrot",
+              "onion",
+              "chicken",
+              "juice"
+            ],
+            "direita": [
+              "frango",
+              "cebola",
+              "batata",
+              "tomate",
+              "suco",
+              "cenoura"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              5,
+              1,
+              0,
+              4
+            ]
+          },
+          "explicacao": "Potato, tomato, carrot e onion são contáveis (How many potatoes?). Juice é incontável (How much juice?)."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quantos ovos você quer?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many eggs do you want?"
+            ]
+          },
+          "explicacao": "Eggs é contável → How many eggs + do you want?"
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quanta água ela bebe?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much water does she drink?"
+            ]
+          },
+          "explicacao": "Water é incontável → How much. She → does + drink (sem -s).",
+          "tagsErro": [
+            "incontavel",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a expressão certa.",
+          "conteudo": {
+            "texto": "___ rice do we need?",
+            "opcoes": [
+              "How many",
+              "How much",
+              "What time",
+              "How often"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Rice é incontável → How much rice…?",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com much ou many.",
+          "conteudo": {
+            "texto": "How ___ potatoes do you want?",
+            "opcoesPorLacuna": [
+              [
+                "much",
+                "many"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "many"
+              ]
+            ]
+          },
+          "explicacao": "Potatoes é contável no plural → How many."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How much apples does he eat?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many apples does he eat?"
+            ]
+          },
+          "explicacao": "Apples é contável → How many."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "she",
+              "eat",
+              "how",
+              "cookies",
+              "many",
+              "does"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many cookies does she eat?"
+            ]
+          },
+          "explicacao": "How many + plural + does + she + eat (sem -s)?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quantos irmãos você tem?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many brothers do you have?",
+              "How many siblings do you have?",
+              "How many brothers and sisters do you have?"
+            ]
+          },
+          "explicacao": "Irmãos é contável → How many brothers + do you have?"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m06-l4",
+      "ordem": 4,
+      "titulo": "I'd like… / Can I have…? — fazendo pedidos",
+      "objetivo": "Pedir comida e bebida de forma educada com I'd like e Can I have…?",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para pedir algo de forma educada, use I'd like… (eu gostaria de…) ou Can I have…? (pode me ver…?). I'd like é a forma curta de I would like.",
+          "Depois de I'd like vem o que você quer: I'd like a sandwich. I'd like some water. Também pode vir to + verbo: I'd like to order.",
+          "Diferença importante: I like coffee = eu gosto de café (sempre). I'd like a coffee = eu gostaria de um café (agora).",
+          "Em pedidos usamos some mesmo em perguntas: Can I have some water, please? Num café, a coffee, a tea ou a soda significam \"uma xícara\" ou \"um copo\". O atendente pode perguntar: What would you like? e Anything else?"
+        ],
+        "regras": [
+          "I'd like + a/an/some…: I'd like a coffee.",
+          "I'd like to + verbo: I'd like to order.",
+          "Can I have + a/an/some…, please?",
+          "I like (gosto, sempre) × I'd like (gostaria, agora)",
+          "Use please e thank you."
+        ],
+        "notaContrastiva": "Não diga *I like a coffee, please* (= eu gosto de um café) → diga *I'd like a coffee, please* ou *Can I have a coffee, please?*",
+        "exemplos": [
+          {
+            "en": "I'd like a cheese sandwich, please.",
+            "pt": "Eu gostaria de um sanduíche de queijo, por favor."
+          },
+          {
+            "en": "Can I have some water, please?",
+            "pt": "Pode me ver uma água, por favor?"
+          },
+          {
+            "en": "What would you like? – I'd like an orange juice.",
+            "pt": "O que você gostaria? – Eu gostaria de um suco de laranja."
+          },
+          {
+            "en": "Can I have the menu, please?",
+            "pt": "Pode me ver o cardápio, por favor?"
+          },
+          {
+            "en": "She'd like a piece of cake.",
+            "pt": "Ela gostaria de um pedaço de bolo."
+          },
+          {
+            "en": "Anything else? – No, thank you.",
+            "pt": "Mais alguma coisa? – Não, obrigado."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "menu",
+            "pt": "cardápio"
+          },
+          {
+            "en": "I'd like",
+            "pt": "eu gostaria de"
+          },
+          {
+            "en": "Can I have…?",
+            "pt": "Pode me ver…? / Posso pedir…?"
+          },
+          {
+            "en": "What would you like?",
+            "pt": "O que você gostaria?"
+          },
+          {
+            "en": "Anything else?",
+            "pt": "Mais alguma coisa?"
+          },
+          {
+            "en": "order",
+            "pt": "pedir (no restaurante) / pedido"
+          },
+          {
+            "en": "cake",
+            "pt": "bolo"
+          },
+          {
+            "en": "a piece of cake",
+            "pt": "um pedaço de bolo"
+          },
+          {
+            "en": "tea",
+            "pt": "chá"
+          },
+          {
+            "en": "hot chocolate",
+            "pt": "chocolate quente"
+          },
+          {
+            "en": "orange juice",
+            "pt": "suco de laranja"
+          },
+          {
+            "en": "soda",
+            "pt": "refrigerante"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Qual frase é um pedido educado no café?",
+          "conteudo": {
+            "opcoes": [
+              "I like a coffee, please.",
+              "I'd like a coffee, please.",
+              "I liking a coffee, please.",
+              "I'd likes a coffee, please."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "I'd like = eu gostaria. \"I like\" significa \"eu gosto\" (sempre) e não serve para pedir. Depois de I'd, o verbo like não muda."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Pode me ver um chá, por favor?\"",
+          "conteudo": {
+            "texto": "Can I ___ a tea, please?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have",
+                "get"
+              ]
+            ]
+          },
+          "explicacao": "Can I have…? é a forma mais usada para pedir. Nos EUA também se ouve muito Can I get…?"
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "O que significa \"I like tea\"?",
+          "conteudo": {
+            "opcoes": [
+              "Eu gostaria de um chá.",
+              "Eu gosto de chá.",
+              "Eu quero um chá agora.",
+              "Eu tenho chá."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "I like = eu gosto (em geral). Para \"eu gostaria\", use I'd like."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a, an ou some.",
+          "conteudo": {
+            "texto": "I'd like ___ egg and ___ bread, please.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an",
+                "some"
+              ],
+              [
+                "a",
+                "an",
+                "some"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ],
+              [
+                "some"
+              ]
+            ]
+          },
+          "explicacao": "Egg é contável e começa com som de vogal → an egg. Bread é incontável → some bread.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "have",
+              "I",
+              "can",
+              "menu",
+              "please",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have the menu please?",
+              "Please can I have the menu?"
+            ]
+          },
+          "explicacao": "Pedido: Can + I + have + the menu + please? Please costuma ir no fim."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada fala do atendente ou cliente à resposta certa.",
+          "conteudo": {
+            "esquerda": [
+              "What would you like?",
+              "Anything else?",
+              "Can I have the menu, please?",
+              "Do you like coffee?"
+            ],
+            "direita": [
+              "No, thank you.",
+              "A cheese sandwich, please.",
+              "Yes, I do.",
+              "Sure. Here you go."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              0,
+              3,
+              2
+            ]
+          },
+          "explicacao": "What would you like? pede o pedido; Anything else? pergunta se você quer mais algo; Here you go = aqui está; Do you like…? pede resposta curta com do."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I like a hot chocolate, please."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like a hot chocolate, please.",
+              "I'd like a hot chocolate please."
+            ]
+          },
+          "explicacao": "Para pedir, use I'd like (eu gostaria), não I like (eu gosto)."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu gostaria de um sanduíche de queijo, por favor.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like a cheese sandwich, please.",
+              "I'd like a cheese sandwich please."
+            ]
+          },
+          "explicacao": "I'd like + a cheese sandwich. Em inglês, o \"de queijo\" vem antes: cheese sandwich."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês usando Can I have…?",
+          "conteudo": {
+            "frase": "Pode me ver o cardápio, por favor?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have the menu, please?",
+              "Can I have the menu please?",
+              "Please, can I have the menu?",
+              "Please can I have the menu?"
+            ]
+          },
+          "explicacao": "Can I have + the menu + please? Cardápio = menu."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "O atendente pergunta \"Anything else?\". O que ele quer saber?",
+          "conteudo": {
+            "opcoes": [
+              "Quanto custa.",
+              "Se você quer mais alguma coisa.",
+              "Qual é o seu nome.",
+              "Se você gosta de café."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Anything else? = Mais alguma coisa?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Eu gostaria de um pedaço de bolo.\"",
+          "conteudo": {
+            "texto": "I'd ___ a piece of cake."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "like"
+              ]
+            ]
+          },
+          "explicacao": "I'd like = eu gostaria de."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "like",
+              "an",
+              "juice",
+              "orange",
+              "I'd"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like an orange juice."
+            ]
+          },
+          "explicacao": "I'd like + an + orange juice (orange começa com som de vogal → an)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Can I has a soda, please?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have a soda, please?",
+              "Can I have a soda please?"
+            ]
+          },
+          "explicacao": "Depois de can, o verbo fica na forma base: Can I have…?",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu gostaria de uma água, por favor.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like some water, please.",
+              "I'd like some water please.",
+              "I'd like a water, please.",
+              "I'd like a water please.",
+              "I'd like a bottle of water, please.",
+              "I'd like a bottle of water please.",
+              "I'd like a glass of water, please.",
+              "I'd like a glass of water please."
+            ]
+          },
+          "explicacao": "I'd like + some water (ou, num café, a water / a bottle of water)."
+        }
+      ]
+    },
+    {
+      "slug": "a1-m06-l5",
+      "ordem": 5,
+      "titulo": "How much is it? — preços",
+      "objetivo": "Perguntar e dizer preços em dólares e centavos.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar o preço, use How much: How much is the coffee? (uma coisa ou incontável) / How much are the cookies? (várias coisas). Responda com It's… ou They're…",
+          "Preços em dólar: $1 = one dollar; $5 = five dollars; 50¢ = fifty cents. $3.50 se lê \"three dollars and fifty cents\" ou, de modo mais comum, \"three fifty\".",
+          "Em inglês, o separador decimal é o ponto, não a vírgula: $3.50 (e não $3,50). O símbolo $ vem antes do número na escrita, mas na fala dollars vem depois: $10 = ten dollars.",
+          "No caixa você vai ouvir: That's $7.25, please. (Fica 7,25.) E pode responder: Here you go. (Aqui está.)"
+        ],
+        "regras": [
+          "How much is + singular/incontável? → It's $2.",
+          "How much are + plural? → They're $4.",
+          "$1 = one dollar · $2 = two dollars · 1¢ = one cent",
+          "$3.50 = three fifty / three dollars and fifty cents",
+          "Ponto decimal: $4.99 (não $4,99)"
+        ],
+        "notaContrastiva": "Não diga *How much costs the coffee?* → diga *How much is the coffee?* E não escreva *$3,50* → escreva *$3.50*.",
+        "exemplos": [
+          {
+            "en": "How much is the coffee? – It's $2.50.",
+            "pt": "Quanto custa o café? – Custa 2,50 dólares."
+          },
+          {
+            "en": "How much are the cookies? – They're $1 each.",
+            "pt": "Quanto custam os biscoitos? – Custam 1 dólar cada."
+          },
+          {
+            "en": "That's $8.75, please.",
+            "pt": "Fica 8,75 dólares, por favor."
+          },
+          {
+            "en": "The sandwich is $6.",
+            "pt": "O sanduíche custa 6 dólares."
+          },
+          {
+            "en": "Here you go. – Thank you.",
+            "pt": "Aqui está. – Obrigado."
+          },
+          {
+            "en": "How much is the hot chocolate? – Three fifty.",
+            "pt": "Quanto custa o chocolate quente? – Três e cinquenta."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "price",
+            "pt": "preço"
+          },
+          {
+            "en": "dollar",
+            "pt": "dólar"
+          },
+          {
+            "en": "cent",
+            "pt": "centavo"
+          },
+          {
+            "en": "each",
+            "pt": "cada"
+          },
+          {
+            "en": "How much is…?",
+            "pt": "Quanto custa…?"
+          },
+          {
+            "en": "How much are…?",
+            "pt": "Quanto custam…?"
+          },
+          {
+            "en": "That's…",
+            "pt": "Fica… / São…"
+          },
+          {
+            "en": "Here you go.",
+            "pt": "Aqui está."
+          },
+          {
+            "en": "change",
+            "pt": "troco"
+          },
+          {
+            "en": "cheap",
+            "pt": "barato"
+          },
+          {
+            "en": "expensive",
+            "pt": "caro"
+          },
+          {
+            "en": "cash",
+            "pt": "dinheiro (em espécie)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com is ou are.",
+          "conteudo": {
+            "texto": "How much ___ the cake? How much ___ the bananas?",
+            "opcoesPorLacuna": [
+              [
+                "is",
+                "are"
+              ],
+              [
+                "is",
+                "are"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ],
+              [
+                "are"
+              ]
+            ]
+          },
+          "explicacao": "The cake é singular → is. The bananas é plural → are."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se lê $4.50?",
+          "conteudo": {
+            "opcoes": [
+              "four dollars fifty cents and",
+              "four fifty",
+              "forty-five dollars",
+              "four dollars and five cents"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "$4.50 = four fifty (ou four dollars and fifty cents)."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se escreve \"seventy-five cents\"?",
+          "conteudo": {
+            "opcoes": [
+              "$75",
+              "75¢",
+              "$7.50",
+              "$0,75"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Seventy-five cents = 75¢. $75 são setenta e cinco dólares, e o inglês não usa vírgula decimal."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta.",
+          "conteudo": {
+            "texto": "How much are the sandwiches? – ___ $5 each.",
+            "opcoesPorLacuna": [
+              [
+                "It's",
+                "They're"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "They're"
+              ]
+            ]
+          },
+          "explicacao": "Sandwiches é plural, então a resposta usa They're (= they are)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada preço à forma falada.",
+          "conteudo": {
+            "esquerda": [
+              "$1",
+              "$12",
+              "50¢",
+              "$2.25",
+              "$9.99"
+            ],
+            "direita": [
+              "nine ninety-nine",
+              "one dollar",
+              "two twenty-five",
+              "fifty cents",
+              "twelve dollars"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          "explicacao": "Dólares inteiros: one dollar, twelve dollars. Centavos sozinhos: fifty cents. Com dólares e centavos, o mais comum é ler os dois números: two twenty-five."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "the",
+              "are",
+              "cookies",
+              "much",
+              "how"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much are the cookies?"
+            ]
+          },
+          "explicacao": "How much + are (plural) + the cookies?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How much costs the juice?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much is the juice?",
+              "How much does the juice cost?"
+            ]
+          },
+          "explicacao": "Em inglês não se inverte o verbo cost. Diga How much is the juice? (ou How much does the juice cost?).",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quanto custa o sanduíche?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much is the sandwich?",
+              "How much does the sandwich cost?",
+              "How much is a sandwich?",
+              "How much does a sandwich cost?"
+            ]
+          },
+          "explicacao": "How much is + singular: How much is the sandwich?"
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quanto custam as maçãs?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much are the apples?",
+              "How much do the apples cost?"
+            ]
+          },
+          "explicacao": "Apples é plural → How much are the apples?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Um café custa $2 e um bolo custa $3. Quanto fica o total?",
+          "conteudo": {
+            "opcoes": [
+              "three dollars",
+              "five dollars",
+              "six dollars",
+              "twenty-three dollars"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "$2 + $3 = $5 = five dollars."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Fica 6,50 dólares, por favor.\"",
+          "conteudo": {
+            "texto": "___ $6.50, please."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "That's",
+                "It's"
+              ]
+            ]
+          },
+          "explicacao": "Para dizer o total: That's $6.50 (ou It's $6.50)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual pergunta está correta?",
+          "conteudo": {
+            "opcoes": [
+              "How much is the cookies?",
+              "How much are the cookies?",
+              "How many are the cookies?",
+              "How much costs the cookies?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Para preço usamos How much, e cookies é plural → are."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "The pizza is $12,50."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The pizza is $12.50.",
+              "The pizza is twelve fifty.",
+              "The pizza is twelve dollars and fifty cents."
+            ]
+          },
+          "explicacao": "Em inglês, o separador decimal é o ponto: $12.50."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quanto custa o suco de laranja?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much is the orange juice?",
+              "How much does the orange juice cost?",
+              "How much is an orange juice?",
+              "How much does an orange juice cost?"
+            ]
+          },
+          "explicacao": "How much is + singular/incontável: How much is the orange juice?"
+        }
+      ]
+    },
+    {
+      "slug": "a1-m06-l6",
+      "ordem": 6,
+      "titulo": "At the café — pedindo no café",
+      "objetivo": "Participar de um diálogo completo em um café: pedir, responder ao atendente e pagar.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Nesta lição juntamos tudo em um diálogo de café. O atendente costuma dizer: Hi! What would you like? / Anything else? / For here or to go? / That's $9.50.",
+          "O cliente responde: I'd like… / Can I have…, please? / How much is…? / No, that's all, thanks. / For here, please. (para comer aqui) / To go, please. (para levar)",
+          "Lembre-se: a/an com coisas pedidas em unidades (a sandwich, an omelet), some com incontáveis (some toast, some water), e sempre please e thank you."
+        ],
+        "regras": [
+          "Atendente: What would you like? / Anything else?",
+          "Cliente: I'd like… / Can I have…, please?",
+          "For here or to go? → For here, please. / To go, please.",
+          "That's all, thanks. = É só isso, obrigado.",
+          "How much is it? → It's $… / That's $…"
+        ],
+        "notaContrastiva": "Não traduza \"para viagem\" ao pé da letra (*for travel*) → nos EUA diga *to go*: *A coffee to go, please.*",
+        "exemplos": [
+          {
+            "en": "Hi! What would you like?",
+            "pt": "Oi! O que você vai querer?"
+          },
+          {
+            "en": "Can I have a coffee and an omelet, please?",
+            "pt": "Pode me ver um café e uma omelete, por favor?"
+          },
+          {
+            "en": "For here or to go? – To go, please.",
+            "pt": "Para comer aqui ou para levar? – Para levar, por favor."
+          },
+          {
+            "en": "Anything else? – No, that's all, thanks.",
+            "pt": "Mais alguma coisa? – Não, é só isso, obrigado."
+          },
+          {
+            "en": "That's $7.25. – Here you go.",
+            "pt": "Fica 7,25 dólares. – Aqui está."
+          },
+          {
+            "en": "How much is the chocolate cake?",
+            "pt": "Quanto custa o bolo de chocolate?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "for here",
+            "pt": "para comer aqui"
+          },
+          {
+            "en": "to go",
+            "pt": "para levar"
+          },
+          {
+            "en": "That's all.",
+            "pt": "É só isso."
+          },
+          {
+            "en": "Here you go.",
+            "pt": "Aqui está."
+          },
+          {
+            "en": "small",
+            "pt": "pequeno"
+          },
+          {
+            "en": "large",
+            "pt": "grande"
+          },
+          {
+            "en": "omelet",
+            "pt": "omelete"
+          },
+          {
+            "en": "toast",
+            "pt": "torrada (incontável)"
+          },
+          {
+            "en": "cheese bread",
+            "pt": "pão de queijo"
+          },
+          {
+            "en": "chocolate cake",
+            "pt": "bolo de chocolate"
+          },
+          {
+            "en": "thanks",
+            "pt": "obrigado (informal)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "O atendente pergunta \"For here or to go?\". Você quer levar. O que você diz?",
+          "conteudo": {
+            "opcoes": [
+              "For here, please.",
+              "To go, please.",
+              "Here you go.",
+              "That's all."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "To go = para levar. For here = para comer aqui. Here you go = aqui está."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Como se diz \"É só isso, obrigado\"?",
+          "conteudo": {
+            "opcoes": [
+              "That's all, thanks.",
+              "Here you go, thanks.",
+              "For here, thanks.",
+              "Anything else, thanks."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "That's all = é só isso."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com a, an ou some.",
+          "conteudo": {
+            "texto": "I'd like ___ omelet and ___ toast, please.",
+            "opcoesPorLacuna": [
+              [
+                "a",
+                "an",
+                "some"
+              ],
+              [
+                "a",
+                "an",
+                "some"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "an"
+              ],
+              [
+                "some"
+              ]
+            ]
+          },
+          "explicacao": "Omelet é contável e começa com som de vogal → an omelet. Toast (torrada) é incontável → some toast.",
+          "tagsErro": [
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Quanto custa? – Fica 4 dólares.\"",
+          "conteudo": {
+            "texto": "How much ___ it? – That's $4."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is"
+              ]
+            ]
+          },
+          "explicacao": "It é singular → How much is it?"
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada fala do atendente à resposta do cliente.",
+          "conteudo": {
+            "esquerda": [
+              "What would you like?",
+              "For here or to go?",
+              "Anything else?",
+              "That's $5.50."
+            ],
+            "direita": [
+              "No, that's all, thanks.",
+              "I'd like a hot chocolate, please.",
+              "Here you go.",
+              "For here, please."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              0,
+              2
+            ]
+          },
+          "explicacao": "What would you like? → o pedido; For here or to go? → for here/to go; Anything else? → that's all; o preço → Here you go (ao entregar o dinheiro)."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "please",
+              "small",
+              "coffee",
+              "can",
+              "I",
+              "a",
+              "have"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have a small coffee please?",
+              "Please can I have a small coffee?"
+            ]
+          },
+          "explicacao": "Can + I + have + a small coffee + please? O adjetivo (small) vem antes do substantivo."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Can I have a orange juice, please?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have an orange juice, please?",
+              "Can I have an orange juice please?"
+            ]
+          },
+          "explicacao": "Orange começa com som de vogal → an orange juice."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu gostaria de um café pequeno, por favor.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like a small coffee, please.",
+              "I'd like a small coffee please."
+            ]
+          },
+          "explicacao": "I'd like + a small coffee. Em inglês, o adjetivo vem antes do substantivo: small coffee."
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quanto custa o bolo de chocolate?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much is the chocolate cake?",
+              "How much does the chocolate cake cost?"
+            ]
+          },
+          "explicacao": "How much is + singular. Bolo de chocolate = chocolate cake (o \"de chocolate\" vem antes)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Complete o diálogo. A: What would you like? B: ___",
+          "conteudo": {
+            "opcoes": [
+              "I like coffee.",
+              "I'd like a coffee, please.",
+              "Yes, I would.",
+              "Here you go."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Para fazer o pedido: I'd like a coffee, please. \"I like coffee\" é só uma preferência."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete: \"Para levar, por favor.\"",
+          "conteudo": {
+            "texto": "___ go, please."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "To"
+              ]
+            ]
+          },
+          "explicacao": "Para levar = to go."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Coloque as palavras na ordem certa.",
+          "conteudo": {
+            "palavras": [
+              "an",
+              "I'd",
+              "toast",
+              "some",
+              "like",
+              "omelet",
+              "and"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I'd like an omelet and some toast.",
+              "I'd like some toast and an omelet."
+            ]
+          },
+          "explicacao": "an + omelet (contável, som de vogal); some + toast (incontável). A ordem dos dois itens pode mudar."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How much is the cookies?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How much are the cookies?"
+            ]
+          },
+          "explicacao": "Cookies é plural → How much are…?"
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Pode me ver um suco de laranja, por favor?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I have an orange juice, please?",
+              "Can I have an orange juice please?",
+              "Can I have some orange juice, please?",
+              "Can I have some orange juice please?",
+              "Can I have a glass of orange juice, please?",
+              "Can I have a glass of orange juice please?",
+              "Can I get an orange juice, please?",
+              "Can I get an orange juice please?",
+              "Can I get some orange juice, please?",
+              "Can I get some orange juice please?",
+              "Could I have an orange juice, please?",
+              "Could I have an orange juice please?",
+              "Could I have some orange juice, please?",
+              "Could I have some orange juice please?",
+              "May I have an orange juice, please?",
+              "May I have an orange juice please?",
+              "May I have some orange juice, please?",
+              "May I have some orange juice please?"
+            ]
+          },
+          "explicacao": "Can I have + an orange juice (ou some orange juice) + please?"
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual palavra é incontável?",
+        "conteudo": {
+          "opcoes": [
+            "cookie",
+            "egg",
+            "milk",
+            "banana"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Milk é incontável. Cookie, egg e banana são contáveis.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "We don't have ___ eggs.",
+          "opcoes": [
+            "some",
+            "any",
+            "a",
+            "an"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Negativa → any: We don't have any eggs."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com How much ou How many.",
+        "conteudo": {
+          "texto": "___ apples do you want?",
+          "opcoesPorLacuna": [
+            [
+              "How much",
+              "How many"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "How many"
+            ]
+          ]
+        },
+        "explicacao": "Apples é contável no plural → How many."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "I eat breads for breakfast.",
+            "I eat bread for breakfast.",
+            "I eat a bread for breakfast.",
+            "I eat an bread for breakfast."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Bread é incontável: sem plural e sem a/an.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com some ou any: \"Nós temos um pouco de queijo.\"",
+        "conteudo": {
+          "texto": "We have ___ cheese.",
+          "opcoesPorLacuna": [
+            [
+              "some",
+              "any"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "some"
+            ]
+          ]
+        },
+        "explicacao": "Afirmativa → some."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "How much ___ the sandwiches?",
+          "opcoes": [
+            "is",
+            "are",
+            "do",
+            "does"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "The sandwiches é plural → How much are…?"
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete: \"Eu gostaria de um chá, por favor.\"",
+        "conteudo": {
+          "texto": "I'd ___ a tea, please."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "like"
+            ]
+          ]
+        },
+        "explicacao": "I'd like = eu gostaria de."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se lê $5.25?",
+        "conteudo": {
+          "opcoes": [
+            "five twenty-five",
+            "fifty-two five",
+            "five dollars and two cents",
+            "twenty-five five"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "$5.25 = five twenty-five (five dollars and twenty-five cents)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a ou an.",
+        "conteudo": {
+          "texto": "Can I have ___ egg sandwich, please?",
+          "opcoesPorLacuna": [
+            [
+              "a",
+              "an"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "an"
+            ]
+          ]
+        },
+        "explicacao": "Egg começa com som de vogal → an egg sandwich."
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "O que significa \"To go, please\"?",
+        "conteudo": {
+          "opcoes": [
+            "Para comer aqui, por favor.",
+            "Para levar, por favor.",
+            "Vamos, por favor.",
+            "Pode ir, por favor."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "To go = para levar."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How much is the orange juice?",
+        "conteudo": {
+          "texto": "Café Sabor – Menu: Coffee $2.00. Hot chocolate $3.50. Orange juice $3.00. Cheese bread $1.50. Chocolate cake $4.25. Waiter: Hi! What would you like? Marina: I'd like a hot chocolate and a piece of chocolate cake, please. Waiter: For here or to go? Marina: For here, please.",
+          "opcoes": [
+            "$2.00",
+            "$3.00",
+            "$3.50",
+            "$4.25"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "No cardápio: Orange juice $3.00."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Quanto fica o pedido da Marina?",
+        "conteudo": {
+          "texto": "Café Sabor – Menu: Coffee $2.00. Hot chocolate $3.50. Orange juice $3.00. Cheese bread $1.50. Chocolate cake $4.25. Waiter: Hi! What would you like? Marina: I'd like a hot chocolate and a piece of chocolate cake, please. Waiter: For here or to go? Marina: For here, please.",
+          "opcoes": [
+            "$5.50",
+            "$7.75",
+            "$6.50",
+            "$8.25"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Hot chocolate ($3.50) + chocolate cake ($4.25) = $7.75."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How many eggs do they need?",
+        "conteudo": {
+          "texto": "Hi, I'm Diego. I live with my mom in Goiânia. Every Saturday, we go to the supermarket. We usually buy rice, beans, milk and some bananas. This week, we don't need any rice, but we need six eggs and some cheese. My mom doesn't drink coffee, so we never buy coffee.",
+          "opcoes": [
+            "Two.",
+            "Six.",
+            "Seven.",
+            "None."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"we need six eggs\"."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Qual frase é verdadeira?",
+        "conteudo": {
+          "texto": "Hi, I'm Diego. I live with my mom in Goiânia. Every Saturday, we go to the supermarket. We usually buy rice, beans, milk and some bananas. This week, we don't need any rice, but we need six eggs and some cheese. My mom doesn't drink coffee, so we never buy coffee.",
+          "opcoes": [
+            "They need some rice this week.",
+            "They often buy coffee.",
+            "They need some cheese.",
+            "They go to the supermarket on Sundays."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"we need six eggs and some cheese\". Eles não precisam de arroz, nunca compram café e vão ao mercado aos sábados."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa.",
+        "conteudo": {
+          "palavras": [
+            "do",
+            "drink",
+            "how",
+            "much",
+            "you",
+            "water"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "How much water do you drink?"
+          ]
+        },
+        "explicacao": "How much + incontável + do + you + drink?"
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu não tenho dinheiro.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I don't have any money.",
+            "I don't have money.",
+            "I have no money."
+          ]
+        },
+        "explicacao": "Negativa: I don't have (any) money. Money é incontável.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "How many milk do you want?"
+        },
+        "gabarito": {
+          "aceitas": [
+            "How much milk do you want?"
+          ]
+        },
+        "explicacao": "Milk é incontável → How much.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu gostaria de um sanduíche, por favor.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I'd like a sandwich, please.",
+            "I'd like a sandwich please."
+          ]
+        },
+        "explicacao": "I'd like + a sandwich + please."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual palavra é contável?",
+        "conteudo": {
+          "opcoes": [
+            "rice",
+            "sugar",
+            "orange",
+            "water"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Orange (laranja) é contável: an orange, two oranges.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "Do you have ___ milk?",
+          "opcoes": [
+            "any",
+            "a",
+            "an",
+            "many"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Pergunta com incontável → any milk."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com How much ou How many.",
+        "conteudo": {
+          "texto": "___ sugar do you want?",
+          "opcoesPorLacuna": [
+            [
+              "How much",
+              "How many"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "How much"
+            ]
+          ]
+        },
+        "explicacao": "Sugar é incontável → How much.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a frase correta.",
+        "conteudo": {
+          "opcoes": [
+            "We eat rices every day.",
+            "We eat rice every day.",
+            "We eat a rice every day.",
+            "We eat an rice every day."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Rice é incontável: sem plural e sem a/an.",
+        "tagsErro": [
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com some ou any: \"Eles não comem carne nenhuma.\"",
+        "conteudo": {
+          "texto": "They don't eat ___ meat.",
+          "opcoesPorLacuna": [
+            [
+              "some",
+              "any"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "any"
+            ]
+          ]
+        },
+        "explicacao": "Negativa → any."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "How much ___ the cake?",
+          "opcoes": [
+            "is",
+            "are",
+            "do",
+            "does"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "The cake é singular → How much is…?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete: \"Pode me ver uma água, por favor?\"",
+        "conteudo": {
+          "texto": "Can I ___ some water, please?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "have",
+              "get"
+            ]
+          ]
+        },
+        "explicacao": "Can I have…? (ou Can I get…?) para pedir."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Como se escreve \"eight dollars and ninety-nine cents\"?",
+        "conteudo": {
+          "opcoes": [
+            "$8,99",
+            "$8.99",
+            "$89.9",
+            "99¢"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Em inglês o separador decimal é o ponto: $8.99."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com a ou an.",
+        "conteudo": {
+          "texto": "I'd like ___ banana, please.",
+          "opcoesPorLacuna": [
+            [
+              "a",
+              "an"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "a"
+            ]
+          ]
+        },
+        "explicacao": "Banana começa com som de consoante → a banana."
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "O atendente pergunta \"Anything else?\". Você não quer mais nada. O que você diz?",
+        "conteudo": {
+          "opcoes": [
+            "No, that's all, thanks.",
+            "Yes, please, to go.",
+            "Here you go.",
+            "For here, please."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "That's all = é só isso."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How much is the apple pie?",
+        "conteudo": {
+          "texto": "Bom Dia Café – Menu: Coffee $1.75. Tea $1.50. Ham and cheese sandwich $5.00. Banana $0.75. Apple pie $3.25. Customer: Can I have a tea and a ham and cheese sandwich, please? Waiter: Sure. Anything else? Customer: No, that's all, thanks. Waiter: That's $6.50.",
+          "opcoes": [
+            "$1.75",
+            "$3.25",
+            "$5.00",
+            "$0.75"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "No cardápio: Apple pie $3.25."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. O que o cliente pede?",
+        "conteudo": {
+          "texto": "Bom Dia Café – Menu: Coffee $1.75. Tea $1.50. Ham and cheese sandwich $5.00. Banana $0.75. Apple pie $3.25. Customer: Can I have a tea and a ham and cheese sandwich, please? Waiter: Sure. Anything else? Customer: No, that's all, thanks. Waiter: That's $6.50.",
+          "opcoes": [
+            "A coffee and a banana.",
+            "A tea and a sandwich.",
+            "A tea and an apple pie.",
+            "A coffee and a sandwich."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O cliente diz: \"Can I have a tea and a ham and cheese sandwich, please?\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. How much rice does Helena use every day?",
+        "conteudo": {
+          "texto": "My name is Helena. I'm a cook at a small restaurant in Belém. Every day, I make lunch for forty people. I need a lot of rice and beans. I use about ten kilos of rice every day! We don't serve any meat on Mondays. On Mondays, we make fish with açaí. Our customers love it.",
+          "opcoes": [
+            "About two kilos.",
+            "About ten kilos.",
+            "About forty kilos.",
+            "She never uses rice."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "O texto diz: \"I use about ten kilos of rice every day!\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto e responda. Qual frase é verdadeira?",
+        "conteudo": {
+          "texto": "My name is Helena. I'm a cook at a small restaurant in Belém. Every day, I make lunch for forty people. I need a lot of rice and beans. I use about ten kilos of rice every day! We don't serve any meat on Mondays. On Mondays, we make fish with açaí. Our customers love it.",
+          "opcoes": [
+            "The restaurant serves meat on Mondays.",
+            "Helena makes lunch for ten people.",
+            "On Mondays they make fish.",
+            "Helena works in São Paulo."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O texto diz: \"On Mondays, we make fish with açaí.\" Não servem carne às segundas, o almoço é para 40 pessoas e o restaurante fica em Belém."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Coloque as palavras na ordem certa.",
+        "conteudo": {
+          "palavras": [
+            "want",
+            "cookies",
+            "how",
+            "do",
+            "many",
+            "you"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "How many cookies do you want?"
+          ]
+        },
+        "explicacao": "How many + plural + do + you + want?"
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós não temos ovos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We don't have any eggs.",
+            "We don't have eggs.",
+            "We have no eggs."
+          ]
+        },
+        "explicacao": "Negativa: We don't have (any) eggs.",
+        "tagsErro": [
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "She doesn't have some money."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She doesn't have any money.",
+            "She doesn't have money."
+          ]
+        },
+        "explicacao": "Negativa → any money."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Quanto custa o café?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "How much is the coffee?",
+            "How much does the coffee cost?",
+            "How much is a coffee?",
+            "How much does a coffee cost?"
+          ]
+        },
+        "explicacao": "How much is + singular/incontável: How much is the coffee?"
+      }
+    ]
+  }
+}

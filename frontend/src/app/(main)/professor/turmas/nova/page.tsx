@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/Button";
 import { apiFetch } from "@/lib/api";
+import { Plus } from "lucide-react";
 
 const NIVEIS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
 
@@ -43,24 +43,24 @@ export default function NovaTurmaPage() {
       <div>
         <Link
           href="/professor/turmas"
-          className="inline-flex items-center gap-2 text-sm text-[#4A4A4A] hover:text-[#1A1A1A] mb-4"
+          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
         >
           ← Voltar às turmas
         </Link>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Nova turma</h1>
-        <p className="text-[#4A4A4A] mt-1">
+        <h1 className="text-2xl font-bold text-ink">Nova turma</h1>
+        <p className="text-ink-soft mt-1">
           Um código de convite será gerado automaticamente.
         </p>
       </div>
 
       <form
         onSubmit={handleSubmit}
-        className="p-6 rounded-xl bg-white border border-gray-100 shadow-sm space-y-5"
+        className="card p-6 space-y-5"
       >
         <div>
           <label
             htmlFor="nome"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Nome da turma
           </label>
@@ -70,13 +70,13 @@ export default function NovaTurmaPage() {
             onChange={(e) => setNome(e.target.value)}
             required
             placeholder="Ex.: Inglês B1 — Tarde"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
           <label
             htmlFor="descricao"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Descrição (opcional)
           </label>
@@ -85,13 +85,13 @@ export default function NovaTurmaPage() {
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
             rows={3}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
         </div>
         <div>
           <label
             htmlFor="nivel"
-            className="block text-sm font-medium text-[#1A1A1A] mb-2"
+            className="block text-sm font-medium text-ink mb-2"
           >
             Nível (prefixo do código de convite)
           </label>
@@ -99,7 +99,7 @@ export default function NovaTurmaPage() {
             id="nivel"
             value={nivel}
             onChange={(e) => setNivel(e.target.value)}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20 focus:border-[#1898DC]"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           >
             {NIVEIS.map((n) => (
               <option key={n} value={n}>
@@ -109,7 +109,7 @@ export default function NovaTurmaPage() {
           </select>
         </div>
         {erro && (
-          <p className="text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
+          <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
             {erro}
           </p>
         )}
@@ -120,13 +120,13 @@ export default function NovaTurmaPage() {
           <button
             type="submit"
             disabled={carregando}
-            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-[#1898DC] text-white px-6 py-3 hover:bg-[#147EB8] transition-colors disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
           >
             {carregando ? (
               "Salvando…"
             ) : (
               <>
-                <Image src="/icons/plus-white.svg" alt="" width={18} height={18} />
+                <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
                 Criar turma
               </>
             )}

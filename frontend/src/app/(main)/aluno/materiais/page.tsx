@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
 import { tempoRelativoPt } from "@/lib/timePt";
+import { Download, Search } from "lucide-react";
 
 type Turma = { id: number; nome: string };
 
@@ -121,21 +122,21 @@ function MateriaisAlunoContent() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-[#1A1A1A]">Materiais</h1>
-        <p className="text-[#4A4A4A] mt-1">
+        <h1 className="text-2xl font-bold text-ink">Materiais</h1>
+        <p className="text-ink-soft mt-1">
           Arquivos e links compartilhados pelo professor na turma.
         </p>
       </div>
 
-      <div className="p-4 rounded-xl bg-white border border-gray-100 shadow-sm space-y-3">
-        <label className="block text-sm font-medium text-[#1A1A1A]">
+      <div className="card p-4 space-y-3">
+        <label className="block text-sm font-medium text-ink">
           Turma
         </label>
         <select
           value={turmaId}
           onChange={(e) => setManualTurmaId(e.target.value)}
           disabled={carregandoTurmas}
-          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A]"
+          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-ink"
         >
           <option value="">
             {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -147,8 +148,8 @@ function MateriaisAlunoContent() {
           ))}
         </select>
         {turmas.length === 0 && !carregandoTurmas && (
-          <p className="text-sm text-[#4A4A4A]">
-            <Link href="/aluno/turmas" className="text-[#1898DC]">
+          <p className="text-sm text-ink-soft">
+            <Link href="/aluno/turmas" className="text-accent">
               Entre em uma turma
             </Link>{" "}
             para ver materiais.
@@ -158,19 +159,13 @@ function MateriaisAlunoContent() {
 
       <div className="flex flex-col sm:flex-row gap-4">
         <div className="relative flex-1">
-          <Image
-            src="/icons/search.svg"
-            alt=""
-            width={20}
-            height={20}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5"
-          />
+          <Search aria-hidden className="h-[20px] w-[20px] shrink-0 text-ink-faint absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" />
           <input
             type="search"
             placeholder="Buscar…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-[#1A1A1A] focus:outline-none focus:ring-2 focus:ring-[#1898DC]/20"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -181,8 +176,8 @@ function MateriaisAlunoContent() {
               onClick={() => setActiveFilter(f.label)}
               className={`px-4 py-2 rounded-lg text-sm font-medium ${
                 activeFilter === f.label
-                  ? "bg-[#1898DC] text-white"
-                  : "border border-gray-300 text-[#4A4A4A] hover:bg-gray-50"
+                  ? "bg-accent text-white"
+                  : "border border-gray-300 text-ink-soft hover:bg-gray-50"
               }`}
             >
               {f.label}
@@ -192,11 +187,11 @@ function MateriaisAlunoContent() {
       </div>
 
       {!turmaId ? (
-        <p className="text-sm text-[#4A4A4A]">Selecione uma turma.</p>
+        <p className="text-sm text-ink-soft">Selecione uma turma.</p>
       ) : carregandoMat ? (
-        <p className="text-sm text-[#4A4A4A]">Carregando materiais…</p>
+        <p className="text-sm text-ink-soft">Carregando materiais…</p>
       ) : filtrados.length === 0 ? (
-        <p className="text-sm text-[#4A4A4A]">Nenhum material encontrado.</p>
+        <p className="text-sm text-ink-soft">Nenhum material encontrado.</p>
       ) : (
         <div className="space-y-4">
           {filtrados.map((mat) => {
@@ -204,7 +199,7 @@ function MateriaisAlunoContent() {
             return (
               <div
                 key={mat.id}
-                className="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 shadow-sm"
+                className="card flex items-center gap-4 p-4"
               >
                 <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
                   <Image
@@ -215,10 +210,10 @@ function MateriaisAlunoContent() {
                   />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-[#1A1A1A] truncate">
+                  <p className="font-medium text-ink truncate">
                     {mat.titulo}
                   </p>
-                  <p className="text-sm text-[#4A4A4A]">
+                  <p className="text-sm text-ink-soft">
                     {mat.tipo.toUpperCase()} · {tempoRelativoPt(mat.criadoEm)}
                   </p>
                 </div>
@@ -227,10 +222,10 @@ function MateriaisAlunoContent() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-[#4A4A4A] hover:text-[#1898DC] rounded-lg shrink-0"
+                    className="p-2 text-ink-soft hover:text-accent rounded-lg shrink-0"
                     aria-label="Abrir"
                   >
-                    <Image src="/icons/download.svg" alt="" width={20} height={20} />
+                    <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />
                   </a>
                 )}
               </div>
@@ -246,7 +241,7 @@ export default function AlunoMateriaisPage() {
   return (
     <Suspense
       fallback={
-        <div className="max-w-4xl mx-auto p-8 text-[#4A4A4A]">Carregando…</div>
+        <div className="max-w-4xl mx-auto p-8 text-ink-soft">Carregando…</div>
       }
     >
       <MateriaisAlunoContent />

@@ -27,11 +27,6 @@ export async function getConfig(_req: Request, res: Response) {
 }
 
 export async function uploadLogo(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   if (!req.file) {
     res.status(400).json({ error: 'Nenhum arquivo enviado' });
     return;
@@ -58,12 +53,7 @@ export async function uploadLogo(req: AuthRequest, res: Response) {
 // ─── Perfil do professor logado ─────────────────────────────────────────────
 
 export async function getProfessorMe(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const professor = await prisma.professor.findUnique({
+  const professor = await prisma.usuario.findUnique({
     where: { id: req.user.id },
     select: { id: true, nome: true, email: true, criadoEm: true },
   });
@@ -77,11 +67,6 @@ export async function getProfessorMe(req: AuthRequest, res: Response) {
 }
 
 export async function updateProfessorMe(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   const { nome, email, senha } = req.body;
   const data: { nome?: string; email?: string; senha?: string } = {};
 
@@ -105,7 +90,7 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
   }
 
   try {
-    const professor = await prisma.professor.update({
+    const professor = await prisma.usuario.update({
       where: { id: req.user.id },
       data,
       select: { id: true, nome: true, email: true, criadoEm: true },
@@ -119,13 +104,9 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
 // ─── Gestão de professores (admin) ──────────────────────────────────────────
 
 export async function listAllProfessors(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const professores = await prisma.professor.findMany({
-    select: { id: true, nome: true, email: true, criadoEm: true },
+  const professores = await prisma.usuario.findMany({
+    where: { papel: 'professor' },
+    select: { id: true, nome: true, email: true, admin: true, criadoEm: true },
     orderBy: { nome: 'asc' },
   });
 
@@ -133,11 +114,6 @@ export async function listAllProfessors(req: AuthRequest, res: Response) {
 }
 
 export async function createProfessorAdmin(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   const { nome, email, senha } = req.body;
   if (!nome || !email || !senha) {
     res.status(400).json({ error: 'Nome, email e senha são obrigatórios' });
@@ -146,8 +122,8 @@ export async function createProfessorAdmin(req: AuthRequest, res: Response) {
 
   try {
     const hashedSenha = await bcrypt.hash(String(senha), 10);
-    const professor = await prisma.professor.create({
-      data: { nome: String(nome).trim(), email: String(email).trim(), senha: hashedSenha },
+    const professor = await prisma.usuario.create({
+      data: { nome: String(nome).trim(), email: String(email).trim(), senha: hashedSenha, papel: 'professor' },
       select: { id: true, nome: true, email: true, criadoEm: true },
     });
     res.status(201).json(professor);
@@ -157,11 +133,6 @@ export async function createProfessorAdmin(req: AuthRequest, res: Response) {
 }
 
 export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   const targetId = parseInt(req.params.id, 10);
   if (Number.isNaN(targetId)) {
     res.status(400).json({ error: 'ID inválido' });
@@ -196,8 +167,8 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
   }
 
   try {
-    const professor = await prisma.professor.update({
-      where: { id: targetId },
+    const professor = await prisma.usuario.update({
+      where: { id: targetId, papel: 'professor' },
       data,
       select: { id: true, nome: true, email: true, criadoEm: true },
     });
@@ -208,11 +179,6 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
 }
 
 export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   const targetId = parseInt(req.params.id, 10);
   if (Number.isNaN(targetId)) {
     res.status(400).json({ error: 'ID inválido' });
@@ -224,7 +190,7 @@ export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
     return;
   }
 
-  const professor = await prisma.professor.findUnique({ where: { id: targetId } });
+  const professor = await prisma.usuario.findFirst({ where: { id: targetId, papel: 'professor' } });
   if (!professor) {
     res.status(404).json({ error: 'Professor não encontrado' });
     return;
@@ -240,10 +206,11 @@ export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
       await tx.submissao.deleteMany({ where: { atividade: { turmaId: t.id } } });
       await tx.atividade.deleteMany({ where: { turmaId: t.id } });
       await tx.materialApoio.deleteMany({ where: { turmaId: t.id } });
+      await tx.aviso.deleteMany({ where: { turmaId: t.id } });
       await tx.matricula.deleteMany({ where: { turmaId: t.id } });
     }
     await tx.turma.deleteMany({ where: { professorId: targetId } });
-    await tx.professor.delete({ where: { id: targetId } });
+    await tx.usuario.delete({ where: { id: targetId } });
   });
 
   res.status(204).send();
@@ -251,40 +218,30 @@ export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
 
 // ─── Promoção de aluno para professor ───────────────────────────────────────
 
+/**
+ * Muda o papel para professor. Submissões e feedbacks ficam como histórico;
+ * só as matrículas saem, para ele não aparecer como aluno nas turmas.
+ */
 export async function promoteAluno(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
   const alunoId = parseInt(req.params.id, 10);
   if (Number.isNaN(alunoId)) {
     res.status(400).json({ error: 'ID inválido' });
     return;
   }
 
-  const aluno = await prisma.aluno.findUnique({ where: { id: alunoId } });
+  const aluno = await prisma.usuario.findFirst({ where: { id: alunoId, papel: 'aluno' } });
   if (!aluno) {
     res.status(404).json({ error: 'Aluno não encontrado' });
     return;
   }
 
-  const emailJaExiste = await prisma.professor.findUnique({ where: { email: aluno.email } });
-  if (emailJaExiste) {
-    res.status(400).json({ error: 'Já existe um professor com este email' });
-    return;
-  }
-
   const novoProfessor = await prisma.$transaction(async (tx) => {
-    const prof = await tx.professor.create({
-      data: { nome: aluno.nome, email: aluno.email, senha: aluno.senha },
+    await tx.matricula.deleteMany({ where: { alunoId } });
+    return tx.usuario.update({
+      where: { id: alunoId },
+      data: { papel: 'professor' },
       select: { id: true, nome: true, email: true },
     });
-    await tx.feedback.deleteMany({ where: { submissao: { alunoId } } });
-    await tx.submissao.deleteMany({ where: { alunoId } });
-    await tx.matricula.deleteMany({ where: { alunoId } });
-    await tx.aluno.delete({ where: { id: alunoId } });
-    return prof;
   });
 
   res.status(201).json({ professor: novoProfessor });
