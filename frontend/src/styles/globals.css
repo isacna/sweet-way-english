@@ -86,8 +86,9 @@
   --radius-card: 1.25rem;
 
   /* ── Tipografia ────────────────────────────────────────────────────────── */
-  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fredoka), var(--font-figtree), ui-rounded, system-ui, sans-serif;
+  /* Inter (variável, eixo óptico) em tudo: a mesma linguagem da home com vídeo */
+  --font-sans: var(--font-inter), -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-inter), -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* ── Espaçamentos semânticos (legado) ──────────────────────────────────── */
@@ -116,11 +117,102 @@
   80% { transform: translateX(2px); }
 }
 
-/* Área da professora: acento azul-céu, mais "ferramenta de trabalho". */
-[data-area="professor"] {
-  --color-accent: var(--color-sky);
-  --color-accent-strong: var(--color-sky-strong);
-  --color-accent-soft: var(--color-sky-soft);
+/* Área da professora: tema claro, mesmo violeta de ação do resto do site. */
+
+/*
+ * Tema escuro "noite" (área do aluno e telas públicas sobre vídeo).
+ * Como o @theme não é inline, redefinir os tokens aqui muda todos os utilitários
+ * (bg-card, text-ink, border-line, bg-grape-soft, gray-*…) dentro desta área.
+ * Contrastes conferidos: ink 16:1, ink-soft 8.8:1, ink-faint 5.7:1, violeta como texto 6.6:1,
+ * branco sobre o violeta 5.4:1 (todos sobre card #17181d).
+ */
+/*
+ * Quando o tema escuro vale:
+ *  - telas públicas sobre vídeo (wrapper com data-tema="escuro"): sempre;
+ *  - área do aluno: por padrão, a menos que a pessoa escolha "Claro";
+ *  - área da professora: só se a pessoa escolher "Escuro".
+ * A escolha fica em <html data-preferencia-tema="claro|escuro"> (src/lib/tema.ts).
+ */
+[data-tema="escuro"],
+html:not([data-preferencia-tema="claro"]) [data-area="aluno"],
+html[data-preferencia-tema="escuro"] [data-area] {
+  color-scheme: dark;
+
+  --color-ink: #f3f3f6;
+  --color-ink-soft: #b4b6be;
+  --color-ink-faint: #8f929b;
+
+  --color-canvas: #0c0e13;
+  --color-surface: #0c0e13;
+  --color-card: #17181d;
+  --color-line: #272931;
+  --color-line-strong: #363944;
+
+  --color-grape: #7448f0;
+  --color-grape-strong: #5b33d1;
+  --color-grape-bright: #a98bff;
+  --color-grape-soft: #251d3d;
+  --color-grape-mist: #1c1730;
+
+  /* accent é resolvido no :root; redefinido aqui para seguir o violeta escuro */
+  --color-accent: var(--color-grape);
+  --color-accent-strong: var(--color-grape-strong);
+  --color-accent-soft: var(--color-grape-soft);
+
+  --color-sky: #0a72b5;
+  --color-sky-strong: #085d94;
+  --color-sky-bright: #5cbcf0;
+  --color-sky-soft: #0f2636;
+  --color-sky-ink: #8ccdf3;
+
+  --color-candy: #ff7aa8;
+  --color-candy-soft: #301723;
+
+  --color-sun-ink: #f3c457;
+  --color-sun-soft: #2c2410;
+  --color-flame-ink: #ff9c6b;
+  --color-flame-soft: #2f1b12;
+
+  --color-success-soft: #122a1f;
+  --color-success-ink: #6fdba3;
+  --color-danger-soft: #331820;
+  --color-danger-ink: #ff8a9b;
+
+  --color-gray-50: #1b1c22;
+  --color-gray-100: #22242b;
+  --color-gray-200: #2c2e37;
+  --color-gray-300: #3b3e49;
+  --color-gray-400: #9a9ca5;
+  --color-gray-500: #a8aab3;
+  --color-gray-600: #c2c4cb;
+  --color-gray-700: #dcdde2;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+  --shadow-md: 0 6px 18px -6px rgb(0 0 0 / 0.55);
+  --shadow-lg: 0 22px 48px -18px rgb(0 0 0 / 0.65);
+
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+/*
+ * Texto colorido precisa ser mais claro no escuro; os fundos (bg-grape, bg-danger…) continuam iguais,
+ * para o texto branco dos botões manter o contraste.
+ */
+:is([data-tema="escuro"], html:not([data-preferencia-tema="claro"]) [data-area="aluno"], html[data-preferencia-tema="escuro"] [data-area])
+  :is(.text-grape, .text-grape-strong, .text-accent, .text-accent-strong) {
+  color: var(--color-grape-bright);
+}
+:is([data-tema="escuro"], html:not([data-preferencia-tema="claro"]) [data-area="aluno"], html[data-preferencia-tema="escuro"] [data-area])
+  .text-danger {
+  color: var(--color-danger-ink);
+}
+:is([data-tema="escuro"], html:not([data-preferencia-tema="claro"]) [data-area="aluno"], html[data-preferencia-tema="escuro"] [data-area])
+  .text-success {
+  color: var(--color-success-ink);
+}
+:is([data-tema="escuro"], html:not([data-preferencia-tema="claro"]) [data-area="aluno"], html[data-preferencia-tema="escuro"] [data-area])
+  .text-sky {
+  color: var(--color-sky-ink);
 }
 
 @layer base {
