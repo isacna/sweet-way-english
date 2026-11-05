@@ -40,8 +40,13 @@ export async function createFeedback(req: AuthRequest, res: Response) {
   }
 
   const { comentario, nota } = req.body;
+  const notaNum = Number(nota);
+  if (nota === '' || nota == null || !Number.isFinite(notaNum) || (comentario != null && typeof comentario !== 'string')) {
+    res.status(400).json({ error: 'Envie uma nota numérica' });
+    return;
+  }
   const feedback = await prisma.feedback.create({
-    data: { submissaoId, professorId: req.user.id, comentario, nota: parseFloat(nota) },
+    data: { submissaoId, professorId: req.user.id, comentario, nota: notaNum },
   });
   await prisma.submissao.update({ where: { id: submissaoId }, data: { status: StatusSubmissao.corrigido } });
   res.status(201).json(feedback);

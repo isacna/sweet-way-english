@@ -87,26 +87,26 @@ describe('MaterialController', () => {
   // ── deleteMaterial ────────────────────────────────────────────────────────
   describe('deleteMaterial', () => {
     it('returns 403 for aluno', async () => {
-      await deleteMaterial(studentReq({ params: { turmaId: '1', materialId: '2' } }), res);
+      await deleteMaterial(studentReq({ params: { id: '1', materialId: '2' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
     it('returns 404 when turma not found', async () => {
       prismaMock.turma.findUnique.mockResolvedValue(null);
-      await deleteMaterial(mockReq({ params: { turmaId: '99', materialId: '2' } }), res);
+      await deleteMaterial(mockReq({ params: { id: '99', materialId: '2' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 403 when turma belongs to another professor', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 999 });
-      await deleteMaterial(mockReq({ params: { turmaId: '1', materialId: '2' } }), res);
+      await deleteMaterial(mockReq({ params: { id: '1', materialId: '2' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
     it('returns 404 when material not found', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
       prismaMock.materialApoio.findFirst.mockResolvedValue(null);
-      await deleteMaterial(mockReq({ params: { turmaId: '1', materialId: '99' } }), res);
+      await deleteMaterial(mockReq({ params: { id: '1', materialId: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
@@ -115,7 +115,7 @@ describe('MaterialController', () => {
       prismaMock.materialApoio.findFirst.mockResolvedValue({ id: 2, urlArquivo: 'https://youtube.com/watch' });
       prismaMock.materialApoio.delete.mockResolvedValue({});
 
-      await deleteMaterial(mockReq({ params: { turmaId: '1', materialId: '2' } }), res);
+      await deleteMaterial(mockReq({ params: { id: '1', materialId: '2' } }), res);
 
       expect(res.status).toHaveBeenCalledWith(204);
     });

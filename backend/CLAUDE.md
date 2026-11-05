@@ -141,7 +141,9 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 | `POST` | `/api/conteudo/exercicios/verificar` | Editor preview: `{ item, resposta }` → `corrigir()` |
 | `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students |
 
-Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
+Every router wraps its controllers with `h()` from `src/http/asyncHandler.ts`, so async errors reach `errorHandler`: Express 4 does not catch rejected promises, and an unhandled rejection kills the process. Wrap new routes too, and validate ids with `idParam()` before calling Prisma.
+
+Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`.
 
 #### Health
 | Method | Path | Description |
@@ -165,7 +167,7 @@ Prisma with SQLite. Client initialized in `src/database/client.ts` using `@prism
 
 **Key models**:
 - `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. Migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
-- `Turma` — class with a random 6-char `codigoConvite` (invite code)
+- `Turma` — class with a random 8-char `codigoConvite` (invite code, `crypto.randomInt`; never derive it from counts or dates, students could guess it)
 - `Matricula` — join table between a `Usuario` (aluno) and a `Turma`
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)
 - `Submissao` — student submission; `status` enum: `pendente | aprovado | reprovado | corrigido`
@@ -177,6 +179,6 @@ After any `schema.prisma` change, run `npx prisma migrate dev` then `npx prisma 
 
 ### File Uploads
 
-Multer (`src/config/multer.ts`) stores files to `./uploads/{timestamp}-{sanitized-name}`, max `UPLOAD_MAX_MB` (413 above it), allowlisted MIME types only: PDF, Office docs, plain text, images (no SVG), audio, video (415 otherwise). The stored URL in the DB is `/uploads/{filename}`, served statically at the same path. File fields:
+Multer (`src/config/multer.ts`) stores files to `./uploads/{timestamp}-{random}-{sanitized-name}{ext}`, max `UPLOAD_MAX_MB` (413 above it), allowlisted MIME types only (`EXTENSAO_POR_MIME`: PDF, Office docs, plain text, common images without SVG, audio, video; 415 otherwise). The extension comes from the MIME type, not the uploaded name. Routes use `...uploadUnico(campo)`, which deletes the file when the response is an error, and check the role before multer runs. `/uploads` sends `Content-Disposition: attachment` for anything outside `EXTENSOES_INLINE`. The stored URL in the DB is `/uploads/{filename}`, served statically at the same path. File fields:
 - `submissoes`: field name `arquivo`
 - `materiais`: field name `arquivo`

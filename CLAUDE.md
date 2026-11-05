@@ -84,7 +84,7 @@ Frontend Jest unit tests don't exist yet (`--passWithNoTests`). Playwright has t
 
 ## Seed Credentials
 
-After running `npm run db:seed` (or first Docker start), these accounts are available:
+After running `npm run db:seed` (or the first Docker start with `SEED_DEMO=1`), these accounts are available. Without `SEED_DEMO=1`, Docker runs `prisma/bootstrap.ts` instead: it imports the course and creates the first admin from `ADMIN_EMAIL`/`ADMIN_PASSWORD` (12+ chars) when no admin exists. Never enable the demo seed on an internet-reachable server: these passwords are public.
 
 | Role      | Email                    | Password  |
 |-----------|--------------------------|-----------|
@@ -118,11 +118,11 @@ Self-paced A1 course using the Structured Grammar (PPP) method. It has no AI and
 4. Backend `authenticateToken` middleware validates the JWT and attaches `req.user = { id, email, role, admin }`; on 401 the frontend `apiFetch` clears the stored session
 5. `requireRole(...)` / `requireAdmin` middlewares gate endpoints (admin is checked against the DB); many older controllers still check `req.user.role` inline
 
-`JWT_SECRET` is required (min 16 chars): the backend fails at startup without it, and `docker compose` refuses to start without it in the root `.env`.
+`JWT_SECRET` is required (min 16 chars, and known placeholder values such as `sua-chave-secreta` are rejected): the backend fails at startup without it, and `docker compose` refuses to start without it in the root `.env`.
 
 ### File Uploads
 
-Multer stores files to `./uploads/{timestamp}-{sanitized-name}` on the backend (size limit `UPLOAD_MAX_MB`, MIME allowlist). The DB stores the relative path `/uploads/{filename}`, served statically at `GET /uploads/*`. The frontend uses `assetUrl(path)` from `src/lib/api.ts` to construct full URLs.
+Multer stores files to `./uploads/{timestamp}-{random}-{sanitized-name}{ext}` on the backend (size limit `UPLOAD_MAX_MB`, MIME allowlist). The extension comes from the MIME type, never from the uploaded name, and a file whose request fails (4xx/5xx) is deleted. `/uploads` serves only media and PDF inline; anything else goes out with `Content-Disposition: attachment`. The DB stores the relative path `/uploads/{filename}`, served statically at `GET /uploads/*`. The frontend uses `assetUrl(path)` from `src/lib/api.ts` to construct full URLs.
 
 ### Users
 

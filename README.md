@@ -55,9 +55,15 @@ cp .env.example .env
 
 3. Preencha as variáveis no `.env`:
 ```env
-JWT_SECRET=sua-chave-secreta
+# Gere com: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+JWT_SECRET=<valor aleatório>
 APP_URL=http://localhost:3333
 NEXT_PUBLIC_API_URL=http://localhost:3333
+# Primeiro admin (criado no primeiro start)
+ADMIN_EMAIL=voce@exemplo.com
+ADMIN_PASSWORD=<senha forte, 12+ caracteres>
+# Só para testar localmente: carrega as contas de demonstração abaixo
+# SEED_DEMO=1
 ```
 
 4. Inicie os containers:
@@ -89,7 +95,7 @@ npm run dev
 
 ## 🔑 Credenciais de Teste
 
-O banco de dados é populado automaticamente com dados de exemplo na primeira execução.
+Sem Docker, rode `npm run db:seed` no backend. No Docker, os dados de exemplo só são carregados com `SEED_DEMO=1` no `.env`. Não use isso num servidor acessível pela internet: as senhas abaixo são públicas.
 
 | Perfil | E-mail | Senha |
 |--------|--------|-------|

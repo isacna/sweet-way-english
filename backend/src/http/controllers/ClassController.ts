@@ -1,6 +1,18 @@
 import { Response } from 'express';
+import { randomInt } from 'crypto';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { idParam } from './cursoApoio.js';
+
+// Sem 0/O/1/I/L para o código ser fácil de digitar
+const ALFABETO_CONVITE = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+
+/** Código de convite aleatório (31^8 ≈ 8,5e11): não dá para adivinhar o de outra turma. */
+function gerarCodigoConvite() {
+  let codigo = '';
+  for (let i = 0; i < 8; i++) codigo += ALFABETO_CONVITE[randomInt(ALFABETO_CONVITE.length)];
+  return codigo;
+}
 
 export async function createClass(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -8,19 +20,25 @@ export async function createClass(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { nome, descricao, nivel } = req.body;
-  const year = new Date().getFullYear();
-  const count = await prisma.turma.count();
-  const codigoConvite = `SW${nivel || 'B'}${count + 1}-${year}`;
-
-  try {
-    const turma = await prisma.turma.create({
-      data: { nome, descricao, codigoConvite, professorId: req.user.id },
-    });
-    res.status(201).json(turma);
-  } catch {
-    res.status(400).json({ error: 'Erro ao criar turma' });
+  const { nome, descricao } = req.body;
+  if (typeof nome !== 'string' || !nome.trim() || (descricao != null && typeof descricao !== 'string')) {
+    res.status(400).json({ error: 'Nome da turma é obrigatório' });
+    return;
   }
+
+  // Colisão é improvável, mas o código é @unique: tenta de novo em vez de falhar
+  for (let tentativa = 0; tentativa < 5; tentativa++) {
+    try {
+      const turma = await prisma.turma.create({
+        data: { nome: nome.trim(), descricao, codigoConvite: gerarCodigoConvite(), professorId: req.user.id },
+      });
+      res.status(201).json(turma);
+      return;
+    } catch {
+      // tenta outro código
+    }
+  }
+  res.status(400).json({ error: 'Erro ao criar turma' });
 }
 
 export async function listClasses(req: AuthRequest, res: Response) {
@@ -41,14 +59,20 @@ export async function listClasses(req: AuthRequest, res: Response) {
 }
 
 export async function getClassById(req: AuthRequest, res: Response) {
-  const id = parseInt(req.params.id);
+  const id = idParam(req.params.id);
+  if (!id) {
+    res.status(400).json({ error: 'ID inválido' });
+    return;
+  }
+  const ehProfessor = req.user.role === 'professor';
   const turma = await prisma.turma.findUnique({
     where: { id },
     include: {
       professor: { select: { nome: true } },
       atividades: true,
       materiais: true,
-      matriculas: { include: { aluno: { select: { id: true, nome: true, email: true } } } },
+      // Alunos veem só o nome dos colegas (podem ser menores): email fica com a professora
+      matriculas: { include: { aluno: { select: { id: true, nome: true, email: ehProfessor } } } },
     },
   });
 
@@ -80,6 +104,10 @@ export async function joinClass(req: AuthRequest, res: Response) {
   }
 
   const { codigoConvite } = req.body;
+  if (typeof codigoConvite !== 'string' || !codigoConvite.trim()) {
+    res.status(400).json({ error: 'Informe o código de convite' });
+    return;
+  }
 
   const alreadyEnrolled = await prisma.matricula.findFirst({
     where: { alunoId: req.user.id },
@@ -89,7 +117,7 @@ export async function joinClass(req: AuthRequest, res: Response) {
     return;
   }
 
-  const turma = await prisma.turma.findUnique({ where: { codigoConvite } });
+  const turma = await prisma.turma.findUnique({ where: { codigoConvite: codigoConvite.trim() } });
   if (!turma) {
     res.status(404).json({ error: 'Turma não encontrada' });
     return;

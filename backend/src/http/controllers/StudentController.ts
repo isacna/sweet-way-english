@@ -74,7 +74,7 @@ export async function createStudent(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha, turmaId } = req.body;
-  if (!nome || !email || !senha) {
+  if (typeof nome !== 'string' || typeof email !== 'string' || typeof senha !== 'string' || !nome || !email || !senha) {
     res.status(400).json({ error: 'Nome, email e senha são obrigatórios' });
     return;
   }
@@ -150,6 +150,10 @@ export async function updateStudent(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha } = req.body;
+  if ([nome, email, senha].some((v) => v !== undefined && typeof v !== 'string')) {
+    res.status(400).json({ error: 'nome, email e senha precisam ser texto' });
+    return;
+  }
   const data: { nome?: string; email?: string; senha?: string } = {};
   if (nome !== undefined) data.nome = nome;
   if (email !== undefined) data.email = email;

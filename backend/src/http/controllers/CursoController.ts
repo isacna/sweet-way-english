@@ -29,13 +29,19 @@ import {
   perfilPublico,
   proximaLicaoId,
   registrarEstudo,
+  respostaLimitada,
 } from './cursoApoio.js';
 
 const HORA_MS = 60 * 60 * 1000;
 const LIMITE_REVISAO = 20;
 
-const respostaSchema = z.object({ resposta: z.json() });
-const respostasSchema = z.object({ respostas: z.record(z.string(), z.json()) });
+const respostaSchema = z.object({ resposta: respostaLimitada });
+// Um teste tem dezenas de itens, não centenas
+const respostasSchema = z.object({
+  respostas: z
+    .record(z.string().max(20), respostaLimitada)
+    .refine((r) => Object.keys(r).length <= 200, { message: 'Respostas demais' }),
+});
 const perfilSchema = z.object({ metodologia: z.enum(['gramatica', 'comunicativa', 'gamificada', 'input']) });
 
 // ─── Trilha ─────────────────────────────────────────────────────────────────
