@@ -45,6 +45,10 @@ export async function createSubmission(req: AuthRequest, res: Response) {
   }
 
   const { conteudo } = req.body;
+  if (conteudo != null && typeof conteudo !== 'string') {
+    res.status(400).json({ error: 'Conteúdo inválido' });
+    return;
+  }
   const submissao = await prisma.submissao.create({
     data: {
       atividadeId,

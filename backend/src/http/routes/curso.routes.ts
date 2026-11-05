@@ -1,5 +1,5 @@
-import { Router, type RequestHandler, type Response } from 'express';
-import type { AuthRequest } from '../../types/index.js';
+import { Router } from 'express';
+import { h } from '../asyncHandler.js';
 import { authenticateToken, requireRole } from '../middlewares/auth.js';
 import {
   getTrilha,
@@ -15,14 +15,6 @@ import {
 
 // Curso autoguiado — aluno. Contrato em docs/api-curso.md.
 const router = Router();
-// Controllers recebem AuthRequest (garantido por authenticateToken); erros assíncronos vão para o errorHandler
-// (o Express 4 não captura promessas rejeitadas sozinho).
-const h =
-  (fn: (req: AuthRequest, res: Response) => Promise<unknown>): RequestHandler =>
-  (req, res, next) => {
-    fn(req as AuthRequest, res).catch(next);
-  };
-
 router.use(authenticateToken, requireRole('aluno'));
 
 router.get('/', h(getTrilha));

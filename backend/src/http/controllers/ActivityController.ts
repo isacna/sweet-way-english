@@ -1,6 +1,7 @@
 import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { idParam } from './cursoApoio.js';
 
 export async function createActivity(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -21,11 +22,16 @@ export async function createActivity(req: AuthRequest, res: Response) {
   }
 
   const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body;
+  const entrega = new Date(dataEntrega);
+  if (typeof titulo !== 'string' || !titulo.trim() || typeof descricao !== 'string' || Number.isNaN(entrega.getTime())) {
+    res.status(400).json({ error: 'Envie titulo, descricao e uma dataEntrega válida' });
+    return;
+  }
   const atividade = await prisma.atividade.create({
     data: {
-      titulo,
+      titulo: titulo.trim(),
       descricao,
-      dataEntrega: new Date(dataEntrega),
+      dataEntrega: entrega,
       arquivoObrigatorio: Boolean(arquivoObrigatorio),
       link: link ? String(link).trim() : null,
       turmaId,
@@ -90,7 +96,11 @@ export async function updateActivity(req: AuthRequest, res: Response) {
 }
 
 export async function listActivitiesByClass(req: AuthRequest, res: Response) {
-  const turmaId = parseInt(req.params.turmaId);
+  const turmaId = idParam(req.params.turmaId);
+  if (!turmaId) {
+    res.status(400).json({ error: 'Turma inválida' });
+    return;
+  }
   const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
   if (!turma) {
     res.status(404).json({ error: 'Turma não encontrada' });

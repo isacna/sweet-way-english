@@ -37,18 +37,27 @@ const CONTRACOES: [RegExp, string][] = [
   [/\blet's\b/g, 'let us'],
 ];
 
+const PONTUACAO_FINAL = new Set(['.', '!', '?', ';', ':', ',', ' ']);
+
+/** Tira pontuação e espaços do fim sem regex ancorada em `$` (quadrática numa sequência longa). */
+function semPontuacaoFinal(s: string): string {
+  let fim = s.length;
+  while (fim > 0 && PONTUACAO_FINAL.has(s[fim - 1])) fim--;
+  return s.slice(0, fim);
+}
+
 /** Minúsculas, aspas/apóstrofos retos, espaços colapsados, sem pontuação final. */
 export function normalizar(s: string): string {
-  return s
+  // Colapsa os espaços antes de tirar o espaço da pontuação: `\s+([,.!?;:])` direto é quadrático (ReDoS)
+  const r = s
     .normalize('NFC')
     .toLowerCase()
     .replace(/[‘’ʼ`´]/g, "'")
     .replace(/[“”]/g, '"')
-    .replace(/\s+([,.!?;:])/g, '$1')
     .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/[.!?;:,\s]+$/g, '')
+    .replace(/ ([,.!?;:])/g, '$1')
     .trim();
+  return semPontuacaoFinal(r).trim();
 }
 
 /** Normaliza e expande contrações: "She isn't here." ≡ "she is not here". */

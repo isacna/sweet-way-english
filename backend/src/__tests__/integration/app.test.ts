@@ -1,5 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import request from 'supertest';
+import fs from 'fs';
+import path from 'path';
 
 // ── Prisma mock ──────────────────────────────────────────────────────────────
 const prismaMock = vi.hoisted(() => ({
@@ -283,6 +285,64 @@ describe('Integration — HTTP API', () => {
       const res = await request(app).get('/api/conteudo').set('Authorization', professor());
       expect(res.status).toBe(500); // prisma.nivel não existe no mock
       silencio.mockRestore();
+    });
+  });
+
+  // ── Auditoria de segurança: regressões ────────────────────────────────────
+  describe('security regressions', () => {
+    const aluno = () => mockToken({ id: 10, role: 'aluno', email: 's@t.com' });
+    const professor = () => mockToken({ id: 1, role: 'professor', email: 'a@t.com' });
+
+    it('returns 400 (not a crash) for a non-numeric class id', async () => {
+      const res = await request(app).get('/api/turmas/abc').set('Authorization', aluno());
+      expect(res.status).toBe(400);
+      expect(prismaMock.turma.findUnique).not.toHaveBeenCalled();
+    });
+
+    it('returns 400 when joining a class without a string invite code', async () => {
+      const res = await request(app).post('/api/turmas/entrar').set('Authorization', aluno()).send({ codigoConvite: { x: 1 } });
+      expect(res.status).toBe(400);
+    });
+
+    it('sends legacy controller errors to the error handler (500, not a crash)', async () => {
+      const silencio = vi.spyOn(console, 'error').mockImplementation(() => {});
+      prismaMock.turma.findMany.mockRejectedValue(new Error('SQLITE_BUSY'));
+      const res = await request(app).get('/api/turmas').set('Authorization', professor());
+      expect(res.status).toBe(500);
+      silencio.mockRestore();
+    });
+
+    it('rejects oversized answers before grading', async () => {
+      const res = await request(app)
+        .post('/api/curso/exercicios/1/verificar')
+        .set('Authorization', aluno())
+        .send({ resposta: [' '.repeat(10_000)] });
+      expect(res.status).toBe(400);
+    });
+
+    it('does not store a submission upload for a professor (role checked before multer)', async () => {
+      const res = await request(app)
+        .post('/api/atividades/1/submissoes')
+        .set('Authorization', professor())
+        .attach('arquivo', Buffer.from('<script>alert(1)</script>'), { filename: 'x.html', contentType: 'image/png' });
+      expect(res.status).toBe(403);
+    });
+
+    it('serves non-media uploads as attachments and media inline', async () => {
+      fs.mkdirSync('uploads', { recursive: true });
+      const html = path.join('uploads', '__teste_seguranca__.html');
+      const png = path.join('uploads', '__teste_seguranca__.png');
+      fs.writeFileSync(html, '<script>alert(1)</script>');
+      fs.writeFileSync(png, 'png');
+      try {
+        const resHtml = await request(app).get('/uploads/__teste_seguranca__.html');
+        expect(resHtml.headers['content-disposition']).toBe('attachment');
+        const resPng = await request(app).get('/uploads/__teste_seguranca__.png');
+        expect(resPng.headers['content-disposition']).toBeUndefined();
+      } finally {
+        fs.rmSync(html, { force: true });
+        fs.rmSync(png, { force: true });
+      }
     });
   });
 

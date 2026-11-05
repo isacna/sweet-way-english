@@ -3,6 +3,20 @@ import fs from 'fs';
 import path from 'path';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { idParam } from './cursoApoio.js';
+
+const TIPOS_MATERIAL = new Set(['pdf', 'audio', 'video', 'link']);
+
+/** Só links http(s): evita `javascript:` e apontar para o upload de outra pessoa (que o delete apagaria). */
+function urlExterna(valor: unknown): string | null {
+  if (typeof valor !== 'string') return null;
+  try {
+    const url = new URL(valor.trim());
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
 
 export async function createMaterial(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -10,7 +24,11 @@ export async function createMaterial(req: AuthRequest, res: Response) {
     return;
   }
 
-  const turmaId = parseInt(req.params.id);
+  const turmaId = idParam(req.params.id);
+  if (!turmaId) {
+    res.status(400).json({ error: 'Turma inválida' });
+    return;
+  }
   const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
   if (!turma) {
     res.status(404).json({ error: 'Turma não encontrada' });
@@ -23,9 +41,9 @@ export async function createMaterial(req: AuthRequest, res: Response) {
 
   const { titulo, tipo, url } = req.body;
   const file = (req as AuthRequest & { file?: Express.Multer.File }).file;
-  const urlArquivo = file ? `/uploads/${file.filename}` : url;
+  const urlArquivo = file ? `/uploads/${file.filename}` : urlExterna(url);
 
-  if (!titulo || !tipo || !urlArquivo) {
+  if (typeof titulo !== 'string' || !titulo.trim() || !TIPOS_MATERIAL.has(tipo) || !urlArquivo) {
     res.status(400).json({ error: 'Informe título, tipo e um arquivo ou URL' });
     return;
   }
@@ -40,8 +58,13 @@ export async function deleteMaterial(req: AuthRequest, res: Response) {
     return;
   }
 
-  const turmaId = parseInt(req.params.turmaId);
-  const materialId = parseInt(req.params.materialId);
+  // Montado em /turmas/:id/materiais
+  const turmaId = idParam(req.params.id);
+  const materialId = idParam(req.params.materialId);
+  if (!turmaId || !materialId) {
+    res.status(400).json({ error: 'ID inválido' });
+    return;
+  }
 
   const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
   if (!turma) {
@@ -69,7 +92,11 @@ export async function deleteMaterial(req: AuthRequest, res: Response) {
 }
 
 export async function listMaterialsByClass(req: AuthRequest, res: Response) {
-  const turmaId = parseInt(req.params.id);
+  const turmaId = idParam(req.params.id);
+  if (!turmaId) {
+    res.status(400).json({ error: 'Turma inválida' });
+    return;
+  }
   const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
   if (!turma) {
     res.status(404).json({ error: 'Turma não encontrada' });

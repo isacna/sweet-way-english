@@ -18,6 +18,19 @@ describe('normalizar / canonico', () => {
   it("keeps possessive 's", () => {
     expect(canonico("Anna's book")).toBe("anna's book");
   });
+
+  it('removes the space before punctuation and keeps inner punctuation', () => {
+    expect(normalizar('Hello ,  my friend ?!')).toBe('hello, my friend');
+    expect(normalizar('a\n\t. b')).toBe('a. b');
+  });
+
+  it('stays linear on long runs of spaces and punctuation (ReDoS)', () => {
+    const inicio = performance.now();
+    normalizar(`${' '.repeat(100_000)}x`);
+    normalizar(`${'.'.repeat(100_000)}x`);
+    normalizar(`x${' .'.repeat(50_000)}`);
+    expect(performance.now() - inicio).toBeLessThan(500);
+  });
 });
 
 describe('corrigir', () => {
