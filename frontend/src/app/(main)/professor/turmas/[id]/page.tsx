@@ -278,7 +278,7 @@ function TurmaDetalhePageContent() {
   if (erro || !turma) {
     return (
       <div className="max-w-6xl mx-auto space-y-4">
-        <p className="text-red-600">{erro || "Turma não encontrada."}</p>
+        <p className="text-danger-ink">{erro || "Turma não encontrada."}</p>
         <Button href="/professor/turmas" variant="secondary" size="md">
           Voltar
         </Button>
@@ -297,7 +297,7 @@ function TurmaDetalhePageContent() {
         </Link>
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-ink">{turma.nome}</h1>
+            <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">{turma.nome}</h1>
             <p className="text-ink-soft mt-1">
               Prof. {turma.professor.nome} · Código{" "}
               <code className="text-sm bg-gray-100 px-2 py-0.5 rounded">
@@ -320,7 +320,7 @@ function TurmaDetalhePageContent() {
             <button
               type="button"
               onClick={() => { setModalAviso(true); setAvisoErro(""); }}
-              className="inline-flex items-center gap-2 font-medium rounded-lg border border-gray-300 text-ink px-4 py-2 text-sm hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center gap-2 font-semibold rounded-xl border border-line-strong bg-card shadow-sm text-ink min-h-[48px] px-6 py-3 hover:bg-gray-50 hover:border-gray-300 transition-colors"
             >
               📌 Novo aviso
             </button>
@@ -338,10 +338,10 @@ function TurmaDetalhePageContent() {
       {/* Mural de Avisos — lista */}
       {avisos.length > 0 && (
         <section className="card p-6 space-y-3">
-          <h2 className="text-lg font-bold text-ink">Mural de Avisos</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Mural de Avisos</h2>
           <ul className="space-y-3">
             {avisos.map((av) => (
-              <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-gray-100 bg-gray-50">
+              <li key={av.id} className="flex gap-3 p-4 rounded-lg border border-line bg-gray-50">
                 <div className="flex-1 min-w-0 space-y-1">
                   <p className="font-medium text-ink">{av.titulo}</p>
                   {av.conteudo && (
@@ -364,7 +364,7 @@ function TurmaDetalhePageContent() {
                 <button
                   type="button"
                   onClick={() => void deletarAviso(av.id)}
-                  className="text-xs font-medium text-red-400 hover:text-red-600 shrink-0 self-start"
+                  className="text-xs font-medium text-danger hover:text-danger-ink shrink-0 self-start"
                   aria-label="Deletar aviso"
                 >
                   Remover
@@ -378,15 +378,15 @@ function TurmaDetalhePageContent() {
       {/* Modal: novo aviso */}
       {modalAviso && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/40 backdrop-blur-sm"
           onClick={() => setModalAviso(false)}
         >
           <div
-            className="w-full max-w-md rounded-xl bg-white border border-gray-100 shadow-lg"
+            className="w-full max-w-md rounded-[var(--radius-card)] bg-card border border-line shadow-lg"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
-              <h2 className="text-lg font-bold text-ink">Novo aviso</h2>
+            <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-line">
+              <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Novo aviso</h2>
               <button
                 type="button"
                 onClick={() => setModalAviso(false)}
@@ -406,7 +406,7 @@ function TurmaDetalhePageContent() {
                   placeholder="Ex: Aula ao vivo hoje às 19h"
                   required
                   autoFocus
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
               <div>
@@ -416,7 +416,7 @@ function TurmaDetalhePageContent() {
                   onChange={(e) => setAvisoConteudo(e.target.value)}
                   placeholder="Informações adicionais…"
                   rows={3}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent resize-none"
                 />
               </div>
               <div>
@@ -426,7 +426,7 @@ function TurmaDetalhePageContent() {
                   value={avisoLink}
                   onChange={(e) => setAvisoLink(e.target.value)}
                   placeholder="https://meet.google.com/..."
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
               {avisoErro && (
@@ -436,14 +436,14 @@ function TurmaDetalhePageContent() {
                 <button
                   type="button"
                   onClick={() => setModalAviso(false)}
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-ink-soft hover:bg-gray-50"
+                  className="flex-1 px-4 py-3 rounded-xl border border-line-strong bg-card shadow-sm text-sm font-semibold text-ink hover:bg-gray-50 hover:border-gray-300"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
                   disabled={salvandoAviso || !avisoTitulo.trim()}
-                  className="flex-1 px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-70 transition-colors"
+                  className="flex-1 px-4 py-3 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 text-sm font-semibold disabled:opacity-70 transition-[filter]"
                 >
                   {salvandoAviso ? "Publicando…" : "Publicar"}
                 </button>
@@ -455,13 +455,13 @@ function TurmaDetalhePageContent() {
 
       <div className="grid lg:grid-cols-2 gap-8">
         <section className="card p-6">
-          <h2 className="text-lg font-bold text-ink mb-4">Alunos</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-4">Alunos</h2>
           {turma.matriculas.length === 0 ? (
             <p className="text-sm text-ink-soft">
               Nenhum aluno matriculado ainda.
             </p>
           ) : (
-            <ul className="divide-y divide-gray-100">
+            <ul className="divide-y divide-line">
               {turma.matriculas.map((m) => (
                 <li
                   key={m.aluno.id}
@@ -478,7 +478,7 @@ function TurmaDetalhePageContent() {
         </section>
 
         <section className="card p-6">
-          <h2 className="text-lg font-bold text-ink mb-4">Atividades</h2>
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-4">Atividades</h2>
           {turma.atividades.length === 0 ? (
             <p className="text-sm text-ink-soft mb-4">
               Nenhuma atividade. Crie a primeira.
@@ -492,7 +492,7 @@ function TurmaDetalhePageContent() {
                     className={`block p-3 rounded-lg border transition-colors ${
                       atividadeDestaque === String(a.id)
                         ? "border-accent bg-accent/5"
-                        : "border-gray-100 hover:border-gray-200"
+                        : "border-line hover:border-gray-200"
                     }`}
                   >
                     <p className="font-medium text-ink">{a.titulo}</p>
@@ -504,7 +504,7 @@ function TurmaDetalhePageContent() {
                       {new Date(a.dataEntrega).toLocaleString("pt-BR")}
                     </p>
                     {Boolean(a.arquivoObrigatorio) && (
-                      <p className="text-xs text-amber-800 mt-1 font-medium">
+                      <p className="text-xs text-sun-ink mt-1 font-medium">
                         Arquivo obrigatório na entrega
                       </p>
                     )}
@@ -519,7 +519,7 @@ function TurmaDetalhePageContent() {
       {atividadeDestaque && (
         <section className="card p-6 space-y-8">
           <div>
-            <h2 className="text-lg font-bold text-ink mb-4">
+            <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-4">
               Gestão da atividade
             </h2>
             <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
@@ -535,7 +535,7 @@ function TurmaDetalhePageContent() {
                   type="text"
                   value={editTitulo}
                   onChange={(e) => setEditTitulo(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
+                  className="w-full px-3 py-2 rounded-xl border border-line-strong text-sm text-ink bg-card focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -550,7 +550,7 @@ function TurmaDetalhePageContent() {
                   value={editDescricao}
                   onChange={(e) => setEditDescricao(e.target.value)}
                   rows={3}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
+                  className="w-full px-3 py-2 rounded-xl border border-line-strong text-sm text-ink bg-card focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
               <div>
@@ -565,7 +565,7 @@ function TurmaDetalhePageContent() {
                   type="datetime-local"
                   value={editDataEntrega}
                   onChange={(e) => setEditDataEntrega(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
+                  className="w-full px-3 py-2 rounded-xl border border-line-strong text-sm text-ink bg-card focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
               <label className="flex items-start gap-3 cursor-pointer sm:col-span-2">
@@ -592,7 +592,7 @@ function TurmaDetalhePageContent() {
                   value={editLink}
                   onChange={(e) => setEditLink(e.target.value)}
                   placeholder="https://youtube.com/... ou outro link"
-                  className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm text-ink"
+                  className="w-full px-3 py-2 rounded-xl border border-line-strong text-sm text-ink bg-card focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
                 {editLink.trim() && (
                   <div className="mt-3">
@@ -606,7 +606,7 @@ function TurmaDetalhePageContent() {
               </div>
             </div>
             {gestaoErro && (
-              <p className="text-sm text-red-600 mt-3">{gestaoErro}</p>
+              <p className="text-sm text-danger-ink mt-3">{gestaoErro}</p>
             )}
             <button
               type="button"
@@ -617,14 +617,14 @@ function TurmaDetalhePageContent() {
                 !editTitulo.trim() ||
                 !editDescricao.trim()
               }
-              className="mt-4 inline-flex items-center rounded-lg bg-accent text-white text-sm font-medium px-4 py-2 hover:bg-accent-strong disabled:opacity-70"
+              className="mt-4 inline-flex items-center rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 text-sm font-semibold px-4 py-2 disabled:opacity-70"
             >
               {salvandoGestao ? "Salvando…" : "Salvar alterações"}
             </button>
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-ink mb-2">
+            <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-2">
               Quem já entregou
             </h2>
             <p className="text-sm text-ink-soft mb-4">
@@ -642,7 +642,7 @@ function TurmaDetalhePageContent() {
                   })()}
             </p>
             {turma.matriculas.length === 0 ? null : (
-              <ul className="divide-y divide-gray-100 rounded-lg border border-gray-100">
+              <ul className="divide-y divide-line rounded-lg border border-line">
                 {turma.matriculas.map((m) => {
                   const entregou = submissoes.some((s) => s.aluno.id === m.aluno.id);
                   return (
@@ -656,7 +656,7 @@ function TurmaDetalhePageContent() {
                       <span
                         className={
                           entregou
-                            ? "text-green-700 font-medium"
+                            ? "text-success-ink font-medium"
                             : "text-ink-soft"
                         }
                       >
@@ -670,7 +670,7 @@ function TurmaDetalhePageContent() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-ink mb-4">
+            <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-4">
               Submissões desta atividade
             </h2>
             {carregandoSub ? (
@@ -684,7 +684,7 @@ function TurmaDetalhePageContent() {
                 {submissoes.map((s) => (
                   <div
                     key={s.id}
-                    className="p-4 rounded-lg border border-gray-100 space-y-3"
+                    className="p-4 rounded-lg border border-line space-y-3"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <span className="font-medium text-ink">
@@ -707,11 +707,11 @@ function TurmaDetalhePageContent() {
                       />
                     )}
                     {s.feedback ? (
-                      <div className="text-sm bg-green-50 border border-green-100 rounded-lg p-3">
-                        <p className="font-medium text-green-900">
+                      <div className="text-sm bg-success-soft border border-success-bright/30 rounded-lg p-3">
+                        <p className="font-medium text-success-ink">
                           Nota: {s.feedback.nota}
                         </p>
-                        <p className="text-green-800 mt-1">{s.feedback.comentario}</p>
+                        <p className="text-success-ink mt-1">{s.feedback.comentario}</p>
                       </div>
                     ) : null}
                     {!s.feedback && s.status === "pendente" ? (
@@ -729,7 +729,7 @@ function TurmaDetalhePageContent() {
                             }))
                           }
                           rows={2}
-                          className="w-full px-3 py-2 rounded-lg border border-gray-300 text-sm"
+                          className="w-full px-3 py-2 rounded-xl border border-line-strong text-sm bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                         />
                         <div className="flex flex-wrap gap-2 items-center">
                           <input
@@ -747,12 +747,12 @@ function TurmaDetalhePageContent() {
                                 },
                               }))
                             }
-                            className="w-28 px-3 py-2 rounded-lg border border-gray-300 text-sm"
+                            className="w-28 px-3 py-2 rounded-xl border border-line-strong text-sm bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                           />
                           <button
                             type="button"
                             onClick={() => enviarFeedback(s.id)}
-                            className="px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong"
+                            className="px-4 py-2 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 text-sm font-semibold"
                           >
                             Enviar feedback
                           </button>
@@ -760,7 +760,7 @@ function TurmaDetalhePageContent() {
                       </div>
                     ) : null}
                     {(s.status === "aprovado" || s.status === "reprovado") && (
-                      <p className="text-xs text-ink-soft border border-gray-100 rounded-lg px-3 py-2 bg-gray-50">
+                      <p className="text-xs text-ink-soft border border-line rounded-lg px-3 py-2 bg-gray-50">
                         {s.status === "aprovado"
                           ? "Esta entrega foi aprovada. A avaliação com Aprovar/Reprovar não pode ser alterada."
                           : "Esta entrega foi reprovada. O aluno pode enviar nova versão. Esta decisão não pode ser alterada."}
@@ -780,7 +780,7 @@ function TurmaDetalhePageContent() {
                           onClick={() =>
                             void definirStatusSubmissao(s.id, "aprovado")
                           }
-                          className="px-3 py-1.5 rounded-lg border border-green-600 text-green-800 text-sm font-medium hover:bg-green-50 transition-colors disabled:opacity-60"
+                          className="px-3 py-1.5 rounded-lg border border-success text-success-ink text-sm font-medium hover:bg-success-soft transition-colors disabled:opacity-60"
                         >
                           {statusSubBusy?.id === s.id &&
                           statusSubBusy.tipo === "aprovado"
@@ -795,7 +795,7 @@ function TurmaDetalhePageContent() {
                           onClick={() =>
                             void definirStatusSubmissao(s.id, "reprovado")
                           }
-                          className="px-3 py-1.5 rounded-lg border border-red-300 text-red-800 text-sm font-medium hover:bg-red-50 transition-colors disabled:opacity-60"
+                          className="px-3 py-1.5 rounded-lg border border-danger-bright/40 text-danger-ink text-sm font-medium hover:bg-danger-soft transition-colors disabled:opacity-60"
                         >
                           {statusSubBusy?.id === s.id &&
                           statusSubBusy.tipo === "reprovado"
@@ -814,7 +814,7 @@ function TurmaDetalhePageContent() {
                           onClick={() =>
                             void definirStatusSubmissao(s.id, "reprovado")
                           }
-                          className="px-3 py-1.5 rounded-lg border border-red-300 text-red-800 text-sm font-medium hover:bg-red-50 transition-colors disabled:opacity-60"
+                          className="px-3 py-1.5 rounded-lg border border-danger-bright/40 text-danger-ink text-sm font-medium hover:bg-danger-soft transition-colors disabled:opacity-60"
                         >
                           {statusSubBusy?.id === s.id &&
                           statusSubBusy.tipo === "reprovado"

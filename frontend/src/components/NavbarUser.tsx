@@ -4,6 +4,7 @@ import { ChevronDown, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { getStoredUser } from "@/lib/api";
+import { SeletorTema } from "./SeletorTema";
 
 function iniciais(nome: string): string {
   const partes = nome.trim().split(/\s+/).filter(Boolean);
@@ -89,10 +90,10 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
           <p className="text-xs text-ink-soft text-left">{exibirPapel}</p>
         </div>
         <div
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-candy-soft via-grape-soft to-sky-soft ring-2 ring-white shadow-sm"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-candy-soft via-grape-soft to-sky-soft ring-2 ring-card shadow-sm"
           aria-hidden
         >
-          <span className="font-display text-sm font-semibold text-accent-strong">
+          <span className="font-display text-sm font-semibold text-grape">
             {nome ? iniciais(nome) : "…"}
           </span>
         </div>
@@ -102,16 +103,16 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
       {aberto && (
         <div
           role="menu"
-          className="absolute right-0 z-[60] mt-2 w-[min(100vw-2rem,280px)] origin-top-right animate-pop-in overflow-hidden rounded-2xl border border-line bg-white py-1 shadow-lg"
+          className="absolute right-0 z-[60] mt-2 w-[min(100vw-2rem,280px)] origin-top-right animate-pop-in overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-lg"
         >
-          <div className="border-b border-line bg-gradient-to-br from-grape-mist to-white px-4 py-3">
+          <div className="border-b border-line bg-gradient-to-br from-grape-mist to-card px-4 py-3">
             <p className="text-sm font-semibold text-ink truncate">
               {exibirNome}
             </p>
             {email && (
               <p className="text-xs text-ink-soft truncate mt-0.5">{email}</p>
             )}
-            <p className="mt-1.5 inline-block rounded-full bg-accent-soft px-2 py-0.5 text-xs font-semibold text-accent-strong">
+            <p className="mt-1.5 inline-block rounded-full bg-grape-soft px-2 py-0.5 text-xs font-semibold text-grape">
               {exibirPapel}
             </p>
           </div>
@@ -138,6 +139,9 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
               Configurações
             </Link>
           )}
+          <div role="none" className="border-t border-line">
+            <SeletorTema />
+          </div>
           <button
             type="button"
             role="menuitem"
@@ -145,9 +149,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
               setAberto(false);
               sair();
             }}
-            className={`flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-semibold text-danger transition-colors hover:bg-danger-soft ${
-              mobileNav ? "border-t border-line md:border-t-0" : ""
-            }`}
+            className="flex w-full items-center gap-3 border-t border-line px-4 py-3 text-left text-sm font-semibold text-danger-ink transition-colors hover:bg-danger-soft"
           >
             <LogOut aria-hidden className="h-[18px] w-[18px]" />
             Sair da conta

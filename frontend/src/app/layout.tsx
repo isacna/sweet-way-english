@@ -1,23 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Fredoka } from "next/font/google";
+import { Inter } from "next/font/google";
 import "../styles/globals.css";
+import { scriptTemaInicial } from "@/lib/temaScript";
 
-// Fredoka: títulos arredondados, na linha do lettering do logo. Figtree: texto corrido, muito legível no celular.
-const fredoka = Fredoka({
-  variable: "--font-fredoka",
+// Inter variável (eixo óptico 14–32). A variável fica no <html>: o Tailwind resolve --font-sans e
+// --font-display no :root, e no <body> ela não existiria ali (a fonte cairia na do sistema).
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
-
-const figtree = Figtree({
-  variable: "--font-figtree",
-  subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 export const metadata: Metadata = {
   title: "Sweet Way English",
   description:
-    "Aprenda inglês de um jeito doce e eficiente. Plataforma que conecta professores e alunos.",
+    "Curso de inglês do básico ao intermediário, no seu ritmo, com explicação em português e uma professora acompanhando.",
   icons: {
     icon: "/logo-sweet.png",
     shortcut: "/logo-sweet.png",
@@ -35,8 +32,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={`${fredoka.variable} ${figtree.variable} antialiased`}>
+    // suppressHydrationWarning: o script abaixo pode pôr data-preferencia-tema no <html> antes do React
+    <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: scriptTemaInicial }} />
+      </head>
+      <body className="antialiased">
         {children}
       </body>
     </html>

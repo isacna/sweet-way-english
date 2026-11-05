@@ -70,14 +70,14 @@ function SessaoRevisao({ sessao, onRecarregar }: { sessao: Sessao; onRecarregar:
   if (fim) {
     const restantes = total - itens.length;
     return (
-      <div className="animate-pop-in rounded-[1.75rem] border-2 border-success-bright/40 bg-gradient-to-b from-success-soft to-white p-8 text-center">
+      <div className="animate-pop-in rounded-[1.75rem] border-2 border-success-bright/30 bg-gradient-to-b from-success-soft to-card p-8 text-center">
         <p className="mb-3 text-5xl" aria-hidden>
           ✅
         </p>
         <h2 className="text-2xl font-semibold text-ink">Revisão concluída!</h2>
         <p className="mt-2 text-ink-soft">
           Você acertou {acertos} de {itens.length}.
-          {xp > 0 && <span className="ml-1.5 inline-block rounded-full bg-sun px-2.5 py-0.5 font-display font-semibold text-ink">+{xp} XP</span>}
+          {xp > 0 && <span className="ml-1.5 inline-block rounded-full bg-sun px-2.5 py-0.5 font-display font-semibold text-gray-950">+{xp} XP</span>}
         </p>
         <p className="mt-1 text-sm text-ink-soft">
           Os itens que você errou voltam mais cedo; os que acertou, mais tarde.
@@ -105,7 +105,7 @@ function SessaoRevisao({ sessao, onRecarregar }: { sessao: Sessao; onRecarregar:
         </span>
       </div>
       <div className="card space-y-5 p-5 sm:p-7">
-        <p className="eyebrow inline-flex max-w-full items-center gap-1.5 break-words rounded-full bg-sky-soft px-2.5 py-1 text-sky-ink">
+        <p className="eyebrow inline-flex max-w-full items-center gap-1.5 break-words rounded-full bg-grape-soft px-2.5 py-1 text-grape">
           <Repeat2 className="h-3.5 w-3.5 shrink-0" aria-hidden />
           {atual.licaoTitulo} · caixa {atual.caixa}
         </p>

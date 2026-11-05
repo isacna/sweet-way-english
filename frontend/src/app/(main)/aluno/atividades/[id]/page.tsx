@@ -167,7 +167,7 @@ function AtividadeEntregaContent() {
   if (erro && !atividade) {
     return (
       <div className="max-w-2xl mx-auto space-y-4">
-        <p className="text-red-600">{erro}</p>
+        <p className="text-danger-ink">{erro}</p>
         <Button href="/aluno/turmas" variant="secondary" size="md">
           Turmas
         </Button>
@@ -198,12 +198,12 @@ function AtividadeEntregaContent() {
         <p className="text-sm text-ink-soft mt-2">
           Prazo: {new Date(atividade.dataEntrega).toLocaleString("pt-BR")}
           {atividade.arquivoObrigatorio && (
-            <span className="block mt-1 text-amber-800 font-medium">
+            <span className="block mt-1 text-sun-ink font-medium">
               É obrigatório enviar um arquivo anexo.
             </span>
           )}
         </p>
-        <div className="mt-4 p-4 rounded-xl bg-white border border-gray-100 text-sm text-ink-soft whitespace-pre-wrap">
+        <div className="mt-4 p-4 rounded-xl bg-card border border-line text-sm text-ink-soft whitespace-pre-wrap">
           {atividade.descricao}
         </div>
       </div>
@@ -221,7 +221,7 @@ function AtividadeEntregaContent() {
             {historicoCronologico.map((s, index) => (
               <li
                 key={s.id}
-                className="p-5 rounded-xl bg-gray-50 border border-gray-200 space-y-3"
+                className="p-5 rounded-xl bg-gray-50 border border-line space-y-3"
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-sm font-semibold text-ink">
@@ -247,18 +247,18 @@ function AtividadeEntregaContent() {
                     href={assetUrl(s.arquivoUrl) ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-accent font-medium hover:underline"
+                    className="inline-flex items-center gap-2 text-sm text-grape font-medium hover:underline"
                   >
                     <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
                     Baixar anexo desta entrega
                   </a>
                 )}
                 {s.feedback ? (
-                  <div className="text-sm bg-white border border-green-100 rounded-lg p-4 shadow-sm">
-                    <p className="font-medium text-green-900">
+                  <div className="text-sm bg-card border border-success/25 rounded-lg p-4">
+                    <p className="font-medium text-success-ink">
                       Nota: {s.feedback.nota}
                     </p>
-                    <p className="text-green-900/90 mt-2 whitespace-pre-wrap">
+                    <p className="text-success-ink/90 mt-2 whitespace-pre-wrap">
                       {s.feedback.comentario}
                     </p>
                     <p className="text-xs text-ink-soft mt-3">
@@ -269,15 +269,15 @@ function AtividadeEntregaContent() {
                     </p>
                   </div>
                 ) : s.status === "pendente" ? (
-                  <p className="text-sm text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+                  <p className="text-sm text-sun-ink bg-sun-soft border border-sun/30 rounded-lg px-3 py-2">
                     Aguardando correção do professor.
                   </p>
                 ) : s.status === "aprovado" ? (
-                  <p className="text-sm text-emerald-800 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+                  <p className="text-sm text-success-ink bg-success-soft border border-success/25 rounded-lg px-3 py-2">
                     Entrega aprovada pelo professor.
                   </p>
                 ) : s.status === "reprovado" ? (
-                  <p className="text-sm text-red-800 bg-red-50 border border-red-100 rounded-lg px-3 py-2">
+                  <p className="text-sm text-danger-ink bg-danger-soft border border-danger/25 rounded-lg px-3 py-2">
                     Entrega reprovada pelo professor.
                   </p>
                 ) : null}
@@ -296,7 +296,7 @@ function AtividadeEntregaContent() {
             {ultima ? "Nova entrega" : "Sua resposta"}
           </h2>
           {ultima?.status === "reprovado" && (
-            <p className="text-sm text-emerald-900 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+            <p className="text-sm text-success-ink bg-success-soft border border-success/25 rounded-lg px-3 py-2">
               O professor reprovou sua última entrega. Envie uma nova versão
               desta atividade abaixo.
             </p>
@@ -306,7 +306,7 @@ function AtividadeEntregaContent() {
             onChange={(e) => setConteudo(e.target.value)}
             rows={6}
             placeholder="Escreva sua resposta aqui…"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
           />
           <div>
             <label className="block text-sm font-medium text-ink mb-2">
@@ -325,14 +325,14 @@ function AtividadeEntregaContent() {
             </p>
           )}
           {okMsg && (
-            <p className="text-sm text-green-700 bg-green-50 px-3 py-2 rounded-lg">
+            <p className="text-sm text-success-ink bg-success-soft px-3 py-2 rounded-lg">
               {okMsg}
             </p>
           )}
           <button
             type="submit"
             disabled={enviando}
-            className="inline-flex items-center gap-2 rounded-lg bg-accent text-white font-medium px-6 py-3 hover:bg-accent-strong disabled:opacity-70"
+            className="inline-flex items-center gap-2 rounded-xl bg-grape text-white font-semibold px-6 py-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.16)] hover:bg-grape-strong disabled:opacity-70"
           >
             <Upload aria-hidden className="h-[18px] w-[18px] shrink-0" />
             {enviando ? "Enviando…" : "Enviar entrega"}

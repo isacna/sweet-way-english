@@ -5,8 +5,14 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
 
 import { AuthShell } from "@/components/AuthShell";
-import { classeBotao } from "@/components/curso/ui";
-import { classeBotaoProfessor, classeCampo, classeRotulo } from "@/components/formStyles";
+import {
+  classeAvisoErro,
+  classeAvisoSucesso,
+  classeBotaoAcao,
+  classeCampo,
+  classeLinkSuave,
+  classeRotulo,
+} from "@/components/formStyles";
 import { apiUrl } from "@/lib/api";
 
 function LoginPageContent() {
@@ -56,9 +62,11 @@ function LoginPageContent() {
   }
 
   return (
-    <AuthShell voltarHref="/home">
+    <AuthShell
+      link={tipo === "professor" ? { href: "/home", rotulo: "Início" } : { href: "/cadastro", rotulo: "Criar conta" }}
+    >
       <div
-        className="mb-6 grid grid-cols-2 gap-1 rounded-2xl bg-gray-100 p-1 text-sm font-semibold"
+        className="mb-7 grid grid-cols-2 gap-1 rounded-[14px] bg-black/30 p-1 text-sm font-medium shadow-[inset_0_0_0_1px_rgba(214,228,255,0.1)]"
         aria-label="Tipo de conta"
       >
         {(["aluno", "professor"] as const).map((t) => {
@@ -68,10 +76,10 @@ function LoginPageContent() {
               key={t}
               href={`/login?tipo=${t}`}
               aria-current={ativo ? "page" : undefined}
-              className={`flex min-h-[40px] items-center justify-center rounded-xl transition-colors ${
+              className={`flex min-h-[44px] items-center justify-center rounded-[11px] transition-colors ${
                 ativo
-                  ? `bg-white shadow-sm ${t === "professor" ? "text-sky-ink" : "text-grape"}`
-                  : "text-ink-soft hover:text-ink"
+                  ? "bg-[linear-gradient(180deg,#3d3d3f_0%,#1d1d20_100%)] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_2px_10px_rgba(0,0,0,0.3)]"
+                  : "text-white/70 hover:text-white"
               }`}
             >
               {t === "professor" ? "Sou professor" : "Sou aluno"}
@@ -80,15 +88,15 @@ function LoginPageContent() {
         })}
       </div>
 
-      <h1 className="text-3xl font-semibold text-ink">Entrar</h1>
-      <p className="mt-1 mb-6 text-ink-soft">
+      <h1 className="text-[1.9rem] font-semibold leading-tight tracking-[-0.015em] text-white">Entrar</h1>
+      <p className="mt-1.5 mb-6 text-ink-soft">
         {tipo === "professor" ? "Acesse sua conta de professor" : "Acesse sua conta de aluno"}
       </p>
 
       {cadastroOk && (
         <p
           role="status"
-          className="mb-6 rounded-2xl border border-success-bright/40 bg-success-soft px-4 py-3 text-sm font-medium text-success-ink"
+          className={`mb-6 ${classeAvisoSucesso}`}
         >
           Conta criada com sucesso! Entre com seu e-mail e senha.
         </p>
@@ -128,7 +136,7 @@ function LoginPageContent() {
         </div>
 
         {erro && (
-          <p className="rounded-2xl bg-danger-soft px-4 py-3 text-sm font-medium text-danger-ink" role="alert">
+          <p className={classeAvisoErro} role="alert">
             {erro}
           </p>
         )}
@@ -136,7 +144,7 @@ function LoginPageContent() {
         <button
           type="submit"
           disabled={carregando}
-          className={`${tipo === "professor" ? classeBotaoProfessor : classeBotao("primario")} w-full`}
+          className={`${classeBotaoAcao} mt-2 w-full`}
         >
           {carregando ? "Entrando..." : "Entrar"}
         </button>
@@ -145,7 +153,7 @@ function LoginPageContent() {
       {tipo !== "professor" && (
         <p className="mt-6 text-center text-sm text-ink-soft">
           Ainda não tem conta?{" "}
-          <Link href="/cadastro" className="inline-flex min-h-[44px] items-center font-semibold text-grape hover:underline">
+          <Link href="/cadastro" className={classeLinkSuave}>
             Criar conta
           </Link>
         </p>
@@ -156,7 +164,7 @@ function LoginPageContent() {
 
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="bg-cotton min-h-screen" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#0a0d12]" />}>
       <LoginPageContent />
     </Suspense>
   );

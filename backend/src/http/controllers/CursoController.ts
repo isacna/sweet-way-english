@@ -36,6 +36,8 @@ const LIMITE_REVISAO = 20;
 
 const respostaSchema = z.object({ resposta: z.json() });
 const respostasSchema = z.object({ respostas: z.record(z.string(), z.json()) });
+const NOTA_MAX_CARACTERES = 5000;
+const notaSchema = z.object({ texto: z.string().max(NOTA_MAX_CARACTERES) });
 const perfilSchema = z.object({ metodologia: z.enum(['gramatica', 'comunicativa', 'gamificada', 'input']) });
 
 // ─── Trilha ─────────────────────────────────────────────────────────────────
@@ -125,7 +127,10 @@ export async function getLicao(req: AuthRequest, res: Response) {
   if (!ok) return;
   const { licao, trilha } = ok;
 
-  const exercicios = await prisma.exercicio.findMany({ where: { licaoId: id }, orderBy: { ordem: 'asc' } });
+  const [exercicios, nota] = await Promise.all([
+    prisma.exercicio.findMany({ where: { licaoId: id }, orderBy: { ordem: 'asc' } }),
+    prisma.notaLicao.findUnique({ where: { usuarioId_licaoId: { usuarioId: req.user.id, licaoId: id } } }),
+  ]);
   const progresso = trilha.progressoPorLicao.get(id);
 
   res.json({
@@ -144,7 +149,37 @@ export async function getLicao(req: AuthRequest, res: Response) {
       tentativas: progresso?.tentativas ?? 0,
     },
     proximaLicaoId: proximaLicaoId(trilha, licao.moduloId, licao.id),
+    nota: nota ? { texto: nota.texto, atualizadoEm: nota.atualizadoEm } : null,
   });
+}
+
+/** Salva as anotações do aluno na lição; texto vazio apaga. */
+export async function salvarNota(req: AuthRequest, res: Response) {
+  const id = idParam(req.params.id);
+  if (!id) {
+    res.status(400).json({ error: 'ID inválido' });
+    return;
+  }
+  const corpo = notaSchema.safeParse(req.body);
+  if (!corpo.success) {
+    res.status(400).json({ error: `A nota pode ter no máximo ${NOTA_MAX_CARACTERES} caracteres` });
+    return;
+  }
+  if (!(await licaoLiberada(req, res, id))) return;
+
+  const chave = { usuarioId_licaoId: { usuarioId: req.user.id, licaoId: id } };
+  const texto = corpo.data.texto;
+  if (texto.trim() === '') {
+    await prisma.notaLicao.deleteMany({ where: { usuarioId: req.user.id, licaoId: id } });
+    res.json({ nota: null });
+    return;
+  }
+  const nota = await prisma.notaLicao.upsert({
+    where: chave,
+    update: { texto },
+    create: { usuarioId: req.user.id, licaoId: id, texto },
+  });
+  res.json({ nota: { texto: nota.texto, atualizadoEm: nota.atualizadoEm } });
 }
 
 // ─── Prática (controlada, semicontrolada, produção) ─────────────────────────

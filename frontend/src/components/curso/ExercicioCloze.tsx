@@ -15,7 +15,7 @@ export function ExercicioCloze({ id, conteudo, value, onChange, disabled, onSubm
   }
 
   return (
-    <p className="break-words rounded-2xl bg-grape-mist/60 p-4 text-[1.15rem] leading-[3rem] text-ink" lang="en">
+    <p className="break-words rounded-2xl border border-line bg-gray-50 p-4 text-[1.15rem] leading-[3rem] text-ink" lang="en">
       {partes.map((parte, i) => (
         <span key={i}>
           <span className="whitespace-pre-line">{parte}</span>
@@ -26,7 +26,7 @@ export function ExercicioCloze({ id, conteudo, value, onChange, disabled, onSubm
                 value={valores[i] ?? ""}
                 disabled={disabled}
                 onChange={(e) => alterar(i, e.target.value)}
-                className="mx-1 min-h-[44px] rounded-xl border-2 border-grape/40 bg-white px-2.5 py-1.5 align-middle text-base font-semibold text-grape-strong shadow-[0_2px_0_0_var(--color-grape-soft)] focus:outline-none focus:ring-4 focus:ring-grape/25 disabled:bg-gray-50 disabled:text-ink"
+                className="mx-1 min-h-[44px] rounded-xl border-2 border-grape/50 bg-card px-2.5 py-1.5 align-middle text-base font-semibold text-grape shadow-[0_2px_0_0_var(--color-grape-soft)] focus:outline-none focus:ring-4 focus:ring-grape/25 disabled:bg-gray-50 disabled:text-ink"
               >
                 <option value="">…</option>
                 {conteudo.opcoesPorLacuna[i].map((op) => (
@@ -54,7 +54,7 @@ export function ExercicioCloze({ id, conteudo, value, onChange, disabled, onSubm
                   }
                 }}
                 size={Math.max(6, (valores[i] ?? "").length + 1)}
-                className="mx-1 min-h-[44px] max-w-[12rem] rounded-xl border-2 border-b-4 border-grape/40 border-b-grape bg-white px-2.5 py-1.5 text-center align-middle text-base font-semibold text-grape-strong focus:outline-none focus:ring-4 focus:ring-grape/25 disabled:bg-gray-50 disabled:text-ink"
+                className="mx-1 min-h-[44px] max-w-[12rem] rounded-xl border-2 border-b-4 border-grape/40 border-b-grape bg-card px-2.5 py-1.5 text-center align-middle text-base font-semibold text-grape focus:outline-none focus:ring-4 focus:ring-grape/25 disabled:bg-gray-50 disabled:text-ink"
               />
             ))}
         </span>

@@ -24,7 +24,7 @@ export function ExercicioTexto(props: Props) {
 
   return (
     <div className="space-y-3">
-      <div className="rounded-2xl border border-grape/15 bg-grape-mist p-4">
+      <div className="rounded-2xl border border-grape/25 bg-grape-mist p-4">
         <p className="eyebrow mb-1.5 text-grape">{rotulo}</p>
         <p className="flex flex-wrap items-center gap-x-2 gap-y-2 break-words text-xl font-semibold text-ink" lang={idiomaOrigem}>
           {props.conteudo.frase}
@@ -53,7 +53,7 @@ export function ExercicioTexto(props: Props) {
             onSubmit();
           }
         }}
-        className="min-h-[56px] w-full rounded-2xl border-2 border-line-strong bg-white px-4 py-3 text-[1.05rem] text-ink placeholder:text-gray-400 focus:border-grape focus:outline-none focus:ring-4 focus:ring-grape/20 disabled:bg-gray-50"
+        className="min-h-[56px] w-full rounded-2xl border-2 border-line-strong bg-gray-50 px-4 py-3 text-[1.05rem] text-ink placeholder:text-ink-faint focus:border-grape focus:outline-none focus:ring-4 focus:ring-grape/20 disabled:bg-gray-50"
       />
     </div>
   );

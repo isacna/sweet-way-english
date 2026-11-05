@@ -36,14 +36,14 @@ export function ContinuarCursoCard() {
   if (falhou) return null;
 
   const base =
-    "relative overflow-hidden p-5 sm:p-6 rounded-[1.75rem] bg-gradient-to-br from-grape via-grape to-grape-bright text-white shadow-lg flex flex-col sm:flex-row sm:items-center gap-4";
+    "relative overflow-hidden p-5 sm:p-6 rounded-[1.75rem] border border-grape/30 bg-card text-ink flex flex-col sm:flex-row sm:items-center gap-4";
   const botao =
-    "relative inline-flex min-h-[48px] justify-center items-center gap-2 px-6 py-3 rounded-2xl bg-white font-display text-[1.05rem] font-semibold text-grape shadow-[0_4px_0_0_rgb(0_0_0/0.18)] hover:bg-grape-mist active:translate-y-[3px] active:shadow-none transition-all shrink-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-white/60";
+    "relative inline-flex min-h-[48px] justify-center items-center gap-2 px-6 py-3 rounded-2xl bg-grape font-display text-[1.05rem] font-semibold text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.18),0_4px_0_0_var(--color-grape-strong)] hover:bg-grape-strong active:translate-y-[3px] active:shadow-none transition-all shrink-0 focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/40";
 
   if (!trilha) {
     return (
       <div className={base} aria-busy="true">
-        <p className="text-sm opacity-90">Carregando seu curso…</p>
+        <p className="text-sm text-ink-soft">Carregando seu curso…</p>
       </div>
     );
   }
@@ -86,23 +86,23 @@ export function ContinuarCursoCard() {
 
   return (
     <div className={base}>
-      <span className="pointer-events-none absolute -right-12 -top-16 h-48 w-48 rounded-full bg-candy-bright/40 blur-2xl" aria-hidden />
-      <span className="pointer-events-none absolute -bottom-20 left-10 h-40 w-40 rounded-full bg-sky-bright/30 blur-2xl" aria-hidden />
+      <span className="pointer-events-none absolute -right-12 -top-20 h-56 w-56 rounded-full bg-grape/30 blur-3xl" aria-hidden />
+      <span className="pointer-events-none absolute -bottom-24 left-10 h-40 w-40 rounded-full bg-candy-bright/10 blur-3xl" aria-hidden />
       <div className="relative flex-1 min-w-0">
-        <p className="eyebrow text-white/85">Continue seu curso</p>
+        <p className="eyebrow text-grape">Continue seu curso</p>
         <p className="mt-1 font-display text-2xl font-semibold leading-tight break-words">{titulo}</p>
-        <p className="mt-0.5 text-sm text-white/85 break-words">{subtitulo}</p>
+        <p className="mt-0.5 text-sm text-ink-soft break-words">{subtitulo}</p>
         <ul className="mt-3 flex flex-wrap gap-2 text-sm font-semibold">
-          <li className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1">
+          <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-gray-50 px-2.5 py-1">
             <Zap className="h-4 w-4 fill-sun text-sun" aria-hidden />
             {perfil.xp} XP
           </li>
-          <li className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1">
+          <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-gray-50 px-2.5 py-1">
             <Flame className="h-4 w-4 fill-flame text-flame" aria-hidden />
             {perfil.ofensivaAtual} {perfil.ofensivaAtual === 1 ? "dia" : "dias"}
           </li>
           {perfil.revisoesPendentes > 0 && (
-            <li className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-2.5 py-1">
+            <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-gray-50 px-2.5 py-1">
               <Repeat2 className="h-4 w-4" aria-hidden />
               {perfil.revisoesPendentes} para revisar
             </li>

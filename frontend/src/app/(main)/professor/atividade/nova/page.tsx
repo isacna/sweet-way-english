@@ -96,7 +96,7 @@ function NovaAtividadePageContent() {
         >
           ← Painel
         </Link>
-        <h1 className="text-2xl font-bold text-ink">Nova atividade</h1>
+        <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Nova atividade</h1>
         <p className="text-ink-soft mt-1">
           A atividade ficará visível para todos os alunos da turma.
         </p>
@@ -119,7 +119,7 @@ function NovaAtividadePageContent() {
             value={turmaId}
             onChange={(e) => setTurmaId(e.target.value)}
             disabled={carregandoTurmas || turmas.length === 0}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent disabled:bg-gray-50"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent disabled:bg-gray-50"
           >
             <option value="">
               {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -151,7 +151,7 @@ function NovaAtividadePageContent() {
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <div>
@@ -167,7 +167,7 @@ function NovaAtividadePageContent() {
             onChange={(e) => setDescricao(e.target.value)}
             required
             rows={4}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <div>
@@ -183,7 +183,7 @@ function NovaAtividadePageContent() {
             value={dataEntrega}
             onChange={(e) => setDataEntrega(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <label className="flex items-start gap-3 cursor-pointer">
@@ -210,7 +210,7 @@ function NovaAtividadePageContent() {
             value={link}
             onChange={(e) => setLink(e.target.value)}
             placeholder="https://youtube.com/... ou outro link"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
           {link.trim() && (
             <div className="mt-3">
@@ -234,7 +234,7 @@ function NovaAtividadePageContent() {
           <button
             type="submit"
             disabled={carregando || turmas.length === 0}
-            className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
+            className="inline-flex items-center justify-center gap-2 font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-6 py-3 transition-[filter] disabled:opacity-70"
           >
             {carregando ? (
               "Salvando…"

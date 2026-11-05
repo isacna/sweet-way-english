@@ -1,0 +1,189 @@
+/*
+ * Telas de entrada (login e cadastro): o mesmo vídeo de fundo da home, fixo atrás,
+ * a nav da home (marca + "Sweet Way English") e o formulário num cartão de vidro escuro.
+ * A página rola normalmente (cadastro é alto); o vídeo fica parado atrás.
+ */
+
+.stage {
+  --e-primary: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: clip;
+  background: #0a0d12;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@supports (min-height: 100dvh) {
+  .stage {
+    min-height: 100dvh;
+  }
+}
+.stage :focus-visible {
+  outline: 2px solid #f8b285;
+  outline-offset: 3px;
+}
+
+.video,
+.scrim {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+.video {
+  object-fit: cover;
+}
+/* Véu leve: segura o contraste do vidro quando o céu do vídeo clareia */
+.scrim {
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(6, 9, 15, 0.28) 0%, rgba(6, 9, 15, 0.1) 35%, rgba(6, 9, 15, 0.38) 100%);
+}
+
+/* ─── Nav (mesma da home) ──────────────────────────────────────────────── */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: max(18px, env(safe-area-inset-top)) max(clamp(16px, 5.2vw, 72px), env(safe-area-inset-right)) 0
+    max(clamp(16px, 5.2vw, 72px), env(safe-area-inset-left));
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  min-width: 0;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.mark {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #fff;
+}
+/* Recorta o redemoinho do logo-sweet.png (igual à home) */
+.markImg {
+  position: absolute;
+  max-width: none;
+  width: 239.25%;
+  height: 239.25%;
+  left: -73.83%;
+  top: -36.45%;
+}
+.wordmark {
+  font-size: 18.5px;
+  font-weight: 500;
+  letter-spacing: -0.0154em;
+  font-variation-settings: "opsz" 32;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão grafite da nav da home */
+.navLink {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 520;
+  letter-spacing: -0.0127em;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #3d3d3f 0%, #1d1d20 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 2px 14px rgba(0, 0, 0, 0.28);
+  transition:
+    filter 0.18s ease,
+    transform 0.18s ease;
+}
+.navLink:hover {
+  filter: brightness(1.16);
+}
+.navLink:active {
+  transform: translateY(1px);
+}
+
+/* ─── Cartão do formulário ─────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 5vh, 56px) max(16px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom))
+    max(16px, env(safe-area-inset-left));
+}
+
+.card {
+  /* Dentro do vidro o texto secundário fica mais claro que o do tema escuro */
+  --color-ink: #ffffff;
+  --color-ink-soft: #cfd0d7;
+  --color-ink-faint: #a9abb4;
+
+  width: 100%;
+  max-width: 440px;
+  padding: 28px 22px 24px;
+  border-radius: 24px;
+  color: #fff;
+  background: rgba(30, 30, 33, 0.8);
+  -webkit-backdrop-filter: blur(24px) saturate(115%);
+  backdrop-filter: blur(24px) saturate(115%);
+  box-shadow:
+    inset 0 0 0 1px rgba(214, 228, 255, 0.14),
+    0 24px 60px -20px rgba(0, 0, 0, 0.6);
+}
+@media (min-width: 480px) {
+  .card {
+    padding: 36px 34px 30px;
+  }
+}
+
+/* ─── Entrada (uma vez, só sem preferência por movimento reduzido) ────── */
+
+@keyframes settleDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+}
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav {
+    animation: settleDown 0.55s var(--e-soft) 0.04s both;
+  }
+  .card {
+    animation: cardIn 0.8s var(--e-primary) 0.12s both;
+  }
+}

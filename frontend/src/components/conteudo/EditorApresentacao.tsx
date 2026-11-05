@@ -42,7 +42,7 @@ function ListaTextos({
             type="button"
             disabled={itens.length <= minimo}
             onClick={() => onChange(itens.filter((_, j) => j !== i))}
-            className="shrink-0 px-2 py-2 text-sm text-red-600 hover:text-red-700 disabled:opacity-30"
+            className="shrink-0 px-2 py-2 text-sm text-danger-ink hover:text-danger-ink disabled:opacity-30"
             aria-label={`Remover ${rotuloItem.toLowerCase()} ${i + 1}`}
           >
             ×
@@ -95,7 +95,7 @@ function TabelaPares({
           <button
             type="button"
             onClick={() => onChange(linhas.filter((_, j) => j !== i))}
-            className="px-2 py-2 text-sm text-red-600 hover:text-red-700 justify-self-start"
+            className="px-2 py-2 text-sm text-danger-ink hover:text-danger-ink justify-self-start"
             aria-label={`Remover linha ${i + 1}`}
           >
             ×

@@ -58,17 +58,17 @@ export function TeacherNav({
             className={
               vertical
                 ? `flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors ${
-                    isActive ? "bg-sky-soft text-sky-ink" : "text-ink hover:bg-gray-50"
+                    isActive ? "bg-accent-soft text-accent-strong" : "text-ink hover:bg-gray-50"
                   }`
                 : `flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-colors ${
                     tabs ? "min-h-[40px] px-3.5" : "px-3 py-2 xl:px-3.5"
                   } ${
                     isActive
                       ? tabs
-                        ? "bg-sky text-white shadow-sm"
-                        : "bg-sky-soft text-sky-ink"
+                        ? "bg-accent text-white shadow-sm"
+                        : "bg-accent-soft text-accent-strong"
                       : tabs
-                        ? "bg-white text-ink-soft ring-1 ring-line"
+                        ? "bg-card text-ink-soft ring-1 ring-line"
                         : "text-ink-soft hover:bg-gray-100 hover:text-ink"
                   }`
             }

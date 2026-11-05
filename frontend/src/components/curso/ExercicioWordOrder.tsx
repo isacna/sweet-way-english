@@ -35,7 +35,7 @@ export function ExercicioWordOrder({ id, conteudo, value, onChange, disabled }: 
       <div
         role="group"
         aria-label="Frase montada"
-        className="flex min-h-[4.25rem] flex-wrap items-center gap-2 rounded-2xl border-2 border-dashed border-grape/35 bg-grape-mist p-3"
+        className="flex min-h-[4.25rem] flex-wrap items-center gap-2 rounded-2xl border-2 border-dashed border-grape/45 bg-grape-mist p-3"
       >
         {frase.length === 0 && (
           <span className="px-1 text-sm text-ink-faint">Toque nas palavras abaixo para montar a frase.</span>
@@ -69,7 +69,7 @@ export function ExercicioWordOrder({ id, conteudo, value, onChange, disabled }: 
               className={`min-h-[44px] rounded-xl border-2 px-3.5 py-2 text-[1.05rem] font-semibold transition-all disabled:cursor-default focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/30 ${
                 usada
                   ? "border-gray-200 bg-gray-100 text-transparent shadow-none"
-                  : "border-line-strong bg-white text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:border-grape/50 active:translate-y-[2px] active:shadow-none"
+                  : "border-line-strong bg-gray-50 text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:border-grape/60 active:translate-y-[2px] active:shadow-none"
               }`}
             >
               {palavra}

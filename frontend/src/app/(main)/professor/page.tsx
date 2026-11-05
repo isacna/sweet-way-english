@@ -117,13 +117,13 @@ export default function ProfessorDashboardPage() {
       label: "Para Corrigir",
       value: carregando ? "…" : String(pendentes),
       icon: "check" as const,
-      color: "bg-orange-100 text-orange-600",
+      color: "bg-flame-soft text-flame-ink",
     },
     {
       label: "Turmas ativas",
       value: carregando ? "…" : String(turmas.length),
       icon: "calendar" as const,
-      color: "bg-green-100 text-green-600",
+      color: "bg-success-soft text-success-ink",
     },
   ];
 
@@ -131,7 +131,7 @@ export default function ProfessorDashboardPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-ink">
+          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">
             Painel do Professor
           </h1>
           <p className="text-ink-soft mt-1">
@@ -151,7 +151,7 @@ export default function ProfessorDashboardPage() {
             className="card p-3.5 sm:p-6"
           >
             <div
-              className={`mb-3 flex h-10 w-10 items-center justify-center rounded-2xl sm:mb-4 sm:h-12 sm:w-12 ${stat.color}`}
+              className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl sm:mb-4 sm:h-12 sm:w-12 ${stat.color}`}
             >
               {stat.icon === "users" && (
                 <UsersRound aria-hidden className="h-[24px] w-[24px] shrink-0" />
@@ -163,7 +163,7 @@ export default function ProfessorDashboardPage() {
                 <CalendarDays aria-hidden className="h-[24px] w-[24px] shrink-0" />
               )}
             </div>
-            <p className="font-display text-2xl font-semibold text-ink sm:text-3xl">{stat.value}</p>
+            <p className="text-2xl font-semibold tracking-[-0.02em] tabular-nums text-ink sm:text-3xl">{stat.value}</p>
             <p className="text-xs leading-snug text-ink-soft sm:text-sm">{stat.label}</p>
           </div>
         ))}
@@ -171,13 +171,13 @@ export default function ProfessorDashboardPage() {
 
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="card p-6">
-          <h2 className="text-lg font-bold text-ink mb-1">
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-1">
             Submissões Recentes
           </h2>
           <p className="text-sm text-ink-soft mb-6">
             Atividades aguardando o seu feedback
           </p>
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-line">
             {carregando ? (
               <p className="text-sm text-ink-soft py-4">Carregando…</p>
             ) : submissoesRecentes.length === 0 ? (
@@ -225,7 +225,7 @@ export default function ProfessorDashboardPage() {
         </div>
 
         <div className="card p-6">
-          <h2 className="text-lg font-bold text-ink mb-6">
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink mb-6">
             Minhas Turmas
           </h2>
           <div className="space-y-4">
@@ -245,7 +245,7 @@ export default function ProfessorDashboardPage() {
               turmas.map((cls) => (
                 <div
                   key={cls.id}
-                  className="flex items-center justify-between py-3 border-b border-gray-100 last:border-0"
+                  className="flex items-center justify-between py-3 border-b border-line last:border-0"
                 >
                   <div>
                     <p className="font-medium text-ink">{cls.nome}</p>

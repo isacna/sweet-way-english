@@ -98,7 +98,7 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
                     aria-label={`Lacuna ${i + 1}`}
                     value={textos[i] ?? ""}
                     onChange={(e) => setTextos((t) => Object.assign([...t], { [i]: e.target.value }))}
-                    className="mx-1 px-2 py-1 rounded border border-gray-300 text-sm"
+                    className="mx-1 px-2 py-1 rounded-lg border border-line-strong text-sm bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                   >
                     <option value="">—</option>
                     {(opcoes[i] ?? []).map((o) => (
@@ -112,7 +112,7 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
                     aria-label={`Lacuna ${i + 1}`}
                     value={textos[i] ?? ""}
                     onChange={(e) => setTextos((t) => Object.assign([...t], { [i]: e.target.value }))}
-                    className="mx-1 w-28 px-2 py-1 rounded border border-gray-300 text-sm"
+                    className="mx-1 w-28 px-2 py-1 rounded-lg border border-line-strong text-sm bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                   />
                 ))}
             </span>
@@ -137,7 +137,7 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
                     Object.assign([...v], { [i]: ev.target.value === "" ? null : Number(ev.target.value) })
                   )
                 }
-                className="px-2 py-1 rounded border border-gray-300 text-sm"
+                className="px-2 py-1 rounded-lg border border-line-strong text-sm bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               >
                 <option value="">—</option>
                 {direita.map((d, j) => (
@@ -176,7 +176,7 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
         </button>
         {resultado && (
           <span
-            className={`text-sm font-medium ${resultado.correto ? "text-emerald-700" : "text-red-700"}`}
+            className={`text-sm font-medium ${resultado.correto ? "text-success-ink" : "text-danger-ink"}`}
           >
             {resultado.correto ? "Correto" : "Incorreto"} · pontuação {Math.round(resultado.pontuacao * 100)}%
           </span>
@@ -187,7 +187,7 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
           Resposta esperada: <strong className="text-ink">{resultado.respostaEsperada}</strong>
         </p>
       )}
-      {erro && <p className="text-sm text-red-700 bg-red-50 px-3 py-2 rounded-lg">{erro}</p>}
+      {erro && <p className="text-sm text-danger-ink bg-danger-soft px-3 py-2 rounded-lg">{erro}</p>}
     </div>
   );
 }

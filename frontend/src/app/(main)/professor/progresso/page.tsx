@@ -20,20 +20,20 @@ function CelulaProgresso({ celula, totalLicoes }: { celula: CelulaModulo | undef
   return (
     <div className="space-y-1 min-w-28">
       <div className="flex items-center justify-between gap-2 text-xs">
-        <span className={completo ? "font-semibold text-emerald-700" : "text-ink"}>
+        <span className={completo ? "font-semibold text-success-ink" : "text-ink"}>
           {feitas}/{totalLicoes} lições
         </span>
       </div>
       <div className="h-1.5 rounded-full bg-gray-100 overflow-hidden" aria-hidden>
-        <div className={`h-full ${completo ? "bg-emerald-500" : "bg-accent"}`} style={{ width: `${pct}%` }} />
+        <div className={`h-full ${completo ? "bg-success-bright" : "bg-accent"}`} style={{ width: `${pct}%` }} />
       </div>
       <p className="text-xs">
         {celula?.testeAprovado ? (
-          <span className="font-medium text-emerald-700">
+          <span className="font-medium text-success-ink">
             Teste ✓ {celula.melhorPercentualTeste ?? 0}%
           </span>
         ) : celula && celula.tentativasTeste > 0 ? (
-          <span className="text-red-700">
+          <span className="text-danger-ink">
             Teste ✗ {celula.melhorPercentualTeste ?? 0}% ({celula.tentativasTeste}{" "}
             {celula.tentativasTeste === 1 ? "tentativa" : "tentativas"})
           </span>
@@ -130,7 +130,7 @@ export default function ProfessorProgressoPage() {
         >
           ← Voltar ao painel
         </Link>
-        <h1 className="text-2xl font-bold text-ink">Progresso no curso</h1>
+        <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Progresso no curso</h1>
         <p className="text-ink-soft mt-1">
           Lições concluídas e testes de cada módulo publicado, por aluno das suas turmas.
         </p>
@@ -145,7 +145,7 @@ export default function ProfessorProgressoPage() {
             id="filtro-turma"
             value={turmaId}
             onChange={(e) => setTurmaId(e.target.value)}
-            className="w-full sm:w-64 px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full sm:w-64 px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           >
             <option value="">Todas as turmas</option>
             {turmas.map((t) => (
@@ -163,7 +163,7 @@ export default function ProfessorProgressoPage() {
             id="ordenacao"
             value={ordenacao}
             onChange={(e) => setOrdenacao(e.target.value as Ordenacao)}
-            className="w-full sm:w-56 px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full sm:w-56 px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           >
             <option value="nome">Nome</option>
             <option value="estudo">Último estudo (recente primeiro)</option>
@@ -183,7 +183,7 @@ export default function ProfessorProgressoPage() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
-              <thead className="bg-gray-50 border-b border-gray-100">
+              <thead className="bg-gray-50 border-b border-line">
                 <tr>
                   <th className="sticky left-0 z-10 bg-gray-50 px-4 py-3 min-w-44">{thBotao("nome", "Aluno")}</th>
                   {modulos.map((m) => (
@@ -200,12 +200,12 @@ export default function ProfessorProgressoPage() {
                   <th className="px-4 py-3 font-semibold text-ink whitespace-nowrap">Revisões pendentes</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-line">
                 {alunos.map((a) => {
                   const porModulo = new Map(a.modulos.map((c) => [c.moduloId, c]));
                   return (
                     <tr key={a.id} className="hover:bg-gray-50/80">
-                      <td className="sticky left-0 z-10 bg-white px-4 py-3 align-top">
+                      <td className="sticky left-0 z-10 bg-card px-4 py-3 align-top">
                         <p className="font-medium text-ink">{a.nome}</p>
                         <p className="text-xs text-ink-soft">{a.turmas.map((t) => t.nome).join(", ")}</p>
                       </td>
@@ -223,7 +223,7 @@ export default function ProfessorProgressoPage() {
                       </td>
                       <td className="px-4 py-3 align-top">
                         {a.revisoesPendentes > 0 ? (
-                          <span className="inline-block px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs font-medium">
+                          <span className="inline-block px-2 py-0.5 rounded-full bg-sun-soft text-sun-ink text-xs font-medium">
                             {a.revisoesPendentes}
                           </span>
                         ) : (

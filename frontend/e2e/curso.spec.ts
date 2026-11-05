@@ -306,7 +306,7 @@ test("professora: conteúdo, editor de lição e progresso", async ({ page }) =>
   await page.getByRole("textbox", { name: "Título", exact: true }).fill(original);
   await page.getByRole("button", { name: "Salvar lição" }).click();
   await expect(page.getByText("Há alterações não salvas.")).toBeHidden();
-  await expect(page.locator(".text-red-700").filter({ hasText: "Não foi salvo" })).toHaveCount(0);
+  await expect(page.getByText("Não foi salvo:")).toHaveCount(0);
 
   await page.goto("/professor/conteudo");
   await page.locator('a[href*="/teste"]').first().click();

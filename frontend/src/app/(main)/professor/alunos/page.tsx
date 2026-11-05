@@ -40,20 +40,20 @@ function Modal({
 }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/40 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-alunos-titulo"
       onClick={onFechar}
     >
       <div
-        className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-xl bg-white border border-gray-100 shadow-lg"
+        className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-[var(--radius-card)] bg-card border border-line shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
+        <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-line">
           <h2
             id="modal-alunos-titulo"
-            className="text-lg font-bold text-ink"
+            className="text-lg font-semibold tracking-[-0.01em] text-ink"
           >
             {titulo}
           </h2>
@@ -301,7 +301,7 @@ export default function ProfessorAlunosPage() {
           >
             ← Voltar ao painel
           </Link>
-          <h1 className="text-2xl font-bold text-ink">Alunos</h1>
+          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Alunos</h1>
           <p className="text-ink-soft mt-1">
             Alunos matriculados nas suas turmas. Novos cadastros são vinculados a
             uma turma para aparecerem aqui.
@@ -311,7 +311,7 @@ export default function ProfessorAlunosPage() {
           type="button"
           disabled={!podeAdicionar}
           onClick={abrirNovo}
-          className="inline-flex items-center justify-center gap-2 font-medium rounded-lg bg-accent text-white px-5 py-3 hover:bg-accent-strong transition-colors disabled:opacity-50 disabled:pointer-events-none"
+          className="inline-flex items-center justify-center gap-2 font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-5 py-3 transition-[filter] disabled:opacity-50 disabled:pointer-events-none"
         >
           <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
           Novo aluno
@@ -319,7 +319,7 @@ export default function ProfessorAlunosPage() {
       </div>
 
       {!podeAdicionar && !carregando && (
-        <p className="text-sm text-amber-800 bg-amber-50 px-4 py-3 rounded-xl border border-amber-100">
+        <p className="text-sm text-sun-ink bg-sun-soft px-4 py-3 rounded-xl border border-sun/40">
           Crie uma{" "}
           <Link
             href="/professor/turmas/nova"
@@ -381,7 +381,7 @@ export default function ProfessorAlunosPage() {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
-              <thead className="bg-gray-50 border-b border-gray-100">
+              <thead className="bg-gray-50 border-b border-line">
                 <tr>
                   <th className="px-6 py-3 font-semibold text-ink">
                     Nome
@@ -397,7 +397,7 @@ export default function ProfessorAlunosPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-line">
                 {alunosFiltrados.map((a) => (
                   <tr key={a.id} className="hover:bg-gray-50/80">
                     <td className="px-6 py-4 font-medium text-ink">
@@ -426,11 +426,11 @@ export default function ProfessorAlunosPage() {
                         >
                           Editar
                         </button>
-                        <span className="text-gray-300">|</span>
+                        <span className="text-gray-300" aria-hidden>|</span>
                         <button
                           type="button"
                           onClick={() => setExcluindo(a)}
-                          className="text-xs font-medium text-red-600 hover:text-red-700"
+                          className="text-xs font-medium text-danger-ink hover:text-danger-ink"
                         >
                           Excluir
                         </button>
@@ -459,7 +459,7 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -475,7 +475,7 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -490,7 +490,7 @@ export default function ProfessorAlunosPage() {
                 value={turmaId}
                 onChange={(e) => setTurmaId(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               >
                 {turmas.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -512,12 +512,12 @@ export default function ProfessorAlunosPage() {
                 value={dataNascimento}
                 max={new Date().toISOString().slice(0, 10)}
                 onChange={(e) => setDataNascimento(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             {novoMenor && (
-              <div className="space-y-4 rounded-lg border border-amber-200 bg-amber-50/60 p-4">
-                <p className="text-xs text-amber-900">
+              <div className="space-y-4 rounded-lg border border-sun/40 bg-sun-soft/60 p-4">
+                <p className="text-xs text-sun-ink">
                   Aluno menor de 18 anos: os dados do responsável e o consentimento
                   dele são obrigatórios (LGPD, art. 14).
                 </p>
@@ -533,7 +533,7 @@ export default function ProfessorAlunosPage() {
                     value={responsavelNome}
                     onChange={(e) => setResponsavelNome(e.target.value)}
                     required
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                    className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                   />
                 </div>
                 <div>
@@ -549,7 +549,7 @@ export default function ProfessorAlunosPage() {
                     value={responsavelEmail}
                     onChange={(e) => setResponsavelEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                    className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                   />
                 </div>
                 <label className="flex items-start gap-2 text-sm text-ink">
@@ -581,7 +581,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -598,7 +598,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setConfirmarSenha(e.target.value)}
                 required
                 minLength={6}
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             {erroForm && (
@@ -618,7 +618,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-5 py-2.5 hover:bg-accent-strong disabled:opacity-70"
+                className="inline-flex items-center justify-center font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-5 py-2.5 disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Cadastrar"}
               </button>
@@ -650,7 +650,7 @@ export default function ProfessorAlunosPage() {
                 value={nome}
                 onChange={(e) => setNome(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -666,7 +666,7 @@ export default function ProfessorAlunosPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -683,7 +683,7 @@ export default function ProfessorAlunosPage() {
                 onChange={(e) => setSenha(e.target.value)}
                 minLength={6}
                 placeholder="Deixe em branco para manter"
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             {senha ? (
@@ -700,7 +700,7 @@ export default function ProfessorAlunosPage() {
                   value={confirmarSenha}
                   onChange={(e) => setConfirmarSenha(e.target.value)}
                   minLength={6}
-                  className="w-full px-4 py-2.5 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  className="w-full px-4 py-2.5 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
               </div>
             ) : null}
@@ -721,7 +721,7 @@ export default function ProfessorAlunosPage() {
               <button
                 type="submit"
                 disabled={salvando}
-                className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-5 py-2.5 hover:bg-accent-strong disabled:opacity-70"
+                className="inline-flex items-center justify-center font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-5 py-2.5 disabled:opacity-70"
               >
                 {salvando ? "Salvando…" : "Salvar"}
               </button>
@@ -750,7 +750,7 @@ export default function ProfessorAlunosPage() {
               type="button"
               disabled={excluindoReq}
               onClick={() => void confirmarExclusao()}
-              className="inline-flex items-center justify-center font-medium rounded-lg bg-red-600 text-white px-5 py-2.5 hover:bg-red-700 disabled:opacity-70"
+              className="inline-flex items-center justify-center font-medium rounded-lg bg-danger text-white px-5 py-2.5 hover:bg-danger-strong disabled:opacity-70"
             >
               {excluindoReq ? "Excluindo…" : "Excluir definitivamente"}
             </button>

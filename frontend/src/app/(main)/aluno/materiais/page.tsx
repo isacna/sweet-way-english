@@ -136,7 +136,7 @@ function MateriaisAlunoContent() {
           value={turmaId}
           onChange={(e) => setManualTurmaId(e.target.value)}
           disabled={carregandoTurmas}
-          className="w-full max-w-md px-4 py-3 rounded-lg border border-gray-300 text-ink"
+          className="w-full max-w-md px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint"
         >
           <option value="">
             {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
@@ -149,7 +149,7 @@ function MateriaisAlunoContent() {
         </select>
         {turmas.length === 0 && !carregandoTurmas && (
           <p className="text-sm text-ink-soft">
-            <Link href="/aluno/turmas" className="text-accent">
+            <Link href="/aluno/turmas" className="text-grape">
               Entre em uma turma
             </Link>{" "}
             para ver materiais.
@@ -165,7 +165,7 @@ function MateriaisAlunoContent() {
             placeholder="Buscar…"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20"
+            className="w-full pl-10 pr-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
           />
         </div>
         <div className="flex flex-wrap gap-2">
@@ -176,7 +176,7 @@ function MateriaisAlunoContent() {
               onClick={() => setActiveFilter(f.label)}
               className={`px-4 py-2 rounded-lg text-sm font-medium ${
                 activeFilter === f.label
-                  ? "bg-accent text-white"
+                  ? "bg-grape text-white"
                   : "border border-gray-300 text-ink-soft hover:bg-gray-50"
               }`}
             >
@@ -222,7 +222,7 @@ function MateriaisAlunoContent() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-ink-soft hover:text-accent rounded-lg shrink-0"
+                    className="p-2 text-ink-soft hover:text-grape-bright rounded-lg shrink-0"
                     aria-label="Abrir"
                   >
                     <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />

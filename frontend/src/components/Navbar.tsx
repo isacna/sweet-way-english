@@ -42,9 +42,9 @@ export function Navbar({
   const logoHref = logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/home");
 
   return (
-    <header className={`sticky top-0 z-50 border-b border-line bg-white/85 backdrop-blur-md ${className}`}>
+    <header className={`sticky top-0 z-50 border-b border-line bg-card/80 backdrop-blur-xl backdrop-saturate-150 ${className}`}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:gap-8">
-        <Link href={logoHref} className="flex min-w-0 shrink-0 items-center rounded-xl">
+        <Link href={logoHref} className="flex min-w-0 shrink-0 items-center rounded-xl transition-opacity hover:opacity-85">
           <Logo logoUrl={logoUrl} />
         </Link>
         {center ? <div className="hidden min-w-0 flex-1 justify-center md:flex">{center}</div> : null}

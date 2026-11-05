@@ -28,7 +28,7 @@ function FallbackAbrir({
   title: string;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 text-center bg-gray-50 rounded-lg border border-dashed border-gray-200">
+    <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 text-center bg-gray-50 rounded-lg border border-dashed border-line-strong">
       <FileText aria-hidden className="h-[40px] w-[40px] shrink-0" />
       <p className="text-sm text-ink-soft max-w-sm">
         Não há pré-visualização embutida para este arquivo ou link. Abra em
@@ -97,7 +97,7 @@ function PreviewBody({
       <iframe
         src={src}
         title={title}
-        className={`w-full ${frameMaxHeightClass} border-0 rounded-md bg-white`}
+        className={`w-full ${frameMaxHeightClass} border-0 rounded-md bg-card`}
       />
     );
   }
@@ -115,7 +115,7 @@ function PreviewBody({
 
   if (kind === "audio") {
     return (
-      <div className="flex flex-col items-stretch gap-2 p-4 bg-white rounded-lg border border-gray-100">
+      <div className="flex flex-col items-stretch gap-2 p-4 bg-card rounded-lg border border-line">
         <p className="text-xs text-ink-soft truncate">{title}</p>
         <audio src={fullUrl} controls className="w-full" preload="metadata" />
       </div>
@@ -146,7 +146,7 @@ export function AssetPreview({
     <div
       className={`rounded-xl border border-gray-200 bg-gray-50 overflow-hidden ${className}`}
     >
-      <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-gray-100 bg-white">
+      <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-line bg-card">
         <span className="text-xs font-medium text-ink-soft">
           {aberto ? "Pré-visualização" : "Pré-visualização oculta"}
         </span>

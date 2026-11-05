@@ -177,19 +177,19 @@ export default function AlunoDashboardPage() {
             label: "Minhas turmas",
             value: carregando ? "…" : String(turmas.length),
             icon: "users" as const,
-            color: "bg-accent/10 text-accent",
+            color: "bg-grape-soft text-grape",
           },
           {
             label: "Atividades a entregar",
             value: carregando ? "…" : String(aEntregar),
             icon: "check" as const,
-            color: "bg-orange-100 text-orange-600",
+            color: "bg-flame-soft text-flame-ink",
           },
           {
             label: "Feedbacks recebidos",
             value: carregando ? "…" : String(feedbacks.length),
             icon: "calendar" as const,
-            color: "bg-green-100 text-green-600",
+            color: "bg-success-soft text-success-ink",
           },
         ].map((stat) => (
           <div
@@ -230,7 +230,7 @@ export default function AlunoDashboardPage() {
               Nenhuma atividade. Entre em uma turma com código de convite.
             </p>
           ) : (
-            <ul className="divide-y divide-gray-100">
+            <ul className="divide-y divide-line">
               {prazos.slice(0, 8).map((p) => (
                 <li
                   key={`${p.turmaId}-${p.atividadeId}`}
@@ -247,14 +247,14 @@ export default function AlunoDashboardPage() {
                     <span
                       className={`inline-block mt-1 text-xs font-medium px-2 py-0.5 rounded-full ${
                         p.situacao === "a_entregar"
-                          ? "bg-orange-100 text-orange-800"
+                          ? "bg-flame-soft text-flame-ink"
                           : p.situacao === "aguardando"
-                            ? "bg-blue-50 text-blue-800"
+                            ? "bg-grape-soft text-grape"
                             : p.situacao === "reprovada"
-                              ? "bg-red-50 text-red-800"
+                              ? "bg-danger-soft text-danger-ink"
                               : p.situacao === "aprovada"
-                                ? "bg-emerald-50 text-emerald-800"
-                                : "bg-green-50 text-green-800"
+                                ? "bg-success-soft text-success-ink"
+                                : "bg-success-soft text-success-ink"
                       }`}
                     >
                       {situacaoLabel(p.situacao)}
@@ -262,7 +262,7 @@ export default function AlunoDashboardPage() {
                   </div>
                   <Link
                     href={`/aluno/atividades/${p.atividadeId}?turmaId=${p.turmaId}`}
-                    className="text-sm font-medium text-accent hover:text-accent-strong shrink-0"
+                    className="text-sm font-medium text-grape hover:underline underline-offset-2 shrink-0"
                   >
                     {p.situacao === "a_entregar" ||
                     p.situacao === "aguardando"
@@ -293,7 +293,7 @@ export default function AlunoDashboardPage() {
               {feedbacksRecentes.map((f) => (
                 <li
                   key={f.id}
-                  className="p-3 rounded-lg border border-gray-100 bg-gray-50/80"
+                  className="p-3 rounded-xl border border-line bg-gray-50"
                 >
                   <p className="text-sm font-medium text-ink">
                     {f.submissao.atividade.titulo}
@@ -311,7 +311,7 @@ export default function AlunoDashboardPage() {
           )}
           <Link
             href="/aluno/feedbacks"
-            className="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-strong"
+            className="mt-4 inline-block text-sm font-medium text-grape hover:underline underline-offset-2"
           >
             Ver todos os feedbacks
           </Link>
