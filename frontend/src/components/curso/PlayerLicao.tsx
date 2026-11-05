@@ -1,20 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 import {
   ArrowLeft,
   BookA,
+  BookOpen,
   Check,
   Clock,
   Lightbulb,
   ListChecks,
   MessagesSquare,
+  NotebookPen,
   RotateCcw,
   Sparkles,
   Zap,
 } from "lucide-react";
 import { apiFetch } from "@/lib/api";
+import { apagarRascunho, lerRascunho, salvarRascunho, type RascunhoLicao } from "@/lib/rascunhoLicao";
 import {
   LIMIAR_QUIZ,
   formatarResposta,
@@ -33,6 +36,8 @@ import {
 import { BotaoOuvir } from "./BotaoOuvir";
 import { Exercicio } from "./Exercicio";
 import { FeedbackResultado } from "./FeedbackResultado";
+import { PainelNotas, useNotaLicao } from "./PainelNotas";
+import { TextoDestacado, Termo, termosDaLicao } from "./TextoDestacado";
 import { BarraAcao, BarraProgresso, classeBotao } from "./ui";
 
 type Fase = "apresentacao" | "pratica" | "quiz" | "resultado";
@@ -70,36 +75,107 @@ function CartaoSecao({
 
 // ─── Apresentação ───────────────────────────────────────────────────────────
 
-function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: () => void }) {
-  const ap = licao.apresentacao;
+function BotaoAnotar({ texto, onAnotar }: { texto: string; onAnotar: (t: string) => void }) {
+  const [feito, setFeito] = useState(false);
   return (
-    <div className="space-y-4 sm:space-y-5">
-      <div className="card relative overflow-hidden p-5 sm:p-6">
-        <span
-          className="pointer-events-none absolute -right-14 -top-16 h-40 w-40 rounded-full bg-grape/25 blur-3xl"
-          aria-hidden
-        />
-        <div className="relative space-y-3">
-          {ap.explicacao.map((p, i) => (
-            <p key={i} className="text-[1.05rem] leading-relaxed text-ink">
-              {p}
+    <button
+      type="button"
+      onClick={() => {
+        onAnotar(texto);
+        setFeito(true);
+        setTimeout(() => setFeito(false), 1600);
+      }}
+      title="Anotar"
+      aria-label={`Anotar: ${texto}`}
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/30 ${
+        feito ? "bg-success-soft text-success-ink" : "text-ink-faint hover:bg-sun-soft hover:text-sun-ink"
+      }`}
+    >
+      {feito ? <Check className="h-4 w-4" strokeWidth={3} aria-hidden /> : <NotebookPen className="h-4 w-4" aria-hidden />}
+    </button>
+  );
+}
+
+/** "I'm Ana = I am Ana = Eu sou a Ana" → inglês (destacado) e, por último, a tradução. */
+function Regra({ regra }: { regra: string }) {
+  const lados = regra.split("=").map((t) => t.trim()).filter(Boolean);
+  if (lados.length < 2) return <span className="leading-relaxed text-ink">{regra}</span>;
+  const pt = lados[lados.length - 1];
+  return (
+    <span className="min-w-0 leading-relaxed">
+      <span className="block">
+        {lados.slice(0, -1).map((lado, i) => (
+          <Fragment key={i}>
+            {i > 0 && <span className="px-1 text-ink-faint">=</span>}
+            {lado.split("/").map((en, j) => (
+              <Fragment key={j}>
+                {j > 0 && <span className="px-0.5 text-ink-faint">/</span>}
+                <Termo texto={en.trim()} />
+              </Fragment>
+            ))}
+          </Fragment>
+        ))}
+      </span>
+      <span className="mt-1 block text-sm text-ink-soft">{pt}</span>
+    </span>
+  );
+}
+
+function Apresentacao({
+  licao,
+  onComecar,
+  onAnotar,
+}: {
+  licao: LicaoDetalhe;
+  onComecar: () => void;
+  onAnotar: (texto: string) => void;
+}) {
+  const ap = licao.apresentacao;
+  const termos = useMemo(() => termosDaLicao(ap), [ap]);
+  return (
+    <div className="space-y-5 sm:space-y-6">
+      <section className="card overflow-hidden" aria-labelledby="titulo-explicacao">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-line px-5 py-4 sm:px-7">
+          <h2 id="titulo-explicacao" className="flex items-center gap-2.5 text-lg font-semibold text-ink">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-grape-soft text-grape" aria-hidden>
+              <BookOpen className="h-5 w-5" />
+            </span>
+            Entenda
+          </h2>
+          {termos.length > 0 && (
+            <p className="text-xs text-ink-faint sm:ml-auto">
+              Toque nos termos em <span className="rounded bg-grape-soft px-1 font-semibold text-grape">destaque</span> para
+              ouvir
             </p>
-          ))}
+          )}
         </div>
-      </div>
+        <ol className="divide-y divide-line">
+          {ap.explicacao.map((p, i) => (
+            <li key={i} className="flex gap-3.5 px-5 py-4 sm:gap-5 sm:px-7 sm:py-5">
+              <span
+                className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border-2 border-grape/30 text-xs font-bold tabular-nums text-grape"
+                aria-hidden
+              >
+                {i + 1}
+              </span>
+              <p className={`max-w-[68ch] text-pretty text-ink ${i === 0 ? "text-[1.12rem] leading-8" : "text-[1.05rem] leading-7"}`}>
+                <TextoDestacado texto={p} termos={termos} />
+              </p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       {ap.regras && ap.regras.length > 0 && (
-        <CartaoSecao icone={<ListChecks className="h-5 w-5" />} titulo="Regras">
-          <ul className="space-y-2.5">
+        <CartaoSecao icone={<ListChecks className="h-5 w-5" />} titulo="Resumo da regra">
+          <ul className="grid gap-2.5 md:grid-cols-2">
             {ap.regras.map((r, i) => (
-              <li key={i} className="flex gap-3 text-ink">
-                <span
-                  className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-grape text-xs font-bold text-white"
-                  aria-hidden
-                >
-                  {i + 1}
-                </span>
-                <span className="leading-relaxed">{r}</span>
+              <li
+                key={i}
+                className="flex items-start justify-between gap-2 rounded-2xl border border-line bg-gray-50 py-3 pr-2 pl-4"
+              >
+                <Regra regra={r} />
+                <BotaoAnotar texto={r} onAnotar={onAnotar} />
               </li>
             ))}
           </ul>
@@ -107,14 +183,14 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
       )}
 
       {ap.notaContrastiva && (
-        <div className="relative overflow-hidden rounded-[var(--radius-card)] border-2 border-sun/50 bg-sun-soft p-5" role="note">
-          <p className="mb-1.5 flex items-center gap-2 font-display text-lg font-semibold text-sun-ink">
+        <div className="rounded-[var(--radius-card)] border-2 border-sun/50 bg-sun-soft p-5 sm:p-6" role="note">
+          <p className="mb-2 flex items-center gap-2 font-display text-lg font-semibold text-sun-ink">
             <Lightbulb className="h-5 w-5" aria-hidden />
-            <span>
-              Atenção, falante de português!
-            </span>
+            Atenção, falante de português!
           </p>
-          <p className="leading-relaxed text-ink">{ap.notaContrastiva}</p>
+          <p className="max-w-[68ch] text-pretty leading-7 text-ink">
+            <TextoDestacado texto={ap.notaContrastiva} termos={[]} />
+          </p>
         </div>
       )}
 
@@ -124,15 +200,16 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
             {ap.exemplos.map((ex, i) => (
               <li
                 key={i}
-                className="flex items-center justify-between gap-3 rounded-2xl border border-line bg-gray-50 p-3 pl-4"
+                className="flex items-center justify-between gap-2 rounded-2xl border border-line bg-gray-50 p-3 pl-4"
               >
-                <div className="min-w-0">
-                  <p className="text-[1.05rem] font-semibold text-ink" lang="en">
+                <div className="min-w-0 flex-1">
+                  <p className="break-words text-[1.05rem] font-semibold text-ink" lang="en">
                     {ex.en}
                   </p>
                   <p className="text-sm text-ink-soft">{ex.pt}</p>
                 </div>
                 <BotaoOuvir texto={ex.en} comLento />
+                <BotaoAnotar texto={`${ex.en} = ${ex.pt}`} onAnotar={onAnotar} />
               </li>
             ))}
           </ul>
@@ -141,31 +218,19 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
 
       {ap.vocabulario && ap.vocabulario.length > 0 && (
         <CartaoSecao icone={<BookA className="h-5 w-5" />} titulo="Vocabulário" tom="candy">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="border-b border-line text-xs uppercase tracking-wider text-ink-faint">
-                <th scope="col" className="py-2 pr-3 font-semibold">
-                  Inglês
-                </th>
-                <th scope="col" className="py-2 font-semibold">
-                  Português
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-line">
-              {ap.vocabulario.map((v, i) => (
-                <tr key={i}>
-                  <td className="break-words py-2 pr-3 font-semibold text-ink" lang="en">
-                    <span className="inline-flex items-center gap-2.5">
-                      <BotaoOuvir texto={v.en} />
-                      {v.en}
-                    </span>
-                  </td>
-                  <td className="break-words py-2 text-ink-soft">{v.pt}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <ul className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+            {ap.vocabulario.map((v, i) => (
+              <li key={i} className="flex items-center gap-3 rounded-2xl border border-line p-2.5 pr-3">
+                <BotaoOuvir texto={v.en} />
+                <div className="min-w-0">
+                  <p className="break-words font-semibold text-ink" lang="en">
+                    {v.en}
+                  </p>
+                  <p className="break-words text-sm text-ink-soft">{v.pt}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </CartaoSecao>
       )}
 
@@ -184,14 +249,22 @@ function Apresentacao({ licao, onComecar }: { licao: LicaoDetalhe; onComecar: ()
 
 function Pratica({
   exercicios,
+  inicial,
+  onMudar,
   onConcluir,
 }: {
   exercicios: ExercicioPublico[];
+  inicial: RascunhoLicao["pratica"];
+  onMudar: (estado: RascunhoLicao["pratica"]) => void;
   onConcluir: () => void;
 }) {
-  const [indice, setIndice] = useState(0);
-  const [respostas, setRespostas] = useState<Record<number, Resposta>>({});
-  const [feedbacks, setFeedbacks] = useState<Record<number, Resultado>>({});
+  const [indice, setIndice] = useState(inicial.indice);
+  const [respostas, setRespostas] = useState<Record<number, Resposta>>(inicial.respostas);
+  const [feedbacks, setFeedbacks] = useState<Record<number, Resultado>>(inicial.feedbacks);
+
+  useEffect(() => {
+    onMudar({ indice, respostas, feedbacks });
+  }, [indice, respostas, feedbacks, onMudar]);
   const [verificando, setVerificando] = useState(false);
   const [erro, setErro] = useState("");
 
@@ -351,13 +424,21 @@ function Pratica({
 function Quiz({
   licaoId,
   itens,
+  inicial,
+  onMudar,
   onResultado,
 }: {
   licaoId: number;
   itens: ExercicioPublico[];
+  inicial: Record<number, Resposta>;
+  onMudar: (respostas: Record<number, Resposta>) => void;
   onResultado: (r: ResultadoQuiz, respostas: Record<number, Resposta>) => void;
 }) {
-  const [respostas, setRespostas] = useState<Record<number, Resposta>>({});
+  const [respostas, setRespostas] = useState<Record<number, Resposta>>(inicial);
+
+  useEffect(() => {
+    onMudar(respostas);
+  }, [respostas, onMudar]);
   const [enviando, setEnviando] = useState(false);
   const [confirmarIncompleto, setConfirmarIncompleto] = useState(false);
   const [erro, setErro] = useState("");
@@ -605,12 +686,25 @@ const passos: { fase: Fase; rotulo: string }[] = [
 
 /** Player de lição no método PPP: apresentação → prática (controlada, semicontrolada, produção) → mini-quiz. */
 export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
-  const [fase, setFase] = useState<Fase>("apresentacao");
-  const [alcancada, setAlcancada] = useState(0);
   const [tentativaQuiz, setTentativaQuiz] = useState(0);
   const [resultado, setResultado] = useState<{ r: ResultadoQuiz; respostas: Record<number, Resposta> } | null>(
     null
   );
+  const notas = useNotaLicao(licao.id, licao.nota);
+  const [notasAbertas, setNotasAbertas] = useState(false);
+
+  // Folha de notas no celular: Esc fecha e a página de trás não rola
+  useEffect(() => {
+    if (!notasAbertas) return;
+    const fechar = (e: KeyboardEvent) => e.key === "Escape" && setNotasAbertas(false);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", fechar);
+    return () => {
+      document.body.style.overflow = overflow;
+      window.removeEventListener("keydown", fechar);
+    };
+  }, [notasAbertas]);
 
   const praticas = useMemo(
     () =>
@@ -622,6 +716,24 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
   const quiz = useMemo(
     () => licao.exercicios.filter((e) => e.etapa === "quiz").sort((a, b) => a.ordem - b.ordem),
     [licao.exercicios]
+  );
+
+  // Retoma de onde parou (atualizar a página ou sair no meio não zera a lição)
+  const [rascunho, setRascunho] = useState(() => lerRascunho(licao.id, praticas, quiz));
+  const [fase, setFase] = useState<Fase>(() =>
+    rascunho.fase === "pratica" && praticas.length === 0 ? "quiz" : rascunho.fase
+  );
+  const [alcancada, setAlcancada] = useState(rascunho.alcancada);
+
+  useEffect(() => {
+    if (fase === "resultado") apagarRascunho(licao.id);
+    else salvarRascunho(licao.id, { ...rascunho, fase, alcancada });
+  }, [licao.id, rascunho, fase, alcancada]);
+
+  const mudarPratica = useCallback((pratica: RascunhoLicao["pratica"]) => setRascunho((r) => ({ ...r, pratica })), []);
+  const mudarQuiz = useCallback(
+    (respostas: Record<number, Resposta>) => setRascunho((r) => ({ ...r, quiz: { respostas } })),
+    []
   );
 
   function irPara(nova: Fase) {
@@ -636,7 +748,7 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
   const indiceAtual = passos.findIndex((p) => p.fase === (fase === "resultado" ? "quiz" : fase));
 
   return (
-    <div className="mx-auto max-w-2xl space-y-5">
+    <div className="mx-auto max-w-6xl">
       <div>
         <Link
           href="/aluno/curso"
@@ -668,8 +780,26 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
               Concluída · {Math.round(licao.progresso.melhorPercentual)}%
             </span>
           )}
+          <button
+            type="button"
+            onClick={() => setNotasAbertas(true)}
+            aria-haspopup="dialog"
+            className="ml-auto inline-flex min-h-[40px] items-center gap-1.5 rounded-full bg-sun-soft px-3.5 text-sun-ink ring-1 ring-sun/40 hover:ring-sun focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/30 lg:hidden"
+          >
+            <NotebookPen className="h-4 w-4" aria-hidden />
+            Minhas notas
+            {notas.texto.trim() !== "" && (
+              <>
+                <span className="h-2 w-2 rounded-full bg-sun-ink" aria-hidden />
+                <span className="sr-only">(com anotações)</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
+
+      <div className="mt-5 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-8 xl:grid-cols-[minmax(0,1fr)_22rem]">
+      <div className="min-w-0 space-y-5">
 
       <nav aria-label="Etapas da lição">
         <ol className="grid grid-cols-3 gap-1.5 rounded-2xl bg-card p-1.5 ring-1 ring-line">
@@ -708,9 +838,18 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
         </ol>
       </nav>
 
-      {fase === "apresentacao" && <Apresentacao licao={licao} onComecar={() => irPara("pratica")} />}
+      {fase === "apresentacao" && (
+        <Apresentacao licao={licao} onComecar={() => irPara("pratica")} onAnotar={notas.anotar} />
+      )}
 
-      {fase === "pratica" && praticas.length > 0 && <Pratica exercicios={praticas} onConcluir={() => irPara("quiz")} />}
+      {fase === "pratica" && praticas.length > 0 && (
+        <Pratica
+          exercicios={praticas}
+          inicial={rascunho.pratica}
+          onMudar={mudarPratica}
+          onConcluir={() => irPara("quiz")}
+        />
+      )}
 
       {fase === "quiz" &&
         (quiz.length === 0 ? (
@@ -720,7 +859,10 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
             key={tentativaQuiz}
             licaoId={licao.id}
             itens={quiz}
+            inicial={rascunho.quiz.respostas}
+            onMudar={mudarQuiz}
             onResultado={(r, respostas) => {
+              setRascunho((d) => ({ ...d, quiz: { respostas: {} } }));
               setResultado({ r, respostas });
               setFase("resultado");
               rolarParaTopo();
@@ -735,12 +877,37 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
           resultado={resultado.r}
           respostas={resultado.respostas}
           onRefazer={() => {
+            setRascunho((r) => ({ ...r, quiz: { respostas: {} } }));
             setTentativaQuiz((t) => t + 1);
             setResultado(null);
             irPara("quiz");
           }}
           onRever={() => irPara("apresentacao")}
         />
+      )}
+      </div>
+
+      {/* Desktop: caderno sempre à mão, preso ao lado da lição */}
+      <aside className="card sticky top-24 hidden max-h-[calc(100dvh-7rem)] overflow-y-auto p-5 lg:block">
+        <PainelNotas notas={notas} idCampo="notas-lateral" />
+      </aside>
+      </div>
+
+      {/* Celular/tablet: as mesmas notas numa folha que sobe de baixo */}
+      {notasAbertas && (
+        <div className="fixed inset-0 z-[60] lg:hidden" role="dialog" aria-modal="true" aria-labelledby="notas-folha-titulo">
+          <button
+            type="button"
+            className="absolute inset-0 h-full w-full cursor-default bg-gray-950/50 backdrop-blur-[2px]"
+            onClick={() => setNotasAbertas(false)}
+            aria-label="Fechar notas"
+            tabIndex={-1}
+          />
+          <div className="pb-safe absolute inset-x-0 bottom-0 flex h-[min(85dvh,40rem)] animate-rise flex-col rounded-t-[1.75rem] border-t border-line bg-card px-5 pt-3">
+            <span className="mx-auto mb-3 h-1.5 w-10 rounded-full bg-line-strong" aria-hidden />
+            <PainelNotas notas={notas} idCampo="notas-folha" onFechar={() => setNotasAbertas(false)} linhas={8} />
+          </div>
+        </div>
       )}
     </div>
   );
