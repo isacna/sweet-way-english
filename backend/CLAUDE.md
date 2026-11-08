@@ -174,7 +174,7 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 | `PATCH` | `/api/conteudo/modulos/:id/status` | `{ status, incluirLicoes? }` |
 | `GET` | `/api/conteudo/modulos/:id/teste` | Test items grouped by form (read-only) |
 | `POST` | `/api/conteudo/exercicios/verificar` | Editor preview: `{ item, resposta }` → `corrigir()` |
-| `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students |
+| `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students; `?turmaId=sem-turma` = students with no Matricula (any professor, pilot) |
 
 Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
 

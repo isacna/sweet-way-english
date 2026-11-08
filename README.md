@@ -56,8 +56,8 @@ cp .env.example .env
 3. Preencha as variáveis no `.env`:
 ```env
 JWT_SECRET=sua-chave-secreta
+POSTGRES_PASSWORD=uma-senha-forte
 APP_URL=http://localhost:3333
-NEXT_PUBLIC_API_URL=http://localhost:3333
 ```
 
 4. Inicie os containers:
