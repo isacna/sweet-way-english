@@ -3,5 +3,9 @@ dist
 prisma/dev.db
 prisma/dev.db-journal
 src/database/generated
+src/__tests__
+coverage
 uploads
 .env
+.env.*
+!.env.example
