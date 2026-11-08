@@ -318,3 +318,63 @@ test("professora: conteúdo, editor de lição e progresso", async ({ page }) =>
 
   expect(erros, erros.join("\n")).toEqual([]);
 });
+
+test("sessão: cookie httpOnly, nada de token no localStorage e sair encerra a sessão", async ({ page }) => {
+  const erros = vigiarErros(page);
+  await page.goto("/login?tipo=aluno");
+  await page.locator("#email").fill(aluno.email);
+  await page.locator("#senha").fill(aluno.senha);
+  await page.getByRole("button", { name: /^Entrar$/ }).click();
+  await page.waitForURL(/\/aluno$/);
+
+  const sessao = (await page.context().cookies()).find((c) => c.name === "sw_sessao");
+  expect(sessao, "cookie sw_sessao").toBeTruthy();
+  expect(sessao!.httpOnly).toBe(true);
+  expect(sessao!.sameSite).toBe("Lax");
+  expect(await page.evaluate(() => localStorage.getItem("token"))).toBeNull();
+  expect(await page.evaluate(() => JSON.parse(localStorage.getItem("user") ?? "{}").email)).toBe(aluno.email);
+
+  // Sair: o servidor apaga o cookie e o cache local some
+  await page.getByRole("button", { name: new RegExp(aluno.nome) }).click();
+  await page.getByRole("menuitem", { name: "Sair da conta" }).click();
+  await page.waitForURL(/\/login\?tipo=aluno/);
+  expect((await page.context().cookies()).find((c) => c.name === "sw_sessao")).toBeUndefined();
+  expect(await page.evaluate(() => localStorage.getItem("user"))).toBeNull();
+  expect(erros, erros.join("\n")).toEqual([]);
+});
+
+test("sessão: usuário em cache com cookie vencido volta para o login", async ({ page }) => {
+  // Simula um cache antigo (inclusive o `token` da versão anterior) sem cookie de sessão
+  await page.goto("/login?tipo=aluno");
+  await page.evaluate((u) => {
+    localStorage.setItem("token", "antigo");
+    localStorage.setItem("user", JSON.stringify({ id: 999999, nome: u.nome, email: u.email, role: "aluno" }));
+  }, aluno);
+  await page.goto("/aluno");
+  await page.waitForURL(/\/login\?tipo=aluno/);
+  expect(await page.evaluate(() => localStorage.getItem("user"))).toBeNull();
+  expect(await page.evaluate(() => localStorage.getItem("token"))).toBeNull();
+});
+
+test("recuperar senha: telas enviam sem erros (o fluxo completo é testado no backend)", async ({ page }) => {
+  const erros = vigiarErros(page);
+  await page.goto("/login?tipo=aluno");
+  await page.getByRole("link", { name: "Esqueci minha senha" }).click();
+  await page.waitForURL(/\/esqueci-senha$/);
+  await page.locator("#email").fill(aluno.email);
+  await page.getByRole("button", { name: "Enviar link" }).click();
+  await expect(page.getByRole("status")).toContainText("Se houver uma conta com esse e-mail");
+
+  // Link com token inválido: a API responde 400 e a tela explica
+  await page.goto("/redefinir-senha?token=0000");
+  await page.locator("#senha").fill("nova12345");
+  await page.locator("#confirmacao").fill("nova12345");
+  const resposta = page.waitForResponse((r) => r.url().endsWith("/api/auth/redefinir-senha"));
+  await page.getByRole("button", { name: "Salvar nova senha" }).click();
+  expect((await resposta).status()).toBe(400);
+  await expect(page.getByRole("alert").filter({ hasText: "Link inválido ou expirado" })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Pedir um novo link" })).toBeVisible();
+
+  // Só o 400 esperado do token inválido
+  expect(erros.filter((e) => !e.includes("/api/auth/redefinir-senha") && !e.includes("400 (Bad Request)")), erros.join("\n")).toEqual([]);
+});

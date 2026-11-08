@@ -3,7 +3,7 @@
 import { ChevronDown, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { getStoredUser } from "@/lib/api";
+import { getStoredUser, sair as encerrarSessao, validarSessao } from "@/lib/api";
 import { SeletorTema } from "./SeletorTema";
 
 function iniciais(nome: string): string {
@@ -37,6 +37,29 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
     });
   }, []);
 
+  // Confere a sessão (cookie) no servidor ao abrir a área logada: o `user` do localStorage é só cache.
+  // Cookie expirado ou senha trocada em outro lugar → volta para o login.
+  const [, setValidado] = useState(false);
+  useEffect(() => {
+    let cancelado = false;
+    const tipoAntes = getStoredUser()?.role === "professor" ? "professor" : "aluno";
+    validarSessao()
+      .then((u) => {
+        if (cancelado) return;
+        if (!u) {
+          window.location.href = `/login?tipo=${tipoAntes}`;
+          return;
+        }
+        setValidado(true);
+      })
+      .catch(() => {
+        // Sem conexão com a API: mantém a tela; as chamadas da página mostram o erro
+      });
+    return () => {
+      cancelado = true;
+    };
+  }, []);
+
   useEffect(() => {
     if (!aberto) return;
 
@@ -58,10 +81,9 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
     };
   }, [aberto]);
 
-  function sair() {
+  async function sair() {
     const u = getStoredUser();
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    await encerrarSessao();
     const tipo = u?.role === "professor" ? "professor" : "aluno";
     window.location.href = `/login?tipo=${tipo}`;
   }
@@ -147,7 +169,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
             role="menuitem"
             onClick={() => {
               setAberto(false);
-              sair();
+              void sair();
             }}
             className="flex w-full items-center gap-3 border-t border-line px-4 py-3 text-left text-sm font-semibold text-danger-ink transition-colors hover:bg-danger-soft"
           >
