@@ -83,9 +83,13 @@ export function requireRole(...papeis: Papel[]) {
  */
 export async function requireAdmin(req: Request, res: Response, next: NextFunction) {
   const { user } = req as AuthRequest;
-  const usuario = user
-    ? await prisma.usuario.findUnique({ where: { id: user.id }, select: { admin: true } })
-    : null;
+  let usuario: { admin: boolean } | null;
+  try {
+    usuario = user ? await prisma.usuario.findUnique({ where: { id: user.id }, select: { admin: true } }) : null;
+  } catch (err) {
+    next(err);
+    return;
+  }
   if (!usuario?.admin) {
     res.status(403).json({ error: 'Acesso restrito ao administrador' });
     return;

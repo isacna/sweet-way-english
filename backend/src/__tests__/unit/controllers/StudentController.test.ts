@@ -22,7 +22,7 @@ vi.mock('bcryptjs', () => ({
 
 import bcrypt from 'bcryptjs';
 import { listStudents, createStudent, updateStudent, deleteStudent } from '../../../http/controllers/StudentController.js';
-import { mockRes, mockReq, studentReq } from '../../helpers/mockReqRes.js';
+import { mockRes, mockReq, studentReq, executar } from '../../helpers/mockReqRes.js';
 
 const professorReq = (overrides = {}) => mockReq(overrides);
 
@@ -36,11 +36,6 @@ describe('StudentController', () => {
 
   // ── listStudents ──────────────────────────────────────────────────────────
   describe('listStudents', () => {
-    it('returns 403 for aluno', async () => {
-      await listStudents(studentReq(), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns sorted list of students with their classes', async () => {
       const matriculaMock = {
         aluno: { id: 2, nome: 'Carlos', email: 'c@t.com', criadoEm: new Date() },
@@ -48,7 +43,7 @@ describe('StudentController', () => {
       };
       prismaMock.matricula.findMany.mockResolvedValue([matriculaMock]);
 
-      await listStudents(professorReq(), res);
+      await executar(listStudents, professorReq(), res);
 
       expect(res.json).toHaveBeenCalledWith(
         expect.arrayContaining([expect.objectContaining({ nome: 'Carlos' })])
@@ -58,24 +53,19 @@ describe('StudentController', () => {
 
   // ── createStudent ─────────────────────────────────────────────────────────
   describe('createStudent', () => {
-    it('returns 403 for aluno', async () => {
-      await createStudent(studentReq(), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 when required fields are missing', async () => {
-      await createStudent(professorReq({ body: { nome: 'Bob' } }), res);
+      await executar(createStudent, professorReq({ body: { nome: 'Bob' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 400 when turmaId is not a number', async () => {
-      await createStudent(professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123', turmaId: 'abc' } }), res);
+      await executar(createStudent, professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123456', turmaId: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 400 when turma does not belong to professor', async () => {
       prismaMock.turma.findFirst.mockResolvedValue(null);
-      await createStudent(professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123', turmaId: 5 } }), res);
+      await executar(createStudent, professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123456', turmaId: 5 } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -86,7 +76,7 @@ describe('StudentController', () => {
       prismaMock.usuario.create.mockResolvedValue(aluno);
       prismaMock.matricula.create.mockResolvedValue({});
 
-      await createStudent(professorReq({ body: { nome: 'Bob', email: ' B@T.com ', senha: '123', turmaId: 1 } }), res);
+      await executar(createStudent, professorReq({ body: { nome: 'Bob', email: ' B@T.com ', senha: '123456', turmaId: 1 } }), res);
 
       expect(prismaMock.usuario.create).toHaveBeenCalledWith(
         expect.objectContaining({ data: expect.objectContaining({ email: 'b@t.com' }) }),
@@ -100,8 +90,8 @@ describe('StudentController', () => {
     it('returns 400 for a minor without guardian consent', async () => {
       prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
       const nascimento = `${new Date().getFullYear() - 12}-01-01`;
-      await createStudent(
-        professorReq({ body: { nome: 'Bia', email: 'bia@t.com', senha: '123', turmaId: 1, dataNascimento: nascimento } }),
+      await executar(createStudent, 
+        professorReq({ body: { nome: 'Bia', email: 'bia@t.com', senha: '123456', turmaId: 1, dataNascimento: nascimento } }),
         res,
       );
       expect(res.status).toHaveBeenCalledWith(400);
@@ -115,10 +105,10 @@ describe('StudentController', () => {
       prismaMock.matricula.create.mockResolvedValue({});
       const nascimento = `${new Date().getFullYear() - 12}-01-01`;
 
-      await createStudent(
+      await executar(createStudent, 
         professorReq({
           body: {
-            nome: 'Bia', email: 'bia@t.com', senha: '123', turmaId: 1, dataNascimento: nascimento,
+            nome: 'Bia', email: 'bia@t.com', senha: '123456', turmaId: 1, dataNascimento: nascimento,
             responsavelNome: 'Rita', responsavelEmail: 'Rita@T.com', consentimentoResponsavel: true,
           },
         }),
@@ -138,8 +128,8 @@ describe('StudentController', () => {
       prismaMock.usuario.create.mockResolvedValue({ id: 5, nome: 'Rui', email: 'rui@t.com' });
       prismaMock.matricula.create.mockResolvedValue({});
 
-      await createStudent(
-        professorReq({ body: { nome: 'Rui', email: 'rui@t.com', senha: '123', turmaId: 1, dataNascimento: '1990-05-01', responsavelNome: '' } }),
+      await executar(createStudent, 
+        professorReq({ body: { nome: 'Rui', email: 'rui@t.com', senha: '123456', turmaId: 1, dataNascimento: '1990-05-01', responsavelNome: '' } }),
         res,
       );
 
@@ -151,33 +141,41 @@ describe('StudentController', () => {
 
     it('returns 400 on duplicate email', async () => {
       prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
-      prismaMock.$transaction.mockRejectedValue(new Error('unique'));
-      await createStudent(professorReq({ body: { nome: 'Bob', email: 'dup@t.com', senha: '123', turmaId: 1 } }), res);
+      prismaMock.$transaction.mockRejectedValue(Object.assign(new Error('unique'), { code: 'P2002' }));
+      await executar(createStudent, professorReq({ body: { nome: 'Bob', email: 'dup@t.com', senha: '123456', turmaId: 1 } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ error: 'Email já cadastrado ou aluno já está nesta turma' });
+    });
+
+    it.each([
+      [{ nome: 'Bob', email: 'b@t.com', senha: '123', turmaId: 1 }, 'A senha precisa ter pelo menos 6 caracteres'],
+      [{ nome: 'Bob', email: 'not-an-email', senha: '123456', turmaId: 1 }, 'Email inválido'],
+      [{ nome: '  ', email: 'b@t.com', senha: '123456', turmaId: 1 }, 'Nome, email e senha são obrigatórios'],
+      [{ nome: 'Bob', email: 'b@t.com', senha: '123456', turmaId: '1abc' }, 'Selecione uma turma para vincular o aluno'],
+    ])('returns 400 for %o', async (body, erro) => {
+      await executar(createStudent, professorReq({ body }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ error: erro });
+      expect(prismaMock.turma.findFirst).not.toHaveBeenCalled();
     });
   });
 
   // ── updateStudent ─────────────────────────────────────────────────────────
   describe('updateStudent', () => {
-    it('returns 403 for aluno', async () => {
-      await updateStudent(studentReq({ params: { id: '2' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await updateStudent(professorReq({ params: { id: 'abc' } }), res);
+      await executar(updateStudent, professorReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when student not linked to professor', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue(null);
-      await updateStudent(professorReq({ params: { id: '99' } }), res);
+      await executar(updateStudent, professorReq({ params: { id: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 400 when no fields sent', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
-      await updateStudent(professorReq({ params: { id: '2' }, body: {} }), res);
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body: {} }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -185,40 +183,55 @@ describe('StudentController', () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       const updated = { id: 2, nome: 'New Name', email: 'b@t.com', criadoEm: new Date() };
       prismaMock.usuario.update.mockResolvedValue(updated);
-      await updateStudent(professorReq({ params: { id: '2' }, body: { nome: 'New Name' } }), res);
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body: { nome: 'New Name' } }), res);
       expect(res.json).toHaveBeenCalledWith(updated);
     });
 
     it('hashes password when senha is provided', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
-      await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
       expect(bcrypt.hash).toHaveBeenCalledWith('newpass', 10);
     });
 
     it('bumps versaoToken when the password changes (old sessions end)', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
-      await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
       expect(prismaMock.usuario.update.mock.calls[0][0].data.versaoToken).toEqual({ increment: 1 });
+    });
+
+    it('ignores an empty password (the edit form sends "" when it does not change)', async () => {
+      prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body: { nome: 'Bob', email: 'b@t.com', senha: '' } }), res);
+      expect(bcrypt.hash).not.toHaveBeenCalled();
+      expect(prismaMock.usuario.update.mock.calls[0][0].data).toEqual({ nome: 'Bob', email: 'b@t.com' });
+    });
+
+    it.each([
+      [{ email: '' }, 'Email não pode ser vazio'],
+      [{ email: 'x' }, 'Email inválido'],
+      [{ nome: '' }, 'Nome não pode ser vazio'],
+      [{ senha: '123' }, 'A senha precisa ter pelo menos 6 caracteres'],
+    ])('returns 400 for %o before touching the database', async (body, erro) => {
+      await executar(updateStudent, professorReq({ params: { id: '2' }, body }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ error: erro });
+      expect(prismaMock.usuario.update).not.toHaveBeenCalled();
     });
   });
 
   // ── deleteStudent ─────────────────────────────────────────────────────────
   describe('deleteStudent', () => {
-    it('returns 403 for aluno', async () => {
-      await deleteStudent(studentReq({ params: { id: '2' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await deleteStudent(professorReq({ params: { id: 'xyz' } }), res);
+      await executar(deleteStudent, professorReq({ params: { id: 'xyz' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when student not linked to professor', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue(null);
-      await deleteStudent(professorReq({ params: { id: '99' } }), res);
+      await executar(deleteStudent, professorReq({ params: { id: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
@@ -231,7 +244,7 @@ describe('StudentController', () => {
       prismaMock.matricula.deleteMany.mockResolvedValue({});
       prismaMock.usuario.delete.mockResolvedValue({});
 
-      await deleteStudent(professorReq({ params: { id: '2' } }), res);
+      await executar(deleteStudent, professorReq({ params: { id: '2' } }), res);
 
       expect(res.status).toHaveBeenCalledWith(204);
       expect(res.send).toHaveBeenCalled();
@@ -248,7 +261,7 @@ describe('StudentController', () => {
       prismaMock.arquivo.deleteMany.mockImplementation(async () => { ordem.push('arquivo'); });
       prismaMock.usuario.delete.mockImplementation(async () => { ordem.push('usuario'); });
 
-      await deleteStudent(professorReq({ params: { id: '2' } }), res);
+      await executar(deleteStudent, professorReq({ params: { id: '2' } }), res);
 
       expect(prismaMock.arquivo.findMany.mock.calls[0][0]).toMatchObject({ where: { donoId: 2 } });
       expect(ordem).toEqual(['arquivo', 'usuario']);

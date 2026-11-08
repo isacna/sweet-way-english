@@ -1,164 +1,62 @@
 import { Response } from 'express';
-import { prisma } from '../../database/client.js';
+import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
-import { apagarArquivos, removerDoDisco } from '../../storage/arquivos.js';
-import { arquivoRecebido, salvarArquivoRecebido } from '../middlewares/upload.js';
-import { arquivoResumoSelect, comArquivo } from '../arquivoPublico.js';
+import { anexoDaRequisicao } from '../middlewares/upload.js';
+import { comArquivo } from '../arquivoPublico.js';
+import { booleano, id, lerBooleano, texto, validar } from '../validacao.js';
+import * as atividades from '../../services/atividades.js';
+import type { EdicaoAtividade } from '../../services/atividades.js';
 
-const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
+const paramsTurma = z.object({ turmaId: id('Turma inválida') });
+const paramsAtividade = z.object({ id: id() });
 
-/** Booleano vindo de JSON (true) ou de multipart ("true", "1", "on"). */
-function lerBooleano(v: unknown) {
-  return v === true || v === 'true' || v === '1' || v === 'on' || v === 1;
-}
+const dataEntrega = z.coerce.date({ error: 'Data de entrega inválida' });
+/** undefined = não mexe; null ou "" = sem link */
+const link = z
+  .union([z.string(), z.null()], { error: 'Link inválido' })
+  .optional()
+  .transform((v) => (v === undefined ? undefined : v?.trim() || null));
+const opcional = <T extends z.ZodType>(s: T) => z.preprocess((v) => v ?? undefined, s.optional());
 
+// JSON ou multipart (com o anexo opcional da professora no campo `arquivo`)
+const novaAtividadeSchema = z.object({
+  titulo: texto('Título é obrigatório'),
+  descricao: texto('Descrição é obrigatória'),
+  dataEntrega,
+  arquivoObrigatorio: booleano,
+  link: link.transform((v) => v ?? null),
+});
+
+const edicaoSchema = z.object({
+  titulo: opcional(texto('Título não pode ser vazio')),
+  descricao: opcional(texto('Descrição não pode ser vazia')),
+  dataEntrega: opcional(dataEntrega),
+  arquivoObrigatorio: z.unknown().transform((v) => (v === undefined ? undefined : lerBooleano(v))),
+  link,
+  removerArquivo: booleano,
+});
+
+/** POST /turmas/:turmaId/atividades — requireRole('professor') */
 export async function createActivity(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const turmaId = parseInt(req.params.turmaId, 10);
-  if (Number.isNaN(turmaId)) {
-    res.status(400).json({ error: 'Turma inválida' });
-    return;
-  }
-
-  const turma = await prisma.turma.findFirst({ where: { id: turmaId, professorId: req.user.id } });
-  if (!turma) {
-    res.status(404).json({ error: 'Turma não encontrada' });
-    return;
-  }
-
-  // JSON ou multipart (com o anexo opcional da professora no campo `arquivo`)
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body ?? {};
-  const dados = {
-    titulo,
-    descricao,
-    dataEntrega: new Date(dataEntrega),
-    arquivoObrigatorio: lerBooleano(arquivoObrigatorio),
-    link: link ? String(link).trim() : null,
-    turmaId,
-  };
-  const atividade = arquivoRecebido(req)
-    ? await salvarArquivoRecebido(req, req.user.id, (tx, a) =>
-        tx.atividade.create({ data: { ...dados, arquivoId: a.id }, include: incluirArquivo }),
-      )
-    : await prisma.atividade.create({ data: dados, include: incluirArquivo });
+  const { turmaId } = validar(paramsTurma, req.params);
+  const dados = validar(novaAtividadeSchema, req.body);
+  const atividade = await atividades.criarAtividade(req.user.id, turmaId, dados, anexoDaRequisicao(req, req.user.id));
   res.status(201).json(comArquivo(atividade));
 }
 
+/** PATCH /professor/atividades/:id — requireRole('professor') */
 export async function updateActivity(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const id = parseInt(req.params.id, 10);
-  if (Number.isNaN(id)) {
-    res.status(400).json({ error: 'ID inválido' });
-    return;
-  }
-
-  const existing = await prisma.atividade.findUnique({
-    where: { id },
-    include: { turma: { select: { professorId: true } } },
-  });
-  if (!existing) {
-    res.status(404).json({ error: 'Atividade não encontrada' });
-    return;
-  }
-  if (existing.turma.professorId !== req.user.id) {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link, removerArquivo } = req.body ?? {};
-  const data: { titulo?: string; descricao?: string; dataEntrega?: Date; arquivoObrigatorio?: boolean; link?: string | null } = {};
-
-  if (titulo !== undefined) {
-    const t = String(titulo).trim();
-    if (!t) { res.status(400).json({ error: 'Título não pode ser vazio' }); return; }
-    data.titulo = t;
-  }
-  if (descricao !== undefined) {
-    const d = String(descricao).trim();
-    if (!d) { res.status(400).json({ error: 'Descrição não pode ser vazia' }); return; }
-    data.descricao = d;
-  }
-  if (dataEntrega !== undefined) {
-    const d = new Date(dataEntrega);
-    if (Number.isNaN(d.getTime())) { res.status(400).json({ error: 'Data de entrega inválida' }); return; }
-    data.dataEntrega = d;
-  }
-  if (arquivoObrigatorio !== undefined) data.arquivoObrigatorio = lerBooleano(arquivoObrigatorio);
-  if (link !== undefined) data.link = link ? String(link).trim() : null;
-
-  // Anexo: um arquivo novo substitui o anterior; `removerArquivo: true` tira o anexo
-  const novoArquivo = arquivoRecebido(req);
-  const tirarAnexo = !novoArquivo && lerBooleano(removerArquivo) && !!existing.arquivoId;
-
-  if (Object.keys(data).length === 0 && !novoArquivo && !tirarAnexo) {
-    res.status(400).json({ error: 'Envie titulo, descricao, dataEntrega, arquivoObrigatorio, link e/ou arquivo' });
-    return;
-  }
-
-  let descartar: string[] = [];
-  const atividade = novoArquivo
-    ? await salvarArquivoRecebido(req, req.user.id, async (tx, a) => {
-        const r = await tx.atividade.update({ where: { id }, data: { ...data, arquivoId: a.id }, include: incluirArquivo });
-        descartar = await apagarArquivos(tx, [existing.arquivoId]);
-        return r;
-      })
-    : await prisma.$transaction(async (tx) => {
-        const r = await tx.atividade.update({
-          where: { id },
-          data: tirarAnexo ? { ...data, arquivoId: null } : data,
-          include: incluirArquivo,
-        });
-        if (tirarAnexo) descartar = await apagarArquivos(tx, [existing.arquivoId]);
-        return r;
-      });
-  await removerDoDisco(descartar);
+  const { id } = validar(paramsAtividade, req.params);
+  const corpo = validar(edicaoSchema, req.body);
+  // Só os campos enviados entram no update
+  const edicao = Object.fromEntries(Object.entries(corpo).filter(([, v]) => v !== undefined)) as EdicaoAtividade;
+  const atividade = await atividades.atualizarAtividade(req.user.id, id, edicao, anexoDaRequisicao(req, req.user.id));
   res.json(comArquivo(atividade));
 }
 
+/** GET /turmas/:turmaId/atividades */
 export async function listActivitiesByClass(req: AuthRequest, res: Response) {
-  const turmaId = parseInt(req.params.turmaId);
-  const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
-  if (!turma) {
-    res.status(404).json({ error: 'Turma não encontrada' });
-    return;
-  }
-
-  if (req.user.role === 'professor' && turma.professorId !== req.user.id) {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-  if (req.user.role === 'aluno') {
-    const enrolled = await prisma.matricula.findFirst({ where: { turmaId, alunoId: req.user.id } });
-    if (!enrolled) { res.status(403).json({ error: 'Acesso negado' }); return; }
-  }
-
-  const submissoesInclude =
-    req.user.role === 'aluno'
-      ? {
-          where: { alunoId: req.user.id },
-          include: {
-            aluno: { select: { nome: true } },
-            feedback: { include: { professor: { select: { nome: true } } } },
-            ...incluirArquivo,
-          },
-          orderBy: { dataEnvio: 'desc' as const },
-        }
-      : {
-          include: { aluno: { select: { nome: true } }, ...incluirArquivo },
-          orderBy: { dataEnvio: 'desc' as const },
-        };
-
-  const atividades = await prisma.atividade.findMany({
-    where: { turmaId },
-    include: { submissoes: submissoesInclude, ...incluirArquivo },
-  });
-  res.json(atividades.map((a) => ({ ...comArquivo(a), submissoes: a.submissoes.map(comArquivo) })));
+  const { turmaId } = validar(paramsTurma, req.params);
+  const lista = await atividades.listarAtividades(req.user, turmaId);
+  res.json(lista.map((a) => ({ ...comArquivo(a), submissoes: a.submissoes.map(comArquivo) })));
 }

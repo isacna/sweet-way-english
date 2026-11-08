@@ -1,107 +1,42 @@
 import { Response } from 'express';
-import { prisma } from '../../database/client.js';
+import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
-import { arquivoResumoSelect, comArquivo, materialPublico } from '../arquivoPublico.js';
+import { comArquivo, materialPublico } from '../arquivoPublico.js';
+import { id, texto, textoOpcional, validar } from '../validacao.js';
+import * as turmas from '../../services/turmas.js';
 
-const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
+const novaTurmaSchema = z.object({
+  nome: texto('Nome da turma é obrigatório'),
+  descricao: textoOpcional('Descrição inválida'),
+  // Prefixo do código de convite (ex.: A1, B2)
+  nivel: textoOpcional('Nível inválido').pipe(
+    z.string().regex(/^[A-Za-z0-9]{1,4}$/, 'Nível inválido').optional(),
+  ),
+});
+const paramsTurma = z.object({ id: id() });
+const entrarSchema = z.object({ codigoConvite: texto('Informe o código de convite') });
 
+/** POST /turmas — requireRole('professor') */
 export async function createClass(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const { nome, descricao, nivel } = req.body;
-  const year = new Date().getFullYear();
-  const count = await prisma.turma.count();
-  const codigoConvite = `SW${nivel || 'B'}${count + 1}-${year}`;
-
-  try {
-    const turma = await prisma.turma.create({
-      data: { nome, descricao, codigoConvite, professorId: req.user.id },
-    });
-    res.status(201).json(turma);
-  } catch {
-    res.status(400).json({ error: 'Erro ao criar turma' });
-  }
+  const dados = validar(novaTurmaSchema, req.body);
+  res.status(201).json(await turmas.criarTurma(req.user.id, dados));
 }
 
+/** GET /turmas */
 export async function listClasses(req: AuthRequest, res: Response) {
-  if (req.user.role === 'professor') {
-    const turmas = await prisma.turma.findMany({
-      where: { professorId: req.user.id },
-      include: { _count: { select: { matriculas: true } } },
-    });
-    res.json(turmas);
-    return;
-  }
-
-  const matriculas = await prisma.matricula.findMany({
-    where: { alunoId: req.user.id },
-    include: { turma: { include: { professor: { select: { nome: true } } } } },
-  });
-  res.json(matriculas.map((m) => m.turma));
+  res.json(await turmas.listarTurmas(req.user));
 }
 
+/** GET /turmas/:id */
 export async function getClassById(req: AuthRequest, res: Response) {
-  const id = parseInt(req.params.id);
-  const turma = await prisma.turma.findUnique({
-    where: { id },
-    include: {
-      professor: { select: { nome: true } },
-      atividades: { include: incluirArquivo },
-      materiais: { include: incluirArquivo },
-      matriculas: { include: { aluno: { select: { id: true, nome: true, email: true } } } },
-    },
-  });
-
-  if (!turma) {
-    res.status(404).json({ error: 'Turma não encontrada' });
-    return;
-  }
-  if (req.user.role === 'professor' && turma.professorId !== req.user.id) {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-  if (req.user.role === 'aluno') {
-    const enrolled = await prisma.matricula.findFirst({
-      where: { turmaId: id, alunoId: req.user.id },
-    });
-    if (!enrolled) {
-      res.status(403).json({ error: 'Acesso negado' });
-      return;
-    }
-  }
-
+  const { id } = validar(paramsTurma, req.params);
+  const turma = await turmas.detalharTurma(req.user, id);
   res.json({ ...turma, atividades: turma.atividades.map(comArquivo), materiais: turma.materiais.map(materialPublico) });
 }
 
+/** POST /turmas/entrar — requireRole('aluno') */
 export async function joinClass(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'aluno') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const { codigoConvite } = req.body;
-
-  const alreadyEnrolled = await prisma.matricula.findFirst({
-    where: { alunoId: req.user.id },
-  });
-  if (alreadyEnrolled) {
-    res.status(400).json({ error: 'Você já está em uma turma. Não é possível entrar em outra.' });
-    return;
-  }
-
-  const turma = await prisma.turma.findUnique({ where: { codigoConvite } });
-  if (!turma) {
-    res.status(404).json({ error: 'Turma não encontrada' });
-    return;
-  }
-
-  try {
-    await prisma.matricula.create({ data: { alunoId: req.user.id, turmaId: turma.id } });
-    res.json({ message: 'Matriculado com sucesso' });
-  } catch {
-    res.status(400).json({ error: 'Você já está nesta turma' });
-  }
+  const { codigoConvite } = validar(entrarSchema, req.body);
+  await turmas.entrarNaTurma(req.user.id, codigoConvite);
+  res.json({ message: 'Matriculado com sucesso' });
 }
