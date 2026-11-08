@@ -34,6 +34,8 @@ model Usuario {
   responsavelNome            String?
   responsavelEmail           String?
   consentimentoResponsavelEm DateTime?
+  // Entra no JWT como `v`; incrementar derruba todas as sessões abertas (troca/redefinição de senha)
+  versaoToken                Int              @default(0)
   criadoEm                   DateTime         @default(now())
   atualizadoEm               DateTime         @updatedAt
   turmas                     Turma[]
@@ -46,6 +48,20 @@ model Usuario {
   tentativasTeste            TentativaTeste[]
   notasLicao                 NotaLicao[]
   licoesRevisadas            Licao[]          @relation("LicaoRevisor")
+  tokensSenha                TokenSenha[]
+}
+
+// Pedido de redefinição de senha. Guarda só o SHA-256 do token enviado por e-mail, nunca o token.
+model TokenSenha {
+  id        Int       @id @default(autoincrement())
+  usuarioId Int
+  hashToken String    @unique
+  expiraEm  DateTime
+  usadoEm   DateTime?
+  criadoEm  DateTime  @default(now())
+  usuario   Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+
+  @@index([usuarioId])
 }
 
 model Turma {

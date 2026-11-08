@@ -2,8 +2,18 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import request from 'supertest';
 
 // ── Prisma mock ──────────────────────────────────────────────────────────────
+// authenticateToken consulta `usuario.findUnique({ select: { versaoToken } })` a cada requisição; essa busca
+// sempre acha a versão 0 (a dos tokens de mockToken). As demais buscas vão para `usuarioFindUnique`.
+const usuarioFindUnique = vi.hoisted(() => vi.fn());
 const prismaMock = vi.hoisted(() => ({
-  usuario: { findUnique: vi.fn(), create: vi.fn() },
+  usuario: {
+    findUnique: vi.fn((args: { select?: Record<string, boolean> }) =>
+      args?.select?.versaoToken && Object.keys(args.select).length === 1
+        ? Promise.resolve({ versaoToken: 0 })
+        : usuarioFindUnique(args)
+    ),
+    create: vi.fn(),
+  },
   turma: { findUnique: vi.fn(), findMany: vi.fn(), create: vi.fn(), count: vi.fn() },
   matricula: { findFirst: vi.fn(), findMany: vi.fn(), create: vi.fn() },
   atividade: { findUnique: vi.fn(), findMany: vi.fn(), create: vi.fn(), update: vi.fn() },
@@ -33,7 +43,7 @@ const createTestApp = createApp;
 
 // Helper: make JWT verify succeed with a given payload
 function mockToken(payload: object) {
-  (jwt.verify as any).mockImplementation((_t: any, _s: any, cb: any) => cb(null, { exp: 9999999999, ...payload }));
+  (jwt.verify as any).mockImplementation(() => ({ exp: 9999999999, v: 0, ...payload }));
   return 'Bearer test_token';
 }
 
@@ -85,7 +95,7 @@ describe('Integration — HTTP API', () => {
   describe('POST /api/auth/login', () => {
     it('returns token for valid credentials', async () => {
       const { default: bcrypt } = await import('bcryptjs');
-      prismaMock.usuario.findUnique.mockResolvedValue({
+      usuarioFindUnique.mockResolvedValue({
         id: 1, nome: 'Ana', email: 'ana@t.com', senha: 'hashed', papel: 'professor', admin: false,
       });
       (bcrypt.compare as any).mockResolvedValue(true);
@@ -101,7 +111,7 @@ describe('Integration — HTTP API', () => {
 
     it('returns 401 for wrong credentials', async () => {
       const { default: bcrypt } = await import('bcryptjs');
-      prismaMock.usuario.findUnique.mockResolvedValue(null);
+      usuarioFindUnique.mockResolvedValue(null);
       (bcrypt.compare as any).mockResolvedValue(false);
 
       const res = await request(app)
@@ -112,10 +122,63 @@ describe('Integration — HTTP API', () => {
     });
   });
 
+  // ── Session cookie ─────────────────────────────────────────────────────────
+  describe('session cookie', () => {
+    it('login sets an httpOnly, SameSite=Lax cookie (no Secure outside production)', async () => {
+      const { default: bcrypt } = await import('bcryptjs');
+      usuarioFindUnique.mockResolvedValue({
+        id: 1, nome: 'Ana', email: 'ana@t.com', senha: 'hashed', papel: 'aluno', admin: false, versaoToken: 0,
+      });
+      (bcrypt.compare as any).mockResolvedValue(true);
+      const res = await request(app).post('/api/auth/login').send({ email: 'ana@t.com', senha: '123' });
+      const cookie = String(res.headers['set-cookie']);
+      expect(cookie).toMatch(/^sw_sessao=test_token;/);
+      expect(cookie).toMatch(/HttpOnly/);
+      expect(cookie).toMatch(/SameSite=Lax/);
+      expect(cookie).toMatch(/Path=\//);
+      expect(cookie).toMatch(/Max-Age=604800/);
+      expect(cookie).not.toMatch(/Secure/);
+    });
+
+    it('GET /api/auth/me works with the cookie alone', async () => {
+      mockToken({ id: 1, role: 'aluno', email: 'ana@t.com' });
+      usuarioFindUnique.mockResolvedValue({ id: 1, nome: 'Ana', email: 'ana@t.com', papel: 'aluno', admin: false, versaoToken: 0 });
+      const res = await request(app).get('/api/auth/me').set('Cookie', 'sw_sessao=test_token');
+      expect(res.status).toBe(200);
+      expect(res.body.user).toEqual({ id: 1, nome: 'Ana', email: 'ana@t.com', role: 'aluno', admin: false });
+    });
+
+    it('GET /api/auth/me returns 401 without a session', async () => {
+      const res = await request(app).get('/api/auth/me');
+      expect(res.status).toBe(401);
+    });
+
+    it('POST /api/auth/logout expires the cookie', async () => {
+      const res = await request(app).post('/api/auth/logout');
+      expect(res.status).toBe(200);
+      expect(String(res.headers['set-cookie'])).toMatch(/sw_sessao=;.*Expires=Thu, 01 Jan 1970/);
+    });
+
+    it('CORS allows credentials for an allowed origin only', async () => {
+      const ok = await request(app).get('/api/health').set('Origin', 'http://localhost:3000');
+      expect(ok.headers['access-control-allow-origin']).toBe('http://localhost:3000');
+      expect(ok.headers['access-control-allow-credentials']).toBe('true');
+      const outra = await request(app).get('/api/health').set('Origin', 'http://evil.example');
+      expect(outra.headers['access-control-allow-origin']).toBeUndefined();
+    });
+
+    it('POST /api/auth/esqueci-senha answers 200 for an unknown e-mail', async () => {
+      usuarioFindUnique.mockResolvedValue(null);
+      const res = await request(app).post('/api/auth/esqueci-senha').send({ email: 'ghost@t.com' });
+      expect(res.status).toBe(200);
+      expect(res.body.message).toMatch(/Se houver uma conta/);
+    });
+  });
+
   // ── Admin ──────────────────────────────────────────────────────────────────
   describe('admin routes', () => {
     it('returns 403 for a professor who is not admin', async () => {
-      prismaMock.usuario.findUnique.mockResolvedValue({ admin: false });
+      usuarioFindUnique.mockResolvedValue({ admin: false });
       const res = await request(app)
         .get('/api/admin/professores')
         .set('Authorization', mockToken({ id: 2, role: 'professor', email: 'p@t.com' }));
@@ -133,7 +196,7 @@ describe('Integration — HTTP API', () => {
   // ── Uploads ────────────────────────────────────────────────────────────────
   describe('upload limits', () => {
     it('rejects disallowed file types with 415', async () => {
-      prismaMock.usuario.findUnique.mockResolvedValue({ admin: true });
+      usuarioFindUnique.mockResolvedValue({ admin: true });
       const res = await request(app)
         .patch('/api/configuracoes/logo')
         .set('Authorization', mockToken({ id: 1, role: 'professor', email: 'a@t.com' }))
@@ -142,7 +205,7 @@ describe('Integration — HTTP API', () => {
     });
 
     it('rejects SVG images (can carry scripts)', async () => {
-      prismaMock.usuario.findUnique.mockResolvedValue({ admin: true });
+      usuarioFindUnique.mockResolvedValue({ admin: true });
       const res = await request(app)
         .patch('/api/configuracoes/logo')
         .set('Authorization', mockToken({ id: 1, role: 'professor', email: 'a@t.com' }))

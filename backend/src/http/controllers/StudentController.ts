@@ -151,10 +151,14 @@ export async function updateStudent(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
   if (nome !== undefined) data.nome = nome;
   if (email !== undefined) data.email = normalizarEmail(email);
-  if (senha !== undefined && senha !== '') data.senha = await bcrypt.hash(senha, 10);
+  if (senha !== undefined && senha !== '') {
+    data.senha = await bcrypt.hash(senha, 10);
+    // Senha nova derruba as sessões abertas do aluno
+    data.versaoToken = { increment: 1 };
+  }
 
   if (Object.keys(data).length === 0) {
     res.status(400).json({ error: 'Envie ao menos um campo: nome, email ou senha' });

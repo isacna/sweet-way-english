@@ -194,6 +194,13 @@ describe('StudentController', () => {
       await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
       expect(bcrypt.hash).toHaveBeenCalledWith('newpass', 10);
     });
+
+    it('bumps versaoToken when the password changes (old sessions end)', async () => {
+      prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
+      await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
+      expect(prismaMock.usuario.update.mock.calls[0][0].data.versaoToken).toEqual({ increment: 1 });
+    });
   });
 
   // ── deleteStudent ─────────────────────────────────────────────────────────

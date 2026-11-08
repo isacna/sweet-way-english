@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { iniciarSessao } from '../sessao.js';
 
 const SENHA_MIN = 6; // mesma regra do cadastro público (AuthController)
 const ERRO_SENHA = `A senha precisa ter pelo menos ${SENHA_MIN} caracteres`;
@@ -72,7 +73,7 @@ export async function getProfessorMe(req: AuthRequest, res: Response) {
 
 export async function updateProfessorMe(req: AuthRequest, res: Response) {
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
 
   if (nome !== undefined) {
     const n = String(nome).trim();
@@ -87,6 +88,8 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
   if (senha !== undefined && String(senha).trim()) {
     if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
+    // Senha nova derruba as sessões abertas com a antiga
+    data.versaoToken = { increment: 1 };
   }
 
   if (Object.keys(data).length === 0) {
@@ -95,11 +98,13 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
   }
 
   try {
-    const professor = await prisma.usuario.update({
+    const { papel, admin, versaoToken, ...professor } = await prisma.usuario.update({
       where: { id: req.user.id },
       data,
-      select: { id: true, nome: true, email: true, criadoEm: true },
+      select: { id: true, nome: true, email: true, criadoEm: true, papel: true, admin: true, versaoToken: true },
     });
+    // Trocou a própria senha: as outras sessões caem, mas esta continua com um cookie novo
+    if (data.versaoToken) iniciarSessao(res, { id: professor.id, nome: professor.nome, email: professor.email, papel, admin, versaoToken });
     res.json(professor);
   } catch {
     res.status(400).json({ error: 'Email já cadastrado' });
@@ -154,7 +159,7 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
 
   if (nome !== undefined) {
     const n = String(nome).trim();
@@ -169,6 +174,8 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
   if (senha !== undefined && String(senha).trim()) {
     if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
+    // Senha nova derruba as sessões abertas com a antiga
+    data.versaoToken = { increment: 1 };
   }
 
   if (Object.keys(data).length === 0) {
@@ -249,7 +256,8 @@ export async function promoteAluno(req: AuthRequest, res: Response) {
     await tx.matricula.deleteMany({ where: { alunoId } });
     return tx.usuario.update({
       where: { id: alunoId },
-      data: { papel: 'professor' },
+      // O papel vai no token: a sessão antiga (de aluno) deixa de valer
+      data: { papel: 'professor', versaoToken: { increment: 1 } },
       select: { id: true, nome: true, email: true },
     });
   });
