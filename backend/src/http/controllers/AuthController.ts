@@ -4,6 +4,7 @@ import bcrypt from 'bcryptjs';
 import { z } from 'zod';
 import { prisma } from '../../database/client.js';
 import { env } from '../../config/env.js';
+import { logger } from '../../config/logger.js';
 
 import { IDADE_MAIORIDADE, idadeEm } from '../../domain/idade.js';
 import { normalizarEmail } from '../../domain/email.js';
@@ -170,7 +171,7 @@ export async function esqueciSenha(req: Request, res: Response) {
     const { assunto, html, texto } = emailRedefinirSenha({ nome: usuario.nome, link });
     // Sem await: o tempo de resposta não deve depender do envio (nem revelar que a conta existe)
     enviarEmail({ para: usuario.email, assunto, html, texto }).catch((err) => {
-      console.error('[email] Falha ao enviar o link de redefinição de senha:', err);
+      (req.log ?? logger).error({ err }, 'Falha ao enviar o e-mail de redefinição de senha');
     });
   }
 

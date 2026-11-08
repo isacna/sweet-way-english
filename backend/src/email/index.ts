@@ -1,6 +1,7 @@
 // Envio de e-mail transacional com provedor trocável.
 // Com RESEND_API_KEY usa a API HTTP do Resend (fetch, sem SDK); sem ela, só registra a mensagem no log (dev).
 import { env } from '../config/env.js';
+import { logger } from '../config/logger.js';
 
 export interface Mensagem {
   para: string;
@@ -17,7 +18,13 @@ export interface ProvedorEmail {
 export const provedorConsole: ProvedorEmail = {
   nome: 'console',
   async enviar(msg) {
-    console.log(`[email] (não enviado: sem RESEND_API_KEY)\nPara: ${msg.para}\nAssunto: ${msg.assunto}\n\n${msg.texto}\n`);
+    // Em produção o destinatário e o texto (com o link de nova senha) NÃO vão para o log: quem lê o log poderia
+    // trocar a senha de outra pessoa. Fora de produção o link aparece, para testar o fluxo sem provedor.
+    if (env.NODE_ENV === 'production') {
+      logger.warn({ assunto: msg.assunto }, 'E-mail não enviado: RESEND_API_KEY não definida');
+      return;
+    }
+    logger.info(`[email] (não enviado: sem RESEND_API_KEY)\nPara: ${msg.para}\nAssunto: ${msg.assunto}\n\n${msg.texto}\n`);
   },
 };
 
@@ -49,8 +56,8 @@ export async function enviarEmail(msg: Mensagem): Promise<void> {
 /** Chamado na subida do servidor: em produção, sem provedor configurado, ninguém recebe o link de nova senha. */
 export function avisarConfigEmail() {
   if (env.NODE_ENV === 'production' && !env.RESEND_API_KEY) {
-    console.warn(
-      '[email] ATENÇÃO: RESEND_API_KEY não definida. Os e-mails (recuperar senha) só aparecem no log e não chegam aos usuários.'
+    logger.warn(
+      'RESEND_API_KEY não definida: os e-mails (recuperar senha) não são enviados e, em produção, nem aparecem no log.'
     );
   }
 }

@@ -7,10 +7,5 @@ export function criarPrisma(connectionString: string) {
   return new PrismaClient({ adapter: new PrismaPg({ connectionString }) });
 }
 
-const url = process.env.DATABASE_URL;
-if (!url && process.env.NODE_ENV !== 'test') {
-  // Não derruba o import (os testes unitários mocam este módulo), mas avisa cedo.
-  console.warn('[database] DATABASE_URL não definida; as consultas vão falhar.');
-}
-
-export const prisma = criarPrisma(url ?? 'postgresql://localhost:5432/sweetway');
+// Sem DATABASE_URL o import não falha (os testes unitários mocam este módulo); o servidor avisa na subida (server.ts).
+export const prisma = criarPrisma(process.env.DATABASE_URL ?? 'postgresql://localhost:5432/sweetway');
