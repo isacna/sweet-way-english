@@ -22,14 +22,16 @@ describe('Integração — uploads privados', () => {
 
   beforeAll(() => {
     original = env.UPLOAD_DIR;
-    pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'sw-int-uploads-'));
+    // Pasta sob um diretório com ponto (como .claude/worktrees): o envio não pode tratar isso como dotfile
+    pasta = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'sw-int-uploads-')), '.oculta', 'uploads');
+    fs.mkdirSync(pasta, { recursive: true });
     (env as { UPLOAD_DIR: string }).UPLOAD_DIR = pasta;
     fs.writeFileSync(path.join(pasta, '1773977192408-entrega.pdf'), FIXTURES.pdf);
     fs.writeFileSync(path.join(pasta, 'logo-abc.png'), FIXTURES.png);
   });
   afterAll(() => {
     (env as { UPLOAD_DIR: string }).UPLOAD_DIR = original;
-    fs.rmSync(pasta, { recursive: true, force: true });
+    fs.rmSync(path.dirname(path.dirname(pasta)), { recursive: true, force: true });
   });
   beforeEach(() => vi.clearAllMocks());
 

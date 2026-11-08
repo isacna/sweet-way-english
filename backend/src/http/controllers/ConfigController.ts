@@ -6,6 +6,7 @@ import {
   apagarArquivos,
   caminhoAbsoluto,
   gravarNoDisco,
+  pastaUploads,
   idsArquivosDasTurmas,
   removerDoDisco,
 } from '../../storage/arquivos.js';
@@ -48,7 +49,13 @@ export async function getLogo(_req: Request, res: Response) {
     return;
   }
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.sendFile(caminhoAbsoluto(config.logoCaminho), { maxAge: '1d', dotfiles: 'deny' }, (err) => {
+  try {
+    caminhoAbsoluto(config.logoCaminho);
+  } catch {
+    res.status(404).json({ error: 'Logo não encontrada' });
+    return;
+  }
+  res.sendFile(config.logoCaminho, { root: pastaUploads(), maxAge: '1d', dotfiles: 'deny' }, (err) => {
     if (err && !res.headersSent) res.status(404).json({ error: 'Logo não encontrada' });
   });
 }

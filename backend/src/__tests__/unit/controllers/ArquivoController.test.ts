@@ -52,7 +52,8 @@ async function pedir(arquivo: object | null, quem: AuthRequest['user']) {
   return r;
 }
 
-const permitido = (r: any) => expect(r.sendFile).toHaveBeenCalled();
+const permitido = (r: any) =>
+  expect(r.sendFile).toHaveBeenCalledWith('x.pdf', expect.objectContaining({ root: expect.any(String), dotfiles: 'deny' }), expect.any(Function));
 const escondido = (r: any) => {
   expect(r.sendFile).not.toHaveBeenCalled();
   expect(r.status).toHaveBeenCalledWith(404);

@@ -1,7 +1,7 @@
 import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
-import { caminhoAbsoluto, tipoPrevisualizavel } from '../../storage/arquivos.js';
+import { caminhoAbsoluto, pastaUploads, tipoPrevisualizavel } from '../../storage/arquivos.js';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -74,9 +74,8 @@ export async function getArquivo(req: AuthRequest, res: Response) {
   });
   if (!arquivo || !(await podeVer(req.user, arquivo))) return naoEncontrado(res);
 
-  let caminho: string;
   try {
-    caminho = caminhoAbsoluto(arquivo.caminho);
+    caminhoAbsoluto(arquivo.caminho); // recusa nomes com pasta ou ".."
   } catch {
     return naoEncontrado(res);
   }
@@ -89,7 +88,8 @@ export async function getArquivo(req: AuthRequest, res: Response) {
   // O frontend (outra origem) lê o nome do arquivo para o download
   res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition');
 
-  res.sendFile(caminho, { cacheControl: false, dotfiles: 'deny' }, (err) => {
+  // `root`: a checagem de dotfiles vale só para o nome do arquivo, não para a pasta (que pode estar sob ".algo/")
+  res.sendFile(arquivo.caminho, { root: pastaUploads(), cacheControl: false, dotfiles: 'deny' }, (err) => {
     if (!err) return;
     if (!res.headersSent) {
       res.removeHeader('Content-Disposition');
