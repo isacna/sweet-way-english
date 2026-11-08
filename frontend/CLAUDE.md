@@ -31,8 +31,10 @@ The spec does these steps:
 3. Shows an empty review page.
 4. Finishes lessons 2–6 through the API, then takes and passes the module test in the UI.
 5. As the teacher, opens the content list, uses the editor ("Testar", then edit, save, reload and revert) and the test view, and opens `/professor/progresso`.
+6. Checks the session: the `sw_sessao` cookie is httpOnly and there is no `token` in `localStorage`. "Sair da conta" removes the cookie. A cached `user` without a cookie goes back to the login.
+7. Opens "Esqueci minha senha" and submits it, then submits `/redefinir-senha` with an invalid token and expects the error. The full reset flow is covered by the backend tests (`npm run test:db`).
 
-Each test fails on any console error or any API response ≥ 400. Answer keys come from the teacher endpoints.
+Each test fails on any console error or any API response ≥ 400, except the expected 400 in step 7. Answer keys come from the teacher endpoints. API calls in the spec use `Authorization: Bearer`, and the backend prefers that header over the cookie.
 
 ```bash
 # backend (from backend/), throwaway DB; NODE_ENV=test only disables the auth rate limit (20 req/15 min)
@@ -63,6 +65,8 @@ Uses a `(main)` route group for shared layout. Two separate role-based areas:
 - `/professor/*` — Teacher dashboard, class/activity management, grading, student management
 - `/login?tipo=aluno|professor` — Auth entry point (`&cadastro=ok` shows the post-signup success message)
 - `/cadastro` — Public student signup (`POST /auth/register/aluno`); under-18s must fill guardian name/email + LGPD consent
+- `/esqueci-senha` — e-mail form (`POST /auth/esqueci-senha`), always shows the same generic success message; linked from the login page ("Esqueci minha senha")
+- `/redefinir-senha?token=` — new password + confirmation (`POST /auth/redefinir-senha`, min 6); success links to the login, an expired/used link offers a new one. Its `layout.tsx` sets `referrer: no-referrer` and `noindex` because the token is in the URL
 
 ### Self-paced course (student side)
 
@@ -78,13 +82,19 @@ Contract: `docs/api-curso.md`. Types and helpers (`proximoPasso`, `respostaPreen
 
 ### Auth Flow
 
-Login stores `token` and `user` (JSON) in `localStorage`. Each page/layout does its own `getStoredUser()` check in `useEffect` and redirects to `/login?tipo=...` if the user is missing or has the wrong role. There is no centralized auth context or middleware.
+The session is the httpOnly cookie `sw_sessao`, set by the backend on login. JS cannot read it. The login page stores only `user` (JSON) in `localStorage` via `salvarUsuario()`, as a UI cache. Helpers in `src/lib/api.ts`:
+- `getStoredUser()` reads the cache.
+- `limparUsuario()` clears it.
+- `validarSessao()` calls `GET /auth/me`: it refreshes the cache, returns `null` on 401, and keeps the cache on other errors.
+- `sair()` calls `POST /auth/logout` and clears the cache.
+
+The helpers also drop a legacy `token` key. Each page/layout still does its own `getStoredUser()` check in `useEffect` and redirects to `/login?tipo=...` if the user is missing or has the wrong role. `NavbarUser`, rendered in the aluno and professor layouts, calls `validarSessao()` on mount and redirects to the login when the cookie is gone or was revoked (password changed). Any 401 from `apiFetch` also clears the cache. There is no centralized auth context or middleware yet (F3 plans a `proxy.ts`).
 
 ### API Layer (`src/lib/api.ts`)
 
 All backend calls go through `apiFetch(path, init?)`:
 - Prepends `NEXT_PUBLIC_API_URL` + `/api` to the path (e.g., `apiFetch("/turmas")` → `http://localhost:3333/api/turmas`)
-- Automatically injects `Authorization: Bearer <token>` from `localStorage`
+- Sends `credentials: "include"` so the session cookie goes along. It never sets `Authorization`. On 401 it clears the cached `user`
 - Sets `Content-Type: application/json` for non-FormData bodies (omits it for file uploads so the browser sets the multipart boundary)
 - Returns the raw `Response` — callers check `res.ok` and call `res.json()` themselves
 
