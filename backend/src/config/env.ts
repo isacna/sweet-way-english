@@ -15,6 +15,8 @@ const envSchema = z.object({
   // Origens permitidas no CORS, separadas por vírgula
   CORS_ORIGIN: z.string().default('http://localhost:3000'),
   UPLOAD_MAX_MB: z.coerce.number().positive().default(10),
+  // Pasta dos uploads (relativa ao diretório de trabalho). Nada nela é servido direto: ver src/storage/arquivos.ts
+  UPLOAD_DIR: z.string().min(1).default('uploads'),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
   // Atrás de proxy reverso (Caddy/Nginx): número de proxies confiáveis, para req.ip e o rate limit verem o IP real.
   // 0 = sem proxy (padrão em dev).

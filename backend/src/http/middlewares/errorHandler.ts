@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import multer from 'multer';
 import { env } from '../../config/env.js';
-import { TipoArquivoNaoPermitido } from '../../config/multer.js';
+import { TipoArquivoNaoPermitido } from '../../storage/arquivos.js';
 
 export function errorHandler(err: unknown, _req: Request, res: Response, _next: NextFunction) {
   if (err instanceof multer.MulterError) {

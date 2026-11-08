@@ -94,7 +94,9 @@ describe('FeedbackController', () => {
       expect(prismaMock.feedback.findMany).toHaveBeenCalledWith(
         expect.objectContaining({ where: { submissao: { alunoId: 10 } } })
       );
-      expect(res.json).toHaveBeenCalledWith(feedbacks);
+      expect(res.json).toHaveBeenCalledWith([
+        { ...feedbacks[0], submissao: { ...feedbacks[0].submissao, arquivo: null, arquivoUrl: null } },
+      ]);
     });
   });
 });

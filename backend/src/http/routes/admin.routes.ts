@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { upload } from '../../config/multer.js';
 import { authenticateToken, requireAdmin, requireRole } from '../middlewares/auth.js';
+import { receberArquivo } from '../middlewares/upload.js';
 import {
   getConfig,
+  getLogo,
   uploadLogo,
   getProfessorMe,
   updateProfessorMe,
@@ -17,7 +18,9 @@ import { h } from '../asyncHandler.js';
 const router = Router();
 
 router.get('/configuracoes', h(getConfig));
-router.patch('/configuracoes/logo', authenticateToken, requireAdmin, upload.single('logo'), h(uploadLogo));
+// Logo: o único upload público (aparece antes do login)
+router.get('/configuracoes/logo', h(getLogo));
+router.patch('/configuracoes/logo', authenticateToken, requireAdmin, receberArquivo('logo', { somenteImagem: true }), h(uploadLogo));
 
 router.get('/professor/me', authenticateToken, requireRole('professor'), h(getProfessorMe));
 router.patch('/professor/me', authenticateToken, requireRole('professor'), h(updateProfessorMe));

@@ -2,6 +2,7 @@ import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { StatusSubmissao } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { comArquivo } from '../arquivoPublico.js';
 
 export async function createFeedback(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -55,5 +56,5 @@ export async function getMyFeedbacks(req: AuthRequest, res: Response) {
       professor: { select: { nome: true } },
     },
   });
-  res.json(feedbacks);
+  res.json(feedbacks.map((f) => ({ ...f, submissao: comArquivo(f.submissao) })));
 }

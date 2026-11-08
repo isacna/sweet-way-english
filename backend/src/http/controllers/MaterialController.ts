@@ -1,9 +1,12 @@
 import { Response } from 'express';
-import fs from 'fs';
-import path from 'path';
 import { prisma } from '../../database/client.js';
 import { TipoMaterial } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { apagarArquivos, removerDoDisco } from '../../storage/arquivos.js';
+import { arquivoRecebido, salvarArquivoRecebido } from '../middlewares/upload.js';
+import { arquivoResumoSelect, materialPublico } from '../arquivoPublico.js';
+
+const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
 
 export async function createMaterial(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -22,11 +25,11 @@ export async function createMaterial(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { titulo, tipo, url } = req.body;
-  const file = (req as AuthRequest & { file?: Express.Multer.File }).file;
-  const urlArquivo = file ? `/uploads/${file.filename}` : url;
+  const { titulo, tipo } = req.body ?? {};
+  const arquivo = arquivoRecebido(req);
+  const url = typeof req.body?.url === 'string' ? req.body.url.trim() : '';
 
-  if (!titulo || !tipo || !urlArquivo) {
+  if (!titulo || !tipo || (!arquivo && !url)) {
     res.status(400).json({ error: 'Informe título, tipo e um arquivo ou URL' });
     return;
   }
@@ -35,9 +38,18 @@ export async function createMaterial(req: AuthRequest, res: Response) {
     res.status(400).json({ error: `Tipo inválido. Use: ${Object.values(TipoMaterial).join(', ')}` });
     return;
   }
+  if (!arquivo && !/^https?:\/\//i.test(url)) {
+    res.status(400).json({ error: 'A URL precisa começar com http:// ou https://' });
+    return;
+  }
 
-  const material = await prisma.materialApoio.create({ data: { titulo, tipo, urlArquivo, turmaId } });
-  res.status(201).json(material);
+  // Com arquivo, a URL enviada junto é ignorada (o material é upload OU link: CHECK no banco)
+  const material = arquivo
+    ? await salvarArquivoRecebido(req, req.user.id, (tx, a) =>
+        tx.materialApoio.create({ data: { titulo, tipo, turmaId, arquivoId: a.id }, include: incluirArquivo }),
+      )
+    : await prisma.materialApoio.create({ data: { titulo, tipo, turmaId, url }, include: incluirArquivo });
+  res.status(201).json(materialPublico(material));
 }
 
 export async function deleteMaterial(req: AuthRequest, res: Response) {
@@ -46,7 +58,8 @@ export async function deleteMaterial(req: AuthRequest, res: Response) {
     return;
   }
 
-  const turmaId = parseInt(req.params.turmaId);
+  // A rota é /turmas/:id/materiais/:materialId (o nome antigo do parâmetro era turmaId)
+  const turmaId = parseInt(req.params.id ?? req.params.turmaId);
   const materialId = parseInt(req.params.materialId);
 
   const turma = await prisma.turma.findUnique({ where: { id: turmaId } });
@@ -65,12 +78,11 @@ export async function deleteMaterial(req: AuthRequest, res: Response) {
     return;
   }
 
-  if (material.urlArquivo.startsWith('/uploads/')) {
-    const filePath = path.join('uploads', path.basename(material.urlArquivo));
-    if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-  }
-
-  await prisma.materialApoio.delete({ where: { id: materialId } });
+  const caminhos = await prisma.$transaction(async (tx) => {
+    await tx.materialApoio.delete({ where: { id: materialId } });
+    return apagarArquivos(tx, [material.arquivoId]);
+  });
+  await removerDoDisco(caminhos);
   res.status(204).send();
 }
 
@@ -91,6 +103,6 @@ export async function listMaterialsByClass(req: AuthRequest, res: Response) {
     if (!enrolled) { res.status(403).json({ error: 'Acesso negado' }); return; }
   }
 
-  const materiais = await prisma.materialApoio.findMany({ where: { turmaId } });
-  res.json(materiais);
+  const materiais = await prisma.materialApoio.findMany({ where: { turmaId }, include: incluirArquivo });
+  res.json(materiais.map(materialPublico));
 }

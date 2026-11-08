@@ -16,7 +16,6 @@ export function createApp() {
   app.use(cors({ origin: env.corsOrigins, credentials: true }));
   app.use(cookieParser());
   app.use(express.json({ limit: '1mb' }));
-  app.use('/uploads', express.static('uploads'));
   app.use('/api', router);
   app.use(errorHandler);
 

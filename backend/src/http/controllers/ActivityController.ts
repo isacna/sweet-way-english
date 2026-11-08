@@ -1,6 +1,16 @@
 import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { apagarArquivos, removerDoDisco } from '../../storage/arquivos.js';
+import { arquivoRecebido, salvarArquivoRecebido } from '../middlewares/upload.js';
+import { arquivoResumoSelect, comArquivo } from '../arquivoPublico.js';
+
+const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
+
+/** Booleano vindo de JSON (true) ou de multipart ("true", "1", "on"). */
+function lerBooleano(v: unknown) {
+  return v === true || v === 'true' || v === '1' || v === 'on' || v === 1;
+}
 
 export async function createActivity(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -20,18 +30,22 @@ export async function createActivity(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body;
-  const atividade = await prisma.atividade.create({
-    data: {
-      titulo,
-      descricao,
-      dataEntrega: new Date(dataEntrega),
-      arquivoObrigatorio: Boolean(arquivoObrigatorio),
-      link: link ? String(link).trim() : null,
-      turmaId,
-    },
-  });
-  res.status(201).json(atividade);
+  // JSON ou multipart (com o anexo opcional da professora no campo `arquivo`)
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body ?? {};
+  const dados = {
+    titulo,
+    descricao,
+    dataEntrega: new Date(dataEntrega),
+    arquivoObrigatorio: lerBooleano(arquivoObrigatorio),
+    link: link ? String(link).trim() : null,
+    turmaId,
+  };
+  const atividade = arquivoRecebido(req)
+    ? await salvarArquivoRecebido(req, req.user.id, (tx, a) =>
+        tx.atividade.create({ data: { ...dados, arquivoId: a.id }, include: incluirArquivo }),
+      )
+    : await prisma.atividade.create({ data: dados, include: incluirArquivo });
+  res.status(201).json(comArquivo(atividade));
 }
 
 export async function updateActivity(req: AuthRequest, res: Response) {
@@ -59,7 +73,7 @@ export async function updateActivity(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link } = req.body;
+  const { titulo, descricao, dataEntrega, arquivoObrigatorio, link, removerArquivo } = req.body ?? {};
   const data: { titulo?: string; descricao?: string; dataEntrega?: Date; arquivoObrigatorio?: boolean; link?: string | null } = {};
 
   if (titulo !== undefined) {
@@ -77,16 +91,36 @@ export async function updateActivity(req: AuthRequest, res: Response) {
     if (Number.isNaN(d.getTime())) { res.status(400).json({ error: 'Data de entrega inválida' }); return; }
     data.dataEntrega = d;
   }
-  if (arquivoObrigatorio !== undefined) data.arquivoObrigatorio = Boolean(arquivoObrigatorio);
+  if (arquivoObrigatorio !== undefined) data.arquivoObrigatorio = lerBooleano(arquivoObrigatorio);
   if (link !== undefined) data.link = link ? String(link).trim() : null;
 
-  if (Object.keys(data).length === 0) {
-    res.status(400).json({ error: 'Envie titulo, descricao, dataEntrega e/ou arquivoObrigatorio' });
+  // Anexo: um arquivo novo substitui o anterior; `removerArquivo: true` tira o anexo
+  const novoArquivo = arquivoRecebido(req);
+  const tirarAnexo = !novoArquivo && lerBooleano(removerArquivo) && !!existing.arquivoId;
+
+  if (Object.keys(data).length === 0 && !novoArquivo && !tirarAnexo) {
+    res.status(400).json({ error: 'Envie titulo, descricao, dataEntrega, arquivoObrigatorio, link e/ou arquivo' });
     return;
   }
 
-  const atividade = await prisma.atividade.update({ where: { id }, data });
-  res.json(atividade);
+  let descartar: string[] = [];
+  const atividade = novoArquivo
+    ? await salvarArquivoRecebido(req, req.user.id, async (tx, a) => {
+        const r = await tx.atividade.update({ where: { id }, data: { ...data, arquivoId: a.id }, include: incluirArquivo });
+        descartar = await apagarArquivos(tx, [existing.arquivoId]);
+        return r;
+      })
+    : await prisma.$transaction(async (tx) => {
+        const r = await tx.atividade.update({
+          where: { id },
+          data: tirarAnexo ? { ...data, arquivoId: null } : data,
+          include: incluirArquivo,
+        });
+        if (tirarAnexo) descartar = await apagarArquivos(tx, [existing.arquivoId]);
+        return r;
+      });
+  await removerDoDisco(descartar);
+  res.json(comArquivo(atividade));
 }
 
 export async function listActivitiesByClass(req: AuthRequest, res: Response) {
@@ -110,17 +144,21 @@ export async function listActivitiesByClass(req: AuthRequest, res: Response) {
     req.user.role === 'aluno'
       ? {
           where: { alunoId: req.user.id },
-          include: { aluno: { select: { nome: true } }, feedback: { include: { professor: { select: { nome: true } } } } },
+          include: {
+            aluno: { select: { nome: true } },
+            feedback: { include: { professor: { select: { nome: true } } } },
+            ...incluirArquivo,
+          },
           orderBy: { dataEnvio: 'desc' as const },
         }
       : {
-          include: { aluno: { select: { nome: true } } },
+          include: { aluno: { select: { nome: true } }, ...incluirArquivo },
           orderBy: { dataEnvio: 'desc' as const },
         };
 
   const atividades = await prisma.atividade.findMany({
     where: { turmaId },
-    include: { submissoes: submissoesInclude },
+    include: { submissoes: submissoesInclude, ...incluirArquivo },
   });
-  res.json(atividades);
+  res.json(atividades.map((a) => ({ ...comArquivo(a), submissoes: a.submissoes.map(comArquivo) })));
 }

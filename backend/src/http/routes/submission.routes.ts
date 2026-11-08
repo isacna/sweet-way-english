@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { authenticateToken } from '../middlewares/auth.js';
-import { upload } from '../../config/multer.js';
+import { receberArquivo } from '../middlewares/upload.js';
 import { createSubmission, listSubmissionsByActivity, updateSubmissionStatus } from '../controllers/SubmissionController.js';
 import { h } from '../asyncHandler.js';
 
 const router = Router({ mergeParams: true });
 
 // Mounted at /atividades/:id/submissoes
-router.post('/', authenticateToken, upload.single('arquivo'), h(createSubmission));
+router.post('/', authenticateToken, receberArquivo('arquivo'), h(createSubmission));
 router.get('/', authenticateToken, h(listSubmissionsByActivity));
 
 export { router as submissionRouter };
