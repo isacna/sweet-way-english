@@ -30,11 +30,11 @@ npm run test:coverage     # Coverage report
 npm run test:db           # src/__tests__/db/ against a real Postgres (TEST_DATABASE_URL)
 ```
 
-`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the session cookie and password reset (`sessao-senha.test.ts`), the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) and the SQLite→Postgres script.
+`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the session cookie and password reset (`sessao-senha.test.ts`), the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) the SQLite→Postgres script, and private uploads (`arquivos.test.ts`: the `20261109010000_arquivos` migration of old rows, plus upload, permissions and file removal through the API).
 
 ## Environment
 
-Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links). Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
+Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `UPLOAD_DIR` (`uploads`), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links). Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
 
 ## Architecture
 
@@ -42,7 +42,7 @@ Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`:
 
 ### Entry Point
 
-`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/uploads` static, `/api` router, central `errorHandler`). `src/server.ts` calls `avisarConfigEmail()` (warns in production when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
+`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/api` router (nothing is served statically: uploads go through `GET /api/arquivos/:id`), central `errorHandler`). `src/server.ts` calls `avisarConfigEmail()` (warns in production when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
 
 ### Route Organization
 
@@ -114,7 +114,8 @@ There is no public professor signup: professors are created by an admin. Signup,
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/configuracoes` | Get app configuration (public) |
-| `PATCH` | `/api/configuracoes/logo` | Upload logo (multipart `logo`), admin |
+| `GET` | `/api/configuracoes/logo` | The school logo (public; the only public upload). `GET /api/configuracoes` returns `logoUrl` = this absolute URL with `?v=<timestamp>` |
+| `PATCH` | `/api/configuracoes/logo` | Upload logo (multipart `logo`, PNG/JPEG/GIF/WebP checked by bytes), admin |
 | `GET` | `/api/professor/me` | Get professor profile, `requireRole('professor')` |
 | `PATCH` | `/api/professor/me` | Update professor profile, `requireRole('professor')` |
 | `GET` | `/api/admin/professores` | List all professors, admin |
@@ -151,6 +152,11 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 | `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students |
 
 Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
+
+#### Files — `arquivo.routes.ts`
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/arquivos/:id` | Streams a private upload (authenticated). See "File Uploads" for who may see it; everyone else gets 404 |
 
 #### Health
 | Method | Path | Description |
@@ -207,13 +213,30 @@ The script opens the SQLite file read-only and copies every table in FK order in
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)
 - `Submissao` — student submission; `status` enum: `pendente | aprovado | reprovado | corrigido`
 - `Feedback` — one-to-one with `Submissao`; has `nota` (grade) and `comentario`
-- `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`
+- `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`. Either `url` (external link) or `arquivoId` (upload), never both (CHECK `MaterialApoio_url_ou_arquivo` in the migration)
+- `Arquivo` — metadata of a private upload: uuid `id`, `donoId`, `nomeOriginal`, `caminho` (file name inside `UPLOAD_DIR`), `mime` (detected), `tamanho`. `Atividade.arquivoId` (teacher attachment), `Submissao.arquivoId` and `MaterialApoio.arquivoId` are nullable and unique. Both directions are `Restrict` (the owner, and the record pointing to the file), because the file on disk must go too: whoever deletes rows calls `apagarArquivos(tx, ids)` inside the transaction and `removerDoDisco(caminhos)` after the commit (`StudentController.deleteStudent`, `ConfigController.deleteProfessorAdmin`, `MaterialController.deleteMaterial`, `ActivityController.updateActivity`). A raw `prisma.turma.delete` leaves orphaned `Arquivo` rows (still visible only to their owner)
+- `ConfiguracaoApp.logoCaminho` — logo file name inside `UPLOAD_DIR` (public, not an `Arquivo`)
 - Course (Phase 1): `Nivel` → `Modulo` → `Licao` → `Exercicio` (PPP stages), `ItemTeste` (parallel forms per module), and learner state `PerfilAprendiz`, `ProgressoLicao`, `RevisaoItem` (Leitner), `TentativaTeste`. `Modulo`/`Licao` have `status: rascunho | revisao | publicado`.
 
 After any `schema.prisma` change, run `npx prisma migrate dev` then `npx prisma generate`.
 
 ### File Uploads
 
-Multer (`src/config/multer.ts`) stores files to `./uploads/{timestamp}-{sanitized-name}`, max `UPLOAD_MAX_MB` (413 above it), allowlisted MIME types only: PDF, Office docs, plain text, images (no SVG), audio, video (415 otherwise). The stored URL in the DB is `/uploads/{filename}`, served statically at the same path. File fields:
-- `submissoes`: field name `arquivo`
-- `materiais`: field name `arquivo`
+Private by default (F2 of `docs/plano-producao.md`). Code: `src/storage/arquivos.ts` (storage), `src/http/middlewares/upload.ts` (request side), `src/http/controllers/ArquivoController.ts` (download), `src/http/arquivoPublico.ts` (response shape).
+
+**Receiving.** Routes use `receberArquivo(campo)`, never `upload.single`. Multer keeps the file in **memory** (one file, `UPLOAD_MAX_MB`, 413 above it). Then `detectarTipo` checks the bytes with `file-type`, and the declared MIME/extension is ignored. The allowlist is unchanged: PDF, docx/pptx, doc/ppt (the CFB container plus the declared type), images except SVG, audio, video, and plain text (only when declared as text, valid UTF-8, no NUL bytes). Anything else is 415, and the logo accepts only PNG/JPEG/GIF/WebP. The controller reads the file with `arquivoRecebido(req)`.
+
+**Saving and cleanup.** Nothing touches the disk until the controller has validated everything and calls `salvarArquivoRecebido(req, donoId, (tx, arquivo) => ...)`. That function writes `UPLOAD_DIR/<uuid>.<ext>`, then in one transaction creates the `Arquivo` row and runs the callback that links it. If anything throws, the file is removed. A request the controller rejects (400/403/404) never writes, and memory storage made that choice. As a safety net, files written and not committed are removed when the response closes. Fields: `arquivo` for submissions, materials and activities (optional teacher attachment, JSON or multipart, `removerArquivo: true` on PATCH), and `logo` for the logo.
+
+**Serving.** `GET /api/arquivos/:id` (uuid, authenticated) is allowed for:
+- the owner;
+- the teacher who owns the class the file belongs to (through `Atividade`, `Submissao` or `MaterialApoio`);
+- students enrolled in that class, for activity attachments and materials;
+- for a submission, only its student;
+- admins (checked in the database).
+
+Everyone else gets **404**, never 403. The response has `Content-Type` from the DB, `Content-Disposition: inline` (PDF, image, audio, video) or `attachment` (others) with `filename*=UTF-8''…`, `X-Content-Type-Options: nosniff` and `Cache-Control: private, no-cache`.
+
+**API contract.** Submissions and activities return `arquivoUrl: "/api/arquivos/<id>" | null` plus `arquivo: { id, nomeOriginal, mime, tamanho } | null`. Materials keep `urlArquivo`: `"/api/arquivos/<id>"` for uploads, the external URL for links. They also return `url` and `arquivo`.
+
+**Migration `20261109010000_arquivos`.** It converted every old `"/uploads/<file>"` value into an `Arquivo` row. The owner is the student or the class teacher, the mime comes from the extension, `tamanho` is 0, and `caminho` is the old file name. Files on disk were not renamed. Values with `/` or `..` were dropped, the old columns were removed, and the logo became `logoCaminho`. Several migrated rows may share one `caminho`, so `apagarArquivos` only returns paths that no other row uses. The seed copies `seed-media/` into one random-named file per record. The SQLite import script (`db:migrar-sqlite`) maps the old columns the same way (`src/storage/legado.ts`).

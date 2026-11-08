@@ -135,7 +135,7 @@ Password reset: `/esqueci-senha` → `POST /api/auth/esqueci-senha` always answe
 
 ### File Uploads
 
-Multer stores files to `./uploads/{timestamp}-{sanitized-name}` on the backend (size limit `UPLOAD_MAX_MB`, MIME allowlist). The DB stores the relative path `/uploads/{filename}`, served statically at `GET /uploads/*`. The frontend uses `assetUrl(path)` from `src/lib/api.ts` to construct full URLs.
+Uploads are private. Multer keeps the file in memory (max `UPLOAD_MAX_MB`). The backend checks the real type from the file's bytes (`file-type`), and only then writes it to `UPLOAD_DIR` (default `./uploads`) under a random name (`<uuid>.<ext>`). Each file gets a row in the `Arquivo` table (owner, original name, mime, size), and `Atividade`/`Submissao`/`MaterialApoio` point to it with `arquivoId`. Nothing in `uploads/` is served statically. Files come only from `GET /api/arquivos/:id`, which needs a session and checks who may see the file (404 otherwise). The API keeps the old fields, `arquivoUrl` / `urlArquivo`, which now hold `"/api/arquivos/<id>"` (or the external URL for link materials), plus `arquivo: { id, nomeOriginal, mime, tamanho }`. The frontend fetches files with `apiFetch` and shows them through `blob:` URLs (`src/lib/arquivos.ts`). The school logo is the only public file: `GET /api/configuracoes/logo`. Details: `backend/CLAUDE.md` ("File Uploads").
 
 ### Users
 
