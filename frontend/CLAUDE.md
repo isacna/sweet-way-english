@@ -97,7 +97,7 @@ The helpers also drop a legacy `token` key.
 - no `sw_sessao` cookie, an unreadable one, or a JWT whose `exp` has passed → redirect to `/login?tipo=aluno|professor` (by area), so a logged-out visitor never sees the page;
 - it **decodes** the JWT payload (the frontend has no secret, so there is no signature check) and sends `role: "aluno"` away from `/professor/*` to `/aluno`, and `role: "professor"` away from `/aluno/*` to `/professor`.
 
-The backend still checks the signature, `versaoToken` and role on every call. A well-formed but revoked cookie (password changed) passes the proxy; then `NavbarUser` (`validarSessao()` on mount) and the pages' 401 handling send the user to the login. Pages don't need a `getStoredUser()` guard. The course pages (`/aluno/curso/**`) dropped it. The legacy student pages (`aluno/page.tsx`, `aluno/turmas/**`, `aluno/atividades/**`, `aluno/materiais`, `aluno/feedbacks`) still have it and can lose it in their redesign. Use the cached user only for display (`NavbarUser`, the lesson draft key). The login page clears the cached user on mount. Any 401 from `apiFetch` also clears it.
+The backend still checks the signature, `versaoToken` and role on every call. A well-formed but revoked cookie (password changed) passes the proxy; then `NavbarUser` (`validarSessao()` on mount) and the pages' 401 handling send the user to the login. Pages don't need a `getStoredUser()` guard. No page has one anymore: the class-management pages redirect only when the API answers 401. Use the cached user only for display (`NavbarUser`, the lesson draft key). The login page clears the cached user on mount. Any 401 from `apiFetch` also clears it.
 
 ### API Layer (`src/lib/api.ts`)
 
@@ -115,7 +115,7 @@ Uploads (submissions, materials, activity attachments) are private. The API retu
 - `useArquivoUrl(url, ativo)` returns `{ src, carregando, erro }`. A private URL is fetched through `apiFetch` into a `blob:` object URL, which is revoked on unmount or change. An external URL comes back unchanged.
 - `abrirArquivo(url, { nome, baixar })` opens the file in a new tab (the tab is opened before the fetch, so pop-up blockers allow it) or downloads it.
 - `<ArquivoBotao url nome baixar>` is a button for private files and a plain link for external ones. It shows the error (404 = no permission).
-- `<AssetPreview url arquivo tipo title>` is a collapsed preview that only downloads once opened. The kind comes from `arquivo.mime`: image, native PDF `<iframe>` on the blob URL, `<video>`, `<audio>`. Office docs and text get a download button. There is no Google Docs viewer, and external PDFs open in a new tab. YouTube links are embedded.
+- `<AssetPreview url arquivo tipo title>` shows "Ver aqui" (toggles an inline preview that only downloads once opened) and "Abrir em nova aba" / "Baixar". The kind comes from `arquivo.mime`: image, native PDF `<iframe>` on the blob URL, `<video>`, `<audio>`. Office docs and text get a download button. There is no Google Docs viewer, and external PDFs open in a new tab. YouTube links are embedded.
 
 The logo URL from `GET /configuracoes` is absolute (backend `APP_URL`) and public. The professor layout turns it into a relative `/api/configuracoes/logo?v=…` so it loads on the same origin.
 
@@ -148,9 +148,20 @@ Tailwind CSS v4 design tokens live in `src/styles/globals.css` (`@theme`, not in
 - Course UI: `classeBotao` (3D buttons ≥ 48px) and `BarraAcao` (sticky bottom action bar) in `components/curso/ui.tsx`; form classes in `components/formStyles.ts`; login/cadastro share `AuthShell`
 - Mobile: students get a bottom tab bar (`StudentNav variant="bottom"`, hidden on lesson/review/test focus screens); teachers get a scrollable tab strip under the header
 
+### Class management (turmas)
+
+Legacy area rebuilt in F3 on a shared kit. Pages stay thin; pieces live in:
+- `components/painel/ui.tsx` — kit for both areas, tokens only: `Cabecalho` (back link, eyebrow, title, actions that stack on phones), `Secao` (card section), `Campo` (label + hint + opcional/obrigatório), `CaixaMarcar`, `classeCampo` / `classeArquivo` / `classeRotulo`, `classeBotao("primario" | "secundario" | "perigo" | "perigoContorno" | "fantasma")` and `classeLinkAcao` (all ≥ 44px), `Mensagem` (role alert/status), `RegiaoAoVivo` (always-mounted aria-live region for async results), `Vazio`, `Carregando`, `Selo`, `Avatar`, `erroDaApi(res | null, padrao)` (reads `{error}`; `null` = no connection, use `apiFetch(...).catch(() => null)`)
+- `components/painel/Dialogo.tsx` — `Dialogo` (modal: focus trapped, Esc closes, focus returns to the opener, body scroll locked, bottom sheet on phones; `bloquearFechar` while a request runs), `AcoesDialogo`, `ConfirmarDialogo` (destructive confirmation; focus starts on Cancelar; shows the API error inside). Never use `alert()`/`confirm()`
+- `components/turmas/` — `tipos.ts` (API shapes), `status.ts` (`seloEntregaProfessora`, `situacaoAluno`, `podeEnviar`, `prazo`, `dataHoraCurta`), `CodigoConvite` (copy button, compact variant), `MuralAvisos` (teacher: create in a dialog, delete with confirmation; student: read-only; only http(s) links become `<a>`), `CamposAtividade` (+ `validarAtividade`, `corpoAtividade`: JSON, or multipart when there is an attachment), `PainelAtividade` (teacher activity detail: delivery progress, who is missing, submissions grouped per student with older attempts collapsed, edit form with attachment replace/remove), `CartaoEntrega` (grade with nota+comentário, or Aprovar / "Pedir nova entrega" with confirmation; also exports `ConteudoEntrega`, `CaixaFeedback` used by the student page), `Materiais` (`ItemMaterial`, `FiltrosMateriais`, `TIPOS_MATERIAL`), `DialogoNovoMaterial` (Arquivo | Link)
+- `components/alunos/DialogosAluno.tsx` — create (minor → guardian + consent) and edit student dialogs
+- `components/configuracoes/` — `SecaoConta` (own profile/password; refreshes the cached user), `SecaoLogo` (admin; shows the logo by its relative `/api/configuracoes/logo` path), `SecaoProfessores` (admin: create/edit/delete, promote student)
+
+Rules the backend enforces and the UI mirrors: a student is in one class at a time; a new submission only after a rejection (`reprovado`); `corrigido` (graded) can only be rejected, which deletes the grade; `aprovado`/`reprovado` are final. `/professor/turmas/[id]?atividade=<id>` opens the activity panel (the dashboard "Para corrigir" queue links there). Teacher and student pages use `accent` (violet); `sky` only for the audio material icon.
+
 ### Reusable Components
 
-- `Button` — polymorphic (renders as `<button>` or `<Link>`), variants: `primary | secondary | ghost`, sizes: `sm | nav | md`
+- `Button` — polymorphic (renders as `<button>` or `<Link>`), variants: `primary | secondary | ghost`, sizes: `sm | nav | md` (all ≥ 44px; tokens only). New pages prefer `classeBotao` from `components/painel/ui.tsx`
 - `Navbar` — top bar, variant `home | dashboard`
 - `StudentNav` / `TeacherNav` — role navigation (header pills on desktop; bottom bar / tab strip on mobile)
 - `NavbarUser` — avatar dropdown with logout

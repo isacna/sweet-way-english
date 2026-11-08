@@ -1,240 +1,147 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { apiFetch, getStoredUser } from "@/lib/api";
-import { ArquivoBotao } from "@/components/ArquivoBotao";
-import type { ArquivoResumo } from "@/lib/arquivos";
-import { tempoRelativoPt } from "@/lib/timePt";
-import { Download, Search } from "lucide-react";
+import { FolderOpen } from "lucide-react";
+import { Cabecalho, Campo, Carregando, classeBotao, classeCampo, erroDaApi, Mensagem, Vazio } from "@/components/painel/ui";
+import { FiltrosMateriais, ItemMaterial } from "@/components/turmas/Materiais";
+import type { Material } from "@/components/turmas/tipos";
+import { apiFetch } from "@/lib/api";
 
 type Turma = { id: number; nome: string };
 
-type Material = {
-  id: number;
-  titulo: string;
-  tipo: string;
-  /** "/api/arquivos/<id>" (upload, privado) ou URL externa (link) */
-  urlArquivo: string;
-  arquivo: ArquivoResumo | null;
-  criadoEm: string;
-};
-
-const FILTROS = [
-  { label: "Todos", tipo: null as string | null },
-  { label: "PDFs", tipo: "pdf" },
-  { label: "Áudio", tipo: "audio" },
-  { label: "Vídeos", tipo: "video" },
-  { label: "Links", tipo: "link" },
-];
-
-function iconeTipo(tipo: string) {
-  if (tipo === "pdf") return "/icons/file-document-red.svg";
-  if (tipo === "audio") return "/icons/audio-blue.svg";
-  return "/icons/file-document-green.svg";
-}
-
-function MateriaisAlunoContent() {
+function MateriaisAlunoConteudo() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const turmaQuery = searchParams.get("turma");
 
-  const [turmas, setTurmas] = useState<Turma[]>([]);
-  const [manualTurmaId, setManualTurmaId] = useState("");
-  const [materiais, setMateriais] = useState<Material[]>([]);
-  const [activeFilter, setActiveFilter] = useState("Todos");
-  const [search, setSearch] = useState("");
-  const [carregandoTurmas, setCarregandoTurmas] = useState(true);
-  const [carregandoMat, setCarregandoMat] = useState(false);
-
-  const carregarMateriais = useCallback(async (id: string) => {
-    if (!id) {
-      setMateriais([]);
-      return;
-    }
-    setCarregandoMat(true);
-    const res = await apiFetch(`/turmas/${id}/materiais`);
-    if (res.ok) {
-      const data: Material[] = await res.json();
-      setMateriais(data);
-    } else {
-      setMateriais([]);
-    }
-    setCarregandoMat(false);
-  }, []);
+  const [turmas, setTurmas] = useState<Turma[] | null>(null);
+  const [turmaManual, setTurmaManual] = useState("");
+  const [materiais, setMateriais] = useState<Material[] | null>(null);
+  const [tipo, setTipo] = useState("");
+  const [busca, setBusca] = useState("");
+  const [erro, setErro] = useState("");
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
-
     let cancelled = false;
-
-    async function loadTurmas() {
-      setCarregandoTurmas(true);
-      const res = await apiFetch("/turmas");
+    (async () => {
+      const res = await apiFetch("/turmas").catch(() => null);
       if (cancelled) return;
-      if (res.status === 401 || res.status === 403) {
+      if (res?.status === 401) {
         router.replace("/login?tipo=aluno");
         return;
       }
-      if (res.ok) {
-        const data: Turma[] = await res.json();
-        setTurmas(data);
+      if (!res?.ok) {
+        setErro(await erroDaApi(res, "Não foi possível carregar suas turmas."));
+        setTurmas([]);
+        return;
       }
-      setCarregandoTurmas(false);
-    }
-
-    void loadTurmas();
+      setTurmas(await res.json());
+    })();
     return () => {
       cancelled = true;
     };
   }, [router]);
 
   const turmaId = useMemo(() => {
-    if (turmaQuery && turmas.some((t) => String(t.id) === turmaQuery))
-      return turmaQuery;
-    if (turmas.length === 1) return String(turmas[0].id);
-    return manualTurmaId;
-  }, [turmaQuery, turmas, manualTurmaId]);
+    if (!turmas) return "";
+    if (turmaManual) return turmaManual;
+    if (turmaQuery && turmas.some((t) => String(t.id) === turmaQuery)) return turmaQuery;
+    return turmas[0] ? String(turmas[0].id) : "";
+  }, [turmaQuery, turmas, turmaManual]);
+
+  const carregarMateriais = useCallback(async (id: string) => {
+    setMateriais(null);
+    const res = await apiFetch(`/turmas/${id}/materiais`).catch(() => null);
+    if (!res?.ok) {
+      setErro(await erroDaApi(res, "Não foi possível carregar os materiais."));
+      setMateriais([]);
+      return;
+    }
+    const lista: Material[] = await res.json();
+    setMateriais(lista.sort((a, b) => new Date(b.criadoEm).getTime() - new Date(a.criadoEm).getTime()));
+    // Link "#material-<id>" vindo da página da turma: rola até o item depois de renderizar
+    const alvo = window.location.hash;
+    if (alvo.startsWith("#material-")) {
+      requestAnimationFrame(() => document.querySelector(alvo)?.scrollIntoView({ block: "start" }));
+    }
+  }, []);
 
   useEffect(() => {
     if (!turmaId) return;
-    queueMicrotask(() => {
-      void carregarMateriais(turmaId);
-    });
+    queueMicrotask(() => void carregarMateriais(turmaId));
   }, [turmaId, carregarMateriais]);
 
-  const tipoFiltro = FILTROS.find((f) => f.label === activeFilter)?.tipo;
-
   const filtrados = useMemo(() => {
-    let list = materiais;
-    if (tipoFiltro) {
-      list = list.filter(
-        (m) => m.tipo.toLowerCase() === tipoFiltro.toLowerCase()
-      );
-    }
-    const q = search.trim().toLowerCase();
-    if (q) list = list.filter((m) => m.titulo.toLowerCase().includes(q));
-    return list;
-  }, [materiais, tipoFiltro, search]);
+    const q = busca.trim().toLowerCase();
+    return (materiais ?? []).filter((m) => (!tipo || m.tipo === tipo) && (!q || m.titulo.toLowerCase().includes(q)));
+  }, [materiais, tipo, busca]);
+
+  if (turmas === null) return <Carregando className="mx-auto max-w-4xl" />;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold text-ink">Materiais</h1>
-        <p className="text-ink-soft mt-1">
-          Arquivos e links compartilhados pelo professor na turma.
-        </p>
-      </div>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <Cabecalho titulo="Materiais" descricao="Arquivos e links que o professor compartilhou com a turma." />
 
-      <div className="card p-4 space-y-3">
-        <label className="block text-sm font-medium text-ink">
-          Turma
-        </label>
-        <select
-          value={turmaId}
-          onChange={(e) => setManualTurmaId(e.target.value)}
-          disabled={carregandoTurmas}
-          className="w-full max-w-md px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint"
-        >
-          <option value="">
-            {carregandoTurmas ? "Carregando…" : "Selecione a turma"}
-          </option>
-          {turmas.map((t) => (
-            <option key={t.id} value={t.id}>
-              {t.nome}
-            </option>
-          ))}
-        </select>
-        {turmas.length === 0 && !carregandoTurmas && (
-          <p className="text-sm text-ink-soft">
-            <Link href="/aluno/turmas" className="text-grape">
-              Entre em uma turma
-            </Link>{" "}
-            para ver materiais.
-          </p>
-        )}
-      </div>
+      {erro && <Mensagem tom="erro">{erro}</Mensagem>}
 
-      <div className="flex flex-col sm:flex-row gap-4">
-        <div className="relative flex-1">
-          <Search aria-hidden className="h-[20px] w-[20px] shrink-0 text-ink-faint absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5" />
-          <input
-            type="search"
-            placeholder="Buscar…"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
+      {turmas.length === 0 ? (
+        !erro && (
+          <Vazio
+            icone={<FolderOpen />}
+            titulo="Você ainda não está numa turma"
+            texto="Entre na turma do seu professor para ver os materiais."
+            acao={
+              <Link href="/aluno/turmas" className={classeBotao("primario")}>
+                Entrar em uma turma
+              </Link>
+            }
           />
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {FILTROS.map((f) => (
-            <button
-              key={f.label}
-              type="button"
-              onClick={() => setActiveFilter(f.label)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium ${
-                activeFilter === f.label
-                  ? "bg-grape text-white"
-                  : "border border-gray-300 text-ink-soft hover:bg-gray-50"
-              }`}
-            >
-              {f.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {!turmaId ? (
-        <p className="text-sm text-ink-soft">Selecione uma turma.</p>
-      ) : carregandoMat ? (
-        <p className="text-sm text-ink-soft">Carregando materiais…</p>
-      ) : filtrados.length === 0 ? (
-        <p className="text-sm text-ink-soft">Nenhum material encontrado.</p>
+        )
       ) : (
-        <div className="space-y-4">
-          {filtrados.map((mat) => {
-            const href = mat.urlArquivo || null;
-            return (
-              <div
-                key={mat.id}
-                className="card flex items-center gap-4 p-4"
-              >
-                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center shrink-0">
-                  <Image
-                    src={iconeTipo(mat.tipo)}
-                    alt=""
-                    width={24}
-                    height={24}
-                  />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-ink truncate">
-                    {mat.titulo}
-                  </p>
-                  <p className="text-sm text-ink-soft">
-                    {mat.tipo.toUpperCase()} · {tempoRelativoPt(mat.criadoEm)}
-                  </p>
-                </div>
-                {href && (
-                  <ArquivoBotao
-                    url={href}
-                    nome={mat.arquivo?.nomeOriginal}
-                    className="p-2 text-ink-soft hover:text-grape-bright rounded-lg shrink-0"
-                    aria-label={`Abrir ${mat.titulo}`}
-                  >
-                    <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />
-                  </ArquivoBotao>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <>
+          {turmas.length > 1 && (
+            <div className="card p-4">
+              <Campo id="turma-materiais" rotulo="Turma">
+                <select
+                  id="turma-materiais"
+                  value={turmaId}
+                  onChange={(e) => setTurmaManual(e.target.value)}
+                  className={`${classeCampo} sm:max-w-sm`}
+                >
+                  {turmas.map((t) => (
+                    <option key={t.id} value={t.id}>
+                      {t.nome}
+                    </option>
+                  ))}
+                </select>
+              </Campo>
+            </div>
+          )}
+
+          {materiais && materiais.length > 0 && (
+            <FiltrosMateriais busca={busca} onBusca={setBusca} tipo={tipo} onTipo={setTipo} idBusca="busca-materiais" />
+          )}
+
+          {materiais === null ? (
+            <Carregando texto="Carregando materiais…" />
+          ) : materiais.length === 0 ? (
+            <Vazio
+              icone={<FolderOpen />}
+              titulo="Nenhum material ainda"
+              texto="Quando o professor compartilhar arquivos ou links, eles aparecem aqui."
+            />
+          ) : filtrados.length === 0 ? (
+            <Vazio compacto titulo="Nenhum material com esse filtro" />
+          ) : (
+            <ul className="space-y-3">
+              {filtrados.map((m) => (
+                <ItemMaterial key={m.id} material={m} />
+              ))}
+            </ul>
+          )}
+        </>
       )}
     </div>
   );
@@ -242,12 +149,8 @@ function MateriaisAlunoContent() {
 
 export default function AlunoMateriaisPage() {
   return (
-    <Suspense
-      fallback={
-        <div className="max-w-4xl mx-auto p-8 text-ink-soft">Carregando…</div>
-      }
-    >
-      <MateriaisAlunoContent />
+    <Suspense fallback={<Carregando className="mx-auto max-w-4xl" />}>
+      <MateriaisAlunoConteudo />
     </Suspense>
   );
 }

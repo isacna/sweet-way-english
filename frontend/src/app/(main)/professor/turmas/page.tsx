@@ -3,23 +3,16 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
-import { Button } from "@/components/Button";
+import { ChevronRight, FolderOpen, Plus, UsersRound } from "lucide-react";
 import { FiltroLista } from "@/components/FiltroLista";
+import { Cabecalho, Carregando, classeBotao, erroDaApi, Mensagem, Vazio } from "@/components/painel/ui";
+import { CodigoConvite } from "@/components/turmas/CodigoConvite";
+import type { TurmaResumo } from "@/components/turmas/tipos";
 import { apiFetch } from "@/lib/api";
-import { Plus, UsersRound } from "lucide-react";
-
-type Turma = {
-  id: number;
-  nome: string;
-  descricao: string | null;
-  codigoConvite: string;
-  criadoEm: string;
-  _count?: { matriculas: number };
-};
 
 export default function TurmasPage() {
   const router = useRouter();
-  const [turmas, setTurmas] = useState<Turma[]>([]);
+  const [turmas, setTurmas] = useState<TurmaResumo[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
   const [busca, setBusca] = useState("");
@@ -30,7 +23,8 @@ export default function TurmasPage() {
     return turmas.filter(
       (t) =>
         t.nome.toLowerCase().includes(q) ||
-        t.descricao?.toLowerCase().includes(q),
+        t.descricao?.toLowerCase().includes(q) ||
+        t.codigoConvite.toLowerCase().includes(q),
     );
   }, [turmas, busca]);
 
@@ -38,125 +32,117 @@ export default function TurmasPage() {
     let cancelled = false;
 
     async function load() {
-      const res = await apiFetch("/turmas");
+      const res = await apiFetch("/turmas").catch(() => null);
       if (cancelled) return;
-
-      if (res.status === 401 || res.status === 403) {
+      if (res?.status === 401 || res?.status === 403) {
         router.replace("/login?tipo=professor");
         return;
       }
-      if (!res.ok) {
-        setErro("Não foi possível carregar as turmas.");
+      if (!res?.ok) {
+        setErro(await erroDaApi(res, "Não foi possível carregar as turmas."));
         setCarregando(false);
         return;
       }
-      const data: Turma[] = await res.json();
+      const data: TurmaResumo[] = await res.json();
       if (cancelled) return;
-      setTurmas(data);
-      setErro("");
+      // Mais novas primeiro
+      setTurmas(data.sort((a, b) => b.id - a.id));
       setCarregando(false);
     }
 
     void load();
-
     return () => {
       cancelled = true;
     };
   }, [router]);
 
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Minhas Turmas</h1>
-          <p className="text-ink-soft mt-1">
-            Gerencie seus alunos e materiais por turma.
-          </p>
-        </div>
-        <Button href="/professor/turmas/nova" variant="primary" size="md">
-          <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
-          Nova Turma
-        </Button>
-      </div>
+    <div className="mx-auto max-w-6xl space-y-6">
+      <Cabecalho
+        titulo="Minhas turmas"
+        descricao="Atividades, avisos e alunos de cada turma. Passe o código de convite para os alunos entrarem."
+        acoes={
+          <Link href="/professor/turmas/nova" className={classeBotao("primario")}>
+            <Plus aria-hidden className="h-4 w-4" />
+            Nova turma
+          </Link>
+        }
+      />
 
-      {erro && (
-        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
-          {erro}
-        </p>
-      )}
+      {erro && <Mensagem tom="erro">{erro}</Mensagem>}
 
-      {!carregando && turmas.length > 0 && (
+      {!carregando && turmas.length > 1 && (
         <FiltroLista
           busca={busca}
           onBuscaChange={setBusca}
-          placeholderBusca="Buscar por nome ou descrição…"
+          placeholderBusca="Buscar por nome, descrição ou código…"
           total={turmas.length}
           totalFiltrado={turmasFiltradas.length}
         />
       )}
 
       {carregando ? (
-        <p className="text-ink-soft">Carregando turmas…</p>
-      ) : turmas.length === 0 ? (
-        <div className="p-8 rounded-xl bg-card border border-line text-center">
-          <p className="text-ink-soft mb-4">Nenhuma turma ainda.</p>
-          <Button href="/professor/turmas/nova" variant="primary" size="md">
-            Criar primeira turma
-          </Button>
-        </div>
-      ) : turmasFiltradas.length === 0 ? (
-        <p className="text-ink-soft text-sm">
-          Nenhuma turma encontrada para &ldquo;{busca}&rdquo;.
-        </p>
+        <Carregando texto="Carregando turmas…" />
+      ) : turmas.length === 0 && !erro ? (
+        <Vazio
+          icone={<UsersRound />}
+          titulo="Nenhuma turma ainda"
+          texto="Crie uma turma para publicar atividades e avisos. Um código de convite é gerado na hora."
+          acao={
+            <Link href="/professor/turmas/nova" className={classeBotao("primario")}>
+              <Plus aria-hidden className="h-4 w-4" />
+              Criar primeira turma
+            </Link>
+          }
+        />
+      ) : turmasFiltradas.length === 0 && busca ? (
+        <Vazio compacto titulo={`Nenhuma turma encontrada para “${busca}”`} />
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {turmasFiltradas.map((cls) => (
-            <article
-              key={cls.id}
-              className="card p-6 flex flex-col"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="font-semibold text-ink">{cls.nome}</h3>
-              </div>
-              {cls.descricao && (
-                <p className="text-sm text-ink-soft mb-3 line-clamp-2">
-                  {cls.descricao}
-                </p>
-              )}
-              <div className="space-y-3 text-sm text-ink-soft mb-4">
-                <p className="flex items-center gap-2">
-                  <UsersRound aria-hidden className="h-[16px] w-[16px] shrink-0" />
-                  {cls._count?.matriculas ?? 0} alunos
-                </p>
-                <p>
-                  <span className="font-medium text-ink">Código: </span>
-                  <code className="text-xs bg-gray-100 px-2 py-0.5 rounded">
-                    {cls.codigoConvite}
-                  </code>
-                </p>
-                <p className="text-xs">
-                  Criada em{" "}
-                  {new Date(cls.criadoEm).toLocaleDateString("pt-BR")}
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 mt-auto">
-                <Button
-                  href={`/professor/turmas/${cls.id}`}
-                  variant="secondary"
-                  size="md"
-                >
-                  Acessar Turma
-                </Button>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {turmasFiltradas.map((t) => {
+            const total = t._count?.matriculas ?? 0;
+            return (
+              <li key={t.id} className="card flex flex-col p-5">
                 <Link
-                  href={`/professor/materiais?turma=${cls.id}`}
-                  className="text-center text-sm font-medium text-accent hover:text-accent-strong"
+                  href={`/professor/turmas/${t.id}`}
+                  className="group -m-2 flex items-start gap-2 rounded-xl p-2 hover:bg-gray-50"
                 >
-                  Materiais desta turma
+                  <div className="min-w-0 flex-1">
+                    <h2 className="break-words text-lg font-semibold leading-snug text-ink">{t.nome}</h2>
+                    <p className="mt-1 inline-flex items-center gap-1.5 text-sm text-ink-soft">
+                      <UsersRound aria-hidden className="h-4 w-4" />
+                      {total} {total === 1 ? "aluno" : "alunos"}
+                    </p>
+                  </div>
+                  <ChevronRight
+                    aria-hidden
+                    className="mt-1 h-5 w-5 shrink-0 text-ink-faint transition-transform group-hover:translate-x-0.5"
+                  />
                 </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+                {t.descricao && <p className="mt-2 line-clamp-2 text-sm text-ink-soft">{t.descricao}</p>}
+                <div className="mt-4 space-y-3 border-t border-line pt-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-xs font-medium text-ink-soft">Código de convite</span>
+                    <CodigoConvite codigo={t.codigoConvite} compacto />
+                  </div>
+                  <div className="flex gap-2">
+                    <Link href={`/professor/turmas/${t.id}`} className={classeBotao("secundario", "flex-1")}>
+                      Abrir turma
+                    </Link>
+                    <Link
+                      href={`/professor/materiais?turma=${t.id}`}
+                      className={classeBotao("fantasma", "px-3")}
+                      aria-label={`Materiais da turma ${t.nome}`}
+                    >
+                      <FolderOpen aria-hidden className="h-[18px] w-[18px]" />
+                      <span className="hidden sm:inline">Materiais</span>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       )}
     </div>
   );

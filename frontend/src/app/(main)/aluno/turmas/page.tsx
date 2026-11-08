@@ -2,203 +2,150 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Button } from "@/components/Button";
-import { apiFetch, getStoredUser } from "@/lib/api";
-import { Plus } from "lucide-react";
-
-type Turma = {
-  id: number;
-  nome: string;
-  descricao: string | null;
-  codigoConvite: string;
-  professor?: { nome: string };
-};
+import { useCallback, useEffect, useState } from "react";
+import { ChevronRight, FolderOpen, KeyRound, LogIn, UsersRound } from "lucide-react";
+import { Cabecalho, Campo, Carregando, classeBotao, classeCampo, erroDaApi, Mensagem, RegiaoAoVivo } from "@/components/painel/ui";
+import type { TurmaResumo } from "@/components/turmas/tipos";
+import { apiFetch } from "@/lib/api";
 
 export default function AlunoTurmasPage() {
   const router = useRouter();
-  const [turmas, setTurmas] = useState<Turma[]>([]);
-  const [carregando, setCarregando] = useState(true);
+  const [turmas, setTurmas] = useState<TurmaResumo[] | null>(null);
   const [erro, setErro] = useState("");
   const [codigo, setCodigo] = useState("");
   const [entrando, setEntrando] = useState(false);
-  const [msgConvite, setMsgConvite] = useState("");
+  const [erroCodigo, setErroCodigo] = useState("");
+  const [sucesso, setSucesso] = useState<{ tom: "sucesso"; texto: string } | null>(null);
 
-  async function recarregar() {
-    const res = await apiFetch("/turmas");
-    if (res.status === 401 || res.status === 403) {
+  const carregar = useCallback(async () => {
+    const res = await apiFetch("/turmas").catch(() => null);
+    if (res?.status === 401 || res?.status === 403) {
       router.replace("/login?tipo=aluno");
       return;
     }
-    if (res.ok) {
-      const data: Turma[] = await res.json();
-      setTurmas(data);
-    }
-  }
-
-  useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
+    if (!res?.ok) {
+      setErro(await erroDaApi(res, "Não foi possível carregar suas turmas."));
+      setTurmas([]);
       return;
     }
-
-    let cancelled = false;
-
-    async function load() {
-      const res = await apiFetch("/turmas");
-      if (cancelled) return;
-      if (res.status === 401 || res.status === 403) {
-        router.replace("/login?tipo=aluno");
-        return;
-      }
-      if (!res.ok) {
-        setErro("Não foi possível carregar suas turmas.");
-        setCarregando(false);
-        return;
-      }
-      const data: Turma[] = await res.json();
-      if (cancelled) return;
-      setTurmas(data);
-      setCarregando(false);
-    }
-
-    void load();
-    return () => {
-      cancelled = true;
-    };
+    setTurmas(await res.json());
   }, [router]);
 
-  async function handleEntrar(e: React.FormEvent) {
+  useEffect(() => {
+    queueMicrotask(() => void carregar());
+  }, [carregar]);
+
+  async function entrar(e: React.FormEvent) {
     e.preventDefault();
-    if (turmas.length > 0) return;
-    setMsgConvite("");
-    setErro("");
-    const c = codigo.trim();
+    setErroCodigo("");
+    const c = codigo.trim().toUpperCase();
     if (!c) {
-      setMsgConvite("Informe o código de convite.");
+      setErroCodigo("Digite o código que o professor passou.");
       return;
     }
     setEntrando(true);
     const res = await apiFetch("/turmas/entrar", {
       method: "POST",
       body: JSON.stringify({ codigoConvite: c }),
-    });
+    }).catch(() => null);
     setEntrando(false);
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setMsgConvite(data.error ?? "Não foi possível entrar na turma.");
+    if (!res?.ok) {
+      setErroCodigo(
+        res?.status === 404
+          ? "Não encontramos uma turma com esse código. Confira as letras e os números."
+          : await erroDaApi(res, "Não foi possível entrar na turma."),
+      );
       return;
     }
     setCodigo("");
-    setMsgConvite("Você entrou na turma com sucesso.");
-    await recarregar();
+    setSucesso({ tom: "sucesso", texto: "Pronto! Você entrou na turma." });
+    await carregar();
   }
 
+  if (turmas === null) return <Carregando texto="Carregando suas turmas…" className="mx-auto max-w-4xl" />;
+
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold text-ink">Minhas turmas</h1>
-        {!carregando && (
-          <p className="text-ink-soft mt-1">
-            {turmas.length > 0
-              ? "Suas turmas matriculadas. Não é possível entrar em outra turma enquanto estiver em uma."
-              : "Use o código que o professor passou para se matricular."}
-          </p>
-        )}
-      </div>
+    <div className="mx-auto max-w-4xl space-y-6">
+      <Cabecalho
+        titulo="Minhas turmas"
+        descricao={
+          turmas.length > 0
+            ? "Atividades, avisos e materiais do seu professor."
+            : "Entre na turma do seu professor com o código de convite."
+        }
+      />
 
-      {!carregando && turmas.length === 0 && (
-        <>
-          <form
-            onSubmit={handleEntrar}
-            className="card p-6 flex flex-col sm:flex-row gap-4 sm:items-end"
-          >
-            <div className="flex-1">
-              <label
-                htmlFor="codigo"
-                className="block text-sm font-medium text-ink mb-2"
-              >
-                Código de convite
-              </label>
-              <input
-                id="codigo"
-                value={codigo}
-                onChange={(e) => setCodigo(e.target.value)}
-                placeholder="Ex.: SWB1-2025"
-                className="w-full px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={entrando}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-grape text-white font-semibold px-6 py-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.16)] hover:bg-grape-strong disabled:opacity-70"
-            >
-              {entrando ? (
-                "Entrando…"
-              ) : (
-                <>
-                  <Plus aria-hidden className="h-[18px] w-[18px] shrink-0" />
-                  Entrar na turma
-                </>
-              )}
-            </button>
-          </form>
-          {msgConvite && (
-            <p
-              className={`text-sm px-4 py-3 rounded-xl ${msgConvite.includes("sucesso") ? "bg-success-soft text-success-ink" : "bg-danger-soft text-danger-ink"}`}
-            >
-              {msgConvite}
+      {erro && <Mensagem tom="erro">{erro}</Mensagem>}
+      <RegiaoAoVivo mensagem={sucesso} />
+
+      {turmas.length === 0 && !erro && (
+        <form onSubmit={entrar} className="card relative overflow-hidden p-5 sm:p-7" noValidate>
+          <span className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-grape/25 blur-3xl" aria-hidden />
+          <div className="relative">
+            <span className="mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-grape-soft text-grape" aria-hidden>
+              <KeyRound className="h-6 w-6" />
+            </span>
+            <h2 className="text-xl font-semibold text-ink">Entrar em uma turma</h2>
+            <p className="mt-1 text-sm text-ink-soft">
+              O código parece com <span className="font-mono font-semibold text-ink">SWA1-2026</span>. Você só pode estar em
+              uma turma por vez.
             </p>
-          )}
-        </>
-      )}
-      {erro && (
-        <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">
-          {erro}
-        </p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">
+              <Campo id="codigo" rotulo="Código de convite" className="min-w-0 flex-1">
+                <input
+                  id="codigo"
+                  value={codigo}
+                  onChange={(e) => setCodigo(e.target.value)}
+                  autoComplete="off"
+                  autoCapitalize="characters"
+                  spellCheck={false}
+                  aria-invalid={erroCodigo ? true : undefined}
+                  aria-describedby={erroCodigo ? "codigo-erro" : undefined}
+                  className={`${classeCampo} font-mono uppercase tracking-wide`}
+                />
+              </Campo>
+              <button type="submit" disabled={entrando} className={classeBotao("primario", "sm:min-w-[11rem]")}>
+                <LogIn aria-hidden className="h-4 w-4" />
+                {entrando ? "Entrando…" : "Entrar na turma"}
+              </button>
+            </div>
+            {erroCodigo && (
+              <div id="codigo-erro" className="mt-3">
+                <Mensagem tom="erro">{erroCodigo}</Mensagem>
+              </div>
+            )}
+          </div>
+        </form>
       )}
 
-      {carregando ? (
-        <p className="text-ink-soft">Carregando…</p>
-      ) : turmas.length > 0 ? (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {turmas.length > 0 && (
+        <ul className="grid gap-4 sm:grid-cols-2">
           {turmas.map((t) => (
-            <article
-              key={t.id}
-              className="card p-6 flex flex-col"
-            >
-              <h3 className="font-bold text-ink mb-2">{t.nome}</h3>
-              {t.descricao && (
-                <p className="text-sm text-ink-soft mb-3 line-clamp-3">
-                  {t.descricao}
-                </p>
-              )}
-              <p className="text-sm text-ink-soft mb-4">
-                Professor:{" "}
-                <span className="font-medium text-ink">
-                  {t.professor?.nome ?? "—"}
+            <li key={t.id} className="card flex flex-col p-5">
+              <Link href={`/aluno/turmas/${t.id}`} className="group -m-2 flex items-start gap-3 rounded-xl p-2 hover:bg-gray-50">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-grape-soft text-grape" aria-hidden>
+                  <UsersRound className="h-5 w-5" />
                 </span>
-              </p>
-              <div className="mt-auto flex flex-col gap-2">
-                <Button
-                  href={`/aluno/turmas/${t.id}`}
-                  variant="primary"
-                  size="md"
-                >
+                <div className="min-w-0 flex-1">
+                  <h2 className="break-words text-lg font-semibold leading-snug text-ink">{t.nome}</h2>
+                  <p className="text-sm text-ink-soft">Professor {t.professor?.nome ?? "—"}</p>
+                </div>
+                <ChevronRight aria-hidden className="mt-1 h-5 w-5 shrink-0 text-ink-faint transition-transform group-hover:translate-x-0.5" />
+              </Link>
+              {t.descricao && <p className="mt-3 line-clamp-3 text-sm text-ink-soft">{t.descricao}</p>}
+              <div className="mt-4 flex gap-2 border-t border-line pt-4">
+                <Link href={`/aluno/turmas/${t.id}`} className={classeBotao("primario", "flex-1")}>
                   Abrir turma
-                </Button>
-                <Link
-                  href={`/aluno/materiais?turma=${t.id}`}
-                  className="text-center text-sm font-medium text-grape hover:opacity-80"
-                >
+                </Link>
+                <Link href={`/aluno/materiais?turma=${t.id}`} className={classeBotao("secundario")}>
+                  <FolderOpen aria-hidden className="h-4 w-4" />
                   Materiais
                 </Link>
               </div>
-            </article>
+            </li>
           ))}
-        </div>
-      ) : null}
+        </ul>
+      )}
     </div>
   );
 }
