@@ -48,10 +48,15 @@ Cria o `PerfilAprendiz` na primeira chamada se não existir.
   apresentacao: Apresentacao,
   exercicios: ExercicioPublico[],   // ordenados por `ordem`; inclui as 4 etapas
   progresso: { concluida: boolean; melhorPercentual: number; tentativas: number },
-  proximaLicaoId: number | null       // próxima lição publicada do mesmo módulo
+  proximaLicaoId: number | null,      // próxima lição publicada do mesmo módulo
+  nota: { texto: string; atualizadoEm: string } | null   // anotações do próprio aluno
 }
 ExercicioPublico = { id, ordem, etapa, tipo, enunciado, conteudo }
 ```
+
+### `PUT /curso/licoes/:id/nota` — `{ texto }`
+Salva as anotações do aluno na lição (até 5000 caracteres; 400 acima disso). Mesmas regras de 404/403 da lição.
+Texto vazio (ou só espaços) apaga a nota. Resposta: `{ nota: { texto, atualizadoEm } | null }`.
 
 ### `POST /curso/exercicios/:id/verificar` — `{ resposta }`
 Para etapas `controlada | semicontrolada | producao` (400 se for `quiz`). Lição precisa estar liberada.

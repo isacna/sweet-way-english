@@ -7,6 +7,7 @@ import { errorHandler } from './http/middlewares/errorHandler.js';
 
 export function createApp() {
   const app = express();
+  app.set('trust proxy', env.TRUST_PROXY);
 
   // Uploads são exibidos pelo frontend em outra origem (porta 3000)
   app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));

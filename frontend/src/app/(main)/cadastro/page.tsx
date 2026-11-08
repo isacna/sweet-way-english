@@ -5,8 +5,13 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { AuthShell } from "@/components/AuthShell";
-import { classeBotao } from "@/components/curso/ui";
-import { classeCampo, classeRotulo } from "@/components/formStyles";
+import {
+  classeAvisoErro,
+  classeBotaoAcao,
+  classeCampo,
+  classeLinkSuave,
+  classeRotulo,
+} from "@/components/formStyles";
 import { apiUrl } from "@/lib/api";
 
 const IDADE_MAIORIDADE = 18;
@@ -108,9 +113,9 @@ export default function CadastroPage() {
   }
 
   return (
-    <AuthShell voltarHref="/login?tipo=aluno">
-              <h1 className="text-3xl font-semibold text-ink">Criar conta</h1>
-              <p className="mt-1 mb-6 text-ink-soft">Cadastro de aluno — é grátis.</p>
+    <AuthShell link={{ href: "/login?tipo=aluno", rotulo: "Entrar" }}>
+              <h1 className="text-[1.9rem] font-semibold leading-tight tracking-[-0.015em] text-white">Criar conta</h1>
+              <p className="mt-1.5 mb-6 text-ink-soft">Cadastro de aluno — é grátis.</p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
@@ -198,8 +203,8 @@ export default function CadastroPage() {
                 </div>
 
                 {menor && (
-                  <fieldset className="space-y-4 rounded-2xl border-2 border-grape/20 bg-grape-mist p-4">
-                    <legend className="rounded-full bg-grape px-3 py-1 text-xs font-bold text-white">
+                  <fieldset className="space-y-4 rounded-2xl border border-[#a98bff]/30 bg-[#7448f0]/12 p-4">
+                    <legend className="rounded-full bg-[#7448f0] px-3 py-1 text-xs font-semibold text-white">
                       Responsável (menores de 18 anos)
                     </legend>
                     <p className="text-sm text-ink-soft">
@@ -231,13 +236,13 @@ export default function CadastroPage() {
                         className={classeCampo}
                       />
                     </div>
-                    <label className="flex cursor-pointer items-start gap-3 rounded-xl bg-white p-3 text-sm leading-relaxed text-ink">
+                    <label className="flex cursor-pointer items-start gap-3 rounded-[12px] border border-white/12 bg-black/30 p-3 text-sm leading-relaxed text-white/90 transition-colors hover:border-white/25 has-[:focus-visible]:border-[#f8b285]">
                       <input
                         type="checkbox"
                         checked={consentimento}
                         onChange={(e) => setConsentimento(e.target.checked)}
                         required
-                        className="mt-0.5 h-5 w-5 shrink-0 accent-grape"
+                        className="mt-0.5 h-5 w-5 shrink-0 accent-[#8a63f6]"
                       />
                       <span>
                         Sou o responsável legal por este aluno e autorizo o uso da Sweet Way English. Entendo que os
@@ -251,7 +256,7 @@ export default function CadastroPage() {
                 )}
 
                 {erro && (
-                  <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium" role="alert">
+                  <p className={classeAvisoErro} role="alert">
                     {erro}
                   </p>
                 )}
@@ -259,7 +264,7 @@ export default function CadastroPage() {
                 <button
                   type="submit"
                   disabled={carregando}
-                  className={`${classeBotao("primario")} w-full`}
+                  className={`${classeBotaoAcao} w-full`}
                 >
                   {carregando ? "Criando conta..." : "Criar conta"}
                 </button>
@@ -267,7 +272,7 @@ export default function CadastroPage() {
 
               <p className="mt-6 text-sm text-center text-ink-soft">
                 Já tem conta?{" "}
-                <Link href="/login?tipo=aluno" className="inline-flex min-h-[44px] items-center font-semibold text-grape hover:underline">
+                <Link href="/login?tipo=aluno" className={classeLinkSuave}>
                   Entrar
                 </Link>
               </p>

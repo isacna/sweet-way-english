@@ -183,8 +183,8 @@ function Resultado({
       <div
         className={`animate-pop-in rounded-[1.75rem] border-2 p-6 text-center sm:p-8 ${
           resultado.aprovado
-            ? "border-success-bright/40 bg-gradient-to-b from-success-soft to-white"
-            : "border-sun/50 bg-gradient-to-b from-sun-soft to-white"
+            ? "border-success-bright/30 bg-gradient-to-b from-success-soft to-card"
+            : "border-sun/40 bg-gradient-to-b from-sun-soft to-card"
         }`}
       >
         <p className="text-5xl mb-2" aria-hidden>
@@ -207,12 +207,12 @@ function Resultado({
           </p>
         )}
         {resultado.xpGanho > 0 && (
-          <p className="mt-4 inline-block rounded-full bg-sun px-4 py-1.5 font-display text-lg font-semibold text-ink shadow-[0_3px_0_0_var(--color-sun-ink)]">
+          <p className="mt-4 inline-block rounded-full bg-sun px-4 py-1.5 font-display text-lg font-semibold text-gray-950 shadow-[0_3px_0_0_var(--color-sun-ink)]">
             +{resultado.xpGanho} XP
           </p>
         )}
 
-        <div className="mx-auto mt-6 max-w-md space-y-3 rounded-2xl bg-white/80 p-4 text-left ring-1 ring-line">
+        <div className="mx-auto mt-6 max-w-md space-y-3 rounded-2xl bg-card/80 p-4 text-left ring-1 ring-line">
           {habilidades.map((h) => {
             const v = resultado.porHabilidade[h];
             const ok = v >= LIMIAR_TESTE_HABILIDADE;
@@ -437,7 +437,7 @@ function TesteModulo({ id }: { id: string }) {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-sky-soft text-sky-ink" aria-hidden>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-grape-soft text-grape" aria-hidden>
                     <Repeat2 className="h-[18px] w-[18px]" />
                   </span>
                   <span>Tentativas ilimitadas; cada uma pode trazer questões diferentes.</span>

@@ -1,1 +1,13 @@
+# Segredos
 .env
+.env.*
+!.env.example
+
+node_modules/
+
+# Arquivos enviados pelos usuários (nunca versionar; em produção ficam num volume)
+backend/uploads/
+
+# Ferramentas locais
+skills-lock.json
+.agents/

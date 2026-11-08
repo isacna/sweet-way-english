@@ -3,6 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const prismaMock = vi.hoisted(() => ({
   nivel: { findMany: vi.fn() },
   licao: { findUnique: vi.fn() },
+  notaLicao: { findUnique: vi.fn(), upsert: vi.fn(), deleteMany: vi.fn() },
   exercicio: { findUnique: vi.fn(), findMany: vi.fn() },
   itemTeste: { findMany: vi.fn() },
   progressoLicao: { findMany: vi.fn(), findUnique: vi.fn(), upsert: vi.fn() },
@@ -24,6 +25,7 @@ vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
 import {
   getTrilha,
   getLicao,
+  salvarNota,
   verificarExercicio,
   enviarQuiz,
   listarRevisao,
@@ -185,6 +187,63 @@ describe('CursoController', () => {
       expect(body).toMatchObject({ id: 11, proximaLicaoId: 12, progresso: { concluida: false, melhorPercentual: 0, tentativas: 0 } });
       expect(body.exercicios[0]).toEqual({ id: 1, ordem: 1, etapa: 'controlada', tipo: 'mcq', enunciado: 'Escolha', conteudo: { opcoes: ['am', 'is'] } });
       expect(JSON.stringify(body)).not.toMatch(/gabarito|explicacao.*Use am|tagsErro|correta/);
+      expect(body.nota).toBeNull();
+    });
+
+    it("includes the student's own note", async () => {
+      estado();
+      prismaMock.licao.findUnique.mockResolvedValue(lessonRow(11));
+      prismaMock.exercicio.findMany.mockResolvedValue([]);
+      const atualizadoEm = new Date('2026-11-04T12:00:00Z');
+      prismaMock.notaLicao.findUnique.mockResolvedValue({ texto: 'am com I', atualizadoEm });
+
+      await getLicao(studentReq({ params: { id: '11' } }), res);
+
+      expect(res.json.mock.calls[0][0].nota).toEqual({ texto: 'am com I', atualizadoEm });
+      expect(prismaMock.notaLicao.findUnique).toHaveBeenCalledWith({
+        where: { usuarioId_licaoId: { usuarioId: 10, licaoId: 11 } },
+      });
+    });
+  });
+
+  // ── PUT /curso/licoes/:id/nota ──────────────────────────────────────────────
+  describe('salvarNota', () => {
+    it('rejects a note over the size limit', async () => {
+      await salvarNota(studentReq({ params: { id: '11' }, body: { texto: 'a'.repeat(5001) } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.notaLicao.upsert).not.toHaveBeenCalled();
+    });
+
+    it('returns 403 for a locked lesson', async () => {
+      estado();
+      prismaMock.licao.findUnique.mockResolvedValue(lessonRow(12));
+      await salvarNota(studentReq({ params: { id: '12' }, body: { texto: 'oi' } }), res);
+      expect(res.status).toHaveBeenCalledWith(403);
+      expect(prismaMock.notaLicao.upsert).not.toHaveBeenCalled();
+    });
+
+    it("upserts the student's note", async () => {
+      estado();
+      prismaMock.licao.findUnique.mockResolvedValue(lessonRow(11));
+      const atualizadoEm = new Date();
+      prismaMock.notaLicao.upsert.mockResolvedValue({ texto: 'Good night = só na despedida', atualizadoEm });
+
+      await salvarNota(studentReq({ params: { id: '11' }, body: { texto: 'Good night = só na despedida' } }), res);
+
+      expect(prismaMock.notaLicao.upsert).toHaveBeenCalledWith({
+        where: { usuarioId_licaoId: { usuarioId: 10, licaoId: 11 } },
+        update: { texto: 'Good night = só na despedida' },
+        create: { usuarioId: 10, licaoId: 11, texto: 'Good night = só na despedida' },
+      });
+      expect(res.json).toHaveBeenCalledWith({ nota: { texto: 'Good night = só na despedida', atualizadoEm } });
+    });
+
+    it('deletes the note when the text is blank', async () => {
+      estado();
+      prismaMock.licao.findUnique.mockResolvedValue(lessonRow(11));
+      await salvarNota(studentReq({ params: { id: '11' }, body: { texto: '   ' } }), res);
+      expect(prismaMock.notaLicao.deleteMany).toHaveBeenCalledWith({ where: { usuarioId: 10, licaoId: 11 } });
+      expect(res.json).toHaveBeenCalledWith({ nota: null });
     });
   });
 

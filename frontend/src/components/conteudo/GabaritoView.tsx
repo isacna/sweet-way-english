@@ -19,12 +19,12 @@ const lista = (v: unknown): string[] => (Array.isArray(v) ? v.map(String) : []);
 function Aceitas({ valores, rotulo = "Respostas aceitas" }: { valores: string[]; rotulo?: string }) {
   return (
     <div>
-      <p className="text-xs font-semibold text-emerald-800 mb-1">{rotulo}</p>
+      <p className="text-xs font-semibold text-success-ink mb-1">{rotulo}</p>
       <ul className="space-y-1">
         {valores.map((v, i) => (
           <li
             key={i}
-            className="text-sm px-2 py-1 rounded bg-emerald-50 text-emerald-900 border border-emerald-100"
+            className="text-sm px-2 py-1 rounded bg-success-soft text-success-ink border border-success-bright/30"
           >
             {v}
           </li>
@@ -55,8 +55,8 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
                   key={i}
                   className={`text-sm px-2 py-1 rounded border ${
                     certa
-                      ? "bg-emerald-50 border-emerald-200 text-emerald-900 font-medium"
-                      : "border-gray-100 text-ink-soft"
+                      ? "bg-success-soft border-success-bright/30 text-success-ink font-medium"
+                      : "border-line text-ink-soft"
                   }`}
                 >
                   {String.fromCharCode(65 + i)}) {o}
@@ -80,7 +80,7 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
               <span key={i}>
                 {p}
                 {i < partes.length - 1 && (
-                  <span className="inline-block mx-0.5 px-1.5 rounded bg-emerald-100 text-emerald-900 font-medium">
+                  <span className="inline-block mx-0.5 px-1.5 rounded bg-success-soft text-success-ink font-medium">
                     {(respostas[i] ?? []).join(" / ") || "?"}
                   </span>
                 )}
@@ -121,7 +121,7 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
             <li key={i} className="text-sm flex flex-wrap gap-2 items-center">
               <span className="px-2 py-0.5 rounded bg-gray-100">{e}</span>
               <span aria-hidden>→</span>
-              <span className="px-2 py-0.5 rounded bg-emerald-50 border border-emerald-100 text-emerald-900">
+              <span className="px-2 py-0.5 rounded bg-success-soft border border-success-bright/30 text-success-ink">
                 {dir[pares[i]] ?? "?"}
               </span>
             </li>
@@ -148,7 +148,7 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
         <div className="space-y-2">
           <p className="text-sm">
             <span className="text-xs text-ink-soft mr-2">Frase com erro:</span>
-            <span className="font-medium text-red-700 line-through decoration-red-300">
+            <span className="font-medium text-danger-ink line-through decoration-red-300">
               {String(c.frase ?? "")}
             </span>
           </p>
@@ -172,7 +172,7 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
       <p className="text-sm font-medium text-ink">{item.enunciado}</p>
       {corpo}
       {item.explicacao && (
-        <p className="text-xs text-ink-soft bg-blue-50/60 border border-blue-100 rounded-lg p-2">
+        <p className="text-xs text-ink-soft bg-grape-mist border border-grape-soft rounded-lg p-2">
           <span className="font-semibold">Explicação: </span>
           {item.explicacao}
         </p>

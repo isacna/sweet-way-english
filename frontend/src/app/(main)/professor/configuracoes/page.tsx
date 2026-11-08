@@ -22,17 +22,17 @@ function Modal({
 }) {
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ink/40 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       onClick={onFechar}
     >
       <div
-        className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-xl bg-white border border-gray-100 shadow-lg"
+        className="w-full max-w-md max-h-[90vh] overflow-y-auto rounded-[var(--radius-card)] bg-card border border-line shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-gray-100">
-          <h2 className="text-lg font-bold text-ink">{titulo}</h2>
+        <div className="flex items-center justify-between gap-4 px-6 py-4 border-b border-line">
+          <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">{titulo}</h2>
           <button
             type="button"
             onClick={onFechar}
@@ -103,7 +103,7 @@ function SecaoMinhaConta() {
 
   return (
     <section className="card p-6 space-y-5">
-      <h2 className="text-lg font-bold text-ink">Minha conta</h2>
+      <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Minha conta</h2>
       <form onSubmit={salvar} className="space-y-4 max-w-md">
         <div>
           <label htmlFor="cfg-nome" className="block text-sm font-medium text-ink mb-1">
@@ -115,7 +115,7 @@ function SecaoMinhaConta() {
             value={nome}
             onChange={(e) => setNome(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <div>
@@ -128,7 +128,7 @@ function SecaoMinhaConta() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         <div>
@@ -141,15 +141,15 @@ function SecaoMinhaConta() {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             placeholder="••••••••"
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
           />
         </div>
         {msg && (
           <p
             className={`text-sm px-4 py-3 rounded-lg ${
               msg.tipo === "ok"
-                ? "text-green-700 bg-green-50"
-                : "text-red-600 bg-red-50"
+                ? "text-success-ink bg-success-soft"
+                : "text-danger-ink bg-danger-soft"
             }`}
           >
             {msg.texto}
@@ -158,7 +158,7 @@ function SecaoMinhaConta() {
         <button
           type="submit"
           disabled={salvando}
-          className="inline-flex items-center justify-center font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
+          className="inline-flex items-center justify-center font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-6 py-3 transition-[filter] disabled:opacity-70"
         >
           {salvando ? "Salvando…" : "Salvar alterações"}
         </button>
@@ -233,11 +233,11 @@ function SecaoAparencia() {
 
   return (
     <section className="card p-6 space-y-5">
-      <h2 className="text-lg font-bold text-ink">Aparência</h2>
+      <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Aparência</h2>
 
       <div className="space-y-3">
         <p className="text-sm font-medium text-ink">Logo atual</p>
-        <div className="flex items-center justify-center p-4 rounded-lg bg-gray-50 border border-dashed border-gray-200 max-w-xs">
+        <div className="flex items-center justify-center p-4 rounded-lg bg-gray-50 border border-dashed border-line-strong max-w-xs">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={preview ?? logoAtual ?? "/logo-sweet.png"}
@@ -269,8 +269,8 @@ function SecaoAparencia() {
           <p
             className={`text-sm px-4 py-3 rounded-lg ${
               msg.tipo === "ok"
-                ? "text-green-700 bg-green-50"
-                : "text-red-600 bg-red-50"
+                ? "text-success-ink bg-success-soft"
+                : "text-danger-ink bg-danger-soft"
             }`}
           >
             {msg.texto}
@@ -279,7 +279,7 @@ function SecaoAparencia() {
         <button
           type="submit"
           disabled={enviando || !arquivo}
-          className="inline-flex items-center gap-2 font-medium rounded-lg bg-accent text-white px-6 py-3 hover:bg-accent-strong transition-colors disabled:opacity-70"
+          className="inline-flex items-center gap-2 font-semibold rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 px-6 py-3 transition-[filter] disabled:opacity-70"
         >
           <Upload aria-hidden className="h-[16px] w-[16px] shrink-0" />
           {enviando ? "Enviando…" : "Enviar logo"}
@@ -403,7 +403,7 @@ function SecaoProfessores() {
   return (
     <section className="card p-6 space-y-5">
       <div className="flex items-center justify-between gap-4">
-        <h2 className="text-lg font-bold text-ink">Professores</h2>
+        <h2 className="text-lg font-semibold tracking-[-0.01em] text-ink">Professores</h2>
         <div className="flex gap-2">
           <button
             type="button"
@@ -415,7 +415,7 @@ function SecaoProfessores() {
           <button
             type="button"
             onClick={abrirCriar}
-            className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg bg-accent text-white hover:bg-accent-strong transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 transition-[filter]"
           >
             <Plus aria-hidden className="h-[14px] w-[14px] shrink-0" />
             Novo professor
@@ -428,7 +428,7 @@ function SecaoProfessores() {
       ) : professores.length === 0 ? (
         <p className="text-sm text-ink-soft">Nenhum professor cadastrado.</p>
       ) : (
-        <ul className="divide-y divide-gray-100 rounded-lg border border-gray-100">
+        <ul className="divide-y divide-line rounded-lg border border-line">
           {professores.map((p) => (
             <li key={p.id} className="flex items-center justify-between gap-3 px-4 py-3">
               <div className="min-w-0">
@@ -446,7 +446,7 @@ function SecaoProfessores() {
                 <button
                   type="button"
                   onClick={() => void deletarProfessor(p)}
-                  className="text-xs font-medium text-red-500 hover:underline"
+                  className="text-xs font-medium text-danger hover:underline"
                 >
                   Deletar
                 </button>
@@ -470,7 +470,7 @@ function SecaoProfessores() {
                 value={fNome}
                 onChange={(e) => setFNome(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -480,7 +480,7 @@ function SecaoProfessores() {
                 value={fEmail}
                 onChange={(e) => setFEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             <div>
@@ -493,7 +493,7 @@ function SecaoProfessores() {
                 onChange={(e) => setFSenha(e.target.value)}
                 required={modalForm.modo === "criar"}
                 placeholder={modalForm.modo === "editar" ? "••••••••" : undefined}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                className="w-full px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
               />
             </div>
             {fErro && <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">{fErro}</p>}
@@ -501,14 +501,14 @@ function SecaoProfessores() {
               <button
                 type="button"
                 onClick={() => setModalForm(null)}
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-sm font-medium text-ink-soft hover:bg-gray-50"
+                className="flex-1 px-4 py-3 rounded-xl border border-line-strong bg-card shadow-sm text-sm font-semibold text-ink hover:bg-gray-50 hover:border-gray-300"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
                 disabled={fSalvando}
-                className="flex-1 px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-70"
+                className="flex-1 px-4 py-3 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 text-sm font-semibold disabled:opacity-70"
               >
                 {fSalvando ? "Salvando…" : "Salvar"}
               </button>
@@ -529,7 +529,7 @@ function SecaoProfessores() {
                   value={buscaEmail}
                   onChange={(e) => { setBuscaEmail(e.target.value); setAlunoEncontrado(null); setBuscaErro(""); setPromoverMsg(null); }}
                   placeholder="aluno@email.com"
-                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 text-ink focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
+                  className="flex-1 px-4 py-3 rounded-xl border border-line-strong bg-card text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
                 />
                 <button
                   type="button"
@@ -539,7 +539,7 @@ function SecaoProfessores() {
                   Buscar
                 </button>
               </div>
-              {buscaErro && <p className="text-sm text-red-600 mt-2">{buscaErro}</p>}
+              {buscaErro && <p className="text-sm text-danger-ink mt-2">{buscaErro}</p>}
             </div>
 
             {alunoEncontrado && (
@@ -549,9 +549,9 @@ function SecaoProfessores() {
                   <p className="text-xs text-ink-soft">{alunoEncontrado.email}</p>
                 </div>
 
-                <div className="px-4 py-3 rounded-lg bg-amber-50 border border-amber-200">
-                  <p className="text-sm font-semibold text-amber-800 mb-1">⚠ Ação irreversível</p>
-                  <p className="text-sm text-amber-700">
+                <div className="px-4 py-3 rounded-lg bg-sun-soft border border-sun/40">
+                  <p className="text-sm font-semibold text-sun-ink mb-1">⚠ Ação irreversível</p>
+                  <p className="text-sm text-sun-ink">
                     Esta ação converterá a conta do aluno em professor. Todas as submissões,
                     matrículas e feedbacks do aluno serão permanentemente deletados.
                   </p>
@@ -570,7 +570,7 @@ function SecaoProfessores() {
                 </label>
 
                 {promoverMsg && (
-                  <p className={`text-sm px-4 py-3 rounded-lg ${promoverMsg.tipo === "ok" ? "text-green-700 bg-green-50" : "text-red-600 bg-red-50"}`}>
+                  <p className={`text-sm px-4 py-3 rounded-lg ${promoverMsg.tipo === "ok" ? "text-success-ink bg-success-soft" : "text-danger-ink bg-danger-soft"}`}>
                     {promoverMsg.texto}
                   </p>
                 )}
@@ -579,7 +579,7 @@ function SecaoProfessores() {
                   type="button"
                   onClick={() => void promover()}
                   disabled={!promoverConfirmado || promovendo}
-                  className="w-full px-4 py-3 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-strong disabled:opacity-50 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 text-sm font-semibold disabled:opacity-50 transition-[filter]"
                 >
                   {promovendo ? "Promovendo…" : "Confirmar promoção"}
                 </button>
@@ -605,7 +605,7 @@ export default function ConfiguracoesPage() {
   return (
     <div className="max-w-2xl mx-auto space-y-8">
       <div>
-        <h1 className="text-2xl font-bold text-ink">Configurações</h1>
+        <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Configurações</h1>
         <p className="text-ink-soft mt-1">
           {admin ? "Gerencie sua conta, aparência e professores da plataforma." : "Gerencie sua conta."}
         </p>

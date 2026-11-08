@@ -101,12 +101,12 @@ function CartaoModulo({
   return (
     <section
       id={`modulo-${modulo.id}`}
-      className={`scroll-mt-24 overflow-hidden rounded-[var(--radius-card)] border-2 transition-shadow ${
+      className={`scroll-mt-24 overflow-hidden rounded-[var(--radius-card)] border-2 transition-colors ${
         bloqueado
-          ? "border-line bg-white/60"
+          ? "border-line bg-card/50"
           : aberto
-            ? "border-grape/25 bg-white shadow-md"
-            : "border-line bg-white shadow-sm hover:shadow-md"
+            ? "border-grape/40 bg-card"
+            : "border-line bg-card hover:border-line-strong"
       }`}
     >
       <button
@@ -280,15 +280,15 @@ function Estatistica({
   rotulo: string;
   valor: React.ReactNode;
   detalhe?: React.ReactNode;
-  tom: "sun" | "flame" | "sky";
+  tom: "sun" | "flame" | "grape";
 }) {
   const cor = {
-    sun: "bg-sun text-ink",
+    sun: "bg-sun text-gray-950",
     flame: "bg-flame text-white",
-    sky: "bg-sky text-white",
+    grape: "bg-grape text-white",
   }[tom];
   return (
-    <div className="flex min-w-0 flex-col rounded-2xl bg-white/95 p-3 shadow-sm sm:p-4">
+    <div className="flex min-w-0 flex-col rounded-2xl border border-line bg-gray-50/80 p-3 sm:p-4">
       <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full ${cor}`} aria-hidden>
         {icone}
       </span>
@@ -362,18 +362,18 @@ export default function TrilhaCursoPage() {
   return (
     <div className="mx-auto max-w-3xl space-y-7">
       {/* Cabeçalho com estatísticas e próximo passo */}
-      <div className="relative overflow-hidden rounded-[1.75rem] bg-gradient-to-br from-grape via-grape to-grape-bright p-4 pb-5 text-white shadow-lg sm:p-6">
+      <div className="relative overflow-hidden rounded-[1.75rem] border border-line bg-card p-4 pb-5 sm:p-6">
         <span
-          className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-candy-bright/40 blur-2xl"
+          className="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full bg-grape/30 blur-3xl"
           aria-hidden
         />
         <span
-          className="pointer-events-none absolute -bottom-24 -left-10 h-56 w-56 rounded-full bg-sky-bright/35 blur-2xl"
+          className="pointer-events-none absolute -bottom-28 -left-12 h-56 w-56 rounded-full bg-candy-bright/10 blur-3xl"
           aria-hidden
         />
         <div className="relative">
-          <h1 className="text-[1.7rem] font-semibold leading-tight sm:text-3xl">Meu curso de inglês</h1>
-          <p className="mt-1 text-white/85">Siga a trilha no seu ritmo: uma lição de cada vez.</p>
+          <h1 className="text-[1.7rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl">Meu curso de inglês</h1>
+          <p className="mt-1 text-ink-soft">Siga a trilha no seu ritmo: uma lição de cada vez.</p>
 
           <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
             <Estatistica
@@ -399,7 +399,7 @@ export default function TrilhaCursoPage() {
               }
             />
             <Estatistica
-              tom="sky"
+              tom="grape"
               icone={<Repeat2 className="h-4 w-4" />}
               rotulo="Revisões"
               valor={perfil.revisoesPendentes}
@@ -407,7 +407,7 @@ export default function TrilhaCursoPage() {
                 perfil.revisoesPendentes > 0 ? (
                   <Link
                     href="/aluno/curso/revisao"
-                    className="mt-1 inline-flex min-h-[32px] items-center rounded-full bg-sky px-3 text-xs font-semibold text-white hover:bg-sky-strong"
+                    className="mt-1 inline-flex min-h-[32px] items-center rounded-full bg-grape px-3 text-xs font-semibold text-white hover:bg-grape-strong"
                   >
                     Revisar agora
                   </Link>
@@ -419,7 +419,7 @@ export default function TrilhaCursoPage() {
           </div>
 
           {passo.tipo === "licao" && (
-            <div className="mt-4 flex flex-col gap-3 rounded-2xl bg-white p-4 text-ink shadow-md sm:flex-row sm:items-center">
+            <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-grape/30 bg-grape-mist p-4 text-ink sm:flex-row sm:items-center">
               <div className="flex min-w-0 flex-1 items-center gap-3">
                 <span
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-grape-soft text-grape"
@@ -439,7 +439,7 @@ export default function TrilhaCursoPage() {
           )}
 
           {passo.tipo === "teste" && (
-            <div className="mt-4 flex flex-col gap-3 rounded-2xl bg-white p-4 text-ink shadow-md sm:flex-row sm:items-center">
+            <div className="mt-4 flex flex-col gap-3 rounded-2xl border border-grape/30 bg-grape-mist p-4 text-ink sm:flex-row sm:items-center">
               <div className="flex min-w-0 flex-1 items-center gap-3">
                 <span
                   className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sun-soft text-sun-ink"
@@ -466,7 +466,7 @@ export default function TrilhaCursoPage() {
           )}
 
           {passo.tipo === "fim" && (
-            <p className="mt-4 rounded-2xl bg-white p-4 text-sm font-semibold text-success-ink">
+            <p className="mt-4 rounded-2xl border border-success/30 bg-success-soft p-4 text-sm font-semibold text-success-ink">
               🎉 Parabéns! Você concluiu todo o conteúdo publicado até agora. Novas lições aparecem aqui assim que forem
               publicadas.
             </p>
@@ -486,7 +486,7 @@ export default function TrilhaCursoPage() {
                 key={m.id}
                 aria-disabled={!ativa}
                 className={`w-[78%] shrink-0 snap-start rounded-2xl border-2 p-4 md:w-auto ${
-                  ativa ? "border-grape bg-white shadow-sm" : "border-dashed border-line-strong bg-white/50"
+                  ativa ? "border-grape/60 bg-card" : "border-dashed border-line-strong bg-transparent"
                 }`}
               >
                 <div className="flex items-center justify-between gap-2">
@@ -526,7 +526,7 @@ export default function TrilhaCursoPage() {
             <section key={nivel.id} aria-labelledby={`nivel-${nivel.id}`} className="space-y-4">
               <div>
                 <h2 id={`nivel-${nivel.id}`} className="flex items-center gap-2.5 text-xl font-semibold text-ink">
-                  <span className="rounded-xl bg-ink px-2.5 py-1 font-display text-sm text-white">{nivel.codigo}</span>
+                  <span className="rounded-xl bg-grape px-2.5 py-1 font-display text-sm text-white">{nivel.codigo}</span>
                   {nivel.nome}
                 </h2>
                 {nivel.descricao && <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{nivel.descricao}</p>}

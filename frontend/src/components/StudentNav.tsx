@@ -33,7 +33,7 @@ export function StudentNav({
     return (
       <nav
         aria-label="Navegação do aluno"
-        className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white/95 px-2 pt-1.5 backdrop-blur-md md:hidden"
+        className="pb-safe fixed inset-x-0 bottom-0 z-40 border-t border-line bg-card/90 px-2 pt-1.5 backdrop-blur-xl backdrop-saturate-150 md:hidden"
       >
         <ul className="mx-auto grid max-w-md grid-cols-5">
           {navItems.map((item) => {

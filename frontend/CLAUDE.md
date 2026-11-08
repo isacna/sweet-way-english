@@ -68,7 +68,8 @@ Uses a `(main)` route group for shared layout. Two separate role-based areas:
 
 Contract: `docs/api-curso.md`. Types and helpers (`proximoPasso`, `respostaPreenchida`, `respostaParaEnvio`, `formatarResposta`, `lerErroApi`, thresholds) in `src/lib/curso.ts`.
 - `/aluno/curso` — trilha (`GET /curso`): XP, ofensiva, revisões pendentes, methodology card, levels → modules (accordion, `#modulo-<id>` opens one) → lessons + module-test button
-- `/aluno/curso/licao/[id]` — lesson player (`components/curso/PlayerLicao.tsx`), PPP: apresentação → prática (controlada → semicontrolada → produção, each checked via `/verificar`) → mini-quiz (sent all at once) → result
+- `/aluno/curso/licao/[id]` — lesson player (`components/curso/PlayerLicao.tsx`), PPP: apresentação → prática (controlada → semicontrolada → produção, each checked via `/verificar`) → mini-quiz (sent all at once) → result. Two columns on `lg` (lesson + sticky "Minhas notas" aside); below `lg` the notes open as a bottom sheet. Notes (`PainelNotas.tsx`, `useNotaLicao`) autosave via `PUT /curso/licoes/:id/nota`; "Anotar" buttons on rules/examples append a line. In-lesson progress (phase, practice answers/feedback and position, quiz answers) is kept in `localStorage` (`src/lib/rascunhoLicao.ts`, key `sw-licao:<userId>:<licaoId>`) so a reload resumes; cleared when the quiz is submitted
+- Presentation emphasis (`TextoDestacado.tsx`): English terms from `vocabulario` and the left side of `regras` ("EN = PT") are highlighted in the explanation and play TTS on click; `*asterisks*` in content mark terms explicitly, and after "não diga" they render as a struck-through wrong form (no audio)
 - `/aluno/curso/revisao` — Leitner review session (`GET/POST /curso/revisao`)
 - `/aluno/curso/modulo/[id]/teste` — module test: intro/rules → `POST /curso/modulos/:id/teste` (409/423/403 handled) → items grouped by skill → `POST /curso/tentativas/:id` → per-skill result
 - `components/curso/` — `Exercicio` dispatches to one renderer per `tipo` (`ExercicioMcq`, `ExercicioCloze`, `ExercicioWordOrder`, `ExercicioMatch`, `ExercicioTexto`), all sharing `PropsRenderizador` (`value`/`onChange`/`disabled`/`feedback`/`onSubmit`); `FeedbackResultado`, `ui.tsx` (progress bar, loading/notice, `classeBotao`), `ContinuarCursoCard` (dashboard card)
@@ -114,8 +115,8 @@ Parallel requests use `Promise.all`. Batch state updates use `queueMicrotask`.
 Tailwind CSS v4 design tokens live in `src/styles/globals.css` (`@theme`, not inline) — use them instead of hex values:
 - Text `ink` / `ink-soft` / `ink-faint`; surfaces `canvas`, `card`; borders `line` / `line-strong`
 - `grape` (violet, student/course actions), `sky` (logo blue; audio buttons, teacher area), `candy` (pink highlights), `sun` (XP), `flame` (streak), `success` / `danger` (+ `-soft`, `-strong`, `-bright`, `-ink` variants)
-- `accent` follows the area: violet by default, sky blue under `[data-area="professor"]` (set in the teacher layout)
-- Fonts: Fredoka (`font-display`, headings/buttons) + Figtree (body), via `next/font` in `app/layout.tsx`
+- `accent` is violet everywhere (sky blue only for the audio button). Dark theme: the tokens are redefined under `[data-tema="escuro"]` (public video screens), `[data-area="aluno"]` (student area, unless the viewer picks "claro") and `html[data-preferencia-tema="escuro"]` (`src/lib/tema.ts`); teacher area is light by default. Use tokens, not `bg-white`/palette colors, or the dark theme breaks
+- Font: Inter (`--font-sans` and `--font-display`), via `next/font` on `<html>` in `app/layout.tsx`; the public screens (`components/publico/HeroVideo.tsx`, `AuthShell`) use CSS modules
 - Helpers: `.card`, `.eyebrow`, `.bg-cotton`, `.pb-safe`; icons from `lucide-react` (pinned)
 - Course UI: `classeBotao` (3D buttons ≥ 48px) and `BarraAcao` (sticky bottom action bar) in `components/curso/ui.tsx`; form classes in `components/formStyles.ts`; login/cadastro share `AuthShell`
 - Mobile: students get a bottom tab bar (`StudentNav variant="bottom"`, hidden on lesson/review/test focus screens); teachers get a scrollable tab strip under the header

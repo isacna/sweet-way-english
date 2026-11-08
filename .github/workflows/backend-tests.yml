@@ -14,8 +14,27 @@ on:
 
 jobs:
   test:
-    name: Unit and integration tests
+    name: Type-check, unit and Postgres integration tests
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: sweetway
+          POSTGRES_PASSWORD: sweetway
+          POSTGRES_DB: sweetway_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U sweetway -d sweetway_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 20
+
+    env:
+      DATABASE_URL: postgresql://sweetway:sweetway@localhost:5432/sweetway_test
+      TEST_DATABASE_URL: postgresql://sweetway:sweetway@localhost:5432/sweetway_test
 
     defaults:
       run:
@@ -38,8 +57,23 @@ jobs:
       - name: Generate Prisma client
         run: npx prisma generate
 
-      - name: Run tests
+      - name: Validate Prisma schema
+        run: npx prisma validate
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Run unit tests
         run: npm test
+
+      - name: Apply migrations to Postgres
+        run: npx prisma migrate deploy
+
+      - name: Check schema and migrations are in sync
+        run: npx prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma --exit-code
+
+      - name: Run Postgres integration tests
+        run: npm run test:db
 
       - name: Upload coverage report
         if: always()
@@ -48,3 +82,4 @@ jobs:
           name: backend-coverage
           path: backend/coverage/
           retention-days: 7
+          if-no-files-found: ignore

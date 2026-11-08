@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /**
- * Marca compacta: o redemoinho do logo (recortado do PNG) + o nome em Fredoka.
+ * Marca compacta: o redemoinho do logo (recortado do PNG) + o nome (cor da tinta: serve no claro e no escuro).
  * Legível com 40px de altura, onde o PNG inteiro vira um borrão.
  */
 export function BrandMark({ size = "md", className = "" }: { size?: "sm" | "md" | "lg"; className?: string }) {
@@ -12,7 +12,7 @@ export function BrandMark({ size = "md", className = "" }: { size?: "sm" | "md" 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <span
-        className="relative shrink-0 overflow-hidden rounded-full"
+        className="relative shrink-0 overflow-hidden rounded-full bg-white"
         style={{ width: s, height: s }}
         aria-hidden
       >
@@ -28,14 +28,14 @@ export function BrandMark({ size = "md", className = "" }: { size?: "sm" | "md" 
       </span>
       <span className="flex flex-col leading-none" aria-hidden>
         <span
-          className={`font-display font-semibold tracking-tight text-sky ${
+          className={`font-display font-semibold tracking-tight text-ink ${
             size === "lg" ? "text-[1.7rem]" : size === "sm" ? "text-base" : "text-lg"
           }`}
         >
           Sweet Way
         </span>
         <span
-          className={`font-display font-medium tracking-[0.3em] text-sky-strong ${
+          className={`font-display font-medium tracking-[0.3em] text-ink-soft ${
             size === "lg" ? "mt-1 text-[0.72rem]" : "mt-0.5 text-[0.56rem]"
           }`}
         >

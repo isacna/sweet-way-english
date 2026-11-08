@@ -54,6 +54,13 @@ describe('MaterialController', () => {
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
+    it('returns 400 for an unknown tipo', async () => {
+      prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
+      await createMaterial(mockReq({ params: { id: '1' }, body: { titulo: 'X', tipo: 'planilha', url: 'https://x.com' } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.materialApoio.create).not.toHaveBeenCalled();
+    });
+
     it('creates material with URL and returns 201', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
       const material = { id: 3, titulo: 'Grammar PDF', tipo: 'pdf', urlArquivo: 'https://example.com/g.pdf' };

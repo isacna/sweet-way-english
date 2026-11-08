@@ -68,7 +68,7 @@ export default function TurmasPage() {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-ink">Minhas Turmas</h1>
+          <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Minhas Turmas</h1>
           <p className="text-ink-soft mt-1">
             Gerencie seus alunos e materiais por turma.
           </p>
@@ -98,7 +98,7 @@ export default function TurmasPage() {
       {carregando ? (
         <p className="text-ink-soft">Carregando turmas…</p>
       ) : turmas.length === 0 ? (
-        <div className="p-8 rounded-xl bg-white border border-gray-100 text-center">
+        <div className="p-8 rounded-xl bg-card border border-line text-center">
           <p className="text-ink-soft mb-4">Nenhuma turma ainda.</p>
           <Button href="/professor/turmas/nova" variant="primary" size="md">
             Criar primeira turma
@@ -106,7 +106,7 @@ export default function TurmasPage() {
         </div>
       ) : turmasFiltradas.length === 0 ? (
         <p className="text-ink-soft text-sm">
-          Nenhuma turma encontrada para "{busca}".
+          Nenhuma turma encontrada para &ldquo;{busca}&rdquo;.
         </p>
       ) : (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -116,7 +116,7 @@ export default function TurmasPage() {
               className="card p-6 flex flex-col"
             >
               <div className="flex items-start justify-between mb-4">
-                <h3 className="font-bold text-ink">{cls.nome}</h3>
+                <h3 className="font-semibold text-ink">{cls.nome}</h3>
               </div>
               {cls.descricao && (
                 <p className="text-sm text-ink-soft mb-3 line-clamp-2">

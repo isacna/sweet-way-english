@@ -10,7 +10,7 @@ export function ExercicioMcq({ id, conteudo, value, onChange, disabled, feedback
     <div className="space-y-3">
       {conteudo.texto && (
         <div
-          className="whitespace-pre-line rounded-2xl border border-sky/20 bg-sky-soft/60 p-4 text-[1.05rem] leading-relaxed text-ink"
+          className="whitespace-pre-line rounded-2xl border border-line bg-gray-50 p-4 text-[1.05rem] leading-relaxed text-ink"
           lang="en"
         >
           {conteudo.texto}
@@ -24,12 +24,12 @@ export function ExercicioMcq({ id, conteudo, value, onChange, disabled, feedback
           const marcada = escolhida === i;
           let estilo = marcada
             ? "border-grape bg-grape-mist text-ink shadow-[0_3px_0_0_var(--color-grape)]"
-            : "border-line-strong bg-white text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:border-grape/50 hover:bg-grape-mist/50";
+            : "border-line-strong bg-card text-ink shadow-[0_3px_0_0_var(--color-line-strong)] hover:border-grape/60 hover:bg-grape-mist";
           if (feedback) {
             const ehCerta = opcao === feedback.respostaEsperada;
             if (ehCerta) estilo = "border-success-bright bg-success-soft text-success-ink shadow-[0_3px_0_0_var(--color-success-bright)]";
             else if (marcada) estilo = "border-danger-bright bg-danger-soft text-danger-ink shadow-[0_3px_0_0_var(--color-danger-bright)]";
-            else estilo = "border-line bg-white text-ink-faint";
+            else estilo = "border-line bg-card text-ink-faint";
           }
           return (
             <button

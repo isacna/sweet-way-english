@@ -11,6 +11,7 @@ const prismaMock = vi.hoisted(() => ({
   feedback: { create: vi.fn(), findMany: vi.fn(), deleteMany: vi.fn() },
   materialApoio: { create: vi.fn(), findFirst: vi.fn(), findMany: vi.fn(), delete: vi.fn() },
   $transaction: vi.fn(),
+  $queryRaw: vi.fn(),
 }));
 
 vi.mock('../../database/client.js', () => ({ prisma: prismaMock }));
@@ -283,6 +284,56 @@ describe('Integration — HTTP API', () => {
       const res = await request(app).get('/api/conteudo').set('Authorization', professor());
       expect(res.status).toBe(500); // prisma.nivel não existe no mock
       silencio.mockRestore();
+    });
+  });
+
+  describe('legacy routes go through the async handler', () => {
+    it('turns a database error in GET /api/turmas into a 500 instead of crashing', async () => {
+      prismaMock.turma.findMany.mockRejectedValue(new Error('db down'));
+      const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const res = await request(app).get('/api/turmas').set('Authorization', mockToken({ id: 1, role: 'professor' }));
+      expect(res.status).toBe(500);
+      expect(res.body).toEqual({ error: 'Erro interno do servidor' });
+      spy.mockRestore();
+    });
+
+    it('turns a database error in POST /api/atividades/:id/submissoes into a 500', async () => {
+      prismaMock.atividade.findUnique.mockRejectedValue(new Error('db down'));
+      const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const res = await request(app)
+        .post('/api/atividades/1/submissoes')
+        .set('Authorization', mockToken({ id: 2, role: 'aluno' }))
+        .field('comentario', 'oi');
+      expect(res.status).toBe(500);
+      spy.mockRestore();
+    });
+  });
+
+  describe('activity routers', () => {
+    it('no longer accepts POST on /api/professor/atividades (was mounted twice)', async () => {
+      const res = await request(app)
+        .post('/api/professor/atividades')
+        .set('Authorization', mockToken({ id: 1, role: 'professor' }))
+        .send({ titulo: 'x' });
+      expect(res.status).toBe(404);
+      expect(prismaMock.atividade.create).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('GET /api/health', () => {
+    it('returns ok when the database answers', async () => {
+      prismaMock.$queryRaw.mockResolvedValue([{ 1: 1 }]);
+      const res = await request(app).get('/api/health');
+      expect(res.status).toBe(200);
+      expect(res.body).toEqual({ status: 'ok' });
+    });
+
+    it('returns 503 when the database is down', async () => {
+      prismaMock.$queryRaw.mockRejectedValue(new Error('connection refused'));
+      const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const res = await request(app).get('/api/health');
+      expect(res.status).toBe(503);
+      spy.mockRestore();
     });
   });
 

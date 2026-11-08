@@ -5,6 +5,10 @@ import path from 'path';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
 
+const SENHA_MIN = 6; // mesma regra do cadastro público (AuthController)
+const ERRO_SENHA = `A senha precisa ter pelo menos ${SENHA_MIN} caracteres`;
+const senhaCurta = (senha: unknown) => String(senha).trim().length < SENHA_MIN;
+
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
 async function getOrCreateConfig() {
@@ -76,11 +80,12 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
     data.nome = n;
   }
   if (email !== undefined) {
-    const e = String(email).trim();
+    const e = String(email).trim().toLowerCase();
     if (!e) { res.status(400).json({ error: 'Email não pode ser vazio' }); return; }
     data.email = e;
   }
   if (senha !== undefined && String(senha).trim()) {
+    if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
   }
 
@@ -119,11 +124,15 @@ export async function createProfessorAdmin(req: AuthRequest, res: Response) {
     res.status(400).json({ error: 'Nome, email e senha são obrigatórios' });
     return;
   }
+  if (senhaCurta(senha)) {
+    res.status(400).json({ error: ERRO_SENHA });
+    return;
+  }
 
   try {
     const hashedSenha = await bcrypt.hash(String(senha), 10);
     const professor = await prisma.usuario.create({
-      data: { nome: String(nome).trim(), email: String(email).trim(), senha: hashedSenha, papel: 'professor' },
+      data: { nome: String(nome).trim(), email: String(email).trim().toLowerCase(), senha: hashedSenha, papel: 'professor' },
       select: { id: true, nome: true, email: true, criadoEm: true },
     });
     res.status(201).json(professor);
@@ -153,11 +162,12 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
     data.nome = n;
   }
   if (email !== undefined) {
-    const e = String(email).trim();
+    const e = String(email).trim().toLowerCase();
     if (!e) { res.status(400).json({ error: 'Email não pode ser vazio' }); return; }
     data.email = e;
   }
   if (senha !== undefined && String(senha).trim()) {
+    if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
   }
 

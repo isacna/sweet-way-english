@@ -4,9 +4,9 @@ type ButtonVariant = "primary" | "secondary" | "ghost";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "rounded-xl bg-accent text-white font-semibold shadow-[0_3px_0_0_var(--color-accent-strong)] hover:bg-accent-strong active:translate-y-[2px] active:shadow-none transition-all",
+    "rounded-xl bg-accent bg-[linear-gradient(163deg,#8a63f6,#7448f0_50%,#6236dc)] text-white font-semibold shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_1px_2px_rgb(34_27_58/0.2),0_4px_12px_-4px_rgb(98_54_220/0.45)] hover:brightness-110 active:brightness-95 active:translate-y-px transition-[filter,transform]",
   secondary:
-    "rounded-xl bg-white border border-line-strong text-ink font-semibold hover:bg-gray-50 hover:border-gray-300 transition-colors",
+    "rounded-xl bg-card border border-line-strong text-ink font-semibold hover:bg-gray-50 hover:border-gray-300 transition-colors",
   ghost: "rounded-xl text-ink-soft font-semibold hover:text-ink hover:bg-gray-100 transition-colors",
 };
 

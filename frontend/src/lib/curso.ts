@@ -96,7 +96,10 @@ export type LicaoDetalhe = {
   exercicios: ExercicioPublico[];
   progresso: { concluida: boolean; melhorPercentual: number; tentativas: number };
   proximaLicaoId: number | null;
+  nota: NotaLicao | null;
 };
+
+export type NotaLicao = { texto: string; atualizadoEm: string };
 
 export type ResultadoQuiz = {
   percentual: number;

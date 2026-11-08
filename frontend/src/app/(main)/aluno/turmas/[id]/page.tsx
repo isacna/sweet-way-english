@@ -52,11 +52,11 @@ function statusAluno(a: Atividade): { label: string; key: StatusFiltro } {
 }
 
 function statusCor(key: StatusFiltro): string {
-  if (key === "aprovada") return "text-green-700";
-  if (key === "reprovada") return "text-red-600";
-  if (key === "corrigida") return "text-blue-600";
-  if (key === "enviada") return "text-amber-700";
-  return "text-accent";
+  if (key === "aprovada") return "text-success-ink";
+  if (key === "reprovada") return "text-danger-ink";
+  if (key === "corrigida") return "text-grape";
+  if (key === "enviada") return "text-sun-ink";
+  return "text-grape";
 }
 
 function ChipFiltro({
@@ -74,7 +74,7 @@ function ChipFiltro({
       onClick={onClick}
       className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors whitespace-nowrap ${
         ativo
-          ? "bg-accent text-white"
+          ? "bg-grape text-white"
           : "bg-gray-100 text-ink-soft hover:bg-gray-200"
       }`}
     >
@@ -173,7 +173,7 @@ export default function AlunoTurmaDetalhePage() {
   if (erro || !turma) {
     return (
       <div className="max-w-4xl mx-auto space-y-4">
-        <p className="text-red-600">{erro || "Turma não encontrada."}</p>
+        <p className="text-danger-ink">{erro || "Turma não encontrada."}</p>
         <Button href="/aluno/turmas" variant="secondary" size="md">
           Voltar às turmas
         </Button>
@@ -208,12 +208,12 @@ export default function AlunoTurmaDetalhePage() {
 
       {/* Mural de Avisos */}
       {avisos.length > 0 && (
-        <section className="rounded-xl border border-accent/20 bg-accent/5 overflow-hidden">
-          <div className="px-6 py-4 border-b border-accent/15 flex items-center gap-2">
+        <section className="rounded-xl border border-grape/20 bg-grape-mist overflow-hidden">
+          <div className="px-6 py-4 border-b border-grape/15 flex items-center gap-2">
             <span>📌</span>
             <h2 className="text-base font-bold text-ink">Mural de Avisos</h2>
           </div>
-          <ul className="divide-y divide-accent/10">
+          <ul className="divide-y divide-grape/10">
             {avisos.map((av) => (
               <li key={av.id} className="px-6 py-4 space-y-1">
                 <p className="font-semibold text-ink">{av.titulo}</p>
@@ -225,7 +225,7 @@ export default function AlunoTurmaDetalhePage() {
                     href={av.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline break-all"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-grape hover:underline break-all"
                   >
                     🔗 {av.link}
                   </a>
@@ -273,7 +273,7 @@ export default function AlunoTurmaDetalhePage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium text-accent hover:text-accent-strong flex items-center gap-2"
+                      className="text-sm font-medium text-grape hover:opacity-80 flex items-center gap-2"
                     >
                       <FileText aria-hidden className="h-[16px] w-[16px] shrink-0" />
                       {m.titulo}{" "}
@@ -319,7 +319,7 @@ export default function AlunoTurmaDetalhePage() {
               return (
                 <li
                   key={a.id}
-                  className="p-4 rounded-lg border border-gray-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+                  className="p-4 rounded-lg border border-line flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
                 >
                   <div className="min-w-0">
                     <p className="font-medium text-ink">{a.titulo}</p>
@@ -328,7 +328,7 @@ export default function AlunoTurmaDetalhePage() {
                       Entrega: {new Date(a.dataEntrega).toLocaleString("pt-BR")}
                     </p>
                     {a.arquivoObrigatorio && (
-                      <p className="text-xs text-amber-800 mt-1 font-medium">
+                      <p className="text-xs text-sun-ink mt-1 font-medium">
                         Arquivo obrigatório na entrega
                       </p>
                     )}

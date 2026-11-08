@@ -35,8 +35,8 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
   const idBase = `ex-${valor.chave}`;
 
   return (
-    <article className="rounded-xl border border-gray-200 bg-white">
-      <header className="flex flex-wrap items-center gap-2 px-4 py-3 border-b border-gray-100">
+    <article className="rounded-2xl border border-line bg-card shadow-sm">
+      <header className="flex flex-wrap items-center gap-2 px-4 py-3 border-b border-line">
         <span className="text-xs font-semibold text-ink-soft">#{numero}</span>
         <span className="text-xs px-2 py-0.5 rounded-full bg-accent/10 text-accent font-medium">
           {rotuloTipo[valor.tipo]}
@@ -50,7 +50,7 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
           {valor.enunciado || <span className="text-ink-soft italic">(sem enunciado)</span>}
         </button>
         {avisos.length > 0 && (
-          <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">
+          <span className="text-xs px-2 py-0.5 rounded-full bg-sun-soft text-sun-ink">
             {avisos.length} pendência{avisos.length > 1 ? "s" : ""}
           </span>
         )}
@@ -87,7 +87,7 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
             onClick={() => {
               if (window.confirm("Remover este exercício? A remoção vale ao salvar a lição.")) onRemover();
             }}
-            className="px-2 py-1 rounded text-xs font-medium text-red-600 hover:bg-red-50"
+            className="px-2 py-1 rounded text-xs font-medium text-danger-ink hover:bg-danger-soft"
           >
             Remover
           </button>
@@ -166,7 +166,7 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
           </Campo>
 
           {avisos.length > 0 && (
-            <ul className="text-xs text-amber-800 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2 list-disc list-inside">
+            <ul className="text-xs text-sun-ink bg-sun-soft border border-sun/40 rounded-lg px-3 py-2 list-disc list-inside">
               {avisos.map((a) => (
                 <li key={a}>{a}</li>
               ))}
@@ -237,9 +237,9 @@ function FormularioTipo({
                         valor.opcoes.map((x, j) => (j === i ? e.target.value : x))
                       )
                     }
-                    className={`${classeInput} ${certa ? "border-emerald-400 bg-emerald-50 font-medium" : ""}`}
+                    className={`${classeInput} ${certa ? "border-success bg-success-soft font-medium" : ""}`}
                   />
-                  {certa && <span className="text-xs font-semibold text-emerald-700 shrink-0">Correta</span>}
+                  {certa && <span className="text-xs font-semibold text-success-ink shrink-0">Correta</span>}
                   <button
                     type="button"
                     disabled={valor.opcoes.length <= 2}
@@ -249,7 +249,7 @@ function FormularioTipo({
                         valor.correta === i ? 0 : valor.correta > i ? valor.correta - 1 : valor.correta;
                       onChange({ ...valor, opcoes, correta });
                     }}
-                    className="shrink-0 px-2 text-sm text-red-600 disabled:opacity-30"
+                    className="shrink-0 px-2 text-sm text-danger-ink disabled:opacity-30"
                     aria-label={`Remover opção ${i + 1}`}
                   >
                     ×
@@ -406,7 +406,7 @@ function FormularioTipo({
                   onChange={(e) => atualizar(i, "esquerda", e.target.value)}
                   className={classeInput}
                 />
-                <span aria-hidden className="text-emerald-700">
+                <span aria-hidden className="text-success-ink">
                   ↔
                 </span>
                 <input
@@ -419,7 +419,7 @@ function FormularioTipo({
                   type="button"
                   disabled={valor.pares.length <= 2}
                   onClick={() => set("pares", valor.pares.filter((_, j) => j !== i))}
-                  className="px-2 text-sm text-red-600 disabled:opacity-30"
+                  className="px-2 text-sm text-danger-ink disabled:opacity-30"
                   aria-label={`Remover par ${i + 1}`}
                 >
                   ×

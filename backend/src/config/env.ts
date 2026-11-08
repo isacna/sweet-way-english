@@ -11,6 +11,10 @@ const envSchema = z.object({
   // Origens permitidas no CORS, separadas por vírgula
   CORS_ORIGIN: z.string().default('http://localhost:3000'),
   UPLOAD_MAX_MB: z.coerce.number().positive().default(10),
+  NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
+  // Atrás de proxy reverso (Caddy/Nginx): número de proxies confiáveis, para req.ip e o rate limit verem o IP real.
+  // 0 = sem proxy (padrão em dev).
+  TRUST_PROXY: z.coerce.number().int().min(0).default(0),
 });
 
 const parsed = envSchema.safeParse(process.env);

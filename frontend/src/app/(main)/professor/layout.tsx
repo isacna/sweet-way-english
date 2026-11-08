@@ -26,7 +26,10 @@ export default async function ProfessorLayout({
   const logoUrl = await getLogoUrl();
 
   return (
-    <div data-area="professor" className="min-h-screen bg-canvas">
+    <div
+      data-area="professor"
+      className="min-h-screen bg-canvas text-ink [&_input[type=checkbox]]:accent-accent [&_input[type=radio]]:accent-accent"
+    >
       <Navbar
         variant="dashboard"
         logoUrl={logoUrl}
