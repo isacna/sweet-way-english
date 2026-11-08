@@ -61,7 +61,7 @@ export function TeacherNav({
                     isActive ? "bg-accent-soft text-accent-strong" : "text-ink hover:bg-gray-50"
                   }`
                 : `flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full text-sm font-semibold transition-colors ${
-                    tabs ? "min-h-[40px] px-3.5" : "px-3 py-2 xl:px-3.5"
+                    tabs ? "min-h-[44px] px-3.5" : "px-3 py-2 xl:px-3.5"
                   } ${
                     isActive
                       ? tabs

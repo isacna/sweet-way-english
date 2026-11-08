@@ -50,7 +50,7 @@ export function FiltroLista({
       {/* Campo de busca */}
       <div className="relative flex-1 min-w-48">
         <svg
-          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+          className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-ink-faint"
           width="16"
           height="16"
           viewBox="0 0 24 24"
@@ -69,7 +69,8 @@ export function FiltroLista({
           value={busca}
           onChange={(e) => onBuscaChange(e.target.value)}
           placeholder={placeholderBusca}
-          className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-line-strong bg-card text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
+          aria-label={placeholderBusca}
+          className="min-h-[44px] w-full pl-9 pr-4 py-2.5 rounded-xl border border-line-strong bg-card text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent"
         />
       </div>
 
@@ -81,12 +82,7 @@ export function FiltroLista({
           value={f.valor}
           onChange={(e) => f.onChange(e.target.value)}
           aria-label={f.label}
-          className="py-2.5 pl-3 pr-8 rounded-xl border border-line-strong bg-card text-sm text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent appearance-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a4a4a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "right 0.75rem center",
-          }}
+          className="min-h-[44px] py-2.5 pl-3 pr-8 rounded-xl border border-line-strong bg-card text-sm text-ink focus:outline-none focus:ring-4 focus:ring-accent/15 focus:border-accent "
         >
           <option value="">{f.placeholder ?? `Todas as ${f.label.toLowerCase()}`}</option>
           {f.opcoes.map((op) => (
@@ -108,7 +104,7 @@ export function FiltroLista({
           <button
             type="button"
             onClick={limparTudo}
-            className="text-accent hover:text-accent-strong font-medium whitespace-nowrap"
+            className="min-h-[44px] rounded-lg px-2 text-accent hover:bg-accent-soft font-semibold whitespace-nowrap"
           >
             Limpar filtros
           </button>
