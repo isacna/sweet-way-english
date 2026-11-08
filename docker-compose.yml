@@ -65,11 +65,13 @@ services:
     build:
       context: ./frontend
       args:
-        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3333}
+        # O navegador chama /api no próprio frontend, que repassa ao backend pela rede interna do Compose.
+        # O destino do rewrite é fixado no build; o mesmo valor vai para o runtime (server components).
+        BACKEND_URL: http://backend:3333
     ports:
       - "3000:3000"
     environment:
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:3333}
+      BACKEND_URL: http://backend:3333
     depends_on:
       backend:
         condition: service_healthy

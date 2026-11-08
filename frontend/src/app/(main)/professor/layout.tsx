@@ -2,20 +2,35 @@ import { Navbar } from "@/components/Navbar";
 import { NavbarUser } from "@/components/NavbarUser";
 import { TeacherNav } from "@/components/TeacherNav";
 
+/**
+ * Server component: não passa pelo rewrite `/api`, então chama o backend direto (`BACKEND_URL`, lido em runtime).
+ * O endereço da logo vem absoluto (`APP_URL` do backend); se for a rota da própria API, vira relativo para o navegador
+ * buscá-lo na mesma origem (funciona pelo IP da rede e atrás do Caddy).
+ */
 async function getLogoUrl(): Promise<string | null> {
   try {
-    const base = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3333";
+    const base = (process.env.BACKEND_URL ?? "http://localhost:3333").replace(/\/$/, "");
     const res = await fetch(`${base}/api/configuracoes`, {
       next: { revalidate: 60 },
     });
     if (res.ok) {
-      const data = await res.json();
-      return data.logoUrl ?? null;
+      const data = (await res.json()) as { logoUrl?: string | null };
+      return logoNaMesmaOrigem(data.logoUrl ?? null);
     }
   } catch {
     // fallback para logo estático
   }
   return null;
+}
+
+function logoNaMesmaOrigem(url: string | null): string | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url, "http://interno");
+    return u.pathname.startsWith("/api/") ? `${u.pathname}${u.search}` : url;
+  } catch {
+    return url;
+  }
 }
 
 export default async function ProfessorLayout({

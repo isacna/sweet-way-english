@@ -1,16 +1,9 @@
-const API_PORTA = 3333;
-
 /**
- * URL do backend. Com `NEXT_PUBLIC_API_URL` definida, usa ela; senão, usa o mesmo host
- * pelo qual a página foi aberta (localhost, IP da rede…) na porta 3333 — assim a troca
- * de IP do computador não exige editar o .env.
+ * Base das chamadas à API: sempre relativa (`/api`, mesma origem). Em dev e no `next start` o Next repassa `/api/*`
+ * ao backend (`rewrites` em `next.config.ts`, `BACKEND_URL`); em produção o Caddy manda `/api/*` direto ao backend.
+ * Assim o cookie de sessão é do próprio site e o acesso pelo IP da rede (celular) funciona sem configurar nada.
  */
-export function apiUrl(): string {
-  const configurada = process.env.NEXT_PUBLIC_API_URL?.trim();
-  if (configurada) return configurada.replace(/\/$/, "");
-  if (typeof window === "undefined") return `http://localhost:${API_PORTA}`;
-  return `${window.location.protocol}//${window.location.hostname}:${API_PORTA}`;
-}
+export const API_BASE = "/api";
 
 /** Rotas REST do backend (`server.ts` monta em `/api`). Ver `backend/src/http/routes/index.ts`. */
 export const apiPaths = {
@@ -74,7 +67,7 @@ export async function apiFetch(path: string, init: RequestInit = {}) {
   if (init.body && !(init.body instanceof FormData)) {
     headers.set("Content-Type", "application/json");
   }
-  const res = await fetch(`${apiUrl()}/api${path}`, { ...init, headers, credentials: "include" });
+  const res = await fetch(`${API_BASE}${path}`, { ...init, headers, credentials: "include" });
   // Sessão expirada ou inválida: limpa o cache do usuário para a página mandar ao login
   if (res.status === 401 && typeof window !== "undefined") {
     limparUsuario();
@@ -103,10 +96,4 @@ export async function sair() {
     // Sem rede: o cache local sai mesmo assim
   }
   limparUsuario();
-}
-
-export function assetUrl(path: string | null | undefined): string | null {
-  if (!path) return null;
-  if (path.startsWith("http")) return path;
-  return `${apiUrl()}${path}`;
 }
