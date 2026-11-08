@@ -3,9 +3,16 @@ generator client {
   output   = "../src/database/generated/prisma"
 }
 
+// PostgreSQL (desde a F1 de docs/plano-producao.md). A URL vem de DATABASE_URL (prisma.config.ts).
+// As migrações antigas do SQLite estão arquivadas em prisma/migrations-sqlite-arquivo/.
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
+
+// Convenções:
+//  - `criadoEm` + `atualizadoEm` nos modelos editáveis;
+//  - toda chave estrangeira tem índice (Postgres não cria sozinho) e `onDelete` explícito;
+//  - os valores dos enums são os mesmos strings da API (o contrato e o frontend não mudam).
 
 enum Papel {
   aluno
@@ -17,6 +24,7 @@ enum Papel {
 model Usuario {
   id                         Int              @id @default(autoincrement())
   nome                       String
+  // Sempre minúsculo (normalizado na aplicação), por isso o índice único já não diferencia maiúsculas.
   email                      String           @unique
   senha                      String
   papel                      Papel
@@ -27,6 +35,7 @@ model Usuario {
   responsavelEmail           String?
   consentimentoResponsavelEm DateTime?
   criadoEm                   DateTime         @default(now())
+  atualizadoEm               DateTime         @updatedAt
   turmas                     Turma[]
   feedbacks                  Feedback[]
   matriculas                 Matricula[]
@@ -36,6 +45,7 @@ model Usuario {
   revisoes                   RevisaoItem[]
   tentativasTeste            TentativaTeste[]
   notasLicao                 NotaLicao[]
+  licoesRevisadas            Licao[]          @relation("LicaoRevisor")
 }
 
 model Turma {
@@ -45,11 +55,15 @@ model Turma {
   codigoConvite String          @unique
   professorId   Int
   criadoEm      DateTime        @default(now())
-  professor     Usuario         @relation(fields: [professorId], references: [id])
+  atualizadoEm  DateTime        @updatedAt
+  // Restrict: apagar uma professora exige decidir antes o destino das turmas (ConfigController faz isso)
+  professor     Usuario         @relation(fields: [professorId], references: [id], onDelete: Restrict)
   matriculas    Matricula[]
   atividades    Atividade[]
   materiais     MaterialApoio[]
   avisos        Aviso[]
+
+  @@index([professorId])
 }
 
 model Aviso {
@@ -59,19 +73,27 @@ model Aviso {
   link     String?
   turmaId  Int
   criadoEm DateTime @default(now())
-  turma    Turma    @relation(fields: [turmaId], references: [id])
+  turma    Turma    @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+
+  @@index([turmaId])
+}
+
+enum StatusMatricula {
+  ativa
+  inativa
 }
 
 model Matricula {
-  id            Int      @id @default(autoincrement())
+  id            Int             @id @default(autoincrement())
   alunoId       Int
   turmaId       Int
-  dataMatricula DateTime @default(now())
-  status        String   @default("ativa")
-  aluno         Usuario  @relation(fields: [alunoId], references: [id])
-  turma         Turma    @relation(fields: [turmaId], references: [id])
+  dataMatricula DateTime        @default(now())
+  status        StatusMatricula @default(ativa)
+  aluno         Usuario         @relation(fields: [alunoId], references: [id], onDelete: Cascade)
+  turma         Turma           @relation(fields: [turmaId], references: [id], onDelete: Cascade)
 
   @@unique([alunoId, turmaId])
+  @@index([turmaId])
 }
 
 model Atividade {
@@ -83,8 +105,11 @@ model Atividade {
   link               String?
   turmaId            Int
   criadoEm           DateTime    @default(now())
-  turma              Turma       @relation(fields: [turmaId], references: [id])
+  atualizadoEm       DateTime    @updatedAt
+  turma              Turma       @relation(fields: [turmaId], references: [id], onDelete: Cascade)
   submissoes         Submissao[]
+
+  @@index([turmaId])
 }
 
 enum StatusSubmissao {
@@ -95,42 +120,60 @@ enum StatusSubmissao {
 }
 
 model Submissao {
-  id          Int             @id @default(autoincrement())
-  atividadeId Int
-  alunoId     Int
-  conteudo    String?
-  arquivoUrl  String?
-  dataEnvio   DateTime        @default(now())
-  status      StatusSubmissao @default(pendente)
-  atividade   Atividade       @relation(fields: [atividadeId], references: [id])
-  aluno       Usuario         @relation(fields: [alunoId], references: [id])
-  feedback    Feedback?
+  id           Int             @id @default(autoincrement())
+  atividadeId  Int
+  alunoId      Int
+  conteudo     String?
+  arquivoUrl   String?
+  dataEnvio    DateTime        @default(now())
+  status       StatusSubmissao @default(pendente)
+  atualizadoEm DateTime        @updatedAt
+  atividade    Atividade       @relation(fields: [atividadeId], references: [id], onDelete: Cascade)
+  aluno        Usuario         @relation(fields: [alunoId], references: [id], onDelete: Cascade)
+  feedback     Feedback?
+
+  @@index([atividadeId])
+  @@index([alunoId])
 }
 
 model Feedback {
-  id          Int       @id @default(autoincrement())
-  submissaoId Int       @unique
-  professorId Int
-  comentario  String
-  nota        Float
-  criadoEm    DateTime  @default(now())
-  submissao   Submissao @relation(fields: [submissaoId], references: [id])
-  professor   Usuario   @relation(fields: [professorId], references: [id])
+  id           Int       @id @default(autoincrement())
+  submissaoId  Int       @unique
+  professorId  Int
+  comentario   String
+  nota         Float
+  criadoEm     DateTime  @default(now())
+  atualizadoEm DateTime  @updatedAt
+  submissao    Submissao @relation(fields: [submissaoId], references: [id], onDelete: Cascade)
+  // Restrict: notas dadas não somem junto com a conta da professora sem uma decisão explícita
+  professor    Usuario   @relation(fields: [professorId], references: [id], onDelete: Restrict)
+
+  @@index([professorId])
 }
 
 model ConfiguracaoApp {
-  id      Int     @id @default(1)
-  logoUrl String?
+  id           Int      @id @default(1)
+  logoUrl      String?
+  atualizadoEm DateTime @updatedAt
+}
+
+enum TipoMaterial {
+  pdf
+  audio
+  video
+  link
 }
 
 model MaterialApoio {
-  id         Int      @id @default(autoincrement())
+  id         Int          @id @default(autoincrement())
   titulo     String
-  tipo       String // "pdf" | "audio" | "video" | "link"
+  tipo       TipoMaterial
   urlArquivo String
   turmaId    Int
-  criadoEm   DateTime @default(now())
-  turma      Turma    @relation(fields: [turmaId], references: [id])
+  criadoEm   DateTime     @default(now())
+  turma      Turma        @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+
+  @@index([turmaId])
 }
 
 // ─── Curso autoguiado (A1 → B1) ──────────────────────────────────────────────
@@ -143,13 +186,48 @@ enum StatusConteudo {
   publicado
 }
 
+// Etapas do fluxo PPP: controlada → semicontrolada → producao → quiz (ETAPAS em schema.ts)
+enum EtapaExercicio {
+  controlada
+  semicontrolada
+  producao
+  quiz
+}
+
+// Tipos de item (discriminador `tipo` em schema.ts); vale para Exercicio e ItemTeste
+enum TipoExercicio {
+  mcq
+  cloze
+  word_order
+  match
+  translate
+  error_correction
+}
+
+// HABILIDADES_TESTE em schema.ts
+enum HabilidadeTeste {
+  gramatica_vocabulario
+  leitura
+  escrita
+}
+
+// Só "gramatica" está disponível na v1
+enum Metodologia {
+  gramatica
+  comunicativa
+  gamificada
+  input
+}
+
 model Nivel {
-  id        Int      @id @default(autoincrement())
-  codigo    String   @unique // "A1"
-  nome      String
-  descricao String?
-  ordem     Int
-  modulos   Modulo[]
+  id           Int      @id @default(autoincrement())
+  codigo       String   @unique // "A1"
+  nome         String
+  descricao    String?
+  ordem        Int
+  criadoEm     DateTime @default(now())
+  atualizadoEm DateTime @updatedAt
+  modulos      Modulo[]
 }
 
 model Modulo {
@@ -166,12 +244,14 @@ model Modulo {
   funcao          String
   pronuncia       String?
   status          StatusConteudo   @default(revisao)
+  criadoEm        DateTime         @default(now())
   atualizadoEm    DateTime         @updatedAt
-  nivel           Nivel            @relation(fields: [nivelId], references: [id])
+  nivel           Nivel            @relation(fields: [nivelId], references: [id], onDelete: Restrict)
   licoes          Licao[]
   itensTeste      ItemTeste[]
   tentativasTeste TentativaTeste[]
 
+  // o índice composto também cobre buscas por nivelId
   @@unique([nivelId, ordem])
 }
 
@@ -187,56 +267,67 @@ model Licao {
   status           StatusConteudo   @default(revisao)
   revisadoPorId    Int?
   revisadoEm       DateTime?
+  criadoEm         DateTime         @default(now())
   atualizadoEm     DateTime         @updatedAt
   modulo           Modulo           @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+  revisadoPor      Usuario?         @relation("LicaoRevisor", fields: [revisadoPorId], references: [id], onDelete: SetNull)
   exercicios       Exercicio[]
   progressos       ProgressoLicao[]
   notas            NotaLicao[]
 
   @@unique([moduloId, ordem])
+  @@index([revisadoPorId])
 }
 
-// Etapas do fluxo PPP: controlada → semicontrolada → producao → quiz
 model Exercicio {
-  id         Int           @id @default(autoincrement())
-  licaoId    Int
-  ordem      Int
-  etapa      String // controlada | semicontrolada | producao | quiz
-  tipo       String // mcq | cloze | word_order | match | translate | error_correction
-  enunciado  String
-  conteudo   Json // parte pública (vai para o navegador)
-  gabarito   Json // NUNCA vai para o navegador do aluno
-  explicacao String // feedback em PT mostrado após responder
-  tagsErro   Json? // string[] — erros típicos de brasileiros (ex.: "terceira_pessoa_s")
-  licao      Licao         @relation(fields: [licaoId], references: [id], onDelete: Cascade)
-  revisoes   RevisaoItem[]
+  id           Int             @id @default(autoincrement())
+  licaoId      Int
+  ordem        Int
+  etapa        EtapaExercicio
+  tipo         TipoExercicio
+  enunciado    String
+  conteudo     Json // parte pública (vai para o navegador)
+  gabarito     Json // NUNCA vai para o navegador do aluno
+  explicacao   String // feedback em PT mostrado após responder
+  tagsErro     Json? // string[] — erros típicos de brasileiros (ex.: "terceira_pessoa_s")
+  criadoEm     DateTime        @default(now())
+  atualizadoEm DateTime        @updatedAt
+  licao        Licao           @relation(fields: [licaoId], references: [id], onDelete: Cascade)
+  revisoes     RevisaoItem[]
+
+  @@index([licaoId])
 }
 
 model ItemTeste {
-  id         Int    @id @default(autoincrement())
+  id         Int             @id @default(autoincrement())
   moduloId   Int
   forma      Int // formas paralelas: 1, 2…
   ordem      Int
-  habilidade String // gramatica_vocabulario | leitura | escrita
-  tipo       String
+  habilidade HabilidadeTeste
+  tipo       TipoExercicio
   enunciado  String
   conteudo   Json
   gabarito   Json
   explicacao String
-  modulo     Modulo @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+  criadoEm   DateTime        @default(now())
+  modulo     Modulo          @relation(fields: [moduloId], references: [id], onDelete: Cascade)
+
+  @@index([moduloId])
 }
 
 // ─── Estado do aprendiz ─────────────────────────────────────────────────────
 
 model PerfilAprendiz {
-  id             Int       @id @default(autoincrement())
-  usuarioId      Int       @unique
-  metodologia    String    @default("gramatica") // gramatica | comunicativa | gamificada | input (só "gramatica" na v1)
-  xp             Int       @default(0)
-  ofensivaAtual  Int       @default(0)
-  ofensivaMaxima Int       @default(0)
+  id             Int         @id @default(autoincrement())
+  usuarioId      Int         @unique
+  metodologia    Metodologia @default(gramatica)
+  xp             Int         @default(0)
+  ofensivaAtual  Int         @default(0)
+  ofensivaMaxima Int         @default(0)
   ultimoEstudoEm DateTime?
-  usuario        Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  criadoEm       DateTime    @default(now())
+  atualizadoEm   DateTime    @updatedAt
+  usuario        Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
 }
 
 model ProgressoLicao {
@@ -247,11 +338,13 @@ model ProgressoLicao {
   melhorPercentual Int       @default(0)
   tentativas       Int       @default(0)
   concluidaEm      DateTime?
+  criadoEm         DateTime  @default(now())
   atualizadoEm     DateTime  @updatedAt
   usuario          Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
   licao            Licao     @relation(fields: [licaoId], references: [id], onDelete: Cascade)
 
   @@unique([usuarioId, licaoId])
+  @@index([licaoId])
 }
 
 // Anotações livres do aluno em cada lição (só ele vê)
@@ -260,27 +353,32 @@ model NotaLicao {
   usuarioId    Int
   licaoId      Int
   texto        String
+  criadoEm     DateTime @default(now())
   atualizadoEm DateTime @updatedAt
   usuario      Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
   licao        Licao    @relation(fields: [licaoId], references: [id], onDelete: Cascade)
 
   @@unique([usuarioId, licaoId])
+  @@index([licaoId])
 }
 
 // Repetição espaçada (Leitner, caixas 1–5) dos exercícios que o aluno errou
 model RevisaoItem {
-  id          Int       @id @default(autoincrement())
-  usuarioId   Int
-  exercicioId Int
-  caixa       Int       @default(1)
-  proximaEm   DateTime
-  acertos     Int       @default(0)
-  erros       Int       @default(0)
-  usuario     Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
-  exercicio   Exercicio @relation(fields: [exercicioId], references: [id], onDelete: Cascade)
+  id           Int       @id @default(autoincrement())
+  usuarioId    Int
+  exercicioId  Int
+  caixa        Int       @default(1)
+  proximaEm    DateTime
+  acertos      Int       @default(0)
+  erros        Int       @default(0)
+  criadoEm     DateTime  @default(now())
+  atualizadoEm DateTime  @updatedAt
+  usuario      Usuario   @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  exercicio    Exercicio @relation(fields: [exercicioId], references: [id], onDelete: Cascade)
 
   @@unique([usuarioId, exercicioId])
   @@index([usuarioId, proximaEm])
+  @@index([exercicioId])
 }
 
 model TentativaTeste {
@@ -299,4 +397,5 @@ model TentativaTeste {
   modulo        Modulo    @relation(fields: [moduloId], references: [id], onDelete: Cascade)
 
   @@index([usuarioId, moduloId])
+  @@index([moduloId])
 }
