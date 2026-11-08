@@ -124,13 +124,14 @@ describe('AuthController', () => {
       );
     });
 
-    it('falls back to the lowercase email', async () => {
-      prismaMock.usuario.findUnique
-        .mockResolvedValueOnce(null)
-        .mockResolvedValueOnce({ id: 2, nome: 'Bob', email: 'bob@t.com', senha: 'hashed', papel: 'aluno', admin: false });
+    it('looks the user up once by the normalized email', async () => {
+      prismaMock.usuario.findUnique.mockResolvedValueOnce({
+        id: 2, nome: 'Bob', email: 'bob@t.com', senha: 'hashed', papel: 'aluno', admin: false,
+      });
       (bcrypt.compare as any).mockResolvedValue(true);
-      await login({ body: { email: 'Bob@T.com', senha: '123' } } as any, res);
-      expect(prismaMock.usuario.findUnique).toHaveBeenLastCalledWith({ where: { email: 'bob@t.com' } });
+      await login({ body: { email: ' Bob@T.com ', senha: '123' } } as any, res);
+      expect(prismaMock.usuario.findUnique).toHaveBeenCalledTimes(1);
+      expect(prismaMock.usuario.findUnique).toHaveBeenCalledWith({ where: { email: 'bob@t.com' } });
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ token: 'mock_token' }));
     });
 

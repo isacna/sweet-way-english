@@ -63,7 +63,7 @@ Um **curso de inglês autoguiado do básico ao intermediário** (CEFR **A1 → A
 4. **FSRS (`ts-fsrs`)** como camada de memória comum a todas as metodologias.
 5. **IA com portões determinísticos** (lista de vocabulário CEFR-J/NGSL, integridade do gabarito, duplicatas) + **juiz cego** + **revisão da professora**.
 6. **Fala:** TTS em cache (custo por conteúdo, não por aluno), Web Speech grátis para "repita a frase", Azure Pronunciation Assessment para nota de pronúncia, Gemini só para explicar em português.
-7. **Mudar de SQLite para Postgres** antes de abrir cadastro público (Fase 2).
+7. **Mudar de SQLite para Postgres** antes de abrir cadastro público (Fase 2). *Feito na F1 de `docs/plano-producao.md`.*
 8. **Certificado de "conclusão alinhada ao CEFR"**, nunca "certificado CEFR" ou "Cambridge".
 
 ---

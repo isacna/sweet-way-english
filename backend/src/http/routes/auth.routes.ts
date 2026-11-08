@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { registerStudent, login } from '../controllers/AuthController.js';
+import { h } from '../asyncHandler.js';
 
 const router = Router();
 
@@ -15,7 +16,7 @@ const authLimiter = rateLimit({
 });
 
 // Professores não se cadastram sozinhos: são criados pelo admin em /admin/professores
-router.post('/register/aluno', authLimiter, registerStudent);
-router.post('/login', authLimiter, login);
+router.post('/register/aluno', authLimiter, h(registerStudent));
+router.post('/login', authLimiter, h(login));
 
 export { router as authRouter };

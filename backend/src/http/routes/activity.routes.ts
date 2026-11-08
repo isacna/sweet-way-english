@@ -1,14 +1,15 @@
 import { Router } from 'express';
 import { authenticateToken } from '../middlewares/auth.js';
 import { createActivity, updateActivity, listActivitiesByClass } from '../controllers/ActivityController.js';
-
-const router = Router({ mergeParams: true });
+import { h } from '../asyncHandler.js';
 
 // Mounted at /turmas/:turmaId/atividades
-router.post('/', authenticateToken, createActivity as any);
-router.get('/', authenticateToken, listActivitiesByClass as any);
+const activityRouter = Router({ mergeParams: true });
+activityRouter.post('/', authenticateToken, h(createActivity));
+activityRouter.get('/', authenticateToken, h(listActivitiesByClass));
 
 // Mounted at /professor/atividades
-router.patch('/:id', authenticateToken, updateActivity as any);
+const professorActivityRouter = Router();
+professorActivityRouter.patch('/:id', authenticateToken, h(updateActivity));
 
-export { router as activityRouter };
+export { activityRouter, professorActivityRouter };
