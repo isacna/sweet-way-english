@@ -36,7 +36,8 @@ export function logRequisicoes(log: Logger = loggerPadrao) {
     customSuccessMessage: (req, res) => `${req.method} ${caminho((req as { originalUrl?: string }).originalUrl ?? req.url)} ${res.statusCode}`,
     customErrorMessage: (req, res) => `${req.method} ${caminho((req as { originalUrl?: string }).originalUrl ?? req.url)} ${res.statusCode}`,
     serializers: {
-      req: (req: { id?: unknown; method?: string; url?: string }) => ({ id: req.id, method: req.method, path: caminho(req.url) }),
+      // O id já vai em `reqId` (quietReqLogger)
+      req: (req: { method?: string; url?: string }) => ({ method: req.method, path: caminho(req.url) }),
       res: (res: { statusCode?: number }) => ({ status: res.statusCode }),
     },
   });

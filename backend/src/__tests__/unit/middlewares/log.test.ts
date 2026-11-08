@@ -59,8 +59,8 @@ describe('request logging (pino-http)', () => {
       msg: 'POST /api/coisa 201',
     });
     expect(typeof linha.duracaoMs).toBe('number');
-    expect(linha.req.id).toBe(r.headers['x-request-id']);
-    expect(Object.keys(linha.req).sort()).toEqual(['id', 'method', 'path']);
+    expect(linha.reqId).toBe(r.headers['x-request-id']);
+    expect(Object.keys(linha.req).sort()).toEqual(['method', 'path']);
   });
 
   it('honours a safe X-Request-Id and replaces an unsafe one', async () => {
@@ -70,7 +70,7 @@ describe('request logging (pino-http)', () => {
     expect(a.headers['x-request-id']).toBe('proxy-123.abc');
     const b = await request(app).post('/api/coisa').set('X-Request-Id', 'mau<script>ç');
     expect(b.headers['x-request-id']).toMatch(/^[0-9a-f-]{36}$/);
-    expect(cap.objetos().map((l) => l.req.id)).toEqual(['proxy-123.abc', b.headers['x-request-id']]);
+    expect(cap.objetos().map((l) => l.reqId)).toEqual(['proxy-123.abc', b.headers['x-request-id']]);
   });
 
   it('logs a 500 at error level with the stack, tied to the request id', async () => {

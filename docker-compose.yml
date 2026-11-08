@@ -38,6 +38,8 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       # Proxies reversos na frente da API (Caddy = 1); 0 quando a porta 3333 é acessada direto
       TRUST_PROXY: ${TRUST_PROXY:-0}
+      # Logs JSON (pino) no stdout: fatal | error | warn | info | debug | trace | silent
+      LOG_LEVEL: ${LOG_LEVEL:-info}
       # Seed só roda com SEED_ON_START=1 (ex.: na primeira subida); veja backend/prisma/seed.ts
       SEED_ON_START: ${SEED_ON_START:-0}
       SEED_DEMO: ${SEED_DEMO:-}
