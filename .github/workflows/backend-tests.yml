@@ -47,7 +47,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
           cache-dependency-path: backend/package-lock.json
 
@@ -65,6 +65,12 @@ jobs:
 
       - name: Run unit tests
         run: npm test
+
+      - name: Validate course content
+        run: npm run conteudo:validar
+
+      - name: Production build (tsc -> dist/)
+        run: npm run build
 
       - name: Apply migrations to Postgres
         run: npx prisma migrate deploy

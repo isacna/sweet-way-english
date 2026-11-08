@@ -1,0 +1,142 @@
+# Produção na VPS: Caddy (HTTPS) → frontend (Next standalone) e backend (API compilada) → PostgreSQL, mais o backup diário.
+# Só o Caddy publica portas (80/443). Banco, API e frontend ficam na rede interna do Compose.
+#
+#   cp deploy/.env.prod.example .env      # e preencha
+#   docker compose -f docker-compose.prod.yml pull     # imagens publicadas pelo CD no GHCR
+#   docker compose -f docker-compose.prod.yml up -d
+#
+# Sem imagens publicadas (ex.: teste local), `up -d --build` constrói a partir do código. Passo a passo: docs/deploy.md.
+
+# Nome fixo: volumes previsíveis (sweetway_pgdata, sweetway_uploads_data...) e sem colidir com o docker-compose.yml de dev.
+name: sweetway
+
+services:
+  caddy:
+    image: caddy:2.10-alpine
+    # Na VPS ficam 80/443. PORTA_HTTP/PORTA_HTTPS só para testar numa máquina onde elas já estão ocupadas.
+    ports:
+      - "${PORTA_HTTP:-80}:80"
+      - "${PORTA_HTTPS:-443}:443"
+      - "${PORTA_HTTPS:-443}:443/udp"
+    environment:
+      # Domínio público (ex.: sweetwayenglish.com.br): o Caddy emite e renova o certificado HTTPS sozinho.
+      # Para testar sem domínio, use SITE_ENDERECO=http://localhost (só HTTP, sem certificado).
+      SITE_ENDERECO: "${SITE_ENDERECO:?Defina SITE_ENDERECO no .env, o domínio ou http://localhost para testar}"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_started
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sweetway}
+      POSTGRES_USER: ${POSTGRES_USER:-sweetway}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD no .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    shm_size: 128mb
+
+  backend:
+    image: ghcr.io/${GHCR_DONO:-isacna}/sweet-way-english-backend:${IMAGEM_TAG:-latest}
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://${POSTGRES_USER:-sweetway}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sweetway}}
+      JWT_SECRET: ${JWT_SECRET:?Defina JWT_SECRET no .env (pelo menos 16 caracteres)}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+      # Origem pública do site (https://dominio). Vale para links de e-mail e para a URL do logo.
+      APP_URL: "${URL_PUBLICA:?Defina URL_PUBLICA no .env, ex. https://sweetwayenglish.com.br}"
+      FRONTEND_URL: ${URL_PUBLICA}
+      CORS_ORIGIN: ${URL_PUBLICA}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-Sweet Way English <onboarding@resend.dev>}
+      NODE_ENV: production
+      # Um proxy (Caddy) na frente: o IP real do aluno vem no X-Forwarded-For (limite de tentativas de login por IP)
+      TRUST_PROXY: "1"
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      UPLOAD_MAX_MB: ${UPLOAD_MAX_MB:-10}
+      SEED_ON_START: ${SEED_ON_START:-0}
+      SEED_DEMO: ${SEED_DEMO:-}
+      SEED_PUBLICAR_CONTEUDO: ${SEED_PUBLICAR_CONTEUDO:-}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_SENHA: ${ADMIN_SENHA:-}
+      ADMIN_NOME: ${ADMIN_NOME:-}
+    # Só volume de dados. Nunca monte nada sobre /app/prisma: migrações e conteúdo vêm da imagem.
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:3333/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+    logging: &logs
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "5"
+
+  frontend:
+    image: ghcr.io/${GHCR_DONO:-isacna}/sweet-way-english-frontend:${IMAGEM_TAG:-latest}
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://backend:3333
+    environment:
+      BACKEND_URL: http://backend:3333
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: *logs
+
+  # pg_dump diário + cópia dos uploads, com retenção local; opcionalmente criptografa e envia para fora (rclone).
+  backup:
+    image: ghcr.io/${GHCR_DONO:-isacna}/sweet-way-english-backup:${IMAGEM_TAG:-latest}
+    build:
+      context: ./deploy/backup
+    environment:
+      PGHOST: postgres
+      PGDATABASE: ${POSTGRES_DB:-sweetway}
+      PGUSER: ${POSTGRES_USER:-sweetway}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      BACKUP_HORARIO: ${BACKUP_HORARIO:-30 3 * * *}
+      BACKUP_RETENCAO_DIAS: ${BACKUP_RETENCAO_DIAS:-30}
+      BACKUP_SENHA: ${BACKUP_SENHA:-}
+      BACKUP_RCLONE_DESTINO: ${BACKUP_RCLONE_DESTINO:-}
+      BACKUP_PING_URL: ${BACKUP_PING_URL:-}
+      TZ: ${TZ:-America/Sao_Paulo}
+    volumes:
+      - backups:/backups
+      - uploads_data:/uploads:ro
+      # Configuração do rclone (remoto R2/B2), criada na VPS com `rclone config`. Opcional.
+      - ./deploy/rclone:/config/rclone
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: *logs
+
+volumes:
+  pgdata:
+  uploads_data:
+  backups:
+  caddy_data:
+  caddy_config:

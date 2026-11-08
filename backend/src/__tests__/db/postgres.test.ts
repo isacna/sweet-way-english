@@ -74,6 +74,17 @@ describe.skipIf(!temBanco)('Postgres real', () => {
       await request(app).put(url).set(auth).send({ texto: '   ' });
       expect(await prisma.notaLicao.count({ where: { licaoId: licao.id } })).toBe(0);
     });
+
+    it('primeiro acesso com várias requisições ao mesmo tempo cria um só perfil, sem erro', async () => {
+      const novo = { nome: 'Corrida', email: 'corrida@teste.com', senha: 'senha123', dataNascimento: '1990-01-01' };
+      expect((await request(app).post('/api/auth/register/aluno').send(novo)).status).toBe(201);
+      const login = await request(app).post('/api/auth/login').send({ email: novo.email, senha: novo.senha });
+      const auth = { Authorization: `Bearer ${login.body.token}` };
+
+      const respostas = await Promise.all(Array.from({ length: 6 }, () => request(app).get('/api/curso').set(auth)));
+      expect(respostas.map((r) => r.status)).toEqual(Array(6).fill(200));
+      expect(await prisma.perfilAprendiz.count({ where: { usuarioId: login.body.user.id } })).toBe(1);
+    });
   });
 
   describe('enums', () => {

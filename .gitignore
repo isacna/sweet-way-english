@@ -2,6 +2,11 @@
 .env
 .env.*
 !.env.example
+!.env.prod.example
+
+# Configuração do rclone na VPS (tem as chaves do R2/B2)
+deploy/rclone/*
+!deploy/rclone/LEIA-ME.md
 
 node_modules/
 

@@ -1,0 +1,188 @@
+name: Produção
+
+# Em todo PR: constrói as imagens de produção, sobe a stack completa (Caddy + frontend + backend + Postgres + backup)
+# como na VPS, roda os e2e (páginas públicas e curso) através do Caddy e testa backup + restauração.
+# Na main: depois disso publica as imagens no GHCR e, se a VPS estiver configurada (variável VPS_HOST), faz o deploy.
+# Configuração do deploy: docs/deploy.md ("Deploy automático").
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: producao-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  COMPOSE: docker compose -f docker-compose.prod.yml
+
+jobs:
+  stack:
+    name: Stack de produção (imagens, e2e, backup)
+    # Fixo em 24.04: o Playwright 1.58 não instala navegadores no ubuntu-latest (26.04)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ambiente de teste (.env)
+        run: |
+          DONO="$(echo "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')"
+          cat > .env <<EOF
+          SITE_ENDERECO=http://localhost
+          URL_PUBLICA=http://localhost
+          GHCR_DONO=$DONO
+          IMAGEM_TAG=${{ github.sha }}
+          POSTGRES_PASSWORD=$(openssl rand -hex 16)
+          JWT_SECRET=$(openssl rand -hex 32)
+          SEED_ON_START=1
+          SEED_DEMO=1
+          SEED_PUBLICAR_CONTEUDO=1
+          ADMIN_EMAIL=admin@ci.local
+          ADMIN_SENHA=$(openssl rand -hex 12)
+          BACKUP_SENHA=$(openssl rand -hex 16)
+          EOF
+
+      - name: Build das imagens
+        run: $COMPOSE build
+
+      - name: Subir a stack
+        run: |
+          $COMPOSE up -d --wait --wait-timeout 300
+          $COMPOSE ps
+
+      - name: Health através do Caddy
+        run: curl -fsS http://localhost/api/health
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Playwright
+        working-directory: frontend
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: E2E (páginas públicas e curso) contra a stack
+        working-directory: frontend
+        env:
+          BASE_URL: http://localhost
+          E2E_CURSO: "1"
+          CI: "1"
+        run: npx playwright test
+
+      - name: Backup e teste de restauração
+        run: |
+          $COMPOSE exec -T backup backup.sh
+          $COMPOSE exec -T backup restaurar.sh teste ultimo
+
+      - name: Logs da stack
+        if: failure()
+        run: $COMPOSE logs --no-color --tail 300
+
+      - name: Relatório do Playwright
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-producao
+          path: frontend/playwright-report/
+          retention-days: 7
+
+      - name: Publicar imagens no GHCR
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ATOR: ${{ github.actor }}
+          DONO: ${{ github.repository_owner }}
+          SHA: ${{ github.sha }}
+        run: |
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io -u "$ATOR" --password-stdin
+          $COMPOSE push backend frontend backup
+          DONO="$(echo "$DONO" | tr '[:upper:]' '[:lower:]')"
+          for s in backend frontend backup; do
+            img="ghcr.io/$DONO/sweet-way-english-$s"
+            docker tag "$img:$SHA" "$img:latest"
+            docker push "$img:latest"
+          done
+
+      - name: Derrubar a stack
+        if: always()
+        run: $COMPOSE down -v
+
+  deploy:
+    name: Deploy na VPS
+    needs: stack
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && vars.VPS_HOST != ''
+    runs-on: ubuntu-24.04
+    environment: producao
+    concurrency:
+      group: deploy-producao
+      cancel-in-progress: false
+
+    env:
+      PASTA: ${{ vars.VPS_PASTA || '/opt/sweetway' }}
+      SHA: ${{ github.sha }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Chave SSH
+        env:
+          CHAVE: ${{ secrets.VPS_CHAVE_SSH }}
+          KNOWN_HOSTS: ${{ vars.VPS_KNOWN_HOSTS }}
+          HOST: ${{ vars.VPS_HOST }}
+          USUARIO: ${{ vars.VPS_USUARIO }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$CHAVE" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          printf 'Host vps\n  HostName %s\n  User %s\n  IdentityFile ~/.ssh/id_deploy\n  IdentitiesOnly yes\n' \
+            "$HOST" "$USUARIO" > ~/.ssh/config
+
+      - name: Copiar compose e Caddyfile
+        run: |
+          ssh vps "mkdir -p '$PASTA/deploy'"
+          scp docker-compose.prod.yml "vps:$PASTA/"
+          scp deploy/Caddyfile "vps:$PASTA/deploy/"
+
+      - name: Atualizar os containers
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ATOR: ${{ github.actor }}
+        run: |
+          # O login usa o token desta execução (vale só durante o job) e sai logo depois do pull
+          printf '%s' "$GHCR_TOKEN" | ssh vps "docker login ghcr.io -u '$ATOR' --password-stdin"
+          ssh vps "set -e
+            cd '$PASTA'
+            sed -i 's/^IMAGEM_TAG=.*/IMAGEM_TAG=$SHA/' .env
+            grep -q '^IMAGEM_TAG=' .env || echo 'IMAGEM_TAG=$SHA' >> .env
+            docker compose -f docker-compose.prod.yml pull
+            docker logout ghcr.io
+            docker compose -f docker-compose.prod.yml up -d --wait --wait-timeout 300 --remove-orphans
+            docker image prune -f"
+
+      - name: Conferir o site
+        env:
+          URL_PUBLICA: ${{ vars.URL_PUBLICA }}
+        run: |
+          [ -n "$URL_PUBLICA" ] || { echo "Defina a variável URL_PUBLICA para conferir o site"; exit 0; }
+          for _ in $(seq 1 20); do
+            curl -fsS "$URL_PUBLICA/api/health" && exit 0
+            sleep 6
+          done
+          exit 1

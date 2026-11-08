@@ -7,7 +7,7 @@ const prismaMock = vi.hoisted(() => ({
   exercicio: { findUnique: vi.fn(), findMany: vi.fn() },
   itemTeste: { findMany: vi.fn() },
   progressoLicao: { findMany: vi.fn(), findUnique: vi.fn(), upsert: vi.fn() },
-  perfilAprendiz: { upsert: vi.fn(), update: vi.fn() },
+  perfilAprendiz: { createMany: vi.fn(), findUniqueOrThrow: vi.fn(), upsert: vi.fn(), update: vi.fn() },
   revisaoItem: { count: vi.fn(), findMany: vi.fn(), findUnique: vi.fn(), findFirst: vi.fn(), create: vi.fn(), update: vi.fn() },
   tentativaTeste: {
     findMany: vi.fn(),
@@ -121,6 +121,8 @@ describe('CursoController', () => {
     vi.resetAllMocks();
     res = mockRes();
     prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+    prismaMock.perfilAprendiz.createMany.mockResolvedValue({ count: 0 } as any);
+    prismaMock.perfilAprendiz.findUniqueOrThrow.mockResolvedValue(perfil);
     prismaMock.perfilAprendiz.upsert.mockResolvedValue(perfil);
     prismaMock.perfilAprendiz.update.mockResolvedValue(perfil);
     prismaMock.revisaoItem.count.mockResolvedValue(0);
@@ -143,12 +145,12 @@ describe('CursoController', () => {
       expect(m1.licoes[0]).toMatchObject({ id: 11, concluida: true, desbloqueada: true, melhorPercentual: 90 });
       expect(m1.licoes[1]).toMatchObject({ id: 12, concluida: false, desbloqueada: true, melhorPercentual: 0 });
       expect(m2.desbloqueado).toBe(false);
-      expect(prismaMock.perfilAprendiz.upsert).toHaveBeenCalledWith(expect.objectContaining({ create: { usuarioId: 10 } }));
+      expect(prismaMock.perfilAprendiz.createMany).toHaveBeenCalledWith({ data: [{ usuarioId: 10 }], skipDuplicates: true });
     });
 
     it('reports a broken streak as 0', async () => {
       estado();
-      prismaMock.perfilAprendiz.upsert.mockResolvedValue({ ...perfil, ultimoEstudoEm: new Date('2020-01-01') });
+      prismaMock.perfilAprendiz.findUniqueOrThrow.mockResolvedValue({ ...perfil, ultimoEstudoEm: new Date('2020-01-01') });
       await getTrilha(studentReq(), res);
       expect(res.json.mock.calls[0][0].perfil.ofensivaAtual).toBe(0);
     });

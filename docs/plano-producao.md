@@ -168,6 +168,26 @@ Mudanças de modelo, aproveitando a troca:
   **teste de restauração** antes do lançamento.
 - Monitoramento: Uptime Kuma (ou healthchecks.io) no `/api/health`; Sentry (plano grátis) opcional para erros do front e da API.
 - VPS: SSH só por chave, firewall (80/443/22), atualizações automáticas de segurança, fail2ban.
+- **Entregue (2026-11-08), menos o que depende da VPS e do domínio.** Passo a passo em `docs/deploy.md`.
+  - **`docker-compose.prod.yml`** (projeto `sweetway`):
+    - serviços `caddy` (Caddy 2.10, `deploy/Caddyfile`: HTTPS automático, `/api/*` direto ao backend e cabeçalhos de segurança), `frontend`, `backend`, `postgres` e `backup`;
+    - só o Caddy publica portas;
+    - as imagens vêm do GHCR, com a tag `IMAGEM_TAG` (sha ou `latest`);
+    - `URL_PUBLICA` alimenta `APP_URL`, `FRONTEND_URL` e `CORS_ORIGIN`, e `TRUST_PROXY=1`.
+  - **Backup** (`deploy/backup/`, imagem própria):
+    - crond diário com `pg_dump` + uploads, criptografado com gpg (`BACKUP_SENHA`);
+    - retenção de 30 dias, cópia opcional via rclone (R2/B2) e aviso pelo healthchecks.io;
+    - `restaurar.sh teste|banco|uploads`.
+  - **CI** (`.github/workflows/producao.yml`):
+    - em todo PR, constrói as 3 imagens, sobe a stack inteira com o Caddy em `http://localhost`, roda os e2e públicos e do curso (31) através dele e testa backup + restauração;
+    - na `main`, publica no GHCR e, com `VPS_HOST` configurado, faz deploy por SSH (`pull` + `up -d --wait`) e confere o `/api/health`.
+  - **Workflows antigos:** agora em Node 24; o do backend roda `npm run build` e `conteudo:validar`, e o do frontend roda lint, `tsc` e `next build`.
+  - **VPS:** `deploy/preparar-vps.sh` (Docker, usuário `deploy`, SSH só por chave, ufw, unattended-upgrades, fail2ban, swap).
+  - **Monitoramento:** UptimeRobot no `/api/health` e healthchecks.io no backup (configuração na seção 6 do `deploy.md`). O Sentry ficou de fora.
+  - **Bugs achados testando a stack:**
+    - o primeiro acesso de um aluno com duas requisições ao mesmo tempo dava 500 (`obterPerfil` agora usa `INSERT … ON CONFLICT DO NOTHING`, com teste no Postgres);
+    - o otimizador de imagens do Next travava sem permissão em `.next/cache` (corrigido no Dockerfile).
+  - **Falta (precisa da VPS e do domínio):** criar a VPS, apontar o DNS, cadastrar as variáveis do environment `producao` no GitHub, configurar o rclone e os monitores, e fazer o teste de restauração na própria VPS.
 
 ### F5. Piloto (go-live)
 Checklist: domínio com HTTPS, admin real criado e senha trocada, módulos revisados e publicados pela professora,
