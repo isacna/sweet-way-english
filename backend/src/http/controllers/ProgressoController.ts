@@ -7,9 +7,20 @@ import { filtroRevisaoPendente, idParam } from './cursoApoio.js';
 
 const PUBLICADO = 'publicado' as const;
 
+/** Valor de `?turmaId=` que lista os alunos sem nenhuma matrícula (cadastro público). */
+export const SEM_TURMA = 'sem-turma';
+
+type AlunoBase = { id: number; nome: string; email: string; turmas: { id: number; nome: string }[] };
+
+/**
+ * `?turmaId=` vazio: alunos das turmas do professor. `?turmaId=<id>`: só aquela turma (404 se não é dele).
+ * `?turmaId=sem-turma`: alunos sem nenhuma matrícula (cadastro público). No piloto, qualquer professor os vê
+ * (não só admins): ainda não pertencem a ninguém e a professora precisa acompanhá-los.
+ */
 export async function progressoAlunos(req: AuthRequest, res: Response) {
   let turmaId: number | null = null;
-  if (req.query.turmaId !== undefined && req.query.turmaId !== '') {
+  const semTurma = req.query.turmaId === SEM_TURMA;
+  if (!semTurma && req.query.turmaId !== undefined && req.query.turmaId !== '') {
     turmaId = idParam(req.query.turmaId);
     if (!turmaId) {
       res.status(400).json({ error: 'Turma inválida' });
@@ -23,27 +34,16 @@ export async function progressoAlunos(req: AuthRequest, res: Response) {
   }
 
   const agora = new Date();
-  const [modulos, matriculas] = await Promise.all([
+  const [modulos, alunosBase] = await Promise.all([
     prisma.modulo.findMany({
       where: { status: PUBLICADO },
       orderBy: [{ nivel: { ordem: 'asc' } }, { ordem: 'asc' }],
       select: { id: true, slug: true, ordem: true, titulo: true, _count: { select: { licoes: { where: { status: PUBLICADO } } } } },
     }),
-    prisma.matricula.findMany({
-      where: { turma: { professorId: req.user.id, ...(turmaId && { id: turmaId }) }, aluno: { papel: 'aluno' } },
-      include: {
-        aluno: { select: { id: true, nome: true, email: true } },
-        turma: { select: { id: true, nome: true } },
-      },
-    }),
+    semTurma ? alunosSemTurma() : alunosDasTurmas(req.user.id, turmaId),
   ]);
 
-  const alunosPorId = new Map<number, { id: number; nome: string; email: string; turmas: { id: number; nome: string }[] }>();
-  for (const m of matriculas) {
-    const a = alunosPorId.get(m.aluno.id) ?? { ...m.aluno, turmas: [] };
-    if (!a.turmas.some((t) => t.id === m.turma.id)) a.turmas.push(m.turma);
-    alunosPorId.set(a.id, a);
-  }
+  const alunosPorId = new Map<number, AlunoBase>(alunosBase.map((a) => [a.id, a]));
   const ids = [...alunosPorId.keys()];
 
   const [perfis, concluidas, tentativas, revisoes] = ids.length
@@ -102,4 +102,29 @@ export async function progressoAlunos(req: AuthRequest, res: Response) {
     modulos: modulos.map((m) => ({ id: m.id, slug: m.slug, ordem: m.ordem, titulo: m.titulo, totalLicoes: m._count.licoes })),
     alunos,
   });
+}
+
+async function alunosDasTurmas(professorId: number, turmaId: number | null): Promise<AlunoBase[]> {
+  const matriculas = await prisma.matricula.findMany({
+    where: { turma: { professorId, ...(turmaId && { id: turmaId }) }, aluno: { papel: 'aluno' } },
+    include: {
+      aluno: { select: { id: true, nome: true, email: true } },
+      turma: { select: { id: true, nome: true } },
+    },
+  });
+  const porId = new Map<number, AlunoBase>();
+  for (const m of matriculas) {
+    const a = porId.get(m.aluno.id) ?? { ...m.aluno, turmas: [] };
+    if (!a.turmas.some((t) => t.id === m.turma.id)) a.turmas.push(m.turma);
+    porId.set(a.id, a);
+  }
+  return [...porId.values()];
+}
+
+async function alunosSemTurma(): Promise<AlunoBase[]> {
+  const alunos = await prisma.usuario.findMany({
+    where: { papel: 'aluno', matriculas: { none: {} } },
+    select: { id: true, nome: true, email: true },
+  });
+  return alunos.map((a) => ({ ...a, turmas: [] }));
 }

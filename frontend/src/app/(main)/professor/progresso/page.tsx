@@ -10,6 +10,9 @@ import type { ProgressoTurma } from "@/components/conteudo/tipos";
 type Turma = { id: number; nome: string };
 type Ordenacao = "nome" | "estudo";
 
+/** `?turmaId=sem-turma`: alunos que se cadastraram sozinhos e ainda não têm matrícula. */
+const SEM_TURMA = "sem-turma";
+
 type AlunoProgresso = ProgressoTurma["alunos"][number];
 type CelulaModulo = AlunoProgresso["modulos"][number];
 
@@ -132,7 +135,7 @@ export default function ProfessorProgressoPage() {
         </Link>
         <h1 className="text-2xl font-semibold tracking-[-0.02em] text-ink">Progresso no curso</h1>
         <p className="text-ink-soft mt-1">
-          Lições concluídas e testes de cada módulo publicado, por aluno das suas turmas.
+          Lições concluídas e testes de cada módulo publicado, por aluno das suas turmas ou sem turma.
         </p>
       </div>
 
@@ -153,6 +156,7 @@ export default function ProfessorProgressoPage() {
                 {t.nome}
               </option>
             ))}
+            <option value={SEM_TURMA}>Alunos sem turma</option>
           </select>
         </div>
         <div>
@@ -178,7 +182,11 @@ export default function ProfessorProgressoPage() {
           <p className="p-8 text-ink-soft">Carregando progresso…</p>
         ) : !dados || alunos.length === 0 ? (
           <p className="p-8 text-center text-ink-soft">
-            {turmaId ? "Nenhum aluno nesta turma." : "Nenhum aluno nas suas turmas ainda."}
+            {turmaId === SEM_TURMA
+              ? "Nenhum aluno sem turma."
+              : turmaId
+                ? "Nenhum aluno nesta turma."
+                : "Nenhum aluno nas suas turmas ainda."}
           </p>
         ) : (
           <div className="overflow-x-auto">
@@ -207,7 +215,9 @@ export default function ProfessorProgressoPage() {
                     <tr key={a.id} className="hover:bg-gray-50/80">
                       <td className="sticky left-0 z-10 bg-card px-4 py-3 align-top">
                         <p className="font-medium text-ink">{a.nome}</p>
-                        <p className="text-xs text-ink-soft">{a.turmas.map((t) => t.nome).join(", ")}</p>
+                        <p className="text-xs text-ink-soft">
+                          {a.turmas.length ? a.turmas.map((t) => t.nome).join(", ") : "Sem turma"}
+                        </p>
                       </td>
                       {modulos.map((m) => (
                         <td key={m.id} className="px-4 py-3 align-top">
