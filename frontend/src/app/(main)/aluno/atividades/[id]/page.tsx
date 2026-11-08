@@ -2,374 +2,273 @@
 
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { Suspense, useEffect, useState } from "react";
-import { Button } from "@/components/Button";
-import { apiFetch, getStoredUser } from "@/lib/api";
-import { ArquivoBotao } from "@/components/ArquivoBotao";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { CalendarClock, FileWarning, Paperclip, Send } from "lucide-react";
 import { AssetPreview } from "@/components/AssetPreview";
-import type { ArquivoResumo } from "@/lib/arquivos";
-import { rotuloStatusSubmissaoPt, tempoRelativoPt } from "@/lib/timePt";
-import { Download, Upload } from "lucide-react";
+import {
+  Cabecalho,
+  Campo,
+  Carregando,
+  classeArquivo,
+  classeBotao,
+  classeCampo,
+  erroDaApi,
+  Mensagem,
+  RegiaoAoVivo,
+  Secao,
+  Selo,
+} from "@/components/painel/ui";
+import { CaixaFeedback, ConteudoEntrega } from "@/components/turmas/CartaoEntrega";
+import { dataHoraCurta, podeEnviar, prazo, situacaoAluno } from "@/components/turmas/status";
+import type { AtividadeComEntregas, Entrega } from "@/components/turmas/tipos";
+import { apiFetch } from "@/lib/api";
 
-type FeedbackItem = {
-  comentario: string;
-  nota: number;
-  criadoEm: string;
-  professor: { nome: string };
-};
-
-type SubmissaoAluno = {
-  id: number;
-  conteudo: string | null;
-  /** "/api/arquivos/<id>": só o aluno e a professora conseguem abrir */
-  arquivoUrl: string | null;
-  arquivo: ArquivoResumo | null;
-  dataEnvio: string;
-  status: string;
-  feedback: FeedbackItem | null;
-};
-
-type Atividade = {
-  id: number;
-  titulo: string;
-  descricao: string;
-  dataEntrega: string;
-  arquivoObrigatorio?: boolean;
-  link?: string | null;
-  /** Anexo da professora (enunciado, worksheet…) */
-  arquivoUrl?: string | null;
-  arquivo?: ArquivoResumo | null;
-  submissoes: SubmissaoAluno[];
-};
-
-function mensagemBloqueioEntrega(statusUltima: string): string {
-  switch (statusUltima) {
+function mensagemBloqueio(status: string): string {
+  switch (status) {
     case "pendente":
-      return "Sua última entrega está aguardando correção do professor. Você não pode enviar outra versão até receber aprovação ou reprovação.";
+      return "Sua entrega está com o professor. Se ele pedir uma nova versão, o formulário volta a aparecer aqui.";
     case "aprovado":
-      return "O professor aprovou sua última entrega. Esta atividade está encerrada para você — não é possível enviar novamente.";
+      return "O professor aprovou sua entrega. Esta atividade está concluída.";
     case "corrigido":
-      return "O professor já corrigiu sua última entrega com nota e comentário. Esta atividade está encerrada — não é possível enviar novamente.";
+      return "O professor corrigiu sua entrega com nota e comentário. Esta atividade está concluída.";
     default:
-      return "Você já possui uma entrega em andamento ou encerrada. Só é possível enviar de novo se o professor reprovar a última entrega.";
+      return "Não é possível enviar uma nova entrega agora.";
   }
 }
 
-function AtividadeEntregaContent() {
+function ResultadoEntrega({ entrega }: { entrega: Entrega }) {
+  if (entrega.feedback) {
+    return (
+      <CaixaFeedback
+        nota={entrega.feedback.nota}
+        comentario={entrega.feedback.comentario}
+        autor={entrega.feedback.professor?.nome}
+        data={entrega.feedback.criadoEm}
+      />
+    );
+  }
+  if (entrega.status === "pendente") return <Mensagem tom="alerta">Aguardando correção do professor.</Mensagem>;
+  if (entrega.status === "aprovado") return <Mensagem tom="sucesso">Entrega aprovada pelo professor.</Mensagem>;
+  if (entrega.status === "reprovado")
+    return <Mensagem tom="erro">O professor pediu uma nova versão desta entrega.</Mensagem>;
+  return null;
+}
+
+function AtividadeEntregaConteudo() {
   const params = useParams();
   const searchParams = useSearchParams();
   const router = useRouter();
   const atividadeId = params.id as string;
   const turmaId = searchParams.get("turmaId") ?? "";
 
-  const [atividade, setAtividade] = useState<Atividade | null>(null);
+  const [atividade, setAtividade] = useState<AtividadeComEntregas | null>(null);
+  const [carregando, setCarregando] = useState(true);
+  const [erroCarga, setErroCarga] = useState("");
   const [conteudo, setConteudo] = useState("");
   const [arquivo, setArquivo] = useState<File | null>(null);
-  const [carregando, setCarregando] = useState(true);
+  const [chaveArquivo, setChaveArquivo] = useState(0);
   const [enviando, setEnviando] = useState(false);
   const [erro, setErro] = useState("");
-  const [okMsg, setOkMsg] = useState("");
+  const [sucesso, setSucesso] = useState<{ tom: "sucesso"; texto: string } | null>(null);
+
+  const buscar = useCallback(async (): Promise<AtividadeComEntregas | null | "erro"> => {
+    const res = await apiFetch(`/turmas/${turmaId}/atividades`).catch(() => null);
+    if (res?.status === 401) {
+      router.replace("/login?tipo=aluno");
+      return null;
+    }
+    if (!res?.ok) {
+      setErroCarga(await erroDaApi(res, "Não foi possível carregar a atividade."));
+      return "erro";
+    }
+    const lista: AtividadeComEntregas[] = await res.json();
+    return lista.find((a) => String(a.id) === String(atividadeId)) ?? null;
+  }, [atividadeId, turmaId, router]);
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
-    if (!turmaId) {
-      queueMicrotask(() => {
-        setCarregando(false);
-        setErro(
-          "Falta o parâmetro da turma. Abra a atividade a partir da turma."
-        );
-      });
-      return;
-    }
-
     let cancelled = false;
-
-    async function load() {
-      const res = await apiFetch(`/turmas/${turmaId}/atividades`);
+    queueMicrotask(async () => {
+      if (!turmaId) {
+        setErroCarga("Abra a atividade a partir da página da turma.");
+        setCarregando(false);
+        return;
+      }
+      const a = await buscar();
       if (cancelled) return;
-      if (res.status === 401 || res.status === 403) {
-        router.replace("/login?tipo=aluno");
-        return;
-      }
-      if (!res.ok) {
-        setErro("Não foi possível carregar a atividade.");
-        setCarregando(false);
-        return;
-      }
-      const lista: Atividade[] = await res.json();
-      const found = lista.find((a) => String(a.id) === String(atividadeId));
-      if (!found) {
-        setErro("Atividade não encontrada nesta turma.");
-        setCarregando(false);
-        return;
-      }
-      setAtividade(found);
+      if (a === null) setErroCarga((e) => e || "Atividade não encontrada nesta turma.");
+      else if (a !== "erro") setAtividade(a);
       setCarregando(false);
-    }
-
-    void load();
+    });
     return () => {
       cancelled = true;
     };
-  }, [atividadeId, turmaId, router]);
+  }, [buscar, turmaId]);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function enviar(e: React.FormEvent) {
     e.preventDefault();
-    setErro("");
-    setOkMsg("");
     if (!atividade) return;
-    const ult = atividade.submissoes?.[0];
-    if (ult && ult.status !== "reprovado") {
-      setErro(
-        "Você já enviou esta atividade. Só poderá enviar outra versão se o professor reprovar a última entrega."
-      );
-      return;
-    }
+    setErro("");
+    setSucesso(null);
     const exigeArquivo = Boolean(atividade.arquivoObrigatorio);
     if (exigeArquivo && !arquivo) {
-      setErro("Esta atividade exige anexar um arquivo.");
+      setErro("Esta atividade exige um arquivo anexo.");
       return;
     }
-    if (!exigeArquivo && !conteudo.trim() && !arquivo) {
-      setErro("Escreva algo na resposta ou anexe um arquivo.");
+    if (!conteudo.trim() && !arquivo) {
+      setErro("Escreva sua resposta ou anexe um arquivo.");
       return;
     }
     setEnviando(true);
     const fd = new FormData();
-    fd.append("conteudo", conteudo.trim() || "");
+    fd.append("conteudo", conteudo.trim());
     if (arquivo) fd.append("arquivo", arquivo);
-
-    const res = await apiFetch(`/atividades/${atividade.id}/submissoes`, {
-      method: "POST",
-      body: fd,
-    });
-    setEnviando(false);
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setErro(data.error ?? "Erro ao enviar.");
+    const res = await apiFetch(`/atividades/${atividade.id}/submissoes`, { method: "POST", body: fd }).catch(() => null);
+    if (!res?.ok) {
+      setEnviando(false);
+      setErro(await erroDaApi(res, "Não foi possível enviar sua entrega."));
       return;
     }
-    setOkMsg("Entrega registrada com sucesso.");
     setConteudo("");
     setArquivo(null);
-
-    const res2 = await apiFetch(`/turmas/${turmaId}/atividades`);
-    if (res2.ok) {
-      const lista: Atividade[] = await res2.json();
-      const found = lista.find((a) => String(a.id) === String(atividadeId));
-      if (found) setAtividade(found);
-    }
+    setChaveArquivo((k) => k + 1);
+    const atualizada = await buscar();
+    if (atualizada && atualizada !== "erro") setAtividade(atualizada);
+    setEnviando(false);
+    setSucesso({ tom: "sucesso", texto: "Entrega enviada! O professor vai corrigir em breve." });
   }
 
-  if (carregando) {
+  const voltar = turmaId ? { href: `/aluno/turmas/${turmaId}`, rotulo: "Voltar à turma" } : { href: "/aluno/turmas", rotulo: "Turmas" };
+
+  if (carregando) return <Carregando texto="Carregando atividade…" className="mx-auto max-w-3xl" />;
+
+  if (!atividade) {
     return (
-      <div className="max-w-2xl mx-auto">
-        <p className="text-ink-soft">Carregando…</p>
+      <div className="mx-auto max-w-xl space-y-4">
+        <Mensagem tom="erro">{erroCarga || "Atividade não encontrada."}</Mensagem>
+        <Link href={voltar.href} className={classeBotao("secundario")}>
+          {voltar.rotulo}
+        </Link>
       </div>
     );
   }
 
-  if (erro && !atividade) {
-    return (
-      <div className="max-w-2xl mx-auto space-y-4">
-        <p className="text-danger-ink">{erro}</p>
-        <Button href="/aluno/turmas" variant="secondary" size="md">
-          Turmas
-        </Button>
-      </div>
-    );
-  }
-
-  if (!atividade) return null;
-
-  const submissoes = atividade.submissoes ?? [];
-  /** Mais recente primeiro (API); última entrega = [0] */
-  const ultima = submissoes[0];
-  const podeNovaEntrega = !ultima || ultima.status === "reprovado";
-  /** Do mais antigo ao mais recente, para leitura em ordem */
-  const historicoCronologico = [...submissoes].reverse();
-  const voltarHref = `/aluno/turmas/${turmaId}`;
+  const entregas = atividade.submissoes ?? [];
+  const ultima = entregas[0];
+  const liberado = podeEnviar(entregas);
+  const situacao = situacaoAluno(entregas);
+  const p = prazo(atividade.dataEntrega);
+  const historico = [...entregas].reverse();
 
   return (
-    <div className="max-w-2xl mx-auto space-y-8">
-      <div>
-        <Link
-          href={voltarHref}
-          className="inline-flex items-center gap-2 text-sm text-ink-soft hover:text-ink mb-4"
-        >
-          ← Voltar à turma
-        </Link>
-        <h1 className="text-2xl font-bold text-ink">{atividade.titulo}</h1>
-        <p className="text-sm text-ink-soft mt-2">
-          Prazo: {new Date(atividade.dataEntrega).toLocaleString("pt-BR")}
-          {atividade.arquivoObrigatorio && (
-            <span className="block mt-1 text-sun-ink font-medium">
-              É obrigatório enviar um arquivo anexo.
-            </span>
-          )}
-        </p>
-        <div className="mt-4 p-4 rounded-xl bg-card border border-line text-sm text-ink-soft whitespace-pre-wrap">
-          {atividade.descricao}
+    <div className="mx-auto max-w-3xl space-y-6">
+      <Cabecalho voltar={voltar} eyebrow="Atividade" titulo={atividade.titulo} />
+
+      <section aria-label="Enunciado" className="card space-y-4 p-4 sm:p-6">
+        <div className="flex flex-wrap items-center gap-2">
+          <Selo tom={situacao.tom}>{situacao.rotulo}</Selo>
+          <span
+            className={`inline-flex items-center gap-1.5 text-sm font-medium ${
+              liberado && p.vencido ? "text-danger" : liberado && p.proximo ? "text-flame-ink" : "text-ink-soft"
+            }`}
+          >
+            <CalendarClock aria-hidden className="h-4 w-4" />
+            Até {p.texto} · {p.relativo}
+          </span>
         </div>
-        {atividade.link && (
-          <AssetPreview url={atividade.link} tipo="link" title={`Link — ${atividade.titulo}`} className="mt-4" />
+        <p className="whitespace-pre-wrap break-words text-ink">{atividade.descricao}</p>
+        {atividade.arquivoObrigatorio && (
+          <Mensagem tom="alerta">
+            <span className="inline-flex items-center gap-1.5">
+              <FileWarning aria-hidden className="h-4 w-4" />
+              Para entregar, é obrigatório anexar um arquivo.
+            </span>
+          </Mensagem>
         )}
-        {atividade.arquivoUrl && (
-          <div className="mt-4 space-y-2">
-            <p className="text-sm font-medium text-ink">
-              Material da atividade: {atividade.arquivo?.nomeOriginal ?? "anexo"}
-            </p>
-            <AssetPreview url={atividade.arquivoUrl} arquivo={atividade.arquivo} title={`Anexo — ${atividade.titulo}`} />
+        {(atividade.link || atividade.arquivoUrl) && (
+          <div className="space-y-4 border-t border-line pt-4">
+            {atividade.link && /^https?:\/\//i.test(atividade.link) && (
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-ink">Link de apoio</p>
+                <AssetPreview url={atividade.link} tipo="link" title={`Link — ${atividade.titulo}`} />
+              </div>
+            )}
+            {atividade.arquivoUrl && (
+              <div className="space-y-2">
+                <p className="flex min-w-0 items-center gap-2 text-sm font-semibold text-ink">
+                  <Paperclip aria-hidden className="h-4 w-4 shrink-0 text-ink-faint" />
+                  <span className="truncate">Material: {atividade.arquivo?.nomeOriginal ?? "anexo"}</span>
+                </p>
+                <AssetPreview url={atividade.arquivoUrl} arquivo={atividade.arquivo} title={`Anexo — ${atividade.titulo}`} />
+              </div>
+            )}
           </div>
         )}
-      </div>
+      </section>
 
-      {submissoes.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-lg font-bold text-ink">
-            Suas entregas e feedbacks do professor
-          </h2>
-          <p className="text-sm text-ink-soft">
-            Cada envio aparece abaixo. Quando o professor corrigir com nota, o
-            comentário e a nota ficam registrados nesta mesma atividade.
-          </p>
-          <ul className="space-y-4">
-            {historicoCronologico.map((s, index) => (
-              <li
-                key={s.id}
-                className="p-5 rounded-xl bg-gray-50 border border-line space-y-3"
-              >
-                <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <span className="text-sm font-semibold text-ink">
-                    Entrega {index + 1}
-                  </span>
-                  <span className="text-xs text-ink-soft">
-                    {new Date(s.dataEnvio).toLocaleString("pt-BR")} ·{" "}
-                    {tempoRelativoPt(s.dataEnvio)} ·{" "}
-                    {rotuloStatusSubmissaoPt(s.status)}
-                  </span>
-                </div>
-                {s.conteudo ? (
-                  <p className="text-sm text-ink whitespace-pre-wrap">
-                    {s.conteudo}
-                  </p>
-                ) : (
-                  <p className="text-sm text-ink-soft italic">
-                    (sem texto na entrega)
-                  </p>
-                )}
-                {s.arquivoUrl && (
-                  <ArquivoBotao
-                    url={s.arquivoUrl}
-                    nome={s.arquivo?.nomeOriginal}
-                    baixar
-                    className="inline-flex items-center gap-2 text-sm text-grape font-medium hover:underline"
-                  >
-                    <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
-                    Baixar anexo desta entrega
-                    {s.arquivo?.nomeOriginal ? ` (${s.arquivo.nomeOriginal})` : ""}
-                  </ArquivoBotao>
-                )}
-                {s.feedback ? (
-                  <div className="text-sm bg-card border border-success/25 rounded-lg p-4">
-                    <p className="font-medium text-success-ink">
-                      Nota: {s.feedback.nota}
-                    </p>
-                    <p className="text-success-ink/90 mt-2 whitespace-pre-wrap">
-                      {s.feedback.comentario}
-                    </p>
-                    <p className="text-xs text-ink-soft mt-3">
-                      {s.feedback.professor.nome}
-                      {s.feedback.criadoEm
-                        ? ` · ${new Date(s.feedback.criadoEm).toLocaleString("pt-BR")}`
-                        : ""}
-                    </p>
-                  </div>
-                ) : s.status === "pendente" ? (
-                  <p className="text-sm text-sun-ink bg-sun-soft border border-sun/30 rounded-lg px-3 py-2">
-                    Aguardando correção do professor.
-                  </p>
-                ) : s.status === "aprovado" ? (
-                  <p className="text-sm text-success-ink bg-success-soft border border-success/25 rounded-lg px-3 py-2">
-                    Entrega aprovada pelo professor.
-                  </p>
-                ) : s.status === "reprovado" ? (
-                  <p className="text-sm text-danger-ink bg-danger-soft border border-danger/25 rounded-lg px-3 py-2">
-                    Entrega reprovada pelo professor.
-                  </p>
-                ) : null}
+      <RegiaoAoVivo mensagem={sucesso} />
+
+      {historico.length > 0 && (
+        <Secao
+          id="entregas"
+          titulo={historico.length === 1 ? "Sua entrega" : "Suas entregas"}
+          descricao="A nota e o comentário do professor aparecem junto de cada entrega."
+        >
+          <ol className="space-y-4">
+            {historico.map((s, i) => (
+              <li key={s.id} className="space-y-3 rounded-2xl border border-line p-4">
+                <p className="text-sm font-semibold text-ink">
+                  {historico.length > 1 ? `Entrega ${i + 1} · ` : ""}
+                  <span className="font-normal text-ink-soft">enviada em {dataHoraCurta(s.dataEnvio)}</span>
+                </p>
+                <ConteudoEntrega entrega={s} rotuloAnexo="Seu anexo" />
+                <ResultadoEntrega entrega={s} />
               </li>
             ))}
-          </ul>
-        </section>
+          </ol>
+        </Secao>
       )}
 
-      {podeNovaEntrega ? (
-        <form
-          onSubmit={handleSubmit}
-          className="card p-6 space-y-4"
+      {liberado ? (
+        <Secao
+          id="enviar"
+          titulo={ultima ? "Enviar nova versão" : "Sua resposta"}
+          descricao={ultima ? "O professor pediu uma nova versão. Corrija e envie de novo." : undefined}
         >
-          <h2 className="text-lg font-bold text-ink">
-            {ultima ? "Nova entrega" : "Sua resposta"}
-          </h2>
-          {ultima?.status === "reprovado" && (
-            <p className="text-sm text-success-ink bg-success-soft border border-success/25 rounded-lg px-3 py-2">
-              O professor reprovou sua última entrega. Envie uma nova versão
-              desta atividade abaixo.
-            </p>
-          )}
-          <textarea
-            value={conteudo}
-            onChange={(e) => setConteudo(e.target.value)}
-            rows={6}
-            placeholder="Escreva sua resposta aqui…"
-            className="w-full px-4 py-3 rounded-xl border border-line-strong bg-gray-50 text-ink placeholder:text-ink-faint focus:outline-none focus:ring-2 focus:ring-grape/30 focus:border-grape"
-          />
-          <div>
-            <label className="block text-sm font-medium text-ink mb-2">
-              Anexo{" "}
-              {atividade.arquivoObrigatorio ? "(obrigatório)" : "(opcional)"}
-            </label>
-            <input
-              type="file"
-              onChange={(e) => setArquivo(e.target.files?.[0] ?? null)}
-              className="w-full text-sm text-ink-soft"
-            />
-          </div>
-          {erro && (
-            <p className="text-sm text-danger-ink bg-danger-soft px-3 py-2 rounded-2xl font-medium">
-              {erro}
-            </p>
-          )}
-          {okMsg && (
-            <p className="text-sm text-success-ink bg-success-soft px-3 py-2 rounded-lg">
-              {okMsg}
-            </p>
-          )}
-          <button
-            type="submit"
-            disabled={enviando}
-            className="inline-flex items-center gap-2 rounded-xl bg-grape text-white font-semibold px-6 py-3 shadow-[inset_0_1px_0_rgb(255_255_255/0.16)] hover:bg-grape-strong disabled:opacity-70"
-          >
-            <Upload aria-hidden className="h-[18px] w-[18px] shrink-0" />
-            {enviando ? "Enviando…" : "Enviar entrega"}
-          </button>
-        </form>
+          <form onSubmit={enviar} className="space-y-4" noValidate>
+            <Campo id="resposta" rotulo="Resposta" opcional={!!atividade.arquivoObrigatorio || undefined}>
+              <textarea
+                id="resposta"
+                value={conteudo}
+                onChange={(e) => setConteudo(e.target.value)}
+                rows={6}
+                placeholder="Escreva sua resposta aqui…"
+                className={`${classeCampo} resize-y`}
+              />
+            </Campo>
+            <Campo
+              id="anexo-entrega"
+              rotulo="Arquivo"
+              obrigatorio={!!atividade.arquivoObrigatorio}
+              opcional={!atividade.arquivoObrigatorio}
+              dica="Foto, PDF, documento, áudio ou vídeo. Só você e o professor conseguem abrir."
+            >
+              <input
+                key={chaveArquivo}
+                id="anexo-entrega"
+                type="file"
+                onChange={(e) => setArquivo(e.target.files?.[0] ?? null)}
+                className={classeArquivo}
+              />
+            </Campo>
+            {erro && <Mensagem tom="erro">{erro}</Mensagem>}
+            <button type="submit" disabled={enviando} className={classeBotao("primario", "w-full sm:w-auto")}>
+              <Send aria-hidden className="h-4 w-4" />
+              {enviando ? "Enviando…" : "Enviar entrega"}
+            </button>
+          </form>
+        </Secao>
       ) : (
-        <section className="card p-6">
-          <h2 className="text-lg font-bold text-ink mb-2">
-            Nova entrega indisponível
-          </h2>
-          <p className="text-sm text-ink-soft">
-            {ultima
-              ? mensagemBloqueioEntrega(ultima.status)
-              : "Não é possível enviar neste momento."}
-          </p>
-        </section>
+        ultima && <Mensagem tom="info">{mensagemBloqueio(ultima.status)}</Mensagem>
       )}
     </div>
   );
@@ -377,12 +276,8 @@ function AtividadeEntregaContent() {
 
 export default function AlunoAtividadePage() {
   return (
-    <Suspense
-      fallback={
-        <div className="max-w-2xl mx-auto p-8 text-ink-soft">Carregando…</div>
-      }
-    >
-      <AtividadeEntregaContent />
+    <Suspense fallback={<Carregando className="mx-auto max-w-3xl" />}>
+      <AtividadeEntregaConteudo />
     </Suspense>
   );
 }
