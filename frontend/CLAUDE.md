@@ -100,7 +100,15 @@ All backend calls go through `apiFetch(path, init?)`:
 
 Named path constants live in `apiPaths` (only a few so far; most paths are inline strings).
 
-`assetUrl(path)` converts relative backend asset paths (e.g., `/uploads/file.jpg`) to full URLs for `<img>` and download links.
+### Private files (`src/lib/arquivos.ts`)
+
+Uploads (submissions, materials, activity attachments) are private. The API returns `arquivoUrl` / `urlArquivo` = `"/api/arquivos/<id>"` and `arquivo: { id, nomeOriginal, mime, tamanho }`. Link materials keep their external URL in `urlArquivo`. Never put an API file URL in `<img>`/`<a href>`. Fetch it with the session instead:
+- `useArquivoUrl(url, ativo)` returns `{ src, carregando, erro }`. A private URL is fetched through `apiFetch` into a `blob:` object URL, which is revoked on unmount or change. An external URL comes back unchanged.
+- `abrirArquivo(url, { nome, baixar })` opens the file in a new tab (the tab is opened before the fetch, so pop-up blockers allow it) or downloads it.
+- `<ArquivoBotao url nome baixar>` is a button for private files and a plain link for external ones. It shows the error (404 = no permission).
+- `<AssetPreview url arquivo tipo title>` is a collapsed preview that only downloads once opened. The kind comes from `arquivo.mime`: image, native PDF `<iframe>` on the blob URL, `<video>`, `<audio>`. Office docs and text get a download button. There is no Google Docs viewer, and external PDFs open in a new tab. YouTube links are embedded.
+
+`assetUrl()` in `api.ts` has no callers left. The logo URL from `GET /configuracoes` is already absolute and public.
 
 ### Data Fetching Pattern
 

@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
+import { apiFetch, getStoredUser } from "@/lib/api";
+import { ArquivoBotao } from "@/components/ArquivoBotao";
+import type { ArquivoResumo } from "@/lib/arquivos";
 import { tempoRelativoPt } from "@/lib/timePt";
 import { Download, Search } from "lucide-react";
 
@@ -14,7 +16,9 @@ type Material = {
   id: number;
   titulo: string;
   tipo: string;
+  /** "/api/arquivos/<id>" (upload, privado) ou URL externa (link) */
   urlArquivo: string;
+  arquivo: ArquivoResumo | null;
   criadoEm: string;
 };
 
@@ -195,7 +199,7 @@ function MateriaisAlunoContent() {
       ) : (
         <div className="space-y-4">
           {filtrados.map((mat) => {
-            const href = assetUrl(mat.urlArquivo);
+            const href = mat.urlArquivo || null;
             return (
               <div
                 key={mat.id}
@@ -218,15 +222,14 @@ function MateriaisAlunoContent() {
                   </p>
                 </div>
                 {href && (
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <ArquivoBotao
+                    url={href}
+                    nome={mat.arquivo?.nomeOriginal}
                     className="p-2 text-ink-soft hover:text-grape-bright rounded-lg shrink-0"
-                    aria-label="Abrir"
+                    aria-label={`Abrir ${mat.titulo}`}
                   >
                     <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />
-                  </a>
+                  </ArquivoBotao>
                 )}
               </div>
             );

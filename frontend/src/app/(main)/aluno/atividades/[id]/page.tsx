@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import { Button } from "@/components/Button";
-import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
+import { apiFetch, getStoredUser } from "@/lib/api";
+import { ArquivoBotao } from "@/components/ArquivoBotao";
+import { AssetPreview } from "@/components/AssetPreview";
+import type { ArquivoResumo } from "@/lib/arquivos";
 import { rotuloStatusSubmissaoPt, tempoRelativoPt } from "@/lib/timePt";
 import { Download, Upload } from "lucide-react";
 
@@ -18,7 +21,9 @@ type FeedbackItem = {
 type SubmissaoAluno = {
   id: number;
   conteudo: string | null;
+  /** "/api/arquivos/<id>": só o aluno e a professora conseguem abrir */
   arquivoUrl: string | null;
+  arquivo: ArquivoResumo | null;
   dataEnvio: string;
   status: string;
   feedback: FeedbackItem | null;
@@ -30,6 +35,10 @@ type Atividade = {
   descricao: string;
   dataEntrega: string;
   arquivoObrigatorio?: boolean;
+  link?: string | null;
+  /** Anexo da professora (enunciado, worksheet…) */
+  arquivoUrl?: string | null;
+  arquivo?: ArquivoResumo | null;
   submissoes: SubmissaoAluno[];
 };
 
@@ -206,6 +215,17 @@ function AtividadeEntregaContent() {
         <div className="mt-4 p-4 rounded-xl bg-card border border-line text-sm text-ink-soft whitespace-pre-wrap">
           {atividade.descricao}
         </div>
+        {atividade.link && (
+          <AssetPreview url={atividade.link} tipo="link" title={`Link — ${atividade.titulo}`} className="mt-4" />
+        )}
+        {atividade.arquivoUrl && (
+          <div className="mt-4 space-y-2">
+            <p className="text-sm font-medium text-ink">
+              Material da atividade: {atividade.arquivo?.nomeOriginal ?? "anexo"}
+            </p>
+            <AssetPreview url={atividade.arquivoUrl} arquivo={atividade.arquivo} title={`Anexo — ${atividade.titulo}`} />
+          </div>
+        )}
       </div>
 
       {submissoes.length > 0 && (
@@ -243,15 +263,16 @@ function AtividadeEntregaContent() {
                   </p>
                 )}
                 {s.arquivoUrl && (
-                  <a
-                    href={assetUrl(s.arquivoUrl) ?? "#"}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <ArquivoBotao
+                    url={s.arquivoUrl}
+                    nome={s.arquivo?.nomeOriginal}
+                    baixar
                     className="inline-flex items-center gap-2 text-sm text-grape font-medium hover:underline"
                   >
                     <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
                     Baixar anexo desta entrega
-                  </a>
+                    {s.arquivo?.nomeOriginal ? ` (${s.arquivo.nomeOriginal})` : ""}
+                  </ArquivoBotao>
                 )}
                 {s.feedback ? (
                   <div className="text-sm bg-card border border-success/25 rounded-lg p-4">

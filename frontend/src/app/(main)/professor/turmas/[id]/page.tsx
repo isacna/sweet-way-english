@@ -5,7 +5,9 @@ import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
 import { AssetPreview } from "@/components/AssetPreview";
 import { Button } from "@/components/Button";
-import { apiFetch, assetUrl } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
+import { ArquivoBotao } from "@/components/ArquivoBotao";
+import type { ArquivoResumo } from "@/lib/arquivos";
 import {
   isoToDatetimeLocalValue,
   rotuloStatusSubmissaoPt,
@@ -26,6 +28,8 @@ type TurmaDetalhe = {
     dataEntrega: string;
     arquivoObrigatorio?: boolean;
     link?: string | null;
+    arquivoUrl?: string | null;
+    arquivo?: ArquivoResumo | null;
   }[];
   materiais: { id: number; titulo: string }[];
   matriculas: { aluno: { id: number; nome: string; email: string } }[];
@@ -34,7 +38,9 @@ type TurmaDetalhe = {
 type Submissao = {
   id: number;
   conteudo: string | null;
+  /** "/api/arquivos/<id>" (privado) */
   arquivoUrl: string | null;
+  arquivo: ArquivoResumo | null;
   dataEnvio: string;
   status: string;
   aluno: { id: number; nome: string };
@@ -43,25 +49,26 @@ type Submissao = {
 
 function BlocoAnexoAluno({
   arquivoUrl,
+  arquivo,
   nomeAluno,
 }: {
   arquivoUrl: string;
+  arquivo: ArquivoResumo | null;
   nomeAluno: string;
 }) {
-  const full = assetUrl(arquivoUrl);
-  if (!full) return null;
   return (
     <div className="space-y-3">
-      <a
-        href={full}
-        target="_blank"
-        rel="noopener noreferrer"
+      <ArquivoBotao
+        url={arquivoUrl}
+        nome={arquivo?.nomeOriginal}
+        baixar
         className="inline-flex items-center gap-2 text-sm text-accent font-medium hover:underline"
       >
         <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
         Baixar anexo do aluno
-      </a>
-      <AssetPreview fullUrl={full} title={`Anexo — ${nomeAluno}`} />
+        {arquivo?.nomeOriginal ? ` (${arquivo.nomeOriginal})` : ""}
+      </ArquivoBotao>
+      <AssetPreview url={arquivoUrl} arquivo={arquivo} title={`Anexo — ${nomeAluno}`} />
     </div>
   );
 }
@@ -597,13 +604,25 @@ function TurmaDetalhePageContent() {
                 {editLink.trim() && (
                   <div className="mt-3">
                     <AssetPreview
-                      fullUrl={editLink.trim()}
+                      url={editLink.trim()}
                       tipo="link"
                       title={editTitulo || "Link da atividade"}
                     />
                   </div>
                 )}
               </div>
+              {(() => {
+                const atual = turma.atividades.find((x) => String(x.id) === atividadeDestaque);
+                if (!atual?.arquivoUrl) return null;
+                return (
+                  <div className="sm:col-span-2 space-y-2">
+                    <p className="text-sm font-medium text-ink">
+                      Anexo da atividade: {atual.arquivo?.nomeOriginal ?? "arquivo"}
+                    </p>
+                    <AssetPreview url={atual.arquivoUrl} arquivo={atual.arquivo} title={`Anexo — ${atual.titulo}`} />
+                  </div>
+                );
+              })()}
             </div>
             {gestaoErro && (
               <p className="text-sm text-danger-ink mt-3">{gestaoErro}</p>
@@ -703,6 +722,7 @@ function TurmaDetalhePageContent() {
                     {s.arquivoUrl && (
                       <BlocoAnexoAluno
                         arquivoUrl={s.arquivoUrl}
+                        arquivo={s.arquivo}
                         nomeAluno={s.aluno.nome}
                       />
                     )}

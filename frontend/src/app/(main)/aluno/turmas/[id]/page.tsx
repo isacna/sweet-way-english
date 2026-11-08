@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/Button";
-import { apiFetch, assetUrl, getStoredUser } from "@/lib/api";
+import { apiFetch, getStoredUser } from "@/lib/api";
+import { ArquivoBotao } from "@/components/ArquivoBotao";
+import type { ArquivoResumo } from "@/lib/arquivos";
 import { FileText } from "lucide-react";
 
 type TurmaDetalhe = {
@@ -27,7 +29,9 @@ type Material = {
   id: number;
   titulo: string;
   tipo: string;
+  /** "/api/arquivos/<id>" (upload, privado) ou URL externa (link) */
   urlArquivo: string;
+  arquivo: ArquivoResumo | null;
 };
 
 type Atividade = {
@@ -265,20 +269,19 @@ export default function AlunoTurmaDetalhePage() {
         ) : (
           <ul className="space-y-2">
             {materiaisFiltrados.map((m) => {
-              const href = assetUrl(m.urlArquivo);
+              const href = m.urlArquivo || null;
               return (
                 <li key={m.id}>
                   {href ? (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-medium text-grape hover:opacity-80 flex items-center gap-2"
+                    <ArquivoBotao
+                      url={href}
+                      nome={m.arquivo?.nomeOriginal}
+                      className="text-sm font-medium text-grape hover:opacity-80 flex items-center gap-2 text-left"
                     >
                       <FileText aria-hidden className="h-[16px] w-[16px] shrink-0" />
                       {m.titulo}{" "}
                       <span className="text-ink-soft font-normal capitalize">({m.tipo})</span>
-                    </a>
+                    </ArquivoBotao>
                   ) : (
                     <span className="text-sm text-ink">{m.titulo}</span>
                   )}
