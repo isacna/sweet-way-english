@@ -9,10 +9,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev        # Start server with tsx (hot reload via tsx watch if needed)
 npm run lint       # Type-check with tsc --noEmit
 
-# Database
-npx prisma migrate dev     # Apply migrations and regenerate client
+# Database (PostgreSQL; DATABASE_URL in .env)
+npx prisma migrate dev     # Create/apply migrations and regenerate client (development)
+npx prisma migrate deploy  # Apply pending migrations (CI, Docker, production)
 npx prisma generate        # Regenerate Prisma client after schema changes
 npm run db:seed            # Seed the database (prisma/seed.ts)
+npm run db:migrar-sqlite -- path/to/dev.db [--forcar]  # Copy an old SQLite DB into Postgres
 npx prisma studio          # Open Prisma GUI
 
 # Build
@@ -25,7 +27,10 @@ Tests run with Vitest. Unit tests are in `src/__tests__/unit/`, integration test
 npm test                  # Run all tests
 npm run test:watch        # Watch mode
 npm run test:coverage     # Coverage report
+npm run test:db           # src/__tests__/db/ against a real Postgres (TEST_DATABASE_URL)
 ```
+
+`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) and the SQLite→Postgres script.
 
 ## Environment
 
@@ -33,7 +38,7 @@ Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`:
 
 ## Architecture
 
-**Stack**: Express.js, TypeScript (ESM), Prisma ORM, SQLite (`prisma/dev.db`), Multer for file uploads, bcryptjs, jsonwebtoken, Zod.
+**Stack**: Express.js, TypeScript (ESM), Prisma ORM, PostgreSQL 17, Multer for file uploads, bcryptjs, jsonwebtoken, Zod.
 
 ### Entry Point
 
@@ -161,10 +166,29 @@ Most older controllers still check `req.user.role` inline; the admin/config rout
 
 ### Database
 
-Prisma with SQLite. Client initialized in `src/database/client.ts` using `@prisma/adapter-better-sqlite3`.
+Prisma with PostgreSQL. The client lives in `src/database/client.ts` (`@prisma/adapter-pg`): `prisma` uses `DATABASE_URL`, and `criarPrisma(url)` builds a client for another URL (scripts, tests).
+
+**Running locally:** you need a Postgres 17 server. For example:
+`docker run -d --name sweetway-pg -p 5432:5432 -e POSTGRES_USER=sweetway -e POSTGRES_PASSWORD=sweetway -e POSTGRES_DB=sweetway postgres:17-alpine`.
+Then set `DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway`, run `npx prisma migrate deploy` and `npm run db:seed`. In Docker Compose the `postgres` service is wired up for you, and the entrypoint runs `migrate deploy` on every start and seeds only when `SEED_ON_START=1`.
+
+**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`. The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
+
+**Moving data from SQLite** (`scripts/migrar-sqlite-para-postgres.ts`, logic in `scripts/migrar-sqlite/migrar.ts`):
+```bash
+DATABASE_URL=postgresql://... npx prisma migrate deploy        # target must be migrated
+DATABASE_URL=postgresql://... npm run db:migrar-sqlite -- ./prisma/dev.db   # or SQLITE_PATH=...
+```
+The script opens the SQLite file read-only and copies every table in FK order inside one transaction. It keeps ids and then resets the sequences, lowercases emails (and aborts on case-insensitive duplicates) and validates enum values. It fills the new `criadoEm`/`atualizadoEm` columns from the row's existing dates, nulls a `revisadoPorId` that points to a missing user, and skips tables missing from the file (such as `NotaLicao` on older files). It refuses when the target already has users, unless you pass `--forcar`, which **truncates every table in the target** first. `better-sqlite3` is a devDependency used only by this script and its test.
+
+**Conventions (F1 of `docs/plano-producao.md`):**
+- Every FK column has an index, and every relation has an explicit `onDelete`. The children of a `Turma` (`Matricula`, `Aviso`, `Atividade` → `Submissao` → `Feedback`, `MaterialApoio`) cascade. Learner state cascades from `Usuario`. `Turma.professor` and `Feedback.professor` are `Restrict`, so deleting a professor still requires handling their classes and grades first (`ConfigController` does that). `Licao.revisadoPor` is `SetNull`. The manual deletes in older controllers still work, and some are now redundant.
+- Enums keep the API string values: `StatusMatricula` (`ativa | inativa`), `EtapaExercicio`, `TipoExercicio` (shared by `Exercicio` and `ItemTeste`), `HabilidadeTeste`, `TipoMaterial`, `Metodologia`. They match `ETAPAS`/`HABILIDADES_TESTE`/the item `tipo`s in `src/domain/conteudo/schema.ts`. Validate input before writing (for example, `MaterialController` returns 400 for an unknown `tipo`), because an invalid enum value is a Prisma error.
+- Editable models have `criadoEm` + `atualizadoEm` (`@updatedAt`). `Json` columns are `jsonb`.
+- `Usuario.email` is stored lowercase (unique index). Use `normalizarEmail()` from `src/domain/email.ts` on every write and lookup. Login does a single lookup.
 
 **Key models**:
-- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. Migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
+- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
 - `Turma` — class with a random 6-char `codigoConvite` (invite code)
 - `Matricula` — join table between a `Usuario` (aluno) and a `Turma`
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)

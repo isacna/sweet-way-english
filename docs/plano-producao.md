@@ -118,6 +118,9 @@ Mudanças de modelo, aproveitando a troca:
 ### F1. PostgreSQL e modelagem (3–5 dias)
 - Revisão do schema (seção 3), migração base, script `migrar-sqlite-para-postgres` para usuários, turmas, progresso e notas.
 - Docker Compose com Postgres; testes de integração com Postgres no CI.
+- **Entregue (2026-11-08):** schema revisado (índices, enums, `onDelete`, timestamps, e-mail minúsculo), migração base
+  `20261108000000_base_postgres`, `npm run db:migrar-sqlite`, serviço `postgres` no Compose (sem volume sobre
+  `/app/prisma`; seed só com `SEED_ON_START=1`), `npm run test:db` no CI. `TokenSenha`, `Arquivo` e `versaoToken` ficam para a F2.
 
 ### F2. Backend (5–8 dias)
 - Sessão em cookie `httpOnly`, `versaoToken`, logout no servidor.
