@@ -4,10 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import s from "./HeroVideo.module.css";
-
-// Vídeo de fundo (lago e montanhas ao amanhecer), carregado de fora: para produção, hospedar um próprio.
-export const VIDEO_FUNDO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260826_124724_bc041163-d651-425f-aea3-2acc1efc2c96.mp4";
+import { VideoFundo } from "./VideoFundo";
 
 const links = [
   { href: "/cadastro", rotulo: "Curso A1" },
@@ -92,7 +89,7 @@ export function HeroVideo() {
 
   return (
     <div className={`${s.stage} ${animando ? s.anim : ""}`}>
-      <video className={s.video} src={VIDEO_FUNDO_URL} autoPlay muted loop playsInline aria-hidden tabIndex={-1} />
+      <VideoFundo className={s.video} />
 
       <div className={s.frame}>
         <input type="checkbox" id="menu-home" className={s.menuToggle} aria-label="Abrir menu" />
