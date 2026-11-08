@@ -4,12 +4,25 @@ const prismaMock = vi.hoisted(() => ({
   turma: { findUnique: vi.fn(), findFirst: vi.fn() },
   atividade: { findUnique: vi.fn(), findMany: vi.fn(), create: vi.fn(), update: vi.fn() },
   matricula: { findFirst: vi.fn() },
+  arquivo: { create: vi.fn(), findMany: vi.fn(), deleteMany: vi.fn() },
+  $transaction: vi.fn(),
 }));
 
 vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
+const disco = vi.hoisted(() => ({ gravarNoDisco: vi.fn(), removerDoDisco: vi.fn() }));
+vi.mock('../../../storage/arquivos.js', async (original) => ({
+  ...(await original<typeof import('../../../storage/arquivos.js')>()),
+  ...disco,
+}));
 
 import { createActivity, updateActivity, listActivitiesByClass } from '../../../http/controllers/ActivityController.js';
 import { mockRes, mockReq, studentReq } from '../../helpers/mockReqRes.js';
+import { definirArquivoRecebido } from '../../../http/middlewares/upload.js';
+
+const semArquivo = { arquivo: null, arquivoUrl: null };
+const NOVO = '7f3c1d2e-0000-4000-8000-00000000000a';
+const VELHO = '7f3c1d2e-0000-4000-8000-00000000000b';
+const PDF = { buffer: Buffer.from('%PDF-1.4'), nomeOriginal: 'enunciado.pdf', mime: 'application/pdf', ext: 'pdf', tamanho: 8 };
 
 describe('ActivityController', () => {
   let res: any;
@@ -48,7 +61,37 @@ describe('ActivityController', () => {
       }), res);
 
       expect(res.status).toHaveBeenCalledWith(201);
-      expect(res.json).toHaveBeenCalledWith(atividade);
+      expect(res.json).toHaveBeenCalledWith({ ...atividade, ...semArquivo });
+      expect(prismaMock.atividade.create.mock.calls[0][0].data.arquivoObrigatorio).toBe(false);
+    });
+
+    it('multipart: "false" stays false and the optional attachment becomes an Arquivo of the teacher', async () => {
+      prismaMock.turma.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      disco.gravarNoDisco.mockResolvedValue('n.pdf');
+      prismaMock.arquivo.create.mockResolvedValue({ id: NOVO });
+      prismaMock.atividade.create.mockResolvedValue({ id: 5, arquivoId: NOVO });
+
+      const req = mockReq({
+        params: { turmaId: '1' },
+        body: { titulo: 'T', descricao: 'd', dataEntrega: '2026-12-31', arquivoObrigatorio: 'false' },
+      });
+      definirArquivoRecebido(req, PDF);
+      await createActivity(req, res);
+
+      const data = prismaMock.atividade.create.mock.calls[0][0].data;
+      expect(data).toMatchObject({ arquivoObrigatorio: false, arquivoId: NOVO });
+      expect(prismaMock.arquivo.create.mock.calls[0][0].data).toMatchObject({ donoId: 1, nomeOriginal: 'enunciado.pdf' });
+      expect(res.json.mock.calls[0][0].arquivoUrl).toBe(`/api/arquivos/${NOVO}`);
+    });
+
+    it('with an attachment but another teacher class: 404 and nothing is written', async () => {
+      prismaMock.turma.findFirst.mockResolvedValue(null);
+      const req = mockReq({ params: { turmaId: '1' }, body: { titulo: 'T' } });
+      definirArquivoRecebido(req, PDF);
+      await createActivity(req, res);
+      expect(res.status).toHaveBeenCalledWith(404);
+      expect(disco.gravarNoDisco).not.toHaveBeenCalled();
     });
   });
 
@@ -97,9 +140,40 @@ describe('ActivityController', () => {
     it('updates activity and returns 200', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 1 } });
       const updated = { id: 1, titulo: 'Updated' };
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
       prismaMock.atividade.update.mockResolvedValue(updated);
       await updateActivity(mockReq({ params: { id: '1' }, body: { titulo: 'Updated' } }), res);
-      expect(res.json).toHaveBeenCalledWith(updated);
+      expect(res.json).toHaveBeenCalledWith({ ...updated, ...semArquivo });
+    });
+
+    it('a new attachment replaces the old one (old row and file removed after commit)', async () => {
+      prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, arquivoId: VELHO, turma: { professorId: 1 } });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      disco.gravarNoDisco.mockResolvedValue('n.pdf');
+      prismaMock.arquivo.create.mockResolvedValue({ id: NOVO });
+      prismaMock.atividade.update.mockResolvedValue({ id: 1, arquivoId: NOVO });
+      prismaMock.arquivo.findMany.mockResolvedValueOnce([{ caminho: 'v.pdf' }]).mockResolvedValueOnce([]);
+
+      const req = mockReq({ params: { id: '1' }, body: {} });
+      definirArquivoRecebido(req, PDF);
+      await updateActivity(req, res);
+
+      expect(prismaMock.atividade.update.mock.calls[0][0].data).toEqual({ arquivoId: NOVO });
+      expect(prismaMock.arquivo.deleteMany).toHaveBeenCalledWith({ where: { id: { in: [VELHO] } } });
+      expect(disco.removerDoDisco).toHaveBeenCalledWith(['v.pdf']);
+      expect(res.json.mock.calls[0][0].arquivoUrl).toBe(`/api/arquivos/${NOVO}`);
+    });
+
+    it('removerArquivo: true detaches and deletes the attachment', async () => {
+      prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, arquivoId: VELHO, turma: { professorId: 1 } });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      prismaMock.atividade.update.mockResolvedValue({ id: 1, arquivoId: null });
+      prismaMock.arquivo.findMany.mockResolvedValueOnce([{ caminho: 'v.pdf' }]).mockResolvedValueOnce([]);
+
+      await updateActivity(mockReq({ params: { id: '1' }, body: { removerArquivo: true } }), res);
+
+      expect(prismaMock.atividade.update.mock.calls[0][0].data).toEqual({ arquivoId: null });
+      expect(disco.removerDoDisco).toHaveBeenCalledWith(['v.pdf']);
     });
   });
 
@@ -126,10 +200,12 @@ describe('ActivityController', () => {
 
     it('returns activities for owning professor', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
-      const atividades = [{ id: 1, titulo: 'Task 1', submissoes: [] }];
+      const atividades = [{ id: 1, titulo: 'Task 1', arquivoId: null, submissoes: [{ id: 3, arquivoId: NOVO }] }];
       prismaMock.atividade.findMany.mockResolvedValue(atividades);
       await listActivitiesByClass(mockReq({ params: { turmaId: '1' } }), res);
-      expect(res.json).toHaveBeenCalledWith(atividades);
+      expect(res.json).toHaveBeenCalledWith([
+        { ...atividades[0], ...semArquivo, submissoes: [{ id: 3, arquivoId: NOVO, arquivo: null, arquivoUrl: `/api/arquivos/${NOVO}` }] },
+      ]);
     });
 
     it('returns activities for enrolled aluno', async () => {
@@ -138,7 +214,7 @@ describe('ActivityController', () => {
       const atividades = [{ id: 1, titulo: 'Task 1', submissoes: [] }];
       prismaMock.atividade.findMany.mockResolvedValue(atividades);
       await listActivitiesByClass(studentReq({ params: { turmaId: '1' } }), res);
-      expect(res.json).toHaveBeenCalledWith(atividades);
+      expect(res.json).toHaveBeenCalledWith([{ ...atividades[0], ...semArquivo }]);
     });
   });
 });

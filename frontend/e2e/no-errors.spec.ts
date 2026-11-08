@@ -5,6 +5,8 @@ const PUBLIC_PAGES = [
   { path: "/home", name: "Home" },
   { path: "/login?tipo=aluno", name: "Login Aluno" },
   { path: "/login?tipo=professor", name: "Login Professor" },
+  { path: "/esqueci-senha", name: "Esqueci minha senha" },
+  { path: "/redefinir-senha?token=abc", name: "Redefinir senha" },
 ];
 
 // Only capture actual errors — warnings are common in Next.js dev mode

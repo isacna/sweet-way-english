@@ -41,20 +41,32 @@ export function youtubeEmbedUrl(url: string): string | null {
   return null;
 }
 
+/** Tipo de prévia a partir do MIME detectado pelo backend (arquivos privados). */
+export function previewKindPorMime(mime: string): AssetPreviewKind {
+  if (mime === "application/pdf") return "pdf";
+  if (mime.startsWith("image/") && mime !== "image/svg+xml") return "image";
+  if (mime.startsWith("video/")) return "video";
+  if (mime.startsWith("audio/")) return "audio";
+  return "none";
+}
+
 /**
  * Define como exibir o recurso em tela (imagem, PDF, vídeo, áudio, YouTube ou nenhum).
  * `tipo` vem de Material (pdf, audio, video, link) ou fica vazio para anexos de alunos.
+ * Com `mime` (arquivo privado, "/api/arquivos/<id>"), ele decide: a URL não tem extensão.
  */
 export function getAssetPreviewKind(
   fullUrl: string,
-  tipo?: string | null
+  tipo?: string | null,
+  mime?: string | null
 ): AssetPreviewKind {
   if (!fullUrl.trim()) return "none";
+  if (mime) return previewKindPorMime(mime);
 
   if (youtubeEmbedUrl(fullUrl)) return "youtube";
 
   const ext = pathnameExtension(fullUrl);
-  const imageExt = ["jpg", "jpeg", "png", "gif", "webp", "svg", "bmp"];
+  const imageExt = ["jpg", "jpeg", "png", "gif", "webp", "bmp"];
   if (imageExt.includes(ext)) return "image";
 
   if (ext === "pdf" || tipo === "pdf") return "pdf";

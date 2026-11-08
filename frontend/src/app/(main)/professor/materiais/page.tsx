@@ -5,7 +5,9 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { AssetPreview } from "@/components/AssetPreview";
-import { apiFetch, assetUrl } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
+import { ArquivoBotao } from "@/components/ArquivoBotao";
+import type { ArquivoResumo } from "@/lib/arquivos";
 import { tempoRelativoPt } from "@/lib/timePt";
 import { Download, Search, Upload } from "lucide-react";
 
@@ -15,7 +17,9 @@ type Material = {
   id: number;
   titulo: string;
   tipo: string;
+  /** "/api/arquivos/<id>" (upload, privado) ou URL externa (link) */
   urlArquivo: string;
+  arquivo: ArquivoResumo | null;
   criadoEm: string;
 };
 
@@ -246,7 +250,7 @@ function MateriaisPageContent() {
           </p>
         ) : (
           filtrados.map((mat) => {
-            const href = assetUrl(mat.urlArquivo);
+            const href = mat.urlArquivo || null;
             return (
               <div
                 key={mat.id}
@@ -271,20 +275,20 @@ function MateriaisPageContent() {
                     </p>
                   </div>
                   {href && (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <ArquivoBotao
+                      url={href}
+                      nome={mat.arquivo?.nomeOriginal}
                       className="p-2 text-ink-soft hover:text-accent hover:bg-accent/10 rounded-lg transition-colors flex-shrink-0"
-                      aria-label="Abrir material"
+                      aria-label={`Abrir ${mat.titulo}`}
                     >
                       <Download aria-hidden className="h-[20px] w-[20px] shrink-0" />
-                    </a>
+                    </ArquivoBotao>
                   )}
                 </div>
                 {href && (
                   <AssetPreview
-                    fullUrl={href}
+                    url={href}
+                    arquivo={mat.arquivo}
                     tipo={mat.tipo}
                     title={mat.titulo}
                   />

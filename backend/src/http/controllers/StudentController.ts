@@ -1,8 +1,7 @@
 import { Response } from 'express';
 import bcrypt from 'bcryptjs';
-import fs from 'fs';
-import path from 'path';
 import { prisma } from '../../database/client.js';
+import { apagarArquivos, removerDoDisco } from '../../storage/arquivos.js';
 import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
 import { ehMenor } from '../../domain/idade.js';
@@ -151,10 +150,14 @@ export async function updateStudent(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
   if (nome !== undefined) data.nome = nome;
   if (email !== undefined) data.email = normalizarEmail(email);
-  if (senha !== undefined && senha !== '') data.senha = await bcrypt.hash(senha, 10);
+  if (senha !== undefined && senha !== '') {
+    data.senha = await bcrypt.hash(senha, 10);
+    // Senha nova derruba as sessões abertas do aluno
+    data.versaoToken = { increment: 1 };
+  }
 
   if (Object.keys(data).length === 0) {
     res.status(400).json({ error: 'Envie ao menos um campo: nome, email ou senha' });
@@ -191,21 +194,17 @@ export async function deleteStudent(req: AuthRequest, res: Response) {
     return;
   }
 
-  const submissions = await prisma.submissao.findMany({ where: { alunoId }, select: { arquivoUrl: true } });
-
-  await prisma.$transaction(async (tx) => {
+  // Os arquivos do aluno (entregas) saem junto: Arquivo.dono é Restrict justamente para não sobrar nada no disco
+  const caminhos = await prisma.$transaction(async (tx) => {
+    const arquivos = await tx.arquivo.findMany({ where: { donoId: alunoId }, select: { id: true } });
     await tx.feedback.deleteMany({ where: { submissao: { alunoId } } });
     await tx.submissao.deleteMany({ where: { alunoId } });
     await tx.matricula.deleteMany({ where: { alunoId } });
+    const remover = await apagarArquivos(tx, arquivos.map((a) => a.id));
     await tx.usuario.delete({ where: { id: alunoId } });
+    return remover;
   });
-
-  for (const s of submissions) {
-    if (s.arquivoUrl?.startsWith('/uploads/')) {
-      const filePath = path.join('uploads', path.basename(s.arquivoUrl));
-      if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
-    }
-  }
+  await removerDoDisco(caminhos);
 
   res.status(204).send();
 }

@@ -13,7 +13,7 @@ import {
   classeLinkSuave,
   classeRotulo,
 } from "@/components/formStyles";
-import { apiUrl } from "@/lib/api";
+import { apiFetch, salvarUsuario } from "@/lib/api";
 
 function LoginPageContent() {
   const searchParams = useSearchParams();
@@ -31,9 +31,9 @@ function LoginPageContent() {
     setCarregando(true);
 
     try {
-      const res = await fetch(`${apiUrl()}/api/auth/login`, {
+      // O backend grava a sessão num cookie httpOnly; aqui só guardamos o usuário para a interface
+      const res = await apiFetch("/auth/login", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, senha }),
       });
 
@@ -45,8 +45,7 @@ function LoginPageContent() {
         return;
       }
 
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
+      salvarUsuario(data.user);
 
       if (data.user.role === "professor") {
         window.location.href = "/professor";
@@ -120,9 +119,17 @@ function LoginPageContent() {
         </div>
 
         <div>
-          <label htmlFor="senha" className={classeRotulo}>
-            Senha
-          </label>
+          <div className="flex items-baseline justify-between gap-3">
+            <label htmlFor="senha" className={classeRotulo}>
+              Senha
+            </label>
+            <Link
+              href="/esqueci-senha"
+              className="mb-1.5 text-sm font-medium text-white/80 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+            >
+              Esqueci minha senha
+            </Link>
+          </div>
           <input
             id="senha"
             type="password"

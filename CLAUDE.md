@@ -66,6 +66,7 @@ Backend `.env` also accepts:
 DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway
 # TEST_DATABASE_URL=...sweetway_test  # for npm run test:db (dropped on every run)
 # Optional: JWT_EXPIRES_IN (7d), PORT (3333), UPLOAD_MAX_MB (10); see backend/.env.example
+# E-mail / session: RESEND_API_KEY (no key = e-mails only logged), EMAIL_FROM, FRONTEND_URL (links in e-mails), COOKIE_SECURE
 ```
 
 The frontend uses `NEXT_PUBLIC_API_URL` at build time to construct API calls. When running in Docker, this is passed as a build arg to the frontend image.
@@ -121,17 +122,20 @@ Self-paced A1 course using the Structured Grammar (PPP) method. It has no AI and
 
 ### Auth Flow (end-to-end)
 
-1. `POST /api/auth/login` returns `{ token, user: { id, nome, email, role, admin } }` (JWT expires per `JWT_EXPIRES_IN`, default 7d)
-2. Frontend stores both in `localStorage`
-3. `apiFetch()` in `src/lib/api.ts` auto-injects `Authorization: Bearer <token>`
-4. Backend `authenticateToken` middleware validates the JWT and attaches `req.user = { id, email, role, admin }`; on 401 the frontend `apiFetch` clears the stored session
-5. `requireRole(...)` / `requireAdmin` middlewares gate endpoints (admin is checked against the DB); many older controllers still check `req.user.role` inline
+1. `POST /api/auth/login` sets the JWT in the httpOnly cookie `sw_sessao` (SameSite=Lax, `Secure` in production or with `COOKIE_SECURE=1`, lifetime `JWT_EXPIRES_IN`, default 7d) and returns `{ token, user: { id, nome, email, role, admin } }`. `token` is only for API clients
+2. The frontend stores only `user` in `localStorage`, as a UI cache. It never stores the token, and it removes a legacy `token` key on load
+3. `apiFetch()` in `src/lib/api.ts` sends `credentials: 'include'`, so the browser attaches the cookie. CORS allows credentials for the `CORS_ORIGIN` allowlist
+4. Backend `authenticateToken` reads `Authorization: Bearer` when present (API clients, tests, e2e), otherwise the cookie. It checks the JWT, then looks the user up by id. It returns 401 if the user was deleted or if `Usuario.versaoToken` differs from the token's `v`. It attaches `req.user = { id, email, role, admin }`. On any 401 the frontend `apiFetch` clears the cached `user`, and `NavbarUser` calls `GET /api/auth/me` on load to send a stale session back to the login
+5. `POST /api/auth/logout` clears the cookie. A password change or reset bumps `versaoToken`, so every older session dies
+6. `requireRole(...)` / `requireAdmin` middlewares gate endpoints (admin is checked against the DB); many older controllers still check `req.user.role` inline
+
+Password reset: `/esqueci-senha` → `POST /api/auth/esqueci-senha` always answers the same way and e-mails a 1-hour, single-use link `${FRONTEND_URL}/redefinir-senha?token=…`. Only the SHA-256 of the token is stored (`TokenSenha`). `/redefinir-senha` → `POST /api/auth/redefinir-senha`. E-mail goes through `backend/src/email/`: Resend when `RESEND_API_KEY` is set, otherwise the backend log in dev. Details in `backend/CLAUDE.md` ("Auth").
 
 `JWT_SECRET` is required (min 16 chars): the backend fails at startup without it, and `docker compose` refuses to start without it in the root `.env`.
 
 ### File Uploads
 
-Multer stores files to `./uploads/{timestamp}-{sanitized-name}` on the backend (size limit `UPLOAD_MAX_MB`, MIME allowlist). The DB stores the relative path `/uploads/{filename}`, served statically at `GET /uploads/*`. The frontend uses `assetUrl(path)` from `src/lib/api.ts` to construct full URLs.
+Uploads are private. Multer keeps the file in memory (max `UPLOAD_MAX_MB`). The backend checks the real type from the file's bytes (`file-type`), and only then writes it to `UPLOAD_DIR` (default `./uploads`) under a random name (`<uuid>.<ext>`). Each file gets a row in the `Arquivo` table (owner, original name, mime, size), and `Atividade`/`Submissao`/`MaterialApoio` point to it with `arquivoId`. Nothing in `uploads/` is served statically. Files come only from `GET /api/arquivos/:id`, which needs a session and checks who may see the file (404 otherwise). The API keeps the old fields, `arquivoUrl` / `urlArquivo`, which now hold `"/api/arquivos/<id>"` (or the external URL for link materials), plus `arquivo: { id, nomeOriginal, mime, tamanho }`. The frontend fetches files with `apiFetch` and shows them through `blob:` URLs (`src/lib/arquivos.ts`). The school logo is the only public file: `GET /api/configuracoes/logo`. Details: `backend/CLAUDE.md` ("File Uploads").
 
 ### Users
 

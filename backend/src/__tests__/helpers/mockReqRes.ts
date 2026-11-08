@@ -7,10 +7,14 @@ export function mockRes() {
     status: vi.fn(),
     json: vi.fn(),
     send: vi.fn(),
+    cookie: vi.fn(),
+    clearCookie: vi.fn(),
   };
   res.status.mockReturnValue(res);
   res.json.mockReturnValue(res);
   res.send.mockReturnValue(res);
+  res.cookie.mockReturnValue(res);
+  res.clearCookie.mockReturnValue(res);
   return res as Response;
 }
 

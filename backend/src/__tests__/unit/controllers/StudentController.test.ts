@@ -6,17 +6,18 @@ const prismaMock = vi.hoisted(() => ({
   usuario: { create: vi.fn(), update: vi.fn(), delete: vi.fn() },
   submissao: { findMany: vi.fn(), deleteMany: vi.fn() },
   feedback: { deleteMany: vi.fn() },
+  arquivo: { findMany: vi.fn(), deleteMany: vi.fn() },
   $transaction: vi.fn(),
+}));
+const disco = vi.hoisted(() => ({ gravarNoDisco: vi.fn(), removerDoDisco: vi.fn() }));
+vi.mock('../../../storage/arquivos.js', async (original) => ({
+  ...(await original<typeof import('../../../storage/arquivos.js')>()),
+  ...disco,
 }));
 
 vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
 vi.mock('bcryptjs', () => ({
   default: { hash: vi.fn().mockResolvedValue('hashed') },
-}));
-vi.mock('fs', () => ({
-  default: { existsSync: vi.fn().mockReturnValue(false), unlinkSync: vi.fn() },
-  existsSync: vi.fn().mockReturnValue(false),
-  unlinkSync: vi.fn(),
 }));
 
 import bcrypt from 'bcryptjs';
@@ -194,6 +195,13 @@ describe('StudentController', () => {
       await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
       expect(bcrypt.hash).toHaveBeenCalledWith('newpass', 10);
     });
+
+    it('bumps versaoToken when the password changes (old sessions end)', async () => {
+      prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.usuario.update.mockResolvedValue({ id: 2, nome: 'Bob', email: 'b@t.com', criadoEm: new Date() });
+      await updateStudent(professorReq({ params: { id: '2' }, body: { senha: 'newpass' } }), res);
+      expect(prismaMock.usuario.update.mock.calls[0][0].data.versaoToken).toEqual({ increment: 1 });
+    });
   });
 
   // ── deleteStudent ─────────────────────────────────────────────────────────
@@ -216,7 +224,7 @@ describe('StudentController', () => {
 
     it('deletes student and returns 204', async () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
-      prismaMock.submissao.findMany.mockResolvedValue([]);
+      prismaMock.arquivo.findMany.mockResolvedValue([]);
       prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
       prismaMock.feedback.deleteMany.mockResolvedValue({});
       prismaMock.submissao.deleteMany.mockResolvedValue({});
@@ -227,6 +235,25 @@ describe('StudentController', () => {
 
       expect(res.status).toHaveBeenCalledWith(204);
       expect(res.send).toHaveBeenCalled();
+    });
+
+    it('deletes the student files (Arquivo rows before the user, disk after commit)', async () => {
+      prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
+      prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
+      const ordem: string[] = [];
+      prismaMock.arquivo.findMany
+        .mockResolvedValueOnce([{ id: 'a1' }, { id: 'a2' }]) // arquivos do aluno
+        .mockResolvedValueOnce([{ caminho: 'x.pdf' }, { caminho: 'y.png' }]) // linhas apagadas
+        .mockResolvedValueOnce([]); // caminhos ainda usados
+      prismaMock.arquivo.deleteMany.mockImplementation(async () => { ordem.push('arquivo'); });
+      prismaMock.usuario.delete.mockImplementation(async () => { ordem.push('usuario'); });
+
+      await deleteStudent(professorReq({ params: { id: '2' } }), res);
+
+      expect(prismaMock.arquivo.findMany.mock.calls[0][0]).toMatchObject({ where: { donoId: 2 } });
+      expect(ordem).toEqual(['arquivo', 'usuario']);
+      expect(disco.removerDoDisco).toHaveBeenCalledWith(['x.pdf', 'y.png']);
+      expect(res.status).toHaveBeenCalledWith(204);
     });
   });
 });

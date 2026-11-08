@@ -30,11 +30,11 @@ npm run test:coverage     # Coverage report
 npm run test:db           # src/__tests__/db/ against a real Postgres (TEST_DATABASE_URL)
 ```
 
-`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) and the SQLite→Postgres script.
+`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the session cookie and password reset (`sessao-senha.test.ts`), the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) the SQLite→Postgres script, and private uploads (`arquivos.test.ts`: the `20261109010000_arquivos` migration of old rows, plus upload, permissions and file removal through the API).
 
 ## Environment
 
-Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `DATABASE_URL`. Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
+Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `UPLOAD_DIR` (`uploads`), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links). Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
 
 ## Architecture
 
@@ -42,7 +42,7 @@ Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`:
 
 ### Entry Point
 
-`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN`, JSON body, `/uploads` static, `/api` router, central `errorHandler`). `src/server.ts` only calls `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
+`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/api` router (nothing is served statically: uploads go through `GET /api/arquivos/:id`), central `errorHandler`). `src/server.ts` calls `avisarConfigEmail()` (warns in production when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
 
 ### Route Organization
 
@@ -52,9 +52,13 @@ Routes are split into individual files under `src/http/routes/`, each with its o
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/auth/register/aluno` | Public signup, always creates an `aluno`; requires `dataNascimento`, and minors (<18) also need `responsavelNome`, `responsavelEmail`, `consentimentoResponsavel: true` (LGPD art. 14) |
-| `POST` | `/api/auth/login` | Login (returns JWT + `user.admin`) |
+| `POST` | `/api/auth/login` | Login: sets the `sw_sessao` cookie and returns `{ token, user }` (`token` only for API clients) |
+| `POST` | `/api/auth/logout` | Clears the session cookie (no auth needed) |
+| `GET` | `/api/auth/me` | `{ user }` of the current session, same shape as login; 401 without a valid session |
+| `POST` | `/api/auth/esqueci-senha` | `{ email }` → always 200 with the same message; e-mails a reset link if the account exists |
+| `POST` | `/api/auth/redefinir-senha` | `{ token, senha }` (min 6) → 200, or 400 for an unknown/expired/used link |
 
-There is no public professor signup: professors are created by an admin. Both auth routes are rate-limited (20 req / 15 min, skipped when `NODE_ENV=test`).
+There is no public professor signup: professors are created by an admin. Signup, login and `redefinir-senha` are rate-limited (20 req / 15 min per IP), `esqueci-senha` more strictly (5 / 15 min per IP); all limiters are skipped when `NODE_ENV=test`.
 
 #### Classes — `class.routes.ts`
 | Method | Path | Description |
@@ -110,7 +114,8 @@ There is no public professor signup: professors are created by an admin. Both au
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/configuracoes` | Get app configuration (public) |
-| `PATCH` | `/api/configuracoes/logo` | Upload logo (multipart `logo`), admin |
+| `GET` | `/api/configuracoes/logo` | The school logo (public; the only public upload). `GET /api/configuracoes` returns `logoUrl` = this absolute URL with `?v=<timestamp>` |
+| `PATCH` | `/api/configuracoes/logo` | Upload logo (multipart `logo`, PNG/JPEG/GIF/WebP checked by bytes), admin |
 | `GET` | `/api/professor/me` | Get professor profile, `requireRole('professor')` |
 | `PATCH` | `/api/professor/me` | Update professor profile, `requireRole('professor')` |
 | `GET` | `/api/admin/professores` | List all professors, admin |
@@ -148,15 +153,28 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 
 Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
 
+#### Files — `arquivo.routes.ts`
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/arquivos/:id` | Streams a private upload (authenticated). See "File Uploads" for who may see it; everyone else gets 404 |
+
 #### Health
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/health` | Health check |
 
-### Auth Middleware
+### Auth
 
-Defined in `src/http/middlewares/auth.ts`:
-- `authenticateToken`: verifies Bearer JWT, attaches `req.user = { id, email, role, admin }`. Returns 401 for invalid/expired tokens and for legacy tokens without `exp`.
+**Session** (`src/http/sessao.ts`): `iniciarSessao(res, usuario)` signs the JWT `{ id, email, role, admin, v }` (`v` = `Usuario.versaoToken`) and sets it in the cookie `sw_sessao` (`httpOnly`, `SameSite=Lax`, `Path=/`, `Secure` in production or with `COOKIE_SECURE=1`, `maxAge` = `JWT_EXPIRES_IN`). `encerrarSessao(res)` clears it. `usuarioPublico()` builds the `user` object returned by login and `/auth/me`. The frontend never sees the token: it calls the API with `credentials: 'include'`.
+
+**Revoking sessions:** incrementing `Usuario.versaoToken` kills every token issued before. It is bumped on password reset, when an admin or professor sets someone's password (`ConfigController.updateProfessorAdmin`, `StudentController.updateStudent`), when a student is promoted to professor (the role is in the token), and when a professor changes their own password (`updateProfessorMe`, which then re-issues the cookie so the current session survives). Logout only clears the cookie.
+
+**Password reset:** `esqueci-senha` creates a `TokenSenha` (only the SHA-256 of a random 32-byte token is stored, `expiraEm` = 1 h), deletes the user's previous unused tokens and e-mails `${FRONTEND_URL}/redefinir-senha?token=...` without awaiting the send (the response time does not reveal whether the account exists). `redefinir-senha` checks hash, expiry and `usadoEm`, then in one transaction marks the token used (conditional update, so a concurrent second request fails), sets the new password and bumps `versaoToken`. For minors the link goes to the account e-mail, like for any user (not to the guardian's).
+
+**E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it the console provider logs the message, link included (dev). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
+
+**Middleware** (`src/http/middlewares/auth.ts`):
+- `authenticateToken`: reads the JWT from `Authorization: Bearer` when present (API clients, tests, e2e), otherwise from the `sw_sessao` cookie (the browser). An explicit header wins so that an API client whose cookie jar holds another user's session still acts as the token it sent. Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
 - `requireRole(...papeis)`: 403 unless `req.user.role` is in the list.
 - `requireAdmin`: checks `Usuario.admin` **in the database** (not the token claim), so revoking admin takes effect immediately.
 
@@ -172,7 +190,7 @@ Prisma with PostgreSQL. The client lives in `src/database/client.ts` (`@prisma/a
 `docker run -d --name sweetway-pg -p 5432:5432 -e POSTGRES_USER=sweetway -e POSTGRES_PASSWORD=sweetway -e POSTGRES_DB=sweetway postgres:17-alpine`.
 Then set `DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway`, run `npx prisma migrate deploy` and `npm run db:seed`. In Docker Compose the `postgres` service is wired up for you, and the entrypoint runs `migrate deploy` on every start and seeds only when `SEED_ON_START=1`.
 
-**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`. The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
+**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`, followed by `20261109000000_sessao_e_senha` (`Usuario.versaoToken`, `TokenSenha`). The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
 
 **Moving data from SQLite** (`scripts/migrar-sqlite-para-postgres.ts`, logic in `scripts/migrar-sqlite/migrar.ts`):
 ```bash
@@ -188,19 +206,37 @@ The script opens the SQLite file read-only and copies every table in FK order in
 - `Usuario.email` is stored lowercase (unique index). Use `normalizarEmail()` from `src/domain/email.ts` on every write and lookup. Login does a single lookup.
 
 **Key models**:
-- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
+- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). `versaoToken` (Int, default 0) goes into the JWT as `v` (see Auth).
+- `TokenSenha`: password-reset request (`hashToken` unique SHA-256, `expiraEm`, `usadoEm`), cascades from `Usuario`. Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
 - `Turma` — class with a random 6-char `codigoConvite` (invite code)
 - `Matricula` — join table between a `Usuario` (aluno) and a `Turma`
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)
 - `Submissao` — student submission; `status` enum: `pendente | aprovado | reprovado | corrigido`
 - `Feedback` — one-to-one with `Submissao`; has `nota` (grade) and `comentario`
-- `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`
+- `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`. Either `url` (external link) or `arquivoId` (upload), never both (CHECK `MaterialApoio_url_ou_arquivo` in the migration)
+- `Arquivo` — metadata of a private upload: uuid `id`, `donoId`, `nomeOriginal`, `caminho` (file name inside `UPLOAD_DIR`), `mime` (detected), `tamanho`. `Atividade.arquivoId` (teacher attachment), `Submissao.arquivoId` and `MaterialApoio.arquivoId` are nullable and unique. Both directions are `Restrict` (the owner, and the record pointing to the file), because the file on disk must go too: whoever deletes rows calls `apagarArquivos(tx, ids)` inside the transaction and `removerDoDisco(caminhos)` after the commit (`StudentController.deleteStudent`, `ConfigController.deleteProfessorAdmin`, `MaterialController.deleteMaterial`, `ActivityController.updateActivity`). A raw `prisma.turma.delete` leaves orphaned `Arquivo` rows (still visible only to their owner)
+- `ConfiguracaoApp.logoCaminho` — logo file name inside `UPLOAD_DIR` (public, not an `Arquivo`)
 - Course (Phase 1): `Nivel` → `Modulo` → `Licao` → `Exercicio` (PPP stages), `ItemTeste` (parallel forms per module), and learner state `PerfilAprendiz`, `ProgressoLicao`, `RevisaoItem` (Leitner), `TentativaTeste`. `Modulo`/`Licao` have `status: rascunho | revisao | publicado`.
 
 After any `schema.prisma` change, run `npx prisma migrate dev` then `npx prisma generate`.
 
 ### File Uploads
 
-Multer (`src/config/multer.ts`) stores files to `./uploads/{timestamp}-{sanitized-name}`, max `UPLOAD_MAX_MB` (413 above it), allowlisted MIME types only: PDF, Office docs, plain text, images (no SVG), audio, video (415 otherwise). The stored URL in the DB is `/uploads/{filename}`, served statically at the same path. File fields:
-- `submissoes`: field name `arquivo`
-- `materiais`: field name `arquivo`
+Private by default (F2 of `docs/plano-producao.md`). Code: `src/storage/arquivos.ts` (storage), `src/http/middlewares/upload.ts` (request side), `src/http/controllers/ArquivoController.ts` (download), `src/http/arquivoPublico.ts` (response shape).
+
+**Receiving.** Routes use `receberArquivo(campo)`, never `upload.single`. Multer keeps the file in **memory** (one file, `UPLOAD_MAX_MB`, 413 above it). Then `detectarTipo` checks the bytes with `file-type`, and the declared MIME/extension is ignored. The allowlist is unchanged: PDF, docx/pptx, doc/ppt (the CFB container plus the declared type), images except SVG, audio, video, and plain text (only when declared as text, valid UTF-8, no NUL bytes). Anything else is 415, and the logo accepts only PNG/JPEG/GIF/WebP. The controller reads the file with `arquivoRecebido(req)`.
+
+**Saving and cleanup.** Nothing touches the disk until the controller has validated everything and calls `salvarArquivoRecebido(req, donoId, (tx, arquivo) => ...)`. That function writes `UPLOAD_DIR/<uuid>.<ext>`, then in one transaction creates the `Arquivo` row and runs the callback that links it. If anything throws, the file is removed. A request the controller rejects (400/403/404) never writes, and memory storage made that choice. As a safety net, files written and not committed are removed when the response closes. Fields: `arquivo` for submissions, materials and activities (optional teacher attachment, JSON or multipart, `removerArquivo: true` on PATCH), and `logo` for the logo.
+
+**Serving.** `GET /api/arquivos/:id` (uuid, authenticated) is allowed for:
+- the owner;
+- the teacher who owns the class the file belongs to (through `Atividade`, `Submissao` or `MaterialApoio`);
+- students enrolled in that class, for activity attachments and materials;
+- for a submission, only its student;
+- admins (checked in the database).
+
+Everyone else gets **404**, never 403. The response has `Content-Type` from the DB, `Content-Disposition: inline` (PDF, image, audio, video) or `attachment` (others) with `filename*=UTF-8''…`, `X-Content-Type-Options: nosniff` and `Cache-Control: private, no-cache`.
+
+**API contract.** Submissions and activities return `arquivoUrl: "/api/arquivos/<id>" | null` plus `arquivo: { id, nomeOriginal, mime, tamanho } | null`. Materials keep `urlArquivo`: `"/api/arquivos/<id>"` for uploads, the external URL for links. They also return `url` and `arquivo`.
+
+**Migration `20261109010000_arquivos`.** It converted every old `"/uploads/<file>"` value into an `Arquivo` row. The owner is the student or the class teacher, the mime comes from the extension, `tamanho` is 0, and `caminho` is the old file name. Files on disk were not renamed. Values with `/` or `..` were dropped, the old columns were removed, and the logo became `logoCaminho`. Several migrated rows may share one `caminho`, so `apagarArquivos` only returns paths that no other row uses. The seed copies `seed-media/` into one random-named file per record. The SQLite import script (`db:migrar-sqlite`) maps the old columns the same way (`src/storage/legado.ts`).

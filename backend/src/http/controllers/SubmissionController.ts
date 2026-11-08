@@ -2,6 +2,10 @@ import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { StatusSubmissao } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { arquivoRecebido, salvarArquivoRecebido } from '../middlewares/upload.js';
+import { arquivoResumoSelect, comArquivo } from '../arquivoPublico.js';
+
+const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
 
 export async function createSubmission(req: AuthRequest, res: Response) {
   if (req.user.role !== 'aluno') {
@@ -27,8 +31,8 @@ export async function createSubmission(req: AuthRequest, res: Response) {
     return;
   }
 
-  const file = (req as AuthRequest & { file?: Express.Multer.File }).file;
-  if (atividade.arquivoObrigatorio && !file) {
+  const arquivo = arquivoRecebido(req);
+  if (atividade.arquivoObrigatorio && !arquivo) {
     res.status(400).json({ error: 'Esta atividade exige o envio de um arquivo.' });
     return;
   }
@@ -44,16 +48,15 @@ export async function createSubmission(req: AuthRequest, res: Response) {
     return;
   }
 
-  const { conteudo } = req.body;
-  const submissao = await prisma.submissao.create({
-    data: {
-      atividadeId,
-      alunoId: req.user.id,
-      conteudo,
-      arquivoUrl: file ? `/uploads/${file.filename}` : null,
-    },
-  });
-  res.status(201).json(submissao);
+  const conteudo = typeof req.body?.conteudo === 'string' ? req.body.conteudo : undefined;
+  const dados = { atividadeId, alunoId: req.user.id, conteudo };
+  // O arquivo só vai para o disco aqui, depois de todas as checagens (e sai de novo se a gravação falhar)
+  const submissao = arquivo
+    ? await salvarArquivoRecebido(req, req.user.id, (tx, a) =>
+        tx.submissao.create({ data: { ...dados, arquivoId: a.id }, include: incluirArquivo }),
+      )
+    : await prisma.submissao.create({ data: dados, include: incluirArquivo });
+  res.status(201).json(comArquivo(submissao));
 }
 
 export async function listSubmissionsByActivity(req: AuthRequest, res: Response) {
@@ -83,10 +86,10 @@ export async function listSubmissionsByActivity(req: AuthRequest, res: Response)
 
   const submissoes = await prisma.submissao.findMany({
     where: { atividadeId },
-    include: { aluno: { select: { id: true, nome: true } }, feedback: true },
+    include: { aluno: { select: { id: true, nome: true } }, feedback: true, ...incluirArquivo },
     orderBy: { dataEnvio: 'desc' },
   });
-  res.json(submissoes);
+  res.json(submissoes.map(comArquivo));
 }
 
 export async function updateSubmissionStatus(req: AuthRequest, res: Response) {
@@ -139,8 +142,8 @@ export async function updateSubmissionStatus(req: AuthRequest, res: Response) {
     return tx.submissao.update({
       where: { id },
       data: { status: newStatus },
-      include: { aluno: { select: { id: true, nome: true } }, feedback: true },
+      include: { aluno: { select: { id: true, nome: true } }, feedback: true, ...incluirArquivo },
     });
   });
-  res.json(updated);
+  res.json(comArquivo(updated));
 }

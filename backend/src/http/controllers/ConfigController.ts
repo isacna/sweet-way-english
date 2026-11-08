@@ -1,9 +1,18 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
-import fs from 'fs';
-import path from 'path';
 import { prisma } from '../../database/client.js';
+import { env } from '../../config/env.js';
+import {
+  apagarArquivos,
+  caminhoAbsoluto,
+  gravarNoDisco,
+  pastaUploads,
+  idsArquivosDasTurmas,
+  removerDoDisco,
+} from '../../storage/arquivos.js';
+import { arquivoRecebido } from '../middlewares/upload.js';
 import { AuthRequest } from '../../types/index.js';
+import { iniciarSessao } from '../sessao.js';
 
 const SENHA_MIN = 6; // mesma regra do cadastro público (AuthController)
 const ERRO_SENHA = `A senha precisa ter pelo menos ${SENHA_MIN} caracteres`;
@@ -21,37 +30,56 @@ async function getOrCreateConfig() {
 
 // ─── Configuração da aplicação ──────────────────────────────────────────────
 
+/** URL pública e absoluta da logo; `v` muda a cada troca, então o navegador pode guardar em cache. */
+function urlDaLogo(config: { logoCaminho: string | null; atualizadoEm: Date }) {
+  if (!config.logoCaminho) return null;
+  return `${env.APP_URL.replace(/\/$/, '')}/api/configuracoes/logo?v=${config.atualizadoEm.getTime()}`;
+}
+
 export async function getConfig(_req: Request, res: Response) {
   const config = await getOrCreateConfig();
-  const base = process.env.APP_URL ?? 'http://localhost:3333';
-  const logoUrl = config.logoUrl
-    ? `${base}${config.logoUrl}`
-    : null;
-  res.json({ logoUrl });
+  res.json({ logoUrl: urlDaLogo(config) });
+}
+
+/** A logo é o único upload público (aparece antes do login). Os demais passam por GET /api/arquivos/:id. */
+export async function getLogo(_req: Request, res: Response) {
+  const config = await prisma.configuracaoApp.findUnique({ where: { id: 1 } });
+  if (!config?.logoCaminho) {
+    res.status(404).json({ error: 'Nenhuma logo definida' });
+    return;
+  }
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  try {
+    caminhoAbsoluto(config.logoCaminho);
+  } catch {
+    res.status(404).json({ error: 'Logo não encontrada' });
+    return;
+  }
+  res.sendFile(config.logoCaminho, { root: pastaUploads(), maxAge: '1d', dotfiles: 'deny' }, (err) => {
+    if (err && !res.headersSent) res.status(404).json({ error: 'Logo não encontrada' });
+  });
 }
 
 export async function uploadLogo(req: AuthRequest, res: Response) {
-  if (!req.file) {
+  // receberArquivo('logo', { somenteImagem: true }) já conferiu que é PNG/JPEG/GIF/WebP pelos bytes
+  const arquivo = arquivoRecebido(req);
+  if (!arquivo) {
     res.status(400).json({ error: 'Nenhum arquivo enviado' });
     return;
   }
 
-  const newLogoUrl = `/uploads/${req.file.filename}`;
-
-  // Apagar logo anterior se existia
-  const config = await getOrCreateConfig();
-  if (config.logoUrl?.startsWith('/uploads/')) {
-    const oldPath = path.join('uploads', path.basename(config.logoUrl));
-    if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
+  const anterior = await getOrCreateConfig();
+  const caminho = await gravarNoDisco(arquivo.buffer, arquivo.ext);
+  let config;
+  try {
+    config = await prisma.configuracaoApp.update({ where: { id: 1 }, data: { logoCaminho: caminho } });
+  } catch (err) {
+    await removerDoDisco([caminho]);
+    throw err;
   }
+  if (anterior.logoCaminho && anterior.logoCaminho !== caminho) await removerDoDisco([anterior.logoCaminho]);
 
-  await prisma.configuracaoApp.update({
-    where: { id: 1 },
-    data: { logoUrl: newLogoUrl },
-  });
-
-  const base = process.env.APP_URL ?? 'http://localhost:3333';
-  res.json({ logoUrl: `${base}${newLogoUrl}` });
+  res.json({ logoUrl: urlDaLogo(config) });
 }
 
 // ─── Perfil do professor logado ─────────────────────────────────────────────
@@ -72,7 +100,7 @@ export async function getProfessorMe(req: AuthRequest, res: Response) {
 
 export async function updateProfessorMe(req: AuthRequest, res: Response) {
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
 
   if (nome !== undefined) {
     const n = String(nome).trim();
@@ -87,6 +115,8 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
   if (senha !== undefined && String(senha).trim()) {
     if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
+    // Senha nova derruba as sessões abertas com a antiga
+    data.versaoToken = { increment: 1 };
   }
 
   if (Object.keys(data).length === 0) {
@@ -95,11 +125,13 @@ export async function updateProfessorMe(req: AuthRequest, res: Response) {
   }
 
   try {
-    const professor = await prisma.usuario.update({
+    const { papel, admin, versaoToken, ...professor } = await prisma.usuario.update({
       where: { id: req.user.id },
       data,
-      select: { id: true, nome: true, email: true, criadoEm: true },
+      select: { id: true, nome: true, email: true, criadoEm: true, papel: true, admin: true, versaoToken: true },
     });
+    // Trocou a própria senha: as outras sessões caem, mas esta continua com um cookie novo
+    if (data.versaoToken) iniciarSessao(res, { id: professor.id, nome: professor.nome, email: professor.email, papel, admin, versaoToken });
     res.json(professor);
   } catch {
     res.status(400).json({ error: 'Email já cadastrado' });
@@ -154,7 +186,7 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
   }
 
   const { nome, email, senha } = req.body;
-  const data: { nome?: string; email?: string; senha?: string } = {};
+  const data: { nome?: string; email?: string; senha?: string; versaoToken?: { increment: number } } = {};
 
   if (nome !== undefined) {
     const n = String(nome).trim();
@@ -169,6 +201,8 @@ export async function updateProfessorAdmin(req: AuthRequest, res: Response) {
   if (senha !== undefined && String(senha).trim()) {
     if (senhaCurta(senha)) { res.status(400).json({ error: ERRO_SENHA }); return; }
     data.senha = await bcrypt.hash(String(senha).trim(), 10);
+    // Senha nova derruba as sessões abertas com a antiga
+    data.versaoToken = { increment: 1 };
   }
 
   if (Object.keys(data).length === 0) {
@@ -206,11 +240,17 @@ export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
     return;
   }
 
-  await prisma.$transaction(async (tx) => {
+  const caminhos = await prisma.$transaction(async (tx) => {
     // Apagar feedbacks do professor
     await tx.feedback.deleteMany({ where: { professorId: targetId } });
     // Apagar turmas e tudo relacionado
     const turmas = await tx.turma.findMany({ where: { professorId: targetId }, select: { id: true } });
+    // Arquivos das turmas (inclusive entregas dos alunos) e os do próprio professor (ex.: entregas de quando era aluno)
+    const arquivos = [
+      ...(await idsArquivosDasTurmas(tx, turmas.map((t) => t.id))),
+      ...(await tx.arquivo.findMany({ where: { donoId: targetId }, select: { id: true } })).map((a) => a.id),
+    ];
+    await tx.submissao.deleteMany({ where: { alunoId: targetId } });
     for (const t of turmas) {
       await tx.feedback.deleteMany({ where: { submissao: { atividade: { turmaId: t.id } } } });
       await tx.submissao.deleteMany({ where: { atividade: { turmaId: t.id } } });
@@ -220,8 +260,11 @@ export async function deleteProfessorAdmin(req: AuthRequest, res: Response) {
       await tx.matricula.deleteMany({ where: { turmaId: t.id } });
     }
     await tx.turma.deleteMany({ where: { professorId: targetId } });
+    const remover = await apagarArquivos(tx, arquivos);
     await tx.usuario.delete({ where: { id: targetId } });
+    return remover;
   });
+  await removerDoDisco(caminhos);
 
   res.status(204).send();
 }
@@ -249,7 +292,8 @@ export async function promoteAluno(req: AuthRequest, res: Response) {
     await tx.matricula.deleteMany({ where: { alunoId } });
     return tx.usuario.update({
       where: { id: alunoId },
-      data: { papel: 'professor' },
+      // O papel vai no token: a sessão antiga (de aluno) deixa de valer
+      data: { papel: 'professor', versaoToken: { increment: 1 } },
       select: { id: true, nome: true, email: true },
     });
   });

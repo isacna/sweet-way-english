@@ -1,6 +1,9 @@
 import { Response } from 'express';
 import { prisma } from '../../database/client.js';
 import { AuthRequest } from '../../types/index.js';
+import { arquivoResumoSelect, comArquivo, materialPublico } from '../arquivoPublico.js';
+
+const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
 
 export async function createClass(req: AuthRequest, res: Response) {
   if (req.user.role !== 'professor') {
@@ -46,8 +49,8 @@ export async function getClassById(req: AuthRequest, res: Response) {
     where: { id },
     include: {
       professor: { select: { nome: true } },
-      atividades: true,
-      materiais: true,
+      atividades: { include: incluirArquivo },
+      materiais: { include: incluirArquivo },
       matriculas: { include: { aluno: { select: { id: true, nome: true, email: true } } } },
     },
   });
@@ -70,7 +73,7 @@ export async function getClassById(req: AuthRequest, res: Response) {
     }
   }
 
-  res.json(turma);
+  res.json({ ...turma, atividades: turma.atividades.map(comArquivo), materiais: turma.materiais.map(materialPublico) });
 }
 
 export async function joinClass(req: AuthRequest, res: Response) {

@@ -204,16 +204,8 @@ function SecaoAparencia() {
     const form = new FormData();
     form.append("logo", arquivo);
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3333"}/api/configuracoes/logo`,
-      {
-        method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${typeof window !== "undefined" ? localStorage.getItem("token") ?? "" : ""}`,
-        },
-        body: form,
-      }
-    );
+    // apiFetch manda o cookie de sessão (a rota exige admin)
+    const res = await apiFetch("/configuracoes/logo", { method: "PATCH", body: form });
 
     const data = await res.json().catch(() => ({}));
     setEnviando(false);

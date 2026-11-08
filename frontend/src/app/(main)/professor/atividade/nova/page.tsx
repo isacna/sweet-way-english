@@ -22,6 +22,7 @@ function NovaAtividadePageContent() {
   const [dataEntrega, setDataEntrega] = useState("");
   const [arquivoObrigatorio, setArquivoObrigatorio] = useState(false);
   const [link, setLink] = useState("");
+  const [anexo, setAnexo] = useState<File | null>(null);
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
   const [carregandoTurmas, setCarregandoTurmas] = useState(true);
@@ -64,16 +65,26 @@ function NovaAtividadePageContent() {
       return;
     }
     setCarregando(true);
-    const res = await apiFetch(`/turmas/${turmaId}/atividades`, {
-      method: "POST",
-      body: JSON.stringify({
-        titulo,
-        descricao,
-        dataEntrega: new Date(dataEntrega).toISOString(),
-        arquivoObrigatorio,
-        link: link.trim() || null,
-      }),
-    });
+    const campos = {
+      titulo,
+      descricao,
+      dataEntrega: new Date(dataEntrega).toISOString(),
+      arquivoObrigatorio,
+      link: link.trim() || null,
+    };
+    let body: BodyInit = JSON.stringify(campos);
+    if (anexo) {
+      // Com anexo vai como multipart (o backend aceita os dois formatos)
+      const fd = new FormData();
+      fd.append("titulo", campos.titulo);
+      fd.append("descricao", campos.descricao);
+      fd.append("dataEntrega", campos.dataEntrega);
+      fd.append("arquivoObrigatorio", String(campos.arquivoObrigatorio));
+      if (campos.link) fd.append("link", campos.link);
+      fd.append("arquivo", anexo);
+      body = fd;
+    }
+    const res = await apiFetch(`/turmas/${turmaId}/atividades`, { method: "POST", body });
     setCarregando(false);
     if (res.status === 401 || res.status === 403) {
       router.replace("/login?tipo=professor");
@@ -215,12 +226,30 @@ function NovaAtividadePageContent() {
           {link.trim() && (
             <div className="mt-3">
               <AssetPreview
-                fullUrl={link.trim()}
+                url={link.trim()}
                 tipo="link"
                 title={titulo || "Link da atividade"}
               />
             </div>
           )}
+        </div>
+        <div>
+          <label
+            htmlFor="anexo"
+            className="block text-sm font-medium text-ink mb-2"
+          >
+            Anexo (opcional)
+          </label>
+          <input
+            id="anexo"
+            type="file"
+            accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,image/png,image/jpeg,image/gif,image/webp,audio/*,video/*"
+            onChange={(e) => setAnexo(e.target.files?.[0] ?? null)}
+            className="block w-full text-sm text-ink-soft file:mr-3 file:rounded-lg file:border-0 file:bg-accent/10 file:px-3 file:py-2 file:text-sm file:font-medium file:text-accent"
+          />
+          <p className="text-xs text-ink-soft mt-1">
+            Só os alunos da turma conseguem abrir. PDF, Word, PowerPoint, texto, imagem, áudio ou vídeo.
+          </p>
         </div>
         {erro && (
           <p className="text-sm text-danger-ink bg-danger-soft px-4 py-3 rounded-2xl font-medium">

@@ -12,6 +12,7 @@ import { adminRouter } from './admin.routes.js';
 import { avisoRouter } from './aviso.routes.js';
 import { cursoRouter } from './curso.routes.js';
 import { conteudoRouter, progressoRouter } from './conteudo.routes.js';
+import { arquivoRouter } from './arquivo.routes.js';
 
 const router = Router();
 
@@ -43,6 +44,7 @@ router.use('/alunos', studentFeedbackRouter);
 router.use('/curso', cursoRouter);
 router.use('/conteudo', conteudoRouter);
 router.use('/professor/progresso', progressoRouter);
+router.use('/arquivos', arquivoRouter);
 router.use('/', adminRouter);
 
 export { router };

@@ -1,15 +1,7 @@
 #!/bin/sh
 set -e
 
-# Copy seed media to uploads volume only if files are not already there
-for f in /app/seed-media/*; do
-  [ -f "$f" ] || continue
-  fname=$(basename "$f")
-  if [ ! -f "/app/uploads/$fname" ]; then
-    cp "$f" "/app/uploads/$fname"
-    echo "Copied seed media: $fname"
-  fi
-done
+# Os arquivos de exemplo (seed-media/) são copiados pelo próprio seed, com nome aleatório e linha em Arquivo.
 
 # O Compose só sobe o backend com o Postgres saudável (healthcheck), então não há espera aqui.
 echo "Running database migrations..."
