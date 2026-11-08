@@ -69,11 +69,11 @@ describe('authenticateToken', () => {
     expect(next).toHaveBeenCalled();
   });
 
-  it('prefers the cookie over the Authorization header', async () => {
+  it('an explicit Bearer header wins over an ambient cookie (API client logged in as someone else)', async () => {
     req.cookies = { sw_sessao: 'cookie.token' };
     req.headers = { authorization: 'Bearer header.token' };
     await authenticateToken(req as Request, res as Response, next);
-    expect(jwt.verify).toHaveBeenCalledWith('cookie.token', expect.any(String));
+    expect(jwt.verify).toHaveBeenCalledWith('header.token', expect.any(String));
   });
 
   it('checks versaoToken with a single lookup by id', async () => {

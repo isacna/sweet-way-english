@@ -5,11 +5,15 @@ import { prisma } from '../../database/client.js';
 import type { AuthRequest, Papel } from '../../types/index.js';
 import { COOKIE_SESSAO } from '../sessao.js';
 
+/**
+ * Um `Authorization: Bearer` explícito vence o cookie: o header é escolhido a cada requisição, o cookie é ambiente
+ * (um cliente de API com cookie jar que logou como outro usuário continua usando o token que mandou).
+ * O frontend não manda Bearer, então no navegador vale o cookie.
+ */
 function extrairToken(req: Request): string | undefined {
-  const doCookie = (req as Request & { cookies?: Record<string, string> }).cookies?.[COOKIE_SESSAO];
-  if (doCookie) return doCookie;
   const authHeader = req.headers['authorization'];
-  return authHeader?.startsWith('Bearer ') ? authHeader.slice(7).trim() || undefined : undefined;
+  if (authHeader?.startsWith('Bearer ')) return authHeader.slice(7).trim() || undefined;
+  return (req as Request & { cookies?: Record<string, string> }).cookies?.[COOKIE_SESSAO] || undefined;
 }
 
 interface PayloadToken {

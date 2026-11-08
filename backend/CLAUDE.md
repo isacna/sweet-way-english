@@ -168,7 +168,7 @@ Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progres
 **E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it the console provider logs the message, link included (dev). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
 
 **Middleware** (`src/http/middlewares/auth.ts`):
-- `authenticateToken`: reads the JWT from the `sw_sessao` cookie first, then from `Authorization: Bearer` (API clients, tests, e2e). Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
+- `authenticateToken`: reads the JWT from `Authorization: Bearer` when present (API clients, tests, e2e), otherwise from the `sw_sessao` cookie (the browser). An explicit header wins so that an API client whose cookie jar holds another user's session still acts as the token it sent. Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
 - `requireRole(...papeis)`: 403 unless `req.user.role` is in the list.
 - `requireAdmin`: checks `Usuario.admin` **in the database** (not the token claim), so revoking admin takes effect immediately.
 
