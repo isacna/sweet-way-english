@@ -129,6 +129,13 @@ Mudanças de modelo, aproveitando a troca:
 - Uploads privados (seção 2) com o modelo `Arquivo`.
 - zod + `requireRole` em todas as rotas antigas; services de turmas, atividades, entregas, feedbacks e materiais.
 - `pino`, build com `tsc`, `env.ts` completo.
+- **Entregue (2026-11-08):** sessão em cookie `sw_sessao` com `versaoToken`, recuperar senha (`TokenSenha`, módulo
+  `email/` com Resend) e uploads privados (`Arquivo`, `GET /api/arquivos/:id`). Rotas antigas com `requireRole` na rota e
+  zod em parâmetros e corpos (`src/http/validacao.ts`); regras e Prisma em `src/services/` (turmas, atividades, avisos,
+  materiais, submissoes, feedbacks, alunos, professores, configuracao), com erros tipados (`src/services/erros.ts`)
+  mapeados pelo `errorHandler`. Logs com `pino`/`pino-http` (id de requisição, sem corpo, cookies nem dados pessoais;
+  `LOG_LEVEL`). Build `tsc` para `dist/` (`npm start` = `node dist/server.js`) e imagem Docker em vários estágios, sem
+  dependências de desenvolvimento, rodando como usuário `node`. O seed e os scripts de conteúdo seguem com `tsx`.
 
 ### F3. Frontend pendente (5–8 dias)
 - API relativa (`/api`) e remoção dos `localhost:3333`; `.env.example` do frontend.

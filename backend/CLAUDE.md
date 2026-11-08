@@ -6,8 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # Development
-npm run dev        # Start server with tsx (hot reload via tsx watch if needed)
-npm run lint       # Type-check with tsc --noEmit
+npm run dev        # Start server with tsx (no build, no file watching)
+npm run lint       # Type-check with tsc --noEmit (strict mode)
 
 # Database (PostgreSQL; DATABASE_URL in .env)
 npx prisma migrate dev     # Create/apply migrations and regenerate client (development)
@@ -17,8 +17,9 @@ npm run db:seed            # Seed the database (prisma/seed.ts)
 npm run db:migrar-sqlite -- path/to/dev.db [--forcar]  # Copy an old SQLite DB into Postgres
 npx prisma studio          # Open Prisma GUI
 
-# Build
-npm run build              # prisma generate + vite build
+# Build and run compiled (what the Docker image does)
+npm run build              # clean + prisma generate + tsc -p tsconfig.build.json + copy the Prisma client into dist/
+npm start                  # node dist/server.js
 ```
 
 Tests run with Vitest. Unit tests are in `src/__tests__/unit/`, integration tests in `src/__tests__/integration/`.
@@ -34,19 +35,43 @@ npm run test:db           # src/__tests__/db/ against a real Postgres (TEST_DATA
 
 ## Environment
 
-Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `UPLOAD_DIR` (`uploads`), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links). Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
+Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `UPLOAD_DIR` (`uploads`), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links), `LOG_LEVEL` (`fatal|error|warn|info|debug|trace|silent`, default `info`; tests are always silent). `DATABASE_URL` is in the schema only so the server can warn at startup; `src/database/client.ts` reads `process.env` directly because the seed and scripts import it without the rest of the env. Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
 
 ## Architecture
 
-**Stack**: Express.js, TypeScript (ESM), Prisma ORM, PostgreSQL 17, Multer for file uploads, bcryptjs, jsonwebtoken, Zod.
+**Stack**: Express.js, TypeScript (ESM, `strict`), Prisma ORM, PostgreSQL 17, Multer for file uploads, bcryptjs, jsonwebtoken, Zod, pino.
+
+### Layers
+
+```
+routes       src/http/routes/*.routes.ts   authenticateToken + requireRole/requireAdmin, receberArquivo, h() (async errors → errorHandler)
+controllers  src/http/controllers/*.ts     validar(schema, req.params | req.body) → service → response shape (comArquivo, materialPublico)
+services     src/services/*.ts             Prisma + business rules; throw typed errors; know nothing about req/res
+domain       src/domain/*.ts               pure rules (grading, progress, unlock, age, e-mail)
+```
+
+- **Services** (one per area): `turmas` (also `garantirAcessoTurma`/`turmaDaProfessora`, used by the others), `atividades`, `avisos`, `materiais`, `submissoes`, `feedbacks`, `alunos`, `professores`, `configuracao`. They take plain arguments (`usuario: UsuarioSessao`, ids, already-validated data) and return Prisma rows; the controller maps them to the API shape. An upload reaches a service as a `GravarAnexo` function built by `anexoDaRequisicao(req, donoId)`: the service calls it only after every check, so a rejected request never writes to disk, and the private-upload cleanup (`salvarArquivoRecebido`) is unchanged. The course controllers (`Curso`, `Conteudo`, `Progresso`) were not moved; they use `cursoApoio.ts` and `erroZod`.
+- **Errors** (`src/services/erros.ts`): `ErroValidacao` 400, `ErroProibido` 403 (default message `Acesso negado`), `ErroNaoEncontrado` 404, `ErroConflito` 409, all subclasses of `ErroServico` (`status` + Portuguese message). `errorHandler` answers `{ error: message }`; it also maps multer (413/400), `TipoArquivoNaoPermitido` (415) and malformed JSON (400). Anything else is a 500 with `Erro interno do servidor`, logged with its stack. `ehErroPrisma(err, 'P2002')` recognises Prisma error codes (unique violations become the old 400 messages, other database errors are 500). The private files route keeps answering 404 instead of 403.
+- **Validation** (`src/http/validacao.ts`): `validar(schema, valor)` throws `ErroValidacao` with the first issue's message (no field-path prefix, so the old messages stay as they were). Helpers: `id(msg)` for URL ids (digits only, 1..2147483647, otherwise 400), `idCorpo`, `texto`, `textoOpcional`, `booleano`/`lerBooleano` (JSON `true` or multipart `"true"/"1"/"on"`), `email`, `edicaoUsuarioSchema` (PATCH of a student or professor: each field optional but not empty when sent, empty password ignored, min 6), `SENHA_MIN`/`ERRO_SENHA`. Validation runs before any database access.
+- **Controller tests** call controllers through `executar(handler, req, res)` (`__tests__/helpers/mockReqRes.ts`), which sends a thrown error through the real `errorHandler`. Role guards are tested over HTTP in `__tests__/integration/rotas-legadas.test.ts`.
+
+### Logging
+
+`src/config/logger.ts` exports `logger` (pino) and `criarLogger(destino?, nivel?)`. Level: `LOG_LEVEL` (default `info`), always `silent` under `NODE_ENV=test`. Output: `pino-pretty` in development when it is installed (it is a devDependency), JSON on stdout otherwise. `src/http/middlewares/log.ts` (`logRequisicoes`, the first middleware in `createApp`) is pino-http: one line per request with `reqId`, `req: { method, path }` (no query string), `res: { status }`, `duracaoMs`; level `info`, `warn` for 4xx, `error` for 5xx; `/api/health` is not logged (the monitor calls it every few seconds; a failing database check logs its own error). The request id is the incoming `X-Request-Id` when it matches `[A-Za-z0-9._:-]{1,128}`, otherwise a UUID, and it is sent back in `X-Request-Id`. No bodies, headers, cookies, IPs or user data are logged; `authorization`, `cookie`, `set-cookie`, `senha`, `token` and `password` paths are also redacted (`CAMPOS_OCULTOS`). In handlers use `req.log` (carries `reqId`) or `logger`; never `console.*` in `src/`. `log.error({ err }, 'mensagem')` logs the stack.
+
+### Build and Docker
+
+`tsconfig.json` is for type-checking (`noEmit`, `strict`, covers tests and scripts). `tsconfig.build.json` extends it with `module`/`moduleResolution: NodeNext`, `rootDir: src`, `outDir: dist`, source maps, and excludes `src/__tests__` and the generated client. `scripts/copiar-prisma-client.mjs` copies `src/database/generated` (CommonJS + wasm, not compiled by tsc) to `dist/database/generated`. Nothing else non-TS is needed at runtime: `prisma/conteudo` is read from the working directory by the seed/scripts only.
+
+`Dockerfile` stages: `deps` (`npm ci`) → `build` (`npm run build`) → `prod-deps` (`npm ci --omit=dev`) → runtime on `node:24-alpine` with `NODE_ENV=production`: production `node_modules`, `dist/`, `prisma/` (schema, migrations, content), `seed-media/`, `prisma.config.ts`, and `src/` + `scripts/` for the tools that run with `tsx`. `prisma` (for `migrate deploy`) and `tsx` (for `prisma/seed.ts`, `conteudo:importar`, `conteudo:validar`) are production dependencies: the seed runs rarely, shares `src/` with the API, and compiling it would need a second output tree. In the image `src/database/generated` is a symlink to the client in `dist/`. Files belong to root; the process runs as `node` and can only write to `/app/uploads`. `entrypoint.sh`: checks that the uploads folder is writable (a volume created by an older image that ran as root needs a one-time `docker compose run --rm --user root --entrypoint chown backend -R node:node /app/uploads`), runs `prisma migrate deploy`, seeds when `SEED_ON_START=1`, then `exec node dist/server.js`.
 
 ### Entry Point
 
-`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/api` router (nothing is served statically: uploads go through `GET /api/arquivos/:id`), central `errorHandler`). `src/server.ts` calls `avisarConfigEmail()` (warns in production when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
+`src/app.ts` exports `createApp()` (request logging with `X-Request-Id`, helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/api` router (nothing is served statically: uploads go through `GET /api/arquivos/:id`), central `errorHandler`). `src/server.ts` registers the `unhandledRejection`/`uncaughtException` handlers (logged), warns when `DATABASE_URL` is missing, calls `avisarConfigEmail()` (warns when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
 
 ### Route Organization
 
-Routes are split into individual files under `src/http/routes/`, each with its own router, and assembled in `src/http/routes/index.ts`.
+Routes are split into individual files under `src/http/routes/`, each with its own router, and assembled in `src/http/routes/index.ts`. Every legacy route declares its roles with `requireRole(...)` (or `requireAdmin`): a wrong role gets `403 { error: 'Acesso negado' }` before any query or upload parsing. Routes open to both roles still list them (`requireRole('professor', 'aluno')`); the service then checks ownership/enrollment. URL ids that are not positive integers get 400.
 
 #### Auth — `auth.routes.ts` (public)
 | Method | Path | Description |
@@ -63,10 +88,10 @@ There is no public professor signup: professors are created by an admin. Signup,
 #### Classes — `class.routes.ts`
 | Method | Path | Description |
 |--------|------|-------------|
-| `POST` | `/api/turmas` | Create class (professor) |
+| `POST` | `/api/turmas` | Create class (professor). `{ nome, descricao?, nivel? }`; `nivel` (1–4 letters/digits) prefixes the invite code `SW<nivel><n>-<year>` |
 | `GET` | `/api/turmas` | List classes for current user |
-| `GET` | `/api/turmas/:id` | Class detail (activities, materials, avisos) |
-| `POST` | `/api/turmas/entrar` | Student joins class via invite code |
+| `GET` | `/api/turmas/:id` | Class detail (activities, materials, students); owner professor or enrolled student |
+| `POST` | `/api/turmas/entrar` | Student joins class via invite code (aluno; one class per student) |
 
 #### Activities — `activity.routes.ts`
 | Method | Path | Description |
@@ -93,21 +118,21 @@ There is no public professor signup: professors are created by an admin. Signup,
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/atividades/:id/submissoes` | Submit assignment (student, multipart `arquivo`) |
-| `GET` | `/api/atividades/:id/submissoes` | List submissions for activity |
+| `GET` | `/api/atividades/:id/submissoes` | List submissions for activity (professor) |
 | `PATCH` | `/api/professor/submissoes/:id` | Update submission status (professor) |
 
 #### Feedback — `feedback.routes.ts`
 | Method | Path | Description |
 |--------|------|-------------|
-| `POST` | `/api/submissoes/:id/feedback` | Add feedback to a submission (professor) |
-| `GET` | `/api/alunos/me/feedbacks` | List all feedbacks for current student |
+| `POST` | `/api/submissoes/:id/feedback` | Add feedback to a submission (professor): `{ comentario, nota }` (number ≥ 0, JSON number or numeric string); marks it `corrigido` in the same transaction |
+| `GET` | `/api/alunos/me/feedbacks` | List all feedbacks for current student (aluno) |
 
 #### Students — `student.routes.ts`
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/api/professor/alunos` | List all students (professor) |
-| `POST` | `/api/professor/alunos` | Create student (professor); optional `dataNascimento`, and for minors `responsavelNome`, `responsavelEmail`, `consentimentoResponsavel: true` are required |
-| `PATCH` | `/api/professor/alunos/:id` | Update student (professor) |
+| `POST` | `/api/professor/alunos` | Create student (professor): `nome`, valid `email`, `senha` (min 6), `turmaId` of one of their classes; optional `dataNascimento`, and for minors `responsavelNome`, `responsavelEmail`, `consentimentoResponsavel: true` are required |
+| `PATCH` | `/api/professor/alunos/:id` | Update student (professor): `nome`/`email` not empty when sent, `senha` ignored when empty, otherwise min 6 |
 | `DELETE` | `/api/professor/alunos/:id` | Delete student (professor) |
 
 #### Config & Admin — `admin.routes.ts`
@@ -167,18 +192,18 @@ Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progres
 
 **Session** (`src/http/sessao.ts`): `iniciarSessao(res, usuario)` signs the JWT `{ id, email, role, admin, v }` (`v` = `Usuario.versaoToken`) and sets it in the cookie `sw_sessao` (`httpOnly`, `SameSite=Lax`, `Path=/`, `Secure` in production or with `COOKIE_SECURE=1`, `maxAge` = `JWT_EXPIRES_IN`). `encerrarSessao(res)` clears it. `usuarioPublico()` builds the `user` object returned by login and `/auth/me`. The frontend never sees the token: it calls the API with `credentials: 'include'`.
 
-**Revoking sessions:** incrementing `Usuario.versaoToken` kills every token issued before. It is bumped on password reset, when an admin or professor sets someone's password (`ConfigController.updateProfessorAdmin`, `StudentController.updateStudent`), when a student is promoted to professor (the role is in the token), and when a professor changes their own password (`updateProfessorMe`, which then re-issues the cookie so the current session survives). Logout only clears the cookie.
+**Revoking sessions:** incrementing `Usuario.versaoToken` kills every token issued before. It is bumped on password reset, when an admin or professor sets someone's password (`professores.atualizarProfessor`, `alunos.atualizarAluno`), when a student is promoted to professor (the role is in the token), and when a professor changes their own password (`professores.atualizarPerfil`; `updateProfessorMe` then re-issues the cookie so the current session survives). Logout only clears the cookie.
 
 **Password reset:** `esqueci-senha` creates a `TokenSenha` (only the SHA-256 of a random 32-byte token is stored, `expiraEm` = 1 h), deletes the user's previous unused tokens and e-mails `${FRONTEND_URL}/redefinir-senha?token=...` without awaiting the send (the response time does not reveal whether the account exists). `redefinir-senha` checks hash, expiry and `usadoEm`, then in one transaction marks the token used (conditional update, so a concurrent second request fails), sets the new password and bumps `versaoToken`. For minors the link goes to the account e-mail, like for any user (not to the guardian's).
 
-**E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it the console provider logs the message, link included (dev). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
+**E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it nothing is sent: outside production the console provider logs the message, link included (dev), and in production it only logs a warning without recipient or link (whoever reads the logs could otherwise reset someone's password). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
 
 **Middleware** (`src/http/middlewares/auth.ts`):
 - `authenticateToken`: reads the JWT from `Authorization: Bearer` when present (API clients, tests, e2e), otherwise from the `sw_sessao` cookie (the browser). An explicit header wins so that an API client whose cookie jar holds another user's session still acts as the token it sent. Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
 - `requireRole(...papeis)`: 403 unless `req.user.role` is in the list.
 - `requireAdmin`: checks `Usuario.admin` **in the database** (not the token claim), so revoking admin takes effect immediately.
 
-Most older controllers still check `req.user.role` inline; the admin/config routes use the middlewares instead.
+Every route uses these middlewares; controllers do not check `req.user.role` for access (services still branch on it where both roles see different data). `requireAdmin` passes database errors to `next()`.
 
 **Role values**: `"professor"` | `"aluno"`. Admin is a separate boolean, not a role.
 
@@ -200,7 +225,7 @@ DATABASE_URL=postgresql://... npm run db:migrar-sqlite -- ./prisma/dev.db   # or
 The script opens the SQLite file read-only and copies every table in FK order inside one transaction. It keeps ids and then resets the sequences, lowercases emails (and aborts on case-insensitive duplicates) and validates enum values. It fills the new `criadoEm`/`atualizadoEm` columns from the row's existing dates, nulls a `revisadoPorId` that points to a missing user, and skips tables missing from the file (such as `NotaLicao` on older files). It refuses when the target already has users, unless you pass `--forcar`, which **truncates every table in the target** first. `better-sqlite3` is a devDependency used only by this script and its test.
 
 **Conventions (F1 of `docs/plano-producao.md`):**
-- Every FK column has an index, and every relation has an explicit `onDelete`. The children of a `Turma` (`Matricula`, `Aviso`, `Atividade` → `Submissao` → `Feedback`, `MaterialApoio`) cascade. Learner state cascades from `Usuario`. `Turma.professor` and `Feedback.professor` are `Restrict`, so deleting a professor still requires handling their classes and grades first (`ConfigController` does that). `Licao.revisadoPor` is `SetNull`. The manual deletes in older controllers still work, and some are now redundant.
+- Every FK column has an index, and every relation has an explicit `onDelete`. The children of a `Turma` (`Matricula`, `Aviso`, `Atividade` → `Submissao` → `Feedback`, `MaterialApoio`) cascade. Learner state cascades from `Usuario`. `Turma.professor` and `Feedback.professor` are `Restrict`, so deleting a professor still requires handling their classes and grades first (`professores.excluirProfessor` does that). `Licao.revisadoPor` is `SetNull`. The manual deletes in older controllers still work, and some are now redundant.
 - Enums keep the API string values: `StatusMatricula` (`ativa | inativa`), `EtapaExercicio`, `TipoExercicio` (shared by `Exercicio` and `ItemTeste`), `HabilidadeTeste`, `TipoMaterial`, `Metodologia`. They match `ETAPAS`/`HABILIDADES_TESTE`/the item `tipo`s in `src/domain/conteudo/schema.ts`. Validate input before writing (for example, `MaterialController` returns 400 for an unknown `tipo`), because an invalid enum value is a Prisma error.
 - Editable models have `criadoEm` + `atualizadoEm` (`@updatedAt`). `Json` columns are `jsonb`.
 - `Usuario.email` is stored lowercase (unique index). Use `normalizarEmail()` from `src/domain/email.ts` on every write and lookup. Login does a single lookup.
@@ -214,7 +239,7 @@ The script opens the SQLite file read-only and copies every table in FK order in
 - `Submissao` — student submission; `status` enum: `pendente | aprovado | reprovado | corrigido`
 - `Feedback` — one-to-one with `Submissao`; has `nota` (grade) and `comentario`
 - `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`. Either `url` (external link) or `arquivoId` (upload), never both (CHECK `MaterialApoio_url_ou_arquivo` in the migration)
-- `Arquivo` — metadata of a private upload: uuid `id`, `donoId`, `nomeOriginal`, `caminho` (file name inside `UPLOAD_DIR`), `mime` (detected), `tamanho`. `Atividade.arquivoId` (teacher attachment), `Submissao.arquivoId` and `MaterialApoio.arquivoId` are nullable and unique. Both directions are `Restrict` (the owner, and the record pointing to the file), because the file on disk must go too: whoever deletes rows calls `apagarArquivos(tx, ids)` inside the transaction and `removerDoDisco(caminhos)` after the commit (`StudentController.deleteStudent`, `ConfigController.deleteProfessorAdmin`, `MaterialController.deleteMaterial`, `ActivityController.updateActivity`). A raw `prisma.turma.delete` leaves orphaned `Arquivo` rows (still visible only to their owner)
+- `Arquivo` — metadata of a private upload: uuid `id`, `donoId`, `nomeOriginal`, `caminho` (file name inside `UPLOAD_DIR`), `mime` (detected), `tamanho`. `Atividade.arquivoId` (teacher attachment), `Submissao.arquivoId` and `MaterialApoio.arquivoId` are nullable and unique. Both directions are `Restrict` (the owner, and the record pointing to the file), because the file on disk must go too: whoever deletes rows calls `apagarArquivos(tx, ids)` inside the transaction and `removerDoDisco(caminhos)` after the commit (`alunos.excluirAluno`, `professores.excluirProfessor`, `materiais.apagarMaterial`, `atividades.atualizarAtividade` in `src/services/`). A raw `prisma.turma.delete` leaves orphaned `Arquivo` rows (still visible only to their owner)
 - `ConfiguracaoApp.logoCaminho` — logo file name inside `UPLOAD_DIR` (public, not an `Arquivo`)
 - Course (Phase 1): `Nivel` → `Modulo` → `Licao` → `Exercicio` (PPP stages), `ItemTeste` (parallel forms per module), and learner state `PerfilAprendiz`, `ProgressoLicao`, `RevisaoItem` (Leitner), `TentativaTeste`. `Modulo`/`Licao` have `status: rascunho | revisao | publicado`.
 
@@ -226,7 +251,7 @@ Private by default (F2 of `docs/plano-producao.md`). Code: `src/storage/arquivos
 
 **Receiving.** Routes use `receberArquivo(campo)`, never `upload.single`. Multer keeps the file in **memory** (one file, `UPLOAD_MAX_MB`, 413 above it). Then `detectarTipo` checks the bytes with `file-type`, and the declared MIME/extension is ignored. The allowlist is unchanged: PDF, docx/pptx, doc/ppt (the CFB container plus the declared type), images except SVG, audio, video, and plain text (only when declared as text, valid UTF-8, no NUL bytes). Anything else is 415, and the logo accepts only PNG/JPEG/GIF/WebP. The controller reads the file with `arquivoRecebido(req)`.
 
-**Saving and cleanup.** Nothing touches the disk until the controller has validated everything and calls `salvarArquivoRecebido(req, donoId, (tx, arquivo) => ...)`. That function writes `UPLOAD_DIR/<uuid>.<ext>`, then in one transaction creates the `Arquivo` row and runs the callback that links it. If anything throws, the file is removed. A request the controller rejects (400/403/404) never writes, and memory storage made that choice. As a safety net, files written and not committed are removed when the response closes. Fields: `arquivo` for submissions, materials and activities (optional teacher attachment, JSON or multipart, `removerArquivo: true` on PATCH), and `logo` for the logo.
+**Saving and cleanup.** Nothing touches the disk until everything is validated and `salvarArquivoRecebido(req, donoId, (tx, arquivo) => ...)` runs. Services get it as `anexoDaRequisicao(req, donoId)` (a `GravarAnexo`, or null without a file) and call it last. That function writes `UPLOAD_DIR/<uuid>.<ext>`, then in one transaction creates the `Arquivo` row and runs the callback that links it. If anything throws, the file is removed. A request the controller rejects (400/403/404) never writes, and memory storage made that choice. As a safety net, files written and not committed are removed when the response closes. Fields: `arquivo` for submissions, materials and activities (optional teacher attachment, JSON or multipart, `removerArquivo: true` on PATCH), and `logo` for the logo.
 
 **Serving.** `GET /api/arquivos/:id` (uuid, authenticated) is allowed for:
 - the owner;

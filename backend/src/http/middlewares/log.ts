@@ -21,7 +21,7 @@ function caminho(url: string | undefined) {
   return (url ?? '').split('?')[0];
 }
 
-/** Não registra o health check bem-sucedido (o monitoramento chama a cada poucos segundos). */
+/** Não registra o health check (o monitoramento chama a cada poucos segundos); a falha do banco já é logada na rota. */
 const ignorar = (req: IncomingMessage) => caminho(req.url) === '/api/health';
 
 export function logRequisicoes(log: Logger = loggerPadrao) {
