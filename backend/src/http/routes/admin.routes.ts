@@ -12,20 +12,21 @@ import {
   deleteProfessorAdmin,
   promoteAluno,
 } from '../controllers/ConfigController.js';
+import { h } from '../asyncHandler.js';
 
 const router = Router();
 
-router.get('/configuracoes', getConfig);
-router.patch('/configuracoes/logo', authenticateToken, requireAdmin, upload.single('logo'), uploadLogo);
+router.get('/configuracoes', h(getConfig));
+router.patch('/configuracoes/logo', authenticateToken, requireAdmin, upload.single('logo'), h(uploadLogo));
 
-router.get('/professor/me', authenticateToken, requireRole('professor'), getProfessorMe);
-router.patch('/professor/me', authenticateToken, requireRole('professor'), updateProfessorMe);
+router.get('/professor/me', authenticateToken, requireRole('professor'), h(getProfessorMe));
+router.patch('/professor/me', authenticateToken, requireRole('professor'), h(updateProfessorMe));
 
-router.get('/admin/professores', authenticateToken, requireAdmin, listAllProfessors);
-router.post('/admin/professores', authenticateToken, requireAdmin, createProfessorAdmin);
-router.patch('/admin/professores/:id', authenticateToken, requireAdmin, updateProfessorAdmin);
-router.delete('/admin/professores/:id', authenticateToken, requireAdmin, deleteProfessorAdmin);
+router.get('/admin/professores', authenticateToken, requireAdmin, h(listAllProfessors));
+router.post('/admin/professores', authenticateToken, requireAdmin, h(createProfessorAdmin));
+router.patch('/admin/professores/:id', authenticateToken, requireAdmin, h(updateProfessorAdmin));
+router.delete('/admin/professores/:id', authenticateToken, requireAdmin, h(deleteProfessorAdmin));
 
-router.post('/admin/alunos/:id/promover', authenticateToken, requireAdmin, promoteAluno);
+router.post('/admin/alunos/:id/promover', authenticateToken, requireAdmin, h(promoteAluno));
 
 export { router as adminRouter };

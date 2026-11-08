@@ -84,7 +84,7 @@ Frontend Jest unit tests don't exist yet (`--passWithNoTests`). Playwright has t
 
 ## Seed Credentials
 
-After running `npm run db:seed` (or first Docker start), these accounts are available:
+Outside production (`NODE_ENV` not `production`), `npm run db:seed` also creates demo data with these accounts. In production the demo data is skipped unless `SEED_DEMO=1`. The first admin then comes from `ADMIN_EMAIL` / `ADMIN_SENHA` (created only if missing). See `backend/.env.example`.
 
 | Role      | Email                    | Password  |
 |-----------|--------------------------|-----------|

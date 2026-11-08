@@ -1,4 +1,6 @@
 import 'dotenv/config';
+import fs from 'node:fs';
+import path from 'node:path';
 import bcrypt from 'bcryptjs';
 import { prisma } from '../src/database/client.js';
 import { StatusSubmissao } from '../src/database/generated/prisma/client.js';
@@ -6,7 +8,57 @@ import { importarConteudo } from '../src/domain/conteudo/importar.js';
 
 const PDF_WORKSHEET = '/uploads/1773977192408-Present_Simple_Worksheet.pdf';
 
-async function main() {
+// Seed em duas partes:
+// - sempre: conteúdo do curso (prisma/conteudo) e, se ADMIN_EMAIL/ADMIN_SENHA estiverem definidos, a conta admin inicial;
+// - dados de demonstração (contas com senha "senha123", turmas, entregas): só fora de produção, ou com SEED_DEMO=1.
+//   SEED_DEMO=0 desliga a demonstração também em dev.
+
+const producao = process.env.NODE_ENV === 'production';
+const comDemo = process.env.SEED_DEMO === '1' || (!producao && process.env.SEED_DEMO !== '0');
+
+/** Copia os arquivos de exemplo (seed-media/) para uploads/, onde os materiais de demonstração apontam. */
+function copiarMidiaDemo() {
+  const origem = path.resolve('seed-media');
+  const destino = path.resolve('uploads');
+  if (!fs.existsSync(origem)) return;
+  fs.mkdirSync(destino, { recursive: true });
+  for (const nome of fs.readdirSync(origem)) {
+    const alvo = path.join(destino, nome);
+    if (!fs.existsSync(alvo)) fs.copyFileSync(path.join(origem, nome), alvo);
+  }
+}
+
+/** Conta admin inicial a partir do ambiente. Não altera uma conta que já existe (nem a senha). */
+async function criarAdminInicial() {
+  const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+  const senha = process.env.ADMIN_SENHA;
+  if (!email || !senha) {
+    const temAdmin = await prisma.usuario.count({ where: { admin: true } });
+    if (producao && temAdmin === 0) {
+      console.warn('  ! Nenhum admin no banco. Defina ADMIN_EMAIL e ADMIN_SENHA e rode o seed de novo.');
+    }
+    return;
+  }
+  if (senha.length < 10) throw new Error('ADMIN_SENHA precisa ter pelo menos 10 caracteres');
+  const existente = await prisma.usuario.findUnique({ where: { email } });
+  if (existente) {
+    console.log(`  - Admin ${email} já existe (senha mantida)`);
+    return;
+  }
+  await prisma.usuario.create({
+    data: {
+      nome: process.env.ADMIN_NOME?.trim() || 'Administração',
+      email,
+      senha: await bcrypt.hash(senha, 10),
+      papel: 'professor',
+      admin: true,
+    },
+  });
+  console.log(`  - Admin inicial criado: ${email}`);
+}
+
+async function seedDemo() {
+  copiarMidiaDemo();
   const senhaHash = await bcrypt.hash('senha123', 10);
 
   // ─── Usuários ──────────────────────────────────────────────────────────────
@@ -300,24 +352,23 @@ async function main() {
     ],
   });
 
+  console.log('  - Demonstração: 1 professor, 3 alunos, 2 turmas, 5 matrículas, 4 atividades, 8 entregas, 3 avisos, 6 materiais');
+  console.log('    Contas: professor@sweetway.com | ana@email.com | bruno@email.com | carla@email.com (senha: senha123)');
+}
+
+async function main() {
+  if (producao && process.env.SEED_DEMO === '1') {
+    console.warn('  ! SEED_DEMO=1 em produção: criando contas de demonstração com senha conhecida.');
+  }
+  console.log('Seed:');
+  await criarAdminInicial();
+  if (comDemo) await seedDemo();
+
   // ─── Curso (prisma/conteudo) ───────────────────────────────────────────────
   // Entra como "revisao": a professora publica em /professor/conteudo.
   // SEED_PUBLICAR_CONTEUDO=1 publica direto (demonstração).
-
   const curso = await importarConteudo(prisma, { publicar: process.env.SEED_PUBLICAR_CONTEUDO === '1' });
-
-  // ─── Resumo ────────────────────────────────────────────────────────────────
-
-  console.log('Seed concluído:');
-  console.log('  - 1 professor, 3 alunos');
-  console.log('  - 2 turmas, 5 matrículas');
-  console.log('  - 4 atividades (2 por turma, sendo 1 com arquivo obrigatório cada)');
-  console.log('  - 8 submissões: 2 corrigidas/aprovadas com feedback, 6 pendentes de avaliação');
-  console.log('  - 3 avisos (2 na turma 1, 1 na turma 2)');
-  console.log('  - 6 materiais de apoio (3 por turma, PDF real incluído)');
   console.log(`  - Curso: ${curso.modulos} módulos, ${curso.licoesCriadas} lições novas`);
-  console.log('  Contas: professor@sweetway.com | ana@email.com | bruno@email.com | carla@email.com');
-  console.log('  Senha: senha123');
 }
 
 main()
