@@ -24,8 +24,12 @@ describe.skipIf(!temBanco)('migração 20261109010000_arquivos (dados antigos)',
     await client.query(`DROP SCHEMA IF EXISTS "${schema}" CASCADE`);
     await client.query(`CREATE SCHEMA "${schema}"`);
     await client.query(`SET search_path TO "${schema}"`);
-    // Banco "antigo": só a migração base, com as URLs /uploads/... em texto
-    await client.query(sql('20261108000000_base_postgres'));
+    // Banco "antigo": todas as migrações anteriores a esta, com as URLs /uploads/... em texto
+    const anteriores = fs
+      .readdirSync(path.resolve('prisma/migrations'))
+      .filter((d) => /^\d+_/.test(d) && d < '20261109010000_arquivos')
+      .sort();
+    for (const m of anteriores) await client.query(sql(m));
     await client.query(`
       INSERT INTO "Usuario" (id, nome, email, senha, papel, "atualizadoEm") VALUES
         (1, 'Prof', 'prof@t.com', 'x', 'professor', now()),
@@ -107,7 +111,7 @@ describe.skipIf(!temBanco)('uploads privados com Postgres real', () => {
   let app: ReturnType<typeof import('../../app.js').createApp>;
   let pasta = '';
   const token = (id: number, role: 'aluno' | 'professor') =>
-    `Bearer ${jwt.sign({ id, email: `${id}@t.com`, role, admin: false }, process.env.JWT_SECRET!, { expiresIn: '1h' })}`;
+    `Bearer ${jwt.sign({ id, email: `${id}@t.com`, role, admin: false, v: 0 }, process.env.JWT_SECRET!, { expiresIn: '1h' })}`;
 
   let prof = 0;
   let ana = 0;
