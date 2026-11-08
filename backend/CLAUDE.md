@@ -30,11 +30,11 @@ npm run test:coverage     # Coverage report
 npm run test:db           # src/__tests__/db/ against a real Postgres (TEST_DATABASE_URL)
 ```
 
-`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) and the SQLite→Postgres script.
+`npm test` mocks Prisma and needs no database. `npm run test:db` uses `vitest.db.config.ts`. It skips everything when `TEST_DATABASE_URL` is unset. Otherwise its `globalSetup` **drops the `public` schema** of that database and runs `prisma migrate deploy`, so the database name must contain `test`. It covers mixed-case email login, the session cookie and password reset (`sessao-senha.test.ts`), the course trail, the lesson-note upsert, enum values, `onDelete` behaviour (Turma cascade, Restrict on a professor with classes, SetNull on the lesson reviewer) and the SQLite→Postgres script.
 
 ## Environment
 
-Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `DATABASE_URL`. Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
+Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`: the server refuses to start if `JWT_SECRET` is missing or shorter than 16 chars. Other vars (all with defaults): `JWT_EXPIRES_IN` (7d; also the cookie `maxAge`, so it must look like `7d`, `12h`, `30m` or plain seconds), `PORT` (3333), `APP_URL`, `CORS_ORIGIN` (comma-separated, default `http://localhost:3000`), `UPLOAD_MAX_MB` (10), `DATABASE_URL`, `COOKIE_SECURE` (`1` adds `Secure` to the session cookie outside production; production always has it), `RESEND_API_KEY` (optional), `EMAIL_FROM` (default `Sweet Way English <onboarding@resend.dev>`), `FRONTEND_URL` (default `http://localhost:3000`, used in e-mailed links). Tests get `JWT_SECRET` from `vitest.config.ts`. Import `env` from `config/env.js` instead of reading `process.env`.
 
 ## Architecture
 
@@ -42,7 +42,7 @@ Copy `.env.example` to `.env`. Env is validated with zod in `src/config/env.ts`:
 
 ### Entry Point
 
-`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN`, JSON body, `/uploads` static, `/api` router, central `errorHandler`). `src/server.ts` only calls `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
+`src/app.ts` exports `createApp()` (helmet, CORS restricted to `CORS_ORIGIN` with `credentials: true`, `cookie-parser`, JSON body, `/uploads` static, `/api` router, central `errorHandler`). `src/server.ts` calls `avisarConfigEmail()` (warns in production when `RESEND_API_KEY` is missing) and `createApp().listen(env.PORT)`. The integration test uses `createApp()` so it covers the real middleware stack.
 
 ### Route Organization
 
@@ -52,9 +52,13 @@ Routes are split into individual files under `src/http/routes/`, each with its o
 | Method | Path | Description |
 |--------|------|-------------|
 | `POST` | `/api/auth/register/aluno` | Public signup, always creates an `aluno`; requires `dataNascimento`, and minors (<18) also need `responsavelNome`, `responsavelEmail`, `consentimentoResponsavel: true` (LGPD art. 14) |
-| `POST` | `/api/auth/login` | Login (returns JWT + `user.admin`) |
+| `POST` | `/api/auth/login` | Login: sets the `sw_sessao` cookie and returns `{ token, user }` (`token` only for API clients) |
+| `POST` | `/api/auth/logout` | Clears the session cookie (no auth needed) |
+| `GET` | `/api/auth/me` | `{ user }` of the current session, same shape as login; 401 without a valid session |
+| `POST` | `/api/auth/esqueci-senha` | `{ email }` → always 200 with the same message; e-mails a reset link if the account exists |
+| `POST` | `/api/auth/redefinir-senha` | `{ token, senha }` (min 6) → 200, or 400 for an unknown/expired/used link |
 
-There is no public professor signup: professors are created by an admin. Both auth routes are rate-limited (20 req / 15 min, skipped when `NODE_ENV=test`).
+There is no public professor signup: professors are created by an admin. Signup, login and `redefinir-senha` are rate-limited (20 req / 15 min per IP), `esqueci-senha` more strictly (5 / 15 min per IP); all limiters are skipped when `NODE_ENV=test`.
 
 #### Classes — `class.routes.ts`
 | Method | Path | Description |
@@ -153,10 +157,18 @@ Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progres
 |--------|------|-------------|
 | `GET` | `/api/health` | Health check |
 
-### Auth Middleware
+### Auth
 
-Defined in `src/http/middlewares/auth.ts`:
-- `authenticateToken`: verifies Bearer JWT, attaches `req.user = { id, email, role, admin }`. Returns 401 for invalid/expired tokens and for legacy tokens without `exp`.
+**Session** (`src/http/sessao.ts`): `iniciarSessao(res, usuario)` signs the JWT `{ id, email, role, admin, v }` (`v` = `Usuario.versaoToken`) and sets it in the cookie `sw_sessao` (`httpOnly`, `SameSite=Lax`, `Path=/`, `Secure` in production or with `COOKIE_SECURE=1`, `maxAge` = `JWT_EXPIRES_IN`). `encerrarSessao(res)` clears it. `usuarioPublico()` builds the `user` object returned by login and `/auth/me`. The frontend never sees the token: it calls the API with `credentials: 'include'`.
+
+**Revoking sessions:** incrementing `Usuario.versaoToken` kills every token issued before. It is bumped on password reset, when an admin or professor sets someone's password (`ConfigController.updateProfessorAdmin`, `StudentController.updateStudent`), when a student is promoted to professor (the role is in the token), and when a professor changes their own password (`updateProfessorMe`, which then re-issues the cookie so the current session survives). Logout only clears the cookie.
+
+**Password reset:** `esqueci-senha` creates a `TokenSenha` (only the SHA-256 of a random 32-byte token is stored, `expiraEm` = 1 h), deletes the user's previous unused tokens and e-mails `${FRONTEND_URL}/redefinir-senha?token=...` without awaiting the send (the response time does not reveal whether the account exists). `redefinir-senha` checks hash, expiry and `usadoEm`, then in one transaction marks the token used (conditional update, so a concurrent second request fails), sets the new password and bumps `versaoToken`. For minors the link goes to the account e-mail, like for any user (not to the guardian's).
+
+**E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it the console provider logs the message, link included (dev). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
+
+**Middleware** (`src/http/middlewares/auth.ts`):
+- `authenticateToken`: reads the JWT from the `sw_sessao` cookie first, then from `Authorization: Bearer` (API clients, tests, e2e). Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
 - `requireRole(...papeis)`: 403 unless `req.user.role` is in the list.
 - `requireAdmin`: checks `Usuario.admin` **in the database** (not the token claim), so revoking admin takes effect immediately.
 
@@ -172,7 +184,7 @@ Prisma with PostgreSQL. The client lives in `src/database/client.ts` (`@prisma/a
 `docker run -d --name sweetway-pg -p 5432:5432 -e POSTGRES_USER=sweetway -e POSTGRES_PASSWORD=sweetway -e POSTGRES_DB=sweetway postgres:17-alpine`.
 Then set `DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway`, run `npx prisma migrate deploy` and `npm run db:seed`. In Docker Compose the `postgres` service is wired up for you, and the entrypoint runs `migrate deploy` on every start and seeds only when `SEED_ON_START=1`.
 
-**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`. The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
+**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`, followed by `20261109000000_sessao_e_senha` (`Usuario.versaoToken`, `TokenSenha`). The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
 
 **Moving data from SQLite** (`scripts/migrar-sqlite-para-postgres.ts`, logic in `scripts/migrar-sqlite/migrar.ts`):
 ```bash
@@ -188,7 +200,8 @@ The script opens the SQLite file read-only and copies every table in FK order in
 - `Usuario.email` is stored lowercase (unique index). Use `normalizarEmail()` from `src/domain/email.ts` on every write and lookup. Login does a single lookup.
 
 **Key models**:
-- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
+- `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). `versaoToken` (Int, default 0) goes into the JWT as `v` (see Auth).
+- `TokenSenha`: password-reset request (`hashToken` unique SHA-256, `expiraEm`, `usadoEm`), cascades from `Usuario`. Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
 - `Turma` — class with a random 6-char `codigoConvite` (invite code)
 - `Matricula` — join table between a `Usuario` (aluno) and a `Turma`
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)
