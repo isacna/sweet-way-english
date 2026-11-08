@@ -2,7 +2,8 @@ import { defineConfig, devices } from "@playwright/test";
 
 // BASE_URL: frontend já rodando (sem ele, o Playwright sobe `npm run dev` em :3000).
 // E2E_CURSO=1 liga o projeto "curso" (e2e/curso.spec.ts), que precisa do backend com seed e curso publicado
-// em API_URL. Sem essa variável, `npm run test:e2e` roda só as páginas públicas. Ver frontend/CLAUDE.md.
+// atrás do frontend (rewrite `/api` → BACKEND_URL). API_URL é opcional: por padrão é o próprio BASE_URL.
+// Sem E2E_CURSO, `npm run test:e2e` roda só as páginas públicas. Ver frontend/CLAUDE.md.
 const baseURL = process.env.BASE_URL ?? "http://localhost:3000";
 const comCurso = process.env.E2E_CURSO === "1";
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { VIDEO_FUNDO_URL } from "./publico/HeroVideo";
+import { VideoFundo } from "./publico/VideoFundo";
 import s from "./publico/AuthShell.module.css";
 
 /**
@@ -19,7 +19,7 @@ export function AuthShell({
 }) {
   return (
     <div className={s.stage} data-tema="escuro">
-      <video className={s.video} src={VIDEO_FUNDO_URL} autoPlay muted loop playsInline aria-hidden tabIndex={-1} />
+      <VideoFundo className={s.video} />
       <div className={s.scrim} aria-hidden />
 
       <header className={s.nav}>

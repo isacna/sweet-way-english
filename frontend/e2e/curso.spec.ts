@@ -1,14 +1,18 @@
 import { test, expect, type Page, type APIRequestContext, type Locator } from "@playwright/test";
 
 // E2E do curso autoguiado (Fase 1). Precisa de backend com o seed e o curso PUBLICADO:
-//   DATABASE_URL=file:/tmp/e2e.db npx prisma migrate deploy
-//   SEED_PUBLICAR_CONTEUDO=1 DATABASE_URL=file:/tmp/e2e.db npx tsx prisma/seed.ts
+//   DATABASE_URL=postgresql://…/sweetway_e2e npx prisma migrate deploy
+//   SEED_PUBLICAR_CONTEUDO=1 DATABASE_URL=postgresql://…/sweetway_e2e npx tsx prisma/seed.ts
 // Roda só no projeto "curso" do playwright.config.ts (E2E_CURSO=1). Ver frontend/CLAUDE.md.
 //
 // Cada execução cria um aluno novo pelo /cadastro (menor de idade, com responsável), então dá para repetir
 // sem recriar o banco. O gabarito vem da API da professora — o navegador do aluno nunca o recebe.
 
-const API_URL = (process.env.API_URL ?? "http://localhost:3333").replace(/\/$/, "");
+// O navegador chama `/api` na própria origem (rewrite do Next ou Caddy). As chamadas diretas do spec usam API_URL,
+// que por padrão é o próprio frontend; aponte para o backend só se quiser pular o rewrite.
+const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "");
+const API_URL = (process.env.API_URL ?? BASE_URL).replace(/\/$/, "");
+const ehApi = (url: string) => url.startsWith(`${BASE_URL}/api/`) || url.startsWith(`${API_URL}/api/`);
 const PROFESSOR = { email: "professor@sweetway.com", senha: "senha123" };
 
 type Etapa = "controlada" | "semicontrolada" | "producao" | "quiz";
@@ -36,10 +40,10 @@ function vigiarErros(page: Page) {
   page.on("requestfailed", (r) => {
     // navegação cancela fetches em andamento — não é falha da API
     if (r.failure()?.errorText.includes("ERR_ABORTED")) return;
-    if (r.url().startsWith(API_URL)) erros.push(`[requestfailed] ${r.method()} ${r.url()} ${r.failure()?.errorText}`);
+    if (ehApi(r.url())) erros.push(`[requestfailed] ${r.method()} ${r.url()} ${r.failure()?.errorText}`);
   });
   page.on("response", (r) => {
-    if (r.url().startsWith(API_URL) && r.status() >= 400) erros.push(`[http ${r.status()}] ${r.request().method()} ${r.url()}`);
+    if (ehApi(r.url()) && r.status() >= 400) erros.push(`[http ${r.status()}] ${r.request().method()} ${r.url()}`);
   });
   return erros;
 }
@@ -315,6 +319,9 @@ test("professora: conteúdo, editor de lição e progresso", async ({ page }) =>
 
   await page.goto("/professor/progresso");
   await expect(page.getByText(aluno.nome).or(page.getByText("Ana Costa")).first()).toBeVisible();
+  // O aluno do /cadastro não tem turma: aparece no filtro "Alunos sem turma"
+  await page.locator("#filtro-turma").selectOption("sem-turma");
+  await expect(page.getByRole("row").filter({ hasText: aluno.nome })).toContainText("Sem turma");
 
   expect(erros, erros.join("\n")).toEqual([]);
 });
@@ -333,6 +340,10 @@ test("sessão: cookie httpOnly, nada de token no localStorage e sair encerra a s
   expect(sessao!.sameSite).toBe("Lax");
   expect(await page.evaluate(() => localStorage.getItem("token"))).toBeNull();
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("user") ?? "{}").email)).toBe(aluno.email);
+
+  // proxy.ts: aluno que abre a área da professora volta para a dele
+  await page.goto("/professor/progresso");
+  await page.waitForURL(/\/aluno$/);
 
   // Sair: o servidor apaga o cookie e o cache local some
   await page.getByRole("button", { name: new RegExp(aluno.nome) }).click();

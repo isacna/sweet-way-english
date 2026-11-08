@@ -7,7 +7,7 @@ import { Exercicio } from "@/components/curso/Exercicio";
 import { FeedbackResultado } from "@/components/curso/FeedbackResultado";
 import { ArrowLeft, Hourglass, Lock, PenLine, Repeat2, Target } from "lucide-react";
 import { Aviso, BarraAcao, BarraProgresso, Carregando, classeBotao } from "@/components/curso/ui";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 import {
   LIMIAR_TESTE_HABILIDADE,
   LIMIAR_TESTE_TOTAL,
@@ -306,11 +306,6 @@ function TesteModulo({ id }: { id: string }) {
 
   // Carrega a trilha só para mostrar título e situação do teste na introdução
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
     let cancelled = false;
     (async () => {
       try {

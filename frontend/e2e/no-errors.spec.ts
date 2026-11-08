@@ -96,3 +96,18 @@ test("root / redirects to /home without errors", async ({ page }) => {
   expect(page.url()).toContain("/home");
   expect(consoleErrors).toHaveLength(0);
 });
+
+// proxy.ts: sem o cookie de sessão, as áreas logadas redirecionam no servidor (a página nem chega a renderizar)
+for (const { path, tipo } of [
+  { path: "/aluno/curso", tipo: "aluno" },
+  { path: "/aluno", tipo: "aluno" },
+  { path: "/professor/progresso", tipo: "professor" },
+]) {
+  test(`"${path}" without a session redirects to the login before rendering`, async ({ page }) => {
+    const response = await page.goto(path);
+    expect(new URL(page.url()).pathname).toBe("/login");
+    expect(new URL(page.url()).searchParams.get("tipo")).toBe(tipo);
+    // O documento recebido já é o login: o redirecionamento veio do servidor, não do JS da página
+    expect(response?.request().redirectedFrom()?.url()).toContain(path);
+  });
+}

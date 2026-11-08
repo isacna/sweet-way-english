@@ -4,6 +4,7 @@ const prismaMock = vi.hoisted(() => ({
   turma: { findFirst: vi.fn() },
   modulo: { findMany: vi.fn() },
   matricula: { findMany: vi.fn() },
+  usuario: { findMany: vi.fn() },
   perfilAprendiz: { findMany: vi.fn() },
   progressoLicao: { findMany: vi.fn() },
   tentativaTeste: { findMany: vi.fn() },
@@ -83,5 +84,24 @@ describe('ProgressoController.progressoAlunos', () => {
     ]);
     expect(alunos[1]).toMatchObject({ id: 20, xp: 0, ofensivaAtual: 0, ultimoEstudoEm: null, revisoesPendentes: 0 });
     expect(prismaMock.matricula.findMany.mock.calls[0][0].where.turma).toEqual({ professorId: 1, id: 3 });
+  });
+
+  it('lists students without any class for ?turmaId=sem-turma', async () => {
+    prismaMock.usuario.findMany.mockResolvedValue([{ id: 30, nome: 'Davi', email: 'd@t.com' }]);
+    prismaMock.perfilAprendiz.findMany.mockResolvedValue([{ usuarioId: 30, xp: 40, ofensivaAtual: 0, ultimoEstudoEm: null }]);
+    prismaMock.progressoLicao.findMany.mockResolvedValue([{ usuarioId: 30, licao: { moduloId: 1 } }]);
+    prismaMock.tentativaTeste.findMany.mockResolvedValue([]);
+    prismaMock.revisaoItem.findMany.mockResolvedValue([]);
+
+    await progressoAlunos(mockReq({ query: { turmaId: 'sem-turma' } as any }), res);
+
+    expect(res.status).not.toHaveBeenCalled();
+    expect(prismaMock.turma.findFirst).not.toHaveBeenCalled();
+    expect(prismaMock.matricula.findMany).not.toHaveBeenCalled();
+    expect(prismaMock.usuario.findMany.mock.calls[0][0].where).toEqual({ papel: 'aluno', matriculas: { none: {} } });
+    const { alunos } = res.json.mock.calls[0][0];
+    expect(alunos).toHaveLength(1);
+    expect(alunos[0]).toMatchObject({ id: 30, nome: 'Davi', xp: 40, turmas: [] });
+    expect(alunos[0].modulos[0]).toMatchObject({ moduloId: 1, licoesConcluidas: 1 });
   });
 });

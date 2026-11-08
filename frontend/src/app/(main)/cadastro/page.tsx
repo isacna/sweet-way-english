@@ -12,7 +12,7 @@ import {
   classeLinkSuave,
   classeRotulo,
 } from "@/components/formStyles";
-import { apiUrl } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 
 const IDADE_MAIORIDADE = 18;
 
@@ -78,7 +78,7 @@ export default function CadastroPage() {
 
     setCarregando(true);
     try {
-      const res = await fetch(`${apiUrl()}/api/auth/register/aluno`, {
+      const res = await apiFetch("/auth/register/aluno", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -7,7 +7,7 @@ import { Exercicio } from "@/components/curso/Exercicio";
 import { FeedbackResultado } from "@/components/curso/FeedbackResultado";
 import { ArrowLeft, Repeat2 } from "lucide-react";
 import { Aviso, BarraAcao, BarraProgresso, Carregando, classeBotao } from "@/components/curso/ui";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 import {
   formatarDataHora,
   lerErroApi,
@@ -164,11 +164,6 @@ export default function RevisaoPage() {
   const [rodada, setRodada] = useState(0);
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
     let cancelled = false;
     (async () => {
       try {

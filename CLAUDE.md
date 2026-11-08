@@ -57,8 +57,7 @@ JWT_SECRET=<required, min 16 chars>
 POSTGRES_PASSWORD=<required>          # POSTGRES_DB / POSTGRES_USER default to sweetway
 # DATABASE_URL=                       # optional; defaults to postgresql://USER:PASSWORD@postgres:5432/DB
 APP_URL=http://localhost:3333
-CORS_ORIGIN=http://localhost:3000
-NEXT_PUBLIC_API_URL=http://localhost:3333
+CORS_ORIGIN=http://localhost:3000        # only for direct calls to :3333 from another origin
 SEED_ON_START=0                       # 1 = run the seed when the backend starts
 LOG_LEVEL=info                        # backend logs (pino, JSON on stdout)
 ```
@@ -72,7 +71,7 @@ DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway
 # LOG_LEVEL (info; pretty output in development, JSON otherwise, silent in tests)
 ```
 
-The frontend uses `NEXT_PUBLIC_API_URL` at build time to construct API calls. When running in Docker, this is passed as a build arg to the frontend image.
+The browser always calls the API on its own origin (`/api/...`); `NEXT_PUBLIC_API_URL` is no longer used. Next rewrites `/api/*` to `BACKEND_URL` (server-side only, default `http://localhost:3333`; see `frontend/.env.example`). The rewrite destination is fixed at `next build`, so in Docker `BACKEND_URL=http://backend:3333` is a build arg (set in `docker-compose.yml`) and also a runtime env for server components. In production Caddy (F4) will route `/api/*` straight to the backend. LAN/phone access works without config; `ALLOWED_DEV_ORIGINS` lists extra hosts for `next dev`.
 
 ## Tests
 
@@ -127,7 +126,7 @@ Self-paced A1 course using the Structured Grammar (PPP) method. It has no AI and
 
 1. `POST /api/auth/login` sets the JWT in the httpOnly cookie `sw_sessao` (SameSite=Lax, `Secure` in production or with `COOKIE_SECURE=1`, lifetime `JWT_EXPIRES_IN`, default 7d) and returns `{ token, user: { id, nome, email, role, admin } }`. `token` is only for API clients
 2. The frontend stores only `user` in `localStorage`, as a UI cache. It never stores the token, and it removes a legacy `token` key on load
-3. `apiFetch()` in `src/lib/api.ts` sends `credentials: 'include'`, so the browser attaches the cookie. CORS allows credentials for the `CORS_ORIGIN` allowlist
+3. `apiFetch()` in `src/lib/api.ts` calls `/api` on the same origin (Next rewrite or Caddy) with `credentials: 'include'`, so the cookie is first-party. CORS (`CORS_ORIGIN` allowlist, with credentials) only matters for direct calls to port 3333. Before rendering `/aluno/*` and `/professor/*`, `frontend/src/proxy.ts` redirects to the login when the cookie is missing or expired and sends a user to their own area by the (decoded, unverified) JWT `role`
 4. Backend `authenticateToken` reads `Authorization: Bearer` when present (API clients, tests, e2e), otherwise the cookie. It checks the JWT, then looks the user up by id. It returns 401 if the user was deleted or if `Usuario.versaoToken` differs from the token's `v`. It attaches `req.user = { id, email, role, admin }`. On any 401 the frontend `apiFetch` clears the cached `user`, and `NavbarUser` calls `GET /api/auth/me` on load to send a stale session back to the login
 5. `POST /api/auth/logout` clears the cookie. A password change or reset bumps `versaoToken`, so every older session dies
 6. `requireRole(...)` / `requireAdmin` middlewares gate every endpoint in the route files (admin is checked against the DB); controllers no longer check `req.user.role` for access

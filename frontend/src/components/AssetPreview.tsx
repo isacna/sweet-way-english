@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import {
   getAssetPreviewKind,
   youtubeEmbedUrl,
@@ -8,7 +8,7 @@ import {
 } from "@/lib/assetPreviewKind";
 import { ehArquivoPrivado, useArquivoUrl, type ArquivoResumo } from "@/lib/arquivos";
 import { ArquivoBotao } from "@/components/ArquivoBotao";
-import { Download, FileText } from "lucide-react";
+import { Download, ExternalLink, Eye, EyeOff, FileText } from "lucide-react";
 
 type AssetPreviewProps = {
   /**
@@ -39,8 +39,8 @@ function FallbackAbrir({
   privado: boolean;
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 text-center bg-gray-50 rounded-lg border border-dashed border-line-strong">
-      <FileText aria-hidden className="h-[40px] w-[40px] shrink-0" />
+    <div className="flex flex-col items-center justify-center gap-3 px-4 py-8 text-center">
+      <FileText aria-hidden className="h-10 w-10 shrink-0 text-ink-faint" />
       <p className="text-sm text-ink-soft max-w-sm">
         {privado
           ? "Este tipo de arquivo não tem pré-visualização. Baixe para abrir no seu computador."
@@ -50,7 +50,7 @@ function FallbackAbrir({
         url={url}
         nome={nome}
         baixar={privado}
-        className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-strong"
+        className="inline-flex min-h-[44px] items-center gap-2 rounded-lg px-2 text-sm font-semibold text-accent hover:bg-accent-soft"
       >
         <Download aria-hidden className="h-[16px] w-[16px] shrink-0" />
         {privado ? "Baixar arquivo" : "Abrir em nova aba"}
@@ -153,8 +153,8 @@ function PreviewBody({
 
 /**
  * Pré-visualização inline de anexos e materiais (imagem, PDF, áudio, vídeo, YouTube).
- * Por padrão vem recolhida; o conteúdo (e o download do arquivo privado) só carrega após
- * clicar em "Mostrar pré-visualização".
+ * Começa recolhida: o conteúdo (e o download do arquivo privado) só carrega depois de "Ver aqui".
+ * Ao lado fica "Abrir em nova aba" (ou "Baixar", para arquivos sem prévia).
  */
 export function AssetPreview({
   url,
@@ -165,61 +165,40 @@ export function AssetPreview({
   className = "",
 }: AssetPreviewProps) {
   const [aberto, setAberto] = useState(false);
+  const idArea = useId();
 
   if (!url) return null;
 
   const privado = ehArquivoPrivado(url);
   const kind = getAssetPreviewKind(url, tipo, privado ? (arquivo?.mime ?? "application/octet-stream") : null);
+  const temPrevia = kind !== "none" && !(kind === "pdf" && !privado);
+  const baixar = privado && !temPrevia;
 
   return (
-    <div
-      className={`rounded-xl border border-gray-200 bg-gray-50 overflow-hidden ${className}`}
-    >
-      <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-line bg-card">
-        <span className="text-xs font-medium text-ink-soft">
-          {aberto ? "Pré-visualização" : "Pré-visualização oculta"}
-        </span>
-        <div className="flex items-center gap-2 shrink-0">
-          {aberto && (
-            <>
-              <button
-                type="button"
-                onClick={() => setAberto(false)}
-                className="text-xs font-medium text-accent hover:text-accent-strong hover:underline"
-              >
-                Ocultar
-              </button>
-              <span className="text-gray-200" aria-hidden>
-                |
-              </span>
-            </>
-          )}
-          <ArquivoBotao
-            url={url}
-            nome={arquivo?.nomeOriginal}
-            baixar={privado && kind === "none"}
-            className="text-xs text-accent font-medium hover:underline"
+    <div className={className}>
+      <div className="flex flex-wrap gap-2">
+        {temPrevia && (
+          <button
+            type="button"
+            onClick={() => setAberto((v) => !v)}
+            aria-expanded={aberto}
+            aria-controls={idArea}
+            className={classeBotaoPrevia}
           >
-            {privado && kind === "none" ? "Baixar" : "Abrir em nova aba"}
-          </ArquivoBotao>
-        </div>
+            {aberto ? <EyeOff aria-hidden className="h-4 w-4" /> : <Eye aria-hidden className="h-4 w-4" />}
+            {aberto ? "Ocultar" : "Ver aqui"}
+            <span className="sr-only">: {title}</span>
+          </button>
+        )}
+        <ArquivoBotao url={url} nome={arquivo?.nomeOriginal} baixar={baixar} className={classeBotaoPrevia}>
+          {baixar ? <Download aria-hidden className="h-4 w-4" /> : <ExternalLink aria-hidden className="h-4 w-4" />}
+          {baixar ? "Baixar" : "Abrir em nova aba"}
+          <span className="sr-only">: {title}</span>
+        </ArquivoBotao>
       </div>
 
-      {!aberto && (
-        <button
-          type="button"
-          onClick={() => setAberto(true)}
-          className="w-full text-left px-3 py-4 text-sm text-ink-soft bg-gray-50 hover:bg-gray-100 transition-colors"
-        >
-          <span className="inline-flex items-center gap-2">
-            <FileText aria-hidden className="h-[18px] w-[18px] shrink-0 shrink-0" />
-            Clique aqui para exibir a mídia nesta página.
-          </span>
-        </button>
-      )}
-
-      {aberto && (
-        <div className="p-3 overflow-auto">
+      {aberto && temPrevia && (
+        <div id={idArea} className="mt-3 overflow-auto rounded-xl border border-line bg-gray-50 p-2 sm:p-3">
           <PreviewBody
             kind={kind}
             url={url}
@@ -232,3 +211,6 @@ export function AssetPreview({
     </div>
   );
 }
+
+const classeBotaoPrevia =
+  "inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-line-strong bg-card px-3.5 text-sm font-semibold text-ink shadow-sm transition-colors hover:border-gray-300 hover:bg-gray-50";

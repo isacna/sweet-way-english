@@ -141,6 +141,8 @@ Pré-visualização no editor: valida `item` com `itemSchema` e devolve `corrigi
 
 ### `GET /professor/progresso?turmaId=`
 Alunos das turmas do professor (ou só da turma indicada; 404 se a turma não é dele).
+`?turmaId=sem-turma` lista os alunos **sem nenhuma matrícula** (cadastro público em `/cadastro`), com `turmas: []`.
+No piloto qualquer professor (admin ou não) vê esse grupo, porque esses alunos ainda não pertencem a ninguém.
 ```ts
 {
   modulos: [{ id, slug, ordem, titulo, totalLicoes }],   // módulos publicados, em ordem

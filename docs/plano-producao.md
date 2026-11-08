@@ -147,6 +147,16 @@ Mudanças de modelo, aproveitando a troca:
 - Vídeo da home hospedado no próprio servidor (versão comprimida + poster); esconder os cards de metodologia "Em breve".
 - **LGPD (obrigatório com menores):** páginas de Termos de Uso e Política de Privacidade, link no cadastro, e um caminho
   para pedir exportação/exclusão de dados (no piloto pode ser por e-mail para o responsável).
+- **Entregue, parte A (2026-11-08):** o navegador chama `/api` relativo; o Next repassa ao backend por `rewrites`
+  (`BACKEND_URL`, fixado no build: build arg no Docker; `proxyClientMaxBodySize` em 25 MB para não cortar uploads de
+  10 MB). Sem `NEXT_PUBLIC_API_URL` nem `localhost:3333` no código do navegador; `frontend/.env.example`; imagem do
+  frontend em `node:24-alpine`. `src/proxy.ts` manda ao login quem está sem o cookie (ou com o JWT vencido) e cada papel
+  para a própria área, antes de renderizar (o JWT só é decodificado; quem valida é o backend); as páginas do curso
+  perderam a checagem de `localStorage` (as páginas antigas do aluno ainda a têm, e saem na revisão delas).
+  `/professor/progresso` com o filtro "Alunos sem turma" (`?turmaId=sem-turma`; no piloto, qualquer professor vê).
+  Vídeo da home em `frontend/public/video/` (WebM 0,5 MB + MP4 1,2 MB, 720p, poster, sem tocar com movimento reduzido
+  ou economia de dados). Cards de metodologia "Em breve" escondidos atrás de uma constante. As telas de senha já
+  vieram na F2; a revisão da gestão de turmas, o Google Docs Viewer e a LGPD ficam para a parte B.
 
 ### F4. Infraestrutura e deploy (3–4 dias)
 - `docker-compose.prod.yml`: `caddy`, `web` (Next standalone), `api` (compilado), `postgres`; volumes só de dados

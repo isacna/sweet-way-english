@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PlayerLicao } from "@/components/curso/PlayerLicao";
 import { Aviso, Carregando, classeBotao } from "@/components/curso/ui";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 import { lerErroApi, type LicaoDetalhe } from "@/lib/curso";
 
 type Estado =
@@ -20,11 +20,6 @@ function CarregadorLicao({ id }: { id: string }) {
   const [estado, setEstado] = useState<Estado>({ tipo: "carregando" });
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
     let cancelled = false;
     (async () => {
       try {

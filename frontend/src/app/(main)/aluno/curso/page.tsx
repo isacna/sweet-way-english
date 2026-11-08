@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Check, ChevronDown, Flame, Hourglass, Lock, Play, Repeat2, Trophy, Zap } from "lucide-react";
 import { BarraProgresso, Carregando, Aviso, classeBotao } from "@/components/curso/ui";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 import {
   formatarDataHora,
   lerErroApi,
@@ -14,7 +14,15 @@ import {
   type Trilha,
 } from "@/lib/curso";
 
-const metodologias = [
+/**
+ * Só a gramática estruturada existe na v1. As outras ficam escondidas até existirem (o backend já guarda
+ * `PerfilAprendiz.metodologia`); com uma só disponível, a seção inteira some, porque não há o que escolher.
+ * Troque para `true` para voltar a mostrar os cards "Em breve".
+ */
+const MOSTRAR_METODOLOGIAS_EM_BREVE = false;
+const METODOLOGIAS_DISPONIVEIS: readonly string[] = ["gramatica"];
+
+const todasMetodologias = [
   {
     id: "gramatica",
     nome: "Gramática estruturada",
@@ -31,6 +39,10 @@ const metodologias = [
     descricao: "Muita leitura e escuta em nível adequado.",
   },
 ] as const;
+
+const metodologias = todasMetodologias.filter(
+  (m) => MOSTRAR_METODOLOGIAS_EM_BREVE || METODOLOGIAS_DISPONIVEIS.includes(m.id)
+);
 
 function moduloEmEspera(m: ModuloTrilha) {
   return !!m.teste.bloqueadoAte && new Date(m.teste.bloqueadoAte) > new Date();
@@ -306,11 +318,6 @@ export default function TrilhaCursoPage() {
   const [abertos, setAbertos] = useState<Set<number>>(new Set());
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
     let cancelled = false;
     (async () => {
       try {
@@ -474,39 +481,41 @@ export default function TrilhaCursoPage() {
         </div>
       </div>
 
-      <section aria-labelledby="titulo-metodologia">
-        <h2 id="titulo-metodologia" className="mb-3 text-lg font-semibold text-ink">
-          Metodologia
-        </h2>
-        <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
-          {metodologias.map((m) => {
-            const ativa = m.id === "gramatica";
-            return (
-              <div
-                key={m.id}
-                aria-disabled={!ativa}
-                className={`w-[78%] shrink-0 snap-start rounded-2xl border-2 p-4 md:w-auto ${
-                  ativa ? "border-grape/60 bg-card" : "border-dashed border-line-strong bg-transparent"
-                }`}
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <p className={`font-semibold ${ativa ? "text-ink" : "text-ink-faint"}`}>{m.nome}</p>
-                  <span
-                    className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${
-                      ativa ? "bg-grape text-white" : "bg-gray-100 text-ink-faint"
-                    }`}
-                  >
-                    {ativa ? "Ativa" : "Em breve"}
-                  </span>
+      {metodologias.length > 1 && (
+        <section aria-labelledby="titulo-metodologia">
+          <h2 id="titulo-metodologia" className="mb-3 text-lg font-semibold text-ink">
+            Metodologia
+          </h2>
+          <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
+            {metodologias.map((m) => {
+              const ativa = METODOLOGIAS_DISPONIVEIS.includes(m.id);
+              return (
+                <div
+                  key={m.id}
+                  aria-disabled={!ativa}
+                  className={`w-[78%] shrink-0 snap-start rounded-2xl border-2 p-4 md:w-auto ${
+                    ativa ? "border-grape/60 bg-card" : "border-dashed border-line-strong bg-transparent"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <p className={`font-semibold ${ativa ? "text-ink" : "text-ink-faint"}`}>{m.nome}</p>
+                    <span
+                      className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-semibold ${
+                        ativa ? "bg-grape text-white" : "bg-gray-100 text-ink-faint"
+                      }`}
+                    >
+                      {ativa ? "Ativa" : "Em breve"}
+                    </span>
+                  </div>
+                  <p className={`mt-1 text-sm leading-relaxed ${ativa ? "text-ink-soft" : "text-ink-faint"}`}>
+                    {m.descricao}
+                  </p>
                 </div>
-                <p className={`mt-1 text-sm leading-relaxed ${ativa ? "text-ink-soft" : "text-ink-faint"}`}>
-                  {m.descricao}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {semConteudo ? (
         <Aviso

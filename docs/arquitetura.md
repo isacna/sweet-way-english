@@ -278,7 +278,7 @@ Público                  Professor                          Aluno
 
 Todas as chamadas ao backend passam por `apiFetch(path, init?)`:
 
-- Prefixa `NEXT_PUBLIC_API_URL + /api` ao caminho (ex: `apiFetch("/turmas")` → `http://localhost:3333/api/turmas`)
+- Prefixa `/api` (relativo, mesma origem) ao caminho (ex: `apiFetch("/turmas")` → `/api/turmas`); o Next repassa ao backend (`rewrites`, `BACKEND_URL`)
 - Injeta `Authorization: Bearer <token>` automaticamente via `localStorage`
 - Define `Content-Type: application/json` para corpos não-FormData (omite para uploads, deixando o browser definir o boundary multipart)
 - Retorna o `Response` bruto — o chamador verifica `res.ok` e chama `res.json()`
@@ -318,14 +318,14 @@ O `docker-compose.yml` na raiz do projeto define dois serviços:
 │  │   backend    │      │   frontend     │   │
 │  │  :3333       │◄─────│  :3000         │   │
 │  │              │      │                │   │
-│  │  SQLite      │      │ NEXT_PUBLIC_   │   │
-│  │  /uploads    │      │ API_URL=:3333  │   │
+│  │  SQLite      │      │ /api → rewrite │   │
+│  │  /uploads    │      │ BACKEND_URL    │   │
 │  └──────────────┘      └────────────────┘   │
 └─────────────────────────────────────────────┘
 ```
 
 - **`backend`**: build de `./backend`, porta `3333`. Volumes para `prisma/dev.db` e `uploads/`. Healthcheck em `GET /api/health`. Executa `prisma migrate deploy && db:seed && node dist/server.js`.
-- **`frontend`**: build de `./frontend`, porta `3000`. Depende do backend estar `healthy`. Recebe `NEXT_PUBLIC_API_URL` como build arg.
+- **`frontend`**: build de `./frontend`, porta `3000`. Depende do backend estar `healthy`. Recebe `BACKEND_URL=http://backend:3333` como build arg (destino do rewrite `/api`) e no runtime.
 
 **Variáveis de ambiente relevantes** (arquivo `.env` na raiz):
 
@@ -333,7 +333,6 @@ O `docker-compose.yml` na raiz do projeto define dois serviços:
 |----------|-----------|
 | `JWT_SECRET` | Segredo para assinar/verificar tokens JWT |
 | `APP_URL` | URL pública do backend |
-| `NEXT_PUBLIC_API_URL` | URL do backend usada pelo frontend em build time |
 | `GEMINI_API_KEY` | Chave da API Gemini (funcionalidades de IA) |
 
 ---
