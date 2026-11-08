@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "tsx src/server.ts",
     "db:seed": "prisma db seed",
+    "db:migrar-sqlite": "tsx scripts/migrar-sqlite-para-postgres.ts",
     "conteudo:validar": "tsx scripts/validar-conteudo.ts",
     "conteudo:importar": "tsx scripts/importar-conteudo.ts",
     "build": "prisma generate && vite build",
