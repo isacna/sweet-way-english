@@ -1,7 +1,9 @@
 // Copia os dados de um banco SQLite antigo (prisma/dev.db) para um Postgres vazio já migrado.
 // A CLI fica em scripts/migrar-sqlite-para-postgres.ts; esta função também é usada no teste com Postgres real.
+import { randomUUID } from 'node:crypto';
 import Database from 'better-sqlite3';
 import { $Enums, Prisma, type PrismaClient } from '../../src/database/generated/prisma/client.js';
+import { caminhoLegado, mimePorExtensao, nomeOriginalLegado } from '../../src/storage/legado.js';
 
 /** Ordem de inserção respeitando as chaves estrangeiras. */
 export const ORDEM_TABELAS = [
@@ -39,6 +41,42 @@ export interface ResultadoTabela {
 }
 
 type Linha = Record<string, unknown>;
+
+/** Uploads antigos ("/uploads/<nome>") viram linhas de Arquivo; a chave é "<Tabela>:<id do registro>". */
+interface ArquivosLegados {
+  linhas: { id: string; donoId: number; nomeOriginal: string; caminho: string; mime: string; tamanho: number; criadoEm: Date }[];
+  porRegistro: Map<string, string>;
+}
+
+function montarArquivosLegados(sqlite: Database.Database, tabelas: Set<string>): ArquivosLegados {
+  const legado: ArquivosLegados = { linhas: [], porRegistro: new Map() };
+  const adicionar = (chave: string, donoId: number, url: unknown, data: unknown) => {
+    const caminho = caminhoLegado(url);
+    if (!caminho) return;
+    const id = randomUUID();
+    legado.porRegistro.set(chave, id);
+    legado.linhas.push({
+      id,
+      donoId,
+      nomeOriginal: nomeOriginalLegado(caminho),
+      caminho,
+      mime: mimePorExtensao(caminho),
+      tamanho: 0,
+      criadoEm: converterData(data) ?? new Date(),
+    });
+  };
+  if (tabelas.has('Submissao')) {
+    const linhas = sqlite.prepare('SELECT id, alunoId, arquivoUrl, dataEnvio FROM "Submissao"').all() as Linha[];
+    for (const l of linhas) adicionar(`Submissao:${l.id}`, Number(l.alunoId), l.arquivoUrl, l.dataEnvio);
+  }
+  if (tabelas.has('MaterialApoio') && tabelas.has('Turma')) {
+    const linhas = sqlite
+      .prepare('SELECT m.id, t.professorId, m.urlArquivo, m.criadoEm FROM "MaterialApoio" m JOIN "Turma" t ON t.id = m.turmaId')
+      .all() as Linha[];
+    for (const l of linhas) adicionar(`MaterialApoio:${l.id}`, Number(l.professorId), l.urlArquivo, l.criadoEm);
+  }
+  return legado;
+}
 type Campo = { name: string; kind: string; type: string };
 
 const LOTE = 500;
@@ -62,7 +100,13 @@ function delegate(tx: Prisma.TransactionClient, modelo: string) {
   return (tx as unknown as Record<string, { createMany(a: { data: Linha[] }): Promise<{ count: number }>; count(): Promise<number> }>)[nome];
 }
 
-function converterLinha(modelo: string, linha: Linha, campos: Campo[], usuarios: Set<number>): Linha {
+function converterLinha(
+  modelo: string,
+  linha: Linha,
+  campos: Campo[],
+  usuarios: Set<number>,
+  arquivos: ArquivosLegados,
+): Linha {
   const out: Linha = {};
   for (const c of campos) {
     if (!(c.name in linha)) continue;
@@ -113,6 +157,14 @@ function converterLinha(modelo: string, linha: Linha, campos: Campo[], usuarios:
   if (modelo === 'Licao' && out.revisadoPorId != null && !usuarios.has(Number(out.revisadoPorId))) {
     out.revisadoPorId = null;
   }
+  // Uploads privados (migração 20261109010000_arquivos): as URLs "/uploads/..." viraram FKs para Arquivo
+  if (modelo === 'Submissao') out.arquivoId = arquivos.porRegistro.get(`Submissao:${linha.id}`) ?? null;
+  if (modelo === 'MaterialApoio') {
+    const arquivoId = arquivos.porRegistro.get(`MaterialApoio:${linha.id}`);
+    if (arquivoId) out.arquivoId = arquivoId;
+    else out.url = typeof linha.urlArquivo === 'string' ? linha.urlArquivo : null;
+  }
+  if (modelo === 'ConfiguracaoApp' && 'logoUrl' in linha) out.logoCaminho = caminhoLegado(linha.logoUrl);
   return out;
 }
 
@@ -151,13 +203,14 @@ export async function migrarSqliteParaPostgres(
     }
     const usuarios = new Set(emails.map((u) => u.id));
 
+    const arquivos = montarArquivosLegados(sqlite, tabelasSqlite);
     const modelos = new Map(Prisma.dmmf.datamodel.models.map((m) => [m.name, m.fields as unknown as Campo[]]));
     const resultado: ResultadoTabela[] = [];
 
     await prisma.$transaction(
       async (tx) => {
         if (opcoes.forcar) {
-          const lista = ORDEM_TABELAS.map((t) => `"${t}"`).join(', ');
+          const lista = [...ORDEM_TABELAS, 'Arquivo'].map((t) => `"${t}"`).join(', ');
           await tx.$executeRawUnsafe(`TRUNCATE TABLE ${lista} RESTART IDENTITY CASCADE`);
           log('Destino esvaziado (--forcar).');
         }
@@ -175,13 +228,22 @@ export async function migrarSqliteParaPostgres(
             const sobrando = Object.keys(linhas[0]).filter((k) => !nomes.has(k));
             if (sobrando.length) log(`${tabela}: colunas ignoradas (não existem no schema novo): ${sobrando.join(', ')}`);
           }
-          const dados = linhas.map((l) => converterLinha(tabela, l, campos, usuarios));
+          const dados = linhas.map((l) => converterLinha(tabela, l, campos, usuarios, arquivos));
           const d = delegate(tx, tabela);
           for (let i = 0; i < dados.length; i += LOTE) await d.createMany({ data: dados.slice(i, i + LOTE) });
           const destino = await d.count();
           resultado.push({ tabela, origem: linhas.length, destino });
           log(`${tabela}: ${linhas.length} → ${destino}`);
           if (destino !== linhas.length) throw new Error(`${tabela}: esperava ${linhas.length} linhas, o destino tem ${destino}`);
+
+          if (tabela === 'Usuario') {
+            // Metadados dos uploads antigos (os arquivos continuam com o mesmo nome na pasta de uploads)
+            for (let i = 0; i < arquivos.linhas.length; i += LOTE) {
+              await tx.arquivo.createMany({ data: arquivos.linhas.slice(i, i + LOTE) });
+            }
+            resultado.push({ tabela: 'Arquivo', origem: arquivos.linhas.length, destino: await tx.arquivo.count() });
+            log(`Arquivo (de URLs /uploads/): ${arquivos.linhas.length}`);
+          }
         }
 
         // Ids foram copiados explicitamente: as sequências precisam continuar depois do maior id

@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import { randomUUID } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import bcrypt from 'bcryptjs';
@@ -6,7 +7,7 @@ import { prisma } from '../src/database/client.js';
 import { StatusSubmissao } from '../src/database/generated/prisma/client.js';
 import { importarConteudo } from '../src/domain/conteudo/importar.js';
 
-const PDF_WORKSHEET = '/uploads/1773977192408-Present_Simple_Worksheet.pdf';
+const PDF_WORKSHEET = '1773977192408-Present_Simple_Worksheet.pdf'; // em seed-media/
 
 // Seed em duas partes:
 // - sempre: conteúdo do curso (prisma/conteudo) e, se ADMIN_EMAIL/ADMIN_SENHA estiverem definidos, a conta admin inicial;
@@ -16,16 +17,26 @@ const PDF_WORKSHEET = '/uploads/1773977192408-Present_Simple_Worksheet.pdf';
 const producao = process.env.NODE_ENV === 'production';
 const comDemo = process.env.SEED_DEMO === '1' || (!producao && process.env.SEED_DEMO !== '0');
 
-/** Copia os arquivos de exemplo (seed-media/) para uploads/, onde os materiais de demonstração apontam. */
-function copiarMidiaDemo() {
-  const origem = path.resolve('seed-media');
-  const destino = path.resolve('uploads');
-  if (!fs.existsSync(origem)) return;
-  fs.mkdirSync(destino, { recursive: true });
-  for (const nome of fs.readdirSync(origem)) {
-    const alvo = path.join(destino, nome);
-    if (!fs.existsSync(alvo)) fs.copyFileSync(path.join(origem, nome), alvo);
-  }
+/**
+ * Copia um arquivo de exemplo (seed-media/) para a pasta de uploads com nome aleatório e cria a linha de Arquivo
+ * (uploads privados: cada registro tem o seu arquivo, servido por GET /api/arquivos/:id). Devolve o id.
+ */
+async function arquivoDemo(donoId: number, nome: string) {
+  const origem = path.resolve('seed-media', nome);
+  const pasta = path.resolve(process.env.UPLOAD_DIR || 'uploads');
+  fs.mkdirSync(pasta, { recursive: true });
+  const caminho = `${randomUUID()}${path.extname(nome).toLowerCase()}`;
+  fs.copyFileSync(origem, path.join(pasta, caminho));
+  const arquivo = await prisma.arquivo.create({
+    data: {
+      donoId,
+      nomeOriginal: nome.replace(/^[0-9]+-/, ''),
+      caminho,
+      mime: 'application/pdf',
+      tamanho: fs.statSync(origem).size,
+    },
+  });
+  return arquivo.id;
 }
 
 /** Conta admin inicial a partir do ambiente. Não altera uma conta que já existe (nem a senha). */
@@ -58,7 +69,6 @@ async function criarAdminInicial() {
 }
 
 async function seedDemo() {
-  copiarMidiaDemo();
   const senhaHash = await bcrypt.hash('senha123', 10);
 
   // ─── Usuários ──────────────────────────────────────────────────────────────
@@ -224,7 +234,7 @@ async function seedDemo() {
     data: {
       atividadeId: atividade2.id,
       alunoId: aluno1.id,
-      arquivoUrl: PDF_WORKSHEET,
+      arquivoId: await arquivoDemo(aluno1.id, PDF_WORKSHEET),
       status: StatusSubmissao.aprovado,
     },
   });
@@ -242,7 +252,7 @@ async function seedDemo() {
     data: {
       atividadeId: atividade2.id,
       alunoId: aluno2.id,
-      arquivoUrl: PDF_WORKSHEET,
+      arquivoId: await arquivoDemo(aluno2.id, PDF_WORKSHEET),
       status: StatusSubmissao.pendente,
     },
   });
@@ -251,7 +261,7 @@ async function seedDemo() {
     data: {
       atividadeId: atividade2.id,
       alunoId: aluno3.id,
-      arquivoUrl: PDF_WORKSHEET,
+      arquivoId: await arquivoDemo(aluno3.id, PDF_WORKSHEET),
       status: StatusSubmissao.pendente,
     },
   });
@@ -280,7 +290,7 @@ async function seedDemo() {
     data: {
       atividadeId: atividade4.id,
       alunoId: aluno1.id,
-      arquivoUrl: PDF_WORKSHEET,
+      arquivoId: await arquivoDemo(aluno1.id, PDF_WORKSHEET),
       status: StatusSubmissao.pendente,
     },
   });
@@ -315,38 +325,38 @@ async function seedDemo() {
       {
         titulo: 'Present Simple — Worksheet',
         tipo: 'pdf',
-        urlArquivo: PDF_WORKSHEET,
+        arquivoId: await arquivoDemo(professor.id, PDF_WORKSHEET),
         turmaId: turma1.id,
       },
       {
         titulo: 'Pronúncia do TH em inglês',
         tipo: 'video',
-        urlArquivo: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         turmaId: turma1.id,
       },
       {
         titulo: 'Duolingo — prática diária',
         tipo: 'link',
-        urlArquivo: 'https://www.duolingo.com',
+        url: 'https://www.duolingo.com',
         turmaId: turma1.id,
       },
       // Turma 2
       {
         titulo: 'Present Simple — Worksheet',
         tipo: 'pdf',
-        urlArquivo: PDF_WORKSHEET,
+        arquivoId: await arquivoDemo(professor.id, PDF_WORKSHEET),
         turmaId: turma2.id,
       },
       {
         titulo: 'BBC Learning English — Podcasts',
         tipo: 'audio',
-        urlArquivo: 'https://www.bbc.co.uk/learningenglish/english/features/6-minute-english',
+        url: 'https://www.bbc.co.uk/learningenglish/english/features/6-minute-english',
         turmaId: turma2.id,
       },
       {
         titulo: 'Cambridge Dictionary Online',
         tipo: 'link',
-        urlArquivo: 'https://dictionary.cambridge.org',
+        url: 'https://dictionary.cambridge.org',
         turmaId: turma2.id,
       },
     ],

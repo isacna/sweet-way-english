@@ -49,6 +49,7 @@ model Usuario {
   notasLicao                 NotaLicao[]
   licoesRevisadas            Licao[]          @relation("LicaoRevisor")
   tokensSenha                TokenSenha[]
+  arquivos                   Arquivo[]
 }
 
 // Pedido de redefinição de senha. Guarda só o SHA-256 do token enviado por e-mail, nunca o token.
@@ -119,10 +120,13 @@ model Atividade {
   dataEntrega        DateTime
   arquivoObrigatorio Boolean     @default(false)
   link               String?
+  // Anexo opcional da professora (enunciado, worksheet…)
+  arquivoId          String?     @unique
   turmaId            Int
   criadoEm           DateTime    @default(now())
   atualizadoEm       DateTime    @updatedAt
   turma              Turma       @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+  arquivo            Arquivo?    @relation(fields: [arquivoId], references: [id], onDelete: Restrict)
   submissoes         Submissao[]
 
   @@index([turmaId])
@@ -140,12 +144,13 @@ model Submissao {
   atividadeId  Int
   alunoId      Int
   conteudo     String?
-  arquivoUrl   String?
+  arquivoId    String?         @unique
   dataEnvio    DateTime        @default(now())
   status       StatusSubmissao @default(pendente)
   atualizadoEm DateTime        @updatedAt
   atividade    Atividade       @relation(fields: [atividadeId], references: [id], onDelete: Cascade)
   aluno        Usuario         @relation(fields: [alunoId], references: [id], onDelete: Cascade)
+  arquivo      Arquivo?        @relation(fields: [arquivoId], references: [id], onDelete: Restrict)
   feedback     Feedback?
 
   @@index([atividadeId])
@@ -169,7 +174,9 @@ model Feedback {
 
 model ConfiguracaoApp {
   id           Int      @id @default(1)
-  logoUrl      String?
+  // Logo da escola: nome do arquivo dentro de UPLOAD_DIR. É público (GET /api/configuracoes/logo), por isso
+  // fica fora do modelo Arquivo, que é sempre privado.
+  logoCaminho  String?
   atualizadoEm DateTime @updatedAt
 }
 
@@ -181,15 +188,39 @@ enum TipoMaterial {
 }
 
 model MaterialApoio {
-  id         Int          @id @default(autoincrement())
-  titulo     String
-  tipo       TipoMaterial
-  urlArquivo String
-  turmaId    Int
-  criadoEm   DateTime     @default(now())
-  turma      Turma        @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+  id        Int          @id @default(autoincrement())
+  titulo    String
+  tipo      TipoMaterial
+  // Exatamente um dos dois (CHECK no banco): `url` para links externos, `arquivoId` para upload
+  url       String?
+  arquivoId String?      @unique
+  turmaId   Int
+  criadoEm  DateTime     @default(now())
+  turma     Turma        @relation(fields: [turmaId], references: [id], onDelete: Cascade)
+  arquivo   Arquivo?     @relation(fields: [arquivoId], references: [id], onDelete: Restrict)
 
   @@index([turmaId])
+}
+
+// Metadados de um upload privado. O arquivo fica em UPLOAD_DIR/<caminho> (nome aleatório, nunca vindo do
+// usuário) e só é servido por GET /api/arquivos/:id, que confere quem pode ver.
+// Cada arquivo pertence a no máximo um registro (Atividade, Submissao ou MaterialApoio: arquivoId @unique).
+// onDelete Restrict nos dois sentidos: o banco não apaga a linha sozinho, porque o arquivo no disco também
+// precisa sair (src/storage/arquivos.ts, apagarArquivos). Quem apaga usuário ou turma remove os arquivos antes.
+model Arquivo {
+  id           String         @id @default(uuid())
+  donoId       Int
+  nomeOriginal String
+  caminho      String
+  mime         String
+  tamanho      Int
+  criadoEm     DateTime       @default(now())
+  dono         Usuario        @relation(fields: [donoId], references: [id], onDelete: Restrict)
+  atividade    Atividade?
+  submissao    Submissao?
+  material     MaterialApoio?
+
+  @@index([donoId])
 }
 
 // ─── Curso autoguiado (A1 → B1) ──────────────────────────────────────────────
@@ -296,7 +327,7 @@ model Licao {
 }
 
 model Exercicio {
-  id           Int             @id @default(autoincrement())
+  id           Int            @id @default(autoincrement())
   licaoId      Int
   ordem        Int
   etapa        EtapaExercicio
@@ -306,9 +337,9 @@ model Exercicio {
   gabarito     Json // NUNCA vai para o navegador do aluno
   explicacao   String // feedback em PT mostrado após responder
   tagsErro     Json? // string[] — erros típicos de brasileiros (ex.: "terceira_pessoa_s")
-  criadoEm     DateTime        @default(now())
-  atualizadoEm DateTime        @updatedAt
-  licao        Licao           @relation(fields: [licaoId], references: [id], onDelete: Cascade)
+  criadoEm     DateTime       @default(now())
+  atualizadoEm DateTime       @updatedAt
+  licao        Licao          @relation(fields: [licaoId], references: [id], onDelete: Cascade)
   revisoes     RevisaoItem[]
 
   @@index([licaoId])

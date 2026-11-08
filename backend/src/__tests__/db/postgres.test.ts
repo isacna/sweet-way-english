@@ -105,7 +105,7 @@ describe.skipIf(!temBanco)('Postgres real', () => {
       });
       await prisma.matricula.create({ data: { alunoId: aluno.id, turmaId: turma.id } });
       await prisma.aviso.create({ data: { titulo: 'Oi', turmaId: turma.id } });
-      await prisma.materialApoio.create({ data: { titulo: 'M', tipo: 'link', urlArquivo: 'https://x', turmaId: turma.id } });
+      await prisma.materialApoio.create({ data: { titulo: 'M', tipo: 'link', url: 'https://x', turmaId: turma.id } });
       const atividade = await prisma.atividade.create({
         data: { titulo: 'A', descricao: 'd', dataEntrega: new Date(), turmaId: turma.id },
       });
@@ -186,7 +186,12 @@ describe.skipIf(!temBanco)('Postgres real', () => {
       const { migrarSqliteParaPostgres } = await import('../../../scripts/migrar-sqlite/migrar.js');
       const r = await migrarSqliteParaPostgres(arquivo, prisma, { forcar: true });
       const porTabela = Object.fromEntries(r.map((t) => [t.tabela, t.destino]));
-      expect(porTabela).toMatchObject({ Usuario: 2, Turma: 1, Matricula: 1, Licao: 1, Exercicio: 1, RevisaoItem: 1, NotaLicao: 0 });
+      expect(porTabela).toMatchObject({ Usuario: 2, Turma: 1, Matricula: 1, Licao: 1, Exercicio: 1, RevisaoItem: 1, NotaLicao: 0, Arquivo: 1 });
+
+      // o material "/uploads/x.pdf" virou um Arquivo da professora da turma
+      const material = await prisma.materialApoio.findUniqueOrThrow({ where: { id: 2 }, include: { arquivo: true } });
+      expect(material.url).toBeNull();
+      expect(material.arquivo).toMatchObject({ donoId: 1, caminho: 'x.pdf', nomeOriginal: 'x.pdf', mime: 'application/pdf' });
 
       const maria = await prisma.usuario.findUniqueOrThrow({ where: { id: 7 } });
       expect(maria.email).toBe('maria@example.com');
