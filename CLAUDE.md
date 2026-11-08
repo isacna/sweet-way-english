@@ -26,7 +26,7 @@ cp .env.example .env
 docker compose up --build
 ```
 
-Compose services: `postgres` (postgres:17-alpine, volume `pgdata`, healthcheck, no published port), `backend` (waits for a healthy postgres, runs `prisma migrate deploy` on every start, seeds only when `SEED_ON_START=1`) and `frontend`. The only volumes are data volumes (`pgdata`, `uploads_data`); never mount anything over `/app/prisma`, since migrations and course content ship in the image.
+Compose services: `postgres` (postgres:17-alpine, volume `pgdata`, healthcheck, no published port), `backend` (compiled image: waits for a healthy postgres, runs `prisma migrate deploy` on every start, seeds only when `SEED_ON_START=1`, then `node dist/server.js` as the non-root `node` user) and `frontend`. The only volumes are data volumes (`pgdata`, `uploads_data`); never mount anything over `/app/prisma`, since migrations and course content ship in the image.
 
 Backend health check: `GET http://localhost:3333/api/health`
 
@@ -39,7 +39,8 @@ Needs a PostgreSQL 17 server. A throwaway one: `docker run -d --name sweetway-pg
 cd backend && cp .env.example .env && npm install   # set DATABASE_URL=postgresql://...
 npx prisma migrate deploy   # or `migrate dev` when changing the schema
 npm run db:seed
-npm run dev        # http://localhost:3333
+npm run dev        # http://localhost:3333 (tsx, no build)
+# Production-like: npm run build (tsc -> dist/) && npm start (node dist/server.js)
 
 # Frontend (separate terminal)
 cd frontend && npm install
@@ -59,6 +60,7 @@ APP_URL=http://localhost:3333
 CORS_ORIGIN=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3333
 SEED_ON_START=0                       # 1 = run the seed when the backend starts
+LOG_LEVEL=info                        # backend logs (pino, JSON on stdout)
 ```
 
 Backend `.env` also accepts:
@@ -66,7 +68,8 @@ Backend `.env` also accepts:
 DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway
 # TEST_DATABASE_URL=...sweetway_test  # for npm run test:db (dropped on every run)
 # Optional: JWT_EXPIRES_IN (7d), PORT (3333), UPLOAD_MAX_MB (10); see backend/.env.example
-# E-mail / session: RESEND_API_KEY (no key = e-mails only logged), EMAIL_FROM, FRONTEND_URL (links in e-mails), COOKIE_SECURE
+# E-mail / session: RESEND_API_KEY (no key = nothing is sent; outside production the message is logged), EMAIL_FROM, FRONTEND_URL (links in e-mails), COOKIE_SECURE
+# LOG_LEVEL (info; pretty output in development, JSON otherwise, silent in tests)
 ```
 
 The frontend uses `NEXT_PUBLIC_API_URL` at build time to construct API calls. When running in Docker, this is passed as a build arg to the frontend image.
@@ -127,7 +130,7 @@ Self-paced A1 course using the Structured Grammar (PPP) method. It has no AI and
 3. `apiFetch()` in `src/lib/api.ts` sends `credentials: 'include'`, so the browser attaches the cookie. CORS allows credentials for the `CORS_ORIGIN` allowlist
 4. Backend `authenticateToken` reads `Authorization: Bearer` when present (API clients, tests, e2e), otherwise the cookie. It checks the JWT, then looks the user up by id. It returns 401 if the user was deleted or if `Usuario.versaoToken` differs from the token's `v`. It attaches `req.user = { id, email, role, admin }`. On any 401 the frontend `apiFetch` clears the cached `user`, and `NavbarUser` calls `GET /api/auth/me` on load to send a stale session back to the login
 5. `POST /api/auth/logout` clears the cookie. A password change or reset bumps `versaoToken`, so every older session dies
-6. `requireRole(...)` / `requireAdmin` middlewares gate endpoints (admin is checked against the DB); many older controllers still check `req.user.role` inline
+6. `requireRole(...)` / `requireAdmin` middlewares gate every endpoint in the route files (admin is checked against the DB); controllers no longer check `req.user.role` for access
 
 Password reset: `/esqueci-senha` → `POST /api/auth/esqueci-senha` always answers the same way and e-mails a 1-hour, single-use link `${FRONTEND_URL}/redefinir-senha?token=…`. Only the SHA-256 of the token is stored (`TokenSenha`). `/redefinir-senha` → `POST /api/auth/redefinir-senha`. E-mail goes through `backend/src/email/`: Resend when `RESEND_API_KEY` is set, otherwise the backend log in dev. Details in `backend/CLAUDE.md` ("Auth").
 
@@ -140,6 +143,10 @@ Uploads are private. Multer keeps the file in memory (max `UPLOAD_MAX_MB`). The 
 ### Users
 
 A single `Usuario` model with `papel: aluno | professor` and an `admin` boolean (admin is a privilege, not a role). bcryptjs (10 rounds). The JWT payload carries `role` (= `papel`) and `admin`. There is no public professor signup; admins create professors. Public student signup requires a birth date, plus guardian consent for minors (LGPD).
+
+### Backend layers
+
+`routes` (auth + `requireRole`) → `controllers` (validate params/body with zod via `validar()`, call a service, shape the response) → `src/services/` (Prisma + business rules, throw `ErroValidacao`/`ErroProibido`/`ErroNaoEncontrado`/`ErroConflito`) → `src/domain/` (pure rules). The central `errorHandler` maps those errors to `{ error }` with 400/403/404/409. The course controllers (`Curso`/`Conteudo`/`Progresso`) keep their own helpers in `cursoApoio.ts`. Logs go through `src/config/logger.ts` (pino), never `console.*`. Details: `backend/CLAUDE.md`.
 
 ### Prisma Client
 

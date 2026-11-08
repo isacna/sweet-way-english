@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { prisma } from '../../database/client.js';
+import { logger } from '../../config/logger.js';
 import { h } from '../asyncHandler.js';
 import { authRouter } from './auth.routes.js';
 import { classRouter } from './class.routes.js';
@@ -19,12 +20,12 @@ const router = Router();
 // Usado pelo healthcheck do Docker e pelo monitoramento: 503 se o banco não responde
 router.get(
   '/health',
-  h(async (_req, res) => {
+  h(async (req, res) => {
     try {
       await prisma.$queryRaw`SELECT 1`;
       res.json({ status: 'ok' });
     } catch (err) {
-      console.error('Health check: banco indisponível', err);
+      (req.log ?? logger).error({ err }, 'Health check: banco indisponível');
       res.status(503).json({ status: 'erro', error: 'Banco de dados indisponível' });
     }
   })

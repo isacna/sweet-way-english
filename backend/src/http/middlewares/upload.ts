@@ -3,6 +3,7 @@ import { upload } from '../../config/multer.js';
 import { prisma } from '../../database/client.js';
 import type { Arquivo, Prisma } from '../../database/generated/prisma/client.js';
 import { detectarTipo, gravarNoDisco, nomeOriginalSeguro, removerDoDisco } from '../../storage/arquivos.js';
+import type { GravarAnexo } from '../../services/tipos.js';
 
 /** Arquivo recebido e já conferido pelos bytes, ainda só em memória. */
 export interface ArquivoRecebido {
@@ -98,6 +99,15 @@ export async function salvarArquivoRecebido<T>(
     await removerDoDisco([caminho]);
     throw err;
   }
+}
+
+/**
+ * O arquivo da requisição como `GravarAnexo` para um service (ou null se nenhum foi enviado). O service chama a
+ * função só depois de validar tudo; ela grava com `salvarArquivoRecebido` em nome de `donoId`.
+ */
+export function anexoDaRequisicao(req: Request, donoId: number): GravarAnexo | null {
+  if (!arquivoRecebido(req)) return null;
+  return (usar) => salvarArquivoRecebido(req, donoId, usar);
 }
 
 /** Para testes: injeta um arquivo recebido sem passar pelo multer. */

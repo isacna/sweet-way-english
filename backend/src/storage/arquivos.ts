@@ -7,6 +7,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileTypeFromBuffer } from 'file-type';
 import { env } from '../config/env.js';
+import { logger } from '../config/logger.js';
 import type { Prisma } from '../database/generated/prisma/client.js';
 
 export class TipoArquivoNaoPermitido extends Error {}
@@ -124,7 +125,7 @@ export async function removerDoDisco(caminhos: Iterable<string>) {
     try {
       await fs.unlink(caminhoAbsoluto(caminho));
     } catch (err) {
-      if ((err as NodeJS.ErrnoException).code !== 'ENOENT') console.error('Falha ao remover upload', caminho, err);
+      if ((err as NodeJS.ErrnoException).code !== 'ENOENT') logger.error({ err, caminho }, 'Falha ao remover upload');
     }
   }
 }

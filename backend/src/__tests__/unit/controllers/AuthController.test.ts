@@ -29,6 +29,7 @@ import {
   MSG_ESQUECI_SENHA,
 } from '../../../http/controllers/AuthController.js';
 import { mockReq, mockRes } from '../../helpers/mockReqRes.js';
+import { logger } from '../../../config/logger.js';
 
 const sha256 = (t: string) => createHash('sha256').update(t).digest('hex');
 
@@ -251,7 +252,7 @@ describe('AuthController', () => {
       prismaMock.usuario.findUnique.mockResolvedValue({ id: 7, nome: 'Ana', email: 'ana@t.com' });
       prismaMock.$transaction.mockResolvedValue([]);
       enviarEmailMock.mockRejectedValue(new Error('provider down'));
-      const erro = vi.spyOn(console, 'error').mockImplementation(() => {});
+      const erro = vi.spyOn(logger, 'error').mockImplementation(() => {});
       await esqueciSenha({ body: { email: 'ana@t.com' } } as any, res);
       await new Promise((r) => setImmediate(r));
       expect(res.json).toHaveBeenCalledWith({ message: MSG_ESQUECI_SENHA });

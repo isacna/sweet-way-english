@@ -1,27 +1,40 @@
-FROM node:20-alpine AS deps
+# API compilada (tsc → dist/) rodando como usuário sem privilégios.
+#  deps:      todas as dependências (para gerar o client do Prisma e compilar)
+#  build:     prisma generate + tsc + cópia do client gerado para dist/
+#  prod-deps: só as dependências de produção
+#  final:     node_modules de produção, dist/, prisma/ (schema, migrações, conteúdo), seed-media/ e, para o seed e os
+#             scripts de conteúdo (rodam com tsx), src/ e scripts/
+FROM node:24-alpine AS deps
 WORKDIR /app
-COPY package*.json ./
+COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:20-alpine AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+FROM deps AS build
 COPY . .
-RUN npx prisma generate
+RUN npm run build
 
-FROM node:20-alpine
+FROM node:24-alpine AS prod-deps
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+FROM node:24-alpine
+ENV NODE_ENV=production
 WORKDIR /app
 
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/src ./src
-COPY --from=builder /app/prisma ./prisma
-COPY --from=builder /app/package.json ./package.json
-COPY --from=builder /app/tsconfig.json ./tsconfig.json
-COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
-COPY --from=builder /app/seed-media ./seed-media
-COPY entrypoint.sh ./entrypoint.sh
+# Arquivos da aplicação ficam com o root (só leitura para o processo); só a pasta de uploads é do usuário `node`
+COPY --from=prod-deps /app/node_modules ./node_modules
+COPY package.json prisma.config.ts tsconfig.json entrypoint.sh ./
+COPY prisma ./prisma
+COPY seed-media ./seed-media
+COPY scripts ./scripts
+COPY src ./src
+COPY --from=build /app/dist ./dist
+# O seed e os scripts (tsx) importam o client gerado de src/; aponta para o mesmo client de dist/ em vez de duplicar
+RUN ln -s ../../dist/database/generated src/database/generated \
+  && mkdir -p uploads && chown node:node uploads \
+  && chmod +x entrypoint.sh
 
-RUN mkdir -p uploads && chmod +x entrypoint.sh
-
+USER node
 EXPOSE 3333
 ENTRYPOINT ["./entrypoint.sh"]

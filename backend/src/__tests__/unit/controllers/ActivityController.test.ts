@@ -16,7 +16,7 @@ vi.mock('../../../storage/arquivos.js', async (original) => ({
 }));
 
 import { createActivity, updateActivity, listActivitiesByClass } from '../../../http/controllers/ActivityController.js';
-import { mockRes, mockReq, studentReq } from '../../helpers/mockReqRes.js';
+import { mockRes, mockReq, studentReq, executar } from '../../helpers/mockReqRes.js';
 import { definirArquivoRecebido } from '../../../http/middlewares/upload.js';
 
 const semArquivo = { arquivo: null, arquivoUrl: null };
@@ -34,19 +34,14 @@ describe('ActivityController', () => {
 
   // ── createActivity ────────────────────────────────────────────────────────
   describe('createActivity', () => {
-    it('returns 403 for aluno', async () => {
-      await createActivity(studentReq({ params: { turmaId: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid turmaId', async () => {
-      await createActivity(mockReq({ params: { turmaId: 'abc' } }), res);
+      await executar(createActivity, mockReq({ params: { turmaId: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when turma not found', async () => {
       prismaMock.turma.findFirst.mockResolvedValue(null);
-      await createActivity(mockReq({ params: { turmaId: '1' } }), res);
+      await executar(createActivity, mockReq({ params: { turmaId: '1' }, body: { titulo: 'T', descricao: 'D', dataEntrega: '2026-12-01' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
@@ -55,7 +50,7 @@ describe('ActivityController', () => {
       const atividade = { id: 5, titulo: 'Task 1' };
       prismaMock.atividade.create.mockResolvedValue(atividade);
 
-      await createActivity(mockReq({
+      await executar(createActivity, mockReq({
         params: { turmaId: '1' },
         body: { titulo: 'Task 1', descricao: 'Do it', dataEntrega: '2026-12-31', arquivoObrigatorio: false },
       }), res);
@@ -77,7 +72,7 @@ describe('ActivityController', () => {
         body: { titulo: 'T', descricao: 'd', dataEntrega: '2026-12-31', arquivoObrigatorio: 'false' },
       });
       definirArquivoRecebido(req, PDF);
-      await createActivity(req, res);
+      await executar(createActivity, req, res);
 
       const data = prismaMock.atividade.create.mock.calls[0][0].data;
       expect(data).toMatchObject({ arquivoObrigatorio: false, arquivoId: NOVO });
@@ -87,9 +82,9 @@ describe('ActivityController', () => {
 
     it('with an attachment but another teacher class: 404 and nothing is written', async () => {
       prismaMock.turma.findFirst.mockResolvedValue(null);
-      const req = mockReq({ params: { turmaId: '1' }, body: { titulo: 'T' } });
+      const req = mockReq({ params: { turmaId: '1' }, body: { titulo: 'T', descricao: 'D', dataEntrega: '2026-12-01' } });
       definirArquivoRecebido(req, PDF);
-      await createActivity(req, res);
+      await executar(createActivity, req, res);
       expect(res.status).toHaveBeenCalledWith(404);
       expect(disco.gravarNoDisco).not.toHaveBeenCalled();
     });
@@ -97,43 +92,38 @@ describe('ActivityController', () => {
 
   // ── updateActivity ────────────────────────────────────────────────────────
   describe('updateActivity', () => {
-    it('returns 403 for aluno', async () => {
-      await updateActivity(studentReq({ params: { id: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await updateActivity(mockReq({ params: { id: 'abc' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when activity not found', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue(null);
-      await updateActivity(mockReq({ params: { id: '99' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 403 when activity belongs to another professor', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 999 } });
-      await updateActivity(mockReq({ params: { id: '1' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
     it('returns 400 when no fields provided', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 1 } });
-      await updateActivity(mockReq({ params: { id: '1' }, body: {} }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' }, body: {} }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 400 for empty titulo', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 1 } });
-      await updateActivity(mockReq({ params: { id: '1' }, body: { titulo: '   ' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' }, body: { titulo: '   ' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 400 for invalid date', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 1 } });
-      await updateActivity(mockReq({ params: { id: '1' }, body: { dataEntrega: 'not-a-date' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' }, body: { dataEntrega: 'not-a-date' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -142,7 +132,7 @@ describe('ActivityController', () => {
       const updated = { id: 1, titulo: 'Updated' };
       prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
       prismaMock.atividade.update.mockResolvedValue(updated);
-      await updateActivity(mockReq({ params: { id: '1' }, body: { titulo: 'Updated' } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' }, body: { titulo: 'Updated' } }), res);
       expect(res.json).toHaveBeenCalledWith({ ...updated, ...semArquivo });
     });
 
@@ -156,7 +146,7 @@ describe('ActivityController', () => {
 
       const req = mockReq({ params: { id: '1' }, body: {} });
       definirArquivoRecebido(req, PDF);
-      await updateActivity(req, res);
+      await executar(updateActivity, req, res);
 
       expect(prismaMock.atividade.update.mock.calls[0][0].data).toEqual({ arquivoId: NOVO });
       expect(prismaMock.arquivo.deleteMany).toHaveBeenCalledWith({ where: { id: { in: [VELHO] } } });
@@ -170,7 +160,7 @@ describe('ActivityController', () => {
       prismaMock.atividade.update.mockResolvedValue({ id: 1, arquivoId: null });
       prismaMock.arquivo.findMany.mockResolvedValueOnce([{ caminho: 'v.pdf' }]).mockResolvedValueOnce([]);
 
-      await updateActivity(mockReq({ params: { id: '1' }, body: { removerArquivo: true } }), res);
+      await executar(updateActivity, mockReq({ params: { id: '1' }, body: { removerArquivo: true } }), res);
 
       expect(prismaMock.atividade.update.mock.calls[0][0].data).toEqual({ arquivoId: null });
       expect(disco.removerDoDisco).toHaveBeenCalledWith(['v.pdf']);
@@ -181,20 +171,20 @@ describe('ActivityController', () => {
   describe('listActivitiesByClass', () => {
     it('returns 404 when turma not found', async () => {
       prismaMock.turma.findUnique.mockResolvedValue(null);
-      await listActivitiesByClass(mockReq({ params: { turmaId: '99' } }), res);
+      await executar(listActivitiesByClass, mockReq({ params: { turmaId: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 403 when professor tries another professor\'s class', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 999 });
-      await listActivitiesByClass(mockReq({ params: { turmaId: '1' } }), res);
+      await executar(listActivitiesByClass, mockReq({ params: { turmaId: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
     it('returns 403 when aluno is not enrolled', async () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
       prismaMock.matricula.findFirst.mockResolvedValue(null);
-      await listActivitiesByClass(studentReq({ params: { turmaId: '1' } }), res);
+      await executar(listActivitiesByClass, studentReq({ params: { turmaId: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
@@ -202,7 +192,7 @@ describe('ActivityController', () => {
       prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1 });
       const atividades = [{ id: 1, titulo: 'Task 1', arquivoId: null, submissoes: [{ id: 3, arquivoId: NOVO }] }];
       prismaMock.atividade.findMany.mockResolvedValue(atividades);
-      await listActivitiesByClass(mockReq({ params: { turmaId: '1' } }), res);
+      await executar(listActivitiesByClass, mockReq({ params: { turmaId: '1' } }), res);
       expect(res.json).toHaveBeenCalledWith([
         { ...atividades[0], ...semArquivo, submissoes: [{ id: 3, arquivoId: NOVO, arquivo: null, arquivoUrl: `/api/arquivos/${NOVO}` }] },
       ]);
@@ -213,7 +203,7 @@ describe('ActivityController', () => {
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       const atividades = [{ id: 1, titulo: 'Task 1', submissoes: [] }];
       prismaMock.atividade.findMany.mockResolvedValue(atividades);
-      await listActivitiesByClass(studentReq({ params: { turmaId: '1' } }), res);
+      await executar(listActivitiesByClass, studentReq({ params: { turmaId: '1' } }), res);
       expect(res.json).toHaveBeenCalledWith([{ ...atividades[0], ...semArquivo }]);
     });
   });

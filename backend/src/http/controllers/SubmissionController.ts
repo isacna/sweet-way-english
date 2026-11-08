@@ -1,149 +1,38 @@
 import { Response } from 'express';
-import { prisma } from '../../database/client.js';
-import { StatusSubmissao } from '../../database/generated/prisma/client.js';
+import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
-import { arquivoRecebido, salvarArquivoRecebido } from '../middlewares/upload.js';
-import { arquivoResumoSelect, comArquivo } from '../arquivoPublico.js';
+import { anexoDaRequisicao } from '../middlewares/upload.js';
+import { comArquivo } from '../arquivoPublico.js';
+import { id, validar } from '../validacao.js';
+import * as submissoes from '../../services/submissoes.js';
 
-const incluirArquivo = { arquivo: { select: arquivoResumoSelect } } as const;
+const paramsNovaEntrega = z.object({ id: id('Atividade inválida') });
+const paramsId = z.object({ id: id() });
+// Texto da entrega (opcional); outro tipo é ignorado, como antes
+const novaEntregaSchema = z.object({
+  conteudo: z.unknown().transform((v) => (typeof v === 'string' ? v : undefined)),
+});
+const MSG_STATUS = 'Envie status: "aprovado" ou "reprovado"';
+const avaliacaoSchema = z.object({ status: z.enum(['aprovado', 'reprovado'], { error: MSG_STATUS }) });
 
+/** POST /atividades/:id/submissoes — requireRole('aluno'); multipart com `arquivo` opcional */
 export async function createSubmission(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'aluno') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const atividadeId = parseInt(req.params.id, 10);
-  if (Number.isNaN(atividadeId)) {
-    res.status(400).json({ error: 'Atividade inválida' });
-    return;
-  }
-
-  const atividade = await prisma.atividade.findUnique({ where: { id: atividadeId } });
-  if (!atividade) {
-    res.status(404).json({ error: 'Atividade não encontrada' });
-    return;
-  }
-
-  const enrolled = await prisma.matricula.findFirst({ where: { turmaId: atividade.turmaId, alunoId: req.user.id } });
-  if (!enrolled) {
-    res.status(403).json({ error: 'Você não está nesta turma' });
-    return;
-  }
-
-  const arquivo = arquivoRecebido(req);
-  if (atividade.arquivoObrigatorio && !arquivo) {
-    res.status(400).json({ error: 'Esta atividade exige o envio de um arquivo.' });
-    return;
-  }
-
-  const last = await prisma.submissao.findFirst({
-    where: { atividadeId, alunoId: req.user.id },
-    orderBy: { dataEnvio: 'desc' },
-  });
-  if (last && last.status !== StatusSubmissao.reprovado) {
-    res.status(400).json({
-      error: 'Você já possui uma entrega para esta atividade. Só é possível enviar de novo se o professor reprovar a última entrega (status reprovado). Com entrega aprovada ou corrigida, não há nova submissão.',
-    });
-    return;
-  }
-
-  const conteudo = typeof req.body?.conteudo === 'string' ? req.body.conteudo : undefined;
-  const dados = { atividadeId, alunoId: req.user.id, conteudo };
-  // O arquivo só vai para o disco aqui, depois de todas as checagens (e sai de novo se a gravação falhar)
-  const submissao = arquivo
-    ? await salvarArquivoRecebido(req, req.user.id, (tx, a) =>
-        tx.submissao.create({ data: { ...dados, arquivoId: a.id }, include: incluirArquivo }),
-      )
-    : await prisma.submissao.create({ data: dados, include: incluirArquivo });
+  const { id: atividadeId } = validar(paramsNovaEntrega, req.params);
+  const { conteudo } = validar(novaEntregaSchema, req.body);
+  const submissao = await submissoes.criarSubmissao(req.user.id, atividadeId, conteudo, anexoDaRequisicao(req, req.user.id));
   res.status(201).json(comArquivo(submissao));
 }
 
+/** GET /atividades/:id/submissoes — requireRole('professor') */
 export async function listSubmissionsByActivity(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const atividadeId = parseInt(req.params.id, 10);
-  if (Number.isNaN(atividadeId)) {
-    res.status(400).json({ error: 'ID inválido' });
-    return;
-  }
-
-  const atividade = await prisma.atividade.findUnique({
-    where: { id: atividadeId },
-    include: { turma: { select: { professorId: true } } },
-  });
-  if (!atividade) {
-    res.status(404).json({ error: 'Atividade não encontrada' });
-    return;
-  }
-  if (atividade.turma.professorId !== req.user.id) {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const submissoes = await prisma.submissao.findMany({
-    where: { atividadeId },
-    include: { aluno: { select: { id: true, nome: true } }, feedback: true, ...incluirArquivo },
-    orderBy: { dataEnvio: 'desc' },
-  });
-  res.json(submissoes.map(comArquivo));
+  const { id: atividadeId } = validar(paramsId, req.params);
+  const lista = await submissoes.listarSubmissoes(req.user.id, atividadeId);
+  res.json(lista.map(comArquivo));
 }
 
+/** PATCH /professor/submissoes/:id — requireRole('professor') */
 export async function updateSubmissionStatus(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const id = parseInt(req.params.id, 10);
-  if (Number.isNaN(id)) {
-    res.status(400).json({ error: 'ID inválido' });
-    return;
-  }
-
-  const { status } = req.body;
-  if (status !== 'aprovado' && status !== 'reprovado') {
-    res.status(400).json({ error: 'Envie status: "aprovado" ou "reprovado"' });
-    return;
-  }
-
-  const submissao = await prisma.submissao.findUnique({
-    where: { id },
-    include: { atividade: { include: { turma: { select: { professorId: true } } } } },
-  });
-  if (!submissao) {
-    res.status(404).json({ error: 'Submissão não encontrada' });
-    return;
-  }
-  if (submissao.atividade.turma.professorId !== req.user.id) {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  if (submissao.status === StatusSubmissao.aprovado || submissao.status === StatusSubmissao.reprovado) {
-    res.status(400).json({ error: 'Esta entrega já foi avaliada com Aprovar ou Reprovar e não pode ser alterada.' });
-    return;
-  }
-
-  const newStatus = status === 'aprovado' ? StatusSubmissao.aprovado : StatusSubmissao.reprovado;
-
-  if (submissao.status === StatusSubmissao.corrigido && newStatus === StatusSubmissao.aprovado) {
-    res.status(400).json({ error: 'Uma entrega já corrigida com nota só pode ser reprovada para o aluno tentar de novo.' });
-    return;
-  }
-
-  const updated = await prisma.$transaction(async (tx) => {
-    if (newStatus === StatusSubmissao.reprovado) {
-      await tx.feedback.deleteMany({ where: { submissaoId: id } });
-    }
-    return tx.submissao.update({
-      where: { id },
-      data: { status: newStatus },
-      include: { aluno: { select: { id: true, nome: true } }, feedback: true, ...incluirArquivo },
-    });
-  });
-  res.json(comArquivo(updated));
+  const { id } = validar(paramsId, req.params);
+  const { status } = validar(avaliacaoSchema, req.body);
+  res.json(comArquivo(await submissoes.avaliarSubmissao(req.user.id, id, status)));
 }

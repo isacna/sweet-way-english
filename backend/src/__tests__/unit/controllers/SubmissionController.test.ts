@@ -17,7 +17,7 @@ vi.mock('../../../storage/arquivos.js', async (original) => ({
 }));
 
 import { createSubmission, listSubmissionsByActivity, updateSubmissionStatus } from '../../../http/controllers/SubmissionController.js';
-import { mockRes, mockReq, studentReq } from '../../helpers/mockReqRes.js';
+import { mockRes, mockReq, studentReq, executar } from '../../helpers/mockReqRes.js';
 import { definirArquivoRecebido } from '../../../http/middlewares/upload.js';
 
 const semArquivo = { arquivo: null, arquivoUrl: null };
@@ -33,33 +33,28 @@ describe('SubmissionController', () => {
 
   // ── createSubmission ──────────────────────────────────────────────────────
   describe('createSubmission', () => {
-    it('returns 403 for professor', async () => {
-      await createSubmission(mockReq({ params: { id: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid activity id', async () => {
-      await createSubmission(studentReq({ params: { id: 'abc' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when activity not found', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue(null);
-      await createSubmission(studentReq({ params: { id: '99' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 403 when aluno is not enrolled', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turmaId: 2, arquivoObrigatorio: false });
       prismaMock.matricula.findFirst.mockResolvedValue(null);
-      await createSubmission(studentReq({ params: { id: '1' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
     it('returns 400 when file is required but not provided', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turmaId: 2, arquivoObrigatorio: true });
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
-      await createSubmission(studentReq({ params: { id: '1' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ error: expect.stringContaining('arquivo') }));
     });
@@ -68,7 +63,7 @@ describe('SubmissionController', () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turmaId: 2, arquivoObrigatorio: false });
       prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
       prismaMock.submissao.findFirst.mockResolvedValue({ id: 5, status: 'pendente' });
-      await createSubmission(studentReq({ params: { id: '1' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -78,7 +73,7 @@ describe('SubmissionController', () => {
       prismaMock.submissao.findFirst.mockResolvedValue({ id: 5, status: 'reprovado' });
       const newSub = { id: 6, status: 'pendente' };
       prismaMock.submissao.create.mockResolvedValue(newSub);
-      await createSubmission(studentReq({ params: { id: '1' }, body: { conteudo: 'My answer' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '1' }, body: { conteudo: 'My answer' } }), res);
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith({ ...newSub, ...semArquivo });
     });
@@ -95,7 +90,7 @@ describe('SubmissionController', () => {
 
       const req = studentReq({ params: { id: '1' }, body: {} });
       definirArquivoRecebido(req, PDF);
-      await createSubmission(req, res);
+      await executar(createSubmission, req, res);
 
       expect(disco.gravarNoDisco).toHaveBeenCalledWith(PDF.buffer, 'pdf');
       expect(prismaMock.arquivo.create).toHaveBeenCalledWith({
@@ -112,7 +107,7 @@ describe('SubmissionController', () => {
       prismaMock.matricula.findFirst.mockResolvedValue(null);
       const req = studentReq({ params: { id: '1' } });
       definirArquivoRecebido(req, PDF);
-      await createSubmission(req, res);
+      await executar(createSubmission, req, res);
       expect(res.status).toHaveBeenCalledWith(403);
       expect(disco.gravarNoDisco).not.toHaveBeenCalled();
     });
@@ -135,32 +130,27 @@ describe('SubmissionController', () => {
       prismaMock.submissao.findFirst.mockResolvedValue(null);
       const newSub = { id: 7, status: 'pendente' };
       prismaMock.submissao.create.mockResolvedValue(newSub);
-      await createSubmission(studentReq({ params: { id: '1' }, body: { conteudo: 'Answer' } }), res);
+      await executar(createSubmission, studentReq({ params: { id: '1' }, body: { conteudo: 'Answer' } }), res);
       expect(res.status).toHaveBeenCalledWith(201);
     });
   });
 
   // ── listSubmissionsByActivity ─────────────────────────────────────────────
   describe('listSubmissionsByActivity', () => {
-    it('returns 403 for aluno', async () => {
-      await listSubmissionsByActivity(studentReq({ params: { id: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await listSubmissionsByActivity(mockReq({ params: { id: 'abc' } }), res);
+      await executar(listSubmissionsByActivity, mockReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when activity not found', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue(null);
-      await listSubmissionsByActivity(mockReq({ params: { id: '99' } }), res);
+      await executar(listSubmissionsByActivity, mockReq({ params: { id: '99' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
     it('returns 403 when activity belongs to another professor', async () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 999 } });
-      await listSubmissionsByActivity(mockReq({ params: { id: '1' } }), res);
+      await executar(listSubmissionsByActivity, mockReq({ params: { id: '1' } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
@@ -168,31 +158,26 @@ describe('SubmissionController', () => {
       prismaMock.atividade.findUnique.mockResolvedValue({ id: 1, turma: { professorId: 1 } });
       const subs = [{ id: 1, conteudo: 'Answer', aluno: { id: 10, nome: 'Bob' } }];
       prismaMock.submissao.findMany.mockResolvedValue(subs);
-      await listSubmissionsByActivity(mockReq({ params: { id: '1' } }), res);
+      await executar(listSubmissionsByActivity, mockReq({ params: { id: '1' } }), res);
       expect(res.json).toHaveBeenCalledWith([{ ...subs[0], ...semArquivo }]);
     });
   });
 
   // ── updateSubmissionStatus ────────────────────────────────────────────────
   describe('updateSubmissionStatus', () => {
-    it('returns 403 for aluno', async () => {
-      await updateSubmissionStatus(studentReq({ params: { id: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await updateSubmissionStatus(mockReq({ params: { id: 'abc' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 400 for invalid status value', async () => {
-      await updateSubmissionStatus(mockReq({ params: { id: '1' }, body: { status: 'corrigido' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '1' }, body: { status: 'corrigido' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when submission not found', async () => {
       prismaMock.submissao.findUnique.mockResolvedValue(null);
-      await updateSubmissionStatus(mockReq({ params: { id: '99' }, body: { status: 'aprovado' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '99' }, body: { status: 'aprovado' } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
@@ -200,7 +185,7 @@ describe('SubmissionController', () => {
       prismaMock.submissao.findUnique.mockResolvedValue({
         id: 1, status: 'aprovado', atividade: { turma: { professorId: 1 } },
       });
-      await updateSubmissionStatus(mockReq({ params: { id: '1' }, body: { status: 'reprovado' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '1' }, body: { status: 'reprovado' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -208,7 +193,7 @@ describe('SubmissionController', () => {
       prismaMock.submissao.findUnique.mockResolvedValue({
         id: 1, status: 'corrigido', atividade: { turma: { professorId: 1 } },
       });
-      await updateSubmissionStatus(mockReq({ params: { id: '1' }, body: { status: 'aprovado' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '1' }, body: { status: 'aprovado' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -219,7 +204,7 @@ describe('SubmissionController', () => {
       const updated = { id: 1, status: 'aprovado' };
       prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
       prismaMock.submissao.update.mockResolvedValue(updated);
-      await updateSubmissionStatus(mockReq({ params: { id: '1' }, body: { status: 'aprovado' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '1' }, body: { status: 'aprovado' } }), res);
       expect(res.json).toHaveBeenCalledWith({ ...updated, ...semArquivo });
     });
 
@@ -231,7 +216,7 @@ describe('SubmissionController', () => {
       prismaMock.$transaction.mockImplementation((cb: any) => cb(prismaMock));
       prismaMock.feedback.deleteMany.mockResolvedValue({});
       prismaMock.submissao.update.mockResolvedValue(updated);
-      await updateSubmissionStatus(mockReq({ params: { id: '1' }, body: { status: 'reprovado' } }), res);
+      await executar(updateSubmissionStatus, mockReq({ params: { id: '1' }, body: { status: 'reprovado' } }), res);
       expect(prismaMock.feedback.deleteMany).toHaveBeenCalledWith({ where: { submissaoId: 1 } });
       expect(res.json).toHaveBeenCalledWith({ ...updated, ...semArquivo });
     });

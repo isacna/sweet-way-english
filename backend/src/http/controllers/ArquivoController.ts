@@ -1,5 +1,6 @@
 import { Response } from 'express';
 import { prisma } from '../../database/client.js';
+import { logger } from '../../config/logger.js';
 import { AuthRequest } from '../../types/index.js';
 import { caminhoAbsoluto, pastaUploads, tipoPrevisualizavel } from '../../storage/arquivos.js';
 
@@ -95,7 +96,7 @@ export async function getArquivo(req: AuthRequest, res: Response) {
       res.removeHeader('Content-Disposition');
       naoEncontrado(res);
     } else {
-      console.error('Falha ao enviar arquivo', arquivo.id, err);
+      (req.log ?? logger).error({ err, arquivoId: arquivo.id }, 'Falha ao enviar arquivo');
     }
   });
 }

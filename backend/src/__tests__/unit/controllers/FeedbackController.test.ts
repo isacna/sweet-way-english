@@ -3,12 +3,13 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const prismaMock = vi.hoisted(() => ({
   submissao: { findUnique: vi.fn(), update: vi.fn() },
   feedback: { create: vi.fn(), findMany: vi.fn() },
+  $transaction: vi.fn(),
 }));
 
 vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
 
 import { createFeedback, getMyFeedbacks } from '../../../http/controllers/FeedbackController.js';
-import { mockRes, mockReq, studentReq } from '../../helpers/mockReqRes.js';
+import { mockRes, mockReq, studentReq, executar } from '../../helpers/mockReqRes.js';
 
 describe('FeedbackController', () => {
   let res: any;
@@ -16,23 +17,19 @@ describe('FeedbackController', () => {
   beforeEach(() => {
     res = mockRes();
     vi.clearAllMocks();
+    prismaMock.$transaction.mockImplementation((fn: (tx: unknown) => unknown) => fn(prismaMock));
   });
 
   // ── createFeedback ────────────────────────────────────────────────────────
   describe('createFeedback', () => {
-    it('returns 403 for aluno', async () => {
-      await createFeedback(studentReq({ params: { id: '1' } }), res);
-      expect(res.status).toHaveBeenCalledWith(403);
-    });
-
     it('returns 400 for invalid id', async () => {
-      await createFeedback(mockReq({ params: { id: 'abc' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: 'abc' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
     it('returns 404 when submission not found', async () => {
       prismaMock.submissao.findUnique.mockResolvedValue(null);
-      await createFeedback(mockReq({ params: { id: '99' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: '99' }, body: { comentario: 'Bom', nota: 8 } }), res);
       expect(res.status).toHaveBeenCalledWith(404);
     });
 
@@ -41,7 +38,7 @@ describe('FeedbackController', () => {
         id: 1, feedback: null, status: 'pendente',
         atividade: { turma: { professorId: 999 } },
       });
-      await createFeedback(mockReq({ params: { id: '1' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: '1' }, body: { comentario: 'Bom', nota: 8 } }), res);
       expect(res.status).toHaveBeenCalledWith(403);
     });
 
@@ -50,7 +47,7 @@ describe('FeedbackController', () => {
         id: 1, feedback: { id: 5 }, status: 'corrigido',
         atividade: { turma: { professorId: 1 } },
       });
-      await createFeedback(mockReq({ params: { id: '1' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: '1' }, body: { comentario: 'Bom', nota: 8 } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ error: expect.stringContaining('feedback') }));
     });
@@ -60,7 +57,7 @@ describe('FeedbackController', () => {
         id: 1, feedback: null, status: 'aprovado',
         atividade: { turma: { professorId: 1 } },
       });
-      await createFeedback(mockReq({ params: { id: '1' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: '1' }, body: { comentario: 'Bom', nota: 8 } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
     });
 
@@ -73,13 +70,30 @@ describe('FeedbackController', () => {
       prismaMock.feedback.create.mockResolvedValue(feedback);
       prismaMock.submissao.update.mockResolvedValue({});
 
-      await createFeedback(mockReq({ params: { id: '1' }, body: { comentario: 'Good work', nota: '9.0' } }), res);
+      await executar(createFeedback, mockReq({ params: { id: '1' }, body: { comentario: 'Good work', nota: '9.0' } }), res);
 
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith(feedback);
       expect(prismaMock.submissao.update).toHaveBeenCalledWith(
         expect.objectContaining({ data: { status: 'corrigido' } })
       );
+      expect(prismaMock.feedback.create).toHaveBeenCalledWith({
+        data: { submissaoId: 1, professorId: 1, comentario: 'Good work', nota: 9 },
+      });
+    });
+
+    it.each([
+      [{ nota: 8 }, 'Comentário é obrigatório'],
+      [{ comentario: '   ', nota: 8 }, 'Comentário é obrigatório'],
+      [{ comentario: 'ok' }, 'Nota inválida'],
+      [{ comentario: 'ok', nota: 'abc' }, 'Nota inválida'],
+      [{ comentario: 'ok', nota: '' }, 'Nota inválida'],
+      [{ comentario: 'ok', nota: -1 }, 'Nota inválida'],
+    ])('returns 400 for an invalid body %o', async (body, erro) => {
+      await executar(createFeedback, mockReq({ params: { id: '1' }, body }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ error: erro });
+      expect(prismaMock.submissao.findUnique).not.toHaveBeenCalled();
     });
   });
 
@@ -89,7 +103,7 @@ describe('FeedbackController', () => {
       const feedbacks = [{ id: 1, nota: 8.5, submissao: { atividade: { titulo: 'Task 1' } } }];
       prismaMock.feedback.findMany.mockResolvedValue(feedbacks);
 
-      await getMyFeedbacks(studentReq(), res);
+      await executar(getMyFeedbacks, studentReq(), res);
 
       expect(prismaMock.feedback.findMany).toHaveBeenCalledWith(
         expect.objectContaining({ where: { submissao: { alunoId: 10 } } })

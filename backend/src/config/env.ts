@@ -28,6 +28,11 @@ const envSchema = z.object({
   EMAIL_FROM: z.string().min(1).default('Sweet Way English <onboarding@resend.dev>'),
   // Endereço público do frontend, usado nos links enviados por e-mail
   FRONTEND_URL: z.url('FRONTEND_URL precisa ser uma URL (ex.: https://app.exemplo.com)').default('http://localhost:3000'),
+  // Postgres. O client do Prisma (database/client.ts) lê direto do process.env, porque os scripts também o usam;
+  // aqui só para o servidor avisar na subida se faltar.
+  DATABASE_URL: z.string().optional(),
+  // Nível dos logs (pino). Nos testes (NODE_ENV=test) os logs ficam desligados.
+  LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace', 'silent']).default('info'),
 });
 
 /** Converte JWT_EXPIRES_IN (`7d`, `12h`, `30m`, `3600`) em milissegundos, para o maxAge do cookie. */

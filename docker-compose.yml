@@ -29,7 +29,7 @@ services:
       JWT_SECRET: ${JWT_SECRET:?Defina JWT_SECRET no .env (pelo menos 16 caracteres)}
       CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
       APP_URL: ${APP_URL:-http://localhost:3333}
-      # Link do e-mail de nova senha; sem RESEND_API_KEY o e-mail só vai para o log
+      # Link do e-mail de nova senha; sem RESEND_API_KEY nenhum e-mail sai (em produção nem o log mostra o link)
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
       RESEND_API_KEY: ${RESEND_API_KEY:-}
       EMAIL_FROM: ${EMAIL_FROM:-Sweet Way English <onboarding@resend.dev>}
@@ -38,6 +38,8 @@ services:
       NODE_ENV: ${NODE_ENV:-production}
       # Proxies reversos na frente da API (Caddy = 1); 0 quando a porta 3333 é acessada direto
       TRUST_PROXY: ${TRUST_PROXY:-0}
+      # Logs JSON (pino) no stdout: fatal | error | warn | info | debug | trace | silent
+      LOG_LEVEL: ${LOG_LEVEL:-info}
       # Seed só roda com SEED_ON_START=1 (ex.: na primeira subida); veja backend/prisma/seed.ts
       SEED_ON_START: ${SEED_ON_START:-0}
       SEED_DEMO: ${SEED_DEMO:-}

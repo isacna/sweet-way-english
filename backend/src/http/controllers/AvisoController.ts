@@ -1,82 +1,33 @@
 import { Response } from 'express';
-import { prisma } from '../../database/client.js';
+import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
+import { id, texto, textoOpcional, validar } from '../validacao.js';
+import * as avisos from '../../services/avisos.js';
 
+const paramsTurma = z.object({ turmaId: id('Turma inválida') });
+const paramsAviso = z.object({ turmaId: id(), avisoId: id() });
+const novoAvisoSchema = z.object({
+  titulo: texto('Título é obrigatório'),
+  conteudo: textoOpcional('Conteúdo inválido').transform((v) => v || null),
+  link: textoOpcional('Link inválido').transform((v) => v || null),
+});
+
+/** GET /turmas/:turmaId/avisos */
 export async function listAvisos(req: AuthRequest, res: Response) {
-  const turmaId = parseInt(req.params.turmaId, 10);
-  if (Number.isNaN(turmaId)) {
-    res.status(400).json({ error: 'Turma inválida' });
-    return;
-  }
-
-  // Verificar acesso: professor dono ou aluno matriculado
-  if (req.user.role === 'professor') {
-    const turma = await prisma.turma.findFirst({ where: { id: turmaId, professorId: req.user.id } });
-    if (!turma) { res.status(403).json({ error: 'Acesso negado' }); return; }
-  } else {
-    const matricula = await prisma.matricula.findFirst({ where: { turmaId, alunoId: req.user.id } });
-    if (!matricula) { res.status(403).json({ error: 'Acesso negado' }); return; }
-  }
-
-  const avisos = await prisma.aviso.findMany({
-    where: { turmaId },
-    orderBy: { criadoEm: 'desc' },
-  });
-
-  res.json(avisos);
+  const { turmaId } = validar(paramsTurma, req.params);
+  res.json(await avisos.listarAvisos(req.user, turmaId));
 }
 
+/** POST /turmas/:turmaId/avisos — requireRole('professor') */
 export async function createAviso(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const turmaId = parseInt(req.params.turmaId, 10);
-  if (Number.isNaN(turmaId)) {
-    res.status(400).json({ error: 'Turma inválida' });
-    return;
-  }
-
-  const turma = await prisma.turma.findFirst({ where: { id: turmaId, professorId: req.user.id } });
-  if (!turma) { res.status(403).json({ error: 'Turma não encontrada' }); return; }
-
-  const { titulo, conteudo, link } = req.body;
-  if (!titulo || !String(titulo).trim()) {
-    res.status(400).json({ error: 'Título é obrigatório' });
-    return;
-  }
-
-  const aviso = await prisma.aviso.create({
-    data: {
-      titulo: String(titulo).trim(),
-      conteudo: conteudo ? String(conteudo).trim() : null,
-      link: link ? String(link).trim() : null,
-      turmaId,
-    },
-  });
-
-  res.status(201).json(aviso);
+  const { turmaId } = validar(paramsTurma, req.params);
+  const dados = validar(novoAvisoSchema, req.body);
+  res.status(201).json(await avisos.criarAviso(req.user.id, turmaId, dados));
 }
 
+/** DELETE /turmas/:turmaId/avisos/:avisoId — requireRole('professor') */
 export async function deleteAviso(req: AuthRequest, res: Response) {
-  if (req.user.role !== 'professor') {
-    res.status(403).json({ error: 'Acesso negado' });
-    return;
-  }
-
-  const turmaId = parseInt(req.params.turmaId, 10);
-  const avisoId = parseInt(req.params.avisoId, 10);
-  if (Number.isNaN(turmaId) || Number.isNaN(avisoId)) {
-    res.status(400).json({ error: 'ID inválido' });
-    return;
-  }
-
-  const aviso = await prisma.aviso.findFirst({
-    where: { id: avisoId, turmaId, turma: { professorId: req.user.id } },
-  });
-  if (!aviso) { res.status(404).json({ error: 'Aviso não encontrado' }); return; }
-
-  await prisma.aviso.delete({ where: { id: avisoId } });
+  const { turmaId, avisoId } = validar(paramsAviso, req.params);
+  await avisos.apagarAviso(req.user.id, turmaId, avisoId);
   res.status(204).send();
 }
