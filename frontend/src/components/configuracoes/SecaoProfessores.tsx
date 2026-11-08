@@ -266,7 +266,7 @@ export function SecaoProfessores() {
       titulo="Professores"
       descricao="Contas com acesso à área da professora."
       acao={
-        <div className="flex w-full flex-wrap gap-2 sm:w-auto [&>*]:flex-1 sm:[&>*]:flex-none">
+        <div className="grid w-full grid-cols-1 gap-2 min-[420px]:grid-cols-2 sm:flex sm:w-auto">
           <button type="button" onClick={() => setPromover(true)} className={classeBotao("secundario")}>
             <UserPlus aria-hidden className="h-4 w-4" />
             Promover aluno

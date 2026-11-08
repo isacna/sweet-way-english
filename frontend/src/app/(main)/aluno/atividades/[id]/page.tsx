@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
-import { CalendarClock, FileWarning, Paperclip, Send } from "lucide-react";
+import { CalendarClock, Paperclip, Send } from "lucide-react";
 import { AssetPreview } from "@/components/AssetPreview";
 import {
   Cabecalho,
@@ -176,13 +176,8 @@ function AtividadeEntregaConteudo() {
           </span>
         </div>
         <p className="whitespace-pre-wrap break-words text-ink">{atividade.descricao}</p>
-        {atividade.arquivoObrigatorio && (
-          <Mensagem tom="alerta">
-            <span className="inline-flex items-center gap-1.5">
-              <FileWarning aria-hidden className="h-4 w-4" />
-              Para entregar, é obrigatório anexar um arquivo.
-            </span>
-          </Mensagem>
+        {atividade.arquivoObrigatorio && liberado && (
+          <Mensagem tom="alerta">Para entregar, é obrigatório anexar um arquivo.</Mensagem>
         )}
         {(atividade.link || atividade.arquivoUrl) && (
           <div className="space-y-4 border-t border-line pt-4">

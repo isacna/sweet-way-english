@@ -75,7 +75,15 @@ export function SecaoLogo() {
         <figure className="space-y-2">
           <div className="flex h-28 items-center justify-center rounded-2xl border border-dashed border-line-strong bg-gray-50 p-4">
             {/* eslint-disable-next-line @next/next/no-img-element -- URL pública do backend ou object URL local */}
-            <img src={mostrar} alt="Logo atual da escola" className="max-h-20 w-auto max-w-full object-contain" />
+            <img
+              src={mostrar}
+              alt="Logo atual da escola"
+              onError={(e) => {
+                // Logo inacessível: mostra o padrão em vez do ícone de imagem quebrada
+                if (!e.currentTarget.src.endsWith("/logo-sweet.png")) e.currentTarget.src = "/logo-sweet.png";
+              }}
+              className="max-h-20 w-auto max-w-full object-contain"
+            />
           </div>
           <figcaption className="text-xs text-ink-soft">{arquivo ? "Prévia do novo logo" : "Logo atual"}</figcaption>
         </figure>

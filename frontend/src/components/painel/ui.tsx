@@ -151,7 +151,12 @@ export function Cabecalho({
           </h1>
           {descricao && <div className="mt-1.5 max-w-2xl text-ink-soft">{descricao}</div>}
         </div>
-        {acoes && <div className="flex shrink-0 flex-wrap gap-2 [&>*]:flex-1 sm:[&>*]:flex-none">{acoes}</div>}
+        {acoes && (
+          // No celular: a primeira ação ocupa a linha toda; as outras dividem a linha de baixo
+          <div className="grid shrink-0 grid-cols-2 gap-2 sm:flex sm:flex-wrap [&>*:first-child]:col-span-2 [&>*:nth-child(2):last-child]:col-span-2">
+            {acoes}
+          </div>
+        )}
       </div>
     </header>
   );

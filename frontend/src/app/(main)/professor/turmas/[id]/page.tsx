@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useCallback, useEffect, useState } from "react";
-import { CalendarClock, ChevronRight, ClipboardList, FolderOpen, Megaphone, Plus, UsersRound } from "lucide-react";
+import { CalendarClock, ChevronRight, ClipboardList, FolderOpen, Plus, UsersRound } from "lucide-react";
 import { apiFetch } from "@/lib/api";
 import {
   Avatar,
@@ -48,7 +48,6 @@ function TurmaDetalheConteudo() {
   const [avisos, setAvisos] = useState<Aviso[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
-  const [novoAviso, setNovoAviso] = useState(false);
 
   const carregarAvisos = useCallback(async () => {
     const res = await apiFetch(`/turmas/${id}/avisos`).catch(() => null);
@@ -140,10 +139,6 @@ function TurmaDetalheConteudo() {
               <Plus aria-hidden className="h-4 w-4" />
               Nova atividade
             </Link>
-            <button type="button" onClick={() => setNovoAviso(true)} className={classeBotao("secundario")}>
-              <Megaphone aria-hidden className="h-4 w-4" />
-              Novo aviso
-            </button>
             <Link href={`/professor/materiais?turma=${turma.id}`} className={classeBotao("secundario")}>
               <FolderOpen aria-hidden className="h-4 w-4" />
               Materiais
@@ -250,8 +245,6 @@ function TurmaDetalheConteudo() {
             avisos={avisos}
             editavel
             onMudou={carregarAvisos}
-            abrirNovo={novoAviso}
-            onFecharNovo={() => setNovoAviso(false)}
           />
 
           <Secao

@@ -125,6 +125,7 @@ export default function ProfessorAlunosPage() {
             {
               id: "turma",
               label: "Turma",
+              placeholder: "Todas as turmas",
               opcoes: turmas.map((t) => ({ valor: String(t.id), rotulo: t.nome })),
               valor: turmaFiltro,
               onChange: setTurmaFiltro,

@@ -67,19 +67,13 @@ export function MuralAvisos({
   avisos,
   editavel,
   onMudou,
-  abrirNovo,
-  onFecharNovo,
 }: {
   turmaId: number | string;
   avisos: Aviso[];
   editavel?: boolean;
   onMudou?: () => void | Promise<void>;
-  /** Controle externo do diálogo de novo aviso (o botão do cabeçalho da página também abre). */
-  abrirNovo?: boolean;
-  onFecharNovo?: () => void;
 }) {
-  const [novoLocal, setNovoLocal] = useState(false);
-  const novoAberto = novoLocal || !!abrirNovo;
+  const [novoAberto, setNovoAberto] = useState(false);
   const [titulo, setTitulo] = useState("");
   const [conteudo, setConteudo] = useState("");
   const [link, setLink] = useState("");
@@ -91,8 +85,7 @@ export function MuralAvisos({
   const [feito, setFeito] = useState("");
 
   function fecharNovo() {
-    setNovoLocal(false);
-    onFecharNovo?.();
+    setNovoAberto(false);
     setErro("");
   }
 
@@ -148,7 +141,7 @@ export function MuralAvisos({
       }
       acao={
         editavel ? (
-          <button type="button" onClick={() => setNovoLocal(true)} className={classeBotao("secundario")}>
+          <button type="button" onClick={() => setNovoAberto(true)} className={classeBotao("secundario")}>
             <Plus aria-hidden className="h-4 w-4" />
             Novo aviso
           </button>
