@@ -2,6 +2,7 @@ import { Response } from 'express';
 import fs from 'fs';
 import path from 'path';
 import { prisma } from '../../database/client.js';
+import { TipoMaterial } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
 
 export async function createMaterial(req: AuthRequest, res: Response) {
@@ -27,6 +28,11 @@ export async function createMaterial(req: AuthRequest, res: Response) {
 
   if (!titulo || !tipo || !urlArquivo) {
     res.status(400).json({ error: 'Informe título, tipo e um arquivo ou URL' });
+    return;
+  }
+  // `tipo` é enum no banco: um valor desconhecido viraria erro 500 do Prisma
+  if (!Object.values(TipoMaterial).includes(tipo)) {
+    res.status(400).json({ error: `Tipo inválido. Use: ${Object.values(TipoMaterial).join(', ')}` });
     return;
   }
 

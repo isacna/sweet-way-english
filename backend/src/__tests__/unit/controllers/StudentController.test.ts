@@ -85,8 +85,11 @@ describe('StudentController', () => {
       prismaMock.usuario.create.mockResolvedValue(aluno);
       prismaMock.matricula.create.mockResolvedValue({});
 
-      await createStudent(professorReq({ body: { nome: 'Bob', email: 'b@t.com', senha: '123', turmaId: 1 } }), res);
+      await createStudent(professorReq({ body: { nome: 'Bob', email: ' B@T.com ', senha: '123', turmaId: 1 } }), res);
 
+      expect(prismaMock.usuario.create).toHaveBeenCalledWith(
+        expect.objectContaining({ data: expect.objectContaining({ email: 'b@t.com' }) }),
+      );
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
         aluno: expect.objectContaining({ nome: 'Bob' }),

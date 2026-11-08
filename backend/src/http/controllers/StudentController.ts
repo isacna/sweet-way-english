@@ -6,6 +6,7 @@ import { prisma } from '../../database/client.js';
 import { z } from 'zod';
 import { AuthRequest } from '../../types/index.js';
 import { ehMenor } from '../../domain/idade.js';
+import { normalizarEmail } from '../../domain/email.js';
 
 // Dados opcionais de idade/responsável (LGPD art. 14), como no cadastro público
 const responsavelSchema = z
@@ -111,7 +112,7 @@ export async function createStudent(req: AuthRequest, res: Response) {
       const a = await tx.usuario.create({
         data: {
           nome,
-          email,
+          email: normalizarEmail(email),
           senha: hashedSenha,
           papel: 'aluno',
           ...(r.dataNascimento && { dataNascimento: r.dataNascimento }),
@@ -152,7 +153,7 @@ export async function updateStudent(req: AuthRequest, res: Response) {
   const { nome, email, senha } = req.body;
   const data: { nome?: string; email?: string; senha?: string } = {};
   if (nome !== undefined) data.nome = nome;
-  if (email !== undefined) data.email = email;
+  if (email !== undefined) data.email = normalizarEmail(email);
   if (senha !== undefined && senha !== '') data.senha = await bcrypt.hash(senha, 10);
 
   if (Object.keys(data).length === 0) {

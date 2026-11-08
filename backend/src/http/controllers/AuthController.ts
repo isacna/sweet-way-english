@@ -6,6 +6,7 @@ import { prisma } from '../../database/client.js';
 import { env } from '../../config/env.js';
 
 import { IDADE_MAIORIDADE, idadeEm } from '../../domain/idade.js';
+import { normalizarEmail } from '../../domain/email.js';
 
 const registerSchema = z
   .object({
@@ -79,10 +80,8 @@ export async function login(req: Request, res: Response) {
   }
   const { email, senha } = parsed.data;
 
-  // Contas antigas podem ter email com maiúsculas; as novas são salvas em minúsculas
-  const user =
-    (await prisma.usuario.findUnique({ where: { email } })) ??
-    (await prisma.usuario.findUnique({ where: { email: email.toLowerCase() } }));
+  // E-mails são gravados normalizados (minúsculos), então uma busca basta
+  const user = await prisma.usuario.findUnique({ where: { email: normalizarEmail(email) } });
 
   if (!user || !(await bcrypt.compare(senha, user.senha))) {
     res.status(401).json({ error: 'Credenciais inválidas' });
