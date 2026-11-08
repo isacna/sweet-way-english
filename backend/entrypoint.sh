@@ -11,16 +11,16 @@ for f in /app/seed-media/*; do
   fi
 done
 
+# O Compose só sobe o backend com o Postgres saudável (healthcheck), então não há espera aqui.
 echo "Running database migrations..."
 npx prisma migrate deploy
 
-# Seed only on first run — sentinel file lives in the persisted volume
-SEED_FLAG="/app/prisma/.seeded"
-if [ ! -f "$SEED_FLAG" ]; then
-  echo "Seeding database..."
-  npx tsx prisma/seed.ts && touch "$SEED_FLAG"
+# Seed só quando pedido explicitamente (ex.: primeira subida): SEED_ON_START=1
+if [ "$SEED_ON_START" = "1" ]; then
+  echo "Seeding database (SEED_ON_START=1)..."
+  npx tsx prisma/seed.ts
 else
-  echo "Database already seeded, skipping."
+  echo "Skipping seed (set SEED_ON_START=1 to run it)."
 fi
 
 echo "Starting server..."
