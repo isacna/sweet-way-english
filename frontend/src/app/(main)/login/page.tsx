@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 import { AuthShell } from "@/components/AuthShell";
 import {
@@ -13,7 +13,7 @@ import {
   classeLinkSuave,
   classeRotulo,
 } from "@/components/formStyles";
-import { apiFetch, salvarUsuario } from "@/lib/api";
+import { apiFetch, limparUsuario, salvarUsuario } from "@/lib/api";
 
 function LoginPageContent() {
   const searchParams = useSearchParams();
@@ -24,6 +24,12 @@ function LoginPageContent() {
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
   const [carregando, setCarregando] = useState(false);
+
+  // Quem chega ao login vai entrar de novo (ou foi mandado para cá pelo proxy.ts por estar sem sessão):
+  // o usuário em cache é descartado para nenhuma tela mostrar um nome antigo.
+  useEffect(() => {
+    limparUsuario();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();

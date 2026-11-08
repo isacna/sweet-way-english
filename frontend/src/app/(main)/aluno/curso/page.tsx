@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Check, ChevronDown, Flame, Hourglass, Lock, Play, Repeat2, Trophy, Zap } from "lucide-react";
 import { BarraProgresso, Carregando, Aviso, classeBotao } from "@/components/curso/ui";
-import { apiFetch, getStoredUser } from "@/lib/api";
+import { apiFetch } from "@/lib/api";
 import {
   formatarDataHora,
   lerErroApi,
@@ -306,11 +306,6 @@ export default function TrilhaCursoPage() {
   const [abertos, setAbertos] = useState<Set<number>>(new Set());
 
   useEffect(() => {
-    const u = getStoredUser();
-    if (!u || u.role !== "aluno") {
-      router.replace("/login?tipo=aluno");
-      return;
-    }
     let cancelled = false;
     (async () => {
       try {
