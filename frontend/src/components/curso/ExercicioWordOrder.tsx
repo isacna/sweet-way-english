@@ -1,19 +1,8 @@
 "use client";
 
 import { useMemo } from "react";
+import { embaralhar } from "@/lib/embaralhar";
 import type { PropsRenderizador } from "./tipos";
-
-/** Embaralhamento determinístico (o mesmo exercício aparece sempre igual, sem Math.random no render). */
-function embaralhar<T>(lista: T[], semente: number): T[] {
-  const r = [...lista];
-  let s = Math.abs(semente) % 233280;
-  for (let i = r.length - 1; i > 0; i--) {
-    s = (s * 9301 + 49297) % 233280;
-    const j = Math.floor((s / 233280) * (i + 1));
-    [r[i], r[j]] = [r[j], r[i]];
-  }
-  return r;
-}
 
 /** Ordenar palavras: toque nas palavras do banco para montar a frase; toque na frase para remover. */
 export function ExercicioWordOrder({ id, conteudo, value, onChange, disabled }: PropsRenderizador<"word_order">) {

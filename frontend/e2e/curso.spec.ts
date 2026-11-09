@@ -75,10 +75,11 @@ function blocoDe(page: Page, id: number): Locator {
 async function responder(page: Page, e: ExercicioCompleto) {
   const bloco = blocoDe(page, e.id);
   const g = e.gabarito as { correta?: number; respostas?: string[][]; aceitas?: string[]; pares?: number[] };
-  const c = e.conteudo as { opcoesPorLacuna?: (string[] | null)[] };
+  const c = e.conteudo as { opcoesPorLacuna?: (string[] | null)[]; opcoes?: string[] };
   switch (e.tipo) {
     case "mcq":
-      await bloco.getByRole("radio").nth(g.correta!).click();
+      // As opções aparecem embaralhadas: clica pelo texto da certa, não pela posição
+      await bloco.getByRole("radio", { name: c.opcoes![g.correta!], exact: true }).click();
       break;
     case "cloze":
       for (const [i, aceitas] of g.respostas!.entries()) {
