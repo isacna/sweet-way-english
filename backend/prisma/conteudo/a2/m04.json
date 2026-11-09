@@ -1,0 +1,1811 @@
+{
+  "slug": "a2-m04",
+  "ordem": 4,
+  "titulo": "Plans & invitations",
+  "tema": "Planos, compromissos e convites",
+  "descricao": "Fale dos seus planos e compromissos, faça previsões pelo que está vendo, convide alguém, aceite ou recuse com educação e sugira programas.",
+  "canDos": [
+    "Dizer o que pretendo fazer com be going to e perguntar sobre os planos de alguém.",
+    "Fazer previsões a partir do que estou vendo (Look at the clouds! It's going to rain).",
+    "Falar de compromissos já combinados, com dia, hora e lugar, usando o present continuous.",
+    "Convidar alguém com Would you like to...? e Do you want to...?",
+    "Aceitar ou recusar um convite com educação, dando um motivo.",
+    "Sugerir programas com Let's..., Why don't we...? e How about + -ing?"
+  ],
+  "gramatica": "Be going to (afirmativa, negativa, perguntas e respostas curtas) para planos e previsões com evidência; present continuous para compromissos combinados; expressões de tempo futuro (tonight, tomorrow, next Friday, in two weeks); Would you like to...?; Let's + verbo, Why don't we + verbo, How about + -ing.",
+  "vocabulario": "Lazer e eventos: concert, show, party, barbecue, festival, exhibition, game, movie; expressões de convite e resposta: I'd love to, Sounds great, Maybe another time, I'm busy, Are you free...?",
+  "funcao": "Falar de planos, convidar, aceitar, recusar e sugerir.",
+  "pronuncia": "Na fala rápida, going to vira \"gonna\" e o to fica fraco (/tə/): \"I'm gonna call you\". Reconheça ao ouvir, mas escreva sempre going to. Na escrita, gonna é só para mensagens muito informais.",
+  "licoes": [
+    {
+      "slug": "a2-m04-l1",
+      "ordem": 1,
+      "titulo": "I'm going to save money",
+      "objetivo": "Usar be going to para falar de planos e intenções, com afirmativa, negativa, perguntas e respostas curtas.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de planos e intenções, coisas que você já decidiu fazer, usamos be going to + verbo na forma base: I'm going to save money this year (Vou economizar dinheiro este ano).",
+          "O be muda com a pessoa: I am going to, you/we/they are going to, he/she/it is going to. Na fala e nas mensagens, usamos as formas curtas: I'm going to, she's going to, they're going to.",
+          "Na negativa, colocamos not depois do be: I'm not going to, he isn't going to, we aren't going to. Na pergunta, o be vem antes do sujeito: Are you going to travel? — Yes, I am. / No, I'm not.",
+          "Com perguntas de informação, a palavra interrogativa vem primeiro: What are you going to do this weekend? Where is she going to stay?"
+        ],
+        "regras": [
+          "Sujeito + am/is/are + going to + verbo base",
+          "I'm going to study. / She's going to study.",
+          "Negativa: I'm not going to... / He isn't going to... / They aren't going to...",
+          "Pergunta: Are you going to...? — Yes, I am. / No, I'm not.",
+          "What / Where / When + be + sujeito + going to + verbo?"
+        ],
+        "notaContrastiva": "Não esqueça o be: não diga *I going to travel* → diga *I'm going to travel*. E depois de going to o verbo fica na forma base: não diga *She's going to visits* → diga *She's going to visit*.",
+        "exemplos": [
+          { "en": "I'm going to save money this year.", "pt": "Vou economizar dinheiro este ano." },
+          { "en": "My sister is going to study medicine.", "pt": "Minha irmã vai estudar medicina." },
+          { "en": "We aren't going to go out tonight.", "pt": "Nós não vamos sair hoje à noite." },
+          { "en": "Are you going to travel on vacation? — Yes, I am.", "pt": "Você vai viajar nas férias? — Vou, sim." },
+          { "en": "Is Pedro going to sell his car? — No, he isn't.", "pt": "O Pedro vai vender o carro? — Não, não vai." },
+          { "en": "What are you going to do this weekend?", "pt": "O que você vai fazer neste fim de semana?" },
+          { "en": "They're going to adopt a dog.", "pt": "Eles vão adotar um cachorro." },
+          { "en": "I'm not going to eat fast food this week.", "pt": "Não vou comer fast food esta semana." }
+        ],
+        "vocabulario": [
+          { "en": "save money", "pt": "economizar dinheiro" },
+          { "en": "learn to drive", "pt": "aprender a dirigir" },
+          { "en": "adopt a dog", "pt": "adotar um cachorro" },
+          { "en": "start a course", "pt": "começar um curso" },
+          { "en": "this year", "pt": "este ano" },
+          { "en": "next month", "pt": "no mês que vem" },
+          { "en": "plan", "pt": "plano" },
+          { "en": "go out", "pt": "sair (para passear)" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Next year, I ___ learn to drive.", "opcoes": ["going to", "am going to", "am go to", "going"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Plano: I + am + going to + verbo base. Sem o am a frase fica incompleta.",
+          "tagsErro": ["be_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que começa a pergunta.",
+          "conteudo": { "texto": "___ your sister going to study medicine?", "opcoes": ["Does", "Do", "Is", "Are"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Com going to, a pergunta usa o be: your sister = she → Is your sister going to...?",
+          "tagsErro": ["ordem_pergunta", "futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to e o verbo entre parênteses.",
+          "conteudo": { "texto": "My parents ___ (buy) a new car next month." },
+          "gabarito": { "respostas": [["are going to buy"]] },
+          "explicacao": "My parents = they → are going to buy.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to na negativa e o verbo go.",
+          "conteudo": { "texto": "We ___ to the party tonight. We're too tired." },
+          "gabarito": { "respostas": [["are not going to go"]] },
+          "explicacao": "Negativa: we + are not (aren't) + going to + go.",
+          "tagsErro": ["negativa", "futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Are you going to ___ the game tonight? — Yes, I ___.",
+            "opcoesPorLacuna": [["watching", "watch", "watches"], ["do", "going", "am"]]
+          },
+          "gabarito": { "respostas": [["watch"], ["am"]] },
+          "explicacao": "Depois de going to vem o verbo base (watch). A pergunta usa are, então a resposta curta usa o be: Yes, I am.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["going", "travel", "Are", "next", "you", "to", "year"] },
+          "gabarito": { "aceitas": ["Are you going to travel next year?"] },
+          "explicacao": "Pergunta: Are + you + going to + travel + next year?",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada situação ao plano.",
+          "conteudo": {
+            "esquerda": ["I'm hungry.", "I'm tired.", "It's my mom's birthday.", "I failed the test.", "My car is very old."],
+            "direita": ["I'm going to buy her flowers.", "I'm going to make a sandwich.", "I'm going to buy a new one.", "I'm going to go to bed.", "I'm going to study more."]
+          },
+          "gabarito": { "pares": [1, 3, 0, 4, 2] },
+          "explicacao": "Cada situação leva a uma decisão: com fome, fazer um sanduíche; cansado, ir dormir; aniversário da mãe, comprar flores.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "She is going to visits her grandparents on Sunday." },
+          "gabarito": {
+            "aceitas": [
+              "She is going to visit her grandparents on Sunday.",
+              "On Sunday she is going to visit her grandparents.",
+              "On Sunday, she is going to visit her grandparents."
+            ]
+          },
+          "explicacao": "Depois de going to o verbo fica na forma base: visit, sem -s.",
+          "tagsErro": ["futuro_planos", "terceira_pessoa_s"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu vou aprender a cozinhar este ano.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "I am going to learn to cook this year.",
+              "I am going to learn how to cook this year.",
+              "This year I am going to learn to cook.",
+              "This year, I am going to learn to cook.",
+              "This year I am going to learn how to cook.",
+              "This year, I am going to learn how to cook."
+            ]
+          },
+          "explicacao": "Plano para o futuro: I'm going to + learn. Aprender a cozinhar = learn to cook (ou learn how to cook).",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Vocês vão viajar nas férias?", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "Are you going to travel on vacation?",
+              "Are you going to travel on your vacation?",
+              "Are you going to travel during your vacation?",
+              "Are you going to travel during the vacation?",
+              "Are you going to travel for vacation?",
+              "Are you guys going to travel on vacation?",
+              "Are you all going to travel on vacation?",
+              "Are you going to take a trip on vacation?"
+            ]
+          },
+          "explicacao": "Pergunta com going to: Are + you + going to + travel? Férias = vacation (inglês americano).",
+          "tagsErro": ["ordem_pergunta", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "They ___ going to sell their house.", "opcoes": ["is", "are", "does", "am"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "They → are going to.",
+          "tagsErro": ["be_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to na negativa e o verbo eat.",
+          "conteudo": { "texto": "I ___ fast food this week. I'm on a diet." },
+          "gabarito": { "respostas": [["am not going to eat"]] },
+          "explicacao": "Negativa com I: I am not (I'm not) going to eat.",
+          "tagsErro": ["negativa", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["adopt", "is", "a", "She", "to", "dog", "going"] },
+          "gabarito": { "aceitas": ["She is going to adopt a dog."] },
+          "explicacao": "She + is + going to + adopt + a dog.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós não vamos sair hoje à noite.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "We are not going to go out tonight.",
+              "Tonight we are not going to go out.",
+              "Tonight, we are not going to go out.",
+              "We are not going out tonight.",
+              "Tonight we are not going out.",
+              "Tonight, we are not going out."
+            ]
+          },
+          "explicacao": "Negativa: we aren't going to go out. Sair (para passear) = go out. Hoje à noite = tonight.",
+          "tagsErro": ["negativa", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "I going to start a new course in March." },
+          "gabarito": {
+            "aceitas": [
+              "I am going to start a new course in March.",
+              "In March I am going to start a new course.",
+              "In March, I am going to start a new course."
+            ]
+          },
+          "explicacao": "Falta o be: I am (I'm) going to start.",
+          "tagsErro": ["be_omitido", "futuro_planos"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m04-l2",
+      "ordem": 2,
+      "titulo": "Look! It's going to rain",
+      "objetivo": "Fazer previsões com be going to a partir do que estamos vendo agora.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Além de planos, be going to serve para previsões baseadas no que estamos vendo ou sabendo agora. Olhamos para as nuvens escuras e dizemos: Look at the clouds! It's going to rain (Vai chover).",
+          "A ideia é: a evidência está na nossa frente. Be careful! You're going to fall (Cuidado! Você vai cair). The bus is full. We're going to be late (Vamos nos atrasar).",
+          "Em português dizemos só \"vai chover\", sem sujeito. Em inglês a frase precisa de sujeito, e para o tempo usamos it: It's going to rain. It's going to be hot.",
+          "A forma é a mesma dos planos: sujeito + am/is/are + going to + verbo base. Pergunta: Is it going to rain? — No, it isn't."
+        ],
+        "regras": [
+          "Previsão com evidência: be going to + verbo base",
+          "Look at the clouds! It's going to rain.",
+          "Be careful! You're going to fall.",
+          "Tempo: It's going to be hot / cold / sunny.",
+          "Pergunta: Is it going to rain? — Yes, it is. / No, it isn't."
+        ],
+        "notaContrastiva": "Não comece a frase sem sujeito: não diga *Is going to rain* → diga *It's going to rain*. E perder o ônibus é *miss* the bus, não *lose* the bus (lose é perder um objeto).",
+        "exemplos": [
+          { "en": "Look at those black clouds! It's going to rain.", "pt": "Olha aquelas nuvens pretas! Vai chover." },
+          { "en": "Be careful! You're going to fall.", "pt": "Cuidado! Você vai cair." },
+          { "en": "The traffic is terrible. We're going to be late.", "pt": "O trânsito está horrível. Vamos nos atrasar." },
+          { "en": "There are no clouds. It's going to be a sunny day.", "pt": "Não tem nenhuma nuvem. Vai ser um dia de sol." },
+          { "en": "Our team is winning 3 to 0. We're going to win!", "pt": "Nosso time está ganhando de 3 a 0. Vamos ganhar!" },
+          { "en": "My phone has 2% battery. It's going to die.", "pt": "Meu celular está com 2% de bateria. Vai descarregar." },
+          { "en": "Run! We're going to miss the bus!", "pt": "Corre! Vamos perder o ônibus!" },
+          { "en": "Is it going to rain tomorrow? — No, it isn't.", "pt": "Vai chover amanhã? — Não, não vai." }
+        ],
+        "vocabulario": [
+          { "en": "cloud / cloudy", "pt": "nuvem / nublado" },
+          { "en": "rain / snow", "pt": "chover / nevar" },
+          { "en": "sunny", "pt": "ensolarado" },
+          { "en": "be late", "pt": "chegar atrasado" },
+          { "en": "miss the bus", "pt": "perder o ônibus" },
+          { "en": "fall", "pt": "cair" },
+          { "en": "win / lose a game", "pt": "ganhar / perder um jogo" },
+          { "en": "be careful", "pt": "tomar cuidado" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Look at those black clouds! It ___ rain.", "opcoes": ["going to", "goes to", "is going to", "is go to"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Previsão com evidência (as nuvens): It + is + going to + rain.",
+          "tagsErro": ["be_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a situação e escolha a previsão mais lógica.",
+          "conteudo": {
+            "texto": "The baby is very tired and her eyes are closing.",
+            "opcoes": ["She's going to run.", "She's going to cook.", "She's going to sleep.", "She's going to drive."]
+          },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Os olhos estão fechando: a evidência mostra que ela vai dormir.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to e o verbo entre parênteses.",
+          "conteudo": { "texto": "Be careful! You ___ (fall)!" },
+          "gabarito": { "respostas": [["are going to fall"]] },
+          "explicacao": "Previsão pelo que estamos vendo: you + are going to + fall.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to e o verbo entre parênteses.",
+          "conteudo": { "texto": "It's 7:55 and the class starts at 8. We ___ (be) late!" },
+          "gabarito": { "respostas": [["are going to be"]] },
+          "explicacao": "Faltam 5 minutos: a evidência mostra o atraso. We + are going to + be late.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa para cada lacuna.",
+          "conteudo": {
+            "texto": "___ going to rain? — No, it ___. The sky is blue.",
+            "opcoesPorLacuna": [["It is", "Is it", "Does it"], ["doesn't", "aren't", "isn't"]]
+          },
+          "gabarito": { "respostas": [["Is it"], ["isn't"]] },
+          "explicacao": "Na pergunta o be vem antes do sujeito: Is it going to rain? Resposta curta com o be: No, it isn't.",
+          "tagsErro": ["ordem_pergunta", "futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["very", "going", "be", "It's", "hot", "to"] },
+          "gabarito": { "aceitas": ["It's going to be very hot."] },
+          "explicacao": "Para o tempo usamos it: It's + going to + be + very hot.",
+          "tagsErro": ["sujeito_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada situação à previsão.",
+          "conteudo": {
+            "esquerda": [
+              "The glass is on the edge of the table.",
+              "Pedro is running to the bus stop, but the bus is leaving.",
+              "Our team is winning 3 to 0.",
+              "Ana studies every day.",
+              "There are no clouds in the sky."
+            ],
+            "direita": [
+              "He's going to miss it.",
+              "It's going to be a sunny day.",
+              "It's going to fall.",
+              "She's going to pass the test.",
+              "We're going to win the game."
+            ]
+          },
+          "gabarito": { "pares": [2, 0, 4, 3, 1] },
+          "explicacao": "Em todas as frases, o que vemos agora mostra o que vai acontecer: por isso usamos going to.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "Is going to rain this afternoon." },
+          "gabarito": {
+            "aceitas": [
+              "It is going to rain this afternoon.",
+              "This afternoon it is going to rain.",
+              "This afternoon, it is going to rain."
+            ]
+          },
+          "explicacao": "Em inglês a frase precisa de sujeito. Para o tempo, usamos it: It's going to rain.",
+          "tagsErro": ["sujeito_omitido"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Vai chover hoje à noite.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "It is going to rain tonight.",
+              "Tonight it is going to rain.",
+              "Tonight, it is going to rain.",
+              "It is going to rain this evening."
+            ]
+          },
+          "explicacao": "Vai chover = It's going to rain (com o sujeito it). Hoje à noite = tonight.",
+          "tagsErro": ["sujeito_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós vamos perder o ônibus.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["We are going to miss the bus."] },
+          "explicacao": "Perder o ônibus, o voo ou a aula = miss. Lose é perder um objeto (lose your keys).",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "The streets are full of cars. We ___ late for the movie.",
+            "opcoes": ["are going to", "going to be", "are going to be", "are be going"]
+          },
+          "gabarito": { "correta": 2 },
+          "explicacao": "We + are + going to + be late. Não esqueça o verbo be depois de going to.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com going to e o verbo entre parênteses.",
+          "conteudo": { "texto": "My phone has 2% battery. It ___ (die) soon." },
+          "gabarito": { "respostas": [["is going to die"]] },
+          "explicacao": "A bateria em 2% é a evidência: it is going to die (vai descarregar).",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["win", "going", "They're", "game", "to", "the"] },
+          "gabarito": { "aceitas": ["They're going to win the game."] },
+          "explicacao": "They're + going to + win + the game.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Vai fazer muito calor amanhã.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "It is going to be very hot tomorrow.",
+              "Tomorrow it is going to be very hot.",
+              "Tomorrow, it is going to be very hot.",
+              "It is going to be really hot tomorrow.",
+              "Tomorrow it is going to be really hot.",
+              "Tomorrow, it is going to be really hot."
+            ]
+          },
+          "explicacao": "Fazer calor = it + be hot. Com going to: It's going to be very hot.",
+          "tagsErro": ["sujeito_omitido", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "That glass is going fall." },
+          "gabarito": { "aceitas": ["That glass is going to fall."] },
+          "explicacao": "Falta o to: is going to fall.",
+          "tagsErro": ["futuro_planos"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m04-l3",
+      "ordem": 3,
+      "titulo": "I'm meeting Ana at seven",
+      "objetivo": "Usar o present continuous para compromissos já combinados, com dia, hora e lugar, e as expressões de tempo futuro.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Quando um compromisso já está combinado, com dia, hora ou lugar marcados, o inglês costuma usar o present continuous: I'm meeting Ana at seven tonight (Vou encontrar a Ana às sete hoje à noite).",
+          "Pense numa agenda: se o compromisso está anotado, com outra pessoa ou com ingresso comprado, o present continuous soa natural. We're flying to Miami on Friday. My brother is getting married in June.",
+          "O que mostra que é futuro, e não agora, é a expressão de tempo: tonight, tomorrow, this weekend, next Friday, in two weeks. Sem ela, I'm meeting Ana quer dizer \"estou encontrando a Ana agora\".",
+          "Nesses casos, going to também está certo: I'm going to meet Ana at seven. A diferença é pequena. Going to destaca a intenção; o present continuous destaca o combinado. Na pergunta sobre os planos de alguém, as duas são muito comuns: What are you doing on Saturday? / What are you going to do on Saturday?"
+        ],
+        "regras": [
+          "Compromisso combinado: am/is/are + verbo-ing + expressão de futuro",
+          "I'm meeting Ana at seven tonight.",
+          "We're flying to Miami next Friday.",
+          "What are you doing on Saturday?",
+          "Expressões: tonight, tomorrow, this weekend, next week, in two weeks, the day after tomorrow",
+          "Dias: on Friday, on Saturday night / Meses: in June / Horas: at seven"
+        ],
+        "notaContrastiva": "Para compromissos marcados, não use o presente simples: não diga *I meet my friends tomorrow* → diga *I'm meeting my friends tomorrow*. E cuidado com as preposições: *on* Sunday, *in* June, *at* 7.",
+        "exemplos": [
+          { "en": "I'm meeting Ana at seven tonight.", "pt": "Vou encontrar a Ana às sete hoje à noite." },
+          { "en": "We're flying to Miami next Friday.", "pt": "Vamos voar para Miami na sexta que vem." },
+          { "en": "My brother is getting married in June.", "pt": "Meu irmão vai se casar em junho." },
+          { "en": "What are you doing on Saturday night?", "pt": "O que você vai fazer no sábado à noite?" },
+          { "en": "I'm seeing the dentist tomorrow at 3 p.m.", "pt": "Vou ao dentista amanhã às 3 da tarde." },
+          { "en": "Carla is having a party this weekend.", "pt": "A Carla vai dar uma festa neste fim de semana." },
+          { "en": "They're moving to a new apartment in two weeks.", "pt": "Eles vão se mudar para um apartamento novo daqui a duas semanas." },
+          { "en": "I can't. I'm visiting my grandma on Sunday.", "pt": "Não posso. Vou visitar minha avó no domingo." }
+        ],
+        "vocabulario": [
+          { "en": "tonight", "pt": "hoje à noite" },
+          { "en": "tomorrow", "pt": "amanhã" },
+          { "en": "the day after tomorrow", "pt": "depois de amanhã" },
+          { "en": "this weekend", "pt": "neste fim de semana" },
+          { "en": "next week / next Friday", "pt": "semana que vem / sexta que vem" },
+          { "en": "in two weeks", "pt": "daqui a duas semanas" },
+          { "en": "get married", "pt": "casar-se" },
+          { "en": "have a party", "pt": "dar uma festa" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta para o compromisso marcado.",
+          "conteudo": {
+            "texto": "I ___ my dentist at 3 p.m. tomorrow. It's in my calendar.",
+            "opcoes": ["see", "am seeing", "sees", "seeing"]
+          },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Compromisso marcado (está na agenda): present continuous → I am seeing.",
+          "tagsErro": ["simples_continuo", "futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a pergunta.",
+          "conteudo": { "texto": "What ___ you doing on Saturday night?", "opcoes": ["do", "is", "does", "are"] },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Present continuous: What + are + you + doing?",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+          "conteudo": { "texto": "We ___ (fly) to Miami next Friday. We have the tickets!" },
+          "gabarito": { "respostas": [["are flying", "are going to fly"]] },
+          "explicacao": "Viagem com passagem comprada: we are flying. We are going to fly também está certo.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+          "conteudo": { "texto": "My brother ___ (get) married in June." },
+          "gabarito": { "respostas": [["is getting", "is going to get"]] },
+          "explicacao": "O casamento já está marcado: is getting married. Get → getting (dobra o t).",
+          "tagsErro": ["futuro_planos", "ortografia_ing"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa para cada lacuna.",
+          "conteudo": {
+            "texto": "I can't come to the party. I ___ my grandma ___ Sunday.",
+            "opcoesPorLacuna": [["visit", "am visiting", "visits"], ["in", "at", "on"]]
+          },
+          "gabarito": { "respostas": [["am visiting"], ["on"]] },
+          "explicacao": "Compromisso combinado: I am visiting. Com dias da semana usamos on: on Sunday.",
+          "tagsErro": ["simples_continuo", "preposicao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["having", "you", "Where", "tonight", "are", "dinner"] },
+          "gabarito": { "aceitas": ["Where are you having dinner tonight?"] },
+          "explicacao": "Where + are + you + having dinner + tonight?",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada expressão à tradução.",
+          "conteudo": {
+            "esquerda": ["hoje à noite", "amanhã", "semana que vem", "daqui a duas semanas", "depois de amanhã", "neste fim de semana"],
+            "direita": ["next week", "this weekend", "tonight", "the day after tomorrow", "in two weeks", "tomorrow"]
+          },
+          "gabarito": { "pares": [2, 5, 0, 4, 3, 1] },
+          "explicacao": "Daqui a duas semanas = in two weeks (in + período). Semana que vem = next week, sem the.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "We are play soccer on Sunday morning." },
+          "gabarito": {
+            "aceitas": [
+              "We are playing soccer on Sunday morning.",
+              "On Sunday morning we are playing soccer.",
+              "On Sunday morning, we are playing soccer.",
+              "We are going to play soccer on Sunday morning."
+            ]
+          },
+          "explicacao": "Present continuous: are + playing (verbo com -ing).",
+          "tagsErro": ["gerundio"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu vou encontrar a Ana às sete hoje à noite.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "I am meeting Ana at seven tonight.",
+              "I am meeting Ana at 7 tonight.",
+              "I am meeting Ana at seven o'clock tonight.",
+              "Tonight I am meeting Ana at seven.",
+              "Tonight, I am meeting Ana at seven.",
+              "Tonight I am meeting Ana at 7.",
+              "Tonight, I am meeting Ana at 7.",
+              "I am going to meet Ana at seven tonight.",
+              "I am going to meet Ana at 7 tonight.",
+              "Tonight I am going to meet Ana at seven.",
+              "Tonight, I am going to meet Ana at seven.",
+              "Tonight I am going to meet Ana at 7.",
+              "Tonight, I am going to meet Ana at 7."
+            ]
+          },
+          "explicacao": "Encontro marcado: I'm meeting Ana. Encontrar alguém combinado = meet (não find). Às sete = at seven.",
+          "tagsErro": ["futuro_planos", "preposicao"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "O que você vai fazer amanhã?", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "What are you doing tomorrow?",
+              "What are you going to do tomorrow?"
+            ]
+          },
+          "explicacao": "Perguntando sobre planos: What are you doing tomorrow? ou What are you going to do tomorrow?",
+          "tagsErro": ["ordem_pergunta", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Sorry, I can't have lunch with you. I ___ with my boss at 12:30.",
+            "opcoes": ["meet", "met", "meets", "am meeting"]
+          },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Reunião marcada para hoje: I am meeting.",
+          "tagsErro": ["simples_continuo", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+          "conteudo": { "texto": "They ___ (move) to a new apartment next month." },
+          "gabarito": { "respostas": [["are moving", "are going to move"]] },
+          "explicacao": "Mudança combinada: they are moving. Move → moving (tira o e).",
+          "tagsErro": ["futuro_planos", "ortografia_ing"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["on", "a", "Carla", "party", "Saturday", "having", "is"] },
+          "gabarito": { "aceitas": ["Carla is having a party on Saturday.", "On Saturday Carla is having a party."] },
+          "explicacao": "Carla + is having a party + on Saturday. A expressão de tempo pode ir para o começo.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós vamos jantar na casa da minha mãe no domingo.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "We are having dinner at my mom's house on Sunday.",
+              "We are having dinner at my mother's house on Sunday.",
+              "We are having dinner at my mom's on Sunday.",
+              "On Sunday we are having dinner at my mom's house.",
+              "On Sunday, we are having dinner at my mom's house.",
+              "On Sunday we are having dinner at my mother's house.",
+              "On Sunday, we are having dinner at my mother's house.",
+              "We are going to have dinner at my mom's house on Sunday.",
+              "We are going to have dinner at my mother's house on Sunday.",
+              "On Sunday we are going to have dinner at my mom's house.",
+              "On Sunday, we are going to have dinner at my mom's house."
+            ]
+          },
+          "explicacao": "Jantar = have dinner. Compromisso combinado: we are having dinner. Na casa da minha mãe = at my mom's house.",
+          "tagsErro": ["futuro_planos", "possessivo_s"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "What time you are leaving tomorrow?" },
+          "gabarito": { "aceitas": ["What time are you leaving tomorrow?"] },
+          "explicacao": "Na pergunta, o be vem antes do sujeito: What time are you leaving?",
+          "tagsErro": ["ordem_pergunta"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m04-l4",
+      "ordem": 4,
+      "titulo": "Would you like to come?",
+      "objetivo": "Convidar alguém com Would you like to...? e Do you want to...? e aceitar ou recusar com educação.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para convidar com educação, usamos Would you like to + verbo base? (Você gostaria de...?): Would you like to come to my party? Entre amigos, Do you want to + verbo? também é muito comum: Do you want to see a movie?",
+          "Antes do convite, é comum perguntar se a pessoa está livre: Are you free on Saturday? (Você está livre no sábado?) Are you busy tonight? (Você está ocupado hoje à noite?)",
+          "Para aceitar: I'd love to! (Eu adoraria!), Sure! (Claro!), That sounds great! / Sounds great! (Parece ótimo!). I'd é a forma curta de I would.",
+          "Para recusar com educação, agradeça, diga que não pode e dê um motivo, muitas vezes com o present continuous: Thanks, but I can't. I'm working on Saturday. Ou: I'd love to, but I'm busy. Maybe another time (Quem sabe outra vez)."
+        ],
+        "regras": [
+          "Convite: Would you like to + verbo base? / Do you want to + verbo base?",
+          "Are you free on Saturday? / Are you busy tonight?",
+          "Aceitar: I'd love to! / Sure! / Sounds great!",
+          "Recusar: Sorry, I can't. I'm working. / I'd love to, but... / Maybe another time.",
+          "I'd love to = I would love to (sem repetir o verbo)"
+        ],
+        "notaContrastiva": "Não esqueça o to: não diga *Would you like come?* → diga *Would you like to come?* E na resposta não diga *Yes, I would like.* → diga *Yes, I'd love to.* ou *Yes, I'd like to.* Recusar só com *No.* soa grosseiro em inglês: agradeça e dê um motivo.",
+        "exemplos": [
+          { "en": "Would you like to come to my party on Saturday?", "pt": "Você gostaria de vir à minha festa no sábado?" },
+          { "en": "Do you want to see a movie tonight?", "pt": "Você quer ver um filme hoje à noite?" },
+          { "en": "Are you free on Friday?", "pt": "Você está livre na sexta?" },
+          { "en": "I'd love to! What time?", "pt": "Eu adoraria! Que horas?" },
+          { "en": "Sounds great! See you there.", "pt": "Parece ótimo! Te vejo lá." },
+          { "en": "Thanks, but I can't. I'm working on Saturday.", "pt": "Obrigado, mas não posso. Vou trabalhar no sábado." },
+          { "en": "I'd love to, but I'm busy that day.", "pt": "Eu adoraria, mas estou ocupado nesse dia." },
+          { "en": "Maybe another time.", "pt": "Quem sabe outra vez." }
+        ],
+        "vocabulario": [
+          { "en": "invite / invitation", "pt": "convidar / convite" },
+          { "en": "free", "pt": "livre, desocupado" },
+          { "en": "busy", "pt": "ocupado" },
+          { "en": "concert / show", "pt": "show" },
+          { "en": "barbecue", "pt": "churrasco" },
+          { "en": "festival", "pt": "festival" },
+          { "en": "I'd love to", "pt": "eu adoraria" },
+          { "en": "maybe another time", "pt": "quem sabe outra vez" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Would you like ___ to the concert with me?", "opcoes": ["come", "to come", "coming", "to coming"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Would you like + to + verbo base: Would you like to come?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta educada para recusar o convite.",
+          "conteudo": {
+            "texto": "Would you like to come to my barbecue on Sunday?",
+            "opcoes": ["No.", "Yes, I can't.", "I don't want.", "I'm sorry, I can't. I'm visiting my parents."]
+          },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Para recusar com educação: peça desculpas, diga que não pode e dê um motivo.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete o convite com uma palavra.",
+          "conteudo": { "texto": "___ you like to have dinner with us on Friday?" },
+          "gabarito": { "respostas": [["Would"]] },
+          "explicacao": "Convite educado: Would you like to...?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta com uma palavra.",
+          "conteudo": { "texto": "I'd love ___, but I'm working on Saturday." },
+          "gabarito": { "respostas": [["to"]] },
+          "explicacao": "I'd love to = eu adoraria. O to fica no fim, sem repetir o verbo.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Are you ___ on Saturday? — Yes, why? — ___ you like to go to the festival with me?",
+            "opcoesPorLacuna": [["late", "free", "busy"], ["Do", "Are", "Would"]]
+          },
+          "gabarito": { "respostas": [["free"], ["Would"]] },
+          "explicacao": "Are you free? = você está livre? A resposta é sim, então vem o convite: Would you like to...?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte o convite.",
+          "conteudo": { "palavras": ["to", "you", "come", "Would", "like"] },
+          "gabarito": { "aceitas": ["Would you like to come?"] },
+          "explicacao": "Would + you + like + to + come?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase à tradução.",
+          "conteudo": {
+            "esquerda": ["I'd love to!", "Maybe another time.", "Sounds great!", "I'm busy that day.", "Are you free on Friday?"],
+            "direita": ["Parece ótimo!", "Estou ocupado nesse dia.", "Você está livre na sexta?", "Eu adoraria!", "Quem sabe outra vez."]
+          },
+          "gabarito": { "pares": [3, 4, 0, 1, 2] },
+          "explicacao": "I'd love to e Sounds great aceitam; I'm busy e Maybe another time recusam com educação.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro do convite.",
+          "conteudo": { "frase": "Would you like go to the movies tonight?" },
+          "gabarito": { "aceitas": ["Would you like to go to the movies tonight?"] },
+          "explicacao": "Falta o to: Would you like to go...?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Você gostaria de vir à minha festa no sábado?", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "Would you like to come to my party on Saturday?",
+              "Would you like to come to my party Saturday?",
+              "Do you want to come to my party on Saturday?",
+              "Do you want to come to my party Saturday?"
+            ]
+          },
+          "explicacao": "Você gostaria de = Would you like to. Vir à festa = come to the party. No sábado = on Saturday.",
+          "tagsErro": ["convite_sugestao", "preposicao"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu adoraria, mas vou trabalhar no domingo.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "I would love to, but I am working on Sunday.",
+              "I would love to but I am working on Sunday.",
+              "I would love to, but I am going to work on Sunday.",
+              "I would love to but I am going to work on Sunday.",
+              "I would love to, but I have to work on Sunday.",
+              "I would love to but I have to work on Sunday.",
+              "I would love to, but I work on Sunday.",
+              "I would love to, but I am working Sunday."
+            ]
+          },
+          "explicacao": "Eu adoraria = I'd love to. O motivo pode vir no present continuous: I'm working on Sunday.",
+          "tagsErro": ["convite_sugestao", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Do you want ___ a coffee after class?", "opcoes": ["get", "getting", "gets", "to get"] },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Do you want + to + verbo base: Do you want to get a coffee?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta com uma palavra.",
+          "conteudo": { "texto": "Thanks for the invitation! I'd ___ to come." },
+          "gabarito": { "respostas": [["love", "like"]] },
+          "explicacao": "I'd love to come (eu adoraria ir) ou I'd like to come (eu gostaria de ir).",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["Friday", "free", "you", "on", "Are"] },
+          "gabarito": { "aceitas": ["Are you free on Friday?"] },
+          "explicacao": "Are + you + free + on Friday?",
+          "tagsErro": ["ordem_pergunta", "preposicao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Quem sabe outra vez.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "Maybe another time.",
+              "Maybe next time.",
+              "Maybe some other time.",
+              "Perhaps another time.",
+              "Perhaps next time."
+            ]
+          },
+          "explicacao": "Quem sabe outra vez = Maybe another time. É um jeito gentil de terminar a recusa.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da resposta.",
+          "conteudo": { "frase": "Sorry, I can't come. I working that day." },
+          "gabarito": {
+            "aceitas": [
+              "Sorry, I can't come. I am working that day.",
+              "Sorry, I can't come. I work that day."
+            ]
+          },
+          "explicacao": "Falta o be: I am (I'm) working that day.",
+          "tagsErro": ["be_omitido"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m04-l5",
+      "ordem": 5,
+      "titulo": "Why don't we go to the beach?",
+      "objetivo": "Sugerir programas com Let's..., Why don't we...? e How about + -ing? e responder a sugestões.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para sugerir um programa para você e outra pessoa, há três formas muito comuns. A primeira é Let's + verbo base (Vamos...): Let's go to the beach! Let's é a forma curta de let us.",
+          "A segunda é Why don't we + verbo base? (Por que a gente não...?): Why don't we watch a movie at home? Apesar de ter don't, é uma sugestão simpática, não uma reclamação.",
+          "A terceira é How about + verbo com -ing? (Que tal...?): How about ordering a pizza? Depois de how about, o verbo sempre leva -ing. What about...? funciona igual.",
+          "Para responder: Good idea! / That's a great idea! / Sounds good! (aceitando) ou I'm not sure... / I'd rather stay home. (hesitando). Repare que Let's, Why don't we e How about falam de nós; para convidar outra pessoa, use Would you like to...?"
+        ],
+        "regras": [
+          "Let's + verbo base: Let's go to the beach!",
+          "Why don't we + verbo base?: Why don't we invite Paulo?",
+          "How about / What about + verbo-ing?: How about ordering a pizza?",
+          "Respostas: Good idea! / Sounds good! / That's a great idea!",
+          "Nunca: *How about go* / *Let's to go* / *Why we don't go*"
+        ],
+        "notaContrastiva": "Não diga *Let's to go* → diga *Let's go*. Não diga *How about go?* → diga *How about going?* E na sugestão a ordem é *Why don't we...?*, não *Why we don't...?*",
+        "exemplos": [
+          { "en": "Let's go to the beach this weekend!", "pt": "Vamos à praia neste fim de semana!" },
+          { "en": "Why don't we watch a movie at home?", "pt": "Por que a gente não vê um filme em casa?" },
+          { "en": "How about ordering a pizza tonight?", "pt": "Que tal pedir uma pizza hoje à noite?" },
+          { "en": "What about going to the exhibition on Sunday?", "pt": "Que tal ir à exposição no domingo?" },
+          { "en": "Why don't we invite Bia? — Good idea!", "pt": "Por que a gente não convida a Bia? — Boa ideia!" },
+          { "en": "Let's meet at the station at six.", "pt": "Vamos nos encontrar na estação às seis." },
+          { "en": "How about taking a walk? — Sounds good!", "pt": "Que tal dar uma caminhada? — Parece bom!" },
+          { "en": "I'm bored. Let's go out!", "pt": "Estou entediado. Vamos sair!" }
+        ],
+        "vocabulario": [
+          { "en": "suggest / suggestion", "pt": "sugerir / sugestão" },
+          { "en": "Let's...", "pt": "Vamos..." },
+          { "en": "Why don't we...?", "pt": "Por que a gente não...?" },
+          { "en": "How about...?", "pt": "Que tal...?" },
+          { "en": "Good idea!", "pt": "Boa ideia!" },
+          { "en": "Sounds good!", "pt": "Parece bom! / Combinado!" },
+          { "en": "exhibition", "pt": "exposição" },
+          { "en": "take a walk", "pt": "dar uma caminhada" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Let's ___ to the beach this weekend!", "opcoes": ["going", "to go", "go", "goes"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Let's + verbo base, sem to: Let's go.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "How about ___ a pizza tonight?", "opcoes": ["ordering", "order", "to order", "ordered"] },
+          "gabarito": { "correta": 0 },
+          "explicacao": "Depois de How about, o verbo leva -ing: How about ordering...?",
+          "tagsErro": ["convite_sugestao", "gerundio"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": { "texto": "Why don't we ___ (watch) a movie at home?" },
+          "gabarito": { "respostas": [["watch"]] },
+          "explicacao": "Why don't we + verbo base: watch.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a sugestão com uma palavra.",
+          "conteudo": { "texto": "I'm bored. ___ go out! — Good idea!" },
+          "gabarito": { "respostas": [["Let's", "Let us"]] },
+          "explicacao": "Sugestão para nós dois: Let's go out! (Vamos sair!)",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Why ___ we invite Paulo? — That's a great ___!",
+            "opcoesPorLacuna": [["not", "doesn't", "don't"], ["idea", "ideas", "think"]]
+          },
+          "gabarito": { "respostas": [["don't"], ["idea"]] },
+          "explicacao": "Sugestão: Why don't we...? Resposta: That's a great idea! (uma ideia, no singular).",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a sugestão.",
+          "conteudo": { "palavras": ["barbecue", "we", "a", "Why", "have", "don't"] },
+          "gabarito": { "aceitas": ["Why don't we have a barbecue?"] },
+          "explicacao": "Why + don't + we + have + a barbecue?",
+          "tagsErro": ["convite_sugestao", "ordem_pergunta"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue o começo ao fim de cada frase.",
+          "conteudo": {
+            "esquerda": ["Let's", "Why don't we", "How about", "Would you like"],
+            "direita": ["take a taxi.", "going by bike?", "to come with us?", "call Marcos?"]
+          },
+          "gabarito": { "pares": [0, 3, 1, 2] },
+          "explicacao": "Let's + verbo base (take). Why don't we + verbo base? (call). How about + -ing? (going). Would you like + to? (to come).",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da sugestão.",
+          "conteudo": { "frase": "How about go to the museum on Sunday?" },
+          "gabarito": {
+            "aceitas": [
+              "How about going to the museum on Sunday?",
+              "What about going to the museum on Sunday?"
+            ]
+          },
+          "explicacao": "Depois de How about, o verbo leva -ing: going.",
+          "tagsErro": ["convite_sugestao", "gerundio"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Vamos ao show no sábado!", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "Let's go to the show on Saturday!",
+              "Let's go to the show Saturday!",
+              "Let's go to the concert on Saturday!",
+              "Let's go to the concert Saturday!"
+            ]
+          },
+          "explicacao": "Vamos + verbo = Let's + verbo base. Show de música = show ou concert.",
+          "tagsErro": ["convite_sugestao", "preposicao"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Por que a gente não convida a Bia?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["Why don't we invite Bia?", "Why don't we ask Bia?"] },
+          "explicacao": "Por que a gente não...? = Why don't we + verbo base? É uma sugestão.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a expressão que completa a sugestão.",
+          "conteudo": {
+            "texto": "___ having lunch at the new restaurant? — Sounds good!",
+            "opcoes": ["Let's", "Why don't we", "How about", "Would you like"]
+          },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Having tem -ing, então só How about funciona: How about having lunch...?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": { "texto": "Let's ___ (meet) at the station at six." },
+          "gabarito": { "respostas": [["meet"]] },
+          "explicacao": "Let's + verbo base: meet.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a sugestão.",
+          "conteudo": { "palavras": ["walk", "taking", "How", "a", "about"] },
+          "gabarito": { "aceitas": ["How about taking a walk?"] },
+          "explicacao": "How about + taking (-ing) + a walk?",
+          "tagsErro": ["convite_sugestao", "gerundio"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Que tal ir ao cinema hoje à noite?", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "How about going to the movies tonight?",
+              "What about going to the movies tonight?",
+              "How about going to the movie theater tonight?",
+              "How about going to the cinema tonight?",
+              "How about seeing a movie tonight?",
+              "How about watching a movie tonight?"
+            ]
+          },
+          "explicacao": "Que tal + verbo = How about + -ing. Ir ao cinema = go to the movies (inglês americano).",
+          "tagsErro": ["convite_sugestao", "gerundio"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da sugestão.",
+          "conteudo": { "frase": "Why we don't call Pedro?" },
+          "gabarito": { "aceitas": ["Why don't we call Pedro?"] },
+          "explicacao": "A ordem da sugestão é Why don't we + verbo?",
+          "tagsErro": ["convite_sugestao", "ordem_pergunta"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m04-l6",
+      "ordem": 6,
+      "titulo": "See you on Saturday!",
+      "objetivo": "Ler e escrever mensagens de convite, aceite e recusa, combinando planos, sugestões e compromissos.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Nesta lição juntamos tudo numa troca de mensagens. Um convite costuma ter: o que é, quando e onde (I'm having a barbecue at my place on Saturday at 1 p.m.), o convite em si (Would you like to come?) e algum detalhe (We're going to use the pool. Bring your swimsuit!).",
+          "Quem aceita agradece e pode oferecer ajuda: Thanks! I'd love to come. Can I bring something? Quem recusa agradece, diz que não pode e dá o motivo com um compromisso: Sorry, I can't. My cousins are arriving on Saturday.",
+          "Para não fechar a porta, sugira outra data: Maybe another time? How about next weekend? Para combinar o encontro: Let's meet at 7, OK? E para terminar: See you on Saturday! / See you there!",
+          "Veja a mensagem do Marcos: Hi everyone! I'm having a barbecue at my place on Saturday at 1 p.m. Would you like to come? Bring your swimsuit! We're going to use the pool."
+        ],
+        "regras": [
+          "Convite: I'm having a... on Saturday. Would you like to come?",
+          "Aceitar: Thanks! I'd love to come. Can I bring something?",
+          "Recusar: Sorry, I can't. I'm + -ing (compromisso).",
+          "Outra data: Maybe another time? How about next weekend?",
+          "Fechar: Let's meet at... / See you on Saturday!"
+        ],
+        "notaContrastiva": "Não diga *I'd love to coming* → diga *I'd love to come*. E com dias use on: não diga *See you in Saturday* → diga *See you on Saturday*.",
+        "exemplos": [
+          { "en": "I'm having a barbecue at my place on Saturday.", "pt": "Vou fazer um churrasco em casa no sábado." },
+          { "en": "Would you like to come? Bring your swimsuit!", "pt": "Você gostaria de vir? Traga sua roupa de banho!" },
+          { "en": "Thanks! I'd love to come. Can I bring something?", "pt": "Obrigado! Eu adoraria ir. Posso levar alguma coisa?" },
+          { "en": "Sorry, I can't. My cousins are arriving on Saturday.", "pt": "Desculpe, não posso. Meus primos vão chegar no sábado." },
+          { "en": "Maybe another time? How about next weekend?", "pt": "Quem sabe outra vez? Que tal no próximo fim de semana?" },
+          { "en": "I'm going to bring a dessert.", "pt": "Vou levar uma sobremesa." },
+          { "en": "Let's meet at the bus stop at 12:30, OK?", "pt": "Vamos nos encontrar no ponto de ônibus ao meio-dia e meia, combinado?" },
+          { "en": "See you on Saturday!", "pt": "Até sábado!" }
+        ],
+        "vocabulario": [
+          { "en": "at my place", "pt": "na minha casa" },
+          { "en": "swimsuit", "pt": "roupa de banho" },
+          { "en": "pool", "pt": "piscina" },
+          { "en": "bring", "pt": "trazer, levar (para onde vamos)" },
+          { "en": "dessert", "pt": "sobremesa" },
+          { "en": "guest", "pt": "convidado" },
+          { "en": "See you there!", "pt": "Te vejo lá!" },
+          { "en": "Let me know.", "pt": "Me avisa." }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a mensagem. O que o Marcos está organizando?",
+          "conteudo": {
+            "texto": "Hi everyone! I'm having a barbecue at my place on Saturday at 1 p.m. Would you like to come? Bring your swimsuit! We're going to use the pool. — Marcos",
+            "opcoes": ["Uma festa de aniversário na sexta.", "Um jogo de futebol no domingo.", "Um churrasco no sábado.", "Um passeio na praia."]
+          },
+          "gabarito": { "correta": 2 },
+          "explicacao": "\"I'm having a barbecue at my place on Saturday.\" Barbecue = churrasco."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a mensagem. Por que os amigos devem levar roupa de banho?",
+          "conteudo": {
+            "texto": "Hi everyone! I'm having a barbecue at my place on Saturday at 1 p.m. Would you like to come? Bring your swimsuit! We're going to use the pool. — Marcos",
+            "opcoes": ["Porque vão à praia.", "Porque vão usar a piscina.", "Porque vai chover.", "Porque o churrasco é no clube."]
+          },
+          "gabarito": { "correta": 1 },
+          "explicacao": "\"We're going to use the pool.\" Pool = piscina."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta ao Marcos.",
+          "conteudo": {
+            "texto": "Hi Marcos! I'd love ___ come. ___ I bring something?",
+            "opcoesPorLacuna": [["for", "to", "at"], ["Can", "Do", "Am"]]
+          },
+          "gabarito": { "respostas": [["to"], ["Can"]] },
+          "explicacao": "I'd love to come. Para oferecer ajuda: Can I bring something? (Posso levar alguma coisa?)",
+          "tagsErro": ["convite_sugestao", "modal_can"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+          "conteudo": { "texto": "Sorry, Marcos, I can't. My cousins ___ (arrive) from Lisbon on Saturday." },
+          "gabarito": { "respostas": [["are arriving", "are going to arrive"]] },
+          "explicacao": "O motivo é um compromisso combinado: my cousins are arriving.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "No problem! ___ another time. — Sure! How ___ next weekend?",
+            "opcoesPorLacuna": [["Let's", "Maybe", "Would"], ["for", "to", "about"]]
+          },
+          "gabarito": { "respostas": [["Maybe"], ["about"]] },
+          "explicacao": "Maybe another time = quem sabe outra vez. How about next weekend? = que tal no próximo fim de semana?",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["use", "are", "pool", "We", "to", "the", "going"] },
+          "gabarito": { "aceitas": ["We are going to use the pool."] },
+          "explicacao": "We + are going to + use + the pool.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada parte da conversa à frase.",
+          "conteudo": {
+            "esquerda": ["Convidar", "Aceitar", "Recusar", "Sugerir outra data", "Combinar o horário"],
+            "direita": [
+              "I can't, sorry. I'm working that day.",
+              "Let's meet at 7, OK?",
+              "Would you like to come to my party?",
+              "How about next Saturday?",
+              "I'd love to! See you there."
+            ]
+          },
+          "gabarito": { "pares": [2, 4, 0, 3, 1] },
+          "explicacao": "Would you like...? convida; I'd love to aceita; I can't + motivo recusa; How about...? sugere; Let's meet at... combina o horário.",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da resposta.",
+          "conteudo": { "frase": "I'd love to coming to your barbecue." },
+          "gabarito": { "aceitas": ["I'd love to come to your barbecue."] },
+          "explicacao": "Depois de I'd love to, o verbo fica na forma base: come.",
+          "tagsErro": ["convite_sugestao", "gerundio"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu vou levar uma sobremesa para o churrasco.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "I am going to bring a dessert to the barbecue.",
+              "I am going to bring dessert to the barbecue.",
+              "I am going to bring a dessert for the barbecue.",
+              "I am going to bring dessert for the barbecue.",
+              "I am bringing a dessert to the barbecue.",
+              "I am bringing dessert to the barbecue.",
+              "I am bringing a dessert for the barbecue.",
+              "I am bringing dessert for the barbecue.",
+              "I am going to take a dessert to the barbecue.",
+              "I am going to take dessert to the barbecue."
+            ]
+          },
+          "explicacao": "Plano: I'm going to bring. Levar algo para o lugar aonde vamos = bring (ou take). Churrasco = barbecue.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Você vai à festa do Leo na sexta?", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "Are you going to Leo's party on Friday?",
+              "Are you going to Leo's party Friday?",
+              "Are you going to go to Leo's party on Friday?",
+              "Are you going to go to Leo's party Friday?"
+            ]
+          },
+          "explicacao": "Present continuous de go para um plano: Are you going to Leo's party? A festa do Leo = Leo's party.",
+          "tagsErro": ["ordem_pergunta", "possessivo_s"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta correta.",
+          "conteudo": {
+            "texto": "Would you like to come to my house on Sunday? — ___",
+            "opcoes": ["I love it!", "Yes, I would like.", "I'm loving to!", "I'd love to!"]
+          },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Para aceitar: I'd love to! Yes, I would like fica incompleto (falta o to).",
+          "tagsErro": ["convite_sugestao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+          "conteudo": { "texto": "We ___ (have) a party for Mom on Friday. Can you come?" },
+          "gabarito": { "respostas": [["are having", "are going to have"]] },
+          "explicacao": "Festa combinada: we are having a party.",
+          "tagsErro": ["futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["on", "See", "Saturday", "you"] },
+          "gabarito": { "aceitas": ["See you on Saturday."] },
+          "explicacao": "See you + on + dia da semana.",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu não posso ir porque vou viajar.", "direcao": "pt-en" },
+          "gabarito": {
+            "aceitas": [
+              "I can't go because I am going to travel.",
+              "I can't go because I am traveling.",
+              "I can't come because I am going to travel.",
+              "I can't come because I am traveling.",
+              "I can't go because I am going to take a trip.",
+              "I can't come because I am going to take a trip."
+            ]
+          },
+          "explicacao": "Não posso = I can't. O motivo é um plano: I'm going to travel (ou I'm traveling).",
+          "tagsErro": ["modal_can", "futuro_planos"]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "Are you free in Friday night?" },
+          "gabarito": { "aceitas": ["Are you free on Friday night?"] },
+          "explicacao": "Com dias da semana (e Friday night) usamos on.",
+          "tagsErro": ["preposicao"]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "I ___ going to buy a new laptop next month.", "opcoes": ["is", "are", "am", "do"] },
+        "gabarito": { "correta": 2 },
+        "explicacao": "I → am going to.",
+        "tagsErro": ["be_omitido"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com going to e o verbo entre parênteses.",
+        "conteudo": { "texto": "Look at the traffic! We ___ (be) late." },
+        "gabarito": { "respostas": [["are going to be"]] },
+        "explicacao": "Previsão pelo que vemos (o trânsito): we are going to be late.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a pergunta.",
+        "conteudo": { "texto": "What ___ you going to do this weekend?", "opcoes": ["do", "are", "is", "will"] },
+        "gabarito": { "correta": 1 },
+        "explicacao": "Pergunta com going to: What + are + you + going to do?",
+        "tagsErro": ["ordem_pergunta"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+        "conteudo": { "texto": "My cousins ___ (arrive) on Thursday. They have the tickets." },
+        "gabarito": { "respostas": [["are arriving", "are going to arrive"]] },
+        "explicacao": "Viagem combinada (com passagem): they are arriving.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "Would you like ___ dinner with us?", "opcoes": ["have", "having", "to have", "has"] },
+        "gabarito": { "correta": 2 },
+        "explicacao": "Would you like + to + verbo base.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": { "texto": "How about ___ (go) to the festival?" },
+        "gabarito": { "respostas": [["going"]] },
+        "explicacao": "How about + -ing: going.",
+        "tagsErro": ["convite_sugestao", "gerundio"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "Let's ___ a taxi. It's late.", "opcoes": ["taking", "to take", "takes", "take"] },
+        "gabarito": { "correta": 3 },
+        "explicacao": "Let's + verbo base: take.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": { "texto": "I'm sorry, I can't. I ___ (work) on Saturday." },
+        "gabarito": { "respostas": [["am working", "am going to work", "work"]] },
+        "explicacao": "O motivo é um compromisso: I am working on Saturday.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a preposição correta.",
+        "conteudo": { "texto": "I'm meeting him ___ Friday.", "opcoes": ["in", "at", "on", "to"] },
+        "gabarito": { "correta": 2 },
+        "explicacao": "Com dias da semana usamos on: on Friday.",
+        "tagsErro": ["preposicao"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "There's a big music ___ in the park this weekend, with ten bands.",
+          "opcoes": ["exhibition", "festival", "barbecue", "game"]
+        },
+        "gabarito": { "correta": 1 },
+        "explicacao": "Evento de música com várias bandas = festival.",
+        "tagsErro": ["vocabulario_lazer"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Onde a banda da Lia vai tocar?",
+        "conteudo": {
+          "texto": "Hi Rafa! My band is playing at the Blue Bar on Friday night. The show starts at 9, but we're going to get there at 8 to prepare everything. Would you like to come? My sister and her friends are coming too. After the show, we're going to have pizza. Let me know! — Lia",
+          "opcoes": ["Na casa da Lia.", "No Blue Bar.", "Num festival no parque.", "Numa pizzaria."]
+        },
+        "gabarito": { "correta": 1 },
+        "explicacao": "\"My band is playing at the Blue Bar on Friday night.\" A pizza é depois do show."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. A que horas a Lia vai chegar ao bar?",
+        "conteudo": {
+          "texto": "Hi Rafa! My band is playing at the Blue Bar on Friday night. The show starts at 9, but we're going to get there at 8 to prepare everything. Would you like to come? My sister and her friends are coming too. After the show, we're going to have pizza. Let me know! — Lia",
+          "opcoes": ["Às 9.", "Depois do show.", "Às 8.", "Ao meio-dia."]
+        },
+        "gabarito": { "correta": 2 },
+        "explicacao": "\"We're going to get there at 8 to prepare everything.\" O show começa às 9."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a resposta. Por que o Rafa não pode ir?",
+        "conteudo": {
+          "texto": "Hi Lia! Thanks for the invitation! I'd love to come, but I can't. My grandparents are visiting us this weekend, and they're arriving on Friday evening. We're going to have a family dinner. How about next Friday? Are you playing again? Good luck at the show! — Rafa",
+          "opcoes": [
+            "Porque vai trabalhar na sexta.",
+            "Porque os avós chegam na sexta e vai ter jantar em família.",
+            "Porque está doente.",
+            "Porque não gosta de pizza."
+          ]
+        },
+        "gabarito": { "correta": 1 },
+        "explicacao": "\"My grandparents are visiting us... they're arriving on Friday evening. We're going to have a family dinner.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a resposta. O que o Rafa sugere?",
+        "conteudo": {
+          "texto": "Hi Lia! Thanks for the invitation! I'd love to come, but I can't. My grandparents are visiting us this weekend, and they're arriving on Friday evening. We're going to have a family dinner. How about next Friday? Are you playing again? Good luck at the show! — Rafa",
+          "opcoes": [
+            "Jantar com a Lia no sábado.",
+            "Comer pizza depois do show.",
+            "Ir ao bar no domingo.",
+            "Ver a banda na próxima sexta."
+          ]
+        },
+        "gabarito": { "correta": 3 },
+        "explicacao": "\"How about next Friday? Are you playing again?\" Ele sugere a sexta seguinte."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte o convite.",
+        "conteudo": { "palavras": ["dance", "like", "you", "to", "Would"] },
+        "gabarito": { "aceitas": ["Would you like to dance?"] },
+        "explicacao": "Would + you + like + to + dance?",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Nós vamos viajar no mês que vem.", "direcao": "pt-en" },
+        "gabarito": {
+          "aceitas": [
+            "We are going to travel next month.",
+            "Next month we are going to travel.",
+            "Next month, we are going to travel.",
+            "We are traveling next month.",
+            "Next month we are traveling.",
+            "Next month, we are traveling.",
+            "We are going to take a trip next month."
+          ]
+        },
+        "explicacao": "Plano: We're going to travel (ou We're traveling). Mês que vem = next month, sem preposição.",
+        "tagsErro": ["futuro_planos", "expressao_tempo"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": { "frase": "She are going to call you tonight." },
+        "gabarito": {
+          "aceitas": [
+            "She is going to call you tonight.",
+            "Tonight she is going to call you.",
+            "Tonight, she is going to call you."
+          ]
+        },
+        "explicacao": "She → is going to.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Por que a gente não pede uma pizza?", "direcao": "pt-en" },
+        "gabarito": {
+          "aceitas": [
+            "Why don't we order a pizza?",
+            "Why don't we order pizza?",
+            "Why don't we get a pizza?",
+            "Why don't we get pizza?"
+          ]
+        },
+        "explicacao": "Sugestão: Why don't we + verbo base? Pedir comida = order.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "My parents ___ going to paint the house.", "opcoes": ["is", "am", "are", "does"] },
+        "gabarito": { "correta": 2 },
+        "explicacao": "My parents = they → are going to.",
+        "tagsErro": ["be_omitido"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com going to e o verbo entre parênteses.",
+        "conteudo": { "texto": "The sky is very dark. It ___ (rain)." },
+        "gabarito": { "respostas": [["is going to rain"]] },
+        "explicacao": "Previsão pelo céu escuro: it is going to rain.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que começa a pergunta.",
+        "conteudo": { "texto": "___ she going to study tonight?", "opcoes": ["Does", "Is", "Are", "Do"] },
+        "gabarito": { "correta": 1 },
+        "explicacao": "Pergunta com going to usa o be: Is she going to...?",
+        "tagsErro": ["ordem_pergunta"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o present continuous do verbo entre parênteses.",
+        "conteudo": { "texto": "I ___ (see) the doctor at 10 tomorrow. I have an appointment." },
+        "gabarito": { "respostas": [["am seeing", "am going to see"]] },
+        "explicacao": "Consulta marcada: I am seeing the doctor.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "Do you want ___ to the game with us?", "opcoes": ["to come", "come", "coming", "comes"] },
+        "gabarito": { "correta": 0 },
+        "explicacao": "Do you want + to + verbo base.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": { "texto": "Why don't we ___ (eat) at home tonight?" },
+        "gabarito": { "respostas": [["eat"]] },
+        "explicacao": "Why don't we + verbo base: eat.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "How about ___ the exhibition at the museum?", "opcoes": ["visit", "to visit", "visits", "visiting"] },
+        "gabarito": { "correta": 3 },
+        "explicacao": "How about + -ing: visiting.",
+        "tagsErro": ["convite_sugestao", "gerundio"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+        "conteudo": { "texto": "Thanks, but I can't. We ___ (have) guests for dinner tonight." },
+        "gabarito": { "respostas": [["are having", "are going to have", "have"]] },
+        "explicacao": "O motivo é um compromisso: we are having guests.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a preposição correta.",
+        "conteudo": { "texto": "Are you free ___ Saturday afternoon?", "opcoes": ["on", "in", "at", "to"] },
+        "gabarito": { "correta": 0 },
+        "explicacao": "Com dias da semana (mesmo com afternoon) usamos on: on Saturday afternoon.",
+        "tagsErro": ["preposicao"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "There's a new photo ___ at the art museum.",
+          "opcoes": ["barbecue", "beach", "exhibition", "game"]
+        },
+        "gabarito": { "correta": 2 },
+        "explicacao": "Mostra de fotos num museu = exhibition (exposição).",
+        "tagsErro": ["vocabulario_lazer"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Por que vai ter churrasco no domingo?",
+        "conteudo": {
+          "texto": "Hey, Duda! Are you free on Sunday? It's my dad's birthday, and we're having a barbecue at our house. My uncle is going to bring his guitar, and my mom is making a huge chocolate cake. It starts at noon. Why don't you come with your brother? He can play soccer with my cousins. — Bruno",
+          "opcoes": [
+            "Porque o tio do Bruno chegou de viagem.",
+            "Porque o time do Bruno ganhou.",
+            "Porque a Duda vai se mudar.",
+            "Porque é aniversário do pai do Bruno."
+          ]
+        },
+        "gabarito": { "correta": 3 },
+        "explicacao": "\"It's my dad's birthday, and we're having a barbecue at our house.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Quem vai fazer o bolo?",
+        "conteudo": {
+          "texto": "Hey, Duda! Are you free on Sunday? It's my dad's birthday, and we're having a barbecue at our house. My uncle is going to bring his guitar, and my mom is making a huge chocolate cake. It starts at noon. Why don't you come with your brother? He can play soccer with my cousins. — Bruno",
+          "opcoes": ["O tio do Bruno.", "A mãe do Bruno.", "A Duda.", "O irmão da Duda."]
+        },
+        "gabarito": { "correta": 1 },
+        "explicacao": "\"My mom is making a huge chocolate cake.\" O tio vai levar o violão."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a resposta. A que horas a Duda pode chegar?",
+        "conteudo": {
+          "texto": "Hi Bruno! Happy birthday to your dad! I'd love to go, but I'm working on Sunday morning. I can get there at three. Is that OK? My brother is coming too, and he's going to bring his soccer ball. See you on Sunday! — Duda",
+          "opcoes": ["Ao meio-dia.", "De manhã.", "Às três.", "À noite."]
+        },
+        "gabarito": { "correta": 2 },
+        "explicacao": "\"I'm working on Sunday morning. I can get there at three.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a resposta. O que o irmão da Duda vai levar?",
+        "conteudo": {
+          "texto": "Hi Bruno! Happy birthday to your dad! I'd love to go, but I'm working on Sunday morning. I can get there at three. Is that OK? My brother is coming too, and he's going to bring his soccer ball. See you on Sunday! — Duda",
+          "opcoes": ["Um violão.", "Uma bola de futebol.", "Um bolo.", "Um presente para o pai do Bruno."]
+        },
+        "gabarito": { "correta": 1 },
+        "explicacao": "\"He's going to bring his soccer ball.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a pergunta.",
+        "conteudo": { "palavras": ["do", "you", "What", "to", "are", "going"] },
+        "gabarito": { "aceitas": ["What are you going to do?"] },
+        "explicacao": "What + are + you + going to + do?",
+        "tagsErro": ["ordem_pergunta"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Eu vou encontrar meus amigos amanhã.", "direcao": "pt-en" },
+        "gabarito": {
+          "aceitas": [
+            "I am meeting my friends tomorrow.",
+            "Tomorrow I am meeting my friends.",
+            "Tomorrow, I am meeting my friends.",
+            "I am going to meet my friends tomorrow.",
+            "Tomorrow I am going to meet my friends.",
+            "Tomorrow, I am going to meet my friends.",
+            "I am seeing my friends tomorrow.",
+            "I am going to see my friends tomorrow."
+          ]
+        },
+        "explicacao": "Encontro combinado: I'm meeting my friends (ou I'm going to meet). Encontrar alguém = meet.",
+        "tagsErro": ["futuro_planos"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro do convite.",
+        "conteudo": { "frase": "Would you like coming to my party?" },
+        "gabarito": { "aceitas": ["Would you like to come to my party?"] },
+        "explicacao": "Would you like + to + verbo base: to come.",
+        "tagsErro": ["convite_sugestao"]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Vamos ao parque amanhã!", "direcao": "pt-en" },
+        "gabarito": {
+          "aceitas": [
+            "Let's go to the park tomorrow!",
+            "Tomorrow, let's go to the park!",
+            "Tomorrow let's go to the park!"
+          ]
+        },
+        "explicacao": "Vamos + verbo = Let's + verbo base: Let's go.",
+        "tagsErro": ["convite_sugestao"]
+      }
+    ]
+  }
+}

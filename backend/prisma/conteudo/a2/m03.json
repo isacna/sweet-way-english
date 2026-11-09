@@ -1,0 +1,411 @@
+{
+  "slug": "a2-m03",
+  "ordem": 3,
+  "titulo": "When it happened",
+  "tema": "Incidentes, pequenos acidentes e o tempo no passado",
+  "descricao": "Conte o que estava acontecendo num momento do passado e o que interrompeu: um tombo, uma chuva forte, o ônibus perdido. Passado contínuo junto com o passado simples, when e while, e o tempo no passado.",
+  "canDos": [
+    "Dizer o que eu estava fazendo num horário do passado (At 8 p.m. I was having dinner).",
+    "Fazer e responder perguntas no passado contínuo (Were you sleeping? — No, I wasn't).",
+    "Descrever o cenário de uma história e o tempo que fazia (It was raining and the streets were empty).",
+    "Contar uma ação que interrompeu outra com when e while.",
+    "Falar de pequenos acidentes e problemas: cair, escorregar, derrubar, quebrar, perder o ônibus, ficar preso.",
+    "Recontar um incidente misturando o passado contínuo e o passado simples."
+  ],
+  "gramatica": "Passado contínuo (was/were + -ing): afirmativa, negativa, perguntas e respostas curtas; passado contínuo para o cenário e para ações em andamento num momento; passado contínuo + passado simples com when e while; verbos de estado sem -ing (know, want, need).",
+  "vocabulario": "Tempo: rain, snow, wind, fog, cloudy, sunny, windy, foggy, storm. Incidentes: drop, fall, slip, break, cut, burn, crash, lose, miss the bus, get stuck, the lights went out.",
+  "funcao": "Narrar um incidente: o que estava acontecendo, o que aconteceu de repente e como terminou.",
+  "pronuncia": "Was e were quase sempre são fracos no meio da frase: /wəz/ e /wər/ (I was working soa como \"ai wəz working\"). O acento cai no verbo principal: I was WORKING, they were SLEEPING. Na resposta curta, a forma é forte: Yes, I WAS. (Sem áudio nesta versão: leia em voz alta acentuando o verbo principal.)",
+  "licoes": [
+    {
+      "slug": "a2-m03-l1",
+      "ordem": 1,
+      "titulo": "What were you doing?",
+      "objetivo": "Formar o passado contínuo (was/were + -ing) para dizer o que estava acontecendo num momento do passado.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "O passado contínuo mostra uma ação que estava em andamento num momento do passado: At 8 p.m. yesterday, I was having dinner (Às 8 da noite de ontem, eu estava jantando). A ação começou antes das 8 e continuou depois.",
+          "A forma é was ou were + verbo com -ing. Use was com I, he, she e it, e were com you, we e they: I was working, she was sleeping, they were playing.",
+          "A grafia do -ing é a mesma do presente contínuo: run → running, make → making, study → studying, lie → lying.",
+          "Expressões comuns com o passado contínuo: at 9 p.m. yesterday, at that time (naquela hora), at midnight, all morning (a manhã toda), this time yesterday (ontem a esta hora)."
+        ],
+        "regras": [
+          "I / he / she / it + was + -ing",
+          "you / we / they + were + -ing",
+          "At 8 p.m. I was having dinner.",
+          "At that time, they were sleeping.",
+          "run → running, make → making, lie → lying"
+        ],
+        "notaContrastiva": "Não esqueça o -ing: não diga *I was work at 8* → diga *I was working at 8*. E não use was com plural: não diga *they was sleeping* → diga *they were sleeping*.",
+        "exemplos": [
+          { "en": "At 8 p.m. yesterday, I was having dinner.", "pt": "Às 8 da noite de ontem, eu estava jantando." },
+          { "en": "At midnight, my parents were sleeping.", "pt": "À meia-noite, meus pais estavam dormindo." },
+          { "en": "This time yesterday, we were traveling to Salvador.", "pt": "Ontem a esta hora, nós estávamos viajando para Salvador." },
+          { "en": "She was studying all morning.", "pt": "Ela estava estudando a manhã toda." },
+          { "en": "At that time, the kids were playing in the yard.", "pt": "Naquela hora, as crianças estavam brincando no quintal." },
+          { "en": "I was reading a book at ten o'clock.", "pt": "Eu estava lendo um livro às dez horas." },
+          { "en": "It was raining all afternoon.", "pt": "Estava chovendo a tarde toda." }
+        ],
+        "vocabulario": [
+          { "en": "at that time", "pt": "naquela hora" },
+          { "en": "this time yesterday", "pt": "ontem a esta hora" },
+          { "en": "all morning / all day", "pt": "a manhã toda / o dia todo" },
+          { "en": "at midnight", "pt": "à meia-noite" },
+          { "en": "have dinner", "pt": "jantar" },
+          { "en": "take a shower", "pt": "tomar banho" },
+          { "en": "yard", "pt": "quintal" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "At 8 p.m. yesterday, I ___ dinner.", "opcoes": ["was having", "were having", "am having", "having"] }, "gabarito": { "correta": 0 }, "explicacao": "Ação em andamento num momento do passado: I + was + having.", "tagsErro": ["be_omitido"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "At ten o'clock last night, my parents ___ TV.", "opcoes": ["was watching", "were watching", "are watching", "watching"] }, "gabarito": { "correta": 1 }, "explicacao": "My parents = they → were + watching. Are watching é presente, e a frase fala de ontem à noite.", "tagsErro": ["be_omitido"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "At 7 a.m. this morning, Lucas ___ (take) a shower." }, "gabarito": { "respostas": [["was taking"]] }, "explicacao": "Lucas = he → was + taking. Take perde o e: taking.", "tagsErro": ["ortografia_ing"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "We ___ (study) for the test at 9 p.m. last night." }, "gabarito": { "respostas": [["were studying"]] }, "explicacao": "We → were + studying.", "tagsErro": ["be_omitido"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha was ou were para cada lacuna.", "conteudo": { "texto": "At midnight, I ___ sleeping and my sisters ___ playing video games.", "opcoesPorLacuna": [["was", "were"], ["was", "were"]] }, "gabarito": { "respostas": [["was"], ["were"]] }, "explicacao": "I → was; my sisters = they → were." },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["was", "She", "a", "book", "reading"] }, "gabarito": { "aceitas": ["She was reading a book."] }, "explicacao": "Sujeito + was + verbo com -ing + complemento: She was reading a book." },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo à sua forma com -ing.", "conteudo": { "esquerda": ["run", "make", "swim", "study", "lie", "drive"], "direita": ["studying", "lying", "running", "driving", "making", "swimming"] }, "gabarito": { "pares": [2, 4, 5, 0, 1, 3] }, "explicacao": "Run e swim dobram a consoante (running, swimming); make e drive perdem o e (making, driving); lie troca ie por y (lying); study só ganha -ing (studying).", "tagsErro": ["ortografia_ing"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "At 9 p.m. they was watching a movie." }, "gabarito": { "aceitas": ["At 9 p.m. they were watching a movie.", "At 9 p.m., they were watching a movie.", "They were watching a movie at 9 p.m."] }, "explicacao": "They → were, não was." },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu estava trabalhando ontem à tarde.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I was working yesterday afternoon.", "Yesterday afternoon I was working.", "Yesterday afternoon, I was working."] }, "explicacao": "Estava trabalhando = was working. Ontem à tarde = yesterday afternoon.", "tagsErro": ["be_omitido"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eles estavam jogando futebol no parque.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["They were playing soccer in the park.", "They were playing soccer at the park.", "They were playing football in the park.", "They were playing football at the park."] }, "explicacao": "They → were + playing. Futebol, no inglês americano, é soccer.", "tagsErro": ["be_omitido"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "At six o'clock, the kids ___ in the pool.", "opcoes": ["was swimming", "were swimming", "swimming", "were swim"] }, "gabarito": { "correta": 1 }, "explicacao": "The kids = they → were + swimming (com mm).", "tagsErro": ["ortografia_ing"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "I ___ (talk) to my mom on the phone at 10 p.m." }, "gabarito": { "respostas": [["was talking"]] }, "explicacao": "I → was + talking.", "tagsErro": ["be_omitido"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["were", "We", "dinner", "cooking"] }, "gabarito": { "aceitas": ["We were cooking dinner."] }, "explicacao": "We + were + cooking + dinner." },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela estava dormindo.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She was sleeping.", "She was asleep."] }, "explicacao": "She → was + sleeping. She was asleep (ela estava adormecida) também está certo.", "tagsErro": ["be_omitido"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He were driving to work at 8 a.m." }, "gabarito": { "aceitas": ["He was driving to work at 8 a.m.", "At 8 a.m. he was driving to work.", "At 8 a.m., he was driving to work."] }, "explicacao": "He → was, não were." }
+      ]
+    },
+    {
+      "slug": "a2-m03-l2",
+      "ordem": 2,
+      "titulo": "Were you sleeping?",
+      "objetivo": "Fazer a negativa, as perguntas e as respostas curtas do passado contínuo.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Na negativa, coloque not depois de was ou were: I wasn't sleeping (was not), they weren't working (were not). O verbo continua com -ing.",
+          "Na pergunta, was ou were vem antes do sujeito: Were you sleeping? Was it raining? Com palavras de pergunta, elas vêm no começo: What were you doing? Where was she going?",
+          "A resposta curta repete was ou were, sem o -ing: Were you sleeping? — Yes, I was. / No, I wasn't. Was he driving? — Yes, he was.",
+          "O passado contínuo não usa did. Não diga Did you sleeping?; diga Were you sleeping?"
+        ],
+        "regras": [
+          "I wasn't / he wasn't / they weren't + -ing",
+          "Was I / he / she / it + -ing...?",
+          "Were you / we / they + -ing...?",
+          "Were you working? — Yes, I was. / No, I wasn't.",
+          "What were you doing? Where was she going?"
+        ],
+        "notaContrastiva": "Não use did no passado contínuo: não diga *Did you were working?* nem *Did you working?* → diga *Were you working?* E não inverta errado: não diga *Where you were going?* → diga *Where were you going?*",
+        "exemplos": [
+          { "en": "I wasn't sleeping. I was reading.", "pt": "Eu não estava dormindo. Estava lendo." },
+          { "en": "Were you working at 3 p.m.? — Yes, I was.", "pt": "Você estava trabalhando às 3 da tarde? — Sim, estava." },
+          { "en": "Was it raining in the morning? — No, it wasn't.", "pt": "Estava chovendo de manhã? — Não, não estava." },
+          { "en": "What were you doing at midnight?", "pt": "O que você estava fazendo à meia-noite?" },
+          { "en": "Where was she going?", "pt": "Aonde ela estava indo?" },
+          { "en": "They weren't listening to the teacher.", "pt": "Eles não estavam ouvindo a professora." },
+          { "en": "Were the kids playing outside? — Yes, they were.", "pt": "As crianças estavam brincando lá fora? — Sim, estavam." }
+        ],
+        "vocabulario": [
+          { "en": "wasn't = was not", "pt": "não estava" },
+          { "en": "weren't = were not", "pt": "não estavam" },
+          { "en": "outside", "pt": "lá fora" },
+          { "en": "listen to", "pt": "ouvir, escutar" },
+          { "en": "go out", "pt": "sair" },
+          { "en": "library", "pt": "biblioteca" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ sleeping at midnight. I was reading.", "opcoes": ["wasn't", "weren't", "didn't", "not"] }, "gabarito": { "correta": 0 }, "explicacao": "I → wasn't + -ing. Did não entra no passado contínuo.", "tagsErro": ["negativa"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ you working at 3 p.m. yesterday? — Yes, I was.", "opcoes": ["Did", "Was", "Were", "Are"] }, "gabarito": { "correta": 2 }, "explicacao": "Passado contínuo com you: Were you working...? Did não entra com -ing.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com a negativa do passado contínuo.", "conteudo": { "texto": "They ___ (not / watch) TV at 9 p.m. They were playing cards." }, "gabarito": { "respostas": [["weren't watching", "were not watching"]] }, "explicacao": "They → weren't (were not) + watching.", "tagsErro": ["negativa"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a resposta curta.", "conteudo": { "texto": "Was Ana studying at the library? — No, she ___." }, "gabarito": { "respostas": [["wasn't", "was not"]] }, "explicacao": "A resposta curta repete o was, sem o -ing: No, she wasn't." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha was ou were para cada lacuna.", "conteudo": { "texto": "___ the kids playing outside? — Yes, they ___.", "opcoesPorLacuna": [["Was", "Were"], ["was", "were"]] }, "gabarito": { "respostas": [["Were"], ["were"]] }, "explicacao": "The kids = they → Were...? — Yes, they were." },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["you", "doing", "What", "were"] }, "gabarito": { "aceitas": ["What were you doing?"] }, "explicacao": "Palavra de pergunta + were + sujeito + verbo com -ing.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada pergunta à resposta.", "conteudo": { "esquerda": ["Were you sleeping?", "Was it raining?", "Were they working?", "Was he driving?", "What were you doing?"], "direita": ["No, they weren't.", "I was cooking.", "Yes, it was.", "No, I wasn't.", "Yes, he was."] }, "gabarito": { "pares": [3, 2, 0, 4, 1] }, "explicacao": "A resposta curta repete o sujeito e was/were da pergunta. What...? pede uma frase completa." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.", "conteudo": { "frase": "Where you were going at 7 a.m.?" }, "gabarito": { "aceitas": ["Where were you going at 7 a.m.?"] }, "explicacao": "Na pergunta, were vem antes do sujeito: Where were you going?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você estava trabalhando ontem à noite?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Were you working last night?", "Were you working yesterday evening?"] }, "explicacao": "Pergunta no passado contínuo: Were you + working? Ontem à noite = last night.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Nós não estávamos dormindo.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["We were not sleeping.", "We were not asleep."] }, "explicacao": "We → weren't (were not) + sleeping.", "tagsErro": ["negativa"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.", "conteudo": { "texto": "What ___ Pedro doing at the gym?", "opcoes": ["was", "were", "did", "does"] }, "gabarito": { "correta": 0 }, "explicacao": "Pedro = he → was. Com -ing não usamos did nem does.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com a negativa do passado contínuo.", "conteudo": { "texto": "I ___ (not / work) yesterday at 4 p.m. I was at the dentist." }, "gabarito": { "respostas": [["wasn't working", "was not working"]] }, "explicacao": "I → wasn't (was not) + working.", "tagsErro": ["negativa"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["she", "Was", "on", "the", "phone", "talking"] }, "gabarito": { "aceitas": ["Was she talking on the phone?"] }, "explicacao": "Was + she + talking + on the phone?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "O que eles estavam fazendo?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["What were they doing?"] }, "explicacao": "What + were + they + doing?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.", "conteudo": { "frase": "Were you study at 8 p.m.?" }, "gabarito": { "aceitas": ["Were you studying at 8 p.m.?"] }, "explicacao": "Depois de were, o verbo vai com -ing: studying.", "tagsErro": ["gerundio"] }
+      ]
+    },
+    {
+      "slug": "a2-m03-l3",
+      "ordem": 3,
+      "titulo": "It was raining",
+      "objetivo": "Descrever o cenário de uma história e o tempo que fazia no passado.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No começo de uma história, usamos o passado contínuo para pintar o cenário: It was a cold night. It was raining and people were walking fast. O cenário é o \"pano de fundo\"; os fatos da história vêm depois, no passado simples.",
+          "Para o tempo, usamos it: It was raining (estava chovendo), It was snowing (estava nevando), It was sunny (fazia sol), It was windy (estava ventando). Repare: em português dizemos \"fazia sol\", mas em inglês o sujeito é it + was.",
+          "Compare: It was raining when I left (a chuva estava em andamento) e It rained a lot yesterday (fato completo: choveu muito ontem). Os dois estão certos; mudam o foco.",
+          "Muitos adjetivos de tempo vêm do substantivo + y: rain → rainy, sun → sunny, wind → windy, cloud → cloudy, fog → foggy, snow → snowy."
+        ],
+        "regras": [
+          "It was raining / snowing. (em andamento, cenário)",
+          "It rained a lot yesterday. (fato completo)",
+          "It was sunny / cloudy / windy / cold / hot.",
+          "sun → sunny, wind → windy, fog → foggy",
+          "It was a beautiful day. The sun was shining."
+        ],
+        "notaContrastiva": "Não diga *Was raining* nem *Made sun* → diga *It was raining* e *It was sunny*. O tempo em inglês sempre tem o sujeito it. E não confunda o substantivo com o verbo: não diga *It was rain all day* → diga *It rained all day* ou *It was raining all day*.",
+        "exemplos": [
+          { "en": "It was a cold night and it was raining.", "pt": "Era uma noite fria e estava chovendo." },
+          { "en": "The sun was shining and the birds were singing.", "pt": "O sol estava brilhando e os passarinhos estavam cantando." },
+          { "en": "It rained a lot yesterday.", "pt": "Choveu muito ontem." },
+          { "en": "It was very windy at the beach.", "pt": "Estava ventando muito na praia." },
+          { "en": "It was foggy, so we drove slowly.", "pt": "Tinha neblina, então dirigimos devagar." },
+          { "en": "It was snowing in the mountains.", "pt": "Estava nevando nas montanhas." },
+          { "en": "There was a big storm last night.", "pt": "Teve uma tempestade forte ontem à noite." }
+        ],
+        "vocabulario": [
+          { "en": "rain / rainy", "pt": "chuva / chuvoso" },
+          { "en": "snow / snowy", "pt": "neve / com neve" },
+          { "en": "sun / sunny", "pt": "sol / ensolarado" },
+          { "en": "wind / windy", "pt": "vento / com vento" },
+          { "en": "cloud / cloudy", "pt": "nuvem / nublado" },
+          { "en": "fog / foggy", "pt": "neblina / com neblina" },
+          { "en": "storm", "pt": "tempestade" },
+          { "en": "shine", "pt": "brilhar" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "It was a terrible morning. It ___ hard and the streets were full of water.", "opcoes": ["was raining", "were raining", "is raining", "rains"] }, "gabarito": { "correta": 0 }, "explicacao": "Cenário no passado: It + was + raining." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "Yesterday it was very ___, so we didn't go to the beach. There were dark clouds everywhere.", "opcoes": ["sunny", "cloudy", "hot", "dry"] }, "gabarito": { "correta": 1 }, "explicacao": "Dark clouds (nuvens escuras) → cloudy, nublado." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.", "conteudo": { "texto": "It ___ (snow) in the mountains all day yesterday." }, "gabarito": { "respostas": [["snowed", "was snowing"]] }, "explicacao": "Os dois estão certos: It snowed all day (fato) ou It was snowing all day (em andamento o dia todo)." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "The sun ___ (shine) and the birds ___ (sing). It was a beautiful morning." }, "gabarito": { "respostas": [["was shining"], ["were singing"]] }, "explicacao": "Cenário: the sun → was shining (shine perde o e); the birds = they → were singing.", "tagsErro": ["ortografia_ing"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha was ou were para cada lacuna.", "conteudo": { "texto": "It ___ a cold night. The wind ___ blowing.", "opcoesPorLacuna": [["was", "were"], ["was", "were"]] }, "gabarito": { "respostas": [["was"], ["was"]] }, "explicacao": "It → was; the wind = it → was." },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["wind", "The", "blowing", "was"] }, "gabarito": { "aceitas": ["The wind was blowing."] }, "explicacao": "The wind + was + blowing: o vento estava soprando." },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada palavra ao adjetivo de tempo.", "conteudo": { "esquerda": ["rain", "snow", "sun", "wind", "cloud", "fog"], "direita": ["windy", "foggy", "rainy", "cloudy", "sunny", "snowy"] }, "gabarito": { "pares": [2, 5, 4, 0, 3, 1] }, "explicacao": "Substantivo + y: rainy, snowy, windy, cloudy. Sun e fog dobram a consoante: sunny, foggy." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "Yesterday it was rain all day." }, "gabarito": { "aceitas": ["Yesterday it rained all day.", "Yesterday, it rained all day.", "It rained all day yesterday.", "Yesterday it was raining all day.", "Yesterday, it was raining all day.", "It was raining all day yesterday."] }, "explicacao": "Rain aqui é verbo: it rained (fato) ou it was raining (em andamento). It was rain mistura o be com o substantivo." },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estava chovendo e fazia frio.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It was raining and it was cold.", "It was raining, and it was cold.", "It was raining and cold.", "It was cold and it was raining.", "It was cold and raining."] }, "explicacao": "O tempo sempre tem o sujeito it: it was raining, it was cold.", "tagsErro": ["sujeito_omitido"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Choveu muito ontem.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It rained a lot yesterday.", "Yesterday it rained a lot.", "Yesterday, it rained a lot.", "It rained hard yesterday."] }, "explicacao": "Fato completo no passado: It rained a lot. Não esqueça o it.", "tagsErro": ["sujeito_omitido"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "It was a cold day in Curitiba. It ___ and everybody was wearing a coat.", "opcoes": ["was raining", "were raining", "is raining", "rain"] }, "gabarito": { "correta": 0 }, "explicacao": "Cenário no passado: It + was + raining." },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "The weather was terrible. It was very ___ and my umbrella broke." }, "gabarito": { "respostas": [["windy"]] }, "explicacao": "O guarda-chuva quebrou por causa do vento: windy." },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["sunny", "was", "It", "a", "day"] }, "gabarito": { "aceitas": ["It was a sunny day."] }, "explicacao": "It + was + a + adjetivo + day." },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estava ventando muito.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It was very windy.", "It was really windy.", "It was so windy.", "The wind was blowing hard.", "The wind was very strong."] }, "explicacao": "Ventando muito = very windy (it + was + adjetivo).", "tagsErro": ["sujeito_omitido"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "It were snowing in the mountains." }, "gabarito": { "aceitas": ["It was snowing in the mountains."] }, "explicacao": "It → was, não were." }
+      ]
+    },
+    {
+      "slug": "a2-m03-l4",
+      "ordem": 4,
+      "titulo": "When the phone rang",
+      "objetivo": "Contar uma ação em andamento que foi interrompida por outra, com o passado contínuo + when + passado simples.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para contar que uma ação foi interrompida, juntamos os dois passados: a ação longa, que estava acontecendo, vai no passado contínuo; a ação curta, que interrompeu, vai no passado simples. I was taking a shower when the phone rang (Eu estava tomando banho quando o telefone tocou).",
+          "Depois de when, normalmente vem a ação curta no passado simples: when the phone rang, when she saw the accident, when the lights went out.",
+          "A frase pode começar por when. Nesse caso, use vírgula: When the phone rang, I was taking a shower.",
+          "Muitos pequenos acidentes aparecem nesse tipo de frase: drop (derrubar, deixar cair), fall (cair), break (quebrar), slip (escorregar), cut (cortar), get stuck (ficar preso). Atenção aos irregulares: fall → fell, break → broke, cut → cut."
+        ],
+        "regras": [
+          "ação longa (was/were + -ing) + when + ação curta (passado simples)",
+          "I was taking a shower when the phone rang.",
+          "When the phone rang, I was taking a shower.",
+          "fall → fell, break → broke, cut → cut, drop → dropped, slip → slipped"
+        ],
+        "notaContrastiva": "Não coloque as duas ações no contínuo: não diga *I was watching TV when my brother was arriving* → diga *I was watching TV when my brother arrived*. A chegada é curta: passado simples.",
+        "exemplos": [
+          { "en": "I was taking a shower when the phone rang.", "pt": "Eu estava tomando banho quando o telefone tocou." },
+          { "en": "We were having dinner when the lights went out.", "pt": "Nós estávamos jantando quando a luz acabou." },
+          { "en": "Bia was walking home when she saw an accident.", "pt": "A Bia estava indo a pé para casa quando viu um acidente." },
+          { "en": "When I got home, my kids were sleeping.", "pt": "Quando eu cheguei em casa, meus filhos estavam dormindo." },
+          { "en": "My dad slipped when he was cleaning the floor.", "pt": "Meu pai escorregou quando estava limpando o chão." },
+          { "en": "I dropped my phone when I was running.", "pt": "Eu derrubei o celular quando estava correndo." },
+          { "en": "She fell when she was getting off the bus.", "pt": "Ela caiu quando estava descendo do ônibus." }
+        ],
+        "vocabulario": [
+          { "en": "ring (rang)", "pt": "tocar (telefone, campainha)" },
+          { "en": "drop (dropped)", "pt": "derrubar, deixar cair" },
+          { "en": "fall (fell)", "pt": "cair" },
+          { "en": "slip (slipped)", "pt": "escorregar" },
+          { "en": "break (broke)", "pt": "quebrar" },
+          { "en": "cut (cut)", "pt": "cortar" },
+          { "en": "get stuck (got stuck)", "pt": "ficar preso, encalhado" },
+          { "en": "the lights went out", "pt": "a luz acabou" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I was taking a shower when the phone ___.", "opcoes": ["rang", "was ringing", "rings", "ring"] }, "gabarito": { "correta": 0 }, "explicacao": "O telefone tocar é a ação curta que interrompe: passado simples, rang.", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "We ___ dinner when the lights suddenly went out.", "opcoes": ["were having", "are having", "have", "was having"] }, "gabarito": { "correta": 0 }, "explicacao": "O jantar estava em andamento (ação longa): we + were having.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com os verbos entre parênteses no passado contínuo ou no passado simples.", "conteudo": { "texto": "Bia ___ (walk) home when she ___ (see) an accident." }, "gabarito": { "respostas": [["was walking"], ["saw"]] }, "explicacao": "Ação longa: was walking. Ação curta depois de when: saw (passado de see).", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado simples.", "conteudo": { "texto": "I ___ (cut) my finger when I was cooking." }, "gabarito": { "respostas": [["cut"]] }, "explicacao": "Cut é irregular e não muda no passado: cut, cut.", "tagsErro": ["verbo_irregular"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma certa para cada lacuna.", "conteudo": { "texto": "My dad ___ the kitchen floor when he ___ and fell.", "opcoesPorLacuna": [["was cleaning", "cleaned"], ["slipped", "was slipping"]] }, "gabarito": { "respostas": [["was cleaning"], ["slipped"]] }, "explicacao": "Limpar o chão estava em andamento (was cleaning); escorregar foi rápido (slipped).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["dropped", "was", "I", "running", "when", "I", "my", "phone"] }, "gabarito": { "aceitas": ["I dropped my phone when I was running.", "When I was running I dropped my phone.", "I was running when I dropped my phone."] }, "explicacao": "Correr estava em andamento (was running); derrubar o celular foi rápido (dropped).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo ao significado.", "conteudo": { "esquerda": ["drop", "fall", "break", "slip", "cut", "get stuck"], "direita": ["escorregar", "cair", "ficar preso", "derrubar, deixar cair", "cortar", "quebrar"] }, "gabarito": { "pares": [3, 1, 5, 0, 4, 2] }, "explicacao": "Fall é você cair; drop é deixar alguma coisa cair. Slip é escorregar." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I was watching TV when my brother was arriving." }, "gabarito": { "aceitas": ["I was watching TV when my brother arrived.", "When my brother arrived, I was watching TV.", "When my brother arrived I was watching TV."] }, "explicacao": "A chegada é a ação curta que interrompe: passado simples, arrived.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu estava dormindo quando o telefone tocou.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I was sleeping when the phone rang.", "When the phone rang, I was sleeping.", "When the phone rang I was sleeping.", "I was asleep when the phone rang.", "When the phone rang, I was asleep.", "When the phone rang I was asleep."] }, "explicacao": "Ação longa: was sleeping. Ação curta: the phone rang (ring → rang).", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela caiu quando estava correndo no parque.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She fell when she was running in the park.", "She fell when she was running at the park.", "She fell down when she was running in the park.", "She fell while she was running in the park.", "She fell while she was running at the park.", "She fell while running in the park.", "When she was running in the park, she fell.", "When she was running in the park she fell."] }, "explicacao": "Cair foi rápido: fell (passado de fall). Correr estava em andamento: was running.", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "They were driving to the beach when the car ___.", "opcoes": ["was breaking down", "broke down", "breaks down", "break down"] }, "gabarito": { "correta": 1 }, "explicacao": "O carro quebrar interrompeu a viagem: passado simples, broke down.", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What ___ you doing when the accident happened?" }, "gabarito": { "respostas": [["were"]] }, "explicacao": "O que você estava fazendo: What + were + you + doing?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["when", "arrived", "were", "We", "eating", "they"] }, "gabarito": { "aceitas": ["We were eating when they arrived.", "When they arrived we were eating.", "They arrived when we were eating."] }, "explicacao": "Comer estava em andamento (were eating); a chegada foi curta (arrived).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Nós estávamos esperando o ônibus quando começou a chover.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["We were waiting for the bus when it started to rain.", "We were waiting for the bus when it started raining.", "We were waiting for the bus when it began to rain.", "We were waiting for the bus when it began raining.", "When it started to rain, we were waiting for the bus.", "When it started to rain we were waiting for the bus.", "When it started raining, we were waiting for the bus.", "When it started raining we were waiting for the bus."] }, "explicacao": "Esperar = wait for (com for). Ação longa: were waiting. Ação curta: it started to rain (com it).", "tagsErro": ["simples_continuo", "preposicao"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I was losing my keys when I was walking home." }, "gabarito": { "aceitas": ["I lost my keys when I was walking home.", "I lost my keys while I was walking home.", "When I was walking home, I lost my keys.", "When I was walking home I lost my keys."] }, "explicacao": "Perder as chaves é uma ação curta: lost (passado simples). Caminhar para casa estava em andamento.", "tagsErro": ["simples_continuo", "verbo_irregular"] }
+      ]
+    },
+    {
+      "slug": "a2-m03-l5",
+      "ordem": 5,
+      "titulo": "While I was cooking",
+      "objetivo": "Usar while com o passado contínuo, diferenciar when e while e lembrar dos verbos de estado.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "While (enquanto) vem com a ação longa, no passado contínuo: While I was cooking, the cat ate my fish (Enquanto eu estava cozinhando, o gato comeu meu peixe). When costuma vir com a ação curta: I was cooking when the phone rang.",
+          "Duas ações longas ao mesmo tempo podem ficar as duas no contínuo: While I was studying, my brother was playing video games.",
+          "Como o when, o while pode ficar no começo (com vírgula) ou no meio da frase: The cat ate my fish while I was cooking.",
+          "Lembre: verbos de estado (know, want, need, like, love, understand) não vão para o -ing, nem no passado. Diga I knew the answer, e não I was knowing; I wanted to go home, e não I was wanting."
+        ],
+        "regras": [
+          "while + ação longa (was/were + -ing)",
+          "when + ação curta (passado simples)",
+          "While I was cooking, I burned my hand.",
+          "While I was studying, my brother was playing video games.",
+          "know → knew, want → wanted (nunca was knowing, was wanting)"
+        ],
+        "notaContrastiva": "Não use while com uma ação curta: não diga *I was reading while the lights went out* → diga *I was reading when the lights went out*. E não ponha verbo de estado no contínuo: não diga *I was wanting to go home* → diga *I wanted to go home*.",
+        "exemplos": [
+          { "en": "While I was cooking, the cat ate my fish!", "pt": "Enquanto eu estava cozinhando, o gato comeu meu peixe!" },
+          { "en": "I cut my finger while I was making a salad.", "pt": "Eu cortei o dedo enquanto estava fazendo uma salada." },
+          { "en": "While I was studying, my brother was playing video games.", "pt": "Enquanto eu estava estudando, meu irmão estava jogando videogame." },
+          { "en": "I met my wife while I was living in Recife.", "pt": "Eu conheci minha esposa enquanto estava morando em Recife." },
+          { "en": "I was reading when the lights went out.", "pt": "Eu estava lendo quando a luz acabou." },
+          { "en": "I knew the answer, but I didn't say anything.", "pt": "Eu sabia a resposta, mas não disse nada." },
+          { "en": "We wanted to go out, but it was raining.", "pt": "A gente queria sair, mas estava chovendo." }
+        ],
+        "vocabulario": [
+          { "en": "while", "pt": "enquanto" },
+          { "en": "burn (burned)", "pt": "queimar" },
+          { "en": "meet (met)", "pt": "conhecer (alguém), encontrar" },
+          { "en": "skate", "pt": "andar de skate, patinar" },
+          { "en": "storm", "pt": "tempestade" },
+          { "en": "alarm", "pt": "alarme, despertador" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "___ I was cooking, the cat ate my fish!", "opcoes": ["While", "During", "Then", "Ago"] }, "gabarito": { "correta": 0 }, "explicacao": "While (enquanto) + ação longa: While I was cooking. During vem com substantivo (during dinner), não com frase.", "tagsErro": ["when_while"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "I was reading ___ the lights went out.", "opcoes": ["when", "while", "during", "after that"] }, "gabarito": { "correta": 0 }, "explicacao": "A luz acabar é uma ação curta, no passado simples: usamos when.", "tagsErro": ["when_while"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com os verbos entre parênteses no passado.", "conteudo": { "texto": "While my mom ___ (work), I ___ (do) my homework." }, "gabarito": { "respostas": [["was working"], ["was doing", "did"]] }, "explicacao": "Depois de while, ação longa: was working. Na outra parte, was doing (as duas ao mesmo tempo) ou did (fato completo).", "tagsErro": ["when_while"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ the answer, but I didn't say anything.", "opcoes": ["knew", "was knowing", "know", "knowing"] }, "gabarito": { "correta": 0 }, "explicacao": "Know é verbo de estado: não vai para o -ing. No passado: knew.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.", "conteudo": { "texto": "Ana broke a glass ___ she was washing the dishes. ___ the glass fell, she screamed.", "opcoesPorLacuna": [["while", "during"], ["When", "While"]] }, "gabarito": { "respostas": [["while"], ["When"]] }, "explicacao": "While + ação longa (was washing). O copo cair foi rápido: When the glass fell.", "tagsErro": ["when_while"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["While", "was", "I", "the", "bus", "waiting", "for", "rain", "it", "started", "to"] }, "gabarito": { "aceitas": ["While I was waiting for the bus it started to rain.", "It started to rain while I was waiting for the bus."] }, "explicacao": "While + ação longa (I was waiting for the bus); a chuva começar foi a ação curta.", "tagsErro": ["when_while"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue as duas partes de cada frase.", "conteudo": { "esquerda": ["While I was cooking,", "I was watching TV", "When the alarm rang,", "While we were sleeping,", "Paula slipped"], "direita": ["we didn't hear the storm.", "when she was getting off the bus.", "I burned my hand.", "I got up.", "when my friend called."] }, "gabarito": { "pares": [2, 4, 3, 0, 1] }, "explicacao": "While vem com a ação longa (was cooking, were sleeping); when vem com a ação curta (rang, called) ou com o cenário da outra pessoa.", "tagsErro": ["when_while"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I was wanting to go home, but it was raining." }, "gabarito": { "aceitas": ["I wanted to go home, but it was raining.", "I wanted to go home but it was raining."] }, "explicacao": "Want é verbo de estado: no passado é wanted, sem -ing.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Enquanto eu estava estudando, meu irmão estava jogando videogame.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["While I was studying, my brother was playing video games.", "While I was studying my brother was playing video games.", "While I was studying, my brother was playing a video game.", "While I was studying my brother was playing a video game.", "My brother was playing video games while I was studying.", "My brother was playing a video game while I was studying."] }, "explicacao": "Duas ações longas ao mesmo tempo: as duas no passado contínuo, ligadas por while.", "tagsErro": ["when_while"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu conheci minha esposa enquanto estava morando em Recife.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I met my wife while I was living in Recife.", "I met my wife when I was living in Recife.", "I met my wife while living in Recife.", "While I was living in Recife, I met my wife.", "While I was living in Recife I met my wife.", "When I was living in Recife, I met my wife.", "When I was living in Recife I met my wife."] }, "explicacao": "Conhecer alguém = meet → met (ação curta). Morar estava em andamento: was living.", "tagsErro": ["verbo_irregular", "when_while"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "I cut my finger ___ I was making a salad.", "opcoes": ["while", "during", "ago", "then"] }, "gabarito": { "correta": 0 }, "explicacao": "While + ação longa: while I was making a salad.", "tagsErro": ["when_while"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.", "conteudo": { "texto": "I ___ (need) help, so I called my dad." }, "gabarito": { "respostas": [["needed"]] }, "explicacao": "Need é verbo de estado: needed, nunca was needing.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["while", "She", "fell", "was", "she", "skating"] }, "gabarito": { "aceitas": ["She fell while she was skating.", "While she was skating she fell."] }, "explicacao": "Cair foi rápido (fell); andar de skate estava em andamento (was skating).", "tagsErro": ["when_while"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Enquanto nós estávamos jantando, a luz acabou.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["While we were having dinner, the lights went out.", "While we were having dinner the lights went out.", "While we were eating dinner, the lights went out.", "While we were eating dinner the lights went out.", "While we were having dinner, the power went out.", "While we were having dinner the power went out.", "While we were eating dinner, the power went out.", "While we were eating dinner the power went out.", "The lights went out while we were having dinner.", "The lights went out while we were eating dinner.", "The power went out while we were having dinner.", "The power went out while we were eating dinner."] }, "explicacao": "A luz acabou = the lights (ou the power) went out. Jantar estava em andamento: were having dinner.", "tagsErro": ["when_while"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "When I was walking home, I was seeing an old friend." }, "gabarito": { "aceitas": ["When I was walking home, I saw an old friend.", "When I was walking home I saw an old friend.", "While I was walking home, I saw an old friend.", "While I was walking home I saw an old friend.", "I saw an old friend when I was walking home.", "I saw an old friend while I was walking home."] }, "explicacao": "Ver o amigo foi uma ação curta: saw (passado simples). Caminhar estava em andamento.", "tagsErro": ["simples_continuo", "verbo_irregular"] }
+      ]
+    },
+    {
+      "slug": "a2-m03-l6",
+      "ordem": 6,
+      "titulo": "What a day!",
+      "objetivo": "Recontar um incidente: cenário no passado contínuo, fatos no passado simples e vocabulário de pequenos problemas.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para contar um incidente, siga três passos. Primeiro, o cenário no passado contínuo: It was raining and I was walking to work. Depois, o que aconteceu de repente, no passado simples: I slipped and fell. Por fim, como terminou: A man helped me, and I went home.",
+          "Leia a história da Júlia: Last Monday was a terrible day. It was raining when I left home, and I missed the bus. While I was waiting for the next one, a car drove through a puddle and splashed me! At work, the elevator stopped and I got stuck for twenty minutes. In the afternoon, I dropped my coffee on my keyboard. When I got home, I took a hot shower and went to bed early.",
+          "Vocabulário útil para incidentes: miss the bus (perder o ônibus), get stuck (ficar preso), drop (derrubar), slip (escorregar), burn (queimar), crash (bater, colidir), lose (perder um objeto). Atenção: perder o ônibus é miss, e não lose; lose é perder um objeto (I lost my keys).",
+          "Para perguntar sobre o incidente: What happened? (O que aconteceu?) What were you doing when it happened? Were you hurt? (Você se machucou?)"
+        ],
+        "regras": [
+          "Cenário: It was raining / I was walking...",
+          "Fato: I slipped and fell / I missed the bus.",
+          "Final: A man helped me / I went home.",
+          "miss the bus (perder o ônibus) × lose my keys (perder as chaves)",
+          "What happened? What were you doing when it happened?"
+        ],
+        "notaContrastiva": "Não diga *I lost the bus* → diga *I missed the bus*. Lose é perder um objeto; miss é perder um horário ou transporte. E não diga *I was getting stuck for two hours* → diga *I got stuck* ou *I was stuck for two hours*.",
+        "exemplos": [
+          { "en": "It was raining when I left home.", "pt": "Estava chovendo quando eu saí de casa." },
+          { "en": "I missed the bus, so I was late for work.", "pt": "Eu perdi o ônibus, então cheguei atrasado ao trabalho." },
+          { "en": "We got stuck in the elevator for twenty minutes.", "pt": "Nós ficamos presos no elevador por vinte minutos." },
+          { "en": "I dropped my coffee on my keyboard.", "pt": "Eu derrubei meu café no teclado." },
+          { "en": "A car crashed into a tree.", "pt": "Um carro bateu numa árvore." },
+          { "en": "I burned my hand while I was baking a cake.", "pt": "Eu queimei a mão enquanto estava assando um bolo." },
+          { "en": "What happened? — I slipped on the wet floor.", "pt": "O que aconteceu? — Eu escorreguei no chão molhado." },
+          { "en": "Were you hurt? — No, I was fine.", "pt": "Você se machucou? — Não, eu estava bem." }
+        ],
+        "vocabulario": [
+          { "en": "miss the bus", "pt": "perder o ônibus" },
+          { "en": "lose (lost)", "pt": "perder (um objeto)" },
+          { "en": "get stuck", "pt": "ficar preso" },
+          { "en": "crash (into)", "pt": "bater (em), colidir" },
+          { "en": "burn (burned)", "pt": "queimar" },
+          { "en": "wet", "pt": "molhado" },
+          { "en": "hurt", "pt": "machucado; machucar" },
+          { "en": "traffic", "pt": "trânsito" },
+          { "en": "puddle", "pt": "poça" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "I got up late and ___ the bus, so I took a taxi.", "opcoes": ["missed", "lost", "dropped", "broke"] }, "gabarito": { "correta": 0 }, "explicacao": "Perder o ônibus = miss the bus. Lose é perder um objeto.", "tagsErro": ["falso_cognato"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a expressão que completa a frase.", "conteudo": { "texto": "We ___ in the elevator for an hour! It stopped between two floors.", "opcoes": ["got stuck", "got lost", "fell", "slipped"] }, "gabarito": { "correta": 0 }, "explicacao": "Ficar preso = get stuck → got stuck. Got lost é se perder no caminho." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com os verbos entre parênteses no passado contínuo ou no passado simples.", "conteudo": { "texto": "Yesterday was a terrible day. It ___ (rain) when I ___ (leave) home." }, "gabarito": { "respostas": [["was raining"], ["left"]] }, "explicacao": "Cenário: it was raining. Ação curta: I left (passado de leave).", "tagsErro": ["simples_continuo", "verbo_irregular"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com os verbos entre parênteses no passado contínuo ou no passado simples.", "conteudo": { "texto": "A car ___ (crash) into a tree while the driver ___ (look) at his phone." }, "gabarito": { "respostas": [["crashed"], ["was looking"]] }, "explicacao": "A batida foi rápida: crashed. Depois de while, ação longa: was looking.", "tagsErro": ["simples_continuo", "when_while"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma certa para cada lacuna.", "conteudo": { "texto": "I ___ my hand on the oven while I ___ a cake.", "opcoesPorLacuna": [["burned", "was burning"], ["was baking", "baked"]] }, "gabarito": { "respostas": [["burned"], ["was baking"]] }, "explicacao": "Queimar a mão foi rápido (burned); assar o bolo estava em andamento (was baking).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["happened", "What", "you", "to"] }, "gabarito": { "aceitas": ["What happened to you?"] }, "explicacao": "What é o sujeito: What happened...? sem did.", "tagsErro": ["pergunta_sujeito"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue as duas partes de cada frase.", "conteudo": { "esquerda": ["I missed the bus,", "The elevator stopped", "I dropped my cell phone", "It was raining hard", "Luis burned his hand"], "direita": ["and the screen broke.", "so I was late for work.", "and we got stuck inside.", "while he was cooking.", "when I left the office."] }, "gabarito": { "pares": [1, 2, 0, 4, 3] }, "explicacao": "Perdi o ônibus → cheguei atrasado; o elevador parou → ficamos presos; o celular caiu → a tela quebrou; estava chovendo quando saí; ele se queimou enquanto cozinhava." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I was getting stuck in traffic for two hours." }, "gabarito": { "aceitas": ["I got stuck in traffic for two hours.", "I was stuck in traffic for two hours."] }, "explicacao": "Ficar preso no trânsito por duas horas é um fato completo: I got stuck (ou I was stuck).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu perdi o ônibus e cheguei atrasado.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I missed the bus and I was late.", "I missed the bus and was late.", "I missed the bus and I arrived late.", "I missed the bus and arrived late.", "I missed the bus and I got there late.", "I missed the bus and got there late."] }, "explicacao": "Perder o ônibus = miss the bus. Chegar atrasado = be late ou arrive late.", "tagsErro": ["falso_cognato"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu escorreguei no chão molhado e caí.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I slipped on the wet floor and fell.", "I slipped on the wet floor and I fell.", "I slipped on the wet floor and fell down.", "I slipped on the wet floor and I fell down."] }, "explicacao": "Escorregar = slip → slipped (dobra o p). Cair = fall → fell.", "tagsErro": ["verbo_irregular", "ortografia_ed"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "Maria ___ her glasses while she was swimming in the ocean.", "opcoes": ["lost", "missed", "got stuck", "crashed"] }, "gabarito": { "correta": 0 }, "explicacao": "Perder um objeto (os óculos) = lose → lost.", "tagsErro": ["falso_cognato"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado simples.", "conteudo": { "texto": "While I was carrying the plates, I ___ (drop) one and it broke." }, "gabarito": { "respostas": [["dropped"]] }, "explicacao": "Drop → dropped: dobra o p antes do -ed.", "tagsErro": ["ortografia_ed"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["was", "snowing", "it", "When", "we", "arrived", "in", "Chicago"] }, "gabarito": { "aceitas": ["When we arrived in Chicago it was snowing.", "It was snowing when we arrived in Chicago."] }, "explicacao": "Cenário: it was snowing. Ação curta: we arrived.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estava chovendo quando eu saí de casa.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It was raining when I left home.", "It was raining when I left the house.", "It was raining when I went out.", "When I left home, it was raining.", "When I left home it was raining.", "When I left the house, it was raining.", "When I left the house it was raining."] }, "explicacao": "Cenário: it was raining. Sair de casa = leave home → left.", "tagsErro": ["simples_continuo", "sujeito_omitido"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My brother breaked his leg when he was playing soccer." }, "gabarito": { "aceitas": ["My brother broke his leg when he was playing soccer.", "My brother broke his leg while he was playing soccer.", "My brother broke his leg when he was playing football.", "When he was playing soccer, my brother broke his leg.", "When he was playing soccer my brother broke his leg."] }, "explicacao": "Break é irregular: o passado é broke. \"Breaked\" não existe.", "tagsErro": ["verbo_irregular"] }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "At nine last night, I ___ a movie.", "opcoes": ["was watching", "were watching", "am watching", "watch"] }, "gabarito": { "correta": 0 }, "explicacao": "Ação em andamento num horário do passado: I + was watching.", "tagsErro": ["be_omitido"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "They ___ (wait) for the bus when it started to rain." }, "gabarito": { "respostas": [["were waiting"]] }, "explicacao": "Ação longa interrompida: they + were waiting.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ you sleeping when I called? — No, I was reading.", "opcoes": ["Did", "Was", "Were", "Are"] }, "gabarito": { "correta": 2 }, "explicacao": "Pergunta no passado contínuo com you: Were you sleeping?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com a negativa do passado contínuo.", "conteudo": { "texto": "My sister ___ (not / work) yesterday at 5 p.m. She was at home." }, "gabarito": { "respostas": [["wasn't working", "was not working"]] }, "explicacao": "She → wasn't (was not) + working.", "tagsErro": ["negativa"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I was cooking when the doorbell ___.", "opcoes": ["was ringing", "rang", "rings", "ringing"] }, "gabarito": { "correta": 1 }, "explicacao": "A campainha tocar é a ação curta: rang.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "___ I was walking to school, I found a wallet on the sidewalk." }, "gabarito": { "respostas": [["While", "When"]] }, "explicacao": "While (enquanto) ou when + ação longa: While I was walking to school.", "tagsErro": ["when_while"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ his face, but I didn't remember his name.", "opcoes": ["knew", "was knowing", "known", "know"] }, "gabarito": { "correta": 0 }, "explicacao": "Know é verbo de estado: knew, nunca was knowing.", "tagsErro": ["verbo_estado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "Yesterday it was very ___. We couldn't see the road.", "opcoes": ["foggy", "sunny", "hot", "dry"] }, "gabarito": { "correta": 0 }, "explicacao": "Não dava para ver a estrada por causa da neblina: foggy." },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "I was late for class because I ___ the bus.", "opcoes": ["missed", "lost", "dropped", "slipped"] }, "gabarito": { "correta": 0 }, "explicacao": "Perder o ônibus = miss the bus → missed.", "tagsErro": ["falso_cognato"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado simples.", "conteudo": { "texto": "Paulo ___ (slip) on the ice and fell." }, "gabarito": { "respostas": [["slipped"]] }, "explicacao": "Slip → slipped: dobra o p antes do -ed.", "tagsErro": ["ortografia_ed"] },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. O que a Carol estava fazendo quando começou a chover?", "conteudo": { "texto": "Last Saturday, Carol had a strange day. In the morning, she was jogging in the park when it started to rain. She ran home, but she slipped on the wet sidewalk and hurt her knee. In the afternoon, while she was resting on the sofa, the lights went out. \"There was a big storm,\" she says. \"But my neighbor brought me some soup, so the day ended well.\"", "opcoes": ["Correndo no parque.", "Descansando no sofá.", "Fazendo sopa.", "Indo ao mercado."] }, "gabarito": { "correta": 0 }, "explicacao": "\"She was jogging in the park when it started to rain.\" Jog = correr devagar, fazer cooper." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. O que aconteceu à tarde?", "conteudo": { "texto": "Last Saturday, Carol had a strange day. In the morning, she was jogging in the park when it started to rain. She ran home, but she slipped on the wet sidewalk and hurt her knee. In the afternoon, while she was resting on the sofa, the lights went out. \"There was a big storm,\" she says. \"But my neighbor brought me some soup, so the day ended well.\"", "opcoes": ["Ela machucou o joelho.", "A luz acabou.", "A vizinha caiu.", "Ela perdeu o ônibus."] }, "gabarito": { "correta": 1 }, "explicacao": "\"In the afternoon, while she was resting on the sofa, the lights went out.\" O joelho foi de manhã." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que a Bruna não atendeu a ligação?", "conteudo": { "texto": "Hi Jonas! Sorry I didn't answer your call yesterday. At eight o'clock, I was driving home from work. The traffic was terrible because a truck crashed on the highway. We were stuck there for two hours! When I finally got home, I was very tired, so I went to bed early. Can I call you tonight? Bruna", "opcoes": ["Porque estava dirigindo para casa.", "Porque estava dormindo.", "Porque perdeu o celular.", "Porque estava numa reunião."] }, "gabarito": { "correta": 0 }, "explicacao": "\"At eight o'clock, I was driving home from work.\"" },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que o trânsito estava ruim?", "conteudo": { "texto": "Hi Jonas! Sorry I didn't answer your call yesterday. At eight o'clock, I was driving home from work. The traffic was terrible because a truck crashed on the highway. We were stuck there for two hours! When I finally got home, I was very tired, so I went to bed early. Can I call you tonight? Bruna", "opcoes": ["Por causa da chuva.", "Porque um caminhão bateu na estrada.", "Porque havia um jogo de futebol.", "Porque a estrada estava em obras."] }, "gabarito": { "correta": 1 }, "explicacao": "\"The traffic was terrible because a truck crashed on the highway.\" Truck = caminhão." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["were", "What", "doing", "you", "night", "last"] }, "gabarito": { "aceitas": ["What were you doing last night?"] }, "explicacao": "What + were + you + doing + last night?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu estava estudando quando você ligou.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I was studying when you called.", "When you called, I was studying.", "When you called I was studying."] }, "explicacao": "Ação longa: was studying. Ação curta: you called.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "We was having lunch when the phone rang." }, "gabarito": { "aceitas": ["We were having lunch when the phone rang.", "When the phone rang, we were having lunch.", "When the phone rang we were having lunch."] }, "explicacao": "We → were, não was." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estava nevando em Nova York.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It was snowing in New York."] }, "explicacao": "Tempo sempre com it: It was snowing.", "tagsErro": ["sujeito_omitido"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "At seven this morning, my parents ___ breakfast.", "opcoes": ["was having", "were having", "are having", "have"] }, "gabarito": { "correta": 1 }, "explicacao": "My parents = they → were having.", "tagsErro": ["be_omitido"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado contínuo.", "conteudo": { "texto": "I ___ (read) a book when I fell asleep." }, "gabarito": { "respostas": [["was reading"]] }, "explicacao": "Ação longa interrompida pelo sono: was reading.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ it raining when you left work? — Yes, it was.", "opcoes": ["Did", "Were", "Was", "Is"] }, "gabarito": { "correta": 2 }, "explicacao": "It → was: Was it raining...?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com a negativa do passado contínuo.", "conteudo": { "texto": "We ___ (not / sleep) at midnight. We were watching a movie." }, "gabarito": { "respostas": [["weren't sleeping", "were not sleeping"]] }, "explicacao": "We → weren't (were not) + sleeping.", "tagsErro": ["negativa"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "She was crossing the street when a bike ___ into her.", "opcoes": ["crashed", "was crashing", "crashes", "crash"] }, "gabarito": { "correta": 0 }, "explicacao": "A batida foi rápida e interrompeu: crashed.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "A thief entered the house ___ we were sleeping.", "opcoesPorLacuna": [["while", "during", "ago"]] }, "gabarito": { "respostas": [["while"]] }, "explicacao": "While + ação longa: while we were sleeping. During vem com substantivo.", "tagsErro": ["when_while"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ to go to the party, but I was sick.", "opcoes": ["wanted", "was wanting", "want", "wanting"] }, "gabarito": { "correta": 0 }, "explicacao": "Want é verbo de estado: wanted, nunca was wanting.", "tagsErro": ["verbo_estado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "It was very ___, and my hat flew away!", "opcoes": ["windy", "foggy", "cloudy", "sunny"] }, "gabarito": { "correta": 0 }, "explicacao": "O chapéu voou por causa do vento: windy." },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a expressão que completa a frase.", "conteudo": { "texto": "We ___ in the elevator for 30 minutes. It stopped between two floors.", "opcoes": ["got stuck", "missed", "got lost", "dropped"] }, "gabarito": { "correta": 0 }, "explicacao": "Ficar preso = get stuck → got stuck." },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado simples.", "conteudo": { "texto": "I ___ (drop) my glasses and they broke." }, "gabarito": { "respostas": [["dropped"]] }, "explicacao": "Drop → dropped: dobra o p antes do -ed.", "tagsErro": ["ortografia_ed"] },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. O que o Henrique estava fazendo quando escorregou?", "conteudo": { "texto": "Last winter, Henrique visited his cousin in Canada. On his second day, it was snowing heavily and the streets were white. While he was taking photos of the snow, he slipped and fell, but he wasn't hurt. Then he got lost because he didn't know the city. Finally, a kind woman helped him find the bus stop. \"It was cold, but it was a great adventure,\" he says.", "opcoes": ["Tirando fotos da neve.", "Procurando o ponto de ônibus.", "Conversando com o primo.", "Andando de ônibus."] }, "gabarito": { "correta": 0 }, "explicacao": "\"While he was taking photos of the snow, he slipped and fell.\"" },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Quem ajudou o Henrique?", "conteudo": { "texto": "Last winter, Henrique visited his cousin in Canada. On his second day, it was snowing heavily and the streets were white. While he was taking photos of the snow, he slipped and fell, but he wasn't hurt. Then he got lost because he didn't know the city. Finally, a kind woman helped him find the bus stop. \"It was cold, but it was a great adventure,\" he says.", "opcoes": ["O primo dele.", "Uma mulher gentil.", "Um policial.", "O motorista do ônibus."] }, "gabarito": { "correta": 1 }, "explicacao": "\"Finally, a kind woman helped him find the bus stop.\" Kind = gentil." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que a Lia estava fazendo quando o alarme tocou?", "conteudo": { "texto": "Hey Sara! You won't believe what happened at work today. I was making coffee in the kitchen when the fire alarm rang. Everybody left the building. We were waiting outside for thirty minutes, and it was very hot. In the end, there was no fire: somebody burned some popcorn in the microwave! See you tomorrow, Lia", "opcoes": ["Fazendo café na cozinha.", "Esperando do lado de fora.", "Fazendo pipoca.", "Saindo do prédio."] }, "gabarito": { "correta": 0 }, "explicacao": "\"I was making coffee in the kitchen when the fire alarm rang.\"" },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que o alarme tocou?", "conteudo": { "texto": "Hey Sara! You won't believe what happened at work today. I was making coffee in the kitchen when the fire alarm rang. Everybody left the building. We were waiting outside for thirty minutes, and it was very hot. In the end, there was no fire: somebody burned some popcorn in the microwave! See you tomorrow, Lia", "opcoes": ["Porque houve um incêndio na cozinha.", "Porque alguém queimou pipoca no micro-ondas.", "Porque estava muito calor.", "Porque alguém testou o alarme."] }, "gabarito": { "correta": 1 }, "explicacao": "\"There was no fire: somebody burned some popcorn in the microwave!\"" },
+      { "forma": 2, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["was", "she", "When", "raining", "it", "left"] }, "gabarito": { "aceitas": ["When she left it was raining.", "It was raining when she left."] }, "explicacao": "Cenário: it was raining. Ação curta: she left.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Nós estávamos jantando quando a luz acabou.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["We were having dinner when the lights went out.", "We were eating dinner when the lights went out.", "We were having dinner when the power went out.", "We were eating dinner when the power went out.", "When the lights went out, we were having dinner.", "When the lights went out we were having dinner.", "When the power went out, we were having dinner.", "When the power went out we were having dinner."] }, "explicacao": "Ação longa: were having dinner. Ação curta: the lights went out.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I was cutting my finger while I was making a salad." }, "gabarito": { "aceitas": ["I cut my finger while I was making a salad.", "I cut my finger when I was making a salad.", "While I was making a salad, I cut my finger.", "While I was making a salad I cut my finger."] }, "explicacao": "Cortar o dedo foi uma ação curta: cut (passado simples).", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você estava trabalhando às oito?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Were you working at eight?", "Were you working at 8?", "Were you working at eight o'clock?", "Were you working at 8 o'clock?"] }, "explicacao": "Pergunta no passado contínuo: Were you working...?", "tagsErro": ["ordem_pergunta"] }
+    ]
+  }
+}

@@ -1,11 +1,18 @@
 "use client";
 
+import { useMemo } from "react";
+import { embaralhar } from "@/lib/embaralhar";
 import { BotaoOuvir } from "./BotaoOuvir";
 import type { PropsRenderizador } from "./tipos";
 
-/** Múltipla escolha: botões de opção; mostra o texto de apoio (leitura) acima, se houver. */
+/**
+ * Múltipla escolha: botões de opção; mostra o texto de apoio (leitura) acima, se houver.
+ * As opções aparecem embaralhadas (ordem fixa por exercício): no conteúdo a certa costuma ser uma das primeiras.
+ * A resposta enviada continua sendo o índice original da opção.
+ */
 export function ExercicioMcq({ id, conteudo, value, onChange, disabled, feedback }: PropsRenderizador<"mcq">) {
   const escolhida = typeof value === "number" ? value : -1;
+  const ordem = useMemo(() => embaralhar(conteudo.opcoes.map((_, i) => i), id), [conteudo.opcoes, id]);
   return (
     <div className="space-y-3">
       {conteudo.texto && (
@@ -20,7 +27,8 @@ export function ExercicioMcq({ id, conteudo, value, onChange, disabled, feedback
         </div>
       )}
       <div role="radiogroup" aria-labelledby={`enunciado-${id}`} className="grid gap-3">
-        {conteudo.opcoes.map((opcao, i) => {
+        {ordem.map((i, posicao) => {
+          const opcao = conteudo.opcoes[i];
           const marcada = escolhida === i;
           let estilo = marcada
             ? "border-grape bg-grape-mist text-ink shadow-[0_3px_0_0_var(--color-grape)]"
@@ -43,7 +51,7 @@ export function ExercicioMcq({ id, conteudo, value, onChange, disabled, feedback
               lang="en"
             >
               <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border-2 font-display text-sm ${marcada && !feedback ? "border-grape bg-grape text-white" : "border-current/20 text-ink-faint"}`} aria-hidden>
-                {String.fromCharCode(65 + i)}
+                {String.fromCharCode(65 + posicao)}
               </span>
               {opcao}
             </button>
