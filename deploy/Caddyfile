@@ -1,0 +1,36 @@
+# Caddy na frente de tudo: HTTPS automático (Let's Encrypt) para SITE_ENDERECO, /api/* direto para a API e o resto
+# para o Next. Com SITE_ENDERECO=http://localhost serve só HTTP, sem certificado (teste local / CI).
+
+{$SITE_ENDERECO} {
+	encode zstd gzip
+
+	# Uploads vão até UPLOAD_MAX_MB (10 MB) + a sobra do multipart; a API recusa o que passar do limite dela
+	request_body {
+		max_size 25MB
+	}
+
+	header {
+		# HSTS só vale sobre HTTPS (o navegador ignora em HTTP)
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "SAMEORIGIN"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), geolocation=(), payment=()"
+		-Server
+		-X-Powered-By
+		defer
+	}
+
+	handle /api/* {
+		reverse_proxy backend:3333
+	}
+
+	handle {
+		reverse_proxy frontend:3000
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

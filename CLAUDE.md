@@ -30,6 +30,10 @@ Compose services: `postgres` (postgres:17-alpine, volume `pgdata`, healthcheck, 
 
 Backend health check: `GET http://localhost:3333/api/health`
 
+### Production (VPS)
+
+`docker-compose.prod.yml` (project `sweetway`) runs `caddy` (`deploy/Caddyfile`: automatic HTTPS for `SITE_ENDERECO`, `/api/*` straight to the backend, the rest to the frontend), `frontend`, `backend`, `postgres` and `backup` (`deploy/backup/`: daily gpg-encrypted `pg_dump` + uploads, optional rclone offsite copy, `restaurar.sh teste|banco|uploads`). Only Caddy publishes ports. Images come from GHCR (`ghcr.io/isacna/sweet-way-english-{backend,frontend,backup}:<IMAGEM_TAG>`); `--build` builds them locally. Env template: `deploy/.env.prod.example`. The `.github/workflows/producao.yml` workflow builds the images, brings the whole stack up behind Caddy, runs every e2e through it and tests backup + restore on every PR; on `main` it pushes to GHCR and deploys over SSH when the `producao` environment has `VPS_HOST`. Runbook (VPS setup, first start, deploy secrets, rollback, backups, monitoring, local test with `PORTA_HTTP`): `docs/deploy.md`.
+
 ### Without Docker
 
 Needs a PostgreSQL 17 server. A throwaway one: `docker run -d --name sweetway-pg -p 5432:5432 -e POSTGRES_USER=sweetway -e POSTGRES_PASSWORD=sweetway -e POSTGRES_DB=sweetway postgres:17-alpine`.

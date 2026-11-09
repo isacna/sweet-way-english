@@ -133,7 +133,10 @@ export function proximaLicaoId(trilha: Trilha, moduloId: number, licaoId: number
 // ─── Perfil, ofensiva e revisão ─────────────────────────────────────────────
 
 export async function obterPerfil(usuarioId: number, db: Db = prisma) {
-  return db.perfilAprendiz.upsert({ where: { usuarioId }, update: {}, create: { usuarioId } });
+  // INSERT ... ON CONFLICT DO NOTHING: duas requisições ao mesmo tempo (ex.: trilha e painel) não brigam pelo
+  // perfil novo. O upsert do Prisma fazia SELECT + INSERT e a segunda caía na unique de usuarioId (500).
+  await db.perfilAprendiz.createMany({ data: [{ usuarioId }], skipDuplicates: true });
+  return db.perfilAprendiz.findUniqueOrThrow({ where: { usuarioId } });
 }
 
 /** Filtro dos itens de revisão vencidos, só de conteúdo publicado. */

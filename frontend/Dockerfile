@@ -28,6 +28,9 @@ ENV BACKEND_URL=$BACKEND_URL
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
+# O otimizador de imagens (next/image) grava em .next/cache. Sem permissão o Next não só deixa de guardar:
+# a próxima requisição da mesma imagem fica pendurada para sempre. O resto do app continua só leitura.
+RUN mkdir -p .next/cache && chown node:node .next/cache
 
 USER node
 EXPOSE 3000
