@@ -1,0 +1,1081 @@
+{
+  "slug": "a2-m02",
+  "ordem": 2,
+  "titulo": "Last holiday",
+  "tema": "Viagens e férias no passado",
+  "descricao": "Conte como foram suas últimas férias: para onde foi, como viajou, o que fez e o que aconteceu, com verbos irregulares, perguntas no passado e palavras para organizar a história.",
+  "canDos": [
+    "Contar uma viagem no passado usando verbos irregulares comuns de viagem.",
+    "Dizer como viajei (de ônibus, de avião, a pé) e o que fiz no lugar.",
+    "Fazer e responder perguntas com where, when, how, who e how long no passado.",
+    "Perguntar quem fez alguma coisa ou o que aconteceu (Who called you? What happened?).",
+    "Dizer quando algo aconteceu com ago, last, in 2019 e when I was...",
+    "Organizar uma história com first, then, after that e finally."
+  ],
+  "gramatica": "Passado simples com verbos irregulares de viagem; perguntas com Wh- + did; perguntas de sujeito sem did (Who called you?, What happened?); expressões de tempo passado (ago, last, in + ano, when I was...); sequenciadores (first, then, after that, finally).",
+  "vocabulario": "Viagem e transporte: by bus, by plane, by car, on foot, airport, ticket, passport, luggage, pack, check in, book a hotel, go sightseeing, souvenir.",
+  "funcao": "Contar uma história no passado e fazer perguntas sobre a viagem de alguém.",
+  "pronuncia": "Terminação -ed: /t/ (walked, booked), /d/ (stayed, traveled) e sílaba extra /ɪd/ só depois de t ou d (visited, needed). Não diga \"work-ed\": worked tem uma sílaba só.",
+  "licoes": [
+    {
+      "slug": "a2-m02-l1",
+      "ordem": 1,
+      "titulo": "We flew to Recife",
+      "objetivo": "Contar para onde você foi e como viajou, com verbos irregulares de transporte e by bus, by plane, on foot.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para contar uma viagem, usamos o passado simples. Muitos verbos de viagem são irregulares: não ganham -ed, mudam de forma. Go vira went, fly vira flew, leave vira left, take vira took, get vira got, drive vira drove e ride vira rode.",
+          "A forma do passado é a mesma para todas as pessoas: I went, she went, they went. Não existe \"wents\" nem \"goed\".",
+          "Para dizer o meio de transporte, usamos by + transporte, sem artigo: by bus, by car, by plane, by train, by boat. A pé é on foot. Também dá para usar take: I took the bus = Peguei o ônibus.",
+          "Get to + lugar quer dizer chegar a algum lugar: We got to the hotel at night. Para casa, sem to: We got home late."
+        ],
+        "regras": [
+          "go → went / fly → flew / leave → left",
+          "take → took / get → got / drive → drove / ride → rode",
+          "by bus / by car / by plane / by train / by boat (sem the)",
+          "on foot = a pé",
+          "take the bus / take a taxi = pegar o ônibus / um táxi",
+          "get to + lugar = chegar a; get home = chegar em casa"
+        ],
+        "notaContrastiva": "Não diga *We went with the bus* → diga *We went by bus* (ou *We took the bus*). E não diga *I goed to the beach* → diga *I went to the beach*.",
+        "exemplos": [
+          { "en": "We flew to Recife last month.", "pt": "Nós voamos para Recife no mês passado." },
+          { "en": "I went to work by bus yesterday.", "pt": "Eu fui ao trabalho de ônibus ontem." },
+          { "en": "They drove to the beach on Saturday.", "pt": "Eles foram de carro para a praia no sábado." },
+          { "en": "She took a taxi to the airport.", "pt": "Ela pegou um táxi para o aeroporto." },
+          { "en": "We left home at six in the morning.", "pt": "Nós saímos de casa às seis da manhã." },
+          { "en": "We got to the hotel at midnight.", "pt": "Nós chegamos ao hotel à meia-noite." },
+          { "en": "My brother rode his bike to the park.", "pt": "Meu irmão foi de bicicleta ao parque." },
+          { "en": "The hotel was near, so we went on foot.", "pt": "O hotel era perto, então fomos a pé." }
+        ],
+        "vocabulario": [
+          { "en": "fly (flew)", "pt": "voar, ir de avião" },
+          { "en": "leave (left)", "pt": "sair, partir" },
+          { "en": "drive (drove)", "pt": "dirigir, ir de carro" },
+          { "en": "ride (rode)", "pt": "andar de (bicicleta, cavalo)" },
+          { "en": "get to (got to)", "pt": "chegar a" },
+          { "en": "by bus / by plane / by train", "pt": "de ônibus / de avião / de trem" },
+          { "en": "on foot", "pt": "a pé" },
+          { "en": "airport", "pt": "aeroporto" },
+          { "en": "bus station", "pt": "rodoviária" },
+          { "en": "trip", "pt": "viagem" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "Last summer we ___ to Porto Alegre.", "opcoes": ["flied", "flew", "fly", "flown"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Fly é irregular: o passado simples é flew. \"Flied\" não existe, e flown não é usado sozinho no passado simples.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+          "conteudo": { "texto": "I went to school ___ bus.", "opcoes": ["with", "in the", "by", "of"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Meio de transporte: by + transporte, sem artigo: by bus.",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "We ___ (leave) home early and ___ (take) a taxi to the airport." },
+          "gabarito": { "respostas": [["left"], ["took"]] },
+          "explicacao": "Leave → left; take → took. Os dois são irregulares.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "My dad ___ (drive) for eight hours, and we ___ (get) to Florianópolis at night." },
+          "gabarito": { "respostas": [["drove"], ["got"]] },
+          "explicacao": "Drive → drove; get → got. Get to + lugar = chegar a.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "The museum was close to the hotel, so we went on ___. Then we went back ___ taxi.",
+            "opcoesPorLacuna": [["foot", "feet", "walk"], ["by", "in", "with"]]
+          },
+          "gabarito": { "respostas": [["foot"], ["by"]] },
+          "explicacao": "A pé = on foot (no singular). De táxi = by taxi.",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["flew", "month", "Recife", "We", "last", "to"] },
+          "gabarito": { "aceitas": ["We flew to Recife last month.", "Last month we flew to Recife."] },
+          "explicacao": "Sujeito + flew + to + lugar + expressão de tempo. A expressão de tempo também pode vir no começo.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo ao seu passado.",
+          "conteudo": {
+            "esquerda": ["fly", "leave", "drive", "ride", "take", "get"],
+            "direita": ["took", "drove", "flew", "got", "rode", "left"]
+          },
+          "gabarito": { "pares": [2, 5, 1, 4, 0, 3] },
+          "explicacao": "Todos são irregulares: fly → flew, leave → left, drive → drove, ride → rode, take → took, get → got.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "We went to Salvador with the bus." },
+          "gabarito": { "aceitas": ["We went to Salvador by bus.", "We took the bus to Salvador.", "We went by bus to Salvador."] },
+          "explicacao": "Meio de transporte: by bus, sem artigo e sem with. Também dá para dizer took the bus.",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós fomos para a praia de ônibus.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["We went to the beach by bus.", "We went by bus to the beach.", "We took the bus to the beach.", "We took a bus to the beach."] },
+          "explicacao": "Fomos = went. De ônibus = by bus (ou took the bus).",
+          "tagsErro": ["verbo_irregular", "preposicao"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Ela saiu de casa às sete e chegou ao aeroporto às nove.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["She left home at seven and got to the airport at nine.", "She left home at seven and arrived at the airport at nine.", "She left the house at seven and got to the airport at nine.", "She left the house at seven and arrived at the airport at nine.", "She left home at 7 and got to the airport at 9.", "She left home at 7 and arrived at the airport at 9."] },
+          "explicacao": "Sair = leave → left. Chegar a = get to → got to (ou arrive at → arrived at). Horas com at.",
+          "tagsErro": ["verbo_irregular", "preposicao"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "My grandparents ___ to Manaus by boat in 2015.", "opcoes": ["goed", "went", "go", "gone"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Go é irregular: o passado simples é went.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "Lucas ___ (ride) his bike to the lake on Sunday." },
+          "gabarito": { "respostas": [["rode"]] },
+          "explicacao": "Ride → rode (irregular).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["by", "went", "They", "the", "to", "train", "city"] },
+          "gabarito": { "aceitas": ["They went to the city by train.", "They went by train to the city."] },
+          "explicacao": "Went + to the city + by train (sem the antes de train).",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós pegamos um táxi para o hotel.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["We took a taxi to the hotel.", "We took a cab to the hotel.", "We went to the hotel by taxi.", "We went to the hotel by cab."] },
+          "explicacao": "Pegar um táxi = take a taxi → took a taxi.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "I flied to Curitiba last week." },
+          "gabarito": { "aceitas": ["I flew to Curitiba last week.", "Last week I flew to Curitiba.", "Last week, I flew to Curitiba."] },
+          "explicacao": "Fly é irregular: o passado é flew.",
+          "tagsErro": ["verbo_irregular"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m02-l2",
+      "ordem": 2,
+      "titulo": "I bought a souvenir",
+      "objetivo": "Contar o que você fez na viagem com mais verbos irregulares e pronunciar bem o -ed dos verbos regulares.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Na viagem fazemos muitas coisas, e vários desses verbos também são irregulares: buy → bought (comprar), spend → spent (gastar, passar tempo), lose → lost (perder), find → found (encontrar), swim → swam (nadar), meet → met (conhecer, encontrar alguém), feel → felt (sentir-se) e sleep → slept (dormir).",
+          "Spend serve para dinheiro e para tempo: I spent 200 reais. We spent a week in Natal (Passamos uma semana em Natal).",
+          "Os verbos regulares ganham -ed: stay → stayed, visit → visited, walk → walked. No inglês americano, travel vira traveled (com um l só).",
+          "Atenção à pronúncia: o -ed só vira uma sílaba a mais (/ɪd/) depois de t ou d: visited, needed. Nos outros verbos ele soa como /t/ (walked, booked) ou /d/ (stayed, traveled), sem sílaba extra."
+        ],
+        "regras": [
+          "buy → bought / spend → spent / lose → lost / find → found",
+          "swim → swam / meet → met / feel → felt / sleep → slept",
+          "spend + dinheiro ou tempo: spent $50 / spent a week",
+          "Regulares: stayed, visited, walked, traveled (EUA: um l)",
+          "-ed = /ɪd/ só depois de t/d: visited, needed",
+          "-ed = /t/ ou /d/ nos outros: walked /t/, stayed /d/"
+        ],
+        "notaContrastiva": "Não diga *I buyed a souvenir* → diga *I bought a souvenir*. E não pronuncie *walk-ed* com duas sílabas → walked soa como \"wókt\", uma sílaba só.",
+        "exemplos": [
+          { "en": "I bought a souvenir for my mom.", "pt": "Eu comprei uma lembrancinha para minha mãe." },
+          { "en": "We spent a week in Natal.", "pt": "Nós passamos uma semana em Natal." },
+          { "en": "She lost her passport at the airport.", "pt": "Ela perdeu o passaporte no aeroporto." },
+          { "en": "Luckily, a man found it.", "pt": "Por sorte, um homem o encontrou." },
+          { "en": "We swam in the ocean every day.", "pt": "Nós nadamos no mar todos os dias." },
+          { "en": "I met a lot of nice people.", "pt": "Eu conheci muitas pessoas legais." },
+          { "en": "We stayed at a small hotel and visited two museums.", "pt": "Ficamos num hotel pequeno e visitamos dois museus." },
+          { "en": "I felt tired, so I slept for ten hours.", "pt": "Eu me senti cansado, então dormi dez horas." }
+        ],
+        "vocabulario": [
+          { "en": "buy (bought)", "pt": "comprar" },
+          { "en": "spend (spent)", "pt": "gastar; passar (tempo)" },
+          { "en": "lose (lost)", "pt": "perder" },
+          { "en": "find (found)", "pt": "encontrar, achar" },
+          { "en": "swim (swam)", "pt": "nadar" },
+          { "en": "meet (met)", "pt": "conhecer, encontrar (alguém)" },
+          { "en": "feel (felt)", "pt": "sentir(-se)" },
+          { "en": "souvenir", "pt": "lembrancinha" },
+          { "en": "passport", "pt": "passaporte" },
+          { "en": "stay at a hotel", "pt": "ficar num hotel" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "I ___ a T-shirt and a key chain at the market.", "opcoes": ["buyed", "bought", "brought", "buy"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Buy é irregular: o passado é bought. Cuidado: brought é o passado de bring (trazer).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Em qual verbo o -ed é pronunciado como uma sílaba a mais (/ɪd/)?",
+          "conteudo": { "opcoes": ["walked", "stayed", "visited", "booked"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "O -ed só vira uma sílaba extra depois de t ou d: visit → vis-i-ted. Walked e booked soam com /t/; stayed com /d/.",
+          "tagsErro": ["pronuncia_ed"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "We ___ (spend) two weeks in Bahia and ___ (swim) in the ocean every day." },
+          "gabarito": { "respostas": [["spent"], ["swam"]] },
+          "explicacao": "Spend → spent; swim → swam. Os dois são irregulares.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "Carla ___ (lose) her wallet, but a kind woman ___ (find) it." },
+          "gabarito": { "respostas": [["lost"], ["found"]] },
+          "explicacao": "Lose → lost; find → found.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Last year we ___ to Chile and ___ at a hostel.",
+            "opcoesPorLacuna": [["traveled", "travel", "traveling"], ["stayed", "stood", "stay"]]
+          },
+          "gabarito": { "respostas": [["traveled"], ["stayed"]] },
+          "explicacao": "Travel e stay são regulares: traveled (no inglês americano, com um l) e stayed.",
+          "tagsErro": ["ortografia_ed"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["spent", "She", "all", "money", "her", "Paris", "in"] },
+          "gabarito": { "aceitas": ["She spent all her money in Paris.", "In Paris she spent all her money."] },
+          "explicacao": "Sujeito + spent (passado de spend) + all her money + in Paris.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo ao seu passado.",
+          "conteudo": {
+            "esquerda": ["buy", "spend", "lose", "find", "swim", "meet"],
+            "direita": ["met", "found", "bought", "swam", "spent", "lost"]
+          },
+          "gabarito": { "pares": [2, 4, 5, 1, 3, 0] },
+          "explicacao": "Buy → bought, spend → spent, lose → lost, find → found, swim → swam, meet → met.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "I meeted a lot of nice people in Chile." },
+          "gabarito": { "aceitas": ["I met a lot of nice people in Chile.", "In Chile I met a lot of nice people.", "In Chile, I met a lot of nice people."] },
+          "explicacao": "Meet é irregular: o passado é met.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eu comprei uma lembrancinha para minha irmã.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["I bought a souvenir for my sister.", "I bought my sister a souvenir."] },
+          "explicacao": "Comprar = buy → bought. Lembrancinha = souvenir.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós passamos três dias em Ouro Preto.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["We spent three days in Ouro Preto.", "We stayed in Ouro Preto for three days.", "We stayed three days in Ouro Preto.", "We stayed in Ouro Preto three days."] },
+          "explicacao": "Passar tempo em um lugar = spend time → spent three days (ou stayed... for three days).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+          "conteudo": { "texto": "After the long walk, we ___ very tired.", "opcoes": ["feeled", "felt", "fell", "feel"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Feel → felt (sentir-se). Fell é o passado de fall (cair).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "The bed was very comfortable, so I ___ (sleep) really well." },
+          "gabarito": { "respostas": [["slept"]] },
+          "explicacao": "Sleep → slept (irregular).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["found", "I", "wallet", "my", "the", "under", "bed"] },
+          "gabarito": { "aceitas": ["I found my wallet under the bed."] },
+          "explicacao": "Find → found. Under the bed = embaixo da cama.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Ele perdeu o passaporte no aeroporto.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["He lost his passport at the airport.", "He lost his passport in the airport.", "He lost the passport at the airport."] },
+          "explicacao": "Perder = lose → lost. Em inglês usamos o possessivo: his passport.",
+          "tagsErro": ["verbo_irregular", "possessivo_his_her"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "We buyed some postcards at the museum." },
+          "gabarito": { "aceitas": ["We bought some postcards at the museum."] },
+          "explicacao": "Buy é irregular: o passado é bought.",
+          "tagsErro": ["verbo_irregular"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m02-l3",
+      "ordem": 3,
+      "titulo": "Where did you go?",
+      "objetivo": "Fazer e responder perguntas sobre uma viagem com where, when, how, who, what e how long + did.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar sobre o passado, usamos a palavra interrogativa + did + sujeito + verbo na forma base: Where did you go? When did they arrive? Depois de did, o verbo nunca fica no passado: Where did you go?, e não \"Where did you went?\".",
+          "As palavras interrogativas mais usadas numa conversa sobre viagem são: where (onde, para onde), when (quando), how (como), who... with (com quem), what (o que) e how long (quanto tempo).",
+          "Com how perguntamos o meio de transporte: How did you go? — By plane. Com how long perguntamos a duração: How long did you stay? — For two weeks.",
+          "Em inglês, a preposição de \"com quem\" costuma ir para o fim: Who did you go with? (Com quem você foi?). O mesmo acontece com where... from e what... about."
+        ],
+        "regras": [
+          "Wh- + did + sujeito + verbo base: Where did you go?",
+          "When did you leave? — Last Friday.",
+          "How did you get there? — By bus.",
+          "Who did you go with? — With my friends.",
+          "How long did you stay? — For a week.",
+          "What did you do there? — We went sightseeing."
+        ],
+        "notaContrastiva": "Não diga *Where you went?* nem *Where did you went?* → diga *Where did you go?* E não diga *With who did you go?* → o natural é *Who did you go with?*",
+        "exemplos": [
+          { "en": "Where did you go on vacation?", "pt": "Para onde você foi nas férias?" },
+          { "en": "When did you get back?", "pt": "Quando você voltou?" },
+          { "en": "How did you get to the island? — By boat.", "pt": "Como você chegou à ilha? — De barco." },
+          { "en": "Who did you go with? — With my cousins.", "pt": "Com quem você foi? — Com meus primos." },
+          { "en": "How long did you stay there? — For ten days.", "pt": "Quanto tempo você ficou lá? — Dez dias." },
+          { "en": "What did you do in the evening?", "pt": "O que você fez à noite?" },
+          { "en": "Where did you stay? — At my aunt's house.", "pt": "Onde você ficou? — Na casa da minha tia." },
+          { "en": "Did you like the food? — Yes, I did!", "pt": "Você gostou da comida? — Gostei!" }
+        ],
+        "vocabulario": [
+          { "en": "where", "pt": "onde, para onde" },
+          { "en": "when", "pt": "quando" },
+          { "en": "how", "pt": "como" },
+          { "en": "who... with", "pt": "com quem" },
+          { "en": "how long", "pt": "quanto tempo" },
+          { "en": "get back", "pt": "voltar" },
+          { "en": "on vacation", "pt": "de férias" },
+          { "en": "island", "pt": "ilha" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a pergunta correta.",
+          "conteudo": { "opcoes": ["Where you went last July?", "Where did you went last July?", "Where did you go last July?", "Where went you last July?"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Wh- + did + sujeito + verbo na forma base: Where did you go?",
+          "tagsErro": ["do_support", "ordem_pergunta"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.",
+          "conteudo": { "texto": "___ did you stay in Gramado? — For five days.", "opcoes": ["How long", "When", "Where", "How"] },
+          "gabarito": { "correta": 0 },
+          "explicacao": "A resposta é uma duração (for five days), então a pergunta é How long.",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.",
+          "conteudo": { "texto": "How ___ you get to the hotel? — By taxi." },
+          "gabarito": { "respostas": [["did"]] },
+          "explicacao": "Pergunta no passado: How + did + sujeito + verbo base.",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com o verbo entre parênteses na forma correta.",
+          "conteudo": { "texto": "What did you ___ (buy) at the market?" },
+          "gabarito": { "respostas": [["buy"]] },
+          "explicacao": "Depois de did, o verbo fica na forma base: buy, não bought.",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra interrogativa certa para cada pergunta.",
+          "conteudo": {
+            "texto": "___ did you go with? — With my sister. ___ did you leave? — On Friday.",
+            "opcoesPorLacuna": [["Who", "Where", "What"], ["When", "How long", "Who"]]
+          },
+          "gabarito": { "respostas": [["Who"], ["When"]] },
+          "explicacao": "Com quem = Who... with. On Friday responde quando = When.",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["did", "How", "get", "you", "the", "to", "airport"] },
+          "gabarito": { "aceitas": ["How did you get to the airport?"] },
+          "explicacao": "How + did + you + get (forma base) + to the airport?",
+          "tagsErro": ["ordem_pergunta", "do_support"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": ["Where did you go?", "When did you go?", "How did you go?", "Who did you go with?", "How long did you stay?"],
+            "direita": ["With my sister.", "By bus.", "For two weeks.", "To Salvador.", "Last July."]
+          },
+          "gabarito": { "pares": [3, 4, 1, 0, 2] },
+          "explicacao": "Where → lugar; When → tempo; How → transporte; Who... with → pessoa; How long → duração."
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "Where did you stayed in Rio?" },
+          "gabarito": { "aceitas": ["Where did you stay in Rio?", "In Rio, where did you stay?"] },
+          "explicacao": "Depois de did, o verbo fica na forma base: stay.",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Com quem você viajou?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["Who did you travel with?", "Who did you go with?", "Who did you take the trip with?", "With whom did you travel?", "With who did you travel?"] },
+          "explicacao": "O mais natural é deixar a preposição no fim: Who did you travel with?",
+          "tagsErro": ["ordem_pergunta", "do_support"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Quanto tempo vocês ficaram em Lisboa?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["How long did you stay in Lisbon?", "How long did you guys stay in Lisbon?", "How long were you in Lisbon?"] },
+          "explicacao": "Quanto tempo = How long + did + you + stay (forma base). Lisboa em inglês é Lisbon.",
+          "tagsErro": ["ordem_pergunta", "do_support"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.",
+          "conteudo": { "texto": "___ did you get to Ilhabela? — By boat.", "opcoes": ["Where", "How", "Who", "How long"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "A resposta é o meio de transporte (by boat), então a pergunta é How.",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.",
+          "conteudo": { "texto": "Where ___ they stay? — At a hostel near the beach." },
+          "gabarito": { "respostas": [["did"]] },
+          "explicacao": "Where + did + they + stay (forma base)?",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["long", "you", "did", "How", "stay", "there"] },
+          "gabarito": { "aceitas": ["How long did you stay there?"] },
+          "explicacao": "How long + did + you + stay + there?",
+          "tagsErro": ["ordem_pergunta"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "O que você fez nas férias?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["What did you do on vacation?", "What did you do on your vacation?", "What did you do during your vacation?", "What did you do during the vacation?", "What did you do on holiday?", "What did you do in your vacation?"] },
+          "explicacao": "O que você fez = What did you do. Nas férias = on vacation (inglês americano).",
+          "tagsErro": ["do_support", "make_do"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "When you arrived in New York?" },
+          "gabarito": { "aceitas": ["When did you arrive in New York?", "When did you get to New York?"] },
+          "explicacao": "Pergunta no passado precisa de did: When did you arrive...? (arrive na forma base).",
+          "tagsErro": ["do_support", "ordem_pergunta"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m02-l4",
+      "ordem": 4,
+      "titulo": "Who called you?",
+      "objetivo": "Perguntar quem fez algo ou o que aconteceu (sem did) e diferenciar de perguntas com did.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Quando who ou what é o sujeito da pergunta, isto é, quando perguntamos quem fez a ação ou o que aconteceu, não usamos did. O verbo vai direto para o passado: Who called you? (Quem ligou para você?) What happened? (O que aconteceu?)",
+          "Compare com as perguntas em que who ou what é o objeto: Who did you call? (Para quem você ligou?) Aqui você fez a ação, então usamos did + verbo base.",
+          "Um jeito fácil de saber: a resposta da pergunta de sujeito começa com a pessoa ou a coisa que fez a ação. Who called you? — My mom called me. Who did you call? — I called my mom.",
+          "What happened? é muito comum para pedir que alguém conte uma história: What happened at the airport? — I lost my bag!"
+        ],
+        "regras": [
+          "Sujeito: Who / What + verbo no passado (sem did)",
+          "Who called you? — My boss called me.",
+          "What happened? — The flight was late.",
+          "Objeto: Who / What + did + sujeito + verbo base",
+          "Who did you call? — I called my boss.",
+          "Nunca: *Who did call you?* / *What did happen?* (no sentido normal)"
+        ],
+        "notaContrastiva": "Não diga *What did happen?* → diga *What happened?* E não diga *Who did win the game?* → diga *Who won the game?* Quando who/what é o sujeito, não entra did.",
+        "exemplos": [
+          { "en": "Who called you last night? — My cousin called me.", "pt": "Quem ligou para você ontem à noite? — Meu primo me ligou." },
+          { "en": "Who did you call? — I called the hotel.", "pt": "Para quem você ligou? — Liguei para o hotel." },
+          { "en": "What happened at the airport?", "pt": "O que aconteceu no aeroporto?" },
+          { "en": "Who won the game? — Our team won!", "pt": "Quem ganhou o jogo? — Nosso time ganhou!" },
+          { "en": "Who took these photos?", "pt": "Quem tirou estas fotos?" },
+          { "en": "What did you see in the museum?", "pt": "O que você viu no museu?" },
+          { "en": "Who told you about this restaurant?", "pt": "Quem te falou deste restaurante?" },
+          { "en": "What broke? — The window broke.", "pt": "O que quebrou? — A janela quebrou." }
+        ],
+        "vocabulario": [
+          { "en": "happen (happened)", "pt": "acontecer" },
+          { "en": "call (called)", "pt": "ligar, telefonar" },
+          { "en": "win (won)", "pt": "ganhar, vencer" },
+          { "en": "tell (told)", "pt": "contar, dizer" },
+          { "en": "break (broke)", "pt": "quebrar" },
+          { "en": "take a photo (took)", "pt": "tirar uma foto" },
+          { "en": "flight", "pt": "voo" },
+          { "en": "late", "pt": "atrasado" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a pergunta correta.",
+          "conteudo": { "opcoes": ["What did happen?", "What happened?", "What did happened?", "What happen?"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "What é o sujeito (o que aconteceu), então não usamos did: What happened?",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a pergunta para a resposta: \"My sister called me.\"",
+          "conteudo": { "opcoes": ["Who did you call?", "Who called you?", "Who did call you?", "Who you called?"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Quem fez a ação (ligou) foi a irmã: pergunta de sujeito, sem did → Who called you?",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "Who ___ (win) the game last night?" },
+          "gabarito": { "respostas": [["won"]] },
+          "explicacao": "Who é o sujeito: o verbo vai direto para o passado, sem did. Win → won.",
+          "tagsErro": ["pergunta_sujeito", "verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.",
+          "conteudo": { "texto": "Who ___ you visit in Belo Horizonte? — I visited my grandparents." },
+          "gabarito": { "respostas": [["did"]] },
+          "explicacao": "Aqui você fez a ação (visitou): who é objeto, então usamos did + verbo base.",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma certa para cada pergunta.",
+          "conteudo": {
+            "texto": "Who ___ these photos? — Paulo took them. What ___ you eat there? — Fish.",
+            "opcoesPorLacuna": [["took", "did take", "did took"], ["did", "was", "do"]]
+          },
+          "gabarito": { "respostas": [["took"], ["did"]] },
+          "explicacao": "Quem tirou (sujeito) → Who took, sem did. O que você comeu (objeto) → What did you eat.",
+          "tagsErro": ["pergunta_sujeito", "do_support"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["happened", "What", "the", "at", "party"] },
+          "gabarito": { "aceitas": ["What happened at the party?"] },
+          "explicacao": "What é o sujeito: What + happened (sem did) + at the party?",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": ["Who called you?", "Who did you call?", "What happened?", "Who won the game?", "What did you eat?"],
+            "direita": ["Fish and rice.", "My cousin called me.", "Our team won!", "I called my boss.", "I lost my passport."]
+          },
+          "gabarito": { "pares": [1, 3, 4, 2, 0] },
+          "explicacao": "Nas perguntas de sujeito (Who called you?, Who won?), a resposta começa por quem fez a ação. Nas perguntas com did, a resposta começa por você.",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "Who did tell you about the hotel?" },
+          "gabarito": { "aceitas": ["Who told you about the hotel?"] },
+          "explicacao": "Quem contou é o sujeito: Who + told (passado), sem did.",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "O que aconteceu no aeroporto?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["What happened at the airport?", "What happened in the airport?"] },
+          "explicacao": "What é o sujeito: What happened...? sem did.",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Para quem você ligou ontem?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["Who did you call yesterday?", "Whom did you call yesterday?", "Yesterday, who did you call?"] },
+          "explicacao": "Você ligou (você é o sujeito), então who é objeto: Who did you call?",
+          "tagsErro": ["do_support"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a pergunta correta.",
+          "conteudo": { "opcoes": ["Who did break the window?", "Who broke the window?", "Who breaked the window?", "Who did broke the window?"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Quem quebrou é o sujeito: Who + broke (passado de break), sem did.",
+          "tagsErro": ["pergunta_sujeito", "verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "What ___ (happen) to your suitcase?" },
+          "gabarito": { "respostas": [["happened"]] },
+          "explicacao": "What é o sujeito: happened, sem did.",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+          "conteudo": { "palavras": ["you", "Who", "to", "did", "talk"] },
+          "gabarito": { "aceitas": ["Who did you talk to?"] },
+          "explicacao": "Você falou (sujeito = you): Who + did + you + talk + to? A preposição fica no fim.",
+          "tagsErro": ["do_support", "ordem_pergunta"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Quem pagou a conta?", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["Who paid the bill?", "Who paid the check?", "Who paid for the bill?"] },
+          "explicacao": "Quem pagou é o sujeito: Who + paid (passado de pay), sem did.",
+          "tagsErro": ["pergunta_sujeito"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.",
+          "conteudo": { "frase": "What did happen on your trip?" },
+          "gabarito": { "aceitas": ["What happened on your trip?", "What happened during your trip?"] },
+          "explicacao": "What é o sujeito: What happened...? sem did.",
+          "tagsErro": ["pergunta_sujeito"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m02-l5",
+      "ordem": 5,
+      "titulo": "Two years ago",
+      "objetivo": "Dizer quando algo aconteceu com ago, last, in + ano, on + data e when I was...",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Ago significa \"atrás\" e vem depois do período de tempo: two years ago (dois anos atrás), three days ago, a long time ago. Nunca diga \"ago two years\".",
+          "Last significa \"passado\" e vem antes da palavra, sem the: last week, last month, last summer, last Saturday. Não diga \"the last week\" para \"semana passada\".",
+          "Para anos, meses e estações usamos in: in 2019, in March, in the summer. Para dias e datas, on: on Monday, on May 5th. Ontem é yesterday, e anteontem é the day before yesterday.",
+          "When I was a child / When I was ten (quando eu era criança / quando eu tinha dez anos) também colocam a história no passado. Se essa parte vier no começo, use vírgula: When I was a child, I lived in Belém."
+        ],
+        "regras": [
+          "período + ago: two years ago, five minutes ago",
+          "last + week / month / year / summer / Friday (sem the)",
+          "in + ano / mês / estação: in 2019, in July",
+          "on + dia / data: on Sunday, on June 10th",
+          "yesterday / the day before yesterday / last night",
+          "When I was + idade / a child, ..."
+        ],
+        "notaContrastiva": "Não diga *I went to Bahia ago two years* → diga *I went to Bahia two years ago*. E não diga *in the last week* para \"semana passada\" → diga *last week*.",
+        "exemplos": [
+          { "en": "I went to Argentina two years ago.", "pt": "Eu fui para a Argentina dois anos atrás." },
+          { "en": "We traveled to Bonito last summer.", "pt": "Nós viajamos para Bonito no verão passado." },
+          { "en": "They moved to Curitiba in 2019.", "pt": "Eles se mudaram para Curitiba em 2019." },
+          { "en": "My flight left on Monday.", "pt": "Meu voo saiu na segunda-feira." },
+          { "en": "When I was a child, I lived in Belém.", "pt": "Quando eu era criança, morava em Belém." },
+          { "en": "She called me five minutes ago.", "pt": "Ela me ligou cinco minutos atrás." },
+          { "en": "We got back the day before yesterday.", "pt": "Nós voltamos anteontem." },
+          { "en": "I saw that movie a long time ago.", "pt": "Eu vi esse filme há muito tempo." }
+        ],
+        "vocabulario": [
+          { "en": "ago", "pt": "atrás, há (tempo)" },
+          { "en": "last week / last month / last year", "pt": "semana passada / mês passado / ano passado" },
+          { "en": "the day before yesterday", "pt": "anteontem" },
+          { "en": "a long time ago", "pt": "há muito tempo" },
+          { "en": "when I was a child", "pt": "quando eu era criança" },
+          { "en": "move (moved)", "pt": "mudar-se" },
+          { "en": "get back (got back)", "pt": "voltar" },
+          { "en": "summer / winter", "pt": "verão / inverno" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a expressão correta.",
+          "conteudo": { "texto": "We visited Foz do Iguaçu ___.", "opcoes": ["ago three years", "three years ago", "three ago years", "before three years"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Ago vem depois do período: three years ago.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+          "conteudo": { "texto": "My parents got married ___ 1998.", "opcoes": ["on", "at", "in", "last"] },
+          "gabarito": { "correta": 2 },
+          "explicacao": "Com anos usamos in: in 1998.",
+          "tagsErro": ["preposicao", "expressao_tempo"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+          "conteudo": { "texto": "I didn't go to work ___ week. I was on vacation." },
+          "gabarito": { "respostas": [["last"]] },
+          "explicacao": "Semana passada = last week (sem the).",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+          "conteudo": { "texto": "Our plane left ___ Friday morning, and we got back ___ July." },
+          "gabarito": { "respostas": [["on"], ["in"]] },
+          "explicacao": "Dia da semana → on (on Friday morning). Mês → in (in July).",
+          "tagsErro": ["preposicao", "expressao_tempo"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a opção certa para cada lacuna.",
+          "conteudo": {
+            "texto": "When I ___ a child, I ___ in a small town.",
+            "opcoesPorLacuna": [["was", "were", "am"], ["lived", "live", "living"]]
+          },
+          "gabarito": { "respostas": [["was"], ["lived"]] },
+          "explicacao": "When I was a child coloca a frase no passado: was (com I) e lived.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["ago", "They", "two", "moved", "years"] },
+          "gabarito": { "aceitas": ["They moved two years ago."] },
+          "explicacao": "Sujeito + moved + two years ago (ago depois do período).",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada expressão à tradução.",
+          "conteudo": {
+            "esquerda": ["três anos atrás", "no verão passado", "em 2019", "quando eu era criança", "anteontem", "na semana passada"],
+            "direita": ["in 2019", "last week", "the day before yesterday", "three years ago", "when I was a child", "last summer"]
+          },
+          "gabarito": { "pares": [3, 5, 0, 4, 2, 1] },
+          "explicacao": "Ago vem depois do período; last vem antes, sem the; anos com in.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "I met my best friend ago ten years." },
+          "gabarito": { "aceitas": ["I met my best friend ten years ago.", "Ten years ago I met my best friend.", "Ten years ago, I met my best friend."] },
+          "explicacao": "Ago vem depois do período de tempo: ten years ago.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Nós viajamos para o Chile no ano passado.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["We traveled to Chile last year.", "We travelled to Chile last year.", "We went to Chile last year.", "Last year we traveled to Chile.", "Last year, we traveled to Chile.", "Last year we went to Chile.", "Last year, we went to Chile."] },
+          "explicacao": "Ano passado = last year (sem the e sem in). Viajar = travel → traveled.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Ela me ligou dez minutos atrás.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["She called me ten minutes ago.", "She called me 10 minutes ago.", "She phoned me ten minutes ago."] },
+          "explicacao": "Atrás = ago, depois do período: ten minutes ago.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+          "conteudo": { "texto": "I bought this bag ___ summer.", "opcoes": ["the last", "last", "in last", "ago"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "Verão passado = last summer, sem the e sem in.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+          "conteudo": { "texto": "My grandfather was born ___ 1950." },
+          "gabarito": { "respostas": [["in"]] },
+          "explicacao": "Com anos usamos in.",
+          "tagsErro": ["preposicao"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["I", "was", "child", "When", "a", "I", "lived", "in", "Belém"] },
+          "gabarito": { "aceitas": ["I lived in Belém when I was a child.", "When I was a child I lived in Belém."] },
+          "explicacao": "When I was a child pode vir no começo (com vírgula na escrita) ou no fim.",
+          "tagsErro": ["expressao_tempo"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Eles voltaram anteontem.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["They got back the day before yesterday.", "They came back the day before yesterday.", "They returned the day before yesterday.", "They went back the day before yesterday."] },
+          "explicacao": "Voltar = get back / come back. Anteontem = the day before yesterday.",
+          "tagsErro": ["expressao_tempo", "verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "We went to the beach in the last weekend." },
+          "gabarito": { "aceitas": ["We went to the beach last weekend.", "Last weekend we went to the beach.", "Last weekend, we went to the beach."] },
+          "explicacao": "Fim de semana passado = last weekend, sem in e sem the.",
+          "tagsErro": ["expressao_tempo"]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m02-l6",
+      "ordem": 6,
+      "titulo": "First, then, finally",
+      "objetivo": "Contar a história de uma viagem em ordem, com first, then, after that e finally, e o vocabulário de viagem.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para contar uma história em ordem, usamos sequenciadores: first (primeiro), then (depois, então), after that (depois disso), next (em seguida) e finally (por fim). Eles costumam vir no começo da frase: First, we packed our bags. Then, we took a taxi.",
+          "Finally é para a última ação da história. Não confunda com \"finalmente\" no sentido de alívio, que também existe, mas aqui o foco é a ordem: Finally, we got to the hotel.",
+          "Algumas expressões de viagem que aparecem muito: pack (fazer as malas), book a hotel (reservar um hotel), check in (fazer check-in), go sightseeing (passear, conhecer os pontos turísticos), take photos (tirar fotos), buy souvenirs (comprar lembrancinhas).",
+          "Uma história boa tem passado simples, sequenciadores e um detalhe ou outro sobre como foi: The weather was great. The food was delicious. It was a perfect trip!"
+        ],
+        "regras": [
+          "First, ... → a primeira ação",
+          "Then, ... / Next, ... → a seguinte",
+          "After that, ... → depois disso",
+          "Finally, ... → a última ação",
+          "pack / book a hotel / check in / go sightseeing",
+          "take photos / buy souvenirs / have a great time"
+        ],
+        "notaContrastiva": "Não diga *After, we went to the beach* → diga *After that, we went to the beach* (ou *Then, we went...*). After sozinho precisa de complemento: after lunch, after the museum.",
+        "exemplos": [
+          { "en": "First, we packed our bags.", "pt": "Primeiro, fizemos as malas." },
+          { "en": "Then, we took a taxi to the airport.", "pt": "Depois, pegamos um táxi para o aeroporto." },
+          { "en": "After that, we checked in and had a coffee.", "pt": "Depois disso, fizemos o check-in e tomamos um café." },
+          { "en": "Finally, we got on the plane.", "pt": "Por fim, entramos no avião." },
+          { "en": "We booked a hotel near the beach.", "pt": "Nós reservamos um hotel perto da praia." },
+          { "en": "In the afternoon, we went sightseeing.", "pt": "À tarde, saímos para conhecer a cidade." },
+          { "en": "After lunch, I bought some souvenirs.", "pt": "Depois do almoço, comprei algumas lembrancinhas." },
+          { "en": "We had a great time!", "pt": "Nós nos divertimos muito!" }
+        ],
+        "vocabulario": [
+          { "en": "first / then / next", "pt": "primeiro / depois / em seguida" },
+          { "en": "after that", "pt": "depois disso" },
+          { "en": "finally", "pt": "por fim" },
+          { "en": "pack (your bags)", "pt": "fazer as malas" },
+          { "en": "book a hotel", "pt": "reservar um hotel" },
+          { "en": "check in", "pt": "fazer check-in" },
+          { "en": "go sightseeing", "pt": "passear, conhecer os pontos turísticos" },
+          { "en": "luggage / suitcase", "pt": "bagagem / mala" },
+          { "en": "get on the plane", "pt": "entrar no avião, embarcar" },
+          { "en": "have a great time", "pt": "divertir-se muito" }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a história.",
+          "conteudo": { "texto": "First, we had breakfast. ___, we went to the museum. Finally, we had dinner at a nice restaurant.", "opcoes": ["Finally", "Then", "First", "Ago"] },
+          "gabarito": { "correta": 1 },
+          "explicacao": "A ação do meio vem com then (ou after that). First é a primeira e finally a última.",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+          "conteudo": { "texto": "We ___ a hotel online two weeks before the trip.", "opcoes": ["booked", "packed", "checked", "visited"] },
+          "gabarito": { "correta": 0 },
+          "explicacao": "Reservar um hotel = book a hotel → booked.",
+          "tagsErro": ["vocabulario_viagem"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "First, I ___ (pack) my suitcase. Then, I ___ (go) to the bus station." },
+          "gabarito": { "respostas": [["packed"], ["went"]] },
+          "explicacao": "Pack é regular: packed. Go é irregular: went.",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+          "conteudo": { "texto": "In the afternoon, we went ___ and took a lot of photos of the old town." },
+          "gabarito": { "respostas": [["sightseeing"]] },
+          "explicacao": "Passear e conhecer os pontos turísticos = go sightseeing.",
+          "tagsErro": ["vocabulario_viagem"]
+        },
+        {
+          "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha o sequenciador certo para cada lacuna.",
+          "conteudo": {
+            "texto": "___, we checked in at the airport. After that, we had a coffee. ___, we got on the plane.",
+            "opcoesPorLacuna": [["First", "Finally", "After"], ["Finally", "First", "Ago"]]
+          },
+          "gabarito": { "respostas": [["First"], ["Finally"]] },
+          "explicacao": "A primeira ação vem com first; a última, com finally.",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["packed", "First", "we", "bags", "our"] },
+          "gabarito": { "aceitas": ["First we packed our bags.", "We packed our bags first."] },
+          "explicacao": "First + we + packed + our bags. Na escrita, costuma ter vírgula depois de First.",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada expressão à tradução.",
+          "conteudo": {
+            "esquerda": ["pack", "check in", "book", "go sightseeing", "souvenir", "luggage"],
+            "direita": ["lembrancinha", "bagagem", "fazer as malas", "passear e conhecer os pontos turísticos", "fazer check-in", "reservar"]
+          },
+          "gabarito": { "pares": [2, 4, 5, 3, 0, 1] },
+          "explicacao": "Pack = fazer as malas; check in = fazer check-in; book = reservar; go sightseeing = passear; souvenir = lembrancinha; luggage = bagagem.",
+          "tagsErro": ["vocabulario_viagem"]
+        },
+        {
+          "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "After, we went to the beach." },
+          "gabarito": { "aceitas": ["After that, we went to the beach.", "After that we went to the beach.", "Then, we went to the beach.", "Then we went to the beach.", "Next, we went to the beach.", "Next we went to the beach.", "Afterwards, we went to the beach.", "Afterwards we went to the beach."] },
+          "explicacao": "After sozinho não funciona como sequenciador. Use after that, then ou next.",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Depois disso, nós fizemos o check-in no hotel.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["After that, we checked in at the hotel.", "After that we checked in at the hotel.", "After that, we checked into the hotel.", "After that we checked into the hotel.", "Then, we checked in at the hotel.", "Then we checked in at the hotel."] },
+          "explicacao": "Depois disso = after that. Fazer check-in no hotel = check in at the hotel (ou check into the hotel).",
+          "tagsErro": ["sequenciador", "vocabulario_viagem"]
+        },
+        {
+          "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Por fim, nós voltamos para casa.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["Finally, we went home.", "Finally we went home.", "Finally, we went back home.", "Finally we went back home.", "Finally, we got home.", "Finally we got home.", "Finally, we came home.", "Finally we came home.", "Finally, we came back home.", "Finally we came back home.", "Finally, we returned home.", "Finally we returned home."] },
+          "explicacao": "Por fim = finally. Voltar para casa = go (back) home, sem to antes de home.",
+          "tagsErro": ["sequenciador", "preposicao"]
+        },
+        {
+          "etapa": "quiz", "tipo": "mcq", "enunciado": "Qual palavra indica a ÚLTIMA ação de uma história?",
+          "conteudo": { "opcoes": ["First", "Then", "After that", "Finally"] },
+          "gabarito": { "correta": 3 },
+          "explicacao": "Finally (por fim) introduz a última ação.",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+          "conteudo": { "texto": "After lunch, we ___ (buy) some souvenirs for our friends." },
+          "gabarito": { "respostas": [["bought"]] },
+          "explicacao": "Buy → bought (irregular).",
+          "tagsErro": ["verbo_irregular"]
+        },
+        {
+          "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.",
+          "conteudo": { "palavras": ["Finally", "home", "we", "went"] },
+          "gabarito": { "aceitas": ["Finally we went home.", "We finally went home."] },
+          "explicacao": "Finally + we + went home (sem to antes de home).",
+          "tagsErro": ["sequenciador"]
+        },
+        {
+          "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+          "conteudo": { "frase": "Primeiro, nós reservamos um hotel.", "direcao": "pt-en" },
+          "gabarito": { "aceitas": ["First, we booked a hotel.", "First we booked a hotel.", "First, we reserved a hotel.", "First we reserved a hotel.", "First, we booked a hotel room.", "First we booked a hotel room."] },
+          "explicacao": "Primeiro = first. Reservar = book → booked.",
+          "tagsErro": ["sequenciador", "vocabulario_viagem"]
+        },
+        {
+          "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+          "conteudo": { "frase": "Finally, we goed to the airport." },
+          "gabarito": { "aceitas": ["Finally, we went to the airport.", "Finally we went to the airport."] },
+          "explicacao": "Go é irregular: o passado é went.",
+          "tagsErro": ["verbo_irregular"]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "We ___ to Fortaleza last July.", "opcoes": ["flied", "flew", "fly", "flown"] },
+        "gabarito": { "correta": 1 }, "explicacao": "Fly é irregular: o passado simples é flew.", "tagsErro": ["verbo_irregular"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": { "texto": "I ___ (lose) my passport at the airport." },
+        "gabarito": { "respostas": [["lost"]] }, "explicacao": "Lose → lost (irregular).", "tagsErro": ["verbo_irregular"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.",
+        "conteudo": { "texto": "Where ___ you stay in Rio?", "opcoes": ["did", "were", "was", "do"] },
+        "gabarito": { "correta": 0 }, "explicacao": "Pergunta no passado com verbo principal (stay): Where + did + you + stay?", "tagsErro": ["do_support"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": { "texto": "She ___ (meet) a lot of nice people on her trip." },
+        "gabarito": { "respostas": [["met"]] }, "explicacao": "Meet → met (irregular).", "tagsErro": ["verbo_irregular"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a pergunta correta.",
+        "conteudo": { "texto": "___ the tickets? — My dad bought them.", "opcoes": ["Who did buy", "Who bought", "Who buyed", "Who did bought"] },
+        "gabarito": { "correta": 1 }, "explicacao": "Quem comprou é o sujeito: Who + bought, sem did.", "tagsErro": ["pergunta_sujeito"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+        "conteudo": { "texto": "We went to Argentina three years ___." },
+        "gabarito": { "respostas": [["ago"]] }, "explicacao": "Três anos atrás = three years ago (ago depois do período).", "tagsErro": ["expressao_tempo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a história.",
+        "conteudo": { "texto": "First, we packed our bags. ___, we took a taxi to the airport. Finally, we got on the plane.", "opcoes": ["First", "Then", "Finally", "Ago"] },
+        "gabarito": { "correta": 1 }, "explicacao": "A ação do meio vem com then; first é a primeira e finally a última.", "tagsErro": ["sequenciador"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.",
+        "conteudo": { "texto": "How long ___ you stay in Chile? — For a week." },
+        "gabarito": { "respostas": [["did"]] }, "explicacao": "How long + did + you + stay?", "tagsErro": ["do_support"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+        "conteudo": { "texto": "They went to the island ___ boat.", "opcoes": ["by", "on the", "in", "with"] },
+        "gabarito": { "correta": 0 }, "explicacao": "Meio de transporte: by + transporte, sem artigo: by boat.", "tagsErro": ["preposicao"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "I ___ very tired after the long trip.", "opcoes": ["feeled", "felt", "fell", "feel"] },
+        "gabarito": { "correta": 1 }, "explicacao": "Feel → felt (sentir-se). Fell é o passado de fall (cair).", "tagsErro": ["verbo_irregular"] },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Como o Marcos foi até Foz do Iguaçu?",
+        "conteudo": { "texto": "Last April, Marcos went to Foz do Iguaçu with his wife. They didn't fly because tickets were expensive, so they went by bus. The trip took fifteen hours! They stayed at a small hotel for four days. On the first day, they visited the waterfalls and took hundreds of photos. On the last day, Marcos bought a souvenir for his mother: a small painting of the falls.", "opcoes": ["De avião.", "De ônibus.", "De carro.", "De trem."] },
+        "gabarito": { "correta": 1 }, "explicacao": "\"They didn't fly because tickets were expensive, so they went by bus.\"" },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. O que o Marcos fez no último dia?",
+        "conteudo": { "texto": "Last April, Marcos went to Foz do Iguaçu with his wife. They didn't fly because tickets were expensive, so they went by bus. The trip took fifteen hours! They stayed at a small hotel for four days. On the first day, they visited the waterfalls and took hundreds of photos. On the last day, Marcos bought a souvenir for his mother: a small painting of the falls.", "opcoes": ["Visitou as cataratas.", "Tirou centenas de fotos.", "Comprou uma lembrancinha para a mãe.", "Voltou de avião."] },
+        "gabarito": { "correta": 2 }, "explicacao": "\"On the last day, Marcos bought a souvenir for his mother.\" As cataratas e as fotos foram no primeiro dia." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. O que aconteceu com a Júlia no aeroporto?",
+        "conteudo": { "texto": "Hi Bia, I'm in Lisbon! The flight was fine, but something bad happened at the airport: I lost my suitcase. I waited for two hours, and finally a man from the airline found it. After that, I took the subway to the hotel. I was so tired that I slept for eleven hours. Tomorrow I'm going sightseeing! Love, Júlia", "opcoes": ["Perdeu o voo.", "Perdeu a mala.", "Perdeu o passaporte.", "Perdeu o metrô."] },
+        "gabarito": { "correta": 1 }, "explicacao": "\"I lost my suitcase.\" Suitcase = mala." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. Quem encontrou a mala?",
+        "conteudo": { "texto": "Hi Bia, I'm in Lisbon! The flight was fine, but something bad happened at the airport: I lost my suitcase. I waited for two hours, and finally a man from the airline found it. After that, I took the subway to the hotel. I was so tired that I slept for eleven hours. Tomorrow I'm going sightseeing! Love, Júlia", "opcoes": ["A Bia.", "A própria Júlia.", "Um funcionário do hotel.", "Um homem da companhia aérea."] },
+        "gabarito": { "correta": 3 }, "explicacao": "\"Finally a man from the airline found it.\" Airline = companhia aérea." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+        "conteudo": { "palavras": ["did", "Who", "go", "you", "with"] },
+        "gabarito": { "aceitas": ["Who did you go with?"] }, "explicacao": "Who + did + you + go + with? A preposição fica no fim.", "tagsErro": ["ordem_pergunta", "do_support"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Nós fomos para Natal de avião.", "direcao": "pt-en" },
+        "gabarito": { "aceitas": ["We went to Natal by plane.", "We went by plane to Natal.", "We flew to Natal.", "We went to Natal by air."] }, "explicacao": "Fomos = went; de avião = by plane. Também dá para dizer We flew to Natal.", "tagsErro": ["verbo_irregular", "preposicao"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.",
+        "conteudo": { "frase": "Where did you went last weekend?" },
+        "gabarito": { "aceitas": ["Where did you go last weekend?"] }, "explicacao": "Depois de did, o verbo fica na forma base: go.", "tagsErro": ["do_support"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Primeiro, nós fizemos as malas.", "direcao": "pt-en" },
+        "gabarito": { "aceitas": ["First, we packed our bags.", "First we packed our bags.", "First, we packed.", "First we packed.", "First, we packed our suitcases.", "First we packed our suitcases.", "First, we packed the bags.", "First we packed the bags."] }, "explicacao": "Primeiro = first; fazer as malas = pack (our bags) → packed.", "tagsErro": ["sequenciador", "vocabulario_viagem"] },
+
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.",
+        "conteudo": { "texto": "My uncle ___ from São Paulo to Brasília last week.", "opcoes": ["drived", "drove", "drive", "driven"] },
+        "gabarito": { "correta": 1 }, "explicacao": "Drive é irregular: o passado simples é drove.", "tagsErro": ["verbo_irregular"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": { "texto": "We ___ (spend) all our money on the first day!" },
+        "gabarito": { "respostas": [["spent"]] }, "explicacao": "Spend → spent (irregular).", "tagsErro": ["verbo_irregular"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.",
+        "conteudo": { "texto": "When ___ they get back from Europe?", "opcoes": ["were", "did", "do", "was"] },
+        "gabarito": { "correta": 1 }, "explicacao": "Pergunta no passado com verbo principal (get back): When + did + they + get back?", "tagsErro": ["do_support"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no passado.",
+        "conteudo": { "texto": "The kids ___ (swim) in the lake all afternoon." },
+        "gabarito": { "respostas": [["swam"]] }, "explicacao": "Swim → swam (irregular).", "tagsErro": ["verbo_irregular"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a pergunta correta.",
+        "conteudo": { "texto": "___ at the hotel? — The air conditioner broke.", "opcoes": ["What did happen", "What happened", "What did happened", "What happen"] },
+        "gabarito": { "correta": 1 }, "explicacao": "What é o sujeito: What happened, sem did.", "tagsErro": ["pergunta_sujeito"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.",
+        "conteudo": { "texto": "My parents visited New York ___ 2018." },
+        "gabarito": { "respostas": [["in"]] }, "explicacao": "Com anos usamos in: in 2018.", "tagsErro": ["preposicao", "expressao_tempo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a história.",
+        "conteudo": { "texto": "First, we visited the museum. After that, we had lunch. ___, we went back to the hotel and slept.", "opcoes": ["First", "Finally", "Ago", "Last"] },
+        "gabarito": { "correta": 1 }, "explicacao": "A última ação da história vem com finally.", "tagsErro": ["sequenciador"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.",
+        "conteudo": { "texto": "How ___ you get to the beach? — By bike." },
+        "gabarito": { "respostas": [["did"]] }, "explicacao": "How + did + you + get?", "tagsErro": ["do_support"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+        "conteudo": { "texto": "The hotel was near the station, so we went on ___.", "opcoes": ["foot", "feet", "walk", "bus"] },
+        "gabarito": { "correta": 0 }, "explicacao": "A pé = on foot (no singular).", "tagsErro": ["preposicao"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a opção correta.",
+        "conteudo": { "texto": "We ___ a hotel near the beach before the trip.", "opcoes": ["booked", "packed", "spent", "checked"] },
+        "gabarito": { "correta": 0 }, "explicacao": "Reservar um hotel = book a hotel → booked.", "tagsErro": ["vocabulario_viagem"] },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Quanto tempo a família da Renata ficou em Bonito?",
+        "conteudo": { "texto": "Two years ago, Renata traveled to Bonito with her parents and her little brother. They flew to Campo Grande and then drove for four hours. They stayed in Bonito for a week. Every morning, they swam in clear rivers full of fish. One afternoon, her brother lost his cap in the river, but a guide found it. Renata says it was the best vacation of her life.", "opcoes": ["Quatro horas.", "Quatro dias.", "Uma semana.", "Dois anos."] },
+        "gabarito": { "correta": 2 }, "explicacao": "\"They stayed in Bonito for a week.\" Two years ago diz quando foi, não quanto tempo ficaram." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. O que aconteceu com o irmão da Renata?",
+        "conteudo": { "texto": "Two years ago, Renata traveled to Bonito with her parents and her little brother. They flew to Campo Grande and then drove for four hours. They stayed in Bonito for a week. Every morning, they swam in clear rivers full of fish. One afternoon, her brother lost his cap in the river, but a guide found it. Renata says it was the best vacation of her life.", "opcoes": ["Ele se perdeu no rio.", "Ele perdeu o boné no rio.", "Ele encontrou um peixe enorme.", "Ele não quis nadar."] },
+        "gabarito": { "correta": 1 }, "explicacao": "\"Her brother lost his cap in the river, but a guide found it.\" Cap = boné." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que o Diego chegou tarde ao hotel?",
+        "conteudo": { "texto": "Hey Tati! Yesterday was a crazy day. Our flight to Santiago left three hours late because of the bad weather. We got to the hotel at 2 a.m.! This morning we woke up late, had breakfast and then went sightseeing downtown. I bought a nice jacket for you. Who told you about the restaurant on the hill? It was amazing! Hugs, Diego", "opcoes": ["Porque perdeu o voo.", "Porque o voo atrasou por causa do tempo.", "Porque pegou o ônibus errado.", "Porque ficou passeando no centro."] },
+        "gabarito": { "correta": 1 }, "explicacao": "\"Our flight to Santiago left three hours late because of the bad weather.\"" },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que o Diego fez hoje de manhã, depois do café?",
+        "conteudo": { "texto": "Hey Tati! Yesterday was a crazy day. Our flight to Santiago left three hours late because of the bad weather. We got to the hotel at 2 a.m.! This morning we woke up late, had breakfast and then went sightseeing downtown. I bought a nice jacket for you. Who told you about the restaurant on the hill? It was amazing! Hugs, Diego", "opcoes": ["Voltou para o aeroporto.", "Dormiu de novo.", "Foi passear no centro.", "Foi a um restaurante no morro."] },
+        "gabarito": { "correta": 2 }, "explicacao": "\"Had breakfast and then went sightseeing downtown.\" Downtown = no centro." },
+      { "forma": 2, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.",
+        "conteudo": { "palavras": ["did", "Where", "they", "stay"] },
+        "gabarito": { "aceitas": ["Where did they stay?"] }, "explicacao": "Where + did + they + stay (forma base)?", "tagsErro": ["ordem_pergunta", "do_support"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Eu comprei uma lembrancinha dois dias atrás.", "direcao": "pt-en" },
+        "gabarito": { "aceitas": ["I bought a souvenir two days ago.", "Two days ago I bought a souvenir.", "Two days ago, I bought a souvenir."] }, "explicacao": "Comprar = buy → bought. Dois dias atrás = two days ago.", "tagsErro": ["verbo_irregular", "expressao_tempo"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.",
+        "conteudo": { "frase": "Who did call you last night?" },
+        "gabarito": { "aceitas": ["Who called you last night?"] }, "explicacao": "Quem ligou é o sujeito: Who called you?, sem did.", "tagsErro": ["pergunta_sujeito"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.",
+        "conteudo": { "frase": "Depois disso, nós pegamos um táxi.", "direcao": "pt-en" },
+        "gabarito": { "aceitas": ["After that, we took a taxi.", "After that we took a taxi.", "After that, we took a cab.", "After that we took a cab.", "Then, we took a taxi.", "Then we took a taxi.", "Then, we took a cab.", "Then we took a cab."] }, "explicacao": "Depois disso = after that. Pegar um táxi = take a taxi → took.", "tagsErro": ["sequenciador", "verbo_irregular"] }
+    ]
+  }
+}

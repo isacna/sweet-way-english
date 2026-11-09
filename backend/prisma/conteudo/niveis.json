@@ -1,3 +1,4 @@
 [
-  { "codigo": "A1", "nome": "Básico 1 (A1)", "descricao": "Primeiros passos: apresentar-se, falar da rotina, da família, da cidade e do fim de semana.", "ordem": 1 }
+  { "codigo": "A1", "nome": "Básico 1 (A1)", "descricao": "Primeiros passos: apresentar-se, falar da rotina, da família, da cidade e do fim de semana.", "ordem": 1 },
+  { "codigo": "A2", "nome": "Básico 2 (A2)", "descricao": "Contar o que aconteceu, fazer planos e convites, comparar, dar conselhos, pedir serviços e falar de experiências.", "ordem": 2 }
 ]
