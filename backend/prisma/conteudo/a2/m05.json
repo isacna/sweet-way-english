@@ -1,0 +1,3381 @@
+{
+  "slug": "a2-m05",
+  "ordem": 5,
+  "titulo": "Shopping & comparing",
+  "tema": "Compras, roupas e comparações",
+  "descricao": "Comparar preços, tamanhos e materiais e comprar numa loja: comparativos, superlativos, as … as, too e enough, much/many/a lot of e made of.",
+  "canDos": [
+    "Comparar duas coisas com comparativos curtos e longos (cheaper, more expensive).",
+    "Usar better, worse e farther, e os superlativos the best e the worst.",
+    "Dizer qual é o mais barato, o maior ou o melhor de um grupo, com in e of.",
+    "Comprar roupas numa loja: pedir tamanho e cor, experimentar e pagar.",
+    "Falar de quantidade com much, many, a lot of, a few e a little, e dizer de que material algo é feito.",
+    "Comparar dois produtos numa avaliação curta, com as … as e not as … as."
+  ],
+  "gramatica": "Comparativo (-er, more, irregulares better/worse/farther) com than; superlativo (the -est, the most, the best/worst) com in e of; as … as e not as … as; too + adjetivo e not + adjetivo + enough; much, many, a lot of, a few, a little.",
+  "vocabulario": "Compras e roupas (size, fitting room, try on, pants, jacket, sneakers), materiais (cotton, leather, wood, glass, wool, plastic), adjetivos para comparar (cheap, expensive, light, heavy, comfortable).",
+  "funcao": "Comparar produtos, comprar numa loja, pedir tamanho e preço.",
+  "pronuncia": "Than é fraco na frase, quase /ðən/: cheaper than → \"cheaper thən\". O acento vai no adjetivo, não no than nem no more. Como o curso não tem áudio, leia em voz alta exagerando o adjetivo.",
+  "licoes": [
+    {
+      "slug": "a2-m05-l1",
+      "ordem": 1,
+      "titulo": "Bigger, cheaper, easier",
+      "objetivo": "Comparar duas coisas com adjetivos curtos: -er + than, e a grafia de bigger, nicer e easier.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para comparar duas coisas com um adjetivo curto (de uma sílaba), acrescentamos -er e usamos than (do que): This bag is cheaper than that bag. My phone is older than your phone. O than é obrigatório quando dizemos com o que estamos comparando.",
+          "A grafia muda em três casos. Adjetivo que termina em e ganha só -r: nice → nicer, large → larger. Adjetivo com consoante + vogal + consoante dobra a última letra: big → bigger, hot → hotter, thin → thinner. Adjetivo de duas sílabas que termina em y troca o y por -ier: easy → easier, happy → happier, pretty → prettier.",
+          "Em português dizemos \"mais barato\" com duas palavras. Em inglês, com adjetivo curto, não se usa more: cheaper já quer dizer \"mais barato\". Dizer more cheaper é um erro muito comum de brasileiros."
+        ],
+        "regras": [
+          "cheap → cheaper than = mais barato do que",
+          "nice → nicer (termina em e: só -r)",
+          "big → bigger, hot → hotter (dobra a consoante)",
+          "easy → easier, heavy → heavier (y vira -ier)",
+          "adjetivo curto: nada de more antes"
+        ],
+        "notaContrastiva": "Não junte more com -er: não diga *This shirt is more cheaper* → diga *This shirt is cheaper*. E não troque than por that: não diga *bigger that my room* → diga *bigger than my room*.",
+        "exemplos": [
+          {
+            "en": "This bag is cheaper than that bag.",
+            "pt": "Esta bolsa é mais barata do que aquela bolsa."
+          },
+          {
+            "en": "My new apartment is bigger than my old one.",
+            "pt": "Meu apartamento novo é maior do que o antigo."
+          },
+          {
+            "en": "Recife is hotter than Curitiba.",
+            "pt": "Recife é mais quente do que Curitiba."
+          },
+          {
+            "en": "The blue shirt is nicer than the red one.",
+            "pt": "A camisa azul é mais bonita do que a vermelha."
+          },
+          {
+            "en": "This exercise is easier than the last one.",
+            "pt": "Este exercício é mais fácil do que o anterior."
+          },
+          {
+            "en": "My brother is taller than my dad.",
+            "pt": "Meu irmão é mais alto do que o meu pai."
+          },
+          {
+            "en": "The black suitcase is heavier than the gray one.",
+            "pt": "A mala preta é mais pesada do que a cinza."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "cheap / cheaper",
+            "pt": "barato / mais barato"
+          },
+          {
+            "en": "big / bigger",
+            "pt": "grande / maior"
+          },
+          {
+            "en": "small / smaller",
+            "pt": "pequeno / menor"
+          },
+          {
+            "en": "old / older",
+            "pt": "velho / mais velho"
+          },
+          {
+            "en": "new / newer",
+            "pt": "novo / mais novo"
+          },
+          {
+            "en": "light / lighter",
+            "pt": "leve / mais leve"
+          },
+          {
+            "en": "heavy / heavier",
+            "pt": "pesado / mais pesado"
+          },
+          {
+            "en": "than",
+            "pt": "do que"
+          },
+          {
+            "en": "the red one",
+            "pt": "a vermelha / o vermelho"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "This T-shirt is ___ than that one.",
+            "opcoes": [
+              "cheaper",
+              "more cheap",
+              "more cheaper"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Cheap é curto: só -er. Nada de more antes de cheaper.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Your room is ___ than my room.",
+            "opcoes": [
+              "biger",
+              "bigger",
+              "more big",
+              "bigest"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Big termina em consoante + vogal + consoante: dobra o g → bigger.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "This math test is ___ (easy) than the English test."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "easier"
+              ]
+            ]
+          },
+          "explicacao": "Easy termina em y depois de consoante: troca o y por -ier → easier.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "The gray jacket is ___ (nice) than the green one."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "nicer"
+              ]
+            ]
+          },
+          "explicacao": "Nice já termina em e: acrescente só -r → nicer.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "My new cell phone is ___ ___ my old one.",
+            "opcoesPorLacuna": [
+              [
+                "lighter",
+                "more light"
+              ],
+              [
+                "that",
+                "than"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "lighter"
+              ],
+              [
+                "than"
+              ]
+            ]
+          },
+          "explicacao": "Comparativo de light = lighter, e o \"do que\" é than (não that).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "than",
+              "This",
+              "one",
+              "that",
+              "heavier",
+              "suitcase"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "This suitcase is heavier than that one."
+            ]
+          },
+          "explicacao": "Sujeito + is + comparativo (heavier) + than + o outro objeto.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada adjetivo ao seu comparativo.",
+          "conteudo": {
+            "esquerda": [
+              "big",
+              "nice",
+              "happy",
+              "hot",
+              "cheap",
+              "large"
+            ],
+            "direita": [
+              "nicer",
+              "hotter",
+              "bigger",
+              "cheaper",
+              "happier",
+              "larger"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              4,
+              1,
+              3,
+              5
+            ]
+          },
+          "explicacao": "Big e hot dobram a consoante; nice e large ganham só -r; happy troca y por -ier; cheap ganha -er.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My sister is more taller than me."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My sister is taller than me.",
+              "My sister is taller than I am."
+            ]
+          },
+          "explicacao": "Tall é curto: taller já significa \"mais alto\". Tire o more.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Esta bolsa é mais barata do que aquela.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This bag is cheaper than that one.",
+              "This bag is cheaper than that bag.",
+              "This purse is cheaper than that one.",
+              "This purse is cheaper than that purse."
+            ]
+          },
+          "explicacao": "Mais barata = cheaper. \"Do que aquela\" = than that one (ou than that bag).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Recife é mais quente do que Curitiba.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Recife is hotter than Curitiba."
+            ]
+          },
+          "explicacao": "Hot → hotter (dobra o t). Do que = than.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Today is ___ than yesterday.",
+            "opcoes": [
+              "hoter",
+              "more hot",
+              "hotter"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Hot dobra o t: hotter.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "My grandmother is ___ (happy) in her new house."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "happier"
+              ]
+            ]
+          },
+          "explicacao": "Happy → happier: o y vira -ier.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "is",
+              "brother",
+              "older",
+              "My",
+              "me",
+              "than"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My brother is older than me."
+            ]
+          },
+          "explicacao": "Older than = mais velho do que.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O meu quarto é menor do que o seu.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My room is smaller than yours.",
+              "My room is smaller than your room.",
+              "My bedroom is smaller than yours.",
+              "My bedroom is smaller than your bedroom."
+            ]
+          },
+          "explicacao": "Menor = smaller. \"O seu\" = yours (ou your room).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "This box is bigger that the other box."
+          },
+          "gabarito": {
+            "aceitas": [
+              "This box is bigger than the other box.",
+              "This box is bigger than the other one."
+            ]
+          },
+          "explicacao": "Depois do comparativo, o \"do que\" é than, não that.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m05-l2",
+      "ordem": 2,
+      "titulo": "More expensive, better",
+      "objetivo": "Comparar com adjetivos longos (more + adjetivo) e com os irregulares better, worse e farther.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Com adjetivos de duas sílabas ou mais (que não terminam em y), usamos more antes do adjetivo, e o adjetivo não muda: expensive → more expensive, comfortable → more comfortable, beautiful → more beautiful. Laptops are more expensive than tablets.",
+          "Para dizer \"menos\", usamos less: This sofa is less comfortable than the old one. Mas, no dia a dia, é mais comum inverter a frase com o oposto: The old sofa is more comfortable.",
+          "Três adjetivos são irregulares e precisam ser decorados: good → better (melhor), bad → worse (pior), far → farther (mais longe). Nunca diga gooder, more good ou badder."
+        ],
+        "regras": [
+          "expensive → more expensive than = mais caro do que",
+          "comfortable → more comfortable",
+          "less + adjetivo = menos: less expensive",
+          "good → better = melhor",
+          "bad → worse = pior",
+          "far → farther = mais longe"
+        ],
+        "notaContrastiva": "Não faça -er com adjetivo longo: não diga *expensiver* → diga *more expensive*. E melhor não é more good: não diga *This store is more good* → diga *This store is better*.",
+        "exemplos": [
+          {
+            "en": "Laptops are more expensive than tablets.",
+            "pt": "Notebooks são mais caros do que tablets."
+          },
+          {
+            "en": "These sneakers are more comfortable than my boots.",
+            "pt": "Estes tênis são mais confortáveis do que as minhas botas."
+          },
+          {
+            "en": "The food here is better than at the other restaurant.",
+            "pt": "A comida aqui é melhor do que no outro restaurante."
+          },
+          {
+            "en": "The traffic today is worse than yesterday.",
+            "pt": "O trânsito hoje está pior do que ontem."
+          },
+          {
+            "en": "The mall is farther than the supermarket.",
+            "pt": "O shopping é mais longe do que o supermercado."
+          },
+          {
+            "en": "This dress is less expensive than that one.",
+            "pt": "Este vestido é menos caro do que aquele."
+          },
+          {
+            "en": "Online shopping is more practical for me.",
+            "pt": "Comprar pela internet é mais prático para mim."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "expensive",
+            "pt": "caro"
+          },
+          {
+            "en": "comfortable",
+            "pt": "confortável"
+          },
+          {
+            "en": "beautiful",
+            "pt": "bonito, lindo"
+          },
+          {
+            "en": "modern",
+            "pt": "moderno"
+          },
+          {
+            "en": "better",
+            "pt": "melhor"
+          },
+          {
+            "en": "worse",
+            "pt": "pior"
+          },
+          {
+            "en": "farther",
+            "pt": "mais longe"
+          },
+          {
+            "en": "less",
+            "pt": "menos"
+          },
+          {
+            "en": "sneakers",
+            "pt": "tênis"
+          },
+          {
+            "en": "mall",
+            "pt": "shopping center"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "This laptop is ___ than my old one.",
+            "opcoes": [
+              "more expensive",
+              "expensiver",
+              "most expensive"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Expensive é longo (três sílabas): more expensive.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Her new job is ___ than her old job. She is very happy!",
+            "opcoes": [
+              "better",
+              "more good",
+              "gooder",
+              "best"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Good é irregular: o comparativo é better.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "This sofa is ___ (comfortable) than the chair."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "more comfortable"
+              ]
+            ]
+          },
+          "explicacao": "Comfortable é longo: more comfortable.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "My cold is ___ (bad) today than yesterday."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "worse"
+              ]
+            ]
+          },
+          "explicacao": "Bad é irregular: worse = pior.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "The mall is ___ than the supermarket. The supermarket is ___ to my house.",
+            "opcoesPorLacuna": [
+              [
+                "farer",
+                "farther"
+              ],
+              [
+                "closer",
+                "more close"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "farther"
+              ],
+              [
+                "closer"
+              ]
+            ]
+          },
+          "explicacao": "Far → farther (mais longe). Close é curto: closer (mais perto), sem more.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "comfortable",
+              "boots",
+              "than",
+              "more",
+              "are",
+              "my",
+              "These",
+              "sneakers"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "These boots are more comfortable than my sneakers."
+            ]
+          },
+          "explicacao": "More + adjetivo longo + than: more comfortable than.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada adjetivo ao seu comparativo.",
+          "conteudo": {
+            "esquerda": [
+              "good",
+              "bad",
+              "far",
+              "expensive",
+              "beautiful",
+              "cheap"
+            ],
+            "direita": [
+              "more beautiful",
+              "worse",
+              "more expensive",
+              "cheaper",
+              "better",
+              "farther"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              1,
+              5,
+              2,
+              0,
+              3
+            ]
+          },
+          "explicacao": "Good, bad e far são irregulares. Expensive e beautiful são longos (more). Cheap é curto (-er).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "This movie is more good than the book."
+          },
+          "gabarito": {
+            "aceitas": [
+              "This movie is better than the book.",
+              "This film is better than the book."
+            ]
+          },
+          "explicacao": "Good é irregular: better, nunca more good.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Notebooks são mais caros do que celulares.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Laptops are more expensive than cell phones.",
+              "Laptops are more expensive than phones.",
+              "Notebooks are more expensive than cell phones.",
+              "Laptops are more expensive than smartphones.",
+              "Notebooks are more expensive than phones.",
+              "Notebooks are more expensive than smartphones."
+            ]
+          },
+          "explicacao": "Mais caros = more expensive (adjetivo longo). Notebook em inglês americano é laptop.",
+          "tagsErro": [
+            "comparativo",
+            "falso_cognato"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O trânsito hoje está pior do que ontem.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The traffic today is worse than yesterday.",
+              "Traffic today is worse than yesterday.",
+              "The traffic is worse today than yesterday.",
+              "Today the traffic is worse than yesterday.",
+              "Today, the traffic is worse than yesterday."
+            ]
+          },
+          "explicacao": "Pior = worse (irregular). Trânsito = traffic.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "The new shopping mall is ___ than the old one.",
+            "opcoes": [
+              "moderner",
+              "more moderner",
+              "more modern"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Modern tem duas sílabas e não termina em y: more modern.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "Your idea is ___ (good) than mine."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "better"
+              ]
+            ]
+          },
+          "explicacao": "Good → better.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "The",
+              "than",
+              "station",
+              "is",
+              "bus",
+              "the",
+              "farther",
+              "airport"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "The bus station is farther than the airport."
+            ]
+          },
+          "explicacao": "Far → farther: mais longe.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Esta loja é melhor do que aquela.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This store is better than that one.",
+              "This store is better than that store.",
+              "This shop is better than that one.",
+              "This shop is better than that shop."
+            ]
+          },
+          "explicacao": "Melhor = better. Loja = store (ou shop).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "These shoes are expensiver than the sneakers."
+          },
+          "gabarito": {
+            "aceitas": [
+              "These shoes are more expensive than the sneakers."
+            ]
+          },
+          "explicacao": "Expensive é longo: more expensive, nunca expensiver.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m05-l3",
+      "ordem": 3,
+      "titulo": "The biggest store in town",
+      "objetivo": "Usar o superlativo (the -est, the most, the best, the worst) com in e of.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "O superlativo diz que algo é o mais ou o menos de um grupo. Com adjetivos curtos, usamos the + -est: cheap → the cheapest, big → the biggest, easy → the easiest. As regras de grafia são as mesmas do comparativo.",
+          "Com adjetivos longos, usamos the most: the most expensive, the most comfortable, the most beautiful. Os irregulares são the best (o melhor), the worst (o pior) e the farthest (o mais longe).",
+          "Depois do superlativo, usamos in para lugares e grupos (the biggest mall in the city, the tallest student in my class) e of para períodos e quantidades (the best day of my life, the cheapest of the three). O the é obrigatório antes do superlativo."
+        ],
+        "regras": [
+          "cheap → the cheapest = o mais barato",
+          "expensive → the most expensive = o mais caro",
+          "good → the best = o melhor",
+          "bad → the worst = o pior",
+          "in + lugar ou grupo: the biggest mall in the city",
+          "of + período ou quantidade: the best day of the year"
+        ],
+        "notaContrastiva": "Não use of com lugar: não diga *the biggest store of the city* → diga *the biggest store in the city*. E não esqueça o the: não diga *It is biggest store* → diga *It is the biggest store*.",
+        "exemplos": [
+          {
+            "en": "This is the biggest mall in the city.",
+            "pt": "Este é o maior shopping da cidade."
+          },
+          {
+            "en": "That was the best day of my life.",
+            "pt": "Aquele foi o melhor dia da minha vida."
+          },
+          {
+            "en": "The black dress is the most expensive.",
+            "pt": "O vestido preto é o mais caro."
+          },
+          {
+            "en": "Monday is the worst day of the week.",
+            "pt": "Segunda-feira é o pior dia da semana."
+          },
+          {
+            "en": "Lucas is the tallest student in my class.",
+            "pt": "O Lucas é o aluno mais alto da minha turma."
+          },
+          {
+            "en": "This is the cheapest of the three phones.",
+            "pt": "Este é o mais barato dos três celulares."
+          },
+          {
+            "en": "It was the easiest test of the year.",
+            "pt": "Foi a prova mais fácil do ano."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "the cheapest",
+            "pt": "o mais barato"
+          },
+          {
+            "en": "the biggest",
+            "pt": "o maior"
+          },
+          {
+            "en": "the most expensive",
+            "pt": "o mais caro"
+          },
+          {
+            "en": "the best",
+            "pt": "o melhor"
+          },
+          {
+            "en": "the worst",
+            "pt": "o pior"
+          },
+          {
+            "en": "store",
+            "pt": "loja"
+          },
+          {
+            "en": "in town",
+            "pt": "na cidade"
+          },
+          {
+            "en": "in my class",
+            "pt": "da minha turma"
+          },
+          {
+            "en": "of the year",
+            "pt": "do ano"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "This is ___ restaurant in our neighborhood.",
+            "opcoes": [
+              "the cheapest",
+              "the cheaper",
+              "the most cheap"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Comparando com todos do bairro → superlativo. Cheap é curto: the cheapest.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "That was ___ movie of the year. It was terrible!",
+            "opcoes": [
+              "the baddest",
+              "worse",
+              "the most bad",
+              "the worst"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Bad é irregular: o superlativo é the worst.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "This is ___ (expensive) watch in the store."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "the most expensive"
+              ]
+            ]
+          },
+          "explicacao": "Expensive é longo: the most expensive.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "Ana is ___ (young) person in my family."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "the youngest"
+              ]
+            ]
+          },
+          "explicacao": "Young é curto: the youngest.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "It is the biggest shopping mall ___ Brazil, and it is open every day ___ the year.",
+            "opcoesPorLacuna": [
+              [
+                "of",
+                "in"
+              ],
+              [
+                "of",
+                "in"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "in"
+              ],
+              [
+                "of"
+              ]
+            ]
+          },
+          "explicacao": "Lugar (Brazil) → in. Período (the year) → of.",
+          "tagsErro": [
+            "superlativo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "This",
+              "pizza",
+              "the",
+              "best",
+              "is",
+              "town",
+              "in"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the best pizza in town."
+            ]
+          },
+          "explicacao": "The best = a melhor. In town = na cidade (lugar → in).",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada adjetivo ao seu superlativo.",
+          "conteudo": {
+            "esquerda": [
+              "good",
+              "bad",
+              "big",
+              "easy",
+              "comfortable",
+              "nice"
+            ],
+            "direita": [
+              "the easiest",
+              "the most comfortable",
+              "the nicest",
+              "the best",
+              "the biggest",
+              "the worst"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              5,
+              4,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "Good e bad são irregulares. Big dobra o g; easy troca y por -iest; nice ganha só -st; comfortable é longo (the most).",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "It is the biggest store of the city."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is the biggest store in the city."
+            ]
+          },
+          "explicacao": "Depois do superlativo, lugar pede in: in the city.",
+          "tagsErro": [
+            "superlativo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Este é o maior shopping da cidade.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the biggest mall in the city.",
+              "This is the biggest shopping mall in the city.",
+              "This is the largest mall in the city.",
+              "This is the largest shopping mall in the city.",
+              "This is the biggest mall in town.",
+              "This is the biggest shopping mall in town."
+            ]
+          },
+          "explicacao": "O maior = the biggest (ou the largest). \"Da cidade\" = in the city: lugar pede in.",
+          "tagsErro": [
+            "superlativo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Foi o melhor dia do ano.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "It was the best day of the year.",
+              "That was the best day of the year."
+            ]
+          },
+          "explicacao": "O melhor = the best. \"Do ano\" = of the year: período pede of.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Which is ___ city in Brazil?",
+            "opcoes": [
+              "the most big",
+              "the bigger",
+              "the biggest"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Comparando com todas as cidades → superlativo: the biggest.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "Saturday is ___ (busy) day at the store."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "the busiest"
+              ]
+            ]
+          },
+          "explicacao": "Busy termina em y: the busiest.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "the",
+              "worst",
+              "day",
+              "of",
+              "week",
+              "is",
+              "the",
+              "Monday"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Monday is the worst day of the week."
+            ]
+          },
+          "explicacao": "The worst = o pior. Of the week: período.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Este é o vestido mais bonito da loja.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the most beautiful dress in the store.",
+              "This is the prettiest dress in the store.",
+              "This is the nicest dress in the store.",
+              "This is the most beautiful dress in the shop.",
+              "This is the prettiest dress in the shop.",
+              "This is the nicest dress in the shop."
+            ]
+          },
+          "explicacao": "Beautiful é longo: the most beautiful (ou the prettiest). \"Da loja\" = in the store.",
+          "tagsErro": [
+            "superlativo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She is most intelligent student in the class."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is the most intelligent student in the class.",
+              "She is the smartest student in the class."
+            ]
+          },
+          "explicacao": "O superlativo sempre leva the: the most intelligent.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m05-l4",
+      "ordem": 4,
+      "titulo": "Can I try it on?",
+      "objetivo": "Comprar roupas numa loja: pedir tamanho e cor, experimentar, dizer too small e not big enough, perguntar o preço e pagar.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Numa loja de roupas, as frases mais úteis são: Can I try it on? (Posso experimentar?), What size are you? (Qual é o seu tamanho?), Do you have it in blue? (Tem em azul?), Where is the fitting room? (Onde fica o provador?) e I'll take it (Vou levar). Para perguntar o preço: How much is it? ou How much does it cost?",
+          "Try on é um verbo de duas partes. Com um substantivo, ele pode ficar no meio ou no fim: Can I try on this jacket? ou Can I try this jacket on? Mas com it ou them, o pronome fica sempre no meio: Can I try it on? (nunca try on it).",
+          "Para dizer que algo não serve, usamos too + adjetivo (demais): These pants are too long. Ou not + adjetivo + enough (não é … o suficiente): This shirt isn't big enough. Repare que enough vem depois do adjetivo."
+        ],
+        "regras": [
+          "Can I try it on? = Posso experimentar?",
+          "try on + it/them: try it on, try them on",
+          "too + adjetivo = demais: too small",
+          "not + adjetivo + enough = não … o suficiente: not big enough",
+          "How much is it? / How much does it cost? = Quanto custa?",
+          "I'll take it = Vou levar"
+        ],
+        "notaContrastiva": "Provar roupa não é prove (prove = provar que algo é verdade): não diga *Can I prove this jacket?* → diga *Can I try this jacket on?*. E enough vem depois do adjetivo: não diga *enough big* → diga *big enough*.",
+        "exemplos": [
+          {
+            "en": "Excuse me, can I try these jeans on?",
+            "pt": "Com licença, posso experimentar esta calça jeans?"
+          },
+          {
+            "en": "What size are you? — I'm a medium.",
+            "pt": "Qual é o seu tamanho? — Sou M."
+          },
+          {
+            "en": "Do you have this T-shirt in black?",
+            "pt": "Você tem esta camiseta em preto?"
+          },
+          {
+            "en": "These shoes are too small. Do you have a bigger size?",
+            "pt": "Estes sapatos estão pequenos demais. Você tem um número maior?"
+          },
+          {
+            "en": "The jacket isn't warm enough for the winter.",
+            "pt": "A jaqueta não é quente o suficiente para o inverno."
+          },
+          {
+            "en": "How much does it cost? — It's forty dollars.",
+            "pt": "Quanto custa? — Custa quarenta dólares."
+          },
+          {
+            "en": "It looks great. I'll take it!",
+            "pt": "Ficou ótimo. Vou levar!"
+          },
+          {
+            "en": "Can I pay by card?",
+            "pt": "Posso pagar com cartão?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "try on",
+            "pt": "experimentar (roupa)"
+          },
+          {
+            "en": "fitting room",
+            "pt": "provador"
+          },
+          {
+            "en": "size",
+            "pt": "tamanho, número"
+          },
+          {
+            "en": "small / medium / large",
+            "pt": "P / M / G"
+          },
+          {
+            "en": "tight",
+            "pt": "apertado"
+          },
+          {
+            "en": "loose",
+            "pt": "largo, folgado"
+          },
+          {
+            "en": "pants",
+            "pt": "calça"
+          },
+          {
+            "en": "jacket",
+            "pt": "jaqueta"
+          },
+          {
+            "en": "too",
+            "pt": "demais"
+          },
+          {
+            "en": "enough",
+            "pt": "suficiente"
+          },
+          {
+            "en": "pay by card / pay in cash",
+            "pt": "pagar com cartão / em dinheiro"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "These pants are ___ small. I need a bigger size.",
+            "opcoes": [
+              "too",
+              "enough",
+              "much"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Too + adjetivo = demais: too small (pequena demais).",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Excuse me, can I ___ this jacket?",
+            "opcoes": [
+              "prove",
+              "test",
+              "try on",
+              "dress"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Experimentar roupa = try on. Prove é falso cognato: significa provar que algo é verdade.",
+          "tagsErro": [
+            "falso_cognato"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "The shirt isn't big ___. Do you have a larger size?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "enough"
+              ]
+            ]
+          },
+          "explicacao": "Not + adjetivo + enough: not big enough (não é grande o suficiente).",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "This coat is ___ expensive. It isn't cheap ___ for me.",
+            "opcoesPorLacuna": [
+              [
+                "too",
+                "enough"
+              ],
+              [
+                "too",
+                "enough"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "too"
+              ],
+              [
+                "enough"
+              ]
+            ]
+          },
+          "explicacao": "Too expensive = caro demais. Not cheap enough = não é barato o suficiente.",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Do you have this T-shirt ___ blue? — Yes. What ___ are you?",
+            "opcoesPorLacuna": [
+              [
+                "on",
+                "in"
+              ],
+              [
+                "number",
+                "size"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "in"
+              ],
+              [
+                "size"
+              ]
+            ]
+          },
+          "explicacao": "Cor: in blue. Tamanho: size (number não se usa para roupa).",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "card",
+              "by",
+              "pay",
+              "I",
+              "Can"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I pay by card?"
+            ]
+          },
+          "explicacao": "Can + sujeito + verbo: Can I pay…? Pagar com cartão = pay by card.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "Can I try it on?",
+              "What size are you?",
+              "It is too tight.",
+              "I'll take it.",
+              "Where is the fitting room?",
+              "How much does it cost?"
+            ],
+            "direita": [
+              "Posso experimentar?",
+              "Quanto custa?",
+              "Está apertado demais.",
+              "Onde fica o provador?",
+              "Vou levar.",
+              "Qual é o seu tamanho?"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              5,
+              2,
+              4,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Frases úteis numa loja de roupas."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "This jacket is enough big for me."
+          },
+          "gabarito": {
+            "aceitas": [
+              "This jacket is big enough for me."
+            ]
+          },
+          "explicacao": "Enough vem depois do adjetivo: big enough.",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Posso experimentar esta camisa?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I try this shirt on?",
+              "Can I try on this shirt?",
+              "May I try this shirt on?",
+              "May I try on this shirt?",
+              "Could I try this shirt on?",
+              "Could I try on this shirt?"
+            ]
+          },
+          "explicacao": "Experimentar = try on. Com substantivo, on pode ficar no meio ou no fim.",
+          "tagsErro": [
+            "falso_cognato"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Estes sapatos são pequenos demais.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "These shoes are too small."
+            ]
+          },
+          "explicacao": "Demais = too, antes do adjetivo: too small.",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "How much does this backpack ___?",
+            "opcoes": [
+              "costs",
+              "costing",
+              "cost"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Na pergunta com does, o verbo fica na forma base: does … cost.",
+          "tagsErro": [
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "This bag is not big ___ for my laptop."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "enough"
+              ]
+            ]
+          },
+          "explicacao": "Not big enough = não é grande o suficiente.",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "are",
+              "long",
+              "These",
+              "pants",
+              "too"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "These pants are too long."
+            ]
+          },
+          "explicacao": "Too + adjetivo: too long (comprida demais).",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Vou levar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I will take it.",
+              "I am going to take it.",
+              "I will take them.",
+              "I am going to take them."
+            ]
+          },
+          "explicacao": "Na loja, \"vou levar\" = I'll take it (decisão na hora)."
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Can I try on it?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Can I try it on?"
+            ]
+          },
+          "explicacao": "Com it, o pronome fica no meio: try it on.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m05-l5",
+      "ordem": 5,
+      "titulo": "A lot of, a few, a little",
+      "objetivo": "Falar de quantidade com much, many, a lot of, a few e a little, e dizer de que material algo é feito (made of).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Many vai com contáveis no plural (many stores, many shirts) e much com incontáveis (much money, much time). Na frase afirmativa, o mais natural é a lot of, que serve para os dois: I have a lot of clothes. There is a lot of traffic. Much e many aparecem mais em perguntas e negativas: How many shirts do you have? We don't have much time.",
+          "A few (alguns, uns poucos) vai com contáveis e a little (um pouco) com incontáveis: I bought a few T-shirts. Can I have a little milk? Os dois têm sentido positivo: há pouco, mas há.",
+          "Para dizer o material, usamos made of: This bag is made of leather. The table is made of wood. Para perguntar: What is it made of? Materiais comuns: cotton (algodão), leather (couro), wood (madeira), glass (vidro), plastic (plástico), metal (metal), wool (lã)."
+        ],
+        "regras": [
+          "many + contável: many stores, How many…?",
+          "much + incontável: much money, How much…?",
+          "a lot of + os dois: a lot of clothes, a lot of time",
+          "a few + contável: a few shirts",
+          "a little + incontável: a little milk",
+          "made of + material: made of cotton"
+        ],
+        "notaContrastiva": "Não use much com contável: não diga *How much books do you have?* → diga *How many books do you have?*. E material leva of: não diga *made in glass* → diga *made of glass* (made in é o país: made in China).",
+        "exemplos": [
+          {
+            "en": "I have a lot of clothes, but I never know what to wear.",
+            "pt": "Eu tenho muitas roupas, mas nunca sei o que vestir."
+          },
+          {
+            "en": "We don't have much money this month.",
+            "pt": "Nós não temos muito dinheiro este mês."
+          },
+          {
+            "en": "How many shirts do you need?",
+            "pt": "Quantas camisas você precisa?"
+          },
+          {
+            "en": "I bought a few T-shirts at the mall.",
+            "pt": "Comprei algumas camisetas no shopping."
+          },
+          {
+            "en": "Can I have a little sugar, please?",
+            "pt": "Pode me dar um pouco de açúcar, por favor?"
+          },
+          {
+            "en": "My wallet is made of leather.",
+            "pt": "Minha carteira é feita de couro."
+          },
+          {
+            "en": "What is this table made of? — It's made of wood.",
+            "pt": "De que é feita esta mesa? — É feita de madeira."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "a lot of",
+            "pt": "muito(s), muita(s)"
+          },
+          {
+            "en": "a few",
+            "pt": "alguns, uns poucos"
+          },
+          {
+            "en": "a little",
+            "pt": "um pouco"
+          },
+          {
+            "en": "made of",
+            "pt": "feito de"
+          },
+          {
+            "en": "cotton",
+            "pt": "algodão"
+          },
+          {
+            "en": "leather",
+            "pt": "couro"
+          },
+          {
+            "en": "wood",
+            "pt": "madeira"
+          },
+          {
+            "en": "glass",
+            "pt": "vidro"
+          },
+          {
+            "en": "wool",
+            "pt": "lã"
+          },
+          {
+            "en": "wallet",
+            "pt": "carteira"
+          },
+          {
+            "en": "clothes",
+            "pt": "roupas"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "We don't have ___ money this month.",
+            "opcoes": [
+              "much",
+              "many",
+              "a few"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Money é incontável e a frase é negativa → much.",
+          "tagsErro": [
+            "quantificador",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "There are ___ people at the mall today. It's very crowded!",
+            "opcoes": [
+              "a little",
+              "a lot of",
+              "much",
+              "a few"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "People é contável e está muito cheio → a lot of. A few seria \"poucas pessoas\".",
+          "tagsErro": [
+            "quantificador"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "I need ___ sugar for the cake and ___ eggs.",
+            "opcoesPorLacuna": [
+              [
+                "a few",
+                "a little"
+              ],
+              [
+                "a little",
+                "a few"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "a little"
+              ],
+              [
+                "a few"
+              ]
+            ]
+          },
+          "explicacao": "Sugar é incontável → a little. Eggs é contável → a few.",
+          "tagsErro": [
+            "quantificador",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "This table is made ___ wood."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "of"
+              ]
+            ]
+          },
+          "explicacao": "Material: made of wood.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "How ___ shirts do you have?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "many"
+              ]
+            ]
+          },
+          "explicacao": "Shirts é contável no plural → How many.",
+          "tagsErro": [
+            "quantificador"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "wallet",
+              "leather",
+              "made",
+              "My",
+              "of",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My wallet is made of leather."
+            ]
+          },
+          "explicacao": "Sujeito + is made of + material.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada material à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "cotton",
+              "leather",
+              "wood",
+              "glass",
+              "wool",
+              "plastic"
+            ],
+            "direita": [
+              "lã",
+              "couro",
+              "algodão",
+              "madeira",
+              "vidro",
+              "plástico"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              1,
+              3,
+              4,
+              0,
+              5
+            ]
+          },
+          "explicacao": "Materiais comuns para descrever roupas e objetos."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How much books do you have?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many books do you have?"
+            ]
+          },
+          "explicacao": "Books é contável no plural → How many, não How much.",
+          "tagsErro": [
+            "quantificador"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Esta bolsa é feita de couro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This bag is made of leather.",
+              "This purse is made of leather.",
+              "This handbag is made of leather."
+            ]
+          },
+          "explicacao": "Feita de = made of. Couro = leather.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós não temos muito tempo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We do not have much time.",
+              "We do not have a lot of time.",
+              "We have not got much time."
+            ]
+          },
+          "explicacao": "Time é incontável; na negativa, much (ou a lot of).",
+          "tagsErro": [
+            "quantificador",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "Can I have ___ milk in my coffee, please?",
+            "opcoes": [
+              "a few",
+              "many",
+              "a little"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Milk é incontável → a little (um pouco).",
+          "tagsErro": [
+            "quantificador",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "This bottle is made ___ glass."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "of"
+              ]
+            ]
+          },
+          "explicacao": "Material sempre com of: made of glass.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "do",
+              "How",
+              "need",
+              "you",
+              "T-shirts",
+              "many"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "How many T-shirts do you need?"
+            ]
+          },
+          "explicacao": "How many + contável no plural + do you…?",
+          "tagsErro": [
+            "quantificador",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela comprou muitas roupas.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She bought a lot of clothes.",
+              "She bought lots of clothes.",
+              "She bought many clothes."
+            ]
+          },
+          "explicacao": "Na afirmativa, a lot of é o mais natural. Roupas = clothes.",
+          "tagsErro": [
+            "quantificador"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "The bottle is made in glass."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The bottle is made of glass."
+            ]
+          },
+          "explicacao": "Material pede of: made of glass. Made in é para o país de origem.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m05-l6",
+      "ordem": 6,
+      "titulo": "Which one is better?",
+      "objetivo": "Comparar dois produtos com as … as e not as … as, e escrever uma avaliação curta usando comparativos e superlativos.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dizer que duas coisas são iguais, usamos as + adjetivo + as: My phone is as expensive as yours (Meu celular é tão caro quanto o seu). O adjetivo não muda: nada de -er nem more.",
+          "Na negativa, not as … as diz que uma coisa é menor que a outra: The CityPack is not as big as the Trekker (A CityPack não é tão grande quanto a Trekker). É um jeito educado de comparar, muito usado em avaliações.",
+          "Para comparar dois produtos, junte tudo o que vimos: comparativo (lighter, more comfortable), superlativo (the cheapest), not as … as, too e enough, e o material (made of). Leia a avaliação: I need a new backpack for college, so I compared two models. The Trekker is bigger than the CityPack, and it has a lot of pockets. It is made of strong plastic, so it is great on rainy days. But it is heavy, and it is the most expensive backpack in the store. The CityPack is not as big as the Trekker, but it is lighter and cheaper. For me, the CityPack is better."
+        ],
+        "regras": [
+          "as + adjetivo + as = tão … quanto: as big as",
+          "not as + adjetivo + as = não tão … quanto",
+          "Which one is better? = Qual é melhor?",
+          "For me, … is better = Para mim, … é melhor",
+          "the red one / the blue one = a vermelha / a azul"
+        ],
+        "notaContrastiva": "Na comparação de igualdade, os dois lados levam as: não diga *My bag is as big than yours* → diga *My bag is as big as yours*. E não use -er com as: não diga *as bigger as* → diga *as big as*.",
+        "exemplos": [
+          {
+            "en": "My phone is as expensive as yours.",
+            "pt": "Meu celular é tão caro quanto o seu."
+          },
+          {
+            "en": "The CityPack is not as big as the Trekker.",
+            "pt": "A CityPack não é tão grande quanto a Trekker."
+          },
+          {
+            "en": "This jacket is as warm as my coat.",
+            "pt": "Esta jaqueta é tão quente quanto o meu casaco."
+          },
+          {
+            "en": "Which one is better, the red one or the blue one?",
+            "pt": "Qual é melhor, a vermelha ou a azul?"
+          },
+          {
+            "en": "The green backpack is lighter and cheaper.",
+            "pt": "A mochila verde é mais leve e mais barata."
+          },
+          {
+            "en": "For me, the smaller one is better.",
+            "pt": "Para mim, a menor é melhor."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "as … as",
+            "pt": "tão … quanto"
+          },
+          {
+            "en": "backpack",
+            "pt": "mochila"
+          },
+          {
+            "en": "pocket",
+            "pt": "bolso"
+          },
+          {
+            "en": "strong",
+            "pt": "forte, resistente"
+          },
+          {
+            "en": "model",
+            "pt": "modelo"
+          },
+          {
+            "en": "compare",
+            "pt": "comparar"
+          },
+          {
+            "en": "carry",
+            "pt": "carregar"
+          },
+          {
+            "en": "college",
+            "pt": "faculdade"
+          },
+          {
+            "en": "which one",
+            "pt": "qual (deles)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a avaliação. Qual mochila é mais leve?",
+          "conteudo": {
+            "texto": "I need a new backpack for college, so I compared two models. The Trekker is bigger than the CityPack, and it has a lot of pockets. It is made of strong plastic, so it is great on rainy days. But it is heavy, and it is the most expensive backpack in the store. The CityPack is not as big as the Trekker, but it is lighter and cheaper. It is made of cotton, so it is not as good in the rain. For me, the CityPack is better. I only carry my laptop and a few books.",
+            "opcoes": [
+              "A Trekker.",
+              "As duas pesam igual.",
+              "O texto não diz.",
+              "A CityPack."
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "\"The CityPack is not as big as the Trekker, but it is lighter and cheaper.\" Lighter = mais leve.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a avaliação. Por que a Trekker é boa em dias de chuva?",
+          "conteudo": {
+            "texto": "I need a new backpack for college, so I compared two models. The Trekker is bigger than the CityPack, and it has a lot of pockets. It is made of strong plastic, so it is great on rainy days. But it is heavy, and it is the most expensive backpack in the store. The CityPack is not as big as the Trekker, but it is lighter and cheaper. It is made of cotton, so it is not as good in the rain. For me, the CityPack is better. I only carry my laptop and a few books.",
+            "opcoes": [
+              "Porque é feita de plástico resistente.",
+              "Porque tem muitos bolsos.",
+              "Porque é a mais cara.",
+              "Porque é feita de algodão."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"It is made of strong plastic, so it is great on rainy days.\" A CityPack é que é de algodão.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "My phone is ___ as yours. They are the same price.",
+            "opcoes": [
+              "more expensive",
+              "as expensive",
+              "expensiver",
+              "the most expensive"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Mesmo preço = igualdade: as expensive as.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "This backpack is not as heavy ___ that one."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "as"
+              ]
+            ]
+          },
+          "explicacao": "Not as … as: os dois lados levam as.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "The blue bag is ___ (big) than the black bag, but the black bag is ___ (cheap)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "bigger"
+              ],
+              [
+                "cheaper"
+              ]
+            ]
+          },
+          "explicacao": "Big → bigger (dobra o g). Cheap → cheaper.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "not",
+              "red",
+              "as",
+              "is",
+              "big",
+              "green",
+              "backpack",
+              "The",
+              "the",
+              "as",
+              "one"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "The red backpack is not as big as the green one."
+            ]
+          },
+          "explicacao": "Not as + adjetivo + as: não tão grande quanto.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada expressão ao seu significado.",
+          "conteudo": {
+            "esquerda": [
+              "as cheap as",
+              "not as cheap as",
+              "cheaper than",
+              "the cheapest",
+              "too expensive",
+              "cheap enough"
+            ],
+            "direita": [
+              "tão barato quanto",
+              "barato o suficiente",
+              "caro demais",
+              "mais barato do que",
+              "não tão barato quanto",
+              "o mais barato"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              0,
+              4,
+              3,
+              5,
+              2,
+              1
+            ]
+          },
+          "explicacao": "Todas as formas de comparar que vimos no módulo.",
+          "tagsErro": [
+            "comparativo",
+            "superlativo",
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My bag is as big than your bag."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My bag is as big as your bag.",
+              "My bag is as big as yours."
+            ]
+          },
+          "explicacao": "Igualdade: as big as. Than só vai com o comparativo (bigger than).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O meu celular não é tão novo quanto o seu.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My cell phone is not as new as yours.",
+              "My phone is not as new as yours.",
+              "My cell phone is not as new as your cell phone.",
+              "My phone is not as new as your phone.",
+              "My cell phone is not as new as your phone."
+            ]
+          },
+          "explicacao": "Não tão … quanto = not as … as. \"O seu\" = yours.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "A mochila verde é mais leve e mais barata.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The green backpack is lighter and cheaper.",
+              "The green backpack is cheaper and lighter.",
+              "The green bag is lighter and cheaper."
+            ]
+          },
+          "explicacao": "Light → lighter; cheap → cheaper. Nada de more com adjetivo curto.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Which is ___, the red one or the blue one?",
+            "opcoes": [
+              "better",
+              "more good",
+              "gooder"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Comparando duas coisas: better (irregular de good).",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "The Trekker is ___ (expensive) of the three backpacks."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "the most expensive"
+              ]
+            ]
+          },
+          "explicacao": "Três mochilas → superlativo. Expensive é longo: the most expensive.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "coat",
+              "warm",
+              "This",
+              "as",
+              "my",
+              "is",
+              "as",
+              "jacket"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "This jacket is as warm as my coat."
+            ]
+          },
+          "explicacao": "As + adjetivo + as: tão quente quanto.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Este é o mais barato.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the cheapest.",
+              "This one is the cheapest.",
+              "This is the cheapest one."
+            ]
+          },
+          "explicacao": "O mais barato = the cheapest (superlativo leva the).",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "The CityPack is more light than the Trekker."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The CityPack is lighter than the Trekker."
+            ]
+          },
+          "explicacao": "Light é curto: lighter, sem more.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "This shirt is ___ than that one.",
+          "opcoes": [
+            "more cheap",
+            "cheaper",
+            "cheapest"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Cheap é curto: cheaper than.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "My suitcase is ___ (heavy) than yours."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "heavier"
+            ]
+          ]
+        },
+        "explicacao": "Heavy termina em y: heavier.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "This is ___ restaurant in town.",
+          "opcoes": [
+            "the best",
+            "the better",
+            "best",
+            "the goodest"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Comparando com todos da cidade: the best (superlativo irregular de good).",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "These tablets are ___ (expensive) than the cell phones."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "more expensive"
+            ]
+          ]
+        },
+        "explicacao": "Expensive é longo: more expensive.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "How ___ money do you have?",
+          "opcoes": [
+            "much",
+            "many",
+            "a few"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Money é incontável: How much.",
+        "tagsErro": [
+          "quantificador",
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa para a lacuna.",
+        "conteudo": {
+          "texto": "There are only ___ stores in my neighborhood.",
+          "opcoesPorLacuna": [
+            [
+              "a little",
+              "a few"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "a few"
+            ]
+          ]
+        },
+        "explicacao": "Stores é contável no plural: a few.",
+        "tagsErro": [
+          "quantificador"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "These jeans are too ___. I need a smaller size.",
+          "opcoes": [
+            "small",
+            "big",
+            "short"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Precisa de um tamanho menor porque a calça está grande demais: too big.",
+        "tagsErro": [
+          "too_enough"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "The bag is made ___ leather."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "of"
+            ]
+          ]
+        },
+        "explicacao": "Material: made of.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "Her car is not as fast ___ my car.",
+          "opcoes": [
+            "than",
+            "that",
+            "as"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Not as … as: os dois lados levam as.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "January is ___ (hot) month of the year in Rio."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "the hottest"
+            ]
+          ]
+        },
+        "explicacao": "Hot dobra o t: the hottest.",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que Bia não comprou a jaqueta preta?",
+        "conteudo": {
+          "texto": "Last Saturday, Bia went to the mall with her sister. She wanted a new jacket for the winter. She tried on three jackets. The black one was too small, and the brown one was too expensive. The gray one was perfect: it was warm enough and not as expensive as the brown one. It was made of wool. Bia paid by card, and then the two sisters had lunch at the food court.",
+          "opcoes": [
+            "Porque era pequena demais.",
+            "Porque era cara demais.",
+            "Porque não era quente.",
+            "Porque era de lã."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"The black one was too small.\" A marrom é que era cara demais."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Qual jaqueta Bia comprou?",
+        "conteudo": {
+          "texto": "Last Saturday, Bia went to the mall with her sister. She wanted a new jacket for the winter. She tried on three jackets. The black one was too small, and the brown one was too expensive. The gray one was perfect: it was warm enough and not as expensive as the brown one. It was made of wool. Bia paid by card, and then the two sisters had lunch at the food court.",
+          "opcoes": [
+            "A marrom.",
+            "A cinza.",
+            "A preta.",
+            "Nenhuma."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"The gray one was perfect\": quente o suficiente e mais barata que a marrom."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Qual celular tem a melhor câmera?",
+        "conteudo": {
+          "texto": "Hi Leo! I need your help. I want to buy a new phone and I have two options. The Zeta X is the newest model and it has the best camera, but it is very expensive. The Nova 5 is older and its camera is not as good, but it is much cheaper and the battery is bigger. I take a lot of photos, but I don't have much money this month. Which one is better for me? Thanks, Camila",
+          "opcoes": [
+            "O Nova 5.",
+            "Os dois são iguais.",
+            "O Zeta X.",
+            "A mensagem não diz."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"The Zeta X is the newest model and it has the best camera.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Qual é o problema de Camila?",
+        "conteudo": {
+          "texto": "Hi Leo! I need your help. I want to buy a new phone and I have two options. The Zeta X is the newest model and it has the best camera, but it is very expensive. The Nova 5 is older and its camera is not as good, but it is much cheaper and the battery is bigger. I take a lot of photos, but I don't have much money this month. Which one is better for me? Thanks, Camila",
+          "opcoes": [
+            "Ela não tira muitas fotos.",
+            "O Nova 5 não tem bateria.",
+            "O Zeta X é muito velho.",
+            "Ela não tem muito dinheiro este mês."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"I don't have much money this month.\" E ela tira muitas fotos (a lot of photos)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "the",
+            "in",
+            "mall",
+            "cheapest",
+            "store",
+            "the",
+            "is",
+            "This"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "This is the cheapest store in the mall."
+          ]
+        },
+        "explicacao": "This is + the cheapest + lugar com in.",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Posso experimentar estes tênis?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Can I try these sneakers on?",
+            "Can I try on these sneakers?",
+            "May I try these sneakers on?",
+            "May I try on these sneakers?",
+            "Could I try these sneakers on?",
+            "Could I try on these sneakers?"
+          ]
+        },
+        "explicacao": "Experimentar = try on. Tênis = sneakers.",
+        "tagsErro": [
+          "falso_cognato"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "My brother is more tall than me."
+        },
+        "gabarito": {
+          "aceitas": [
+            "My brother is taller than me.",
+            "My brother is taller than I am."
+          ]
+        },
+        "explicacao": "Tall é curto: taller, sem more.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Meu quarto não é tão grande quanto o seu.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "My room is not as big as yours.",
+            "My room is not as big as your room.",
+            "My bedroom is not as big as yours.",
+            "My bedroom is not as big as your bedroom.",
+            "My room is not as large as yours."
+          ]
+        },
+        "explicacao": "Não tão … quanto = not as … as. \"O seu\" = yours.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "This jacket is ___ than the gray one.",
+          "opcoes": [
+            "more nice",
+            "nicer",
+            "nicest"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Nice termina em e: nicer than.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "Today is ___ (cold) than yesterday."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "colder"
+            ]
+          ]
+        },
+        "explicacao": "Cold é curto: colder.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "That was ___ day of my life.",
+          "opcoes": [
+            "the worse",
+            "the worst",
+            "worst",
+            "the baddest"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Superlativo irregular de bad: the worst.",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "This chair is ___ (comfortable) than the sofa."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "more comfortable"
+            ]
+          ]
+        },
+        "explicacao": "Comfortable é longo: more comfortable.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "How ___ shirts do you want?",
+          "opcoes": [
+            "many",
+            "much",
+            "a little"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Shirts é contável no plural: How many.",
+        "tagsErro": [
+          "quantificador"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa para a lacuna.",
+        "conteudo": {
+          "texto": "Can I have ___ water, please?",
+          "opcoesPorLacuna": [
+            [
+              "a few",
+              "a little"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "a little"
+            ]
+          ]
+        },
+        "explicacao": "Water é incontável: a little.",
+        "tagsErro": [
+          "quantificador",
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "This T-shirt isn't big ___. I need a larger size.",
+          "opcoes": [
+            "too",
+            "enough",
+            "much"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Not + adjetivo + enough: not big enough.",
+        "tagsErro": [
+          "too_enough"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "The table is made ___ wood."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "of"
+            ]
+          ]
+        },
+        "explicacao": "Material: made of.",
+        "tagsErro": [
+          "preposicao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a frase.",
+        "conteudo": {
+          "texto": "My sister is as tall ___ my mom.",
+          "opcoes": [
+            "than",
+            "that",
+            "as"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Igualdade: as tall as.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o superlativo do adjetivo entre parênteses.",
+        "conteudo": {
+          "texto": "This is ___ (easy) exercise in the book."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "the easiest"
+            ]
+          ]
+        },
+        "explicacao": "Easy termina em y: the easiest.",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que Rodrigo normalmente compra roupas pela internet?",
+        "conteudo": {
+          "texto": "Rodrigo usually buys clothes online. It is easier and faster, and the prices are often lower than in the stores. But last month he bought a pair of sneakers online, and they were too small. He sent them back and waited two weeks for a new pair. Now he buys shoes at a store near his house. It is more expensive, but he can try them on first.",
+          "opcoes": [
+            "Porque a loja fica longe.",
+            "Porque é mais fácil e mais rápido.",
+            "Porque pode experimentar antes.",
+            "Porque os tênis são maiores."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"It is easier and faster, and the prices are often lower.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que agora ele compra sapatos na loja?",
+        "conteudo": {
+          "texto": "Rodrigo usually buys clothes online. It is easier and faster, and the prices are often lower than in the stores. But last month he bought a pair of sneakers online, and they were too small. He sent them back and waited two weeks for a new pair. Now he buys shoes at a store near his house. It is more expensive, but he can try them on first.",
+          "opcoes": [
+            "Porque é mais barato.",
+            "Porque a loja é a maior da cidade.",
+            "Porque pode experimentar antes.",
+            "Porque a internet é lenta."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"It is more expensive, but he can try them on first.\" Os tênis da internet ficaram pequenos demais."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a avaliação. Qual tênis é mais leve?",
+        "conteudo": {
+          "texto": "I run every morning, so I need good sneakers. This month I tested two pairs. The Flash sneakers are very light and they are made of a soft material, but they are not as strong as the Rock sneakers. The Rock sneakers are heavier, but they are the most comfortable shoes in the store, and they are cheaper too. For long runs, the Rock sneakers are better for me. — Marina",
+          "opcoes": [
+            "O Rock.",
+            "Os dois pesam igual.",
+            "A avaliação não diz.",
+            "O Flash."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"The Flash sneakers are very light.\" O Rock é mais pesado (heavier)."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a avaliação. Qual tênis Marina prefere para corridas longas, e por quê?",
+        "conteudo": {
+          "texto": "I run every morning, so I need good sneakers. This month I tested two pairs. The Flash sneakers are very light and they are made of a soft material, but they are not as strong as the Rock sneakers. The Rock sneakers are heavier, but they are the most comfortable shoes in the store, and they are cheaper too. For long runs, the Rock sneakers are better for me. — Marina",
+          "opcoes": [
+            "O Rock, porque é o mais confortável.",
+            "O Flash, porque é mais leve.",
+            "O Flash, porque é o mais barato.",
+            "O Rock, porque é o mais leve."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"The Rock sneakers are heavier, but they are the most comfortable shoes in the store.\" E são mais baratos."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "the",
+            "store",
+            "most",
+            "the",
+            "is",
+            "This",
+            "jacket",
+            "expensive",
+            "in"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "This is the most expensive jacket in the store."
+          ]
+        },
+        "explicacao": "This is + the most expensive + lugar com in.",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Posso pagar com cartão?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Can I pay by card?",
+            "Can I pay with a card?",
+            "May I pay by card?",
+            "Can I pay with my card?",
+            "Can I pay by credit card?",
+            "Can I pay with a credit card?",
+            "Could I pay by card?"
+          ]
+        },
+        "explicacao": "Pagar com cartão = pay by card.",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "These boots are enough big for me."
+        },
+        "gabarito": {
+          "aceitas": [
+            "These boots are big enough for me."
+          ]
+        },
+        "explicacao": "Enough vem depois do adjetivo: big enough.",
+        "tagsErro": [
+          "too_enough"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Esta loja é mais barata do que aquela.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "This store is cheaper than that one.",
+            "This store is cheaper than that store.",
+            "This shop is cheaper than that one.",
+            "This shop is cheaper than that shop."
+          ]
+        },
+        "explicacao": "Mais barata = cheaper. Loja = store (ou shop).",
+        "tagsErro": [
+          "comparativo"
+        ]
+      }
+    ]
+  }
+}
