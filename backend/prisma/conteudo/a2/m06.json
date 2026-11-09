@@ -1,0 +1,426 @@
+{
+  "slug": "a2-m06",
+  "ordem": 6,
+  "titulo": "Health & advice",
+  "tema": "Saúde, corpo e conselhos",
+  "descricao": "Falar de sintomas e do corpo, ir ao médico e à farmácia, dar conselhos com should e falar de obrigações e regras com have to e must.",
+  "canDos": [
+    "Dizer o que estou sentindo e onde dói.",
+    "Entender e responder perguntas simples no médico e na farmácia.",
+    "Dar e pedir conselhos com should e shouldn't.",
+    "Falar do que tenho e do que não preciso fazer com have to e don't have to.",
+    "Entender regras e ordens com must e mustn't, sem confundir mustn't com don't have to.",
+    "Escrever uma resposta curta com conselhos num fórum."
+  ],
+  "gramatica": "Should / shouldn't + verbo base para conselhos; have to / has to / don't have to / doesn't have to (obrigação e falta de obrigação), perguntas com Do/Does … have to; must / mustn't para regras e ordens fortes; contraste mustn't × don't have to.",
+  "vocabulario": "Partes do corpo, sintomas e doenças comuns (headache, sore throat, cold, the flu, fever, stomachache), no médico e na farmácia (medicine, pill, prescription), hábitos saudáveis (get enough sleep, drink water, exercise).",
+  "funcao": "Descrever sintomas, dar e pedir conselhos, falar de obrigações e regras.",
+  "pronuncia": "O l de should, could e would é mudo: should soa /ʃʊd/. Have to e has to soam /hæftə/ e /hæstə/, com f e s. Como o curso ainda não tem áudio, fica a dica para ouvir em séries e músicas.",
+  "licoes": [
+    {
+      "slug": "a2-m06-l1",
+      "ordem": 1,
+      "titulo": "What's the matter?",
+      "objetivo": "Dizer o que está sentindo e onde dói: I have a headache, my back hurts, I feel sick.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar o que alguém está sentindo, usamos What's the matter? ou What's wrong? (O que você tem? O que houve?). No médico, você também vai ouvir How do you feel? (Como você está se sentindo?).",
+          "Para dizer o sintoma, o português usa estar com, mas o inglês usa have: estou com dor de cabeça = I have a headache. Muitas dores terminam em -ache: headache (cabeça), stomachache (barriga), backache (costas), toothache (dente), earache (ouvido). Gripe, no inglês americano, é the flu: I have the flu.",
+          "Para dizer que uma parte do corpo dói, usamos hurt: My back hurts. My feet hurt. Com uma parte só (he/she/it), hurt ganha -s; com plural, não. Para como você se sente, usamos feel + adjetivo: I feel sick (enjoado, mal), I feel dizzy (tonto), I feel tired (cansado)."
+        ],
+        "regras": [
+          "What's the matter? / What's wrong? = O que você tem?",
+          "I have a headache = Estou com dor de cabeça",
+          "I have a cold / the flu / a fever = Estou resfriado / gripado / com febre",
+          "My back hurts = Minhas costas doem",
+          "My feet hurt = Meus pés doem",
+          "I feel sick / dizzy / tired = Estou enjoado / tonto / cansado"
+        ],
+        "notaContrastiva": "Não traduza o estar com: não diga *I am with a headache* → diga *I have a headache*. E lembre do -s com a terceira pessoa: não diga *She have a fever* → diga *She has a fever*.",
+        "exemplos": [
+          { "en": "What's the matter? — I have a terrible headache.", "pt": "O que você tem? — Estou com uma dor de cabeça terrível." },
+          { "en": "My son has a fever and a sore throat.", "pt": "Meu filho está com febre e dor de garganta." },
+          { "en": "I think I have the flu.", "pt": "Acho que estou gripado." },
+          { "en": "My back hurts after work.", "pt": "Minhas costas doem depois do trabalho." },
+          { "en": "My feet hurt. These shoes are too small.", "pt": "Meus pés doem. Estes sapatos são pequenos demais." },
+          { "en": "I feel dizzy. Can I sit down?", "pt": "Estou tonto. Posso sentar?" },
+          { "en": "She has a cold, so she's staying home today.", "pt": "Ela está resfriada, então vai ficar em casa hoje." },
+          { "en": "How do you feel today? — Better, thanks.", "pt": "Como você está se sentindo hoje? — Melhor, obrigado." }
+        ],
+        "vocabulario": [
+          { "en": "head / headache", "pt": "cabeça / dor de cabeça" },
+          { "en": "stomach / stomachache", "pt": "estômago, barriga / dor de barriga" },
+          { "en": "back / backache", "pt": "costas / dor nas costas" },
+          { "en": "tooth / toothache", "pt": "dente / dor de dente" },
+          { "en": "sore throat", "pt": "dor de garganta" },
+          { "en": "a cold", "pt": "resfriado" },
+          { "en": "the flu", "pt": "gripe" },
+          { "en": "a fever", "pt": "febre" },
+          { "en": "hurt", "pt": "doer" },
+          { "en": "sick", "pt": "doente, enjoado" },
+          { "en": "dizzy", "pt": "tonto" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "My head hurts. I have a ___.", "opcoes": ["backache", "headache", "toothache", "sore throat"] }, "gabarito": { "correta": 1 }, "explicacao": "Dor na cabeça (head) = headache.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Marina ___ a fever and a sore throat.", "opcoes": ["have", "is", "has"] }, "gabarito": { "correta": 2 }, "explicacao": "Sintoma pede have, e Marina = she → has. Não use is: em inglês não se está com febre, se tem febre.", "tagsErro": ["ter_sintoma", "terceira_pessoa_s"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "My back ___ and I ___ tired.", "opcoesPorLacuna": [["hurt", "hurts"], ["feel", "feels"]] }, "gabarito": { "respostas": [["hurts"], ["feel"]] }, "explicacao": "My back = it → hurts. I → feel, sem -s.", "tagsErro": ["terceira_pessoa_s"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What's the ___? — I have a cold." }, "gabarito": { "respostas": [["matter", "problem"]] }, "explicacao": "What's the matter? é a pergunta mais comum para saber o que a pessoa tem.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase (inglês americano).", "conteudo": { "texto": "Ana can't go to school today. She has ___ flu.", "opcoes": ["an", "the", "some"] }, "gabarito": { "correta": 1 }, "explicacao": "No inglês americano, gripe é the flu: She has the flu.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["headache", "today", "a", "I", "terrible", "have"] }, "gabarito": { "aceitas": ["I have a terrible headache today.", "Today I have a terrible headache."] }, "explicacao": "Estar com dor de cabeça = have a headache. O adjetivo terrible vem antes do substantivo.", "tagsErro": ["ter_sintoma"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada sintoma à tradução.", "conteudo": { "esquerda": ["a headache", "a sore throat", "a fever", "a cold", "a stomachache", "a toothache"], "direita": ["dor de barriga", "febre", "dor de dente", "dor de cabeça", "resfriado", "dor de garganta"] }, "gabarito": { "pares": [3, 5, 1, 4, 0, 2] }, "explicacao": "As dores com -ache juntam a parte do corpo + ache: head, stomach, tooth. Sore throat é dor de garganta; a cold é resfriado.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I am with a headache." }, "gabarito": { "aceitas": ["I have a headache.", "I have got a headache."] }, "explicacao": "Estar com dor = have: I have a headache. A tradução palavra por palavra (I am with) não existe em inglês.", "tagsErro": ["ter_sintoma"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estou com dor de garganta.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I have a sore throat.", "I have got a sore throat."] }, "explicacao": "Estou com = I have. Dor de garganta = a sore throat.", "tagsErro": ["ter_sintoma"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Minhas costas doem e eu estou cansado.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["My back hurts and I am tired.", "My back hurts and I feel tired.", "My back hurts, and I am tired.", "My back hurts, and I feel tired.", "My back is hurting and I am tired.", "My back is hurting and I feel tired.", "My back hurts and I am really tired.", "My back hurts and I'm so tired."] }, "explicacao": "Costas é singular em inglês: my back → hurts. Cansado = tired (I am tired ou I feel tired).", "tagsErro": ["terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "I feel ___. I think I'm going to fall.", "opcoes": ["hungry", "bored", "dizzy"] }, "gabarito": { "correta": 2 }, "explicacao": "Quem acha que vai cair está tonto: dizzy.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses na forma correta.", "conteudo": { "texto": "Lucas ___ (have) a cold, so he's staying home." }, "gabarito": { "respostas": [["has"]] }, "explicacao": "Lucas = he → has.", "tagsErro": ["terceira_pessoa_s", "ter_sintoma"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["the", "What", "matter", "is"] }, "gabarito": { "aceitas": ["What is the matter?"] }, "explicacao": "What is the matter? (ou What's the matter?) = O que você tem?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela está com febre.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She has a fever.", "She has got a fever.", "She has a temperature.", "She has got a temperature."] }, "explicacao": "Estar com febre = have a fever. She → has.", "tagsErro": ["ter_sintoma", "terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My legs hurts after the game." }, "gabarito": { "aceitas": ["My legs hurt after the game.", "After the game my legs hurt.", "After the game, my legs hurt."] }, "explicacao": "My legs é plural (they) → hurt, sem -s.", "tagsErro": ["terceira_pessoa_s"] }
+      ]
+    },
+    {
+      "slug": "a2-m06-l2",
+      "ordem": 2,
+      "titulo": "You should rest",
+      "objetivo": "Dar e pedir conselhos com should e shouldn't + verbo base.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dar um conselho, usamos should (deveria) + verbo na forma base: You should rest. You should drink more water. Na negativa, shouldn't (should not): You shouldn't go to work today.",
+          "Should é igual para todas as pessoas: I should, she should, they should. Ele não ganha -s e não vem com to depois: He should see a doctor, e não He shoulds ou He should to see.",
+          "Para pedir um conselho, coloque should antes do sujeito: Should I take an aspirin? What should I do? A resposta curta também usa should: Yes, you should. / No, you shouldn't."
+        ],
+        "regras": [
+          "should + verbo base = deveria: You should rest.",
+          "shouldn't + verbo base = não deveria: You shouldn't go out.",
+          "Igual para todos: I / you / he / she / we / they should",
+          "Should I…? / What should I do? = pedir conselho",
+          "Yes, you should. / No, you shouldn't."
+        ],
+        "notaContrastiva": "Depois de should o verbo vem direto, sem to: não diga *You should to rest* → diga *You should rest*. E should não muda com he/she: não diga *He shoulds see a doctor* → diga *He should see a doctor*.",
+        "exemplos": [
+          { "en": "You have a fever. You should stay in bed.", "pt": "Você está com febre. Deveria ficar de cama." },
+          { "en": "You shouldn't go to work today.", "pt": "Você não deveria ir trabalhar hoje." },
+          { "en": "He should see a doctor.", "pt": "Ele deveria ir ao médico." },
+          { "en": "What should I do? I can't sleep.", "pt": "O que eu deveria fazer? Não consigo dormir." },
+          { "en": "Should I take an aspirin? — Yes, you should.", "pt": "Devo tomar uma aspirina? — Sim, deveria." },
+          { "en": "We should drink more water.", "pt": "A gente deveria beber mais água." },
+          { "en": "Kids shouldn't eat too much candy.", "pt": "Crianças não deveriam comer doce demais." },
+          { "en": "You look tired. You should go to bed early.", "pt": "Você parece cansado. Deveria ir dormir cedo." }
+        ],
+        "vocabulario": [
+          { "en": "should / shouldn't", "pt": "deveria / não deveria" },
+          { "en": "advice", "pt": "conselho (incontável)" },
+          { "en": "rest", "pt": "descansar" },
+          { "en": "stay in bed", "pt": "ficar de cama" },
+          { "en": "see a doctor", "pt": "ir ao médico" },
+          { "en": "take an aspirin", "pt": "tomar uma aspirina" },
+          { "en": "medicine", "pt": "remédio" },
+          { "en": "candy", "pt": "doce, bala" },
+          { "en": "go to bed early", "pt": "ir dormir cedo" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "You have a fever. You ___ go to school today.", "opcoes": ["shouldn't", "should", "don't should"] }, "gabarito": { "correta": 0 }, "explicacao": "Com febre, o conselho é não ir: shouldn't. A negativa de should não usa don't.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "You look tired. You should ___ to bed early.", "opcoes": ["going", "to go", "goes", "go"] }, "gabarito": { "correta": 3 }, "explicacao": "Depois de should, o verbo vem na forma base, sem to: should go.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com should ou shouldn't.", "conteudo": { "texto": "It's very cold outside. You ___ wear a jacket." }, "gabarito": { "respostas": [["should"]] }, "explicacao": "Está frio: o conselho é usar casaco → should.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "You ___ drink a lot of water and you ___ eat a lot of junk food.", "opcoesPorLacuna": [["should", "shouldn't"], ["should", "shouldn't"]] }, "gabarito": { "respostas": [["should"], ["shouldn't"]] }, "explicacao": "Beber água é bom → should. Comer muita besteira não é → shouldn't.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ I take an aspirin? — Yes, you should.", "opcoes": ["Do", "Should", "Am"] }, "gabarito": { "correta": 1 }, "explicacao": "A resposta usa should, então a pergunta também: Should I take…?", "tagsErro": ["modal_should", "ordem_pergunta"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["see", "should", "a", "You", "doctor"] }, "gabarito": { "aceitas": ["You should see a doctor."] }, "explicacao": "Sujeito + should + verbo base + complemento: You should see a doctor.", "tagsErro": ["modal_should"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada problema ao melhor conselho.", "conteudo": { "esquerda": ["I have a headache.", "I'm always tired.", "I have a toothache.", "I have a sore throat.", "I'm very stressed."], "direita": ["You should go to the dentist.", "You should do yoga and relax.", "You should take an aspirin.", "You should drink hot tea with honey.", "You should go to bed earlier."] }, "gabarito": { "pares": [2, 4, 0, 3, 1] }, "explicacao": "Dor de cabeça → aspirina; cansaço → dormir mais cedo; dor de dente → dentista; dor de garganta → chá quente com mel; estresse → relaxar.", "tagsErro": ["modal_should", "vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "You should to rest this weekend." }, "gabarito": { "aceitas": ["You should rest this weekend.", "This weekend you should rest.", "This weekend, you should rest."] }, "explicacao": "Depois de should não vem to: You should rest.", "tagsErro": ["modal_should"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você deveria ir ao médico.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You should go to the doctor.", "You should see a doctor.", "You should see the doctor.", "You should go to a doctor.", "You should go see a doctor.", "You ought to go to the doctor.", "You ought to see a doctor."] }, "explicacao": "Deveria = should + verbo base. Ir ao médico = go to the doctor ou see a doctor.", "tagsErro": ["modal_should"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ele não deveria comer tanto açúcar.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["He should not eat so much sugar.", "He should not eat that much sugar.", "He should not eat too much sugar.", "He should not eat a lot of sugar."] }, "explicacao": "Não deveria = shouldn't (should not). Should não ganha -s com he. Açúcar é incontável → so much sugar.", "tagsErro": ["modal_should", "incontavel"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My sister has a backache. She ___ carry heavy bags.", "opcoes": ["should", "shoulds", "doesn't should", "shouldn't"] }, "gabarito": { "correta": 3 }, "explicacao": "Com dor nas costas, o conselho é não carregar peso: shouldn't. Should não ganha -s nem usa doesn't.", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What ___ I do? — You should rest." }, "gabarito": { "respostas": [["should"]] }, "explicacao": "Para pedir conselho: What should I do?", "tagsErro": ["modal_should", "ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["late", "She", "stay", "shouldn't", "up"] }, "gabarito": { "aceitas": ["She shouldn't stay up late."] }, "explicacao": "Shouldn't + verbo base: She shouldn't stay up late (ficar acordada até tarde).", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não deveria trabalhar hoje.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You should not work today.", "Today you should not work.", "Today, you should not work.", "You should not go to work today.", "Today you should not go to work.", "Today, you should not go to work."] }, "explicacao": "Não deveria = shouldn't + verbo base: You shouldn't work today.", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He shoulds take a vitamin." }, "gabarito": { "aceitas": ["He should take a vitamin."] }, "explicacao": "Should é igual para todas as pessoas: he should, sem -s.", "tagsErro": ["modal_should"] }
+      ]
+    },
+    {
+      "slug": "a2-m06-l3",
+      "ordem": 3,
+      "titulo": "I have to take this medicine",
+      "objetivo": "Falar de obrigações com have to / has to e do que não é preciso fazer com don't have to / doesn't have to.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dizer que algo é obrigatório ou necessário, usamos have to + verbo base (ter que): I have to take this medicine twice a day. Com he, she e it, vira has to: My mom has to see the doctor on Friday.",
+          "Na negativa, don't have to / doesn't have to quer dizer não precisa, não é obrigatório: It's Saturday, so I don't have to work. She doesn't have to go to school today. A pessoa pode fazer, se quiser, mas não é obrigada.",
+          "Have to funciona como um verbo comum: as perguntas usam do e does. Do you have to work tomorrow? — Yes, I do. / No, I don't. Does he have to wear a uniform? — Yes, he does. Repare que na pergunta e na negativa volta a ser have, nunca has."
+        ],
+        "regras": [
+          "I / you / we / they have to + verbo base = tenho que…",
+          "He / she / it has to + verbo base = tem que…",
+          "don't / doesn't have to = não precisa",
+          "Do you have to…? / Does she have to…? = Você tem que…?",
+          "Depois de does / doesn't: have to (nunca has to)"
+        ],
+        "notaContrastiva": "Não esqueça o has com he/she: não diga *She have to go* → diga *She has to go*. Mas depois de does e doesn't, volta o have: não diga *Does he has to work?* → diga *Does he have to work?*.",
+        "exemplos": [
+          { "en": "I have to take this medicine twice a day.", "pt": "Tenho que tomar este remédio duas vezes por dia." },
+          { "en": "My mom has to see the doctor on Friday.", "pt": "Minha mãe tem que ir ao médico na sexta." },
+          { "en": "It's Saturday, so I don't have to work.", "pt": "É sábado, então não preciso trabalhar." },
+          { "en": "She doesn't have to pay. The test is free.", "pt": "Ela não precisa pagar. O exame é de graça." },
+          { "en": "Do you have to work tomorrow? — No, I don't.", "pt": "Você tem que trabalhar amanhã? — Não." },
+          { "en": "Does he have to wear a uniform? — Yes, he does.", "pt": "Ele tem que usar uniforme? — Sim." },
+          { "en": "We have to be at the doctor's office at nine.", "pt": "Temos que estar no consultório às nove." },
+          { "en": "You don't have to come with me. I'm OK.", "pt": "Você não precisa vir comigo. Estou bem." }
+        ],
+        "vocabulario": [
+          { "en": "have to / has to", "pt": "ter que" },
+          { "en": "don't have to", "pt": "não precisar" },
+          { "en": "twice a day", "pt": "duas vezes por dia" },
+          { "en": "pill", "pt": "comprimido" },
+          { "en": "prescription", "pt": "receita médica" },
+          { "en": "doctor's office", "pt": "consultório" },
+          { "en": "appointment", "pt": "consulta (horário marcado)" },
+          { "en": "uniform", "pt": "uniforme" },
+          { "en": "free", "pt": "de graça, livre" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ get up at six on weekdays.", "opcoes": ["has to", "have to", "have"] }, "gabarito": { "correta": 1 }, "explicacao": "I → have to + verbo base. Sem o to, a frase não faz sentido.", "tagsErro": ["have_to"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My mom ___ take her medicine every morning.", "opcoes": ["have to", "must to", "has to", "haves to"] }, "gabarito": { "correta": 2 }, "explicacao": "My mom = she → has to.", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "It's Saturday, so I ___ go to work today. I can sleep late!", "opcoesPorLacuna": [["have to", "don't have to", "doesn't have to"]] }, "gabarito": { "respostas": [["don't have to"]] }, "explicacao": "No sábado não é obrigatório trabalhar → don't have to (com I, don't).", "tagsErro": ["have_to"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "___ you have to work tomorrow? — No, I don't." }, "gabarito": { "respostas": [["Do"]] }, "explicacao": "Have to faz perguntas com do: Do you have to…? A resposta curta confirma: No, I don't.", "tagsErro": ["do_support", "have_to"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com have to na forma correta.", "conteudo": { "texto": "Paulo ___ (have to) wear a uniform at work." }, "gabarito": { "respostas": [["has to"]] }, "explicacao": "Paulo = he → has to.", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["have", "take", "she", "Does", "the", "medicine", "to"] }, "gabarito": { "aceitas": ["Does she have to take the medicine?"] }, "explicacao": "Does + sujeito + have to + verbo base. Depois de does, have (e não has).", "tagsErro": ["do_support", "have_to"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada frase à tradução.", "conteudo": { "esquerda": ["I have to work.", "She has to study.", "We don't have to pay.", "He doesn't have to cook.", "Do you have to go?"], "direita": ["Ele não precisa cozinhar.", "Eu tenho que trabalhar.", "Você tem que ir?", "Nós não precisamos pagar.", "Ela tem que estudar."] }, "gabarito": { "pares": [1, 4, 3, 0, 2] }, "explicacao": "Have to / has to = ter que. Don't / doesn't have to = não precisar.", "tagsErro": ["have_to"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "She have to go to the dentist." }, "gabarito": { "aceitas": ["She has to go to the dentist."] }, "explicacao": "She → has to.", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu tenho que tomar este remédio duas vezes por dia.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I have to take this medicine twice a day.", "I have to take this medicine two times a day.", "I need to take this medicine twice a day.", "I need to take this medicine two times a day.", "I have to take this medication twice a day.", "I need to take this medication twice a day."] }, "explicacao": "Tenho que = I have to. Tomar remédio = take medicine. Duas vezes por dia = twice a day.", "tagsErro": ["have_to"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não precisa vir amanhã.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You do not have to come tomorrow.", "You do not need to come tomorrow.", "Tomorrow you do not have to come.", "You do not have to come in tomorrow.", "You need not come tomorrow."] }, "explicacao": "Não precisa = don't have to (ou don't need to) + verbo base.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Gabriel ___ work on Sundays. He's free all day!", "opcoes": ["doesn't have to", "don't have to", "has to"] }, "gabarito": { "correta": 0 }, "explicacao": "Ele está livre, então não é obrigado a trabalhar. Gabriel = he → doesn't have to.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com have to na forma correta.", "conteudo": { "texto": "We ___ (have to) be at the doctor's office at nine." }, "gabarito": { "respostas": [["have to"]] }, "explicacao": "We → have to.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["wear", "have", "a", "I", "uniform", "don't", "to"] }, "gabarito": { "aceitas": ["I don't have to wear a uniform."] }, "explicacao": "Não preciso = I don't have to + verbo base.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela tem que descansar.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She has to rest.", "She needs to rest.", "She has to get some rest.", "She needs to get some rest.", "She must rest."] }, "explicacao": "Ela tem que = she has to (com -s na terceira pessoa).", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "Does he has to work today?" }, "gabarito": { "aceitas": ["Does he have to work today?"] }, "explicacao": "Depois de does, o verbo volta para a forma base: have to.", "tagsErro": ["do_support", "have_to"] }
+      ]
+    },
+    {
+      "slug": "a2-m06-l4",
+      "ordem": 4,
+      "titulo": "You must wear a helmet",
+      "objetivo": "Entender e usar must e mustn't para regras, placas e ordens fortes.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Must + verbo base mostra uma obrigação forte: regras, placas, avisos e ordens do médico. You must wear a helmet. Patients must arrive at eight. É parecido com have to, mas soa mais formal e é muito comum em regras escritas.",
+          "Mustn't (must not) quer dizer é proibido, não pode: You mustn't smoke here. Children mustn't use the pool alone. É exatamente o que as placas com NO… dizem: NO SMOKING = You mustn't smoke.",
+          "Como should, must é igual para todas as pessoas e não vem com to: He must stay in bed, e não He musts ou He must to. Na conversa do dia a dia, para obrigações pessoais, os americanos preferem have to: I have to work tomorrow."
+        ],
+        "regras": [
+          "must + verbo base = tem que (regra, ordem forte)",
+          "mustn't + verbo base = não pode, é proibido",
+          "Igual para todos: I / you / he / she / we / they must",
+          "NO SMOKING = You mustn't smoke.",
+          "Sem to e sem -s: He must stay. (não He musts / must to)"
+        ],
+        "notaContrastiva": "Must não vem com to: não diga *You must to wear a mask* → diga *You must wear a mask*. E não ganha -s: não diga *He musts stay in bed* → diga *He must stay in bed*.",
+        "exemplos": [
+          { "en": "You must wear a helmet on a bike.", "pt": "Você tem que usar capacete na bicicleta." },
+          { "en": "You mustn't smoke in the hospital.", "pt": "Não pode fumar no hospital." },
+          { "en": "Patients must arrive fifteen minutes early.", "pt": "Os pacientes devem chegar quinze minutos antes." },
+          { "en": "The doctor says I must stay in bed for two days.", "pt": "O médico diz que eu tenho que ficar de cama por dois dias." },
+          { "en": "Children mustn't use the pool alone.", "pt": "Crianças não podem usar a piscina sozinhas." },
+          { "en": "Drivers must stop at a red light.", "pt": "Os motoristas têm que parar no sinal vermelho." },
+          { "en": "You mustn't use your cell phone in the library.", "pt": "Não pode usar o celular na biblioteca." },
+          { "en": "Visitors mustn't feed the animals.", "pt": "Os visitantes não podem alimentar os animais." }
+        ],
+        "vocabulario": [
+          { "en": "must", "pt": "ter que, dever (regra, ordem)" },
+          { "en": "mustn't", "pt": "não poder (proibido)" },
+          { "en": "rule", "pt": "regra" },
+          { "en": "sign", "pt": "placa, aviso" },
+          { "en": "helmet", "pt": "capacete" },
+          { "en": "patient", "pt": "paciente" },
+          { "en": "smoke", "pt": "fumar" },
+          { "en": "feed", "pt": "alimentar, dar comida" },
+          { "en": "staff only", "pt": "só funcionários" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "You ___ smoke in the hospital. It's against the rules.", "opcoes": ["must", "mustn't", "don't must"] }, "gabarito": { "correta": 1 }, "explicacao": "É proibido (against the rules) → mustn't. A negativa de must não usa don't.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The doctor says I ___ take these pills after meals.", "opcoes": ["must to", "musts", "must"] }, "gabarito": { "correta": 2 }, "explicacao": "Must + verbo base, sem to e sem -s.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Leia o aviso da piscina e escolha a forma correta para cada lacuna.", "conteudo": { "texto": "POOL RULES: You ___ run near the pool. You ___ take a shower before you swim.", "opcoesPorLacuna": [["must", "mustn't"], ["must", "mustn't"]] }, "gabarito": { "respostas": [["mustn't"], ["must"]] }, "explicacao": "Correr na beira da piscina é proibido → mustn't. Tomar banho antes é obrigatório → must.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com must ou mustn't.", "conteudo": { "texto": "Drivers ___ stop at a red light." }, "gabarito": { "respostas": [["must"]] }, "explicacao": "Parar no sinal vermelho é obrigatório → must.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "O que a frase quer dizer?", "conteudo": { "texto": "You mustn't eat in the classroom.", "opcoes": ["Você não precisa comer na sala.", "Você deveria comer na sala.", "Você não pode comer na sala.", "Você tem que comer na sala."] }, "gabarito": { "correta": 2 }, "explicacao": "Mustn't = é proibido, não pode.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["helmet", "must", "You", "a", "wear"] }, "gabarito": { "aceitas": ["You must wear a helmet."] }, "explicacao": "Sujeito + must + verbo base + complemento.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada placa ao que ela quer dizer.", "conteudo": { "esquerda": ["NO SMOKING", "SILENCE, PLEASE", "NO PHONES", "WASH YOUR HANDS", "STAFF ONLY"], "direita": ["You must wash your hands.", "You mustn't use your phone.", "You mustn't go in here if you don't work here.", "You mustn't smoke.", "You mustn't make noise."] }, "gabarito": { "pares": [3, 4, 1, 0, 2] }, "explicacao": "NO + -ing = é proibido → mustn't. WASH YOUR HANDS é uma ordem → must. STAFF ONLY = só funcionários.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "You must to wear a mask in the hospital." }, "gabarito": { "aceitas": ["You must wear a mask in the hospital.", "In the hospital you must wear a mask.", "In the hospital, you must wear a mask."] }, "explicacao": "Depois de must não vem to: You must wear…", "tagsErro": ["must_mustnt"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não pode usar o celular aqui.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You must not use your cell phone here.", "You must not use your phone here.", "You cannot use your cell phone here.", "You cannot use your phone here.", "You are not allowed to use your cell phone here.", "You are not allowed to use your phone here.", "You must not use cell phones here.", "You cannot use cell phones here.", "You must not use the cell phone here.", "You cannot use the cell phone here."] }, "explicacao": "Não pode (proibido) = mustn't (ou can't). Celular = cell phone (ou só phone).", "tagsErro": ["must_mustnt"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Os pacientes têm que chegar às oito.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Patients must arrive at eight.", "Patients must arrive at 8.", "Patients have to arrive at eight.", "Patients have to arrive at 8.", "The patients must arrive at eight.", "The patients must arrive at 8.", "The patients have to arrive at eight.", "The patients have to arrive at 8.", "Patients must arrive at eight o'clock.", "Patients have to arrive at eight o'clock.", "The patients must arrive at eight o'clock.", "The patients have to arrive at eight o'clock."] }, "explicacao": "Regra → must (ou have to) + verbo base. Pacientes em geral: Patients, sem the.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "This medicine is dangerous for kids. Children ___ take it.", "opcoes": ["must", "has to", "mustn't"] }, "gabarito": { "correta": 2 }, "explicacao": "É perigoso para crianças: é proibido → mustn't.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com must ou mustn't.", "conteudo": { "texto": "You ___ be quiet in the library." }, "gabarito": { "respostas": [["must"]] }, "explicacao": "Ficar em silêncio na biblioteca é regra → must.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["the", "feed", "Visitors", "animals", "mustn't"] }, "gabarito": { "aceitas": ["Visitors mustn't feed the animals."] }, "explicacao": "Sujeito + mustn't + verbo base: Visitors mustn't feed the animals.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você tem que usar capacete.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You must wear a helmet.", "You have to wear a helmet.", "You need to wear a helmet."] }, "explicacao": "Obrigação → must (ou have to) + verbo base. Usar roupa ou capacete = wear.", "tagsErro": ["must_mustnt", "wear_use"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He musts stay in the hospital tonight." }, "gabarito": { "aceitas": ["He must stay in the hospital tonight.", "Tonight he must stay in the hospital.", "Tonight, he must stay in the hospital."] }, "explicacao": "Must é igual para todas as pessoas: he must, sem -s.", "tagsErro": ["must_mustnt"] }
+      ]
+    },
+    {
+      "slug": "a2-m06-l5",
+      "ordem": 5,
+      "titulo": "Mustn't or don't have to?",
+      "objetivo": "Não confundir mustn't (proibido) com don't have to (não precisa) e falar de hábitos saudáveis.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No afirmativo, must e have to são parecidos: os dois falam de obrigação. Mas na negativa eles dizem coisas bem diferentes, e essa é uma armadilha clássica para brasileiros.",
+          "Mustn't = é proibido, não pode: You mustn't swim here. (Nadar aqui é perigoso ou não é permitido.) Don't have to = não precisa, não é obrigatório: You don't have to swim. (Você pode nadar, se quiser, mas não é obrigado.)",
+          "Uma dica: quando em português você diria não precisa, use don't have to. Quando diria não pode ou é proibido, use mustn't (ou can't). E para conselhos sobre hábitos saudáveis, volte ao should: You should get enough sleep. You shouldn't skip breakfast."
+        ],
+        "regras": [
+          "mustn't = não pode, é proibido",
+          "don't / doesn't have to = não precisa, não é obrigatório",
+          "The museum is free. You don't have to pay. (não precisa)",
+          "It's a hospital. You mustn't shout. (não pode)",
+          "Hábitos saudáveis → should: You should drink water."
+        ],
+        "notaContrastiva": "Não use mustn't para não precisa: não diga *The class is free, so you mustn't pay* → diga *The class is free, so you don't have to pay*. Mustn't significaria que é proibido pagar!",
+        "exemplos": [
+          { "en": "The museum is free. You don't have to pay.", "pt": "O museu é de graça. Você não precisa pagar." },
+          { "en": "It's a hospital. You mustn't shout.", "pt": "É um hospital. Não pode gritar." },
+          { "en": "Tomorrow is a holiday, so I don't have to get up early.", "pt": "Amanhã é feriado, então não preciso acordar cedo." },
+          { "en": "You mustn't take more than two pills a day.", "pt": "Você não pode tomar mais de dois comprimidos por dia." },
+          { "en": "She doesn't have to cook tonight. We're going out.", "pt": "Ela não precisa cozinhar hoje. Vamos sair." },
+          { "en": "You should get enough sleep and drink a lot of water.", "pt": "Você deveria dormir o suficiente e beber bastante água." },
+          { "en": "You shouldn't skip breakfast.", "pt": "Você não deveria pular o café da manhã." },
+          { "en": "I go for a walk every morning.", "pt": "Eu faço uma caminhada toda manhã." }
+        ],
+        "vocabulario": [
+          { "en": "healthy", "pt": "saudável" },
+          { "en": "habit", "pt": "hábito" },
+          { "en": "get enough sleep", "pt": "dormir o suficiente" },
+          { "en": "skip breakfast", "pt": "pular o café da manhã" },
+          { "en": "go for a walk", "pt": "fazer uma caminhada" },
+          { "en": "vegetables", "pt": "legumes e verduras" },
+          { "en": "shout", "pt": "gritar" },
+          { "en": "holiday", "pt": "feriado" },
+          { "en": "mask", "pt": "máscara" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The museum is free. You ___ pay.", "opcoes": ["mustn't", "don't have to", "must"] }, "gabarito": { "correta": 1 }, "explicacao": "É de graça: não precisa pagar → don't have to. Mustn't diria que é proibido pagar.", "tagsErro": ["must_mustnt", "have_to"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "It's a hospital. You ___ shout here.", "opcoes": ["don't have to", "doesn't have to", "mustn't", "must"] }, "gabarito": { "correta": 2 }, "explicacao": "Gritar no hospital é proibido → mustn't.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "Tomorrow is a holiday, so the kids ___ go to school. But they ___ forget their homework for Monday!", "opcoesPorLacuna": [["don't have to", "mustn't"], ["don't have to", "mustn't"]] }, "gabarito": { "respostas": [["don't have to"], ["mustn't"]] }, "explicacao": "No feriado não precisam ir → don't have to. Esquecer a lição não pode → mustn't.", "tagsErro": ["must_mustnt", "have_to"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com should ou shouldn't.", "conteudo": { "texto": "To stay healthy, you ___ get enough sleep." }, "gabarito": { "respostas": [["should"]] }, "explicacao": "Dormir o suficiente é um bom hábito → should.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Qual é um hábito saudável?", "conteudo": { "opcoes": ["skip breakfast", "drink enough water", "sleep four hours a night", "eat fast food every day"] }, "gabarito": { "correta": 1 }, "explicacao": "Drink enough water = beber água suficiente. Os outros não são saudáveis.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["bring", "have", "You", "anything", "to", "don't"] }, "gabarito": { "aceitas": ["You don't have to bring anything."] }, "explicacao": "Não precisa = don't have to + verbo base.", "tagsErro": ["have_to"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada hábito à tradução.", "conteudo": { "esquerda": ["get enough sleep", "drink water", "eat vegetables", "skip breakfast", "go for a walk"], "direita": ["comer legumes e verduras", "pular o café da manhã", "dormir o suficiente", "fazer uma caminhada", "beber água"] }, "gabarito": { "pares": [2, 4, 0, 1, 3] }, "explicacao": "Skip = pular, deixar de fazer. Go for a walk = sair para caminhar.", "tagsErro": ["vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "You mustn't pay. The class is free." }, "gabarito": { "aceitas": ["You don't have to pay. The class is free.", "You don't need to pay. The class is free."] }, "explicacao": "A aula é de graça: não precisa pagar → don't have to. Mustn't seria proibido pagar.", "tagsErro": ["must_mustnt", "have_to"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não precisa usar máscara aqui.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You do not have to wear a mask here.", "You do not need to wear a mask here.", "Here you do not have to wear a mask.", "Here, you do not have to wear a mask.", "You do not have to use a mask here.", "You do not need to use a mask here."] }, "explicacao": "Não precisa = don't have to (ou don't need to). Usar máscara = wear a mask.", "tagsErro": ["have_to", "wear_use"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não pode fumar no hospital.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You must not smoke in the hospital.", "You cannot smoke in the hospital.", "You are not allowed to smoke in the hospital.", "You must not smoke at the hospital.", "You cannot smoke at the hospital.", "You are not allowed to smoke at the hospital.", "Smoking is not allowed in the hospital."] }, "explicacao": "Não pode (proibido) = mustn't ou can't. Não use don't have to, que seria não precisa.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "It's Sunday. I ___ get up early. I can stay in bed!", "opcoes": ["must", "mustn't", "don't have to"] }, "gabarito": { "correta": 2 }, "explicacao": "Domingo não é obrigatório acordar cedo → don't have to.", "tagsErro": ["must_mustnt", "have_to"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "This medicine is strong. You ___ take more than two pills a day.", "opcoes": ["mustn't", "don't have to", "doesn't have to"] }, "gabarito": { "correta": 0 }, "explicacao": "Mais de dois comprimidos é proibido (perigoso) → mustn't.", "tagsErro": ["must_mustnt"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "She ___ cook tonight. We're going to a restaurant.", "opcoesPorLacuna": [["mustn't", "don't have to", "doesn't have to"]] }, "gabarito": { "respostas": [["doesn't have to"]] }, "explicacao": "Vão ao restaurante: ela não precisa cozinhar. She → doesn't have to.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você deveria dormir oito horas por noite.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You should sleep eight hours a night.", "You should sleep 8 hours a night.", "You should sleep eight hours every night.", "You should sleep 8 hours every night.", "You should sleep eight hours per night.", "You should sleep 8 hours per night.", "You should get eight hours of sleep a night.", "You should get 8 hours of sleep a night."] }, "explicacao": "Conselho → should + verbo base. Por noite = a night.", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He don't have to take the pills anymore." }, "gabarito": { "aceitas": ["He doesn't have to take the pills anymore."] }, "explicacao": "He → doesn't have to.", "tagsErro": ["have_to", "terceira_pessoa_s"] }
+      ]
+    },
+    {
+      "slug": "a2-m06-l6",
+      "ordem": 6,
+      "titulo": "Ask the forum",
+      "objetivo": "Ler um pedido de ajuda num fórum e escrever uma resposta curta com conselhos.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Num fórum de conselhos, alguém conta o problema e pergunta What should I do? As respostas costumam seguir um caminho simples: uma frase de apoio (Sorry to hear that!), dois ou três conselhos com should e shouldn't, às vezes uma regra com have to ou mustn't, e um final gentil (I hope you feel better soon!).",
+          "Leia o pedido da Bia: Hi everyone! I'm a nurse and I work at night three times a week. During the day I can't sleep, and I feel tired all the time. I drink a lot of coffee to stay awake. What should I do? — Bia",
+          "E a resposta do Leo: Hi Bia! Sorry to hear that. You shouldn't drink coffee after 2 p.m. You should make your room very dark and turn off your phone. And you don't have to sleep eight hours at once: two shorter sleeps are OK too. I hope you feel better soon! — Leo",
+          "Para dar mais força a um conselho, use I think you should… ou Maybe you should… (Acho que você deveria… / Talvez você devesse…). E para agradecer: Thanks for the advice! Lembre que advice é incontável: nada de advices."
+        ],
+        "regras": [
+          "Sorry to hear that! = Sinto muito!",
+          "I think you should… / Maybe you should… = Acho que / Talvez você devesse…",
+          "You shouldn't… = Você não deveria…",
+          "I hope you feel better soon! = Espero que você melhore logo!",
+          "Thanks for the advice! (advice é incontável)"
+        ],
+        "notaContrastiva": "Advice não tem plural: não diga *Thanks for the advices* → diga *Thanks for the advice*. E depois de should o verbo fica na forma base: não diga *Maybe you should drinking less coffee* → diga *Maybe you should drink less coffee*.",
+        "exemplos": [
+          { "en": "What should I do?", "pt": "O que eu deveria fazer?" },
+          { "en": "Sorry to hear that!", "pt": "Sinto muito!" },
+          { "en": "I think you should talk to a doctor.", "pt": "Acho que você deveria conversar com um médico." },
+          { "en": "Maybe you should drink less coffee.", "pt": "Talvez você devesse beber menos café." },
+          { "en": "You shouldn't look at your phone in bed.", "pt": "Você não deveria olhar o celular na cama." },
+          { "en": "You don't have to sleep eight hours at once.", "pt": "Você não precisa dormir oito horas seguidas." },
+          { "en": "I hope you feel better soon!", "pt": "Espero que você melhore logo!" },
+          { "en": "Thanks for the advice!", "pt": "Obrigado pelo conselho!" }
+        ],
+        "vocabulario": [
+          { "en": "forum", "pt": "fórum" },
+          { "en": "nurse", "pt": "enfermeiro(a)" },
+          { "en": "stay awake", "pt": "ficar acordado" },
+          { "en": "at once", "pt": "de uma vez, seguido" },
+          { "en": "turn off", "pt": "desligar" },
+          { "en": "dark", "pt": "escuro" },
+          { "en": "advice", "pt": "conselho(s)" },
+          { "en": "feel better", "pt": "melhorar, sentir-se melhor" },
+          { "en": "cough", "pt": "tosse" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia o pedido da Bia. Qual é o problema dela?", "conteudo": { "texto": "Hi everyone! I'm a nurse and I work at night three times a week. During the day I can't sleep, and I feel tired all the time. I drink a lot of coffee to stay awake. What should I do? — Bia", "opcoes": ["Ela trabalha demais durante o dia.", "Ela não consegue dormir de dia e vive cansada.", "Ela não gosta de café.", "Ela está gripada."] }, "gabarito": { "correta": 1 }, "explicacao": "During the day I can't sleep, and I feel tired all the time: ela não dorme de dia e está sempre cansada." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia a resposta do Leo. O que ele diz sobre o café?", "conteudo": { "texto": "Hi Bia! Sorry to hear that. You shouldn't drink coffee after 2 p.m. You should make your room very dark and turn off your phone. And you don't have to sleep eight hours at once: two shorter sleeps are OK too. I hope you feel better soon! — Leo", "opcoes": ["Ela deveria beber mais café à noite.", "Ela deveria trocar o café por chá.", "Ela não deveria beber café depois das 14h.", "Ela deveria beber café antes de dormir."] }, "gabarito": { "correta": 2 }, "explicacao": "You shouldn't drink coffee after 2 p.m.: nada de café depois das duas da tarde." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete o conselho com should ou shouldn't.", "conteudo": { "texto": "You ___ look at your phone in bed. The light keeps you awake." }, "gabarito": { "respostas": [["shouldn't"]] }, "explicacao": "A luz do celular atrapalha o sono → shouldn't.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "My advice: you ___ go to bed at the same time every day, and you ___ sleep with the TV on.", "opcoesPorLacuna": [["should", "shouldn't"], ["should", "shouldn't"]] }, "gabarito": { "respostas": [["should"], ["shouldn't"]] }, "explicacao": "Ter horário para dormir ajuda → should. Dormir com a TV ligada atrapalha → shouldn't.", "tagsErro": ["modal_should"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a melhor resposta para: I have a terrible cold. What should I do?", "conteudo": { "opcoes": ["Yes, you should.", "You must to stay home.", "You shouldn't to go out.", "You should drink hot tea and rest."] }, "gabarito": { "correta": 3 }, "explicacao": "Só esta dá um conselho e está correta: should + verbo base. As outras têm to depois do modal ou não respondem à pergunta.", "tagsErro": ["modal_should"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte o conselho.", "conteudo": { "palavras": ["off", "at", "should", "You", "phone", "turn", "your", "night"] }, "gabarito": { "aceitas": ["You should turn off your phone at night.", "You should turn your phone off at night.", "At night you should turn off your phone.", "At night you should turn your phone off."] }, "explicacao": "Turn off = desligar. O objeto pode ficar no meio (turn your phone off) ou depois (turn off your phone).", "tagsErro": ["modal_should"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada problema ao melhor conselho.", "conteudo": { "esquerda": ["I'm always tired.", "I eat too much junk food.", "I'm stressed at work.", "I have a bad cough.", "I never exercise."], "direita": ["You should cook at home more.", "You should take short breaks.", "You should go for a walk every day.", "You should sleep more.", "You should drink hot water with honey."] }, "gabarito": { "pares": [3, 0, 1, 4, 2] }, "explicacao": "Cansaço → dormir mais; besteira → cozinhar em casa; estresse → pausas; tosse → água quente com mel; sedentarismo → caminhar.", "tagsErro": ["modal_should", "vocabulario_saude"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "Maybe you should drinking less coffee." }, "gabarito": { "aceitas": ["Maybe you should drink less coffee."] }, "explicacao": "Depois de should, verbo base: drink, e não drinking.", "tagsErro": ["modal_should", "gerundio"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Acho que você deveria conversar com um médico.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I think you should talk to a doctor.", "I think you should talk with a doctor.", "I think you should speak to a doctor.", "I think you should speak with a doctor.", "I think you should see a doctor.", "I think you should talk to your doctor.", "I think you should speak to your doctor."] }, "explicacao": "Acho que = I think. Deveria = should + verbo base. Conversar com = talk to.", "tagsErro": ["modal_should"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não precisa dormir oito horas seguidas.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You do not have to sleep eight hours in a row.", "You do not have to sleep 8 hours in a row.", "You do not have to sleep eight hours straight.", "You do not have to sleep 8 hours straight.", "You do not have to sleep eight straight hours.", "You do not have to sleep eight hours at once.", "You do not have to sleep 8 hours at once.", "You do not need to sleep eight hours in a row.", "You do not need to sleep 8 hours in a row.", "You do not need to sleep eight hours straight.", "You do not need to sleep 8 hours straight.", "You do not need to sleep eight straight hours.", "You do not need to sleep eight hours at once.", "You do not need to sleep 8 hours at once."] }, "explicacao": "Não precisa = don't have to. Seguidas = in a row, straight ou at once.", "tagsErro": ["have_to"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Qual destas frases dá um conselho?", "conteudo": { "opcoes": ["You should take a break.", "I have a headache.", "I work at night.", "Thanks for your help!"] }, "gabarito": { "correta": 0 }, "explicacao": "Conselho usa should: You should take a break.", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Thanks for the ___! I feel much better now." }, "gabarito": { "respostas": [["advice", "tips", "help"]] }, "explicacao": "Thanks for the advice! Advice é incontável: sem -s.", "tagsErro": ["incontavel"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["I", "do", "should", "What"] }, "gabarito": { "aceitas": ["What should I do?"] }, "explicacao": "What + should + sujeito + verbo base: What should I do?", "tagsErro": ["modal_should", "ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você deveria beber mais água.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You should drink more water."] }, "explicacao": "Deveria = should + verbo base.", "tagsErro": ["modal_should"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "Thanks for the advices!" }, "gabarito": { "aceitas": ["Thanks for the advice!", "Thanks for your advice!", "Thank you for the advice!", "Thank you for your advice!"] }, "explicacao": "Advice é incontável: não tem plural.", "tagsErro": ["incontavel"] }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "I can't eat. I have a ___ throat.", "opcoes": ["sick", "sore", "hurt"] }, "gabarito": { "correta": 1 }, "explicacao": "Dor de garganta = a sore throat.", "tagsErro": ["vocabulario_saude"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My knees ___ after running.", "opcoes": ["hurts", "hurting", "hurt", "are hurt"] }, "gabarito": { "correta": 2 }, "explicacao": "My knees = they → hurt, sem -s.", "tagsErro": ["terceira_pessoa_s"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com should ou shouldn't.", "conteudo": { "texto": "You look pale. You ___ go home and rest." }, "gabarito": { "respostas": [["should"]] }, "explicacao": "O conselho é ir para casa descansar → should.", "tagsErro": ["modal_should"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "You should ___ more vegetables.", "opcoes": ["eat", "to eat", "eating"] }, "gabarito": { "correta": 0 }, "explicacao": "Depois de should, verbo base: eat.", "tagsErro": ["modal_should"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com have to na forma correta.", "conteudo": { "texto": "Carla ___ (have to) work late tonight." }, "gabarito": { "respostas": [["has to"]] }, "explicacao": "Carla = she → has to.", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ we have to bring our own towels? — No, you don't.", "opcoes": ["Must", "Do", "Does"] }, "gabarito": { "correta": 1 }, "explicacao": "We + have to → pergunta com Do. A resposta No, you don't confirma.", "tagsErro": ["do_support", "have_to"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The sign says NO SWIMMING. It means you ___ swim here.", "opcoes": ["don't have to", "mustn't", "should"] }, "gabarito": { "correta": 1 }, "explicacao": "NO SWIMMING = é proibido nadar → mustn't.", "tagsErro": ["must_mustnt"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The concert is free, so we ___ buy tickets.", "opcoes": ["mustn't", "must", "don't have to"] }, "gabarito": { "correta": 2 }, "explicacao": "É de graça: não precisamos comprar ingresso → don't have to.", "tagsErro": ["must_mustnt", "have_to"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Patients ___ eat anything before the blood test. The test is at 7 a.m.", "opcoesPorLacuna": [["mustn't", "don't have to"]] }, "gabarito": { "respostas": [["mustn't"]] }, "explicacao": "Antes do exame de sangue é proibido comer → mustn't.", "tagsErro": ["must_mustnt"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "I feel ___. I think I'm going to throw up.", "opcoes": ["sick", "sickness", "sore"] }, "gabarito": { "correta": 0 }, "explicacao": "Feel sick = estar enjoado (throw up = vomitar).", "tagsErro": ["vocabulario_saude"] },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. O que o Sr. Silva não pode fazer na segunda à noite?", "conteudo": { "texto": "Dear Mr. Silva, your blood test is on Tuesday at 8 a.m. at our clinic on Rua das Flores. You mustn't eat anything after 10 p.m. on Monday, but you can drink water. You don't have to bring your prescription: we have it. Please arrive 15 minutes early. Thank you, Clínica Vida", "opcoes": ["Beber água.", "Comer depois das 22h.", "Dormir cedo.", "Tomar banho."] }, "gabarito": { "correta": 1 }, "explicacao": "You mustn't eat anything after 10 p.m. on Monday: não pode comer depois das 22h. Água pode." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. O que o Sr. Silva não precisa levar?", "conteudo": { "texto": "Dear Mr. Silva, your blood test is on Tuesday at 8 a.m. at our clinic on Rua das Flores. You mustn't eat anything after 10 p.m. on Monday, but you can drink water. You don't have to bring your prescription: we have it. Please arrive 15 minutes early. Thank you, Clínica Vida", "opcoes": ["A receita.", "Os documentos.", "Água.", "Dinheiro."] }, "gabarito": { "correta": 0 }, "explicacao": "You don't have to bring your prescription: não precisa levar a receita, a clínica já tem." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o fórum. Qual é o conselho sobre a festa?", "conteudo": { "texto": "Renata: My son is 10 and he has a cough and a fever. He wants to go to his friend's party on Saturday. What should I do?\nDr. Paulo: Sorry to hear that! He shouldn't go to the party with a fever. He should stay home, drink a lot of water and rest. If the fever doesn't go down in two days, you should take him to the doctor.", "opcoes": ["Ele deveria ir, mas voltar cedo.", "Ele não deveria ir.", "Ele tem que ir.", "Ele deveria levar remédio para a festa."] }, "gabarito": { "correta": 1 }, "explicacao": "He shouldn't go to the party with a fever: com febre, ele não deveria ir." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o fórum. Quando Renata deveria levar o filho ao médico?", "conteudo": { "texto": "Renata: My son is 10 and he has a cough and a fever. He wants to go to his friend's party on Saturday. What should I do?\nDr. Paulo: Sorry to hear that! He shouldn't go to the party with a fever. He should stay home, drink a lot of water and rest. If the fever doesn't go down in two days, you should take him to the doctor.", "opcoes": ["Hoje mesmo.", "Depois da festa.", "Só se ele continuar com tosse.", "Se a febre não baixar em dois dias."] }, "gabarito": { "correta": 3 }, "explicacao": "If the fever doesn't go down in two days, you should take him to the doctor." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["sugar", "shouldn't", "so", "You", "much", "eat"] }, "gabarito": { "aceitas": ["You shouldn't eat so much sugar."] }, "explicacao": "Shouldn't + verbo base; so much com incontável (sugar).", "tagsErro": ["modal_should"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu tenho que ir ao dentista amanhã.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I have to go to the dentist tomorrow.", "Tomorrow I have to go to the dentist.", "Tomorrow, I have to go to the dentist.", "I need to go to the dentist tomorrow.", "Tomorrow I need to go to the dentist.", "Tomorrow, I need to go to the dentist.", "I have to see the dentist tomorrow.", "I must go to the dentist tomorrow."] }, "explicacao": "Tenho que = I have to + verbo base.", "tagsErro": ["have_to"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "She don't have to work today." }, "gabarito": { "aceitas": ["She doesn't have to work today.", "Today she doesn't have to work.", "Today, she doesn't have to work."] }, "explicacao": "She → doesn't have to.", "tagsErro": ["have_to", "terceira_pessoa_s"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você não pode comer aqui.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["You must not eat here.", "You cannot eat here.", "You are not allowed to eat here."] }, "explicacao": "Não pode (proibido) = mustn't ou can't.", "tagsErro": ["must_mustnt"] },
+
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "I ate too much pizza. Now I have a ___.", "opcoes": ["headache", "toothache", "stomachache", "sore throat"] }, "gabarito": { "correta": 2 }, "explicacao": "Comeu demais → dor de barriga: stomachache.", "tagsErro": ["vocabulario_saude"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My son ___ a cold.", "opcoes": ["have", "has", "is"] }, "gabarito": { "correta": 1 }, "explicacao": "Sintoma pede have; my son = he → has.", "tagsErro": ["ter_sintoma", "terceira_pessoa_s"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com should ou shouldn't.", "conteudo": { "texto": "It's 11 p.m. You ___ drink coffee now." }, "gabarito": { "respostas": [["shouldn't"]] }, "explicacao": "Café tarde da noite atrapalha o sono → shouldn't.", "tagsErro": ["modal_should"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "He should ___ to the doctor.", "opcoes": ["goes", "go", "to go"] }, "gabarito": { "correta": 1 }, "explicacao": "Depois de should, verbo base: go.", "tagsErro": ["modal_should"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com have to na forma correta.", "conteudo": { "texto": "We ___ (have to) wear a uniform at school." }, "gabarito": { "respostas": [["have to"]] }, "explicacao": "We → have to.", "tagsErro": ["have_to"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que começa a pergunta.", "conteudo": { "texto": "___ your brother have to work on Saturdays? — Yes, he does.", "opcoes": ["Do", "Is", "Does"] }, "gabarito": { "correta": 2 }, "explicacao": "Your brother = he → Does … have to? A resposta Yes, he does confirma.", "tagsErro": ["do_support", "have_to"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The sign says NO PHOTOS. It means you ___ take pictures.", "opcoes": ["mustn't", "don't have to", "should"] }, "gabarito": { "correta": 0 }, "explicacao": "NO PHOTOS = é proibido tirar fotos → mustn't.", "tagsErro": ["must_mustnt"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Tomorrow is a holiday. You ___ come to work.", "opcoes": ["mustn't", "don't have to", "must"] }, "gabarito": { "correta": 1 }, "explicacao": "No feriado não é obrigatório trabalhar → don't have to.", "tagsErro": ["must_mustnt", "have_to"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "You ___ drive after you take this medicine. It makes you sleepy.", "opcoesPorLacuna": [["mustn't", "don't have to"]] }, "gabarito": { "respostas": [["mustn't"]] }, "explicacao": "O remédio dá sono: dirigir é perigoso, proibido → mustn't.", "tagsErro": ["must_mustnt"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra correta.", "conteudo": { "texto": "I feel ___. Everything is spinning. I need to sit down.", "opcoes": ["hungry", "bored", "happy", "dizzy"] }, "gabarito": { "correta": 3 }, "explicacao": "Tudo girando = tontura: dizzy.", "tagsErro": ["vocabulario_saude"] },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia as regras da academia. O que é obrigatório levar?", "conteudo": { "texto": "Welcome to FitLife Gym! Our rules: You must bring a towel. You mustn't use your phone in the yoga room. You don't have to make an appointment for the pool. Children under 14 must come with an adult. Please drink water and don't train when you're sick!", "opcoes": ["Um celular.", "Uma toalha.", "Uma garrafa de água.", "Um documento."] }, "gabarito": { "correta": 1 }, "explicacao": "You must bring a towel: é obrigatório levar toalha." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia as regras da academia. Para usar a piscina, você…", "conteudo": { "texto": "Welcome to FitLife Gym! Our rules: You must bring a towel. You mustn't use your phone in the yoga room. You don't have to make an appointment for the pool. Children under 14 must come with an adult. Please drink water and don't train when you're sick!", "opcoes": ["tem que marcar horário.", "tem que pagar à parte.", "não precisa marcar horário.", "não pode usar toalha."] }, "gabarito": { "correta": 2 }, "explicacao": "You don't have to make an appointment for the pool: não precisa marcar horário." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que Mari não vai à praia?", "conteudo": { "texto": "Hi Duda! I'm sorry, I can't go to the beach tomorrow. I have the flu and a fever. The doctor says I have to stay home for three days and I mustn't go out in the sun. Can we go next weekend? Kisses, Mari", "opcoes": ["Porque está chovendo.", "Porque tem que trabalhar.", "Porque está gripada e com febre.", "Porque vai viajar."] }, "gabarito": { "correta": 2 }, "explicacao": "I have the flu and a fever: está gripada e com febre." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que o médico disse?", "conteudo": { "texto": "Hi Duda! I'm sorry, I can't go to the beach tomorrow. I have the flu and a fever. The doctor says I have to stay home for three days and I mustn't go out in the sun. Can we go next weekend? Kisses, Mari", "opcoes": ["Ela tem que ficar em casa por três dias.", "Ela deveria ir à praia.", "Ela não precisa tomar remédio.", "Ela pode tomar sol."] }, "gabarito": { "correta": 0 }, "explicacao": "The doctor says I have to stay home for three days: tem que ficar em casa três dias." },
+      { "forma": 2, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["work", "you", "to", "Do", "tomorrow", "have"] }, "gabarito": { "aceitas": ["Do you have to work tomorrow?"] }, "explicacao": "Do + sujeito + have to + verbo base?", "tagsErro": ["do_support", "have_to"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ele deveria descansar mais.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["He should rest more.", "He should get more rest."] }, "explicacao": "Deveria = should + verbo base (sem -s com he).", "tagsErro": ["modal_should"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "You must to take this pill after lunch." }, "gabarito": { "aceitas": ["You must take this pill after lunch.", "After lunch you must take this pill.", "After lunch, you must take this pill."] }, "explicacao": "Depois de must não vem to.", "tagsErro": ["must_mustnt"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Nós não precisamos pagar.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["We do not have to pay.", "We do not need to pay.", "We need not pay."] }, "explicacao": "Não precisamos = we don't have to (ou don't need to).", "tagsErro": ["have_to"] }
+    ]
+  }
+}
