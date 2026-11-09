@@ -30,42 +30,42 @@ describe('ClassController', () => {
 
   // ── createClass ──────────────────────────────────────────────────────────
   describe('createClass', () => {
-    it('creates class and returns 201', async () => {
-      prismaMock.turma.count.mockResolvedValue(5);
-      const turma = { id: 1, nome: 'English A1', codigoConvite: 'SWB6-2026' };
+    it('creates class with a random 8-char invite code and returns 201', async () => {
+      const turma = { id: 1, nome: 'English A1', codigoConvite: 'K7QM4TZP' };
       prismaMock.turma.create.mockResolvedValue(turma);
 
-      await executar(createClass, mockReq({ body: { nome: 'English A1', nivel: 'B' } }), res);
+      await executar(createClass, mockReq({ body: { nome: 'English A1' } }), res);
 
       expect(res.status).toHaveBeenCalledWith(201);
       expect(res.json).toHaveBeenCalledWith(turma);
+      const codigo = prismaMock.turma.create.mock.calls[0][0].data.codigoConvite;
+      expect(codigo).toMatch(/^[ABCDEFGHJKMNPQRSTUVWXYZ2-9]{8}$/);
+      expect(prismaMock.turma.count).not.toHaveBeenCalled();
+    });
+
+    it('ignores a legacy nivel field', async () => {
+      prismaMock.turma.create.mockResolvedValue({ id: 1 });
+      await executar(createClass, mockReq({ body: { nome: 'A1', nivel: 'B1/../x' } }), res);
+      expect(res.status).toHaveBeenCalledWith(201);
+      expect(prismaMock.turma.create.mock.calls[0][0].data).not.toHaveProperty('nivel');
     });
 
     it('returns 400 when the name is missing', async () => {
-      await executar(createClass, mockReq({ body: { nivel: 'B1' } }), res);
+      await executar(createClass, mockReq({ body: {} }), res);
       expect(res.status).toHaveBeenCalledWith(400);
       expect(res.json).toHaveBeenCalledWith({ error: 'Nome da turma é obrigatório' });
       expect(prismaMock.turma.create).not.toHaveBeenCalled();
     });
 
-    it('returns 400 for an invalid nivel (it goes into the invite code)', async () => {
-      await executar(createClass, mockReq({ body: { nome: 'A1', nivel: 'B1/../x' } }), res);
-      expect(res.status).toHaveBeenCalledWith(400);
-    });
-
-    it('tries the next invite code when one is taken (deleted classes leave gaps)', async () => {
-      prismaMock.turma.count.mockResolvedValue(0);
-      const turma = { id: 2, nome: 'A1', codigoConvite: 'SWB12-2026' };
+    it('tries another invite code when one is taken', async () => {
+      const turma = { id: 2, nome: 'A1', codigoConvite: 'ABCDEFGH' };
       prismaMock.turma.create.mockRejectedValueOnce(Object.assign(new Error('unique'), { code: 'P2002' })).mockResolvedValueOnce(turma);
-      await executar(createClass, mockReq({ body: { nome: 'A1', nivel: 'B1' } }), res);
+      await executar(createClass, mockReq({ body: { nome: 'A1' } }), res);
       expect(res.status).toHaveBeenCalledWith(201);
-      const codigos = prismaMock.turma.create.mock.calls.map((c: any[]) => c[0].data.codigoConvite);
-      expect(codigos[0]).toMatch(/^SWB11-\d{4}$/);
-      expect(codigos[1]).toMatch(/^SWB12-\d{4}$/);
+      expect(prismaMock.turma.create).toHaveBeenCalledTimes(2);
     });
 
     it('returns 500 on an unexpected DB error', async () => {
-      prismaMock.turma.count.mockResolvedValue(0);
       prismaMock.turma.create.mockRejectedValue(new Error('db error'));
       await executar(createClass, mockReq({ body: { nome: 'A1' } }), res);
       expect(res.status).toHaveBeenCalledWith(500);
@@ -124,6 +124,17 @@ describe('ClassController', () => {
       await executar(getClassById, studentReq({ params: { id: '1' } }), res);
       expect(res.json).toHaveBeenCalledWith(turma);
     });
+
+    it("hides classmates' e-mails from students but not from the teacher", async () => {
+      const emailSelecionado = () =>
+        prismaMock.turma.findUnique.mock.calls.at(-1)![0].include.matriculas.include.aluno.select.email;
+      prismaMock.turma.findUnique.mockResolvedValue({ id: 1, professorId: 1, matriculas: [] });
+      prismaMock.matricula.findFirst.mockResolvedValue({ id: 1 });
+      await executar(getClassById, studentReq({ params: { id: '1' } }), mockRes());
+      expect(emailSelecionado()).toBe(false);
+      await executar(getClassById, mockReq({ params: { id: '1' } }), mockRes());
+      expect(emailSelecionado()).toBe(true);
+    });
   });
 
   // ── joinClass ─────────────────────────────────────────────────────────────
@@ -147,6 +158,14 @@ describe('ClassController', () => {
       prismaMock.matricula.create.mockResolvedValue({});
       await executar(joinClass, studentReq({ body: { codigoConvite: 'SWB1-2026' } }), res);
       expect(res.json).toHaveBeenCalledWith({ message: 'Matriculado com sucesso' });
+    });
+
+    it('accepts the invite code in lowercase', async () => {
+      prismaMock.matricula.findFirst.mockResolvedValue(null);
+      prismaMock.turma.findUnique.mockResolvedValue({ id: 3 });
+      prismaMock.matricula.create.mockResolvedValue({});
+      await executar(joinClass, studentReq({ body: { codigoConvite: ' k7qm4tzp ' } }), res);
+      expect(prismaMock.turma.findUnique).toHaveBeenCalledWith({ where: { codigoConvite: 'K7QM4TZP' } });
     });
 
     it('returns 400 if aluno is already in that specific class', async () => {

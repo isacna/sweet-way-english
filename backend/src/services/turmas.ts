@@ -1,4 +1,5 @@
 // Turmas: criação, listagem, detalhe e entrada por código de convite.
+import { randomInt } from 'node:crypto';
 import { prisma } from '../database/client.js';
 import { arquivoResumoSelect } from '../http/arquivoPublico.js';
 import { ehErroPrisma, ErroNaoEncontrado, ErroProibido, ErroValidacao } from './erros.js';
@@ -37,23 +38,29 @@ export async function turmaDaProfessora(professorId: number, turmaId: number) {
 export interface NovaTurma {
   nome: string;
   descricao?: string;
-  nivel?: string;
 }
 
-/** Tentativas de achar um código de convite livre (turmas apagadas deixam buracos na contagem). */
-const TENTATIVAS_CODIGO = 10;
+// Sem 0/O/1/I/L, que se confundem ao digitar o código passado pela professora
+const ALFABETO_CONVITE = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+const TAMANHO_CONVITE = 8;
+
+/** Código de convite aleatório (31^8 ≈ 8,5e11): não dá para adivinhar o de outra turma. */
+export function gerarCodigoConvite() {
+  let codigo = '';
+  for (let i = 0; i < TAMANHO_CONVITE; i++) codigo += ALFABETO_CONVITE[randomInt(ALFABETO_CONVITE.length)];
+  return codigo;
+}
+
+/** Colisão é quase impossível, mas o código é @unique: tenta outro em vez de falhar. */
+const TENTATIVAS_CODIGO = 5;
 
 export async function criarTurma(professorId: number, dados: NovaTurma) {
-  const ano = new Date().getFullYear();
-  const total = await prisma.turma.count();
   for (let t = 0; t < TENTATIVAS_CODIGO; t++) {
-    const codigoConvite = `SW${dados.nivel || 'B'}${total + 1 + t}-${ano}`;
     try {
       return await prisma.turma.create({
-        data: { nome: dados.nome, descricao: dados.descricao, codigoConvite, professorId },
+        data: { nome: dados.nome, descricao: dados.descricao, codigoConvite: gerarCodigoConvite(), professorId },
       });
     } catch (err) {
-      // Código já usado: tenta o próximo número
       if (!ehErroPrisma(err, 'P2002')) throw err;
     }
   }
@@ -82,7 +89,8 @@ export async function detalharTurma(usuario: UsuarioSessao, id: number) {
       professor: { select: { nome: true } },
       atividades: { include: incluirArquivo },
       materiais: { include: incluirArquivo },
-      matriculas: { include: { aluno: { select: { id: true, nome: true, email: true } } } },
+      // Alunos veem só o nome dos colegas (podem ser menores); o e-mail fica com a professora
+      matriculas: { include: { aluno: { select: { id: true, nome: true, email: usuario.role === 'professor' } } } },
     },
   });
   if (!turma) throw new ErroNaoEncontrado('Turma não encontrada');

@@ -87,7 +87,7 @@ export default function AlunoTurmasPage() {
             </span>
             <h2 className="text-xl font-semibold text-ink">Entrar em uma turma</h2>
             <p className="mt-1 text-sm text-ink-soft">
-              O código parece com <span className="font-mono font-semibold text-ink">SWA1-2026</span>. Você só pode estar em
+              O código tem 8 letras e números, como <span className="font-mono font-semibold text-ink">K7QM4TZP</span>. Você só pode estar em
               uma turma por vez.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-end">

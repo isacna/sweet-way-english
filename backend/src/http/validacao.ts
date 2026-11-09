@@ -40,7 +40,7 @@ export function textoOpcional(mensagem: string) {
   return z.preprocess(
     (v) => (v === null || v === '' ? undefined : v),
     z.string({ error: mensagem }).trim().optional(),
-  );
+  ).optional(); // sem o .optional() de fora, o zod >= 4.5 exige a chave
 }
 
 /** Booleano vindo de JSON (true) ou de multipart ("true", "1", "on"). Qualquer outra coisa é false. */
@@ -48,7 +48,8 @@ export function lerBooleano(v: unknown) {
   return v === true || v === 'true' || v === '1' || v === 'on' || v === 1;
 }
 
-export const booleano = z.unknown().transform(lerBooleano);
+// Desde o zod 4.5, `z.unknown()` num objeto exige a chave: o `.optional()` antes do transform a deixa ausente
+export const booleano = z.unknown().optional().transform(lerBooleano);
 
 // ─── Usuários (alunos e professores) ────────────────────────────────────────
 
@@ -64,10 +65,11 @@ export const email = (mensagemVazio: string) =>
  */
 export function edicaoUsuarioSchema({ aparar }: { aparar: boolean }) {
   return z.object({
-    nome: z.preprocess((v) => (v === null ? undefined : v), texto('Nome não pode ser vazio').optional()),
-    email: z.preprocess((v) => (v === null ? undefined : v), email('Email não pode ser vazio').optional()),
+    nome: z.preprocess((v) => (v === null ? undefined : v), texto('Nome não pode ser vazio').optional()).optional(),
+    email: z.preprocess((v) => (v === null ? undefined : v), email('Email não pode ser vazio').optional()).optional(),
     senha: z
       .unknown()
+      .optional()
       .transform((v) => (v === undefined || v === null ? '' : String(v)))
       .transform((v) => (aparar ? v.trim() : v))
       .refine((v) => v.trim() === '' || v.length >= SENHA_MIN, ERRO_SENHA)
