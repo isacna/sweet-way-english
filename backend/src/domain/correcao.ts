@@ -32,10 +32,13 @@ const CONTRACOES: [RegExp, string][] = [
   [/\b(you|we|they|who|what)'re\b/g, '$1 are'],
   [/\b(i|you|we|they|he|she|it|who)'ll\b/g, '$1 will'],
   [/\b(i|you|we|they|who)'ve\b/g, '$1 have'],
-  [/\b(i|you|we|they|he|she|it|who)'d\b/g, '$1 would'],
-  [new RegExp(`\\b(${PRONOMES_S.join('|')})'s\\b`, 'g'), '$1 is'],
   [/\blet's\b/g, 'let us'],
 ];
+
+// Contrações com duas leituras: "she's" = she is | she has ("She's never been there"); "I'd" = I would | I had.
+// canonicoVariantes() gera as duas para a resposta do aluno (ver iguais()).
+const CONTRACAO_S = new RegExp(`\\b(${PRONOMES_S.join('|')})'s\\b`, 'g');
+const CONTRACAO_D = /\b(i|you|we|they|he|she|it|who)'d\b/g;
 
 const PONTUACAO_FINAL = new Set(['.', '!', '?', ';', ':', ',', ' ']);
 
@@ -60,11 +63,22 @@ export function normalizar(s: string): string {
   return semPontuacaoFinal(r).trim();
 }
 
-/** Normaliza e expande contrações: "She isn't here." ≡ "she is not here". */
+/**
+ * Normaliza e expande contrações: "She isn't here." ≡ "she is not here".
+ * 's e 'd viram a leitura mais comum (is, would); canonicoVariantes() dá também a outra.
+ */
 export function canonico(s: string): string {
+  return canonicoVariantes(s)[0];
+}
+
+/** Formas canônicas de uma frase: a principal e, se houver 's ou 'd de pronome, a leitura com has/had. */
+export function canonicoVariantes(s: string): string[] {
   let r = normalizar(s);
   for (const [re, sub] of CONTRACOES) r = r.replace(re, sub);
-  return r.replace(/\s*,\s*/g, ', ');
+  r = r.replace(/\s*,\s*/g, ', ');
+  const principal = r.replace(CONTRACAO_S, '$1 is').replace(CONTRACAO_D, '$1 would');
+  const alternativa = r.replace(CONTRACAO_S, '$1 has').replace(CONTRACAO_D, '$1 had');
+  return principal === alternativa ? [principal] : [principal, alternativa];
 }
 
 /** Palavras de uma frase (sem pontuação final), normalizadas — para comparar com o banco de palavras. */
@@ -72,9 +86,15 @@ export function tokensFrase(frase: string): string[] {
   return normalizar(frase).split(' ').filter(Boolean);
 }
 
+/**
+ * Só a resposta do aluno ganha as duas leituras de 's/'d: "She's never been" bate com "She has never been".
+ * O gabarito fica na leitura comum (is, would), senão "She has a teacher" passaria por "She's a teacher".
+ * Por isso, no gabarito, has/had vão por extenso (a forma contraída do aluno é aceita do mesmo jeito).
+ */
 function iguais(resposta: string, aceitas: string[]) {
-  const r = canonico(resposta);
-  return r.length > 0 && aceitas.some((a) => canonico(a) === r);
+  const r = canonicoVariantes(resposta);
+  if (!r[0]) return false;
+  return aceitas.some((a) => r.includes(canonico(a)));
 }
 
 const resultado = (correto: boolean, pontuacao: number, respostaEsperada: string, explicacao: string): Resultado => ({

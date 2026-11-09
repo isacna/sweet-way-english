@@ -1,0 +1,3447 @@
+{
+  "slug": "a2-m08",
+  "ordem": 8,
+  "titulo": "Experiences",
+  "tema": "Experiências, mídia e tecnologia",
+  "descricao": "Fale do que você já fez (ou nunca fez) na vida, das novidades que acabaram de acontecer e do que ainda falta fazer, com o present perfect, ever, never, just, already e yet.",
+  "canDos": [
+    "Perguntar e responder sobre experiências de vida com Have you ever...? e I've never...",
+    "Formar o present perfect com have/has + particípio, inclusive dos verbos irregulares mais comuns.",
+    "Escolher entre o present perfect (experiência, sem data) e o passado simples (com data ou tempo terminado).",
+    "Dar notícias recentes com just e falar de tarefas com already e yet.",
+    "Falar de séries, aplicativos, vídeos e jogos online.",
+    "Entender e contar o resultado de uma pesquisa \"Have you ever...?\"."
+  ],
+  "gramatica": "Present perfect: have/has + particípio passado (regulares em -ed e irregulares comuns); ever e never para experiências; present perfect × passado simples; been × gone; just, already e yet.",
+  "vocabulario": "Experiências (travel abroad, ride a horse, see snow, try new food, meet a famous person, win a prize, be on TV) e mídia e tecnologia (download an app, upload a photo, post a video, watch a series, stream, go viral, subscribe to a channel, play an online game).",
+  "funcao": "Falar de experiências de vida e de coisas que acabaram de acontecer ou que ainda não aconteceram.",
+  "pronuncia": "Contrações I've, you've, we've e she's / he's (= she has, he has), e o have fraco nas perguntas: \"Have you ever...?\" soa /həv jə ˈevər/. Como o curso não tem áudio, repare na escrita: I've never been = I have never been.",
+  "licoes": [
+    {
+      "slug": "a2-m08-l1",
+      "ordem": 1,
+      "titulo": "Have you ever...?",
+      "objetivo": "Perguntar e responder sobre experiências de vida com Have you ever...? e I've never..., usando have/has + particípio.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de experiências de vida, sem dizer quando aconteceram, o inglês usa o present perfect: have ou has + particípio passado. I have been to Salvador = Eu já estive em Salvador (em algum momento da vida). Na fala, quase sempre contraímos: I've, you've, we've, they've; she's, he's (= she has, he has).",
+          "Para perguntar sobre a vida toda de alguém, usamos Have you ever + particípio? Ever = alguma vez, já. Have you ever eaten sushi? = Você já comeu sushi? As respostas curtas usam have: Yes, I have. / No, I haven't.",
+          "Para dizer que algo nunca aconteceu, colocamos never entre have e o particípio: I've never been to Japan. Never já é negativo, então não use not junto: I haven't never é errado.",
+          "Com he, she e it, o auxiliar é has: She has never ridden a horse. Has he ever been on TV? — Yes, he has. Been to + lugar quer dizer já ter ido (e voltado) a um lugar."
+        ],
+        "regras": [
+          "I / you / we / they + have + particípio = I've been, they've tried",
+          "he / she / it + has + particípio = she's been, he's tried",
+          "Have you ever + particípio...? = Você já... (alguma vez)?",
+          "Yes, I have. / No, I haven't. — Yes, she has. / No, she hasn't.",
+          "never = nunca (sem not): I've never been to Japan.",
+          "been to + lugar = já ter ido a / estado em"
+        ],
+        "notaContrastiva": "Para perguntar sobre experiência de vida, não diga *Did you ever go to Bahia?* → diga *Have you ever been to Bahia?*. E não use not com never: não diga *I haven't never tried it* → diga *I've never tried it*.",
+        "exemplos": [
+          {
+            "en": "Have you ever been to Salvador?",
+            "pt": "Você já foi a Salvador?"
+          },
+          {
+            "en": "Yes, I have. / No, I haven't.",
+            "pt": "Sim, já fui. / Não, nunca fui."
+          },
+          {
+            "en": "I've never eaten sushi.",
+            "pt": "Eu nunca comi sushi."
+          },
+          {
+            "en": "Have you ever tried tapioca?",
+            "pt": "Você já experimentou tapioca?"
+          },
+          {
+            "en": "She has never ridden a horse.",
+            "pt": "Ela nunca andou a cavalo."
+          },
+          {
+            "en": "Has he ever been on TV? — Yes, he has.",
+            "pt": "Ele já apareceu na TV? — Sim, já."
+          },
+          {
+            "en": "We've been to the Amazon twice.",
+            "pt": "Nós já fomos à Amazônia duas vezes."
+          },
+          {
+            "en": "They have never seen snow.",
+            "pt": "Eles nunca viram neve."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "been to",
+            "pt": "já ter ido a, já ter estado em"
+          },
+          {
+            "en": "ever",
+            "pt": "alguma vez, já (em perguntas)"
+          },
+          {
+            "en": "never",
+            "pt": "nunca"
+          },
+          {
+            "en": "try (tried)",
+            "pt": "experimentar"
+          },
+          {
+            "en": "ride a horse",
+            "pt": "andar a cavalo"
+          },
+          {
+            "en": "see snow",
+            "pt": "ver neve"
+          },
+          {
+            "en": "travel abroad",
+            "pt": "viajar para o exterior"
+          },
+          {
+            "en": "be on TV",
+            "pt": "aparecer na TV"
+          },
+          {
+            "en": "once / twice / three times",
+            "pt": "uma vez / duas vezes / três vezes"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Have you ever ___ to Rio de Janeiro?",
+            "opcoes": [
+              "went",
+              "been",
+              "go",
+              "be"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Experiência de vida: have + particípio. O particípio de be é been: Have you ever been to...?",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha o auxiliar correto.",
+          "conteudo": {
+            "texto": "She ___ never seen snow.",
+            "opcoes": [
+              "have",
+              "is",
+              "did",
+              "has"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Com she, o auxiliar do present perfect é has: She has never seen snow.",
+          "tagsErro": [
+            "present_perfect",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no particípio e com a resposta curta.",
+          "conteudo": {
+            "texto": "Have you ever ___ (try) tapioca? — Yes, I ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "tried"
+              ],
+              [
+                "have"
+              ]
+            ]
+          },
+          "explicacao": "Try é regular: o particípio é tried. A resposta curta repete o auxiliar da pergunta: Yes, I have.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "I've never ___ (eat) Japanese food, and my brother has never ___ (ride) a horse."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "eaten"
+              ],
+              [
+                "ridden"
+              ]
+            ]
+          },
+          "explicacao": "Eat → eaten e ride → ridden são particípios irregulares.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "___ your parents ever been to Argentina? — No, they ___.",
+            "opcoesPorLacuna": [
+              [
+                "Have",
+                "Has",
+                "Did"
+              ],
+              [
+                "haven't",
+                "hasn't",
+                "didn't"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Have"
+              ],
+              [
+                "haven't"
+              ]
+            ]
+          },
+          "explicacao": "Your parents = they, então a pergunta usa Have e a resposta curta é No, they haven't.",
+          "tagsErro": [
+            "present_perfect",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "you",
+              "to",
+              "Have",
+              "been",
+              "ever",
+              "Salvador"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever been to Salvador?"
+            ]
+          },
+          "explicacao": "Have + sujeito + ever + particípio + to + lugar?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta curta certa.",
+          "conteudo": {
+            "esquerda": [
+              "Have you ever been to Chile?",
+              "Has she ever tried sushi?",
+              "Have they ever seen snow?",
+              "Has your dad ever ridden a horse?"
+            ],
+            "direita": [
+              "Yes, he has.",
+              "No, they haven't.",
+              "No, I haven't.",
+              "Yes, she has."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              1,
+              0
+            ]
+          },
+          "explicacao": "A resposta curta usa o mesmo auxiliar da pergunta (have ou has) e o pronome certo: your dad = he.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I haven't never been to Bahia."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have never been to Bahia.",
+              "I have not ever been to Bahia."
+            ]
+          },
+          "explicacao": "Never já é negativo: não use not junto. I've never been to Bahia (ou I haven't ever been).",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já comeu sushi?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever eaten sushi?",
+              "Have you eaten sushi?",
+              "Have you ever had sushi?",
+              "Have you had sushi?",
+              "Have you ever tried sushi?",
+              "Have you tried sushi?"
+            ]
+          },
+          "explicacao": "Experiência de vida: Have you ever + particípio? Comer = eat → eaten (ou have → had).",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela nunca andou a cavalo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has never ridden a horse.",
+              "She's never ridden a horse.",
+              "She has never been on a horse.",
+              "She's never been on a horse."
+            ]
+          },
+          "explicacao": "Experiência de vida com never: She has (She's) never + particípio. Ride → rode → ridden.",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Has Paulo ever ___ a famous person?",
+            "opcoes": [
+              "met",
+              "meet",
+              "meeted",
+              "meets"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Meet → met (o passado e o particípio são iguais). Has + particípio: Has Paulo ever met...?",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com have ou has.",
+          "conteudo": {
+            "texto": "We ___ never been to the Amazon."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have"
+              ]
+            ]
+          },
+          "explicacao": "We → have: We have (We've) never been to the Amazon.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "never",
+              "I",
+              "snow",
+              "have",
+              "seen"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have never seen snow."
+            ]
+          },
+          "explicacao": "Sujeito + have + never + particípio: I have never seen snow.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já foi ao Rio?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever been to Rio?",
+              "Have you been to Rio?",
+              "Have you ever been to Rio de Janeiro?",
+              "Have you been to Rio de Janeiro?"
+            ]
+          },
+          "explicacao": "Experiência de vida: Have you ever been to + lugar?",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Have you ever went to Chile?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever been to Chile?",
+              "Have you ever gone to Chile?"
+            ]
+          },
+          "explicacao": "Depois de have vem o particípio, não o passado: went → been (ou gone).",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m08-l2",
+      "ordem": 2,
+      "titulo": "Seen, done, written",
+      "objetivo": "Formar o present perfect com os particípios irregulares mais comuns, na afirmativa e na negativa, e entender a diferença entre been e gone.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Nos verbos regulares, o particípio é igual ao passado: worked, played, visited, tried. Nos irregulares, ele pode ser igual ao passado (buy → bought → bought) ou diferente (see → saw → seen). Por isso aprendemos três formas: a base, o passado e o particípio.",
+          "Alguns particípios muito usados: be → been, go → gone, see → seen, do → done, eat → eaten, write → written, take → taken, fly → flown, drive → driven, ride → ridden. Outros são iguais ao passado: meet → met, read → read, win → won, lose → lost, buy → bought, find → found.",
+          "Na negativa, usamos haven't ou hasn't + particípio: I haven't seen that movie. He hasn't read the book. Depois de have ou has, o verbo nunca vai para o passado: I have saw é errado.",
+          "Been ou gone? She has been to Paris = ela já foi e voltou (é uma experiência). She has gone to the bakery = ela foi e ainda está lá. Para experiências de vida, use been."
+        ],
+        "regras": [
+          "see → saw → seen / do → did → done / eat → ate → eaten",
+          "write → wrote → written / take → took → taken / fly → flew → flown",
+          "meet → met → met / buy → bought → bought / win → won → won / lose → lost → lost",
+          "read → read → read (só o som muda: /riːd/ → /red/)",
+          "I haven't seen / she hasn't read (negativa)",
+          "been to = foi e voltou / gone to = foi e ainda está lá"
+        ],
+        "notaContrastiva": "Não diga *I have saw that movie* → diga *I have seen that movie*. Depois de have/has vem o particípio, não o passado. E se a pessoa ainda não voltou, não diga *She has been to the bakery* → diga *She has gone to the bakery*.",
+        "exemplos": [
+          {
+            "en": "I've seen that movie three times.",
+            "pt": "Eu já vi esse filme três vezes."
+          },
+          {
+            "en": "Have you ever written a poem?",
+            "pt": "Você já escreveu um poema?"
+          },
+          {
+            "en": "He has won two prizes.",
+            "pt": "Ele já ganhou dois prêmios."
+          },
+          {
+            "en": "I've never flown in a helicopter.",
+            "pt": "Eu nunca voei de helicóptero."
+          },
+          {
+            "en": "She hasn't read the book.",
+            "pt": "Ela não leu o livro."
+          },
+          {
+            "en": "My dad has lost his keys again!",
+            "pt": "Meu pai perdeu as chaves de novo!"
+          },
+          {
+            "en": "Julia has gone to the bakery.",
+            "pt": "A Júlia foi à padaria (e ainda não voltou)."
+          },
+          {
+            "en": "I've been to Recife, but I've never been to Natal.",
+            "pt": "Já fui a Recife, mas nunca fui a Natal."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "see → seen",
+            "pt": "ver → visto"
+          },
+          {
+            "en": "do → done",
+            "pt": "fazer → feito"
+          },
+          {
+            "en": "eat → eaten",
+            "pt": "comer → comido"
+          },
+          {
+            "en": "write → written",
+            "pt": "escrever → escrito"
+          },
+          {
+            "en": "take → taken",
+            "pt": "pegar, tirar → pegado, tirado"
+          },
+          {
+            "en": "fly → flown",
+            "pt": "voar → voado"
+          },
+          {
+            "en": "meet → met",
+            "pt": "conhecer → conhecido"
+          },
+          {
+            "en": "win → won",
+            "pt": "ganhar → ganhado"
+          },
+          {
+            "en": "lose → lost",
+            "pt": "perder → perdido"
+          },
+          {
+            "en": "buy → bought",
+            "pt": "comprar → comprado"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I have never ___ a horror movie.",
+            "opcoes": [
+              "saw",
+              "seen",
+              "see",
+              "seeing"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Depois de have vem o particípio: see → saw → seen.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "My grandparents have ___ in a plane only once.",
+            "opcoes": [
+              "flew",
+              "fly",
+              "flown",
+              "flied"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Fly → flew → flown. Com have, use o particípio: have flown.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "Lucas has ___ (win) two medals, but he has never ___ (lose) a game."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "won"
+              ],
+              [
+                "lost"
+              ]
+            ]
+          },
+          "explicacao": "Win → won e lose → lost: nesses verbos, o passado e o particípio são iguais.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "She hasn't ___ (do) her homework, and I haven't ___ (take) a shower."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "done"
+              ],
+              [
+                "taken"
+              ]
+            ]
+          },
+          "explicacao": "Do → did → done e take → took → taken. Na negativa: hasn't / haven't + particípio.",
+          "tagsErro": [
+            "verbo_irregular",
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Where's Pedro? — He has ___ to the supermarket. He'll be back soon.",
+            "opcoesPorLacuna": [
+              [
+                "gone",
+                "been",
+                "went"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "gone"
+              ]
+            ]
+          },
+          "explicacao": "O Pedro foi e ainda não voltou: has gone. Has been significaria que ele já foi e já voltou.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "read",
+              "She",
+              "book",
+              "hasn't",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She hasn't read the book."
+            ]
+          },
+          "explicacao": "Negativa: sujeito + hasn't + particípio. Read tem a mesma escrita na base, no passado e no particípio.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo ao seu particípio.",
+          "conteudo": {
+            "esquerda": [
+              "see",
+              "do",
+              "eat",
+              "write",
+              "take",
+              "fly"
+            ],
+            "direita": [
+              "taken",
+              "seen",
+              "flown",
+              "done",
+              "written",
+              "eaten"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              5,
+              4,
+              0,
+              2
+            ]
+          },
+          "explicacao": "See → seen, do → done, eat → eaten, write → written, take → taken, fly → flown.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have saw this video before."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have seen this video before.",
+              "I saw this video before."
+            ]
+          },
+          "explicacao": "Depois de have vem o particípio: seen, não saw. (Sem have, o passado saw também fica certo.)",
+          "tagsErro": [
+            "verbo_irregular",
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu nunca voei de avião.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have never flown.",
+              "I have never been on a plane.",
+              "I have never flown on a plane.",
+              "I have never flown in a plane.",
+              "I have never been on an airplane.",
+              "I have never flown on an airplane.",
+              "I have never flown in an airplane.",
+              "I have never traveled by plane.",
+              "I have never travelled by plane.",
+              "I have never taken a plane."
+            ]
+          },
+          "explicacao": "Experiência com never: I have (I've) never + particípio. Fly → flown; também dá para dizer been on a plane.",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela já ganhou um prêmio.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has won a prize.",
+              "She's won a prize.",
+              "She has already won a prize.",
+              "She's already won a prize.",
+              "She has won an award.",
+              "She's won an award.",
+              "She has already won an award.",
+              "She's already won an award.",
+              "She already won a prize.",
+              "She already won an award."
+            ]
+          },
+          "explicacao": "Experiência de vida: She has (She's) won a prize. Win → won. No inglês americano, She already won a prize também é aceito.",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "We have ___ a lot of pizza this week!",
+            "opcoes": [
+              "ate",
+              "eat",
+              "eaten",
+              "eating"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Have + particípio: eat → ate → eaten.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "My mom has ___ (buy) a new cell phone."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "bought"
+              ]
+            ]
+          },
+          "explicacao": "Buy → bought → bought.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "met",
+              "have",
+              "a",
+              "I",
+              "person",
+              "never",
+              "famous"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have never met a famous person."
+            ]
+          },
+          "explicacao": "Sujeito + have + never + particípio (met) + a famous person.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já viu esse filme?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you seen this movie?",
+              "Have you ever seen this movie?",
+              "Have you seen that movie?",
+              "Have you ever seen that movie?",
+              "Have you seen this film?",
+              "Have you ever seen this film?",
+              "Have you seen that film?",
+              "Have you ever seen that film?",
+              "Have you already seen this movie?",
+              "Have you already seen that movie?"
+            ]
+          },
+          "explicacao": "Já viu? = Have you seen...? (ou Have you ever seen...?). See → seen.",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Ana has went to the bank. She isn't here."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Ana has gone to the bank. She isn't here.",
+              "Ana's gone to the bank. She isn't here."
+            ]
+          },
+          "explicacao": "Depois de has vem o particípio: went → gone. Ela foi e ainda está lá, então gone (e não been).",
+          "tagsErro": [
+            "verbo_irregular",
+            "present_perfect"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m08-l3",
+      "ordem": 3,
+      "titulo": "I went there last year",
+      "objetivo": "Usar o present perfect para experiências sem data e o passado simples quando dizemos ou perguntamos quando algo aconteceu.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "O present perfect fala de experiências sem dizer quando: I've been to Salvador (em algum momento da vida). Quando dizemos ou perguntamos quando aconteceu, usamos o passado simples: I went to Salvador in 2019.",
+          "Palavras de tempo terminado pedem o passado simples: yesterday, last week, last year, two days ago, in 2020, when I was a child. Por isso, I have seen him yesterday é errado: o certo é I saw him yesterday.",
+          "Numa conversa, é comum começar com o present perfect e continuar no passado simples para dar os detalhes: Have you ever been to Bahia? — Yes, I have. I went there last summer. It was amazing!",
+          "Para perguntar os detalhes, também usamos o passado simples: When did you go? Who did you go with? Did you like it? Não pergunte When have you gone?"
+        ],
+        "regras": [
+          "experiência, sem data → present perfect: I've been to Chile.",
+          "com data ou tempo terminado → passado simples: I went to Chile last year.",
+          "yesterday / last... / ... ago / in 2020 → passado simples",
+          "Have you ever...? — Yes, I have. + detalhes no passado: I went there in 2019.",
+          "When did you...? / Who did you... with? / Did you like it?"
+        ],
+        "notaContrastiva": "Não diga *I have seen him yesterday* → diga *I saw him yesterday*. Com yesterday, last week, ago ou um ano, use o passado simples. E não pergunte *When have you gone there?* → pergunte *When did you go there?*.",
+        "exemplos": [
+          {
+            "en": "Have you ever been to Bahia? — Yes, I went there last summer.",
+            "pt": "Você já foi à Bahia? — Sim, fui no verão passado."
+          },
+          {
+            "en": "I've tried sushi. I tried it at a party last year.",
+            "pt": "Já experimentei sushi. Experimentei numa festa no ano passado."
+          },
+          {
+            "en": "She has met a famous singer. She met him in 2022.",
+            "pt": "Ela já conheceu um cantor famoso. Ela o conheceu em 2022."
+          },
+          {
+            "en": "When did you go to Chile?",
+            "pt": "Quando você foi ao Chile?"
+          },
+          {
+            "en": "I saw Pedro yesterday.",
+            "pt": "Eu vi o Pedro ontem."
+          },
+          {
+            "en": "We've watched that series. We watched it in two days.",
+            "pt": "Já assistimos a essa série. Assistimos em dois dias."
+          },
+          {
+            "en": "Have you ever lost your passport? — Yes. I lost it at the airport two years ago.",
+            "pt": "Você já perdeu o passaporte? — Sim. Perdi no aeroporto há dois anos."
+          },
+          {
+            "en": "Did you like it? — Yes, I loved it!",
+            "pt": "Você gostou? — Sim, adorei!"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "yesterday",
+            "pt": "ontem"
+          },
+          {
+            "en": "last summer / last year",
+            "pt": "no verão passado / no ano passado"
+          },
+          {
+            "en": "two years ago",
+            "pt": "há dois anos"
+          },
+          {
+            "en": "in 2020",
+            "pt": "em 2020"
+          },
+          {
+            "en": "when I was a child",
+            "pt": "quando eu era criança"
+          },
+          {
+            "en": "amazing",
+            "pt": "incrível"
+          },
+          {
+            "en": "passport",
+            "pt": "passaporte"
+          },
+          {
+            "en": "once",
+            "pt": "uma vez"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ to Argentina in 2018.",
+            "opcoes": [
+              "have gone",
+              "went",
+              "have been",
+              "go"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "In 2018 diz quando aconteceu → passado simples: I went to Argentina in 2018.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que começa a pergunta.",
+          "conteudo": {
+            "texto": "___ you ever played an online game?",
+            "opcoes": [
+              "Did",
+              "Do",
+              "Has",
+              "Have"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Experiência de vida: Have you ever + particípio (played)?",
+          "tagsErro": [
+            "present_perfect",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa.",
+          "conteudo": {
+            "texto": "Have you ever been to Florianópolis? — Yes, I ___ there last January.",
+            "opcoesPorLacuna": [
+              [
+                "went",
+                "have gone",
+                "have been"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "went"
+              ]
+            ]
+          },
+          "explicacao": "Last January diz quando → passado simples: I went there last January.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado simples.",
+          "conteudo": {
+            "texto": "I ___ (see) your sister at the mall yesterday."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "saw"
+              ]
+            ]
+          },
+          "explicacao": "Yesterday é tempo terminado → passado simples: see → saw.",
+          "tagsErro": [
+            "perfect_x_passado",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "My parents ___ (never / try) Thai food."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have never tried",
+                "'ve never tried"
+              ]
+            ]
+          },
+          "explicacao": "Experiência de vida, sem data → present perfect: have never tried.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "you",
+              "When",
+              "go",
+              "did",
+              "there"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "When did you go there?"
+            ]
+          },
+          "explicacao": "Para perguntar quando, use o passado: When + did + sujeito + verbo na base?",
+          "tagsErro": [
+            "perfect_x_passado",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Have you ever been to Peru?",
+              "When did you go?",
+              "Who did you go with?",
+              "Did you like it?"
+            ],
+            "direita": [
+              "With my cousins.",
+              "Yes, it was amazing!",
+              "Yes, I have.",
+              "Last year."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              0,
+              1
+            ]
+          },
+          "explicacao": "A conversa começa no present perfect (Have you ever...?) e os detalhes vêm no passado simples (When did you go?).",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have seen him at the gym yesterday."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I saw him at the gym yesterday.",
+              "Yesterday I saw him at the gym.",
+              "Yesterday, I saw him at the gym."
+            ]
+          },
+          "explicacao": "Com yesterday, use o passado simples: I saw him, e não I have seen him.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Já fui a Recife. Fui no ano passado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have been to Recife. I went there last year.",
+              "I have been to Recife. I went last year.",
+              "I have been to Recife. I was there last year.",
+              "I have already been to Recife. I went there last year.",
+              "I have already been to Recife. I went last year.",
+              "I have already been to Recife. I was there last year."
+            ]
+          },
+          "explicacao": "A experiência vem no present perfect (I've been to Recife) e o detalhe com data no passado simples (I went there last year).",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Quando você viu esse filme?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "When did you see this movie?",
+              "When did you see that movie?",
+              "When did you see this film?",
+              "When did you see that film?",
+              "When did you watch this movie?",
+              "When did you watch that movie?",
+              "When did you watch this film?",
+              "When did you watch that film?"
+            ]
+          },
+          "explicacao": "Pergunta com when → passado simples: When did you see...?",
+          "tagsErro": [
+            "perfect_x_passado",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "We ___ that series last month.",
+            "opcoes": [
+              "have watched",
+              "watched",
+              "watch",
+              "have watch"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Last month é tempo terminado → passado simples: watched.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado simples.",
+          "conteudo": {
+            "texto": "She ___ (lose) her phone two days ago."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "lost"
+              ]
+            ]
+          },
+          "explicacao": "Two days ago → passado simples: lose → lost.",
+          "tagsErro": [
+            "perfect_x_passado",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "ever",
+              "eaten",
+              "Have",
+              "you",
+              "food",
+              "Indian"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever eaten Indian food?"
+            ]
+          },
+          "explicacao": "Have + you + ever + particípio (eaten) + o resto?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu vi a Ana ontem.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I saw Ana yesterday.",
+              "Yesterday I saw Ana.",
+              "Yesterday, I saw Ana."
+            ]
+          },
+          "explicacao": "Ontem = yesterday → passado simples: I saw Ana yesterday.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "When have you met your best friend?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "When did you meet your best friend?"
+            ]
+          },
+          "explicacao": "Pergunta com when → passado simples: When did you meet...?",
+          "tagsErro": [
+            "perfect_x_passado",
+            "do_support"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m08-l4",
+      "ordem": 4,
+      "titulo": "I've just posted it!",
+      "objetivo": "Dar notícias que acabaram de acontecer com just e falar de vídeos, aplicativos, séries e jogos online.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dar uma notícia que acabou de acontecer, usamos have/has + just + particípio. Just = acabou de: I've just posted a new video = Acabei de postar um vídeo novo. Just fica entre have e o particípio.",
+          "No inglês americano, também é muito comum usar o passado simples com just: I just posted a video. As duas formas estão certas. O que não pode é misturar: é I have just posted, e não I have just post.",
+          "Esse tipo de notícia aparece muito quando falamos de internet e tecnologia: download an app (baixar um aplicativo), upload a photo (subir uma foto), post a video (postar um vídeo), watch a series (assistir a uma série), stream a show (ver um programa pela internet), go viral (viralizar), subscribe to a channel (se inscrever num canal).",
+          "Para perguntar se alguém já fez algo com aplicativos, séries e jogos, usamos de novo Have you ever...?: Have you ever played an online game? Has your video ever gone viral?"
+        ],
+        "regras": [
+          "have/has + just + particípio = acabou de: I've just downloaded it.",
+          "inglês americano: I just downloaded it (também certo)",
+          "download = baixar / upload = subir, enviar / post = publicar",
+          "watch a series (series é igual no singular e no plural)",
+          "go viral → went viral → gone viral",
+          "subscribe to a channel = se inscrever num canal"
+        ],
+        "notaContrastiva": "Não diga *I have just download the app* → diga *I have just downloaded the app* (ou *I just downloaded the app*). E series não muda: não diga *a serie* → diga *a series*.",
+        "exemplos": [
+          {
+            "en": "I've just posted a new video!",
+            "pt": "Acabei de postar um vídeo novo!"
+          },
+          {
+            "en": "She has just downloaded the app.",
+            "pt": "Ela acabou de baixar o aplicativo."
+          },
+          {
+            "en": "We just finished the series.",
+            "pt": "A gente acabou de terminar a série."
+          },
+          {
+            "en": "My video has gone viral!",
+            "pt": "Meu vídeo viralizou!"
+          },
+          {
+            "en": "Have you ever played an online game?",
+            "pt": "Você já jogou um jogo online?"
+          },
+          {
+            "en": "He has just uploaded the photos.",
+            "pt": "Ele acabou de subir as fotos."
+          },
+          {
+            "en": "I've subscribed to your channel.",
+            "pt": "Eu me inscrevi no seu canal."
+          },
+          {
+            "en": "Have you seen the new episode? — Yes, I've just watched it.",
+            "pt": "Você viu o episódio novo? — Vi, acabei de assistir."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "download an app",
+            "pt": "baixar um aplicativo"
+          },
+          {
+            "en": "upload a photo",
+            "pt": "subir (enviar) uma foto"
+          },
+          {
+            "en": "post a video",
+            "pt": "postar um vídeo"
+          },
+          {
+            "en": "watch a series",
+            "pt": "assistir a uma série"
+          },
+          {
+            "en": "episode",
+            "pt": "episódio"
+          },
+          {
+            "en": "stream",
+            "pt": "transmitir, ver pela internet"
+          },
+          {
+            "en": "go viral",
+            "pt": "viralizar"
+          },
+          {
+            "en": "subscribe to",
+            "pt": "se inscrever em"
+          },
+          {
+            "en": "channel",
+            "pt": "canal"
+          },
+          {
+            "en": "online game",
+            "pt": "jogo online"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Look! Carla has just ___ a photo of us.",
+            "opcoes": [
+              "post",
+              "posted",
+              "posting",
+              "posts"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Has + just + particípio: post → posted.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "I'm so happy! My video has gone ___!",
+            "opcoes": [
+              "viral",
+              "virus",
+              "virtual",
+              "visual"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Viralizar = go viral. O particípio de go é gone: has gone viral.",
+          "tagsErro": [
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "We have just ___ (watch) the last episode of the series."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "watched"
+              ]
+            ]
+          },
+          "explicacao": "Have + just + particípio: watch → watched (regular).",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "First, ___ the app on your phone. Then ___ your photos to your profile.",
+            "opcoesPorLacuna": [
+              [
+                "download",
+                "upload",
+                "post"
+              ],
+              [
+                "upload",
+                "download",
+                "subscribe"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "download"
+              ],
+              [
+                "upload"
+              ]
+            ]
+          },
+          "explicacao": "Baixar o aplicativo para o celular = download the app. Enviar fotos para o seu perfil = upload your photos.",
+          "tagsErro": [
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "Ana has just ___ (subscribe) to my channel!"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "subscribed"
+              ]
+            ]
+          },
+          "explicacao": "Has + just + particípio: subscribe → subscribed. Subscribe to = se inscrever em.",
+          "tagsErro": [
+            "just_yet_already",
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "just",
+              "I've",
+              "the",
+              "finished",
+              "series"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I've just finished the series."
+            ]
+          },
+          "explicacao": "I've + just + particípio + o resto: I've just finished the series.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra ao significado.",
+          "conteudo": {
+            "esquerda": [
+              "download",
+              "upload",
+              "post",
+              "stream",
+              "subscribe to"
+            ],
+            "direita": [
+              "se inscrever em",
+              "baixar",
+              "assistir pela internet",
+              "subir, enviar",
+              "publicar"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              4,
+              2,
+              0
+            ]
+          },
+          "explicacao": "Download = baixar; upload = subir, enviar; post = publicar; stream = assistir (ou transmitir) pela internet; subscribe to = se inscrever em.",
+          "tagsErro": [
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "He has just download a new game."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He has just downloaded a new game.",
+              "He's just downloaded a new game.",
+              "He just downloaded a new game."
+            ]
+          },
+          "explicacao": "Depois de has just vem o particípio: downloaded.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu acabei de baixar o aplicativo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have just downloaded the app.",
+              "I just downloaded the app.",
+              "I have just downloaded the application.",
+              "I just downloaded the application."
+            ]
+          },
+          "explicacao": "Acabei de = I have (I've) just + particípio, ou I just + passado no inglês americano. Baixar = download.",
+          "tagsErro": [
+            "just_yet_already",
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Meu vídeo viralizou!",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "My video has gone viral!",
+              "My video's gone viral!",
+              "My video went viral!"
+            ]
+          },
+          "explicacao": "Viralizar = go viral. Notícia recente: My video has gone viral! (ou My video went viral!)",
+          "tagsErro": [
+            "vocabulario_tecnologia"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Have you seen the new episode? — Yes, I've just ___ it.",
+            "opcoes": [
+              "watch",
+              "watching",
+              "watched",
+              "watches"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "I've just + particípio: watched.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o particípio do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "They have just ___ (upload) the video."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "uploaded"
+              ]
+            ]
+          },
+          "explicacao": "Have + just + particípio: upload → uploaded.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "just",
+              "She",
+              "has",
+              "app",
+              "the",
+              "downloaded"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has just downloaded the app."
+            ]
+          },
+          "explicacao": "Sujeito + has + just + particípio + o resto.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ele acabou de postar uma foto.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "He has just posted a photo.",
+              "He's just posted a photo.",
+              "He just posted a photo.",
+              "He has just posted a picture.",
+              "He's just posted a picture.",
+              "He just posted a picture."
+            ]
+          },
+          "explicacao": "Acabou de = has just + particípio (ou just + passado no inglês americano). Postar = post.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have just watch a great series."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have just watched a great series.",
+              "I just watched a great series."
+            ]
+          },
+          "explicacao": "Depois de have just vem o particípio: watched.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m08-l5",
+      "ordem": 5,
+      "titulo": "Already or yet?",
+      "objetivo": "Falar de tarefas e planos com already (já) e yet (ainda não; já? na pergunta).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para falar de tarefas, usamos already e yet com o present perfect. Already = já (está feito, às vezes antes do esperado): I've already done my homework. Already costuma ficar entre have e o particípio.",
+          "Yet aparece em negativas e perguntas, e fica no fim da frase. Na negativa, yet = ainda (não): I haven't finished yet = Ainda não terminei. Na pergunta, yet = já: Have you finished yet? = Você já terminou?",
+          "Repare que o português usa já nos dois casos: na afirmativa vira already; na pergunta, yet. E ainda não vira haven't... yet.",
+          "No inglês americano do dia a dia, também se ouve already com o passado simples: I already did it. Nas negativas e perguntas com yet, use o present perfect: Have you done it yet? / I haven't done it yet."
+        ],
+        "regras": [
+          "already = já (afirmativa): I've already paid.",
+          "yet = ainda (negativa, no fim): I haven't paid yet.",
+          "yet = já (pergunta, no fim): Have you paid yet?",
+          "ainda não = haven't / hasn't ... yet",
+          "inglês americano: I already paid (também certo)",
+          "No, not yet. = Ainda não."
+        ],
+        "notaContrastiva": "Não diga *I have finished yet* → diga *I have already finished* (na afirmativa, já = already). E não diga *I haven't finished already* → diga *I haven't finished yet*.",
+        "exemplos": [
+          {
+            "en": "I've already cleaned my room.",
+            "pt": "Eu já arrumei meu quarto."
+          },
+          {
+            "en": "Have you done your homework yet?",
+            "pt": "Você já fez a lição de casa?"
+          },
+          {
+            "en": "No, I haven't done it yet.",
+            "pt": "Não, ainda não fiz."
+          },
+          {
+            "en": "She has already bought the tickets.",
+            "pt": "Ela já comprou os ingressos."
+          },
+          {
+            "en": "Has the movie started yet? — No, not yet.",
+            "pt": "O filme já começou? — Ainda não."
+          },
+          {
+            "en": "We haven't decided yet.",
+            "pt": "Nós ainda não decidimos."
+          },
+          {
+            "en": "The package hasn't arrived yet.",
+            "pt": "O pacote ainda não chegou."
+          },
+          {
+            "en": "I already paid the bill.",
+            "pt": "Eu já paguei a conta. (inglês americano)"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "already",
+            "pt": "já (afirmativa)"
+          },
+          {
+            "en": "yet",
+            "pt": "ainda (negativa) / já (pergunta)"
+          },
+          {
+            "en": "not yet",
+            "pt": "ainda não"
+          },
+          {
+            "en": "homework",
+            "pt": "lição de casa"
+          },
+          {
+            "en": "tickets",
+            "pt": "ingressos, passagens"
+          },
+          {
+            "en": "pay the bill",
+            "pt": "pagar a conta"
+          },
+          {
+            "en": "package",
+            "pt": "pacote, encomenda"
+          },
+          {
+            "en": "decide",
+            "pt": "decidir"
+          },
+          {
+            "en": "clean my room",
+            "pt": "arrumar o meu quarto"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "I haven't paid the bill ___.",
+            "opcoes": [
+              "already",
+              "just",
+              "yet",
+              "ever"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Negativa + yet no fim = ainda não: I haven't paid the bill yet.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Don't buy the tickets. Marcos has ___ bought them.",
+            "opcoes": [
+              "already",
+              "yet",
+              "ever",
+              "never"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Afirmativa: já = already, entre has e o particípio.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "___ the movie started ___? — No, not yet.",
+            "opcoesPorLacuna": [
+              [
+                "Has",
+                "Have",
+                "Did"
+              ],
+              [
+                "yet",
+                "just",
+                "never"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Has"
+              ],
+              [
+                "yet"
+              ]
+            ]
+          },
+          "explicacao": "The movie = it → Has. Pergunta com já = yet no fim: Has the movie started yet?",
+          "tagsErro": [
+            "just_yet_already",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect e a palavra entre parênteses.",
+          "conteudo": {
+            "texto": "We have ___ (already / clean) the kitchen."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "already cleaned"
+              ]
+            ]
+          },
+          "explicacao": "Already fica entre have e o particípio: We have already cleaned the kitchen.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo na negativa do present perfect.",
+          "conteudo": {
+            "texto": "The package ___ (not / arrive) yet."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "hasn't arrived",
+                "has not arrived"
+              ]
+            ]
+          },
+          "explicacao": "The package = it → hasn't + particípio: hasn't arrived yet = ainda não chegou.",
+          "tagsErro": [
+            "just_yet_already",
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "yet",
+              "Have",
+              "you",
+              "the",
+              "read",
+              "email"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you read the email yet?"
+            ]
+          },
+          "explicacao": "Pergunta: Have + you + particípio + o resto + yet (no fim)?",
+          "tagsErro": [
+            "just_yet_already",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "Já fiz.",
+              "Ainda não fiz.",
+              "Você já fez?",
+              "Acabei de fazer."
+            ],
+            "direita": [
+              "I haven't done it yet.",
+              "I've just done it.",
+              "I've already done it.",
+              "Have you done it yet?"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Já (afirmativa) = already; ainda não = haven't... yet; já? (pergunta) = yet; acabei de = just.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have finished my project yet."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have already finished my project.",
+              "I have finished my project already.",
+              "I already finished my project."
+            ]
+          },
+          "explicacao": "Na afirmativa, já = already, e não yet. Yet só aparece em negativas e perguntas.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu ainda não terminei.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I have not finished yet.",
+              "I have not finished it yet.",
+              "I am not done yet.",
+              "I am not finished yet."
+            ]
+          },
+          "explicacao": "Ainda não = haven't + particípio + yet: I haven't finished yet.",
+          "tagsErro": [
+            "just_yet_already",
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela já comprou os ingressos.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has already bought the tickets.",
+              "She's already bought the tickets.",
+              "She has bought the tickets already.",
+              "She's bought the tickets already.",
+              "She already bought the tickets."
+            ]
+          },
+          "explicacao": "Já (afirmativa) = already: She has (She's) already bought the tickets. No inglês americano, She already bought the tickets também vale.",
+          "tagsErro": [
+            "just_yet_already",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "Is Rafa still at work? — No, he has ___ gone home.",
+            "opcoes": [
+              "yet",
+              "ever",
+              "already",
+              "still"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Afirmativa: já = already, entre has e o particípio.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "Have you called your mom ___? — No, not yet."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "yet",
+                "already"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta com já, no fim da frase: Have you called your mom yet?",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "already",
+              "I've",
+              "lunch",
+              "had"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I've already had lunch."
+            ]
+          },
+          "explicacao": "I've + already + particípio: I've already had lunch = Já almocei.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já fez a lição de casa?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you done your homework yet?",
+              "Have you done the homework yet?",
+              "Have you done your homework already?",
+              "Have you already done your homework?",
+              "Have you done your homework?",
+              "Have you finished your homework yet?",
+              "Have you finished your homework?",
+              "Did you already do your homework?",
+              "Did you do your homework already?"
+            ]
+          },
+          "explicacao": "Pergunta com já: Have you done your homework yet? No inglês americano, Did you already do your homework? também vale.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We haven't decided already."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We haven't decided yet."
+            ]
+          },
+          "explicacao": "Na negativa, ainda não = yet, no fim: We haven't decided yet.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m08-l6",
+      "ordem": 6,
+      "titulo": "Our \"Have you ever...?\" survey",
+      "objetivo": "Ler e contar o resultado de uma pesquisa \"Have you ever...?\", misturando present perfect e passado simples.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Uma pesquisa \"Have you ever...?\" é um jeito divertido de praticar: você faz perguntas sobre experiências e depois conta os resultados. A Duda fez uma pesquisa com a turma dela. Leia o resultado:",
+          "Our class survey: Duda asked 20 students five questions. Only two students have been on TV. Fifteen students have flown in a plane, and five have never flown. Three students have met a famous person: Lucas met a soccer player at the airport last year. Everybody has posted a video online, and Bia's video has gone viral! Twelve students have eaten sushi, but eight have never tried it.",
+          "Para contar resultados, usamos números e palavras como everybody (todo mundo), nobody (ninguém), most students (a maioria dos alunos) e only two (só dois). Everybody e nobody pedem has: Everybody has posted a video. Nobody has been to Japan. Nobody já é negativo, então não use not junto.",
+          "Repare como a pesquisa mistura os tempos: o resultado geral vem no present perfect (Three students have met a famous person) e o detalhe com data vem no passado simples (Lucas met a soccer player last year)."
+        ],
+        "regras": [
+          "Have you ever...? = a pergunta da pesquisa",
+          "Everybody has... / Nobody has... (com has)",
+          "Most students have... / Only two students have...",
+          "resultado geral → present perfect; detalhe com data → passado simples",
+          "nobody = ninguém (sem not): Nobody has been to Japan."
+        ],
+        "notaContrastiva": "Não diga *Everybody have posted a video* → diga *Everybody has posted a video*. E não use not com nobody: não diga *Nobody hasn't been there* → diga *Nobody has been there*.",
+        "exemplos": [
+          {
+            "en": "Have you ever been on TV?",
+            "pt": "Você já apareceu na TV?"
+          },
+          {
+            "en": "Only two students have been on TV.",
+            "pt": "Só dois alunos já apareceram na TV."
+          },
+          {
+            "en": "Everybody has posted a video online.",
+            "pt": "Todo mundo já postou um vídeo na internet."
+          },
+          {
+            "en": "Nobody has been to Japan.",
+            "pt": "Ninguém já foi ao Japão."
+          },
+          {
+            "en": "Most students have eaten sushi.",
+            "pt": "A maioria dos alunos já comeu sushi."
+          },
+          {
+            "en": "Lucas met a famous player last year.",
+            "pt": "O Lucas conheceu um jogador famoso no ano passado."
+          },
+          {
+            "en": "Five students have never flown.",
+            "pt": "Cinco alunos nunca andaram de avião."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "survey",
+            "pt": "pesquisa"
+          },
+          {
+            "en": "result",
+            "pt": "resultado"
+          },
+          {
+            "en": "ask a question",
+            "pt": "fazer uma pergunta"
+          },
+          {
+            "en": "everybody / everyone",
+            "pt": "todo mundo"
+          },
+          {
+            "en": "nobody / no one",
+            "pt": "ninguém"
+          },
+          {
+            "en": "most students",
+            "pt": "a maioria dos alunos"
+          },
+          {
+            "en": "only",
+            "pt": "só, apenas"
+          },
+          {
+            "en": "famous",
+            "pt": "famoso"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a pesquisa. Quantos alunos já apareceram na TV?",
+          "conteudo": {
+            "texto": "Our class survey: Duda asked 20 students five questions. Only two students have been on TV. Fifteen students have flown in a plane, and five have never flown. Three students have met a famous person: Lucas met a soccer player at the airport last year. Everybody has posted a video online, and Bia's video has gone viral! Twelve students have eaten sushi, but eight have never tried it.",
+            "opcoes": [
+              "Nenhum.",
+              "Dois.",
+              "Três.",
+              "Quinze."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "\"Only two students have been on TV.\" Três é o número de alunos que já conheceram uma pessoa famosa."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a pesquisa. O que aconteceu com o Lucas?",
+          "conteudo": {
+            "texto": "Our class survey: Duda asked 20 students five questions. Only two students have been on TV. Fifteen students have flown in a plane, and five have never flown. Three students have met a famous person: Lucas met a soccer player at the airport last year. Everybody has posted a video online, and Bia's video has gone viral! Twelve students have eaten sushi, but eight have never tried it.",
+            "opcoes": [
+              "Ele apareceu na TV.",
+              "O vídeo dele viralizou.",
+              "Ele nunca andou de avião.",
+              "Ele conheceu um jogador de futebol no aeroporto."
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "\"Lucas met a soccer player at the airport last year.\" Quem viralizou foi a Bia."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Everybody ___ watched that series.",
+            "opcoes": [
+              "have",
+              "are",
+              "has",
+              "is"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Everybody pede o verbo no singular: Everybody has watched...",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "Nobody in my family ___ (be) to Europe."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "has been"
+              ]
+            ]
+          },
+          "explicacao": "Nobody pede has, e o particípio de be é been: Nobody has been to Europe.",
+          "tagsErro": [
+            "present_perfect",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Have you ever been to a soccer game? — Yes, I ___. I ___ to a game in Belo Horizonte last month.",
+            "opcoesPorLacuna": [
+              [
+                "have",
+                "did",
+                "am"
+              ],
+              [
+                "went",
+                "have gone",
+                "have been"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have"
+              ],
+              [
+                "went"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta: Yes, I have. O detalhe tem data (last month) → passado simples: I went.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "students",
+              "have",
+              "Most",
+              "sushi",
+              "eaten"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Most students have eaten sushi."
+            ]
+          },
+          "explicacao": "Most students (= they) + have + particípio: Most students have eaten sushi.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra ao significado.",
+          "conteudo": {
+            "esquerda": [
+              "everybody",
+              "nobody",
+              "most students",
+              "only two"
+            ],
+            "direita": [
+              "ninguém",
+              "só dois",
+              "todo mundo",
+              "a maioria dos alunos"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Everybody = todo mundo; nobody = ninguém; most students = a maioria dos alunos; only two = só dois."
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Nobody hasn't been to Japan."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Nobody has been to Japan.",
+              "No one has been to Japan."
+            ]
+          },
+          "explicacao": "Nobody já é negativo: não use not junto. Nobody has been to Japan.",
+          "tagsErro": [
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Todo mundo já postou um vídeo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Everybody has posted a video.",
+              "Everyone has posted a video.",
+              "Everybody's posted a video.",
+              "Everyone's posted a video.",
+              "Everybody has already posted a video.",
+              "Everyone has already posted a video.",
+              "Everybody has posted a video online.",
+              "Everyone has posted a video online.",
+              "Everybody already posted a video.",
+              "Everyone already posted a video."
+            ]
+          },
+          "explicacao": "Todo mundo = everybody (ou everyone), com has: Everybody has posted a video.",
+          "tagsErro": [
+            "present_perfect",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já conheceu uma pessoa famosa?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever met a famous person?",
+              "Have you met a famous person?",
+              "Have you ever met someone famous?",
+              "Have you met someone famous?",
+              "Have you ever met anyone famous?",
+              "Have you met anyone famous?",
+              "Have you ever met a celebrity?",
+              "Have you met a celebrity?"
+            ]
+          },
+          "explicacao": "Experiência de vida: Have you ever met...? Conhecer alguém (pela primeira vez) = meet → met.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Three students have met a famous person. Lucas ___ a soccer player last year.",
+            "opcoes": [
+              "has met",
+              "met",
+              "have met",
+              "meets"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Last year diz quando → passado simples: Lucas met a soccer player last year.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "Only two students ___ (be) on TV."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have been"
+              ]
+            ]
+          },
+          "explicacao": "Two students = they → have been.",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "ever",
+              "you",
+              "Have",
+              "on",
+              "been",
+              "TV"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever been on TV?"
+            ]
+          },
+          "explicacao": "Have + you + ever + been + on TV? (aparecer na TV = be on TV).",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ninguém da minha turma já foi ao Japão.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Nobody in my class has been to Japan.",
+              "No one in my class has been to Japan.",
+              "Nobody from my class has been to Japan.",
+              "No one from my class has been to Japan.",
+              "Nobody in my class has ever been to Japan.",
+              "No one in my class has ever been to Japan."
+            ]
+          },
+          "explicacao": "Ninguém = nobody (sem not), com has: Nobody in my class has been to Japan.",
+          "tagsErro": [
+            "present_perfect",
+            "negativa"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Everybody have tried the new app."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Everybody has tried the new app.",
+              "Everybody's tried the new app."
+            ]
+          },
+          "explicacao": "Everybody pede has: Everybody has tried the new app.",
+          "tagsErro": [
+            "terceira_pessoa_s",
+            "present_perfect"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Have you ever ___ a horse?",
+          "opcoes": [
+            "rode",
+            "ridden",
+            "ride",
+            "riding"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Have + particípio: ride → rode → ridden.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha o auxiliar correto.",
+        "conteudo": {
+          "texto": "My brother ___ never been on a plane.",
+          "opcoes": [
+            "is",
+            "did",
+            "has",
+            "have"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "My brother = he → has: He has never been on a plane.",
+        "tagsErro": [
+          "present_perfect",
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o particípio do verbo entre parênteses.",
+        "conteudo": {
+          "texto": "I have never ___ (write) a song."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "written"
+            ]
+          ]
+        },
+        "explicacao": "Write → wrote → written.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "We ___ that movie last weekend.",
+          "opcoes": [
+            "watched",
+            "have watched",
+            "watch",
+            "have watch"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Last weekend diz quando → passado simples: watched.",
+        "tagsErro": [
+          "perfect_x_passado"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o particípio do verbo entre parênteses.",
+        "conteudo": {
+          "texto": "Have you ___ (meet) my cousin Rafa? — Yes, I met him at your party."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "met"
+            ]
+          ]
+        },
+        "explicacao": "Meet → met → met. Have you met...? = Você já conhece...?",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "Look! I've ___ downloaded the new game.",
+          "opcoes": [
+            "yet",
+            "ever",
+            "just",
+            "still"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Acabei de = I've just + particípio.",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "She hasn't answered my message ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "yet"
+            ]
+          ]
+        },
+        "explicacao": "Negativa + yet no fim = ainda não: She hasn't answered my message yet.",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Is Tiago here? — No, he has ___ to the gym. He'll be back at six.",
+          "opcoes": [
+            "gone",
+            "been",
+            "went",
+            "go"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Ele foi e ainda não voltou: has gone.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "My video has gone ___! It has a million views.",
+          "opcoes": [
+            "virus",
+            "viral",
+            "visual"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Viralizar = go viral: My video has gone viral.",
+        "tagsErro": [
+          "vocabulario_tecnologia"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa para cada lacuna.",
+        "conteudo": {
+          "texto": "___ you ever played an online game? — No, I ___.",
+          "opcoesPorLacuna": [
+            [
+              "Have",
+              "Did",
+              "Has"
+            ],
+            [
+              "haven't",
+              "didn't",
+              "hasn't"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Have"
+            ],
+            [
+              "haven't"
+            ]
+          ]
+        },
+        "explicacao": "Experiência de vida: Have you ever...? Resposta curta: No, I haven't.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que o Marcos nunca fez?",
+        "conteudo": {
+          "texto": "Hi, I'm Marcos. I love traveling, but I have never been abroad. I have been to eleven Brazilian states. Last year I went to Bonito with my sister, and we swam in a river with a lot of fish! I have never flown in a helicopter, but I want to try it one day. My sister has already done it: she flew over Rio in 2021.",
+          "opcoes": [
+            "Viajar para o exterior.",
+            "Nadar num rio.",
+            "Ir a Bonito.",
+            "Viajar com a irmã."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"I have never been abroad.\" Ele já nadou num rio em Bonito, com a irmã."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quem já voou de helicóptero?",
+        "conteudo": {
+          "texto": "Hi, I'm Marcos. I love traveling, but I have never been abroad. I have been to eleven Brazilian states. Last year I went to Bonito with my sister, and we swam in a river with a lot of fish! I have never flown in a helicopter, but I want to try it one day. My sister has already done it: she flew over Rio in 2021.",
+          "opcoes": [
+            "O Marcos.",
+            "A irmã do Marcos.",
+            "Os dois.",
+            "Ninguém."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"My sister has already done it: she flew over Rio in 2021.\" O Marcos nunca voou de helicóptero."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. O que a Nina acabou de fazer?",
+        "conteudo": {
+          "texto": "Hey Lia! Have you seen the new episode of Star Café yet? I've just watched it. It's amazing! Don't worry, no spoilers. I haven't watched the bonus video yet, because I've already used all my phone data this month. Has your brother downloaded the new game? Text me! — Nina",
+          "opcoes": [
+            "Baixar um jogo novo.",
+            "Ver o vídeo bônus.",
+            "Mandar spoilers para a Lia.",
+            "Assistir ao episódio novo."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"I've just watched it\" = acabei de assistir (ao episódio novo)."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Por que a Nina ainda não viu o vídeo bônus?",
+        "conteudo": {
+          "texto": "Hey Lia! Have you seen the new episode of Star Café yet? I've just watched it. It's amazing! Don't worry, no spoilers. I haven't watched the bonus video yet, because I've already used all my phone data this month. Has your brother downloaded the new game? Text me! — Nina",
+          "opcoes": [
+            "Porque não gostou do episódio.",
+            "Porque já usou todos os dados do celular.",
+            "Porque o irmão da Lia está com o celular.",
+            "Porque o vídeo ainda não saiu."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"I haven't watched the bonus video yet, because I've already used all my phone data this month.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "never",
+            "She",
+            "been",
+            "has",
+            "abroad"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "She has never been abroad."
+          ]
+        },
+        "explicacao": "Sujeito + has + never + been + abroad.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Você já experimentou comida japonesa?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Have you ever tried Japanese food?",
+            "Have you tried Japanese food?",
+            "Have you ever eaten Japanese food?",
+            "Have you eaten Japanese food?",
+            "Have you ever had Japanese food?",
+            "Have you had Japanese food?"
+          ]
+        },
+        "explicacao": "Experiência de vida: Have you ever + particípio (tried, eaten ou had)?",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "I have visited my grandma last Sunday."
+        },
+        "gabarito": {
+          "aceitas": [
+            "I visited my grandma last Sunday.",
+            "Last Sunday I visited my grandma.",
+            "Last Sunday, I visited my grandma."
+          ]
+        },
+        "explicacao": "Last Sunday diz quando → passado simples: I visited.",
+        "tagsErro": [
+          "perfect_x_passado"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu ainda não li o livro.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I have not read the book yet."
+          ]
+        },
+        "explicacao": "Ainda não = haven't + particípio + yet: I haven't read the book yet.",
+        "tagsErro": [
+          "just_yet_already",
+          "negativa"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Have you ever ___ a prize?",
+          "opcoes": [
+            "winned",
+            "win",
+            "winning",
+            "won"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Have + particípio: win → won → won.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha o auxiliar correto.",
+        "conteudo": {
+          "texto": "Julia and Caio ___ never tried sushi.",
+          "opcoes": [
+            "has",
+            "have",
+            "is",
+            "does"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Julia and Caio = they → have: They have never tried sushi.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o particípio do verbo entre parênteses.",
+        "conteudo": {
+          "texto": "My dad has never ___ (drive) a truck."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "driven"
+            ]
+          ]
+        },
+        "explicacao": "Drive → drove → driven.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I ___ my keys yesterday, but I found them this morning.",
+          "opcoes": [
+            "have lost",
+            "lost",
+            "lose",
+            "have lose"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Yesterday diz quando → passado simples: I lost my keys yesterday.",
+        "tagsErro": [
+          "perfect_x_passado"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o particípio do verbo entre parênteses.",
+        "conteudo": {
+          "texto": "Has your sister ___ (see) the new Spider-Man movie?"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "seen"
+            ]
+          ]
+        },
+        "explicacao": "Has + particípio: see → saw → seen.",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "We've ___ finished the project. Can we go home now?",
+          "opcoes": [
+            "already",
+            "yet",
+            "ever",
+            "still"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Afirmativa: já = already, entre have e o particípio.",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "Have you paid the bill ___? — No, not yet."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "yet",
+              "already"
+            ]
+          ]
+        },
+        "explicacao": "Pergunta com já, no fim: Have you paid the bill yet?",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Where's Mom? — She has ___ to the drugstore. She isn't here.",
+          "opcoes": [
+            "been",
+            "gone",
+            "went",
+            "go"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Ela foi e ainda não voltou: has gone.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "I love your videos! I'm going to ___ to your channel.",
+          "opcoes": [
+            "subscribe",
+            "download",
+            "upload",
+            "post"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Se inscrever num canal = subscribe to a channel.",
+        "tagsErro": [
+          "vocabulario_tecnologia"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa para cada lacuna.",
+        "conteudo": {
+          "texto": "___ your brother ever been to Chile? — Yes, he ___.",
+          "opcoesPorLacuna": [
+            [
+              "Has",
+              "Have",
+              "Did"
+            ],
+            [
+              "has",
+              "have",
+              "did"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Has"
+            ],
+            [
+              "has"
+            ]
+          ]
+        },
+        "explicacao": "Your brother = he → Has he ever been...? Resposta curta: Yes, he has.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que a Sofia nunca viu?",
+        "conteudo": {
+          "texto": "Hi! I'm Sofia, and I'm from a small town in Goiás. I have never seen the sea, but I have seen a lot of rivers and waterfalls. I have ridden a horse many times, because my grandfather has a farm. Last month my cousin invited me to Fortaleza for the holidays. I'm so excited! I have already bought a new swimsuit.",
+          "opcoes": [
+            "Uma cachoeira.",
+            "O mar.",
+            "Um rio.",
+            "Um cavalo."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"I have never seen the sea, but I have seen a lot of rivers and waterfalls.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que a Sofia já andou muito a cavalo?",
+        "conteudo": {
+          "texto": "Hi! I'm Sofia, and I'm from a small town in Goiás. I have never seen the sea, but I have seen a lot of rivers and waterfalls. I have ridden a horse many times, because my grandfather has a farm. Last month my cousin invited me to Fortaleza for the holidays. I'm so excited! I have already bought a new swimsuit.",
+          "opcoes": [
+            "Porque o avô dela tem uma fazenda.",
+            "Porque ela mora em Fortaleza.",
+            "Porque o primo dela tem cavalos.",
+            "Porque ela fez um curso."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"I have ridden a horse many times, because my grandfather has a farm.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o resultado da pesquisa. Quantos alunos já jogaram um jogo online?",
+        "conteudo": {
+          "texto": "Class 8B survey: \"Have you ever played an online game?\" 25 students answered. Everybody has played an online game. Most students have downloaded a game app, and nine have posted a gaming video. Nobody has won a prize in a tournament, but Pedro played in a big tournament in São Paulo last year and finished in tenth place.",
+          "opcoes": [
+            "Nove.",
+            "Nenhum.",
+            "A maioria.",
+            "Todos."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"Everybody has played an online game.\" Nove é o número de alunos que já postaram um vídeo de jogo."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o resultado da pesquisa. O que o Pedro fez no ano passado?",
+        "conteudo": {
+          "texto": "Class 8B survey: \"Have you ever played an online game?\" 25 students answered. Everybody has played an online game. Most students have downloaded a game app, and nine have posted a gaming video. Nobody has won a prize in a tournament, but Pedro played in a big tournament in São Paulo last year and finished in tenth place.",
+          "opcoes": [
+            "Ganhou um prêmio num torneio.",
+            "Postou um vídeo de jogo.",
+            "Jogou um torneio grande em São Paulo.",
+            "Baixou um aplicativo de jogos."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"Pedro played in a big tournament in São Paulo last year.\" Ninguém ganhou prêmio."
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "just",
+            "They've",
+            "the",
+            "video",
+            "uploaded"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "They've just uploaded the video."
+          ]
+        },
+        "explicacao": "They've + just + particípio + o resto.",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Ela nunca foi ao Chile.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "She has never been to Chile.",
+            "She's never been to Chile."
+          ]
+        },
+        "explicacao": "Experiência de vida com never: She has (She's) never been to Chile.",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "When have you arrived?"
+        },
+        "gabarito": {
+          "aceitas": [
+            "When did you arrive?"
+          ]
+        },
+        "explicacao": "Pergunta com when → passado simples: When did you arrive?",
+        "tagsErro": [
+          "perfect_x_passado",
+          "do_support"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Nós já compramos os ingressos.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "We have already bought the tickets.",
+            "We have bought the tickets already.",
+            "We already bought the tickets."
+          ]
+        },
+        "explicacao": "Já (afirmativa) = already: We have (We've) already bought the tickets.",
+        "tagsErro": [
+          "just_yet_already",
+          "verbo_irregular"
+        ]
+      }
+    ]
+  }
+}
