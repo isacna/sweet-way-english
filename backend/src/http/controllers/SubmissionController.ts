@@ -10,7 +10,7 @@ const paramsNovaEntrega = z.object({ id: id('Atividade inválida') });
 const paramsId = z.object({ id: id() });
 // Texto da entrega (opcional); outro tipo é ignorado, como antes
 const novaEntregaSchema = z.object({
-  conteudo: z.unknown().transform((v) => (typeof v === 'string' ? v : undefined)),
+  conteudo: z.unknown().optional().transform((v) => (typeof v === 'string' ? v : undefined)),
 });
 const MSG_STATUS = 'Envie status: "aprovado" ou "reprovado"';
 const avaliacaoSchema = z.object({ status: z.enum(['aprovado', 'reprovado'], { error: MSG_STATUS }) });

@@ -7,13 +7,10 @@ import { Plus } from "lucide-react";
 import { Cabecalho, Campo, classeBotao, classeCampo, erroDaApi, Mensagem } from "@/components/painel/ui";
 import { apiFetch } from "@/lib/api";
 
-const NIVEIS = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
-
 export default function NovaTurmaPage() {
   const router = useRouter();
   const [nome, setNome] = useState("");
   const [descricao, setDescricao] = useState("");
-  const [nivel, setNivel] = useState<string>("A1");
   const [erro, setErro] = useState("");
   const [salvando, setSalvando] = useState(false);
 
@@ -27,7 +24,7 @@ export default function NovaTurmaPage() {
     setSalvando(true);
     const res = await apiFetch("/turmas", {
       method: "POST",
-      body: JSON.stringify({ nome: nome.trim(), descricao: descricao.trim() || undefined, nivel }),
+      body: JSON.stringify({ nome: nome.trim(), descricao: descricao.trim() || undefined }),
     }).catch(() => null);
     if (res?.status === 401 || res?.status === 403) {
       router.replace("/login?tipo=professor");
@@ -70,15 +67,6 @@ export default function NovaTurmaPage() {
             rows={3}
             className={`${classeCampo} resize-y`}
           />
-        </Campo>
-        <Campo id="nivel" rotulo="Nível" dica="Entra no código de convite (ex.: SWA13-2026).">
-          <select id="nivel" value={nivel} onChange={(e) => setNivel(e.target.value)} className={classeCampo}>
-            {NIVEIS.map((n) => (
-              <option key={n} value={n}>
-                {n}
-              </option>
-            ))}
-          </select>
         </Campo>
         {erro && <Mensagem tom="erro">{erro}</Mensagem>}
         <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">

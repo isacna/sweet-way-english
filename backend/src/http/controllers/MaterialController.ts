@@ -20,7 +20,7 @@ const novoMaterialSchema = z.object({
     .string({ error: MSG_FALTA })
     .min(1, MSG_FALTA)
     .pipe(z.enum(TIPOS, { error: `Tipo inválido. Use: ${TIPOS.join(', ')}` })),
-  url: z.unknown().transform((v) => (typeof v === 'string' ? v.trim() : '')),
+  url: z.unknown().optional().transform((v) => (typeof v === 'string' ? v.trim() : '')),
 });
 
 /** POST /turmas/:id/materiais — requireRole('professor'); multipart com `arquivo` ou JSON com `url` */

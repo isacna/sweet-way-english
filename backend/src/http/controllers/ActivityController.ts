@@ -16,7 +16,7 @@ const link = z
   .union([z.string(), z.null()], { error: 'Link inválido' })
   .optional()
   .transform((v) => (v === undefined ? undefined : v?.trim() || null));
-const opcional = <T extends z.ZodType>(s: T) => z.preprocess((v) => v ?? undefined, s.optional());
+const opcional = <T extends z.ZodType>(s: T) => z.preprocess((v) => v ?? undefined, s.optional()).optional();
 
 // JSON ou multipart (com o anexo opcional da professora no campo `arquivo`)
 const novaAtividadeSchema = z.object({
@@ -31,7 +31,7 @@ const edicaoSchema = z.object({
   titulo: opcional(texto('Título não pode ser vazio')),
   descricao: opcional(texto('Descrição não pode ser vazia')),
   dataEntrega: opcional(dataEntrega),
-  arquivoObrigatorio: z.unknown().transform((v) => (v === undefined ? undefined : lerBooleano(v))),
+  arquivoObrigatorio: z.unknown().optional().transform((v) => (v === undefined ? undefined : lerBooleano(v))),
   link,
   removerArquivo: booleano,
 });

@@ -1,6 +1,6 @@
 // Apoio compartilhado pelos controllers do curso autoguiado (aluno e professora).
 import type { Response } from 'express';
-import type { ZodError } from 'zod';
+import { z, type ZodError } from 'zod';
 import { prisma } from '../../database/client.js';
 import type { Prisma } from '../../database/generated/prisma/client.js';
 import { corrigir, RespostaInvalida, versaoPublica, type ItemCorrigivel, type Resultado } from '../../domain/correcao.js';
@@ -14,6 +14,13 @@ export function idParam(valor: unknown): number | null {
   const n = Number(valor);
   return Number.isInteger(n) && n > 0 ? n : null;
 }
+
+/** Limite de tamanho de uma resposta: a correção normaliza com regex, e texto enorme trava o event loop. */
+export const MAX_RESPOSTA_CHARS = 2000;
+
+export const respostaLimitada = z
+  .json()
+  .refine((v) => JSON.stringify(v).length <= MAX_RESPOSTA_CHARS, { message: 'Resposta longa demais' });
 
 export function erroZod(res: Response, erro: ZodError) {
   const issue = erro.issues[0];

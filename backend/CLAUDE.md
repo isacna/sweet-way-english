@@ -88,10 +88,10 @@ There is no public professor signup: professors are created by an admin. Signup,
 #### Classes — `class.routes.ts`
 | Method | Path | Description |
 |--------|------|-------------|
-| `POST` | `/api/turmas` | Create class (professor). `{ nome, descricao?, nivel? }`; `nivel` (1–4 letters/digits) prefixes the invite code `SW<nivel><n>-<year>` |
+| `POST` | `/api/turmas` | Create class (professor). `{ nome, descricao? }`; the invite code is 8 random chars from `turmas.gerarCodigoConvite()` (no 0/O/1/I/L) |
 | `GET` | `/api/turmas` | List classes for current user |
-| `GET` | `/api/turmas/:id` | Class detail (activities, materials, students); owner professor or enrolled student |
-| `POST` | `/api/turmas/entrar` | Student joins class via invite code (aluno; one class per student) |
+| `GET` | `/api/turmas/:id` | Class detail (activities, materials, students); owner professor or enrolled student. Students get classmates' `nome` only, no `email` |
+| `POST` | `/api/turmas/entrar` | Student joins class via invite code (aluno; one class per student; the code is uppercased) |
 
 #### Activities — `activity.routes.ts`
 | Method | Path | Description |
@@ -176,7 +176,7 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 | `POST` | `/api/conteudo/exercicios/verificar` | Editor preview: `{ item, resposta }` → `corrigir()` |
 | `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students; `?turmaId=sem-turma` = students with no Matricula (any professor, pilot) |
 
-Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
+Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Answers (`resposta`, each value of `respostas`) are capped at 2000 chars of JSON (`respostaLimitada`) and a submission at 200 answers, because grading normalizes with regexes. Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
 
 #### Files — `arquivo.routes.ts`
 | Method | Path | Description |
@@ -233,7 +233,7 @@ The script opens the SQLite file read-only and copies every table in FK order in
 **Key models**:
 - `Usuario`: single user table with `papel` enum (`aluno | professor`) and `admin` boolean; passwords hashed with bcryptjs (10 rounds). `versaoToken` (Int, default 0) goes into the JWT as `v` (see Auth).
 - `TokenSenha`: password-reset request (`hashToken` unique SHA-256, `expiraEm`, `usadoEm`), cascades from `Usuario`. Stores `dataNascimento` and guardian-consent fields for minors. Relations keep the old names (`Turma.professor`, `Matricula.aluno`, `Submissao.aluno`, `Feedback.professor`), all pointing to `Usuario`. The archived SQLite migration `20261103000000_usuario_unificado` merged the old `Professor`/`Aluno` tables (student ids were offset by the max professor id).
-- `Turma` — class with a random 6-char `codigoConvite` (invite code)
+- `Turma` — class with a unique `codigoConvite` (invite code; new classes get 8 random chars, older ones keep `SW<nivel><n>-<year>`)
 - `Matricula` — join table between a `Usuario` (aluno) and a `Turma`
 - `Atividade` — assignment belonging to a `Turma`, has `arquivoObrigatorio` (bool) and `prazo` (deadline)
 - `Submissao` — student submission; `status` enum: `pendente | aprovado | reprovado | corrigido`

@@ -7,12 +7,12 @@ import { Prisma } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
 import { itemSchema, licaoEdicaoSchema } from '../../domain/conteudo/schema.js';
 import { dadosExercicio } from '../../domain/conteudo/importar.js';
-import { comCorrecao, corrigirOuZerar, erroZod, idParam } from './cursoApoio.js';
+import { comCorrecao, corrigirOuZerar, erroZod, idParam, respostaLimitada } from './cursoApoio.js';
 
 const STATUS = ['rascunho', 'revisao', 'publicado'] as const;
 const statusLicaoSchema = z.object({ status: z.enum(STATUS) });
 const statusModuloSchema = z.object({ status: z.enum(STATUS), incluirLicoes: z.boolean().optional() });
-const verificarSchema = z.object({ item: z.unknown(), resposta: z.json() });
+const verificarSchema = z.object({ item: z.unknown(), resposta: respostaLimitada });
 
 export async function listarConteudo(_req: AuthRequest, res: Response) {
   const niveis = await prisma.nivel.findMany({

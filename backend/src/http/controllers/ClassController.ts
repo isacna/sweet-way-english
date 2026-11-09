@@ -8,13 +8,10 @@ import * as turmas from '../../services/turmas.js';
 const novaTurmaSchema = z.object({
   nome: texto('Nome da turma é obrigatório'),
   descricao: textoOpcional('Descrição inválida'),
-  // Prefixo do código de convite (ex.: A1, B2)
-  nivel: textoOpcional('Nível inválido').pipe(
-    z.string().regex(/^[A-Za-z0-9]{1,4}$/, 'Nível inválido').optional(),
-  ),
 });
 const paramsTurma = z.object({ id: id() });
-const entrarSchema = z.object({ codigoConvite: texto('Informe o código de convite') });
+// Maiúsculas: o aluno pode digitar o código em minúsculas
+const entrarSchema = z.object({ codigoConvite: texto('Informe o código de convite').transform((c) => c.toUpperCase()) });
 
 /** POST /turmas — requireRole('professor') */
 export async function createClass(req: AuthRequest, res: Response) {
