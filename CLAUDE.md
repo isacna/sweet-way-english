@@ -111,9 +111,10 @@ Outside production (`NODE_ENV` not `production`), `npm run db:seed` also creates
 
 ## Self-paced course (Phase 1)
 
-Self-paced A1 course using the Structured Grammar (PPP) method. It has no AI and no audio, and grading is deterministic. Plan: `docs/plano-plataforma-cursos.md` (section 9.1 says what was delivered). API contract: `docs/api-curso.md`.
+Self-paced A1 and A2 course using the Structured Grammar (PPP) method. It has no AI and no audio, and grading is deterministic. Plan: `docs/plano-plataforma-cursos.md` (section 9.1 says what was delivered). API contract: `docs/api-curso.md`.
 
-- **Content** is versioned JSON in `backend/prisma/conteudo/` (`niveis.json`, `a1/m01.json`…`m10.json`): 10 modules × 6 lessons, plus 2 parallel test forms per module. The format is the zod schema in `backend/src/domain/conteudo/schema.ts`.
+- **Content** is versioned JSON in `backend/prisma/conteudo/` (`niveis.json`, `a1/m01.json`…`m10.json`, `a2/m01.json`…`m10.json`): per level, 10 modules × 6 lessons, plus 2 parallel test forms per module. A2-M10 is a review module whose test is the A2 level exam (2 forms × 30 items). The trail runs across levels in order, so A2-M01 unlocks when the A1-M10 test is passed. The format is the zod schema in `backend/src/domain/conteudo/schema.ts`.
+  - Grading (`correcao.ts`) ignores case, final punctuation and contractions, but **not** commas inside a sentence: list comma variants in `aceitas`. A student's `she's`/`I'd` is read as both is/has and would/had, while keys use the common reading, so write *has*/*had* in full in keys.
   - `cd backend && npm run conteudo:validar [-- m03]` checks the schema and the answer-key rules.
   - `npm run conteudo:importar` loads the content into the DB with status `revisao`. It is idempotent: existing lessons and tests are kept.
   - `-- --publicar` imports already published. `-- --sobrescrever` replaces lessons and tests, which **discards the teacher's edits**.
