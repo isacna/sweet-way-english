@@ -1,0 +1,3598 @@
+{
+  "slug": "a2-m09",
+  "ordem": 9,
+  "titulo": "If…",
+  "tema": "Condições e dicas",
+  "descricao": "Fale de fatos e de possibilidades reais com if, use unless, e dê dicas sobre a cidade, os estudos e a moradia, até montar um guia de dicas para visitantes.",
+  "canDos": [
+    "Falar de fatos e verdades gerais com a condicional zero (If you heat ice, it melts).",
+    "Falar de possibilidades reais no futuro com a primeira condicional (If it rains, we'll stay home).",
+    "Fazer perguntas com a primeira condicional (What will you do if…?) e responder com will ou won't.",
+    "Usar unless no lugar de if not.",
+    "Usar o vocabulário da cidade, dos estudos e da moradia (downtown, subway, grade, roommate, landlord).",
+    "Dar dicas para visitantes com if + imperativo ou should."
+  ],
+  "gramatica": "Condicional zero (If/When + presente, presente); primeira condicional (If + presente, will/won't + verbo base); perguntas (What will you do if…? Will you…?) e respostas curtas; sem will depois de if; vírgula quando o if vem primeiro; unless = if not; dicas com if + imperativo e if + should.",
+  "vocabulario": "Cidade (neighborhood, downtown, subway, sidewalk, crosswalk, traffic, traffic light, rush hour), estudos (take a test/class/course, pass, fail, grade, college, degree), moradia (rent, landlord, roommate, furnished, deposit, utilities) e viagem (tip, visitor, sunset, crowded).",
+  "funcao": "Falar de condições e consequências e dar dicas.",
+  "pronuncia": "Na fala, will vira 'll e quase some: If it rains, we'll stay home soa \"we'l stay\". Numa frase com duas partes, a voz sobe um pouco no fim da parte com if e desce no fim da frase: If it rains ↗, we'll stay home ↘. O curso ainda não tem áudio: leia as frases em voz alta com essa melodia.",
+  "licoes": [
+    {
+      "slug": "a2-m09-l1",
+      "ordem": 1,
+      "titulo": "If you heat ice, it melts",
+      "objetivo": "Falar de fatos e verdades gerais com a condicional zero: If/When + presente, presente.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "A condicional zero fala de coisas que sempre acontecem quando uma condição é verdadeira: fatos, regras e hábitos. Usamos o presente simples nas duas partes: If you heat ice, it melts. (Se você esquenta o gelo, ele derrete.)",
+          "Na condicional zero, if e when têm quase o mesmo sentido, porque o resultado sempre acontece: If I drink coffee at night, I can't sleep. = When I drink coffee at night, I can't sleep.",
+          "A frase tem duas partes: a condição (com if) e o resultado. A condição pode vir primeiro ou depois. Quando o if vem primeiro, usamos vírgula: If it rains, the streets get wet. Quando vem depois, não precisa de vírgula: The streets get wet if it rains.",
+          "Lembre do -s na terceira pessoa nas duas partes: If my son eats chocolate, he gets sick."
+        ],
+        "regras": [
+          "If + presente, presente = fato ou verdade geral",
+          "If you heat ice, it melts.",
+          "When = if (na condicional zero)",
+          "If primeiro → vírgula: If it rains, the streets get wet.",
+          "If depois → sem vírgula: The streets get wet if it rains."
+        ],
+        "notaContrastiva": "Em português às vezes dizemos \"se você esquentar o gelo, ele derrete\". Em inglês a condição fica no presente simples: não diga *If you will heat ice, it melts* → diga *If you heat ice, it melts*.",
+        "exemplos": [
+          {
+            "en": "If you heat water to 100 degrees, it boils.",
+            "pt": "Se você esquenta a água a 100 graus, ela ferve."
+          },
+          {
+            "en": "If I drink coffee at night, I can't sleep.",
+            "pt": "Se eu tomo café à noite, não consigo dormir."
+          },
+          {
+            "en": "When it rains, the traffic is terrible.",
+            "pt": "Quando chove, o trânsito fica horrível."
+          },
+          {
+            "en": "If you take the subway, it's faster.",
+            "pt": "Se você pega o metrô, é mais rápido."
+          },
+          {
+            "en": "My dog barks if somebody rings the bell.",
+            "pt": "Meu cachorro late se alguém toca a campainha."
+          },
+          {
+            "en": "If you mix blue and yellow, you get green.",
+            "pt": "Se você mistura azul e amarelo, dá verde."
+          },
+          {
+            "en": "If I don't eat breakfast, I get hungry at ten.",
+            "pt": "Se eu não tomo café da manhã, fico com fome às dez."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "if",
+            "pt": "se"
+          },
+          {
+            "en": "when",
+            "pt": "quando"
+          },
+          {
+            "en": "heat",
+            "pt": "esquentar"
+          },
+          {
+            "en": "melt",
+            "pt": "derreter"
+          },
+          {
+            "en": "boil",
+            "pt": "ferver"
+          },
+          {
+            "en": "get wet",
+            "pt": "ficar molhado"
+          },
+          {
+            "en": "traffic",
+            "pt": "trânsito"
+          },
+          {
+            "en": "subway",
+            "pt": "metrô"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If you heat ice, it ___.",
+            "opcoes": [
+              "melt",
+              "melts",
+              "will melting",
+              "melted"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Condicional zero: presente nas duas partes. It → melts, com -s.",
+          "tagsErro": [
+            "condicional_zero",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If you ___ blue and yellow, you get green.",
+            "opcoes": [
+              "will mix",
+              "mixing",
+              "mix",
+              "mixes"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Fato geral: If + presente simples. You → mix.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "If it ___ (rain), the streets ___ (get) wet."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "rains"
+              ],
+              [
+                "get"
+              ]
+            ]
+          },
+          "explicacao": "Condicional zero: presente nas duas partes. It rains (com -s); the streets get (plural, sem -s).",
+          "tagsErro": [
+            "condicional_zero",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "When my sister ___ (drink) coffee at night, she ___ (not sleep) well."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "drinks"
+              ],
+              [
+                "doesn't sleep",
+                "does not sleep"
+              ]
+            ]
+          },
+          "explicacao": "My sister = she: drinks, com -s. Negativa na terceira pessoa: doesn't sleep.",
+          "tagsErro": [
+            "condicional_zero",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "If you ___ water to 100 degrees, it ___.",
+            "opcoesPorLacuna": [
+              [
+                "heat",
+                "will heat",
+                "heated"
+              ],
+              [
+                "boil",
+                "boils",
+                "is boiling"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "heat"
+              ],
+              [
+                "boils"
+              ]
+            ]
+          },
+          "explicacao": "Fato da ciência: presente nas duas partes. You heat, it boils.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "subway",
+              "faster",
+              "is",
+              "it",
+              "take",
+              "If",
+              "the",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you take the subway it is faster",
+              "It is faster if you take the subway"
+            ]
+          },
+          "explicacao": "If + you take the subway + it is faster. Na escrita, use vírgula depois da parte com if: If you take the subway, it's faster.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada condição ao resultado.",
+          "conteudo": {
+            "esquerda": [
+              "If you heat ice,",
+              "If you mix red and white,",
+              "If it rains,",
+              "If I drink coffee at night,",
+              "If you don't water plants,"
+            ],
+            "direita": [
+              "I can't sleep.",
+              "it melts.",
+              "they die.",
+              "you get pink.",
+              "the streets get wet."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              4,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Cada fato geral junta uma condição e um resultado, os dois no presente.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If you heat chocolate, it melt."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you heat chocolate, it melts.",
+              "If you heat chocolate it melts.",
+              "Chocolate melts if you heat it.",
+              "It melts if you heat chocolate."
+            ]
+          },
+          "explicacao": "It → melts, com -s na terceira pessoa.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se chove, o trânsito fica horrível.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it rains, the traffic is terrible.",
+              "If it rains the traffic is terrible.",
+              "The traffic is terrible if it rains.",
+              "If it rains, traffic is terrible.",
+              "If it rains traffic is terrible.",
+              "Traffic is terrible if it rains.",
+              "If it rains, the traffic gets terrible.",
+              "If it rains the traffic gets terrible.",
+              "The traffic gets terrible if it rains.",
+              "If it rains, traffic gets terrible.",
+              "If it rains traffic gets terrible.",
+              "Traffic gets terrible if it rains.",
+              "If it rains, the traffic is awful.",
+              "If it rains the traffic is awful.",
+              "The traffic is awful if it rains.",
+              "If it rains, the traffic is horrible.",
+              "If it rains the traffic is horrible.",
+              "The traffic is horrible if it rains.",
+              "When it rains, the traffic is terrible.",
+              "When it rains the traffic is terrible.",
+              "The traffic is terrible when it rains.",
+              "When it rains, traffic is terrible.",
+              "When it rains traffic is terrible.",
+              "Traffic is terrible when it rains.",
+              "When it rains, the traffic gets terrible.",
+              "When it rains the traffic gets terrible.",
+              "The traffic gets terrible when it rains.",
+              "When it rains, traffic gets terrible.",
+              "When it rains traffic gets terrible.",
+              "Traffic gets terrible when it rains.",
+              "When it rains, the traffic is awful.",
+              "When it rains the traffic is awful.",
+              "The traffic is awful when it rains.",
+              "When it rains, the traffic is horrible.",
+              "When it rains the traffic is horrible.",
+              "The traffic is horrible when it rains."
+            ]
+          },
+          "explicacao": "Fato que sempre acontece: If it rains, the traffic is terrible. Também pode ser When it rains.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se eu não tomo café da manhã, eu fico com fome.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If I don't eat breakfast, I get hungry.",
+              "If I don't eat breakfast I get hungry.",
+              "I get hungry if I don't eat breakfast.",
+              "If I don't eat breakfast, I feel hungry.",
+              "If I don't eat breakfast I feel hungry.",
+              "I feel hungry if I don't eat breakfast.",
+              "If I don't have breakfast, I get hungry.",
+              "If I don't have breakfast I get hungry.",
+              "I get hungry if I don't have breakfast.",
+              "If I don't have breakfast, I feel hungry.",
+              "If I don't have breakfast I feel hungry.",
+              "I feel hungry if I don't have breakfast.",
+              "When I don't eat breakfast, I get hungry.",
+              "When I don't eat breakfast I get hungry.",
+              "I get hungry when I don't eat breakfast.",
+              "When I don't eat breakfast, I feel hungry.",
+              "When I don't eat breakfast I feel hungry.",
+              "I feel hungry when I don't eat breakfast.",
+              "When I don't have breakfast, I get hungry.",
+              "When I don't have breakfast I get hungry.",
+              "I get hungry when I don't have breakfast.",
+              "When I don't have breakfast, I feel hungry.",
+              "When I don't have breakfast I feel hungry.",
+              "I feel hungry when I don't have breakfast."
+            ]
+          },
+          "explicacao": "Hábito: presente nas duas partes. Ficar com fome = get hungry.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If my son eats too much candy, he ___ a stomachache.",
+            "opcoes": [
+              "gets",
+              "get",
+              "will getting",
+              "got"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Condicional zero com he: gets, com -s.",
+          "tagsErro": [
+            "condicional_zero",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples.",
+          "conteudo": {
+            "texto": "If you ___ (press) this button, the machine ___ (stop)."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "press"
+              ],
+              [
+                "stops"
+              ]
+            ]
+          },
+          "explicacao": "You press; the machine (it) stops.",
+          "tagsErro": [
+            "condicional_zero",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "late",
+              "I",
+              "when",
+              "is",
+              "the",
+              "bus",
+              "am",
+              "late"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "When the bus is late I am late",
+              "I am late when the bus is late"
+            ]
+          },
+          "explicacao": "When + the bus is late + I am late. When = if na condicional zero.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você mistura azul e amarelo, dá verde.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you mix blue and yellow, you get green.",
+              "If you mix blue and yellow you get green.",
+              "You get green if you mix blue and yellow.",
+              "If you mix blue and yellow, it makes green.",
+              "If you mix blue and yellow it makes green.",
+              "It makes green if you mix blue and yellow.",
+              "If you mix blue and yellow, you make green.",
+              "If you mix blue and yellow you make green.",
+              "You make green if you mix blue and yellow."
+            ]
+          },
+          "explicacao": "Dar verde = you get green. Presente nas duas partes.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If water get very cold, it turns into ice."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If water gets very cold, it turns into ice.",
+              "If water gets very cold it turns into ice.",
+              "Water turns into ice if it gets very cold."
+            ]
+          },
+          "explicacao": "Water = it: gets, com -s.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m09-l2",
+      "ordem": 2,
+      "titulo": "If it rains, we'll stay home",
+      "objetivo": "Falar de possibilidades reais no futuro com a primeira condicional: If + presente, will + verbo.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "A primeira condicional fala de uma situação possível no futuro e do resultado dela: If it rains tomorrow, we'll stay home. (Se chover amanhã, vamos ficar em casa.) A condição usa o presente simples, e o resultado usa will + verbo base.",
+          "Na negativa, use won't (will not) no resultado ou don't/doesn't na condição: If you don't hurry, you'll miss the bus. If it rains, I won't go to the beach.",
+          "Repare: em português dizemos \"se chover\", \"se você estudar\", com o verbo no futuro do subjuntivo. Em inglês a parte com if fica no presente simples: If it rains, if you study.",
+          "Assim como na condicional zero, a parte com if pode vir primeiro (com vírgula) ou depois (sem vírgula): We'll stay home if it rains."
+        ],
+        "regras": [
+          "If + presente simples, will/won't + verbo base",
+          "If it rains, we'll stay home.",
+          "If you don't hurry, you'll miss the bus.",
+          "I'll call you if I have time.",
+          "Se chover = If it rains (presente, não futuro)"
+        ],
+        "notaContrastiva": "O \"se chover\" do português leva o brasileiro a usar will depois de if. Não diga *If it will rain, we will stay home* → diga *If it rains, we'll stay home*. O will fica só no resultado.",
+        "exemplos": [
+          {
+            "en": "If it rains tomorrow, we'll stay home.",
+            "pt": "Se chover amanhã, vamos ficar em casa."
+          },
+          {
+            "en": "If you study, you'll pass the test.",
+            "pt": "Se você estudar, vai passar na prova."
+          },
+          {
+            "en": "If you don't hurry, you'll miss the bus.",
+            "pt": "Se você não se apressar, vai perder o ônibus."
+          },
+          {
+            "en": "I'll call you if I have time.",
+            "pt": "Eu te ligo se tiver tempo."
+          },
+          {
+            "en": "If she gets the job, she'll move to Curitiba.",
+            "pt": "Se ela conseguir o emprego, vai se mudar para Curitiba."
+          },
+          {
+            "en": "If it's sunny on Saturday, we'll go to the beach.",
+            "pt": "Se fizer sol no sábado, vamos à praia."
+          },
+          {
+            "en": "If you're tired, I won't stay long.",
+            "pt": "Se você estiver cansado, não vou ficar muito."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "hurry",
+            "pt": "se apressar"
+          },
+          {
+            "en": "miss the bus",
+            "pt": "perder o ônibus"
+          },
+          {
+            "en": "pass a test",
+            "pt": "passar numa prova"
+          },
+          {
+            "en": "get a job",
+            "pt": "conseguir um emprego"
+          },
+          {
+            "en": "move to",
+            "pt": "se mudar para"
+          },
+          {
+            "en": "stay home",
+            "pt": "ficar em casa"
+          },
+          {
+            "en": "won't = will not",
+            "pt": "não vai / não vou"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If it ___ tomorrow, we'll stay home.",
+            "opcoes": [
+              "will rain",
+              "rains",
+              "rain",
+              "raining"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Depois de if, presente simples: if it rains. O will fica no resultado.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If you study hard, you ___ the test.",
+            "opcoes": [
+              "pass",
+              "passed",
+              "are passing",
+              "will pass"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Resultado no futuro: will + verbo base. You will pass.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+          "conteudo": {
+            "texto": "If she ___ (get) the job, she ___ (move) to Curitiba."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "gets"
+              ],
+              [
+                "will move",
+                "'ll move"
+              ]
+            ]
+          },
+          "explicacao": "Condição no presente (she gets) e resultado com will (she will move).",
+          "tagsErro": [
+            "condicional_primeira",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+          "conteudo": {
+            "texto": "If you ___ (not hurry), you ___ (miss) the bus."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't hurry",
+                "do not hurry"
+              ],
+              [
+                "will miss",
+                "'ll miss"
+              ]
+            ]
+          },
+          "explicacao": "Negativa na condição: don't hurry. Resultado: will miss.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "If it's sunny on Saturday, we ___ to the beach. If it rains, we ___ go.",
+            "opcoesPorLacuna": [
+              [
+                "go",
+                "will go",
+                "went"
+              ],
+              [
+                "won't",
+                "don't",
+                "not"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "will go"
+              ],
+              [
+                "won't"
+              ]
+            ]
+          },
+          "explicacao": "Resultado com will: we will go. Na negativa: won't go.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "I",
+              "you",
+              "time",
+              "call",
+              "have",
+              "if",
+              "will",
+              "I"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I will call you if I have time",
+              "If I have time I will call you"
+            ]
+          },
+          "explicacao": "Resultado + if + condição: I will call you if I have time. Quando o if vem primeiro, use vírgula na escrita.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada condição ao resultado.",
+          "conteudo": {
+            "esquerda": [
+              "If you study,",
+              "If you don't hurry,",
+              "If it rains,",
+              "If I'm hungry,",
+              "If she gets the job,"
+            ],
+            "direita": [
+              "we'll stay home.",
+              "she'll move.",
+              "you'll pass the test.",
+              "I'll make a sandwich.",
+              "you'll miss the bus."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "If + presente, will + verbo: cada condição tem um resultado possível no futuro.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If it will rain, we will stay home."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it rains, we will stay home.",
+              "If it rains we will stay home.",
+              "We will stay home if it rains."
+            ]
+          },
+          "explicacao": "Depois de if não usamos will: If it rains.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você estudar, você vai passar na prova.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you study, you will pass the test.",
+              "If you study you will pass the test.",
+              "You will pass the test if you study.",
+              "If you study, you will pass the exam.",
+              "If you study you will pass the exam.",
+              "You will pass the exam if you study."
+            ]
+          },
+          "explicacao": "Se você estudar = if you study (presente). Vai passar = will pass.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se não chover, nós vamos à praia.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it doesn't rain, we will go to the beach.",
+              "If it doesn't rain we will go to the beach.",
+              "We will go to the beach if it doesn't rain."
+            ]
+          },
+          "explicacao": "Se não chover = if it doesn't rain. Resultado com will: we will go.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If I ___ hungry later, I'll make a sandwich.",
+            "opcoes": [
+              "am",
+              "will be",
+              "be",
+              "being"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Depois de if, presente simples: If I am hungry.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+          "conteudo": {
+            "texto": "If you ___ (call) me tonight, I ___ (tell) you the news."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "call"
+              ],
+              [
+                "will tell",
+                "'ll tell"
+              ]
+            ]
+          },
+          "explicacao": "If + presente (you call), will + verbo (I will tell).",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "bus",
+              "don't",
+              "the",
+              "hurry",
+              "you",
+              "If",
+              "miss",
+              "will",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you don't hurry you will miss the bus",
+              "You will miss the bus if you don't hurry"
+            ]
+          },
+          "explicacao": "If you don't hurry + you will miss the bus.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu te ligo se eu tiver tempo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If I have time, I will call you.",
+              "If I have time I will call you.",
+              "I will call you if I have time.",
+              "If I have time, I will phone you.",
+              "If I have time I will phone you.",
+              "I will phone you if I have time.",
+              "If I have time, I will give you a call.",
+              "If I have time I will give you a call.",
+              "I will give you a call if I have time."
+            ]
+          },
+          "explicacao": "Ligo = will call (resultado). Se eu tiver tempo = if I have time (presente).",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If she will get the job, she'll move to Curitiba."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If she gets the job, she'll move to Curitiba.",
+              "If she gets the job she'll move to Curitiba.",
+              "She'll move to Curitiba if she gets the job."
+            ]
+          },
+          "explicacao": "Depois de if, presente simples: if she gets.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m09-l3",
+      "ordem": 3,
+      "titulo": "What will you do if…?",
+      "objetivo": "Fazer perguntas com a primeira condicional, usar a vírgula certa e evitar will depois de if.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar sobre uma situação possível, colocamos will antes do sujeito na parte do resultado: What will you do if it rains? Will you come if I invite you? A parte com if continua no presente simples.",
+          "Respostas curtas usam will e won't: Will you come? — Yes, I will. / No, I won't.",
+          "A vírgula: quando a frase começa com if, colocamos uma vírgula no fim da parte com if: If it rains, we'll stay home. Quando a parte com if vem no fim, não usamos vírgula: We'll stay home if it rains.",
+          "Revise o erro mais comum dos brasileiros: nada de will depois de if. Errado: If I will have money… Certo: If I have money, I'll travel."
+        ],
+        "regras": [
+          "What will you do if + presente?",
+          "Will you + verbo + if + presente?",
+          "Yes, I will. / No, I won't.",
+          "If no começo → vírgula",
+          "If no meio → sem vírgula"
+        ],
+        "notaContrastiva": "Não diga *What you will do if it rains?* → diga *What will you do if it rains?* (will antes do sujeito). E não diga *If I will have money, I will travel* → diga *If I have money, I'll travel*.",
+        "exemplos": [
+          {
+            "en": "What will you do if it rains?",
+            "pt": "O que você vai fazer se chover?"
+          },
+          {
+            "en": "Will you come if I invite you? — Yes, I will.",
+            "pt": "Você vem se eu te convidar? — Sim, venho."
+          },
+          {
+            "en": "If I have money, I'll travel to Chile.",
+            "pt": "Se eu tiver dinheiro, vou viajar para o Chile."
+          },
+          {
+            "en": "I'll travel to Chile if I have money.",
+            "pt": "Vou viajar para o Chile se eu tiver dinheiro."
+          },
+          {
+            "en": "Where will you live if you get the job?",
+            "pt": "Onde você vai morar se conseguir o emprego?"
+          },
+          {
+            "en": "Will she be angry if I'm late? — No, she won't.",
+            "pt": "Ela vai ficar brava se eu me atrasar? — Não, não vai."
+          },
+          {
+            "en": "What will happen if we miss the flight?",
+            "pt": "O que vai acontecer se a gente perder o voo?"
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "What will you do if…?",
+            "pt": "O que você vai fazer se…?"
+          },
+          {
+            "en": "invite",
+            "pt": "convidar"
+          },
+          {
+            "en": "happen",
+            "pt": "acontecer"
+          },
+          {
+            "en": "angry",
+            "pt": "bravo, irritado"
+          },
+          {
+            "en": "flight",
+            "pt": "voo"
+          },
+          {
+            "en": "comma",
+            "pt": "vírgula"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "opcoes": [
+              "What you will do if it rains?",
+              "What will you do if it will rain?",
+              "What will you do if it rains?",
+              "What do you will do if it rains?"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Pergunta: What will you do...? E depois de if, presente: if it rains.",
+          "tagsErro": [
+            "ordem_pergunta",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a resposta curta correta.",
+          "conteudo": {
+            "texto": "Will you come to the party if I invite you? — Yes, I ___.",
+            "opcoes": [
+              "do",
+              "will",
+              "come",
+              "am"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "A pergunta usa will, então a resposta curta também: Yes, I will.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a pergunta com uma palavra.",
+          "conteudo": {
+            "texto": "___ you be at home if I call you at nine?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Will",
+                "will"
+              ]
+            ]
+          },
+          "explicacao": "Pergunta no futuro: Will you be...? A parte com if continua no presente: if I call.",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "What will you do if you ___ (not find) a job?"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't find",
+                "do not find"
+              ]
+            ]
+          },
+          "explicacao": "Depois de if, presente simples na negativa: if you don't find.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "Where ___ you live if you ___ the job in Recife?",
+            "opcoesPorLacuna": [
+              [
+                "will",
+                "do",
+                "are"
+              ],
+              [
+                "get",
+                "will get",
+                "got"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "will"
+              ],
+              [
+                "get"
+              ]
+            ]
+          },
+          "explicacao": "Where will you live (resultado) + if you get (condição no presente).",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "do",
+              "rains",
+              "What",
+              "you",
+              "it",
+              "if",
+              "will"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What will you do if it rains?"
+            ]
+          },
+          "explicacao": "What + will + you + do + if it rains?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada pergunta à resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Will you come if I invite you?",
+              "What will you do if it rains?",
+              "Will she be angry if I'm late?",
+              "Where will you live if you get the job?"
+            ],
+            "direita": [
+              "No, she won't.",
+              "Yes, I will. Thanks!",
+              "I'll rent an apartment downtown.",
+              "I'll stay home and read."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Perguntas com will pedem respostas com will ou won't.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "What you will do if you miss the bus?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What will you do if you miss the bus?"
+            ]
+          },
+          "explicacao": "Na pergunta, will vem antes do sujeito: What will you do...?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você vai fazer se chover?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What will you do if it rains?",
+              "What are you going to do if it rains?"
+            ]
+          },
+          "explicacao": "O que você vai fazer = What will you do. Se chover = if it rains (presente).",
+          "tagsErro": [
+            "ordem_pergunta",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se eu tiver dinheiro, vou viajar para o Chile.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If I have money, I will travel to Chile.",
+              "If I have money I will travel to Chile.",
+              "I will travel to Chile if I have money.",
+              "If I have money, I will go to Chile.",
+              "If I have money I will go to Chile.",
+              "I will go to Chile if I have money.",
+              "If I have money, I will take a trip to Chile.",
+              "If I have money I will take a trip to Chile.",
+              "I will take a trip to Chile if I have money.",
+              "If I have the money, I will travel to Chile.",
+              "If I have the money I will travel to Chile.",
+              "I will travel to Chile if I have the money.",
+              "If I have the money, I will go to Chile.",
+              "If I have the money I will go to Chile.",
+              "I will go to Chile if I have the money.",
+              "If I have the money, I will take a trip to Chile.",
+              "If I have the money I will take a trip to Chile.",
+              "I will take a trip to Chile if I have the money.",
+              "If I have enough money, I will travel to Chile.",
+              "If I have enough money I will travel to Chile.",
+              "I will travel to Chile if I have enough money.",
+              "If I have enough money, I will go to Chile.",
+              "If I have enough money I will go to Chile.",
+              "I will go to Chile if I have enough money.",
+              "If I have enough money, I will take a trip to Chile.",
+              "If I have enough money I will take a trip to Chile.",
+              "I will take a trip to Chile if I have enough money."
+            ]
+          },
+          "explicacao": "Se eu tiver = if I have (presente). Vou viajar = I will travel.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Qual frase está pontuada corretamente?",
+          "conteudo": {
+            "opcoes": [
+              "If you are tired we, will go home.",
+              "We will go home, if you are tired.",
+              "If you are tired, we will go home.",
+              "If, you are tired we will go home."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Quando a frase começa com if, a vírgula fica no fim da parte com if.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a resposta curta com uma palavra.",
+          "conteudo": {
+            "texto": "Will it be cold tomorrow? — No, it ___. It'll be sunny."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "won't",
+                "will not"
+              ]
+            ]
+          },
+          "explicacao": "Resposta curta negativa com will: No, it won't.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a pergunta.",
+          "conteudo": {
+            "palavras": [
+              "angry",
+              "she",
+              "Will",
+              "be",
+              "late",
+              "I",
+              "if",
+              "am"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Will she be angry if I am late?"
+            ]
+          },
+          "explicacao": "Will + she + be angry + if I am late?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você vem se eu te convidar?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Will you come if I invite you?",
+              "Are you going to come if I invite you?"
+            ]
+          },
+          "explicacao": "Você vem? = Will you come? Se eu te convidar = if I invite you.",
+          "tagsErro": [
+            "ordem_pergunta",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If I will see Ana, I will give her your message."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If I see Ana, I will give her your message.",
+              "If I see Ana I will give her your message.",
+              "I will give Ana your message if I see her.",
+              "I will give her your message if I see Ana."
+            ]
+          },
+          "explicacao": "Depois de if, presente simples: If I see Ana.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m09-l4",
+      "ordem": 4,
+      "titulo": "Unless you take the subway…",
+      "objetivo": "Usar unless (= if not) e o vocabulário da cidade: bairro, centro, metrô, calçada, trânsito, faixa de pedestres.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Unless quer dizer \"a menos que\" ou \"se não\". Unless you hurry = If you don't hurry. Depois de unless, o verbo fica no afirmativo e no presente: Unless you take the subway, you'll be late. (A menos que você pegue o metrô, vai se atrasar.)",
+          "Cuidado para não usar duas negativas: unless já tem o \"não\" dentro. Errado: Unless you don't hurry… Certo: Unless you hurry… ou If you don't hurry…",
+          "Nesta lição também aparece o vocabulário da cidade. Downtown é o centro da cidade (I work downtown, sem preposição). Neighborhood é o bairro. Subway é o metrô no inglês americano. O pedestre anda na sidewalk (calçada) e atravessa na crosswalk (faixa de pedestres). Traffic é o trânsito, e traffic light é o semáforo.",
+          "Com essas palavras dá para dar avisos com condicionais: If you cross at the crosswalk, it's safer. You'll get stuck in traffic unless you leave early."
+        ],
+        "regras": [
+          "unless = if not = a menos que",
+          "Unless you hurry, you'll miss the bus.",
+          "= If you don't hurry, you'll miss the bus.",
+          "downtown = centro (sem preposição: I work downtown)",
+          "neighborhood = bairro",
+          "sidewalk = calçada; crosswalk = faixa de pedestres"
+        ],
+        "notaContrastiva": "Unless já é negativo: não diga *Unless you don't leave early, you'll be late* → diga *Unless you leave early, you'll be late*. E não diga *I work in the downtown* → diga *I work downtown*.",
+        "exemplos": [
+          {
+            "en": "Unless you take the subway, you'll be late.",
+            "pt": "A menos que você pegue o metrô, vai se atrasar."
+          },
+          {
+            "en": "You'll get stuck in traffic unless you leave early.",
+            "pt": "Você vai ficar preso no trânsito se não sair cedo."
+          },
+          {
+            "en": "I live in a quiet neighborhood near the park.",
+            "pt": "Eu moro num bairro tranquilo perto do parque."
+          },
+          {
+            "en": "My office is downtown.",
+            "pt": "Meu escritório fica no centro."
+          },
+          {
+            "en": "Always cross the street at the crosswalk.",
+            "pt": "Sempre atravesse a rua na faixa de pedestres."
+          },
+          {
+            "en": "Don't ride your bike on the sidewalk.",
+            "pt": "Não ande de bicicleta na calçada."
+          },
+          {
+            "en": "If the traffic light is red, wait.",
+            "pt": "Se o semáforo estiver vermelho, espere."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "unless",
+            "pt": "a menos que, se não"
+          },
+          {
+            "en": "neighborhood",
+            "pt": "bairro"
+          },
+          {
+            "en": "downtown",
+            "pt": "centro (da cidade)"
+          },
+          {
+            "en": "subway",
+            "pt": "metrô"
+          },
+          {
+            "en": "sidewalk",
+            "pt": "calçada"
+          },
+          {
+            "en": "crosswalk",
+            "pt": "faixa de pedestres"
+          },
+          {
+            "en": "traffic",
+            "pt": "trânsito"
+          },
+          {
+            "en": "traffic light",
+            "pt": "semáforo"
+          },
+          {
+            "en": "get stuck in traffic",
+            "pt": "ficar preso no trânsito"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "In the US, people walk on the ___ and cars drive on the street.",
+            "opcoes": [
+              "crosswalk",
+              "sidewalk",
+              "subway",
+              "downtown"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Calçada = sidewalk. Crosswalk é a faixa de pedestres.",
+          "tagsErro": [
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a frase que quer dizer o mesmo que: \"If you don't hurry, you'll miss the train.\"",
+          "conteudo": {
+            "opcoes": [
+              "Unless you don't hurry, you'll miss the train.",
+              "Unless you hurry, you'll miss the train.",
+              "If you hurry, you'll miss the train.",
+              "Unless you will hurry, you'll miss the train."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Unless = if not. Unless you hurry = if you don't hurry. Sem negativa dupla.",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "We'll be late ___ we take a taxi. The bus is too slow."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "unless"
+              ]
+            ]
+          },
+          "explicacao": "A menos que = unless. We'll be late unless we take a taxi.",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra do vocabulário da cidade.",
+          "conteudo": {
+            "texto": "Wait for the green light and cross at the ___."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "crosswalk"
+              ]
+            ]
+          },
+          "explicacao": "Faixa de pedestres = crosswalk.",
+          "tagsErro": [
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "I live in a quiet ___, but I work ___, in the busy center of the city.",
+            "opcoesPorLacuna": [
+              [
+                "neighborhood",
+                "neighbor",
+                "sidewalk"
+              ],
+              [
+                "downtown",
+                "in downtown",
+                "at the downtown"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "neighborhood"
+              ],
+              [
+                "downtown"
+              ]
+            ]
+          },
+          "explicacao": "Bairro = neighborhood. No centro = downtown, sem preposição.",
+          "tagsErro": [
+            "vocabulario_cidade",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "early",
+              "leave",
+              "stuck",
+              "unless",
+              "in",
+              "You'll",
+              "get",
+              "traffic",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "You'll get stuck in traffic unless you leave early",
+              "Unless you leave early you'll get stuck in traffic"
+            ]
+          },
+          "explicacao": "You'll get stuck in traffic + unless you leave early.",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "neighborhood",
+              "downtown",
+              "sidewalk",
+              "crosswalk",
+              "traffic light",
+              "subway"
+            ],
+            "direita": [
+              "semáforo",
+              "calçada",
+              "metrô",
+              "bairro",
+              "faixa de pedestres",
+              "centro"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              3,
+              5,
+              1,
+              4,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Vocabulário da cidade no inglês americano.",
+          "tagsErro": [
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Unless you don't leave now, you'll miss the subway."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Unless you leave now, you'll miss the subway.",
+              "Unless you leave now you'll miss the subway.",
+              "You'll miss the subway unless you leave now.",
+              "If you don't leave now, you'll miss the subway.",
+              "If you don't leave now you'll miss the subway.",
+              "You'll miss the subway if you don't leave now."
+            ]
+          },
+          "explicacao": "Unless já é negativo: Unless you leave now (ou If you don't leave now).",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu trabalho no centro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I work downtown.",
+              "I work in the city center.",
+              "I work in the center of the city."
+            ]
+          },
+          "explicacao": "No centro = downtown, sem preposição e sem artigo.",
+          "tagsErro": [
+            "preposicao",
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você pegar o metrô, vai chegar mais rápido.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you take the subway, you will get there faster.",
+              "If you take the subway you will get there faster.",
+              "You will get there faster if you take the subway.",
+              "If you take the subway, you will arrive faster.",
+              "If you take the subway you will arrive faster.",
+              "You will arrive faster if you take the subway.",
+              "If you take the subway, you will get there more quickly.",
+              "If you take the subway you will get there more quickly.",
+              "You will get there more quickly if you take the subway.",
+              "If you take the subway, you will arrive more quickly.",
+              "If you take the subway you will arrive more quickly.",
+              "You will arrive more quickly if you take the subway."
+            ]
+          },
+          "explicacao": "Se você pegar = if you take (presente). Vai chegar = will get there / will arrive.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "You'll miss the start of the movie ___ you leave now.",
+            "opcoes": [
+              "if",
+              "when",
+              "unless",
+              "because"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Você vai perder o começo a menos que saia agora: unless you leave now.",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra do vocabulário da cidade.",
+          "conteudo": {
+            "texto": "There's a lot of ___ at 6 p.m. Everybody is going home by car."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "traffic"
+              ]
+            ]
+          },
+          "explicacao": "Trânsito = traffic (incontável: a lot of traffic).",
+          "tagsErro": [
+            "vocabulario_cidade",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "the",
+              "Always",
+              "street",
+              "crosswalk",
+              "at",
+              "cross",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Always cross the street at the crosswalk"
+            ]
+          },
+          "explicacao": "Imperativo: Always cross the street + at the crosswalk.",
+          "tagsErro": [
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu moro num bairro tranquilo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I live in a quiet neighborhood.",
+              "I live in a calm neighborhood.",
+              "I live in a peaceful neighborhood."
+            ]
+          },
+          "explicacao": "Bairro = neighborhood. Tranquilo = quiet.",
+          "tagsErro": [
+            "vocabulario_cidade"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "My office is in the downtown."
+          },
+          "gabarito": {
+            "aceitas": [
+              "My office is downtown."
+            ]
+          },
+          "explicacao": "No centro = downtown, sem in the.",
+          "tagsErro": [
+            "preposicao"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m09-l5",
+      "ordem": 5,
+      "titulo": "If you study, you'll pass",
+      "objetivo": "Usar condicionais para falar de estudos e moradia: notas, cursos, faculdade, aluguel e colegas de casa.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Estudar: take a class (fazer uma aula ou disciplina), take a course (fazer um curso), take a test/an exam (fazer uma prova), pass (passar) e fail (reprovar, ir mal). Grade é a nota. College é a faculdade (no inglês americano, college e university são muito parecidos), e degree é o diploma: She has a degree in nursing.",
+          "Cuidado com o falso cognato: em inglês, \"fazer uma prova\" é take a test, e não make a test. E \"passar na prova\" é pass the test, sem preposição.",
+          "Morar: rent an apartment (alugar um apartamento), the rent (o aluguel), the landlord (o dono do imóvel), a roommate (alguém que divide a casa com você), a deposit (o depósito, a caução) e utilities (as contas de luz, água e gás). Furnished = mobiliado.",
+          "Com a primeira condicional dá para falar de planos e consequências: If you fail the test, you'll take it again. If I find a roommate, the rent will be cheaper."
+        ],
+        "regras": [
+          "take a test / an exam = fazer uma prova",
+          "pass ≠ fail = passar ≠ reprovar",
+          "grade = nota; degree = diploma",
+          "rent = aluguel / alugar; landlord = dono do imóvel",
+          "roommate = colega de casa; furnished = mobiliado",
+          "utilities = contas (luz, água, gás)"
+        ],
+        "notaContrastiva": "Não diga *I will make a test tomorrow* → diga *I will take a test tomorrow*. E não diga *pass in the test* → diga *pass the test*.",
+        "exemplos": [
+          {
+            "en": "If you study every day, you'll pass the test.",
+            "pt": "Se você estudar todo dia, vai passar na prova."
+          },
+          {
+            "en": "If she fails the exam, she'll take it again in July.",
+            "pt": "Se ela reprovar no exame, vai fazer de novo em julho."
+          },
+          {
+            "en": "I got a good grade in math.",
+            "pt": "Tirei uma nota boa em matemática."
+          },
+          {
+            "en": "He wants to take an English course next year.",
+            "pt": "Ele quer fazer um curso de inglês no ano que vem."
+          },
+          {
+            "en": "If I find a roommate, the rent will be cheaper.",
+            "pt": "Se eu achar alguém para dividir o apartamento, o aluguel vai ficar mais barato."
+          },
+          {
+            "en": "The apartment is furnished, and the utilities are included.",
+            "pt": "O apartamento é mobiliado, e as contas estão incluídas."
+          },
+          {
+            "en": "The landlord will ask for a deposit if you rent the apartment.",
+            "pt": "O dono vai pedir um depósito se você alugar o apartamento."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "take a test / an exam",
+            "pt": "fazer uma prova"
+          },
+          {
+            "en": "pass / fail",
+            "pt": "passar / reprovar"
+          },
+          {
+            "en": "grade",
+            "pt": "nota"
+          },
+          {
+            "en": "take a class / a course",
+            "pt": "fazer uma aula / um curso"
+          },
+          {
+            "en": "college",
+            "pt": "faculdade"
+          },
+          {
+            "en": "degree",
+            "pt": "diploma, graduação"
+          },
+          {
+            "en": "rent",
+            "pt": "aluguel; alugar"
+          },
+          {
+            "en": "landlord",
+            "pt": "dono do imóvel"
+          },
+          {
+            "en": "roommate",
+            "pt": "colega de casa"
+          },
+          {
+            "en": "furnished",
+            "pt": "mobiliado"
+          },
+          {
+            "en": "deposit",
+            "pt": "depósito, caução"
+          },
+          {
+            "en": "utilities",
+            "pt": "contas de luz, água e gás"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "I'm nervous. I'm going to ___ a big test tomorrow.",
+            "opcoes": [
+              "make",
+              "do the",
+              "take",
+              "pass in"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Fazer uma prova = take a test.",
+          "tagsErro": [
+            "make_do",
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "If I find a ___, I'll share the rent with him.",
+            "opcoes": [
+              "landlord",
+              "roommate",
+              "neighbor",
+              "deposit"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Alguém que divide o apartamento = roommate. Landlord é o dono.",
+          "tagsErro": [
+            "vocabulario_moradia"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+          "conteudo": {
+            "texto": "If you ___ (study) every day, you ___ (get) a good grade."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "study"
+              ],
+              [
+                "will get",
+                "'ll get"
+              ]
+            ]
+          },
+          "explicacao": "If + presente (you study), will + verbo (you will get). Nota = grade.",
+          "tagsErro": [
+            "condicional_primeira",
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com uma palavra.",
+          "conteudo": {
+            "texto": "She has a ___ in nursing. She studied at college for four years."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "degree"
+              ]
+            ]
+          },
+          "explicacao": "Diploma de graduação = degree: a degree in nursing.",
+          "tagsErro": [
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "If he ___ the exam, he'll take it again. But I think he'll ___!",
+            "opcoesPorLacuna": [
+              [
+                "fails",
+                "will fail",
+                "fail"
+              ],
+              [
+                "pass",
+                "passes",
+                "passing"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "fails"
+              ],
+              [
+                "pass"
+              ]
+            ]
+          },
+          "explicacao": "Fail = reprovar (he fails, com -s). Pass = passar, depois de will fica na forma base.",
+          "tagsErro": [
+            "vocabulario_estudo",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "rent",
+              "If",
+              "cheaper",
+              "will",
+              "roommate",
+              "the",
+              "be",
+              "find",
+              "a",
+              "I"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "If I find a roommate the rent will be cheaper",
+              "The rent will be cheaper if I find a roommate"
+            ]
+          },
+          "explicacao": "If I find a roommate + the rent will be cheaper.",
+          "tagsErro": [
+            "condicional_primeira",
+            "vocabulario_moradia"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada palavra à tradução.",
+          "conteudo": {
+            "esquerda": [
+              "grade",
+              "degree",
+              "landlord",
+              "roommate",
+              "furnished",
+              "utilities"
+            ],
+            "direita": [
+              "colega de casa",
+              "contas de luz e água",
+              "diploma",
+              "mobiliado",
+              "nota",
+              "dono do imóvel"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              4,
+              2,
+              5,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Vocabulário de estudo e de moradia.",
+          "tagsErro": [
+            "vocabulario_estudo",
+            "vocabulario_moradia"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If you study, you will pass in the test."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you study, you will pass the test.",
+              "If you study you will pass the test.",
+              "You will pass the test if you study."
+            ]
+          },
+          "explicacao": "Passar na prova = pass the test, sem in.",
+          "tagsErro": [
+            "preposicao",
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se ela reprovar no exame, ela vai fazer de novo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If she fails the exam, she will take it again.",
+              "If she fails the exam she will take it again.",
+              "She will take it again if she fails the exam.",
+              "If she fails the exam, she will do it again.",
+              "If she fails the exam she will do it again.",
+              "She will do it again if she fails the exam.",
+              "If she fails the exam, she will retake it.",
+              "If she fails the exam she will retake it.",
+              "She will retake it if she fails the exam.",
+              "If she fails the test, she will take it again.",
+              "If she fails the test she will take it again.",
+              "She will take it again if she fails the test.",
+              "If she fails the test, she will do it again.",
+              "If she fails the test she will do it again.",
+              "She will do it again if she fails the test.",
+              "If she fails the test, she will retake it.",
+              "If she fails the test she will retake it.",
+              "She will retake it if she fails the test."
+            ]
+          },
+          "explicacao": "Reprovar = fail (she fails, presente). Fazer de novo = take it again.",
+          "tagsErro": [
+            "condicional_primeira",
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O apartamento é mobiliado.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "The apartment is furnished.",
+              "The flat is furnished."
+            ]
+          },
+          "explicacao": "Mobiliado = furnished. Apartamento = apartment (americano).",
+          "tagsErro": [
+            "vocabulario_moradia"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "The ___ wants the rent on the first day of every month.",
+            "opcoes": [
+              "roommate",
+              "landlord",
+              "grade",
+              "neighborhood"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Quem recebe o aluguel é o dono do imóvel: landlord.",
+          "tagsErro": [
+            "vocabulario_moradia"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "If we ___ (rent) this apartment, the landlord will ask for a deposit."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "rent"
+              ]
+            ]
+          },
+          "explicacao": "Depois de if, presente simples: if we rent.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "an",
+              "take",
+              "He",
+              "course",
+              "English",
+              "wants",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "He wants to take an English course"
+            ]
+          },
+          "explicacao": "Fazer um curso = take a course: He wants to take an English course.",
+          "tagsErro": [
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu tirei uma nota boa em inglês.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I got a good grade in English.",
+              "I got a good grade in English class."
+            ]
+          },
+          "explicacao": "Tirar uma nota = get a grade (passado: got).",
+          "tagsErro": [
+            "vocabulario_estudo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I will make an exam next Monday."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I will take an exam next Monday.",
+              "Next Monday I will take an exam.",
+              "Next Monday, I will take an exam."
+            ]
+          },
+          "explicacao": "Fazer uma prova = take an exam, não make.",
+          "tagsErro": [
+            "make_do",
+            "vocabulario_estudo"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m09-l6",
+      "ordem": 6,
+      "titulo": "Tips for visitors",
+      "objetivo": "Dar dicas para quem visita uma cidade com if + imperativo, should e will.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para dar dicas, juntamos if com um imperativo ou com should: If you visit Salvador, try acarajé. If you like museums, you should go downtown. A parte com if continua no presente simples.",
+          "Também dá para avisar sobre o resultado com will: If you go at rush hour, you'll get stuck in traffic. E usar unless: Don't take a taxi unless you have time.",
+          "Leia o guia de dicas abaixo. Repare como cada dica começa com uma condição e termina com um conselho ou um aviso:",
+          "VISITING SALVADOR? HERE ARE OUR TIPS!\nIf you like history, start your trip in Pelourinho, the old downtown. Wear comfortable shoes: the streets are very old and steep.\nIf you want to see the sunset, go to Farol da Barra at about 5:30 p.m. It gets crowded, so arrive early.\nIf you're hungry, try acarajé. But be careful: it's very spicy if you ask for it 'hot'!\nDon't take a taxi downtown at rush hour unless you have a lot of time. The traffic is terrible.\nAnd if it rains, don't worry. It usually stops after an hour."
+        ],
+        "regras": [
+          "If + presente, imperativo: If you visit Salvador, try acarajé.",
+          "If + presente, you should + verbo: If you like history, you should visit Pelourinho.",
+          "If + presente, will: If you go at rush hour, you'll get stuck in traffic.",
+          "Don't + verbo + unless…: Don't take a taxi unless you have time.",
+          "rush hour = hora do rush"
+        ],
+        "notaContrastiva": "Na dica, a parte com if também fica no presente: não diga *If you will visit Salvador, try acarajé* → diga *If you visit Salvador, try acarajé*. E no imperativo não há sujeito: não diga *If you are hungry, you try acarajé* como ordem → diga *try acarajé* ou *you should try acarajé*.",
+        "exemplos": [
+          {
+            "en": "If you visit Salvador, try acarajé.",
+            "pt": "Se você visitar Salvador, experimente acarajé."
+          },
+          {
+            "en": "If you like history, you should visit Pelourinho.",
+            "pt": "Se você gosta de história, deveria visitar o Pelourinho."
+          },
+          {
+            "en": "If you go at rush hour, you'll get stuck in traffic.",
+            "pt": "Se você for na hora do rush, vai ficar preso no trânsito."
+          },
+          {
+            "en": "If it rains, take an umbrella.",
+            "pt": "Se chover, leve um guarda-chuva."
+          },
+          {
+            "en": "Don't take a taxi downtown unless you have a lot of time.",
+            "pt": "Não pegue táxi no centro a menos que tenha muito tempo."
+          },
+          {
+            "en": "If you want to see the sunset, arrive early.",
+            "pt": "Se você quer ver o pôr do sol, chegue cedo."
+          },
+          {
+            "en": "Wear comfortable shoes if you walk a lot.",
+            "pt": "Use sapatos confortáveis se for andar muito."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "tip",
+            "pt": "dica"
+          },
+          {
+            "en": "visitor",
+            "pt": "visitante"
+          },
+          {
+            "en": "sunset",
+            "pt": "pôr do sol"
+          },
+          {
+            "en": "crowded",
+            "pt": "lotado, cheio"
+          },
+          {
+            "en": "rush hour",
+            "pt": "hora do rush"
+          },
+          {
+            "en": "spicy",
+            "pt": "apimentado"
+          },
+          {
+            "en": "steep",
+            "pt": "íngreme"
+          },
+          {
+            "en": "comfortable shoes",
+            "pt": "sapatos confortáveis"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia o guia de dicas. Onde a pessoa deve começar a viagem se gosta de história?",
+          "conteudo": {
+            "texto": "VISITING SALVADOR? HERE ARE OUR TIPS!\nIf you like history, start your trip in Pelourinho, the old downtown. Wear comfortable shoes: the streets are very old and steep.\nIf you want to see the sunset, go to Farol da Barra at about 5:30 p.m. It gets crowded, so arrive early.\nIf you're hungry, try acarajé. But be careful: it's very spicy if you ask for it 'hot'!\nDon't take a taxi downtown at rush hour unless you have a lot of time. The traffic is terrible.\nAnd if it rains, don't worry. It usually stops after an hour.",
+            "opcoes": [
+              "No Farol da Barra.",
+              "No Pelourinho.",
+              "Num restaurante de acarajé.",
+              "Na praia."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "\"If you like history, start your trip in Pelourinho, the old downtown.\""
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia o guia de dicas. Por que é bom chegar cedo ao Farol da Barra?",
+          "conteudo": {
+            "texto": "VISITING SALVADOR? HERE ARE OUR TIPS!\nIf you like history, start your trip in Pelourinho, the old downtown. Wear comfortable shoes: the streets are very old and steep.\nIf you want to see the sunset, go to Farol da Barra at about 5:30 p.m. It gets crowded, so arrive early.\nIf you're hungry, try acarajé. But be careful: it's very spicy if you ask for it 'hot'!\nDon't take a taxi downtown at rush hour unless you have a lot of time. The traffic is terrible.\nAnd if it rains, don't worry. It usually stops after an hour.",
+            "opcoes": [
+              "Porque fecha às 17h30.",
+              "Porque chove à tarde.",
+              "Porque fica lotado.",
+              "Porque o trânsito é ruim de manhã."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "\"It gets crowded, so arrive early.\" Crowded = lotado."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia o guia de dicas. Quando o guia diz para NÃO pegar táxi no centro?",
+          "conteudo": {
+            "texto": "VISITING SALVADOR? HERE ARE OUR TIPS!\nIf you like history, start your trip in Pelourinho, the old downtown. Wear comfortable shoes: the streets are very old and steep.\nIf you want to see the sunset, go to Farol da Barra at about 5:30 p.m. It gets crowded, so arrive early.\nIf you're hungry, try acarajé. But be careful: it's very spicy if you ask for it 'hot'!\nDon't take a taxi downtown at rush hour unless you have a lot of time. The traffic is terrible.\nAnd if it rains, don't worry. It usually stops after an hour.",
+            "opcoes": [
+              "Na hora do rush, se você não tiver muito tempo.",
+              "Quando chover.",
+              "À noite.",
+              "Depois do pôr do sol."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"Don't take a taxi downtown at rush hour unless you have a lot of time.\"",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete a dica com o verbo entre parênteses.",
+          "conteudo": {
+            "texto": "If you ___ (visit) Salvador, ___ (try) acarajé!"
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "visit"
+              ],
+              [
+                "try"
+              ]
+            ]
+          },
+          "explicacao": "Dica: if + presente (you visit) + imperativo (try).",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa para cada lacuna.",
+          "conteudo": {
+            "texto": "If you go at rush hour, you ___ get stuck in traffic. ___ arrive early!",
+            "opcoesPorLacuna": [
+              [
+                "will",
+                "are",
+                "do"
+              ],
+              [
+                "So",
+                "Because",
+                "If"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "will"
+              ],
+              [
+                "So"
+              ]
+            ]
+          },
+          "explicacao": "Aviso com will: you will get stuck. Dica final: So arrive early! (Então chegue cedo!)",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a dica.",
+          "conteudo": {
+            "palavras": [
+              "should",
+              "you",
+              "like",
+              "Pelourinho",
+              "If",
+              "you",
+              "visit",
+              "history"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you like history you should visit Pelourinho",
+              "You should visit Pelourinho if you like history"
+            ]
+          },
+          "explicacao": "If you like history + you should visit Pelourinho. Na escrita, use vírgula depois da parte com if.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada condição à melhor dica.",
+          "conteudo": {
+            "esquerda": [
+              "If it rains,",
+              "If you're hungry,",
+              "If you walk a lot,",
+              "If you want to see the sunset,",
+              "If you are in a hurry,"
+            ],
+            "direita": [
+              "wear comfortable shoes.",
+              "take the subway.",
+              "take an umbrella.",
+              "arrive early.",
+              "try the local food."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              4,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Cada dica junta uma condição (if + presente) e um imperativo.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If you will visit Rio, go to the Botanical Garden."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you visit Rio, go to the Botanical Garden.",
+              "If you visit Rio go to the Botanical Garden.",
+              "Go to the Botanical Garden if you visit Rio."
+            ]
+          },
+          "explicacao": "Depois de if, presente simples: If you visit Rio.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se chover, leve um guarda-chuva.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it rains, take an umbrella.",
+              "If it rains take an umbrella.",
+              "Take an umbrella if it rains.",
+              "If it rains, bring an umbrella.",
+              "If it rains bring an umbrella.",
+              "Bring an umbrella if it rains."
+            ]
+          },
+          "explicacao": "Se chover = if it rains. Leve = take (imperativo).",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você gosta de história, você deveria visitar o centro antigo.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you like history, you should visit the old downtown.",
+              "If you like history you should visit the old downtown.",
+              "You should visit the old downtown if you like history.",
+              "If you like history, you should visit the historic downtown.",
+              "If you like history you should visit the historic downtown.",
+              "You should visit the historic downtown if you like history.",
+              "If you like history, you should visit the old town.",
+              "If you like history you should visit the old town.",
+              "You should visit the old town if you like history.",
+              "If you like history, you should visit the old city center.",
+              "If you like history you should visit the old city center.",
+              "You should visit the old city center if you like history.",
+              "If you like history, you should visit the old city.",
+              "If you like history you should visit the old city.",
+              "You should visit the old city if you like history."
+            ]
+          },
+          "explicacao": "Dica com should: If you like history, you should visit… Centro antigo = the old downtown / the old town.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a dica correta.",
+          "conteudo": {
+            "opcoes": [
+              "If you will visit Recife, try tapioca.",
+              "If you visit Recife, you try tapioca.",
+              "If you visit Recife, try tapioca.",
+              "If you visiting Recife, try tapioca."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Dica: if + presente (you visit) + imperativo (try).",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete a dica com uma palavra.",
+          "conteudo": {
+            "texto": "Don't drive downtown ___ you really have to. Parking is very expensive."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "unless"
+              ]
+            ]
+          },
+          "explicacao": "A menos que = unless: Don't drive downtown unless you have to.",
+          "tagsErro": [
+            "unless"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a dica.",
+          "conteudo": {
+            "palavras": [
+              "early",
+              "if",
+              "want",
+              "Arrive",
+              "see",
+              "you",
+              "to",
+              "sunset",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Arrive early if you want to see the sunset",
+              "If you want to see the sunset arrive early"
+            ]
+          },
+          "explicacao": "Arrive early + if you want to see the sunset.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você for na hora do rush, vai ficar preso no trânsito.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you go at rush hour, you will get stuck in traffic.",
+              "If you go at rush hour you will get stuck in traffic.",
+              "You will get stuck in traffic if you go at rush hour.",
+              "If you go at rush hour, you will be stuck in traffic.",
+              "If you go at rush hour you will be stuck in traffic.",
+              "You will be stuck in traffic if you go at rush hour.",
+              "If you go during rush hour, you will get stuck in traffic.",
+              "If you go during rush hour you will get stuck in traffic.",
+              "You will get stuck in traffic if you go during rush hour.",
+              "If you go during rush hour, you will be stuck in traffic.",
+              "If you go during rush hour you will be stuck in traffic.",
+              "You will be stuck in traffic if you go during rush hour."
+            ]
+          },
+          "explicacao": "Se você for = if you go (presente). Vai ficar preso = will get stuck.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If you are hungry, you should to try the local food."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you are hungry, you should try the local food.",
+              "If you are hungry you should try the local food.",
+              "You should try the local food if you are hungry."
+            ]
+          },
+          "explicacao": "Depois de should, verbo base sem to: you should try.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If you heat butter, it ___.",
+          "opcoes": [
+            "will melting",
+            "melted",
+            "melts",
+            "melt"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Condicional zero, fato geral: it melts.",
+        "tagsErro": [
+          "condicional_zero"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If it ___ tomorrow, we'll go to the park.",
+          "opcoes": [
+            "doesn't rain",
+            "won't rain",
+            "isn't rain",
+            "not rain"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Depois de if, presente simples: if it doesn't rain.",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+        "conteudo": {
+          "texto": "If you ___ (take) the subway, you ___ (be) there in ten minutes."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "take"
+            ],
+            [
+              "will be",
+              "'ll be"
+            ]
+          ]
+        },
+        "explicacao": "If + presente (you take), will + verbo (you will be).",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a pergunta correta.",
+        "conteudo": {
+          "opcoes": [
+            "What you will do if you fail?",
+            "What will you do if you will fail?",
+            "What do you will do if you fail?",
+            "What will you do if you fail?"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "What will you do + if you fail (presente).",
+        "tagsErro": [
+          "ordem_pergunta",
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "You'll miss the bus ___ you run. It leaves in two minutes!"
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "unless"
+            ]
+          ]
+        },
+        "explicacao": "A menos que = unless: unless you run.",
+        "tagsErro": [
+          "unless"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "Cross the street at the ___. It is safer.",
+          "opcoes": [
+            "sidewalk",
+            "crosswalk",
+            "downtown",
+            "subway"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Faixa de pedestres = crosswalk.",
+        "tagsErro": [
+          "vocabulario_cidade"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "I work ___, in the center of the city."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "downtown"
+            ]
+          ]
+        },
+        "explicacao": "No centro = downtown, sem preposição.",
+        "tagsErro": [
+          "vocabulario_cidade"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "I'm going to ___ an English test on Friday.",
+          "opcoes": [
+            "make",
+            "take",
+            "pass in",
+            "do the"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Fazer uma prova = take a test.",
+        "tagsErro": [
+          "make_do",
+          "vocabulario_estudo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "The ___ owns the apartment, and I pay him the rent every month.",
+          "opcoes": [
+            "roommate",
+            "neighbor",
+            "landlord",
+            "deposit"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "O dono do imóvel = landlord.",
+        "tagsErro": [
+          "vocabulario_moradia"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta com uma palavra.",
+        "conteudo": {
+          "texto": "Will you be home if I call at eight? — Yes, I ___."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "will"
+            ]
+          ]
+        },
+        "explicacao": "Resposta curta com will: Yes, I will.",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o anúncio. O que está incluído no aluguel?",
+        "conteudo": {
+          "texto": "ROOM FOR RENT – Vila Madalena, São Paulo\nHi! I'm Paula, a college student. I'm looking for a roommate for my two-bedroom apartment. The room is furnished (bed, desk and closet). The rent is $400 a month, and the utilities are included. The apartment is near the subway, so you'll get downtown in 20 minutes. If you have a pet, I'm sorry, but the landlord doesn't allow pets. If you're interested, send me a message!",
+          "opcoes": [
+            "A mobília e as contas.",
+            "Só a cama.",
+            "O transporte até o centro.",
+            "Nada além do quarto."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"The room is furnished... the utilities are included.\" Mobiliado e com as contas incluídas."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o anúncio. Quem NÃO pode morar no apartamento?",
+        "conteudo": {
+          "texto": "ROOM FOR RENT – Vila Madalena, São Paulo\nHi! I'm Paula, a college student. I'm looking for a roommate for my two-bedroom apartment. The room is furnished (bed, desk and closet). The rent is $400 a month, and the utilities are included. The apartment is near the subway, so you'll get downtown in 20 minutes. If you have a pet, I'm sorry, but the landlord doesn't allow pets. If you're interested, send me a message!",
+          "opcoes": [
+            "Um estudante.",
+            "Quem trabalha no centro.",
+            "Quem não tem carro.",
+            "Quem tem um animal de estimação."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"If you have a pet, I'm sorry, but the landlord doesn't allow pets.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia as dicas. Por que comprar os livros só na segunda semana?",
+        "conteudo": {
+          "texto": "FIRST WEEK AT COLLEGE? READ THIS!\nIf you get lost on campus, ask a student. Everybody is friendly. Buy your books in the second week: if you wait, you'll know which books you really need. If you miss a class, ask a classmate for notes. And don't stay up all night before a test unless you want to sleep during the exam!",
+          "opcoes": [
+            "Porque ficam mais baratos.",
+            "Porque você vai saber quais livros realmente precisa.",
+            "Porque a livraria fecha na primeira semana.",
+            "Porque os colegas emprestam."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"If you wait, you'll know which books you really need.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia as dicas. O que fazer se você faltar a uma aula?",
+        "conteudo": {
+          "texto": "FIRST WEEK AT COLLEGE? READ THIS!\nIf you get lost on campus, ask a student. Everybody is friendly. Buy your books in the second week: if you wait, you'll know which books you really need. If you miss a class, ask a classmate for notes. And don't stay up all night before a test unless you want to sleep during the exam!",
+          "opcoes": [
+            "Falar com o professor.",
+            "Comprar o livro.",
+            "Pedir as anotações a um colega.",
+            "Ficar acordado a noite toda."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"If you miss a class, ask a classmate for notes.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "rains",
+            "If",
+            "stay",
+            "will",
+            "it",
+            "we",
+            "home"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "If it rains we will stay home",
+            "We will stay home if it rains"
+          ]
+        },
+        "explicacao": "If it rains + we will stay home.",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Se você estudar, você vai passar.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "If you study, you will pass.",
+            "If you study you will pass.",
+            "You will pass if you study.",
+            "If you study, you will pass the test.",
+            "If you study you will pass the test.",
+            "You will pass the test if you study.",
+            "If you study, you will pass the exam.",
+            "If you study you will pass the exam.",
+            "You will pass the exam if you study."
+          ]
+        },
+        "explicacao": "If you study (presente), you will pass.",
+        "tagsErro": [
+          "condicional_primeira",
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "If I will have time, I will help you."
+        },
+        "gabarito": {
+          "aceitas": [
+            "If I have time, I will help you.",
+            "If I have time I will help you.",
+            "I will help you if I have time."
+          ]
+        },
+        "explicacao": "Depois de if, presente simples: If I have time.",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "O apartamento é perto do metrô.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "The apartment is near the subway.",
+            "The apartment is close to the subway.",
+            "The apartment is near the subway station.",
+            "The apartment is close to the subway station."
+          ]
+        },
+        "explicacao": "Perto de = near / close to. Metrô = subway.",
+        "tagsErro": [
+          "vocabulario_cidade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If you mix red and white, you ___ pink.",
+          "opcoes": [
+            "got",
+            "get",
+            "will getting",
+            "gets"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Condicional zero: you get pink.",
+        "tagsErro": [
+          "condicional_zero"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If she ___ the job, she'll move to Rio.",
+          "opcoes": [
+            "will get",
+            "get",
+            "gets",
+            "getting"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Depois de if, presente simples: if she gets (com -s).",
+        "tagsErro": [
+          "will_depois_if",
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses. Use will no resultado.",
+        "conteudo": {
+          "texto": "If we ___ (not leave) now, we ___ (be) late."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "don't leave",
+              "do not leave"
+            ],
+            [
+              "will be",
+              "'ll be"
+            ]
+          ]
+        },
+        "explicacao": "If we don't leave (presente), we will be late.",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Qual frase está pontuada corretamente?",
+        "conteudo": {
+          "opcoes": [
+            "We'll eat outside, if it's sunny.",
+            "If it's sunny, we'll eat outside.",
+            "If it's sunny we'll, eat outside.",
+            "If, it's sunny we'll eat outside."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Frase que começa com if: vírgula no fim da parte com if.",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "___ you study, you won't pass the test."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "Unless",
+              "unless"
+            ]
+          ]
+        },
+        "explicacao": "A menos que você estude = unless you study.",
+        "tagsErro": [
+          "unless"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "Don't ride your bike on the ___. It's for people who walk.",
+          "opcoes": [
+            "crosswalk",
+            "traffic",
+            "sidewalk",
+            "subway"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Calçada = sidewalk.",
+        "tagsErro": [
+          "vocabulario_cidade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com uma palavra.",
+        "conteudo": {
+          "texto": "I live in a nice ___ with a lot of trees and small shops."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "neighborhood"
+            ]
+          ]
+        },
+        "explicacao": "Bairro = neighborhood.",
+        "tagsErro": [
+          "vocabulario_cidade"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "She studied hard, and she got a great ___ in the exam: 9.5!",
+          "opcoes": [
+            "degree",
+            "grade",
+            "course",
+            "class"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Nota = grade.",
+        "tagsErro": [
+          "vocabulario_estudo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "I share the apartment with my ___, Lucas. We split the rent.",
+          "opcoes": [
+            "landlord",
+            "deposit",
+            "neighborhood",
+            "roommate"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Quem divide a casa = roommate.",
+        "tagsErro": [
+          "vocabulario_moradia"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete a resposta curta com uma palavra.",
+        "conteudo": {
+          "texto": "Will it be expensive if we take a taxi? — No, it ___. It's very close."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "won't",
+              "will not"
+            ]
+          ]
+        },
+        "explicacao": "Resposta curta negativa: No, it won't.",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o anúncio. O que NÃO está incluído no aluguel?",
+        "conteudo": {
+          "texto": "APARTMENT FOR RENT – Downtown Curitiba\nSmall one-bedroom apartment, not furnished, on the fifth floor. The rent is $550 a month, and the utilities are not included. There is a bus stop in front of the building and a supermarket on the corner. The landlord asks for a deposit of one month's rent. If you rent it before May 1st, the first week will be free. Call Mr. Souza for a visit.",
+          "opcoes": [
+            "A mobília e as contas.",
+            "O quinto andar.",
+            "O depósito.",
+            "O ponto de ônibus."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"Not furnished... the utilities are not included.\" Não tem mobília nem contas incluídas."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o anúncio. O que acontece se você alugar antes de 1º de maio?",
+        "conteudo": {
+          "texto": "APARTMENT FOR RENT – Downtown Curitiba\nSmall one-bedroom apartment, not furnished, on the fifth floor. The rent is $550 a month, and the utilities are not included. There is a bus stop in front of the building and a supermarket on the corner. The landlord asks for a deposit of one month's rent. If you rent it before May 1st, the first week will be free. Call Mr. Souza for a visit.",
+          "opcoes": [
+            "Não paga o depósito.",
+            "Ganha os móveis.",
+            "Paga metade do aluguel.",
+            "A primeira semana é grátis."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"If you rent it before May 1st, the first week will be free.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia as dicas. O que fazer se o semáforo estiver vermelho?",
+        "conteudo": {
+          "texto": "BIKE TIPS FOR NEW YORK\nIf you ride a bike in the city, always wear a helmet. Don't ride on the sidewalk: it's not allowed. If the traffic light is red, stop, even if there are no cars. If you rent a city bike, return it in 30 minutes or you'll pay extra. And if it rains, take the subway. The streets get very slippery.",
+          "opcoes": [
+            "Passar se não houver carros.",
+            "Parar, mesmo sem carros.",
+            "Ir pela calçada.",
+            "Pegar o metrô."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"If the traffic light is red, stop, even if there are no cars.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia as dicas. O que acontece se você não devolver a bicicleta alugada em 30 minutos?",
+        "conteudo": {
+          "texto": "BIKE TIPS FOR NEW YORK\nIf you ride a bike in the city, always wear a helmet. Don't ride on the sidewalk: it's not allowed. If the traffic light is red, stop, even if there are no cars. If you rent a city bike, return it in 30 minutes or you'll pay extra. And if it rains, take the subway. The streets get very slippery.",
+          "opcoes": [
+            "Você perde a bicicleta.",
+            "Você não pode alugar de novo.",
+            "Você paga a mais.",
+            "Você precisa usar capacete."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"Return it in 30 minutes or you'll pay extra.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "bus",
+            "hurry",
+            "miss",
+            "you",
+            "Unless",
+            "the",
+            "will",
+            "you"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Unless you hurry you will miss the bus",
+            "You will miss the bus unless you hurry"
+          ]
+        },
+        "explicacao": "Unless you hurry + you will miss the bus.",
+        "tagsErro": [
+          "unless"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Se chover, nós vamos ficar em casa.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "If it rains, we will stay home.",
+            "If it rains we will stay home.",
+            "We will stay home if it rains.",
+            "If it rains, we will stay at home.",
+            "If it rains we will stay at home.",
+            "We will stay at home if it rains.",
+            "If it rains, we are going to stay home.",
+            "If it rains we are going to stay home.",
+            "We are going to stay home if it rains.",
+            "If it rains, we are going to stay at home.",
+            "If it rains we are going to stay at home.",
+            "We are going to stay at home if it rains."
+          ]
+        },
+        "explicacao": "If it rains (presente), we will stay home.",
+        "tagsErro": [
+          "condicional_primeira",
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "If she will call, I will tell her the news."
+        },
+        "gabarito": {
+          "aceitas": [
+            "If she calls, I will tell her the news.",
+            "If she calls I will tell her the news.",
+            "I will tell her the news if she calls."
+          ]
+        },
+        "explicacao": "Depois de if, presente simples: If she calls.",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu vou fazer uma prova amanhã.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I will take a test tomorrow.",
+            "I am going to take a test tomorrow.",
+            "I am taking a test tomorrow.",
+            "I will take an exam tomorrow.",
+            "I am going to take an exam tomorrow.",
+            "I am taking an exam tomorrow.",
+            "Tomorrow I am going to take a test.",
+            "Tomorrow, I am going to take a test.",
+            "Tomorrow I will take a test.",
+            "Tomorrow, I will take a test.",
+            "I have a test tomorrow.",
+            "I have an exam tomorrow."
+          ]
+        },
+        "explicacao": "Fazer uma prova = take a test (não make).",
+        "tagsErro": [
+          "make_do",
+          "vocabulario_estudo"
+        ]
+      }
+    ]
+  }
+}

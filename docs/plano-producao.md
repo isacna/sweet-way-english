@@ -199,6 +199,14 @@ Roda em paralelo a F0–F4, sem depender delas: 10 módulos A2 no mesmo formato 
 validados por `conteudo:validar` e revisados pela professora em `/professor/conteudo`. Mesmo método do A1
 (seção 9.1 do plano do curso). É o item mais longo do escopo do dia 1; se atrasar, o piloto pode abrir com A1 e o A2 entrar
 publicado aos poucos, já que a professora publica módulo a módulo.
+- **Escrito (2026-11-09), falta a revisão da professora:**
+  - **Volume:** os 10 módulos A2 (`a2/m01.json`…`m10.json`, PRs #12–#16), com 6 lições de 15 exercícios cada (900 no nível).
+  - **Testes:** do M01 ao M09, 2 formas de 18 itens por módulo. O M10 é revisão, e o teste dele é a prova do nível A2: 2 formas de 30 itens, cobrindo todos os módulos, com tarefas no formato do A2 Key e itens originais.
+  - **Correção:** todas as respostas aceitas do A1 e do A2 (4.467) passam no corretor real.
+  - **Mudanças no app feitas junto:**
+    - as opções de múltipla escolha aparecem embaralhadas por exercício (a certa era A ou B em 73% dos itens);
+    - o corretor lê o `'s`/`'d` do aluno como *is/has* e *would/had*.
+  - **Revisão:** cada PR lista os pontos que a professora deve conferir, quase sempre respostas aceitas por tolerância.
 
 ## 5. Ordem e estimativa
 

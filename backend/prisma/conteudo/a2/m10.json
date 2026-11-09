@@ -1,0 +1,3904 @@
+{
+  "slug": "a2-m10",
+  "ordem": 10,
+  "titulo": "Review & A2 exam",
+  "tema": "Revisão do A2 e prova do nível",
+  "descricao": "Revise todo o A2 em seis lições que misturam os módulos e faça a prova final do nível: leitura, gramática e vocabulário, e escrita.",
+  "canDos": [
+    "Escolher o tempo verbal certo para rotina, agora, passado, planos e experiências.",
+    "Entender avisos, placas, mensagens e textos curtos do dia a dia.",
+    "Comparar, dar conselhos, fazer pedidos educados e falar de condições.",
+    "Escrever frases corretas, sem os erros mais comuns de brasileiros no A2."
+  ],
+  "gramatica": "Revisão do A2: presente simples × present continuous, verbos de estado, passado simples e contínuo, when/while, going to e present continuous para o futuro, comparativos e superlativos, should/have to/must, will e pedidos educados, present perfect, condicionais zero e primeira.",
+  "vocabulario": "Revisão do vocabulário do A2: trabalho e rotina, viagem, incidentes e clima, lazer e convites, compras, saúde, serviços, experiências e tecnologia, cidade.",
+  "funcao": "Revisar o nível e fazer a prova do A2.",
+  "pronuncia": "Revisão das formas fracas e contrações do A2 (I'll, I've, was/were, to, than). O curso ainda não tem áudio: leia os exemplos em voz alta para praticar.",
+  "licoes": [
+    {
+      "slug": "a2-m10-l1",
+      "ordem": 1,
+      "titulo": "Routines, now and last week",
+      "objetivo": "Revisar presente simples × present continuous, verbos de estado e passado simples com irregulares e perguntas (módulos 1 e 2).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Esta lição revisa os módulos 1 e 2 do A2. O presente simples fala de rotina e de fatos: I work in a bank, She usually takes the bus. O present continuous fala do que está acontecendo agora ou de uma situação temporária: I am working from home this week. Usually, every day e on Mondays combinam com o presente simples; now, at the moment, this week e these days combinam com o continuous.",
+          "Verbos de estado (know, want, need, like, love, understand) não costumam ir para o -ing, mesmo quando falamos de agora: I know the answer, e não I am knowing the answer.",
+          "Para o passado terminado, use o passado simples. Muitos verbos são irregulares: go → went, buy → bought, take → took, fly → flew, leave → left, spend → spent. Na pergunta e na negativa, o did carrega o passado e o verbo volta para a forma base: Where did you go? I didn't buy anything.",
+          "Quando a pergunta é sobre o sujeito (quem fez?), não usamos did: Who called you? What happened? Para contar uma história em ordem, use first, then, after that e finally."
+        ],
+        "regras": [
+          "rotina / fato → presente simples: She works on Saturdays.",
+          "agora / temporário → am/is/are + -ing: She is working from home this week.",
+          "know, want, need, like, understand → sem -ing: I need help now.",
+          "passado terminado → passado simples: We flew to Recife last year.",
+          "pergunta / negativa no passado → did + verbo base: Did you buy it? I didn't see him.",
+          "pergunta sobre o sujeito → sem did: Who called you? What happened?"
+        ],
+        "notaContrastiva": "Não diga *I am knowing the answer* → diga *I know the answer*. Não pergunte *Where you went?* → pergunte *Where did you go?*. E depois de did o verbo fica na base: não *Did you bought it?* → *Did you buy it?*.",
+        "exemplos": [
+          {
+            "en": "I usually work at the office, but this week I'm working from home.",
+            "pt": "Eu normalmente trabalho no escritório, mas esta semana estou trabalhando de casa."
+          },
+          {
+            "en": "What are you doing? — I'm cooking dinner.",
+            "pt": "O que você está fazendo? — Estou fazendo o jantar."
+          },
+          {
+            "en": "I don't understand this word.",
+            "pt": "Eu não entendo esta palavra."
+          },
+          {
+            "en": "We flew to Salvador and stayed at a small hotel.",
+            "pt": "Nós voamos para Salvador e ficamos num hotel pequeno."
+          },
+          {
+            "en": "Where did you go on vacation?",
+            "pt": "Para onde você foi nas férias?"
+          },
+          {
+            "en": "Who told you about the party?",
+            "pt": "Quem te contou da festa?"
+          },
+          {
+            "en": "First we visited the museum, then we had lunch.",
+            "pt": "Primeiro visitamos o museu, depois almoçamos."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "usually",
+            "pt": "normalmente"
+          },
+          {
+            "en": "at the moment",
+            "pt": "neste momento"
+          },
+          {
+            "en": "these days",
+            "pt": "ultimamente, nestes dias"
+          },
+          {
+            "en": "ago",
+            "pt": "atrás (two days ago = há dois dias)"
+          },
+          {
+            "en": "first / then / finally",
+            "pt": "primeiro / depois / por fim"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "My brother ___ in a bank, but this month he's working at a hotel.",
+            "opcoes": [
+              "works",
+              "is working",
+              "work",
+              "working"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O trabalho fixo é rotina → presente simples: he works. A situação temporária (this month) fica no continuous: he's working at a hotel.",
+          "tagsErro": [
+            "simples_continuo",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Shh! The baby ___ right now.",
+            "opcoes": [
+              "sleeps",
+              "is sleeping",
+              "slept",
+              "sleep"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Right now = agora → present continuous: is sleeping.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ what you mean.",
+            "opcoes": [
+              "am understanding",
+              "understanding",
+              "understand",
+              "understands"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Understand é verbo de estado: não vai para o -ing. I understand what you mean.",
+          "tagsErro": [
+            "verbo_estado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado simples.",
+          "conteudo": {
+            "texto": "Last year we ___ (fly) to Recife and ___ (spend) a week there."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "flew"
+              ],
+              [
+                "spent"
+              ]
+            ]
+          },
+          "explicacao": "Fly → flew e spend → spent: os dois são irregulares (módulo 2).",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa.",
+          "conteudo": {
+            "texto": "___ called you last night? — My cousin did.",
+            "opcoesPorLacuna": [
+              [
+                "Who",
+                "Who did",
+                "Did who"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "Who"
+              ]
+            ]
+          },
+          "explicacao": "A pergunta é sobre o sujeito (quem ligou?), então não leva did: Who called you?",
+          "tagsErro": [
+            "pergunta_sujeito"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "stay",
+              "you",
+              "Rio",
+              "Where",
+              "in",
+              "did"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where did you stay in Rio?"
+            ]
+          },
+          "explicacao": "Pergunta no passado: Where + did + sujeito + verbo na base (stay)?",
+          "tagsErro": [
+            "ordem_pergunta",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo ao seu passado.",
+          "conteudo": {
+            "esquerda": [
+              "buy",
+              "leave",
+              "take",
+              "meet",
+              "lose",
+              "find"
+            ],
+            "direita": [
+              "met",
+              "bought",
+              "found",
+              "left",
+              "lost",
+              "took"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              5,
+              0,
+              4,
+              2
+            ]
+          },
+          "explicacao": "Todos são irregulares do módulo 2: buy → bought, leave → left, take → took, meet → met, lose → lost, find → found.",
+          "tagsErro": [
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She is wanting a new phone."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She wants a new phone."
+            ]
+          },
+          "explicacao": "Want é verbo de estado: She wants a new phone, e não She is wanting.",
+          "tagsErro": [
+            "verbo_estado"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu normalmente vou de ônibus, mas hoje estou indo de carro.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I usually go by bus, but today I am going by car.",
+              "I usually go by bus but today I am going by car.",
+              "I usually take the bus, but today I am going by car.",
+              "I usually take the bus but today I am going by car.",
+              "I usually go by bus, but today I am driving.",
+              "I usually go by bus but today I am driving.",
+              "I usually take the bus, but today I am driving.",
+              "I usually take the bus but today I am driving.",
+              "I usually go by bus, but I am going by car today.",
+              "I usually go by bus but I am going by car today.",
+              "I usually take the bus, but I am going by car today.",
+              "I usually take the bus but I am going by car today."
+            ]
+          },
+          "explicacao": "A rotina vai no presente simples (I usually go by bus) e o que acontece hoje no continuous (today I am going by car).",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Onde você comprou essa jaqueta?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Where did you buy this jacket?",
+              "Where did you buy that jacket?",
+              "Where did you get this jacket?",
+              "Where did you get that jacket?"
+            ]
+          },
+          "explicacao": "Pergunta no passado: Where did you buy...? Depois de did, buy fica na base.",
+          "tagsErro": [
+            "do_support",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a pergunta correta.",
+          "conteudo": {
+            "texto": "___ last weekend?",
+            "opcoes": [
+              "What you did",
+              "What have you done",
+              "What do you do",
+              "What did you do"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Last weekend é passado terminado: What did you do...?",
+          "tagsErro": [
+            "do_support",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no presente simples ou no present continuous.",
+          "conteudo": {
+            "texto": "Look! It ___ (rain) again."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is raining",
+                "'s raining"
+              ]
+            ]
+          },
+          "explicacao": "Look! mostra que está acontecendo agora → present continuous: it is raining.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "you",
+              "about",
+              "told",
+              "party",
+              "Who",
+              "the"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Who told you about the party?"
+            ]
+          },
+          "explicacao": "Pergunta sobre o sujeito, sem did: Who + told (passado) + you...?",
+          "tagsErro": [
+            "pergunta_sujeito"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela não entende espanhol.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She does not understand Spanish."
+            ]
+          },
+          "explicacao": "Understand é verbo de estado, sem -ing. Negativa com she: does not (doesn't) + understand.",
+          "tagsErro": [
+            "verbo_estado",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "Did you saw the game yesterday?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Did you see the game yesterday?"
+            ]
+          },
+          "explicacao": "Depois de did, o verbo fica na forma base: Did you see...?",
+          "tagsErro": [
+            "do_support"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m10-l2",
+      "ordem": 2,
+      "titulo": "Was doing, going to do",
+      "objetivo": "Revisar o passado contínuo com when e while, os planos com going to, os compromissos combinados e os convites (módulos 3 e 4).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Esta lição revisa os módulos 3 e 4 do A2. O passado contínuo (was/were + -ing) mostra uma ação em andamento num momento do passado ou o cenário de uma história: At 8 p.m. I was having dinner. It was raining and people were running.",
+          "Quando uma ação curta interrompe uma ação mais longa, a curta vai no passado simples e a longa no contínuo: I was cooking when the phone rang. While vem com a ação longa: While I was cooking, the phone rang.",
+          "Para o futuro, be going to fala de planos e de previsões com evidência: I'm going to save money. Look at those clouds! It's going to rain. Para compromissos combinados, com hora ou lugar, use o present continuous: I'm meeting Ana at seven.",
+          "Para convidar: Would you like to come? Para aceitar: I'd love to! Para recusar com educação: Sorry, I can't. I'm working. Para sugerir: Let's go…, Why don't we go…?, How about going…?"
+        ],
+        "regras": [
+          "cenário / ação em andamento → was/were + -ing: It was raining.",
+          "ação longa + ação curta → I was cooking when the phone rang.",
+          "while + ação longa: While I was cooking, the phone rang.",
+          "plano / previsão com evidência → am/is/are going to + verbo base",
+          "compromisso combinado → present continuous: I'm meeting Ana at seven.",
+          "Would you like to...? — I'd love to! / Sorry, I can't.",
+          "Let's go / Why don't we go? / How about going?"
+        ],
+        "notaContrastiva": "Não diga *I was cooking when the phone was ringing* para uma interrupção → diga *I was cooking when the phone rang*. Não diga *How about go to the beach?* → diga *How about going to the beach?*. E não esqueça o be: não *I going to travel* → *I'm going to travel*.",
+        "exemplos": [
+          {
+            "en": "I was taking a shower when you called.",
+            "pt": "Eu estava tomando banho quando você ligou."
+          },
+          {
+            "en": "While we were walking home, it started to rain.",
+            "pt": "Enquanto voltávamos a pé para casa, começou a chover."
+          },
+          {
+            "en": "What were you doing at ten last night?",
+            "pt": "O que você estava fazendo às dez ontem à noite?"
+          },
+          {
+            "en": "I'm going to visit my grandparents next weekend.",
+            "pt": "Vou visitar meus avós no próximo fim de semana."
+          },
+          {
+            "en": "We're having a barbecue on Saturday. Would you like to come?",
+            "pt": "Vamos fazer um churrasco no sábado. Você gostaria de vir?"
+          },
+          {
+            "en": "Why don't we go to the movies? — Good idea!",
+            "pt": "Por que não vamos ao cinema? — Boa ideia!"
+          },
+          {
+            "en": "Look at the sky! It's going to rain.",
+            "pt": "Olha o céu! Vai chover."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "while",
+            "pt": "enquanto"
+          },
+          {
+            "en": "suddenly",
+            "pt": "de repente"
+          },
+          {
+            "en": "tonight",
+            "pt": "hoje à noite"
+          },
+          {
+            "en": "next weekend",
+            "pt": "no próximo fim de semana"
+          },
+          {
+            "en": "I'd love to!",
+            "pt": "Eu adoraria!"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ TV when the lights went out.",
+            "opcoes": [
+              "was watching",
+              "watched",
+              "am watching",
+              "were watching"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "A ação longa (ver TV) estava em andamento quando a curta aconteceu → passado contínuo: I was watching. Com I, o passado de be é was.",
+          "tagsErro": [
+            "simples_continuo",
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "___ I was waiting for the bus, I met an old friend.",
+            "opcoes": [
+              "During",
+              "While",
+              "Then",
+              "So"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "While vem com a ação longa no passado contínuo: While I was waiting... During vem com um substantivo (during the trip).",
+          "tagsErro": [
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses no passado contínuo.",
+          "conteudo": {
+            "texto": "They ___ (play) soccer when it started to rain."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "were playing"
+              ]
+            ]
+          },
+          "explicacao": "They → were + playing. A chuva interrompeu o jogo.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Look at those dark clouds! It ___ rain.",
+            "opcoes": [
+              "goes to",
+              "going to",
+              "is going to",
+              "will to"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Previsão com evidência (as nuvens) → be going to: It is going to rain.",
+          "tagsErro": [
+            "futuro_planos"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa.",
+          "conteudo": {
+            "texto": "How about ___ to the beach on Sunday?",
+            "opcoesPorLacuna": [
+              [
+                "go",
+                "going",
+                "to go"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "going"
+              ]
+            ]
+          },
+          "explicacao": "How about + verbo com -ing: How about going...?",
+          "tagsErro": [
+            "convite_sugestao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "doing",
+              "nine",
+              "What",
+              "at",
+              "you",
+              "were"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "What were you doing at nine?"
+            ]
+          },
+          "explicacao": "Pergunta no passado contínuo: What + were + you + doing...?",
+          "tagsErro": [
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue o convite ou a sugestão à melhor resposta.",
+          "conteudo": {
+            "esquerda": [
+              "Would you like to come to my party?",
+              "Why don't we eat out tonight?",
+              "Are you free on Friday?",
+              "How about going for a walk in the park?"
+            ],
+            "direita": [
+              "Sorry, I'm working on Friday.",
+              "I'd love to! What time does it start?",
+              "Not now. It's raining!",
+              "Good idea! Let's try the new pizza place."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              0,
+              2
+            ]
+          },
+          "explicacao": "Cada resposta combina com um convite: a festa tem horário, a pizzaria é para comer fora, sexta-feira responde à pergunta sobre sexta, e a chuva atrapalha o passeio.",
+          "tagsErro": [
+            "convite_sugestao"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We was having dinner when you called."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We were having dinner when you called."
+            ]
+          },
+          "explicacao": "Com we, o passado de be é were: We were having dinner.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu estava dormindo quando você ligou.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I was sleeping when you called.",
+              "When you called, I was sleeping.",
+              "When you called I was sleeping.",
+              "I was asleep when you called.",
+              "When you called, I was asleep.",
+              "When you called I was asleep."
+            ]
+          },
+          "explicacao": "A ação longa vai no passado contínuo (I was sleeping) e a curta no passado simples (you called).",
+          "tagsErro": [
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós vamos viajar no próximo mês.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are going to travel next month.",
+              "Next month we are going to travel.",
+              "Next month, we are going to travel.",
+              "We are traveling next month.",
+              "Next month we are traveling.",
+              "Next month, we are traveling.",
+              "We are going to take a trip next month.",
+              "Next month we are going to take a trip.",
+              "Next month, we are going to take a trip."
+            ]
+          },
+          "explicacao": "Plano → be going to (We are going to travel). Se a viagem já está marcada, o present continuous também serve: We are traveling next month.",
+          "tagsErro": [
+            "futuro_planos"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "While she ___, she cut her finger.",
+            "opcoes": [
+              "cooked",
+              "cooks",
+              "is cooking",
+              "was cooking"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "While + ação longa no passado contínuo: While she was cooking...",
+          "tagsErro": [
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com a forma de going to do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "I ___ (not / buy) a new car this year."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "am not going to buy",
+                "'m not going to buy"
+              ]
+            ]
+          },
+          "explicacao": "Negativa com going to: I am not going to buy. O be não pode faltar.",
+          "tagsErro": [
+            "futuro_planos",
+            "be_omitido"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "like",
+              "the",
+              "Would",
+              "come",
+              "to",
+              "you",
+              "concert",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Would you like to come to the concert?"
+            ]
+          },
+          "explicacao": "Convite: Would you like + to + verbo...?",
+          "tagsErro": [
+            "convite_sugestao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "O que você estava fazendo às oito?",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "What were you doing at eight?",
+              "What were you doing at 8?"
+            ]
+          },
+          "explicacao": "Ação em andamento num momento do passado → passado contínuo: What were you doing...?",
+          "tagsErro": [
+            "simples_continuo",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "How about to go to the movies tonight?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How about going to the movies tonight?"
+            ]
+          },
+          "explicacao": "Depois de How about, o verbo vai com -ing: How about going...?",
+          "tagsErro": [
+            "convite_sugestao"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m10-l3",
+      "ordem": 3,
+      "titulo": "Better, the best, you should",
+      "objetivo": "Revisar comparativos, superlativos e quantificadores, e os conselhos, obrigações e proibições com should, have to e must (módulos 5 e 6).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Esta lição revisa os módulos 5 e 6 do A2. Para comparar duas coisas: adjetivo curto + -er + than (cheaper than, bigger than, easier than) ou more + adjetivo longo + than (more expensive than). Os irregulares são good → better, bad → worse e far → farther.",
+          "Para o maior de um grupo: the + -est (the cheapest) ou the most + adjetivo longo (the most beautiful), com in para lugares (in the city) e of para grupos e períodos (of the year). Irregulares: the best, the worst. Para dizer igual: as big as; diferente: not as big as. Too quer dizer demais (too small) e not … enough quer dizer não o suficiente (not big enough).",
+          "Much vai com incontáveis (much money) e many com contáveis no plural (many people); a lot of serve para os dois. A few (contáveis) e a little (incontáveis) querem dizer alguns, um pouco.",
+          "Para conselhos, use should / shouldn't + verbo base: You should rest. Para obrigação, have to / has to; para falta de obrigação, don't have to / doesn't have to. Must e mustn't são regras fortes. Atenção: mustn't = é proibido; don't have to = não precisa."
+        ],
+        "regras": [
+          "curto + -er than / more + longo + than: cheaper than, more expensive than",
+          "the + -est / the most + longo: the cheapest, the most beautiful",
+          "good → better → the best / bad → worse → the worst",
+          "as ... as / not as ... as / too + adjetivo / not + adjetivo + enough",
+          "much + incontável / many + contável / a few, a little",
+          "should / shouldn't + verbo base → conselho",
+          "have to / has to → obrigação / don't have to → não precisa",
+          "must → regra forte / mustn't → é proibido"
+        ],
+        "notaContrastiva": "Não diga *more cheap* nem *more better* → diga *cheaper* e *better*. Não diga *You should to rest* → diga *You should rest*. E cuidado: *You mustn't come* = você não pode vir (proibido); *You don't have to come* = você não precisa vir.",
+        "exemplos": [
+          {
+            "en": "This phone is cheaper than that one.",
+            "pt": "Este celular é mais barato que aquele."
+          },
+          {
+            "en": "It's the most expensive store in the mall.",
+            "pt": "É a loja mais cara do shopping."
+          },
+          {
+            "en": "My bag isn't as big as yours.",
+            "pt": "Minha bolsa não é tão grande quanto a sua."
+          },
+          {
+            "en": "These pants are too small for me.",
+            "pt": "Esta calça está pequena demais para mim."
+          },
+          {
+            "en": "You should drink more water.",
+            "pt": "Você deveria beber mais água."
+          },
+          {
+            "en": "She has to work on Saturdays.",
+            "pt": "Ela tem que trabalhar aos sábados."
+          },
+          {
+            "en": "You don't have to pay. It's free!",
+            "pt": "Você não precisa pagar. É de graça!"
+          },
+          {
+            "en": "You mustn't use your phone here.",
+            "pt": "Você não pode usar o celular aqui."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "cheaper / more expensive",
+            "pt": "mais barato / mais caro"
+          },
+          {
+            "en": "the best / the worst",
+            "pt": "o melhor / o pior"
+          },
+          {
+            "en": "too small",
+            "pt": "pequeno demais"
+          },
+          {
+            "en": "a few / a little",
+            "pt": "alguns / um pouco"
+          },
+          {
+            "en": "mustn't",
+            "pt": "não pode (é proibido)"
+          },
+          {
+            "en": "don't have to",
+            "pt": "não precisa"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Chile is ___ than Brazil.",
+            "opcoes": [
+              "smaller",
+              "more small",
+              "smallest",
+              "small"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Adjetivo curto + -er + than: smaller than. More small não existe.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "This is ___ restaurant in town.",
+            "opcoes": [
+              "the better",
+              "the best",
+              "best",
+              "the most good"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Superlativo de good: the best. In town = na cidade.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "There isn't ___ milk in the fridge.",
+            "opcoesPorLacuna": [
+              [
+                "much",
+                "many",
+                "a few"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "much"
+              ]
+            ]
+          },
+          "explicacao": "Milk é incontável: na negativa, much milk.",
+          "tagsErro": [
+            "quantificador",
+            "incontavel"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "You look tired. You ___ go to bed early.",
+            "opcoes": [
+              "should to",
+              "have",
+              "should",
+              "mustn't"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Conselho → should + verbo base: You should go to bed early. Sem to depois de should.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com have to ou has to.",
+          "conteudo": {
+            "texto": "My sister ___ wear a uniform at work."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "has to"
+              ]
+            ]
+          },
+          "explicacao": "Com my sister (she), use has to.",
+          "tagsErro": [
+            "have_to",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "as",
+              "not",
+              "fast",
+              "is",
+              "yours",
+              "My",
+              "as",
+              "car"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "My car is not as fast as yours."
+            ]
+          },
+          "explicacao": "Not as + adjetivo + as: My car is not as fast as yours.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada frase ao que ela quer dizer.",
+          "conteudo": {
+            "esquerda": [
+              "You mustn't smoke here.",
+              "You don't have to come.",
+              "You should see a doctor.",
+              "You have to show your ID."
+            ],
+            "direita": [
+              "É obrigatório.",
+              "É proibido.",
+              "É um conselho.",
+              "Não é necessário."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              1,
+              3,
+              2,
+              0
+            ]
+          },
+          "explicacao": "Mustn't = proibido; don't have to = não precisa; should = conselho; have to = obrigação.",
+          "tagsErro": [
+            "must_mustnt",
+            "have_to"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "This hotel is more cheap than the other one."
+          },
+          "gabarito": {
+            "aceitas": [
+              "This hotel is cheaper than the other one."
+            ]
+          },
+          "explicacao": "Cheap é curto: cheaper than, e não more cheap.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Este é o celular mais barato da loja.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the cheapest phone in the store.",
+              "This is the cheapest cell phone in the store.",
+              "This is the cheapest cellphone in the store.",
+              "This is the cheapest phone in the shop.",
+              "This is the cheapest cell phone in the shop.",
+              "This is the cheapest cellphone in the shop."
+            ]
+          },
+          "explicacao": "Superlativo de cheap: the cheapest. Para lugar, use in: in the store.",
+          "tagsErro": [
+            "superlativo",
+            "preposicao"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você não precisa trazer comida.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "You do not have to bring food.",
+              "You do not need to bring food.",
+              "You do not have to bring any food.",
+              "You do not need to bring any food."
+            ]
+          },
+          "explicacao": "Não precisa = don't have to (ou don't need to). Não use mustn't: isso seria proibido.",
+          "tagsErro": [
+            "have_to",
+            "must_mustnt"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa a frase.",
+          "conteudo": {
+            "texto": "These shoes are ___ big. I need a smaller size.",
+            "opcoes": [
+              "enough",
+              "as",
+              "very much",
+              "too"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Too + adjetivo = demais: too big.",
+          "tagsErro": [
+            "too_enough"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o comparativo do adjetivo entre parênteses.",
+          "conteudo": {
+            "texto": "Today is ___ (hot) than yesterday."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "hotter"
+              ]
+            ]
+          },
+          "explicacao": "Hot termina em consoante-vogal-consoante: dobra o t → hotter.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "drink",
+              "should",
+              "night",
+              "You",
+              "at",
+              "coffee",
+              "not"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "You should not drink coffee at night.",
+              "At night you should not drink coffee."
+            ]
+          },
+          "explicacao": "Conselho negativo: should not + verbo base.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela tem que trabalhar amanhã.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has to work tomorrow.",
+              "Tomorrow she has to work.",
+              "Tomorrow, she has to work.",
+              "She needs to work tomorrow.",
+              "Tomorrow she needs to work.",
+              "Tomorrow, she needs to work.",
+              "She must work tomorrow.",
+              "Tomorrow she must work.",
+              "Tomorrow, she must work."
+            ]
+          },
+          "explicacao": "Obrigação com she → has to work. Need to e must também servem aqui.",
+          "tagsErro": [
+            "have_to",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "We have many homework today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "We have a lot of homework today.",
+              "We have lots of homework today.",
+              "We have much homework today."
+            ]
+          },
+          "explicacao": "Homework é incontável: many só vai com contáveis no plural. Much homework está certo, mas em frase afirmativa o natural é a lot of homework.",
+          "tagsErro": [
+            "incontavel",
+            "quantificador"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m10-l4",
+      "ordem": 4,
+      "titulo": "I'll help you. Have you ever...?",
+      "objetivo": "Revisar will para decisões e ofertas, os pedidos educados e o present perfect com ever, never, just, already e yet (módulos 7 e 8).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Esta lição revisa os módulos 7 e 8 do A2. Will (I'll) serve para decisões tomadas na hora, ofertas e promessas: The phone is ringing. — I'll get it! I'll call you tomorrow, I promise. Para oferecer ajuda também dá para usar Shall I…? (Shall I open the window?).",
+          "Para pedir com educação: Could you…? / Can you…? / Would you…? + verbo base. Para pedir permissão: Can I…? / Could I…? / May I…?. Em lojas, hotéis e restaurantes, prefira I'd like… a I want…: I'd like a double room, please.",
+          "O present perfect (have/has + particípio) fala de experiências sem data: Have you ever been to Chile? I've never eaten sushi. Quando dizemos quando aconteceu, usamos o passado simples: I went there in 2019.",
+          "Just = acabou de; already = já; yet = ainda, no fim de perguntas e negativas: I've just finished. I've already seen it. I haven't done it yet. Have you finished yet?"
+        ],
+        "regras": [
+          "decisão na hora / oferta / promessa → will: I'll get it!",
+          "Shall I...? → oferecer ajuda",
+          "Could / Can / Would you + verbo base? → pedido",
+          "Can / Could / May I + verbo base? → permissão",
+          "I'd like... → pedido educado (em vez de I want...)",
+          "experiência sem data → have/has + particípio: I've been to Chile.",
+          "com data → passado simples: I went there in 2019.",
+          "just / already / yet → I've just finished. I haven't finished yet."
+        ],
+        "notaContrastiva": "Não diga *I want a coffee* ao pedir num café → diga *I'd like a coffee, please* ou *Could I have a coffee?*. Não diga *I have seen him yesterday* → diga *I saw him yesterday*. E lembre: depois de will, could e can o verbo fica na base: não *Could you to help me?* → *Could you help me?*.",
+        "exemplos": [
+          {
+            "en": "It's cold in here. — I'll close the window.",
+            "pt": "Está frio aqui. — Vou fechar a janela."
+          },
+          {
+            "en": "Could you help me with my bags, please?",
+            "pt": "Você poderia me ajudar com as malas, por favor?"
+          },
+          {
+            "en": "I'd like a round-trip ticket to Curitiba, please.",
+            "pt": "Eu gostaria de uma passagem de ida e volta para Curitiba, por favor."
+          },
+          {
+            "en": "Have you ever been to Argentina? — Yes, I went there last year.",
+            "pt": "Você já foi à Argentina? — Sim, fui no ano passado."
+          },
+          {
+            "en": "I've never ridden a horse.",
+            "pt": "Eu nunca andei a cavalo."
+          },
+          {
+            "en": "She has just posted a new video.",
+            "pt": "Ela acabou de postar um vídeo novo."
+          },
+          {
+            "en": "Have you done your homework yet? — No, not yet.",
+            "pt": "Você já fez o dever de casa? — Não, ainda não."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "I'll...",
+            "pt": "eu vou... (decisão na hora)"
+          },
+          {
+            "en": "Could you...?",
+            "pt": "Você poderia...?"
+          },
+          {
+            "en": "I'd like...",
+            "pt": "Eu gostaria de..."
+          },
+          {
+            "en": "ever / never",
+            "pt": "alguma vez / nunca"
+          },
+          {
+            "en": "just / already / yet",
+            "pt": "acabou de / já / ainda"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "The phone is ringing! — Don't worry, I ___ answer it.",
+            "opcoes": [
+              "will",
+              "am going",
+              "going to",
+              "answer"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Decisão tomada na hora → will: I will (I'll) answer it.",
+          "tagsErro": [
+            "will_decisao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa o pedido.",
+          "conteudo": {
+            "texto": "___ you open the door for me, please?",
+            "opcoes": [
+              "Should",
+              "Could",
+              "Must",
+              "Shall"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Pedido educado: Could you + verbo base...?",
+          "tagsErro": [
+            "pedido_educado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "I ___ (never / see) the ocean."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have never seen",
+                "'ve never seen"
+              ]
+            ]
+          },
+          "explicacao": "Experiência de vida → have never + particípio (see → seen).",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "We ___ to Chile in 2021.",
+            "opcoes": [
+              "have been",
+              "have gone",
+              "went",
+              "go"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "In 2021 diz quando aconteceu → passado simples: we went.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a palavra certa.",
+          "conteudo": {
+            "texto": "I haven't finished my homework ___.",
+            "opcoesPorLacuna": [
+              [
+                "yet",
+                "already",
+                "just"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "yet"
+              ]
+            ]
+          },
+          "explicacao": "Yet vai no fim de negativas e perguntas: I haven't finished yet.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "been",
+              "Salvador",
+              "you",
+              "ever",
+              "Have",
+              "to"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever been to Salvador?"
+            ]
+          },
+          "explicacao": "Experiência: Have + you + ever + been to + lugar?",
+          "tagsErro": [
+            "present_perfect",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada verbo ao seu particípio.",
+          "conteudo": {
+            "esquerda": [
+              "go",
+              "eat",
+              "write",
+              "see",
+              "take",
+              "buy"
+            ],
+            "direita": [
+              "taken",
+              "written",
+              "gone",
+              "bought",
+              "seen",
+              "eaten"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              5,
+              1,
+              4,
+              0,
+              3
+            ]
+          },
+          "explicacao": "Particípios irregulares do módulo 8: gone, eaten, written, seen, taken, bought.",
+          "tagsErro": [
+            "verbo_irregular",
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I have visited my aunt last weekend."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I visited my aunt last weekend.",
+              "Last weekend I visited my aunt.",
+              "Last weekend, I visited my aunt."
+            ]
+          },
+          "explicacao": "Last weekend é tempo terminado → passado simples: I visited.",
+          "tagsErro": [
+            "perfect_x_passado"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu gostaria de um café, por favor.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I would like a coffee, please.",
+              "I would like a coffee please.",
+              "I would like some coffee, please.",
+              "I would like some coffee please.",
+              "Could I have a coffee, please?",
+              "Could I have a coffee please?",
+              "Can I have a coffee, please?",
+              "Can I have a coffee please?"
+            ]
+          },
+          "explicacao": "Pedido educado: I'd like (I would like) a coffee, please. Could I have...? também serve.",
+          "tagsErro": [
+            "pedido_educado"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela acabou de chegar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has just arrived.",
+              "She just arrived.",
+              "She has just got here.",
+              "She just got here.",
+              "She has just gotten here."
+            ]
+          },
+          "explicacao": "Acabou de = just: She has just arrived. No inglês americano, She just arrived também é comum.",
+          "tagsErro": [
+            "just_yet_already"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a palavra que completa o pedido.",
+          "conteudo": {
+            "texto": "Excuse me, ___ I use your phone?",
+            "opcoes": [
+              "would",
+              "will",
+              "do",
+              "may"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Pedir permissão: May I (ou Can I / Could I) + verbo base?",
+          "tagsErro": [
+            "pedido_educado"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o present perfect do verbo entre parênteses.",
+          "conteudo": {
+            "texto": "My parents ___ (already / buy) the tickets."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "have already bought",
+                "'ve already bought",
+                "already bought"
+              ]
+            ]
+          },
+          "explicacao": "Have + already + particípio: have already bought. No inglês americano, already bought também é aceito.",
+          "tagsErro": [
+            "just_yet_already",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "call",
+              "tomorrow",
+              "I",
+              "you",
+              "will"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I will call you tomorrow.",
+              "Tomorrow I will call you."
+            ]
+          },
+          "explicacao": "Promessa → will + verbo base: I will call you tomorrow.",
+          "tagsErro": [
+            "will_decisao"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Você já comeu comida japonesa? (alguma vez na vida)",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever eaten Japanese food?",
+              "Have you ever had Japanese food?",
+              "Have you ever tried Japanese food?"
+            ]
+          },
+          "explicacao": "Experiência de vida → Have you ever + particípio: Have you ever eaten...?",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She has went to the mall."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She has gone to the mall.",
+              "She went to the mall."
+            ]
+          },
+          "explicacao": "Depois de has, use o particípio: gone (e não went). Ou use só o passado: She went to the mall.",
+          "tagsErro": [
+            "present_perfect",
+            "verbo_irregular"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m10-l5",
+      "ordem": 5,
+      "titulo": "If it rains... Which tense?",
+      "objetivo": "Revisar as condicionais zero e primeira e escolher o tempo verbal certo para cada situação (módulo 9 e todo o A2).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Esta lição revisa o módulo 9 e mistura os tempos do A2. A condicional zero fala de fatos e verdades gerais: If you heat ice, it melts. If I drink coffee at night, I can't sleep. As duas partes ficam no presente simples.",
+          "A primeira condicional fala de uma situação possível no futuro: If it rains tomorrow, we will stay home. Depois de if, use o presente simples, nunca will: If you study, you'll pass (e não If you will study). Na negativa: If you don't hurry, you'll miss the bus. A ordem pode mudar: We'll stay home if it rains (nesse caso, sem vírgula).",
+          "Para escolher o tempo, pergunte: é rotina (presente simples)? Está acontecendo agora (present continuous)? Terminou, com data (passado simples)? Estava em andamento (passado contínuo)? É plano (going to) ou decisão na hora (will)? É experiência sem data (present perfect)?"
+        ],
+        "regras": [
+          "If + presente, presente → fato: If you mix red and white, you get pink.",
+          "If + presente, will/won't + verbo → futuro possível: If it rains, I'll stay home.",
+          "nunca will depois de if: If it rains (e não If it will rain)",
+          "rotina → presente simples / agora → am/is/are + -ing",
+          "passado com data → passado simples / em andamento → was/were + -ing",
+          "plano → going to / decisão na hora → will / experiência → have/has + particípio"
+        ],
+        "notaContrastiva": "Não diga *If it will rain tomorrow, we stay home* → diga *If it rains tomorrow, we will stay home*. O will vai na outra parte da frase, nunca depois de if.",
+        "exemplos": [
+          {
+            "en": "If you heat water to 100 degrees, it boils.",
+            "pt": "Se você aquece a água a 100 graus, ela ferve."
+          },
+          {
+            "en": "If it rains tomorrow, we'll go to the mall.",
+            "pt": "Se chover amanhã, vamos ao shopping."
+          },
+          {
+            "en": "If you don't hurry, you'll miss the bus.",
+            "pt": "Se você não se apressar, vai perder o ônibus."
+          },
+          {
+            "en": "I'll call you if I have time.",
+            "pt": "Eu te ligo se eu tiver tempo."
+          },
+          {
+            "en": "She usually walks to work, but today she's driving.",
+            "pt": "Ela normalmente vai a pé ao trabalho, mas hoje está indo de carro."
+          },
+          {
+            "en": "I've been to Peru. I went there in 2022.",
+            "pt": "Já fui ao Peru. Fui lá em 2022."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "if",
+            "pt": "se"
+          },
+          {
+            "en": "unless",
+            "pt": "a menos que (só para reconhecer)"
+          },
+          {
+            "en": "heat / melt / boil",
+            "pt": "aquecer / derreter / ferver"
+          },
+          {
+            "en": "hurry",
+            "pt": "apressar-se"
+          },
+          {
+            "en": "miss the bus",
+            "pt": "perder o ônibus"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If it ___ tomorrow, we'll stay home.",
+            "opcoes": [
+              "rains",
+              "will rain",
+              "rained",
+              "raining"
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Depois de if, presente simples (it rains); o will fica na outra parte da frase.",
+          "tagsErro": [
+            "will_depois_if",
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "If you mix blue and yellow, you ___ green.",
+            "opcoes": [
+              "got",
+              "get",
+              "will getting",
+              "are get"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Fato geral → condicional zero, com as duas partes no presente simples: you get green.",
+          "tagsErro": [
+            "condicional_zero"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "If you ___ (not / study), you won't pass the test."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "don't study",
+                "do not study"
+              ]
+            ]
+          },
+          "explicacao": "Depois de if, presente simples na negativa: If you don't study...",
+          "tagsErro": [
+            "will_depois_if",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Escolha a forma certa.",
+          "conteudo": {
+            "texto": "Right now my brother ___ a shower.",
+            "opcoesPorLacuna": [
+              [
+                "takes",
+                "is taking",
+                "took"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "is taking"
+              ]
+            ]
+          },
+          "explicacao": "Right now = agora → present continuous: is taking.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "I ___ my keys yesterday, so I couldn't get in.",
+            "opcoes": [
+              "have lost",
+              "lose",
+              "lost",
+              "was losing"
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "Yesterday é tempo terminado → passado simples: lost.",
+          "tagsErro": [
+            "perfect_x_passado",
+            "verbo_irregular"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "help",
+              "if",
+              "I",
+              "time",
+              "will",
+              "you",
+              "have",
+              "I"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "I will help you if I have time.",
+              "If I have time I will help you."
+            ]
+          },
+          "explicacao": "Primeira condicional: will + verbo na parte principal e presente depois de if.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue o começo ao fim da frase.",
+          "conteudo": {
+            "esquerda": [
+              "If you heat ice,",
+              "If it rains tomorrow,",
+              "If you don't hurry,",
+              "If I'm tired at night,"
+            ],
+            "direita": [
+              "the game will be canceled.",
+              "I go to bed early.",
+              "it melts.",
+              "you'll miss the bus."
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              0,
+              3,
+              1
+            ]
+          },
+          "explicacao": "Fatos e hábitos ficam no presente nas duas partes (it melts, I go to bed); o futuro possível leva will (will be canceled, you'll miss).",
+          "tagsErro": [
+            "condicional_zero",
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "If it will be sunny tomorrow, we will go to the beach."
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it is sunny tomorrow, we will go to the beach.",
+              "If it is sunny tomorrow we will go to the beach.",
+              "We will go to the beach if it is sunny tomorrow."
+            ]
+          },
+          "explicacao": "Depois de if, use o presente: If it is sunny..., e não If it will be sunny.",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se chover, eu vou ficar em casa.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If it rains, I will stay home.",
+              "If it rains I will stay home.",
+              "If it rains, I will stay at home.",
+              "If it rains I will stay at home.",
+              "I will stay home if it rains.",
+              "I will stay at home if it rains.",
+              "If it rains, I am going to stay home.",
+              "If it rains I am going to stay home.",
+              "If it rains, I am going to stay at home.",
+              "If it rains I am going to stay at home.",
+              "I am going to stay home if it rains.",
+              "I am going to stay at home if it rains."
+            ]
+          },
+          "explicacao": "Se chover = If it rains (presente depois de if). Vou ficar = I will (I'll) stay.",
+          "tagsErro": [
+            "condicional_primeira",
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Ela está estudando agora.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is studying now.",
+              "She is studying right now.",
+              "Right now she is studying.",
+              "Right now, she is studying.",
+              "Now she is studying."
+            ]
+          },
+          "explicacao": "Agora → present continuous: She is studying now.",
+          "tagsErro": [
+            "simples_continuo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Have you ever ___ to Bahia?",
+            "opcoes": [
+              "went",
+              "go",
+              "going",
+              "been"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "Experiência: Have you ever been to...? (particípio de be).",
+          "tagsErro": [
+            "present_perfect"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "If you ___ (call) me, I'll pick you up."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "call"
+              ]
+            ]
+          },
+          "explicacao": "Depois de if, presente simples: If you call me...",
+          "tagsErro": [
+            "will_depois_if"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "visit",
+              "going",
+              "We",
+              "grandparents",
+              "are",
+              "to",
+              "our"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "We are going to visit our grandparents."
+            ]
+          },
+          "explicacao": "Plano → am/is/are + going to + verbo base.",
+          "tagsErro": [
+            "futuro_planos"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Se você não se apressar, vai perder o ônibus.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "If you do not hurry, you will miss the bus.",
+              "If you do not hurry you will miss the bus.",
+              "You will miss the bus if you do not hurry.",
+              "If you do not hurry up, you will miss the bus.",
+              "If you do not hurry up you will miss the bus.",
+              "You will miss the bus if you do not hurry up.",
+              "If you do not hurry, you are going to miss the bus.",
+              "If you do not hurry you are going to miss the bus.",
+              "You are going to miss the bus if you do not hurry."
+            ]
+          },
+          "explicacao": "If + presente na negativa (don't hurry) + will na outra parte (you'll miss). Perder o ônibus = miss the bus.",
+          "tagsErro": [
+            "condicional_primeira"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "I was walking home when I was seeing an accident."
+          },
+          "gabarito": {
+            "aceitas": [
+              "I was walking home when I saw an accident.",
+              "When I was walking home, I saw an accident.",
+              "While I was walking home, I saw an accident."
+            ]
+          },
+          "explicacao": "A ação curta, que interrompe a longa, vai no passado simples: when I saw an accident.",
+          "tagsErro": [
+            "when_while"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "a2-m10-l6",
+      "ordem": 6,
+      "titulo": "Ready for the A2 exam",
+      "objetivo": "Treinar as três partes da prova do A2: leitura de avisos e mensagens, gramática e vocabulário, e escrita.",
+      "minutosEstimados": 20,
+      "apresentacao": {
+        "explicacao": [
+          "Esta é a última lição do A2. Depois dela vem a prova do nível: 30 questões em três partes, inspiradas nos tipos de tarefa das provas internacionais de nível A2 (todas as questões são originais).",
+          "Leitura: avisos, placas e mensagens curtas, e um texto mais longo com perguntas. Leia a pergunta primeiro e procure no texto a parte que responde. Cuidado com as opções que usam palavras do texto, mas dizem outra coisa.",
+          "Gramática e vocabulário: frases com lacunas para escolher ou completar. Antes de escolher o verbo, procure as pistas de tempo: yesterday, now, next week, ever, if.",
+          "Escrita: montar frases, corrigir um erro e traduzir. No fim, releia a frase inteira: confira o -s da terceira pessoa, o did nas perguntas do passado e o verbo na base depois de should, must, can e will. Para passar, você precisa de 75% no total e de pelo menos 60% em cada parte."
+        ],
+        "regras": [
+          "every day / usually → presente simples",
+          "now / at the moment / this week → am/is/are + -ing",
+          "yesterday / last ... / ... ago → passado simples",
+          "when + ação curta / while + ação longa → passado contínuo na ação longa",
+          "next ... / tonight (plano) → going to ou present continuous",
+          "ever / never / just / yet → present perfect",
+          "If + presente → will na outra parte"
+        ],
+        "notaContrastiva": "Os erros que mais tiram ponto no A2: esquecer o -s (*she work* → *she works*), usar did com o verbo no passado (*did you went* → *did you go*), will depois de if (*if it will rain* → *if it rains*), present perfect com data (*I have seen him yesterday* → *I saw him yesterday*) e *more better* (→ *better*).",
+        "exemplos": [
+          {
+            "en": "NO SWIMMING AFTER 6 P.M.",
+            "pt": "PROIBIDO NADAR DEPOIS DAS 18H."
+          },
+          {
+            "en": "Closed for lunch. Back at 2.",
+            "pt": "Fechado para o almoço. Voltamos às 14h."
+          },
+          {
+            "en": "Tickets are cheaper online.",
+            "pt": "Os ingressos são mais baratos pela internet."
+          },
+          {
+            "en": "Hi Bia! I'm running late. I'll be there in 20 minutes.",
+            "pt": "Oi, Bia! Estou atrasada. Chego em 20 minutos."
+          },
+          {
+            "en": "If you need help, ask at the front desk.",
+            "pt": "Se precisar de ajuda, pergunte na recepção."
+          },
+          {
+            "en": "Have you finished the book yet? — Not yet.",
+            "pt": "Você já terminou o livro? — Ainda não."
+          }
+        ],
+        "vocabulario": [
+          {
+            "en": "notice / sign",
+            "pt": "aviso / placa"
+          },
+          {
+            "en": "open / closed",
+            "pt": "aberto / fechado"
+          },
+          {
+            "en": "free",
+            "pt": "grátis; livre"
+          },
+          {
+            "en": "allowed",
+            "pt": "permitido"
+          },
+          {
+            "en": "running late",
+            "pt": "atrasado(a)"
+          }
+        ]
+      },
+      "exercicios": [
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia o aviso. O que ele quer dizer?",
+          "conteudo": {
+            "texto": "SWIMMING POOL\nOpen 8 a.m. – 6 p.m.\nChildren under 12 must be with an adult.",
+            "opcoes": [
+              "Crianças menores de 12 anos precisam estar com um adulto.",
+              "Crianças não podem usar a piscina.",
+              "A piscina fica aberta a noite toda.",
+              "A piscina abre às 6 da manhã."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"Children under 12 must be with an adult\": crianças com menos de 12 anos precisam de um adulto. A piscina abre às 8h e fecha às 18h."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a mensagem. Por que a Duda não vai ao cinema?",
+          "conteudo": {
+            "texto": "Hi Leo! Thanks for the invitation, but I can't go to the movies tonight. I have to finish a project for work. Why don't we go on Saturday? — Duda",
+            "opcoes": [
+              "Ela não gosta de cinema.",
+              "Ela tem que terminar um trabalho.",
+              "Ela está doente.",
+              "Ela vai viajar no sábado."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "\"I have to finish a project for work\": ela tem que terminar um projeto do trabalho."
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Leia a mensagem. O que a Duda sugere?",
+          "conteudo": {
+            "texto": "Hi Leo! Thanks for the invitation, but I can't go to the movies tonight. I have to finish a project for work. Why don't we go on Saturday? — Duda",
+            "opcoes": [
+              "Ir ao cinema hoje à noite.",
+              "Trabalhar juntos no projeto.",
+              "Ir ao cinema no sábado.",
+              "Ficar em casa no sábado."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "\"Why don't we go on Saturday?\" é uma sugestão: ir ao cinema no sábado.",
+          "tagsErro": [
+            "convite_sugestao"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "cloze",
+          "enunciado": "Complete o e-mail.",
+          "conteudo": {
+            "texto": "Dear Ms. Silva, I ___ like to book a room for two nights. ___ you send me the prices, please?",
+            "opcoesPorLacuna": [
+              [
+                "would",
+                "will",
+                "am"
+              ],
+              [
+                "Could",
+                "Should",
+                "Must"
+              ]
+            ]
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "would"
+              ],
+              [
+                "Could"
+              ]
+            ]
+          },
+          "explicacao": "Pedido educado: I would (I'd) like to book... e Could you send me...?",
+          "tagsErro": [
+            "pedido_educado"
+          ]
+        },
+        {
+          "etapa": "controlada",
+          "tipo": "mcq",
+          "enunciado": "Escolha a forma correta.",
+          "conteudo": {
+            "texto": "Last summer, while we ___ on the beach, we saw a turtle.",
+            "opcoes": [
+              "walked",
+              "have walked",
+              "walk",
+              "were walking"
+            ]
+          },
+          "gabarito": {
+            "correta": 3
+          },
+          "explicacao": "While + ação longa no passado contínuo: while we were walking.",
+          "tagsErro": [
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "read",
+              "Have",
+              "book",
+              "you",
+              "this",
+              "ever"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Have you ever read this book?"
+            ]
+          },
+          "explicacao": "Experiência: Have you ever + particípio (read)?",
+          "tagsErro": [
+            "present_perfect",
+            "ordem_pergunta"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "match",
+          "enunciado": "Ligue cada aviso ao lugar onde ele aparece.",
+          "conteudo": {
+            "esquerda": [
+              "Please turn off your phone during the movie.",
+              "Check-out is at 11 a.m.",
+              "Gate 12: boarding now",
+              "Today's special: fish and rice"
+            ],
+            "direita": [
+              "aeroporto",
+              "restaurante",
+              "cinema",
+              "hotel"
+            ]
+          },
+          "gabarito": {
+            "pares": [
+              2,
+              3,
+              0,
+              1
+            ]
+          },
+          "explicacao": "Movie → cinema; check-out → hotel; gate e boarding → aeroporto; today's special (prato do dia) → restaurante.",
+          "tagsErro": [
+            "vocabulario_servicos"
+          ]
+        },
+        {
+          "etapa": "semicontrolada",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "She don't have to work on Sundays."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She does not have to work on Sundays."
+            ]
+          },
+          "explicacao": "Com she, a negativa é doesn't have to: She doesn't have to work.",
+          "tagsErro": [
+            "have_to",
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Eu acho que você deveria descansar.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "I think you should rest.",
+              "I think that you should rest.",
+              "I think you should get some rest.",
+              "I think that you should get some rest."
+            ]
+          },
+          "explicacao": "Conselho: I think you should + verbo base.",
+          "tagsErro": [
+            "modal_should"
+          ]
+        },
+        {
+          "etapa": "producao",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Esta mochila é melhor do que aquela.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "This backpack is better than that one.",
+              "This backpack is better than that backpack.",
+              "This bag is better than that one.",
+              "This bag is better than that bag."
+            ]
+          },
+          "explicacao": "Comparativo de good: better than. Para não repetir a palavra, use that one.",
+          "tagsErro": [
+            "comparativo"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "mcq",
+          "enunciado": "Leia o aviso. O que ele quer dizer?",
+          "conteudo": {
+            "texto": "MUSEUM SHOP\nYou don't have to pay to come in.",
+            "opcoes": [
+              "A entrada é gratuita.",
+              "É proibido entrar na loja.",
+              "Você precisa pagar para entrar.",
+              "A loja está fechada."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "\"You don't have to pay\" = você não precisa pagar: a entrada é gratuita.",
+          "tagsErro": [
+            "have_to"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "cloze",
+          "enunciado": "Complete com o verbo entre parênteses na forma correta.",
+          "conteudo": {
+            "texto": "Every Saturday my father ___ (play) soccer with his friends."
+          },
+          "gabarito": {
+            "respostas": [
+              [
+                "plays"
+              ]
+            ]
+          },
+          "explicacao": "Rotina (every Saturday) com he → presente simples com -s: plays.",
+          "tagsErro": [
+            "terceira_pessoa_s"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "word_order",
+          "enunciado": "Monte a frase.",
+          "conteudo": {
+            "palavras": [
+              "go",
+              "did",
+              "with",
+              "Who",
+              "you"
+            ]
+          },
+          "gabarito": {
+            "aceitas": [
+              "Who did you go with?"
+            ]
+          },
+          "explicacao": "Pergunta no passado: Who + did + you + go + with? A preposição fica no fim.",
+          "tagsErro": [
+            "ordem_pergunta",
+            "do_support"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "translate",
+          "enunciado": "Traduza para o inglês.",
+          "conteudo": {
+            "frase": "Nós estávamos jantando quando a luz acabou.",
+            "direcao": "pt-en"
+          },
+          "gabarito": {
+            "aceitas": [
+              "We were having dinner when the lights went out.",
+              "We were eating dinner when the lights went out.",
+              "We were having dinner when the power went out.",
+              "We were eating dinner when the power went out.",
+              "We were having dinner when the electricity went out.",
+              "We were eating dinner when the electricity went out.",
+              "When the lights went out, we were having dinner.",
+              "When the lights went out we were having dinner.",
+              "When the power went out, we were having dinner.",
+              "When the power went out we were having dinner.",
+              "When the lights went out, we were eating dinner.",
+              "When the lights went out we were eating dinner.",
+              "When the power went out, we were eating dinner.",
+              "When the power went out we were eating dinner."
+            ]
+          },
+          "explicacao": "A ação longa (jantar) vai no passado contínuo e a curta no passado simples: the lights went out (a luz acabou).",
+          "tagsErro": [
+            "when_while"
+          ]
+        },
+        {
+          "etapa": "quiz",
+          "tipo": "error_correction",
+          "enunciado": "Corrija o erro da frase.",
+          "conteudo": {
+            "frase": "This is the more beautiful beach in Brazil."
+          },
+          "gabarito": {
+            "aceitas": [
+              "This is the most beautiful beach in Brazil."
+            ]
+          },
+          "explicacao": "Superlativo de adjetivo longo: the most beautiful.",
+          "tagsErro": [
+            "superlativo"
+          ]
+        }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I ___ from home this week because my office is closed.",
+          "opcoes": [
+            "work",
+            "am working",
+            "worked",
+            "works"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Situação temporária (this week) → present continuous: I am working. (Módulo 1)",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Do you ___ the answer?",
+          "opcoes": [
+            "knowing",
+            "are know",
+            "know",
+            "knows"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Know é verbo de estado e, depois de do, fica na base: Do you know...? (Módulo 1)",
+        "tagsErro": [
+          "verbo_estado",
+          "do_support"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no passado simples.",
+        "conteudo": {
+          "texto": "We ___ (leave) the hotel early and ___ (take) a taxi to the airport."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "left"
+            ],
+            [
+              "took"
+            ]
+          ]
+        },
+        "explicacao": "Leave → left; take → took. (Módulo 2)",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a pergunta que combina com a resposta.",
+        "conteudo": {
+          "texto": "___ — My brother did. He loves cooking.",
+          "opcoes": [
+            "Who did make dinner?",
+            "Who did dinner make?",
+            "Who makes did dinner?",
+            "Who made dinner?"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Pergunta sobre o sujeito, sem did: Who made dinner? (Módulo 2)",
+        "tagsErro": [
+          "pergunta_sujeito"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "My friend called while I ___ my homework.",
+          "opcoes": [
+            "was doing",
+            "did",
+            "am doing",
+            "were doing"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "While + ação longa no passado contínuo: while I was doing. (Módulo 3)",
+        "tagsErro": [
+          "when_while",
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "___ I was cooking, I burned my hand.",
+          "opcoesPorLacuna": [
+            [
+              "While",
+              "During",
+              "Then"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "While"
+            ]
+          ]
+        },
+        "explicacao": "While vem com a ação longa (I was cooking). During vem com um substantivo. (Módulo 3)",
+        "tagsErro": [
+          "when_while"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Look at that boy on the wall! He ___ fall!",
+          "opcoes": [
+            "goes to",
+            "is going to",
+            "going",
+            "will to"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Previsão com evidência → be going to: He is going to fall. (Módulo 4)",
+        "tagsErro": [
+          "futuro_planos"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a forma certa.",
+        "conteudo": {
+          "texto": "Why don't we ___ a pizza tonight?",
+          "opcoesPorLacuna": [
+            [
+              "order",
+              "ordering",
+              "to order"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "order"
+            ]
+          ]
+        },
+        "explicacao": "Why don't we + verbo base: Why don't we order...? (Módulo 4)",
+        "tagsErro": [
+          "convite_sugestao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "This is ___ beach in the city.",
+          "opcoes": [
+            "more beautiful",
+            "most beautiful",
+            "the most beautiful",
+            "the beautifulest"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Superlativo de adjetivo longo: the most beautiful. (Módulo 5)",
+        "tagsErro": [
+          "superlativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "I only have ___ money, so I can't buy this jacket.",
+          "opcoesPorLacuna": [
+            [
+              "a little",
+              "a few",
+              "many"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "a little"
+            ]
+          ]
+        },
+        "explicacao": "Money é incontável → a little money. A few vai com contáveis. (Módulo 5)",
+        "tagsErro": [
+          "quantificador",
+          "incontavel"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "You ___ smoke in the hospital. It's not allowed.",
+          "opcoes": [
+            "don't have to",
+            "should",
+            "have to",
+            "mustn't"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Not allowed = proibido → mustn't. Don't have to quer dizer não precisa. (Módulo 6)",
+        "tagsErro": [
+          "must_mustnt"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com should ou shouldn't.",
+        "conteudo": {
+          "texto": "You have a fever. You ___ go to school today."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "shouldn't",
+              "should not"
+            ]
+          ]
+        },
+        "explicacao": "Conselho negativo → shouldn't + verbo base. (Módulo 6)",
+        "tagsErro": [
+          "modal_should"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa a oferta.",
+        "conteudo": {
+          "texto": "It's very hot in here. — ___ I open the window?",
+          "opcoes": [
+            "Shall",
+            "Am",
+            "Does",
+            "Will"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Para oferecer ajuda: Shall I...? (Módulo 7)",
+        "tagsErro": [
+          "will_decisao"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Have you ever ___ a famous person?",
+          "opcoes": [
+            "meet",
+            "met",
+            "meeting",
+            "meets"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Have you ever + particípio: met. (Módulo 8)",
+        "tagsErro": [
+          "present_perfect",
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "I haven't seen the new movie ___.",
+          "opcoesPorLacuna": [
+            [
+              "yet",
+              "already",
+              "just"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "yet"
+            ]
+          ]
+        },
+        "explicacao": "Yet vai no fim de negativas: I haven't seen it yet. (Módulo 8)",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If you ___ the bus, you'll be late.",
+          "opcoes": [
+            "will miss",
+            "missed",
+            "miss",
+            "missing"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Depois de if, presente simples: If you miss the bus... (Módulo 9)",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o aviso. O que é verdade?",
+        "conteudo": {
+          "texto": "CITY LIBRARY\nOpen Monday to Saturday, 9 a.m. to 8 p.m.\nYou must be quiet in the reading room.\nYou don't have to pay to use the computers.",
+          "opcoes": [
+            "A biblioteca abre aos domingos.",
+            "É preciso pagar para usar os computadores.",
+            "Pode-se falar alto na sala de leitura.",
+            "Os computadores são de graça."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"You don't have to pay to use the computers\": não precisa pagar. A biblioteca abre de segunda a sábado."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o aviso. O que você deve fazer na sala de leitura?",
+        "conteudo": {
+          "texto": "CITY LIBRARY\nOpen Monday to Saturday, 9 a.m. to 8 p.m.\nYou must be quiet in the reading room.\nYou don't have to pay to use the computers.",
+          "opcoes": [
+            "Fazer silêncio.",
+            "Pagar uma taxa.",
+            "Usar o computador.",
+            "Chegar antes das 9h."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"You must be quiet in the reading room\": é preciso fazer silêncio."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Por que a Paula não pode almoçar amanhã?",
+        "conteudo": {
+          "texto": "Hi Marcos! I'm sorry, but I can't meet you for lunch tomorrow. My boss wants me to travel to São Paulo for a meeting. I'm flying there tomorrow morning and coming back on Thursday. How about Friday? There's a new Japanese restaurant near the office. Let me know! — Paula",
+          "opcoes": [
+            "Ela está doente.",
+            "Ela vai viajar a trabalho.",
+            "Ela não gosta de comida japonesa.",
+            "Ela vai visitar a família."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"My boss wants me to travel to São Paulo for a meeting\": ela vai viajar para uma reunião."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. O que a Paula sugere?",
+        "conteudo": {
+          "texto": "Hi Marcos! I'm sorry, but I can't meet you for lunch tomorrow. My boss wants me to travel to São Paulo for a meeting. I'm flying there tomorrow morning and coming back on Thursday. How about Friday? There's a new Japanese restaurant near the office. Let me know! — Paula",
+          "opcoes": [
+            "Almoçar na quinta-feira.",
+            "Jantar amanhã.",
+            "Almoçar na sexta num restaurante japonês.",
+            "Ir a São Paulo com o Marcos."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"How about Friday? There's a new Japanese restaurant near the office.\" Na quinta ela ainda está voltando."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Onde o Rafael normalmente trabalha?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a nurse. I usually work at a hospital in Porto Alegre, but this month I'm working at a small clinic in the mountains. Last Monday, while I was driving to the clinic, it started to snow. I stopped the car and took a lot of photos, because it was my first time in the snow! I was late for work, but my boss didn't mind. The clinic is quieter than the hospital, and the people are very friendly. I have to start work at seven, so I go to bed early. Next month I'm going to go back to Porto Alegre. If I have a vacation in July, I'll come back to the mountains with my family.",
+          "opcoes": [
+            "Numa clínica nas montanhas.",
+            "Numa escola.",
+            "Num hotel.",
+            "Num hospital em Porto Alegre."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"I usually work at a hospital in Porto Alegre.\" A clínica é só neste mês."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que aconteceu na segunda-feira passada?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a nurse. I usually work at a hospital in Porto Alegre, but this month I'm working at a small clinic in the mountains. Last Monday, while I was driving to the clinic, it started to snow. I stopped the car and took a lot of photos, because it was my first time in the snow! I was late for work, but my boss didn't mind. The clinic is quieter than the hospital, and the people are very friendly. I have to start work at seven, so I go to bed early. Next month I'm going to go back to Porto Alegre. If I have a vacation in July, I'll come back to the mountains with my family.",
+          "opcoes": [
+            "Começou a nevar enquanto ele dirigia.",
+            "Ele bateu o carro.",
+            "O chefe ficou bravo com ele.",
+            "Ele chegou cedo ao trabalho."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"While I was driving to the clinic, it started to snow.\" O chefe não se importou com o atraso."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Como o Rafael compara a clínica com o hospital?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a nurse. I usually work at a hospital in Porto Alegre, but this month I'm working at a small clinic in the mountains. Last Monday, while I was driving to the clinic, it started to snow. I stopped the car and took a lot of photos, because it was my first time in the snow! I was late for work, but my boss didn't mind. The clinic is quieter than the hospital, and the people are very friendly. I have to start work at seven, so I go to bed early. Next month I'm going to go back to Porto Alegre. If I have a vacation in July, I'll come back to the mountains with my family.",
+          "opcoes": [
+            "A clínica é maior.",
+            "A clínica é mais tranquila.",
+            "O hospital é mais simpático.",
+            "A clínica é mais barulhenta."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"The clinic is quieter than the hospital\": a clínica é mais tranquila."
+      },
+      {
+        "forma": 1,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que ele vai fazer se tiver férias em julho?",
+        "conteudo": {
+          "texto": "My name is Rafael and I'm a nurse. I usually work at a hospital in Porto Alegre, but this month I'm working at a small clinic in the mountains. Last Monday, while I was driving to the clinic, it started to snow. I stopped the car and took a lot of photos, because it was my first time in the snow! I was late for work, but my boss didn't mind. The clinic is quieter than the hospital, and the people are very friendly. I have to start work at seven, so I go to bed early. Next month I'm going to go back to Porto Alegre. If I have a vacation in July, I'll come back to the mountains with my family.",
+          "opcoes": [
+            "Vai ficar em Porto Alegre.",
+            "Vai trabalhar na clínica.",
+            "Vai voltar às montanhas com a família.",
+            "Vai viajar sozinho para a praia."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"If I have a vacation in July, I'll come back to the mountains with my family.\""
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "going",
+            "tonight",
+            "you",
+            "Where",
+            "are"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "Where are you going tonight?"
+          ]
+        },
+        "explicacao": "Plano ou compromisso: Where + are + you + going...?",
+        "tagsErro": [
+          "futuro_planos",
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "been",
+            "Chile",
+            "has",
+            "She",
+            "to",
+            "never"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "She has never been to Chile."
+          ]
+        },
+        "explicacao": "Experiência: She + has + never + been to...",
+        "tagsErro": [
+          "present_perfect"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "If it will rain, we will stay home."
+        },
+        "gabarito": {
+          "aceitas": [
+            "If it rains, we will stay home.",
+            "If it rains we will stay home.",
+            "We will stay home if it rains."
+          ]
+        },
+        "explicacao": "Depois de if, presente simples: If it rains...",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "My sister is more tall than me."
+        },
+        "gabarito": {
+          "aceitas": [
+            "My sister is taller than me.",
+            "My sister is taller than I am.",
+            "My sister is taller than I."
+          ]
+        },
+        "explicacao": "Tall é curto: taller than.",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu estava estudando quando você chegou.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I was studying when you arrived.",
+            "I was studying when you got here.",
+            "I was studying when you came.",
+            "When you arrived, I was studying.",
+            "When you arrived I was studying.",
+            "When you got here, I was studying.",
+            "When you got here I was studying.",
+            "When you came, I was studying.",
+            "When you came I was studying."
+          ]
+        },
+        "explicacao": "Ação longa no passado contínuo (I was studying) e ação curta no passado simples (you arrived).",
+        "tagsErro": [
+          "when_while"
+        ]
+      },
+      {
+        "forma": 1,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Você poderia me ajudar, por favor?",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "Could you help me, please?",
+            "Could you help me please?",
+            "Could you please help me?",
+            "Can you help me, please?",
+            "Can you help me please?",
+            "Can you please help me?",
+            "Would you help me, please?",
+            "Would you help me please?",
+            "Would you please help me?"
+          ]
+        },
+        "explicacao": "Pedido educado: Could you + verbo base...? Can e would também servem.",
+        "tagsErro": [
+          "pedido_educado"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Be quiet, please! I ___ to the news.",
+          "opcoes": [
+            "listen",
+            "listens",
+            "listened",
+            "am listening"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Agora (Be quiet!) → present continuous: I am listening. (Módulo 1)",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a forma certa.",
+        "conteudo": {
+          "texto": "I ___ a new laptop. Mine is very old.",
+          "opcoesPorLacuna": [
+            [
+              "need",
+              "am needing",
+              "needing"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "need"
+            ]
+          ]
+        },
+        "explicacao": "Need é verbo de estado: I need, e não I am needing. (Módulo 1)",
+        "tagsErro": [
+          "verbo_estado"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com o verbo entre parênteses no passado simples.",
+        "conteudo": {
+          "texto": "Ana ___ (buy) a souvenir and ___ (send) it to her mom."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "bought"
+            ],
+            [
+              "sent"
+            ]
+          ]
+        },
+        "explicacao": "Buy → bought; send → sent. (Módulo 2)",
+        "tagsErro": [
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a pergunta que combina com a resposta.",
+        "conteudo": {
+          "texto": "___ — The bus was late.",
+          "opcoes": [
+            "What happened?",
+            "What did happen?",
+            "What happen?",
+            "What was happen?"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "Pergunta sobre o sujeito, sem did: What happened? (Módulo 2)",
+        "tagsErro": [
+          "pergunta_sujeito"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "At ten last night I ___ a movie, so I didn't hear the phone.",
+          "opcoes": [
+            "was watch",
+            "was watching",
+            "watching",
+            "were watching"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Ação em andamento num momento do passado: I was watching. (Módulo 3)",
+        "tagsErro": [
+          "simples_continuo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "My phone rang ___ I was taking a shower.",
+          "opcoesPorLacuna": [
+            [
+              "while",
+              "during",
+              "then"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "while"
+            ]
+          ]
+        },
+        "explicacao": "While + ação longa (I was taking a shower). (Módulo 3)",
+        "tagsErro": [
+          "when_while"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I ___ the dentist at three tomorrow. It's in my calendar.",
+          "opcoes": [
+            "see",
+            "saw",
+            "am seeing",
+            "sees"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Compromisso combinado, com dia e hora → present continuous: I am seeing the dentist. (Módulo 4)",
+        "tagsErro": [
+          "futuro_planos"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a forma certa.",
+        "conteudo": {
+          "texto": "Would you like ___ to my party on Saturday?",
+          "opcoesPorLacuna": [
+            [
+              "to come",
+              "coming",
+              "come"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "to come"
+            ]
+          ]
+        },
+        "explicacao": "Would you like + to + verbo: Would you like to come...? (Módulo 4)",
+        "tagsErro": [
+          "convite_sugestao"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "This hotel is ___ than the one near the beach.",
+          "opcoes": [
+            "more cheap",
+            "cheapest",
+            "the cheapest",
+            "cheaper"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Comparando dois hotéis: cheaper than. (Módulo 5)",
+        "tagsErro": [
+          "comparativo"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "How ___ people are coming to the party?",
+          "opcoesPorLacuna": [
+            [
+              "many",
+              "much",
+              "a little"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "many"
+            ]
+          ]
+        },
+        "explicacao": "People é contável no plural → How many? (Módulo 5)",
+        "tagsErro": [
+          "quantificador"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "Tomorrow is Sunday. You ___ get up early.",
+          "opcoes": [
+            "don't have to",
+            "mustn't",
+            "has to",
+            "should to"
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "No domingo não há obrigação → don't have to (não precisa). Mustn't seria proibido. (Módulo 6)",
+        "tagsErro": [
+          "must_mustnt",
+          "have_to"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Complete com have to ou has to.",
+        "conteudo": {
+          "texto": "Pedro ___ take his medicine three times a day."
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "has to"
+            ]
+          ]
+        },
+        "explicacao": "Com Pedro (he), use has to. (Módulo 6)",
+        "tagsErro": [
+          "have_to",
+          "terceira_pessoa_s"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a palavra que completa o pedido.",
+        "conteudo": {
+          "texto": "Excuse me, ___ you tell me where the bank is?",
+          "opcoes": [
+            "must",
+            "could",
+            "shall",
+            "should"
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "Pedido educado: Could you + verbo base...? (Módulo 7)",
+        "tagsErro": [
+          "pedido_educado"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "I ___ my keys! I can't find them anywhere.",
+          "opcoes": [
+            "have lose",
+            "losing",
+            "have lost",
+            "am lose"
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "Present perfect: have + particípio (lost). (Módulo 8)",
+        "tagsErro": [
+          "present_perfect",
+          "verbo_irregular"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "cloze",
+        "enunciado": "Escolha a palavra certa.",
+        "conteudo": {
+          "texto": "We have ___ finished lunch, so we aren't hungry.",
+          "opcoesPorLacuna": [
+            [
+              "just",
+              "yet",
+              "ever"
+            ]
+          ]
+        },
+        "gabarito": {
+          "respostas": [
+            [
+              "just"
+            ]
+          ]
+        },
+        "explicacao": "Just = acabou de: We have just finished. (Módulo 8)",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "gramatica_vocabulario",
+        "tipo": "mcq",
+        "enunciado": "Escolha a forma correta.",
+        "conteudo": {
+          "texto": "If it ___ sunny tomorrow, we'll go to the beach.",
+          "opcoes": [
+            "will be",
+            "was",
+            "being",
+            "is"
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "Depois de if, presente simples: If it is sunny... (Módulo 9)",
+        "tagsErro": [
+          "will_depois_if"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o aviso. O que é verdade?",
+        "conteudo": {
+          "texto": "SUPERMARKET SALE!\nBuy two, get one free.\nThis week only.\nSorry, we do not accept checks.",
+          "opcoes": [
+            "Quem compra dois produtos leva três.",
+            "A promoção dura um mês.",
+            "O supermercado aceita cheques.",
+            "O supermercado está fechado."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"Buy two, get one free\": compre dois e leve um de graça. A promoção é só nesta semana."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o aviso. Como NÃO é possível pagar?",
+        "conteudo": {
+          "texto": "SUPERMARKET SALE!\nBuy two, get one free.\nThis week only.\nSorry, we do not accept checks.",
+          "opcoes": [
+            "Com cartão.",
+            "Com cheque.",
+            "Em dinheiro.",
+            "Pelo celular."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"Sorry, we do not accept checks\": o mercado não aceita cheques."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. Para que a Tati está convidando a Gabi?",
+        "conteudo": {
+          "texto": "Hey Gabi! Are you free on Saturday? Some friends and I are going to have a picnic in the park. I'm making sandwiches and Leo is bringing his guitar. We're meeting at the main gate at 11. If it rains, we'll go to my apartment instead. Would you like to come? — Tati",
+          "opcoes": [
+            "Uma aula de violão.",
+            "Um jantar no apartamento.",
+            "Um piquenique no parque.",
+            "Uma viagem no sábado."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"Some friends and I are going to have a picnic in the park.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia a mensagem. O que eles vão fazer se chover?",
+        "conteudo": {
+          "texto": "Hey Gabi! Are you free on Saturday? Some friends and I are going to have a picnic in the park. I'm making sandwiches and Leo is bringing his guitar. We're meeting at the main gate at 11. If it rains, we'll go to my apartment instead. Would you like to come? — Tati",
+          "opcoes": [
+            "Vão cancelar tudo.",
+            "Vão ao cinema.",
+            "Vão se encontrar no portão.",
+            "Vão para o apartamento da Tati."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"If it rains, we'll go to my apartment instead.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Como as primas foram de São Paulo a Santiago?",
+        "conteudo": {
+          "texto": "Last year, my cousin Fernanda and I traveled to Chile. It was our first trip abroad. We flew from São Paulo to Santiago and stayed at a small hostel downtown. On the second day, while we were visiting a market, Fernanda lost her wallet! We were very worried, but a woman found it and took it to the police. That was the best moment of the trip! Santiago is bigger and colder than our hometown, so we had to buy jackets. Have you ever been to Chile? If you go, you should try the empanadas. Next year, we're going to visit Peru. I've already started to save money for the trip.",
+          "opcoes": [
+            "De avião.",
+            "De ônibus.",
+            "De carro.",
+            "De navio."
+          ]
+        },
+        "gabarito": {
+          "correta": 0
+        },
+        "explicacao": "\"We flew from São Paulo to Santiago\": foram de avião."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. O que aconteceu no mercado?",
+        "conteudo": {
+          "texto": "Last year, my cousin Fernanda and I traveled to Chile. It was our first trip abroad. We flew from São Paulo to Santiago and stayed at a small hostel downtown. On the second day, while we were visiting a market, Fernanda lost her wallet! We were very worried, but a woman found it and took it to the police. That was the best moment of the trip! Santiago is bigger and colder than our hometown, so we had to buy jackets. Have you ever been to Chile? If you go, you should try the empanadas. Next year, we're going to visit Peru. I've already started to save money for the trip.",
+          "opcoes": [
+            "Elas compraram jaquetas.",
+            "A Fernanda perdeu a carteira.",
+            "Elas conheceram uma policial.",
+            "A Fernanda achou uma carteira."
+          ]
+        },
+        "gabarito": {
+          "correta": 1
+        },
+        "explicacao": "\"While we were visiting a market, Fernanda lost her wallet!\" Quem achou a carteira foi uma mulher."
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Por que elas tiveram que comprar jaquetas?",
+        "conteudo": {
+          "texto": "Last year, my cousin Fernanda and I traveled to Chile. It was our first trip abroad. We flew from São Paulo to Santiago and stayed at a small hostel downtown. On the second day, while we were visiting a market, Fernanda lost her wallet! We were very worried, but a woman found it and took it to the police. That was the best moment of the trip! Santiago is bigger and colder than our hometown, so we had to buy jackets. Have you ever been to Chile? If you go, you should try the empanadas. Next year, we're going to visit Peru. I've already started to save money for the trip.",
+          "opcoes": [
+            "Porque perderam as malas.",
+            "Porque estava chovendo.",
+            "Porque Santiago é mais fria que a cidade delas.",
+            "Porque as jaquetas eram baratas."
+          ]
+        },
+        "gabarito": {
+          "correta": 2
+        },
+        "explicacao": "\"Santiago is bigger and colder than our hometown, so we had to buy jackets.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "leitura",
+        "tipo": "mcq",
+        "enunciado": "Leia o texto. Quais são os planos para o ano que vem?",
+        "conteudo": {
+          "texto": "Last year, my cousin Fernanda and I traveled to Chile. It was our first trip abroad. We flew from São Paulo to Santiago and stayed at a small hostel downtown. On the second day, while we were visiting a market, Fernanda lost her wallet! We were very worried, but a woman found it and took it to the police. That was the best moment of the trip! Santiago is bigger and colder than our hometown, so we had to buy jackets. Have you ever been to Chile? If you go, you should try the empanadas. Next year, we're going to visit Peru. I've already started to save money for the trip.",
+          "opcoes": [
+            "Voltar ao Chile.",
+            "Morar em Santiago.",
+            "Trabalhar num mercado.",
+            "Visitar o Peru."
+          ]
+        },
+        "gabarito": {
+          "correta": 3
+        },
+        "explicacao": "\"Next year, we're going to visit Peru.\""
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "doing",
+            "midnight",
+            "What",
+            "at",
+            "were",
+            "you"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "What were you doing at midnight?"
+          ]
+        },
+        "explicacao": "Pergunta no passado contínuo: What + were + you + doing...?",
+        "tagsErro": [
+          "ordem_pergunta"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "word_order",
+        "enunciado": "Monte a frase.",
+        "conteudo": {
+          "palavras": [
+            "seen",
+            "already",
+            "I",
+            "movie",
+            "have",
+            "this"
+          ]
+        },
+        "gabarito": {
+          "aceitas": [
+            "I have already seen this movie.",
+            "I have seen this movie already."
+          ]
+        },
+        "explicacao": "Have + already + particípio: I have already seen...",
+        "tagsErro": [
+          "just_yet_already"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "She should to drink more water."
+        },
+        "gabarito": {
+          "aceitas": [
+            "She should drink more water."
+          ]
+        },
+        "explicacao": "Depois de should, o verbo vem na base, sem to.",
+        "tagsErro": [
+          "modal_should"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "error_correction",
+        "enunciado": "Corrija o erro da frase.",
+        "conteudo": {
+          "frase": "I have met him two years ago."
+        },
+        "gabarito": {
+          "aceitas": [
+            "I met him two years ago.",
+            "Two years ago I met him.",
+            "Two years ago, I met him."
+          ]
+        },
+        "explicacao": "Ago marca tempo terminado → passado simples: I met him.",
+        "tagsErro": [
+          "perfect_x_passado"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Se você estudar, vai passar na prova.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "If you study, you will pass the test.",
+            "If you study you will pass the test.",
+            "You will pass the test if you study.",
+            "If you study, you will pass the exam.",
+            "If you study you will pass the exam.",
+            "You will pass the exam if you study.",
+            "If you study, you are going to pass the test.",
+            "If you study you are going to pass the test.",
+            "You are going to pass the test if you study.",
+            "If you study, you are going to pass the exam.",
+            "If you study you are going to pass the exam.",
+            "You are going to pass the exam if you study."
+          ]
+        },
+        "explicacao": "If + presente (study) + will na outra parte (you will pass).",
+        "tagsErro": [
+          "condicional_primeira"
+        ]
+      },
+      {
+        "forma": 2,
+        "habilidade": "escrita",
+        "tipo": "translate",
+        "enunciado": "Traduza para o inglês.",
+        "conteudo": {
+          "frase": "Eu gostaria de um quarto duplo, por favor.",
+          "direcao": "pt-en"
+        },
+        "gabarito": {
+          "aceitas": [
+            "I would like a double room, please.",
+            "I would like a double room please.",
+            "Could I have a double room, please?",
+            "Could I have a double room please?",
+            "Can I have a double room, please?",
+            "Can I have a double room please?",
+            "I would like to book a double room, please.",
+            "I would like to book a double room please."
+          ]
+        },
+        "explicacao": "Pedido educado: I'd like (I would like) a double room, please.",
+        "tagsErro": [
+          "pedido_educado"
+        ]
+      }
+    ]
+  }
+}
