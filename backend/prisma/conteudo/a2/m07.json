@@ -1,0 +1,422 @@
+{
+  "slug": "a2-m07",
+  "ordem": 7,
+  "titulo": "Travel & services",
+  "tema": "Viagens e serviços",
+  "descricao": "Ofereça ajuda e tome decisões na hora com will, peça coisas com educação (Could you...? Can I...? I'd like...) e se vire no hotel, na estação, no aeroporto, no banco e nos correios.",
+  "canDos": [
+    "Oferecer ajuda, prometer e tomar decisões na hora com will (I'll help you / I'll take the blue one).",
+    "Fazer pedidos educados com Can you...?, Could you...? e Would you...? e responder (Sure! / I'm afraid I can't).",
+    "Pedir permissão com Can I...?, Could I...? e May I...?",
+    "Pedir algo com educação usando I'd like... e Could I have...?",
+    "Reservar e usar um quarto de hotel: tipo de quarto, check-in, check-out e pedidos na recepção.",
+    "Comprar passagens e entender avisos de estação e aeroporto (round-trip, gate, delayed)."
+  ],
+  "gramatica": "Will para decisões na hora, ofertas e promessas (I'll / I won't); Shall I...? para oferecer; Can/Could/Would you + verbo base para pedidos; Can/Could/May I + verbo base para permissão; I'd like + substantivo / I'd like to + verbo; Could I have...?",
+  "vocabulario": "Serviços: hotel (book a room, single/double room, reservation, front desk, key card, wake-up call, check in/out, elevator), estação e aeroporto (one-way/round-trip ticket, platform, gate, departure, arrival, delay, aisle/window seat, boarding pass), banco e correios (open an account, withdraw/exchange money, send a package, stamp); frases educadas (Here you are, Let me check, Enjoy your stay).",
+  "funcao": "Oferecer ajuda, pedir serviços e permissão com educação.",
+  "pronuncia": "Na fala, I will vira I'll (/aɪl/), e o 'll quase some: I'll call you. Could you soa junto, como /kʊdʒu/ (\"cou-dju\"). O curso ainda não tem áudio: reconheça essas formas ao ouvir e leia as frases em voz alta. Na escrita, use I'll ou I will e Could you.",
+  "licoes": [
+    {
+      "slug": "a2-m07-l1",
+      "ordem": 1,
+      "titulo": "I'll help you!",
+      "objetivo": "Usar will para decisões tomadas na hora, ofertas de ajuda e promessas, e Shall I...? para oferecer.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Usamos will + verbo base para uma decisão tomada na hora, no momento em que falamos. O telefone toca e você diz: I'll get it! (Eu atendo!). Numa loja, depois de ver duas camisetas: I'll take the blue one (Vou levar a azul). Na fala, quase sempre usamos a forma curta I'll (= I will).",
+          "Will também serve para oferecer ajuda e para prometer: I'll help you with your bags (Eu te ajudo com as malas), I'll call you back (Eu te ligo de volta). A negativa é will not, ou a forma curta won't: I won't forget (Não vou esquecer).",
+          "Compare com going to, do módulo 4: going to é um plano decidido antes (I'm going to visit my aunt next week). Will é a decisão na hora: Oh, it's raining! I'll take an umbrella.",
+          "Para oferecer ajuda em forma de pergunta, usamos Shall I...? (Quer que eu...?): Shall I open the window? É educado e um pouco formal. Nos Estados Unidos também se diz Do you want me to open the window?"
+        ],
+        "regras": [
+          "I'll = I will (decisão na hora, oferta, promessa)",
+          "I won't = I will not",
+          "will + verbo base, sem to: I'll help",
+          "Shall I...? = Quer que eu...?",
+          "going to = plano já decidido; will = decisão no momento"
+        ],
+        "notaContrastiva": "Em português dizemos \"Eu atendo!\" no presente, mas em inglês a decisão na hora pede will: não diga *I answer it!* → diga *I'll get it!* E depois de will não vem to: não diga *I'll to call you* → diga *I'll call you*.",
+        "exemplos": [
+          { "en": "The phone is ringing! — I'll get it.", "pt": "O telefone está tocando! — Eu atendo." },
+          { "en": "I'll take the blue one, please.", "pt": "Vou levar a azul, por favor." },
+          { "en": "Your bags look heavy. I'll help you.", "pt": "Suas malas parecem pesadas. Eu te ajudo." },
+          { "en": "I'm busy now. I'll call you back later.", "pt": "Estou ocupado agora. Eu te ligo de volta mais tarde." },
+          { "en": "I won't forget, I promise!", "pt": "Não vou esquecer, prometo!" },
+          { "en": "It's hot in here. Shall I open the window?", "pt": "Está quente aqui. Quer que eu abra a janela?" },
+          { "en": "Oh, it's raining! I'll take an umbrella.", "pt": "Ah, está chovendo! Vou pegar um guarda-chuva." },
+          { "en": "We don't have any milk. — I'll buy some.", "pt": "Não temos leite. — Eu compro." }
+        ],
+        "vocabulario": [
+          { "en": "I'll get it", "pt": "eu atendo / eu pego" },
+          { "en": "call back", "pt": "ligar de volta" },
+          { "en": "promise", "pt": "prometer / promessa" },
+          { "en": "forget", "pt": "esquecer" },
+          { "en": "heavy", "pt": "pesado" },
+          { "en": "umbrella", "pt": "guarda-chuva" },
+          { "en": "Shall I...?", "pt": "Quer que eu...?" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "The phone is ringing! — Don't worry. I ___ answer it.", "opcoes": ["will", "am", "do", "was"] }, "gabarito": { "correta": 0 }, "explicacao": "Decisão tomada na hora: I will (I'll) answer it.", "tagsErro": ["will_decisao"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a resposta que mostra uma decisão tomada na hora.", "conteudo": { "texto": "We don't have any milk.", "opcoes": ["I buy milk every day.", "I bought milk yesterday.", "Oh no! I'll buy some on my way home.", "I don't like milk very much."] }, "gabarito": { "correta": 2 }, "explicacao": "A pessoa decide naquele momento comprar leite: I'll buy some.", "tagsErro": ["will_decisao"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com will + o verbo entre parênteses.", "conteudo": { "texto": "Your bags look heavy. I ___ (help) you." }, "gabarito": { "respostas": [["will help"]] }, "explicacao": "Oferta de ajuda: I will help you (ou I'll help you).", "tagsErro": ["will_decisao"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com a forma negativa de will.", "conteudo": { "texto": "Don't worry. I ___ forget your birthday this year. I promise!" }, "gabarito": { "respostas": [["won't", "will not"]] }, "explicacao": "Promessa na negativa: I won't (= will not) forget.", "tagsErro": ["will_decisao", "negativa"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para a lacuna.", "conteudo": { "texto": "It's cold in here. — ___ I close the window? — Yes, please. Thanks!", "opcoesPorLacuna": [["Do", "Shall", "Am"]] }, "gabarito": { "respostas": [["Shall"]] }, "explicacao": "Para oferecer ajuda: Shall I close the window? (Quer que eu feche a janela?)", "tagsErro": ["will_decisao"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["you", "back", "I", "call", "will"] }, "gabarito": { "aceitas": ["I will call you back."] }, "explicacao": "I + will + call + you + back. Call back = ligar de volta.", "tagsErro": ["will_decisao"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada frase à tradução.", "conteudo": { "esquerda": ["I'll get it!", "I'll call you back.", "I'll take the blue one.", "I won't forget.", "Shall I help you?"], "direita": ["Eu te ligo de volta.", "Quer que eu te ajude?", "Eu atendo!", "Não vou esquecer.", "Vou levar a azul."] }, "gabarito": { "pares": [2, 0, 4, 3, 1] }, "explicacao": "Todas são decisões na hora, ofertas ou promessas com will, e Shall I...? oferece ajuda.", "tagsErro": ["will_decisao"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I'll to carry your bag." }, "gabarito": { "aceitas": ["I'll carry your bag."] }, "explicacao": "Depois de will vem o verbo base, sem to: I'll carry.", "tagsErro": ["will_decisao"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu te ajudo com as malas.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I will help you with your bags.", "I will help you with the bags.", "I will help you with your suitcases.", "I will help you with the suitcases.", "I can help you with your bags.", "I can help you with the bags.", "Let me help you with your bags.", "Let me help you with the bags."] }, "explicacao": "Oferta de ajuda: I'll help you. Malas = bags ou suitcases.", "tagsErro": ["will_decisao"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Está chovendo! Eu vou pegar um guarda-chuva.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["It is raining! I will take an umbrella.", "It is raining! I will get an umbrella.", "It is raining! I will grab an umbrella.", "It is raining. I will take an umbrella.", "It is raining. I will get an umbrella.", "It is raining. I will grab an umbrella.", "It is raining, I will take an umbrella.", "It is raining, I will get an umbrella."] }, "explicacao": "A decisão foi tomada ao ver a chuva, então usamos will: I'll take an umbrella.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "A: I'm hungry. B: Me too! I ___ make some sandwiches.", "opcoes": ["am", "will", "do", "going to"] }, "gabarito": { "correta": 1 }, "explicacao": "B decide na hora: I'll (I will) make some sandwiches.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Sorry, I can't talk now. I ___ call you back later." }, "gabarito": { "respostas": [["will"]] }, "explicacao": "Promessa: I will (I'll) call you back.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["open", "I", "Shall", "window", "the"] }, "gabarito": { "aceitas": ["Shall I open the window?"] }, "explicacao": "Shall + I + verbo base? oferece ajuda: Shall I open the window?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu prometo. Não vou esquecer.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I promise. I will not forget.", "I promise! I will not forget.", "I promise, I will not forget."] }, "explicacao": "Promessa na negativa: I won't (= will not) forget.", "tagsErro": ["will_decisao", "negativa"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "The doorbell is ringing. I get it!" }, "gabarito": { "aceitas": ["The doorbell is ringing. I will get it!", "The doorbell is ringing. I will answer it!"] }, "explicacao": "Decisão na hora pede will: I'll get it!", "tagsErro": ["will_decisao"] }
+      ]
+    },
+    {
+      "slug": "a2-m07-l2",
+      "ordem": 2,
+      "titulo": "Could you help me?",
+      "objetivo": "Fazer pedidos educados com Can you...?, Could you...? e Would you...? e responder com Sure! ou I'm afraid I can't.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para pedir algo a alguém com educação, usamos Can you...?, Could you...? ou Would you...? + verbo base. Can you é mais informal; Could you e Would you são mais educados. Exemplo: Could you help me, please? (Você poderia me ajudar, por favor?)",
+          "Para deixar o pedido ainda mais gentil, use please e comece com Excuse me: Excuse me, could you tell me the time, please? Com desconhecidos, em lojas, hotéis e bancos, prefira Could you...?",
+          "Para aceitar: Sure! / Of course! / No problem. Para dizer não com educação: I'm sorry, I can't. ou I'm afraid I can't. (Infelizmente não posso.)",
+          "Aqui could não é passado: é a forma educada de pedir. Depois de can, could e would vem o verbo base, sem to: Could you open the door?"
+        ],
+        "regras": [
+          "Can you + verbo? (informal)",
+          "Could you + verbo, please? (educado)",
+          "Would you + verbo, please? (educado)",
+          "Sure! / Of course! / No problem.",
+          "I'm sorry, I can't. / I'm afraid I can't."
+        ],
+        "notaContrastiva": "Em português pedimos com \"Você pode...?\" e tudo bem, mas em inglês, com desconhecidos, *Can you* soa direto: prefira *Could you...?* E não use to depois de could: não diga *Could you to help me?* → diga *Could you help me?*",
+        "exemplos": [
+          { "en": "Could you help me, please?", "pt": "Você poderia me ajudar, por favor?" },
+          { "en": "Excuse me, could you tell me the time?", "pt": "Com licença, você poderia me dizer as horas?" },
+          { "en": "Can you open the door? — Sure!", "pt": "Você pode abrir a porta? — Claro!" },
+          { "en": "Would you speak more slowly, please?", "pt": "Você falaria mais devagar, por favor?" },
+          { "en": "Could you close the window? — No problem.", "pt": "Você poderia fechar a janela? — Sem problema." },
+          { "en": "Can you help me now? — I'm afraid I can't. I'm busy.", "pt": "Você pode me ajudar agora? — Infelizmente não posso. Estou ocupado." },
+          { "en": "Could you repeat that, please?", "pt": "Você poderia repetir, por favor?" }
+        ],
+        "vocabulario": [
+          { "en": "Could you...?", "pt": "Você poderia...?" },
+          { "en": "Would you...?", "pt": "Você faria...? / Você poderia...?" },
+          { "en": "Excuse me", "pt": "com licença" },
+          { "en": "Sure! / Of course!", "pt": "Claro!" },
+          { "en": "No problem.", "pt": "Sem problema." },
+          { "en": "I'm afraid I can't.", "pt": "Infelizmente não posso." },
+          { "en": "slowly", "pt": "devagar" },
+          { "en": "repeat", "pt": "repetir" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido.", "conteudo": { "texto": "Excuse me, ___ you help me with my suitcase, please?", "opcoes": ["do", "are", "could", "should"] }, "gabarito": { "correta": 2 }, "explicacao": "Pedido educado: Could you + verbo base, please?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha o pedido mais educado para fazer a um garçom.", "conteudo": { "opcoes": ["Give me the menu.", "I want the menu.", "Menu, now!", "Could you bring me the menu, please?"] }, "gabarito": { "correta": 3 }, "explicacao": "Com atendentes, use Could you...? e please. As outras soam como ordens.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses na forma correta.", "conteudo": { "texto": "Could you ___ (open) the window, please?" }, "gabarito": { "respostas": [["open"]] }, "explicacao": "Depois de could vem o verbo base: Could you open...?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a resposta com uma palavra.", "conteudo": { "texto": "Can you help me with this box? — Sure, no ___!" }, "gabarito": { "respostas": [["problem"]] }, "explicacao": "No problem = sem problema. É um jeito simpático de aceitar um pedido." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.", "conteudo": { "texto": "Would you ___ the door, please? — I'm ___, I can't. My hands are full.", "opcoesPorLacuna": [["close", "to close", "closing"], ["afraid", "scared", "sorry"]] }, "gabarito": { "respostas": [["close"], ["afraid", "sorry"]] }, "explicacao": "Would you + verbo base: close. Para recusar: I'm afraid I can't ou I'm sorry, I can't.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte o pedido.", "conteudo": { "palavras": ["me", "Could", "help", "you"] }, "gabarito": { "aceitas": ["Could you help me?"] }, "explicacao": "Could + you + help + me?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada frase à tradução.", "conteudo": { "esquerda": ["Sure!", "No problem.", "I'm afraid I can't.", "Excuse me...", "Could you...?"], "direita": ["Com licença...", "Infelizmente não posso.", "Claro!", "Você poderia...?", "Sem problema."] }, "gabarito": { "pares": [2, 4, 1, 0, 3] }, "explicacao": "Sure e No problem aceitam; I'm afraid I can't recusa com educação.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro do pedido.", "conteudo": { "frase": "Could you to repeat that, please?" }, "gabarito": { "aceitas": ["Could you repeat that, please?", "Could you repeat that please?"] }, "explicacao": "Depois de could não vem to: Could you repeat that?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você poderia falar mais devagar, por favor?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Could you speak more slowly, please?", "Could you speak more slowly please?", "Could you please speak more slowly?", "Could you speak slower, please?", "Could you speak slower please?", "Could you please speak slower?", "Could you talk more slowly, please?", "Could you talk more slowly please?", "Would you speak more slowly, please?", "Would you speak more slowly please?", "Would you please speak more slowly?", "Can you speak more slowly, please?", "Can you speak more slowly please?", "Can you please speak more slowly?"] }, "explicacao": "Você poderia = Could you. Mais devagar = more slowly.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Sinto muito, não posso.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I am sorry, I can't.", "I am sorry I can't.", "I am sorry, but I can't.", "I am sorry but I can't.", "Sorry, I can't.", "Sorry I can't.", "Sorry, but I can't.", "I am afraid I can't."] }, "explicacao": "Recusa educada: I'm sorry, I can't. (Ou I'm afraid I can't.)", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido.", "conteudo": { "texto": "___ you tell me where the bathroom is, please?", "opcoes": ["Do", "Could", "Are", "Shall"] }, "gabarito": { "correta": 1 }, "explicacao": "Pedido educado: Could you tell me...?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a resposta com uma palavra.", "conteudo": { "texto": "I'm ___ I can't help you now. I'm very busy." }, "gabarito": { "respostas": [["afraid", "sorry"]] }, "explicacao": "I'm afraid I can't = infelizmente não posso. I'm sorry I can't também serve.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte o pedido.", "conteudo": { "palavras": ["please", "you", "Would", "door", "the", "close"] }, "gabarito": { "aceitas": ["Would you close the door please?", "Would you please close the door?"] }, "explicacao": "Would + you + close + the door + please? O please também pode vir depois de you.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você pode me ajudar?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Can you help me?", "Could you help me?", "Can you help me please?", "Could you help me please?", "Can you help me, please?", "Could you help me, please?", "Can you please help me?", "Could you please help me?"] }, "explicacao": "Você pode me ajudar? = Can you help me? Could you é ainda mais educado.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro do pedido.", "conteudo": { "frase": "Can you helping me with this form?" }, "gabarito": { "aceitas": ["Can you help me with this form?"] }, "explicacao": "Depois de can vem o verbo base: Can you help me?", "tagsErro": ["pedido_educado"] }
+      ]
+    },
+    {
+      "slug": "a2-m07-l3",
+      "ordem": 3,
+      "titulo": "Can I pay by card?",
+      "objetivo": "Pedir permissão com Can I...?, Could I...? e May I...? e pedir algo com I'd like... no banco, nos correios e no restaurante.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para pedir permissão, usamos Can I...?, Could I...? ou May I...? + verbo base. Can I é o mais comum; Could I é mais educado; May I é o mais formal (hotel, banco, consultório). Exemplo: Can I pay by card? (Posso pagar com cartão?)",
+          "Para pedir algo numa loja, banco ou restaurante, I'd like... (Eu gostaria de...) é educado. I'd like + substantivo: I'd like a coffee, please. I'd like to + verbo: I'd like to send this package. Evite I want..., que soa exigente com atendentes.",
+          "Também dá para pedir uma coisa com Could I have...? ou Can I have...?: Could I have the check, please? (A conta, por favor.) Nos Estados Unidos, a conta do restaurante é the check.",
+          "No banco e nos correios: open an account (abrir uma conta), withdraw money (sacar dinheiro), exchange money (trocar dinheiro), send a package (mandar um pacote), a stamp (um selo). O atendente pode pedir seu documento: Can I see your ID, please?"
+        ],
+        "regras": [
+          "Can I / Could I / May I + verbo base?",
+          "I'd like + substantivo: I'd like a stamp, please.",
+          "I'd like to + verbo: I'd like to open an account.",
+          "Could I have the check, please?",
+          "I'd like = I would like (educado); I want (direto)"
+        ],
+        "notaContrastiva": "Em português dizemos \"Eu quero um café\" no balcão sem problema, mas em inglês *I want a coffee* soa grosseiro. Diga *I'd like a coffee, please* ou *Could I have a coffee, please?* E não esqueça o to antes do verbo: não diga *I'd like open an account* → diga *I'd like to open an account*.",
+        "exemplos": [
+          { "en": "Can I pay by card? — Yes, of course.", "pt": "Posso pagar com cartão? — Sim, claro." },
+          { "en": "May I use your phone?", "pt": "Posso usar seu telefone?" },
+          { "en": "I'd like a coffee, please.", "pt": "Eu gostaria de um café, por favor." },
+          { "en": "I'd like to open an account.", "pt": "Eu gostaria de abrir uma conta." },
+          { "en": "Could I have the check, please?", "pt": "Pode me trazer a conta, por favor?" },
+          { "en": "I'd like to send this package to Chile.", "pt": "Eu gostaria de mandar este pacote para o Chile." },
+          { "en": "Can I see your ID, please?", "pt": "Posso ver seu documento, por favor?" },
+          { "en": "I'd like to exchange some dollars.", "pt": "Eu gostaria de trocar alguns dólares." }
+        ],
+        "vocabulario": [
+          { "en": "pay by card / pay in cash", "pt": "pagar com cartão / em dinheiro" },
+          { "en": "the check", "pt": "a conta (do restaurante)" },
+          { "en": "open an account", "pt": "abrir uma conta" },
+          { "en": "withdraw money", "pt": "sacar dinheiro" },
+          { "en": "exchange money", "pt": "trocar dinheiro" },
+          { "en": "send a package", "pt": "mandar um pacote" },
+          { "en": "stamp", "pt": "selo" },
+          { "en": "ID", "pt": "documento de identidade" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido de permissão.", "conteudo": { "texto": "___ I pay by card? — Yes, of course.", "opcoes": ["Do", "Can", "Am", "Does"] }, "gabarito": { "correta": 1 }, "explicacao": "Pedir permissão: Can I + verbo base? Can I pay by card?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha o jeito mais educado de pedir no balcão.", "conteudo": { "opcoes": ["I want a coffee.", "Give me a coffee.", "I'd like a coffee, please.", "Coffee."] }, "gabarito": { "correta": 2 }, "explicacao": "I'd like... please é educado. I want soa exigente com atendentes.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com a forma correta do verbo entre parênteses.", "conteudo": { "texto": "I'd like ___ (send) this package to Chile." }, "gabarito": { "respostas": [["to send"]] }, "explicacao": "I'd like + to + verbo: I'd like to send.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete o pedido com uma palavra.", "conteudo": { "texto": "___ I have the check, please?" }, "gabarito": { "respostas": [["Could", "Can", "May"]] }, "explicacao": "Could I have...? (ou Can I / May I have...?) pede algo com educação.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.", "conteudo": { "texto": "At the bank: I'd like to ___ some money from my account. — Sure. Can I see your ___, please?", "opcoesPorLacuna": [["withdraw", "borrow", "stamp"], ["key", "ID", "stamp"]] }, "gabarito": { "respostas": [["withdraw"], ["ID"]] }, "explicacao": "Withdraw money = sacar dinheiro. No banco, pedem seu ID (documento).", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["would", "an", "account", "I", "open", "to", "like"] }, "gabarito": { "aceitas": ["I would like to open an account."] }, "explicacao": "I + would like + to + open + an account.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada expressão à tradução.", "conteudo": { "esquerda": ["withdraw money", "send a package", "stamp", "open an account", "the check"], "direita": ["selo", "a conta (do restaurante)", "sacar dinheiro", "abrir uma conta", "mandar um pacote"] }, "gabarito": { "pares": [2, 4, 0, 3, 1] }, "explicacao": "Vocabulário de banco, correios e restaurante.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I'd like open a bank account." }, "gabarito": { "aceitas": ["I'd like to open a bank account."] }, "explicacao": "Falta o to: I'd like to open...", "tagsErro": ["pedido_educado"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Posso pagar com cartão?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Can I pay by card?", "Could I pay by card?", "May I pay by card?", "Can I pay with a card?", "Could I pay with a card?", "May I pay with a card?", "Can I pay with card?", "Can I pay with my card?", "Could I pay with my card?", "Can I pay by credit card?", "Can I pay with a credit card?"] }, "explicacao": "Posso...? = Can I...? Pagar com cartão = pay by card.", "tagsErro": ["pedido_educado", "preposicao"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu gostaria de mandar esta carta para o Chile.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I would like to send this letter to Chile.", "I would like to mail this letter to Chile."] }, "explicacao": "Eu gostaria de = I'd like to. Mandar uma carta = send (ou mail) a letter.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido de permissão.", "conteudo": { "texto": "Excuse me, ___ I use your phone? Mine is dead.", "opcoes": ["do", "will", "must", "may"] }, "gabarito": { "correta": 3 }, "explicacao": "Pedido de permissão formal: May I use...?", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "I'd like ___ exchange some dollars, please." }, "gabarito": { "respostas": [["to"]] }, "explicacao": "I'd like + to + verbo: I'd like to exchange.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte o pedido.", "conteudo": { "palavras": ["have", "Could", "check", "the", "I"] }, "gabarito": { "aceitas": ["Could I have the check?"] }, "explicacao": "Could + I + have + the check?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu gostaria de um café, por favor.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I would like a coffee, please.", "I would like a coffee please.", "I would like some coffee, please.", "I would like some coffee please.", "Could I have a coffee, please?", "Could I have a coffee please?", "Can I have a coffee, please?", "Can I have a coffee please?"] }, "explicacao": "Pedido educado: I'd like a coffee, please.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro do pedido.", "conteudo": { "frase": "Can I to see the menu, please?" }, "gabarito": { "aceitas": ["Can I see the menu, please?", "Can I see the menu please?"] }, "explicacao": "Depois de can não vem to: Can I see...?", "tagsErro": ["pedido_educado"] }
+      ]
+    },
+    {
+      "slug": "a2-m07-l4",
+      "ordem": 4,
+      "titulo": "I'd like to book a room",
+      "objetivo": "Reservar um quarto de hotel, falar do tipo de quarto, do check-in e do check-out e fazer pedidos na recepção.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No hotel, você vai até a front desk (recepção). Para reservar, diga: I'd like to book a room (Eu gostaria de reservar um quarto). Book = reservar; reservation = reserva. O recepcionista pode perguntar: Do you have a reservation? (O senhor tem reserva?)",
+          "Tipos de quarto: a single room (para uma pessoa), a double room (de casal), for two nights (por duas noites). Check in = fazer o check-in (chegar); check out = fazer o check-out (sair). What time is check-out? (A que horas é o check-out?)",
+          "Pedidos comuns: Is breakfast included? (O café da manhã está incluído?) Could I have a wake-up call at seven? (Poderia me acordar às sete?) O recepcionista entrega o key card (cartão-chave) e explica: The elevator is on the left (O elevador fica à esquerda).",
+          "Para reclamar com educação: The air conditioner isn't working. Could you send someone, please? E o funcionário oferece ajuda com will: I'll send someone right away (Vou mandar alguém agora mesmo)."
+        ],
+        "regras": [
+          "book a room = reservar um quarto",
+          "a single room / a double room for two nights",
+          "check in / check out",
+          "Is breakfast included?",
+          "Could I have a wake-up call at seven?",
+          "front desk = recepção; elevator = elevador; key card = cartão-chave"
+        ],
+        "notaContrastiva": "Reserve é verbo; o substantivo é reservation: não diga *I have a reserve* → diga *I have a reservation*. E *single room* não é um quarto \"simples\": é um quarto para uma pessoa.",
+        "exemplos": [
+          { "en": "I'd like to book a room for two nights.", "pt": "Eu gostaria de reservar um quarto por duas noites." },
+          { "en": "Do you have a reservation? — Yes, my name is Paulo Lima.", "pt": "O senhor tem reserva? — Sim, meu nome é Paulo Lima." },
+          { "en": "A single room, please.", "pt": "Um quarto para uma pessoa, por favor." },
+          { "en": "Is breakfast included?", "pt": "O café da manhã está incluído?" },
+          { "en": "What time is check-out?", "pt": "A que horas é o check-out?" },
+          { "en": "Here's your key card. The elevator is on the left.", "pt": "Aqui está seu cartão-chave. O elevador fica à esquerda." },
+          { "en": "Could I have a wake-up call at seven?", "pt": "Poderia me acordar às sete?" },
+          { "en": "The air conditioner isn't working. — I'll send someone right away.", "pt": "O ar-condicionado não está funcionando. — Vou mandar alguém agora mesmo." }
+        ],
+        "vocabulario": [
+          { "en": "book", "pt": "reservar" },
+          { "en": "reservation", "pt": "reserva" },
+          { "en": "single room / double room", "pt": "quarto para uma pessoa / quarto de casal" },
+          { "en": "front desk", "pt": "recepção" },
+          { "en": "key card", "pt": "cartão-chave" },
+          { "en": "elevator", "pt": "elevador" },
+          { "en": "wake-up call", "pt": "ligação para acordar" },
+          { "en": "included", "pt": "incluído" },
+          { "en": "air conditioner", "pt": "ar-condicionado" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "Good evening. I'd like to ___ a room for two nights.", "opcoes": ["borrow", "book", "buy", "bring"] }, "gabarito": { "correta": 1 }, "explicacao": "Reservar um quarto = book a room.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "A room for one person is a ___ room.", "opcoes": ["single", "double", "family", "big"] }, "gabarito": { "correta": 0 }, "explicacao": "Single room = quarto para uma pessoa. Double room = quarto de casal.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Do you have a ___? — Yes, my name is Paulo Lima." }, "gabarito": { "respostas": [["reservation", "booking"]] }, "explicacao": "Reserva = reservation (ou booking). Reserve é o verbo.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "What time is check-___? — It's at noon. You need to leave the room before twelve." }, "gabarito": { "respostas": [["out"]] }, "explicacao": "Sair do hotel = check out. Chegar = check in.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.", "conteudo": { "texto": "Is breakfast ___? — Yes, it's from seven to ten in the restaurant. Here is your ___ card.", "opcoesPorLacuna": [["included", "including", "include"], ["key", "post", "phone"]] }, "gabarito": { "respostas": [["included"], ["key"]] }, "explicacao": "Is breakfast included? = o café está incluído? Key card = cartão-chave.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["a", "I", "book", "to", "room", "would", "like"] }, "gabarito": { "aceitas": ["I would like to book a room."] }, "explicacao": "I + would like + to + book + a room.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada palavra à tradução.", "conteudo": { "esquerda": ["front desk", "elevator", "key card", "wake-up call", "single room", "check out"], "direita": ["quarto para uma pessoa", "cartão-chave", "recepção", "fazer o check-out", "elevador", "ligação para acordar"] }, "gabarito": { "pares": [2, 4, 1, 5, 0, 3] }, "explicacao": "Vocabulário de hotel: front desk, elevator, key card, wake-up call.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I have a reserve for two nights." }, "gabarito": { "aceitas": ["I have a reservation for two nights.", "I have a booking for two nights."] }, "explicacao": "O substantivo é reservation (ou booking); reserve é verbo.", "tagsErro": ["vocabulario_servicos", "falso_cognato"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "O café da manhã está incluído?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Is breakfast included?", "Is the breakfast included?", "Is breakfast included in the price?"] }, "explicacao": "Is breakfast included? Em inglês, café da manhã costuma vir sem artigo.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "O ar-condicionado não está funcionando.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["The air conditioner is not working.", "The air conditioning is not working.", "The AC is not working.", "The A/C is not working.", "The air conditioner does not work.", "The air conditioning does not work."] }, "explicacao": "Não está funcionando = isn't working (present continuous para o problema de agora).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "The air conditioner isn't working. — I'm sorry. I ___ send someone right away.", "opcoes": ["am", "will", "going", "did"] }, "gabarito": { "correta": 1 }, "explicacao": "Oferta na hora: I'll (I will) send someone.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com a expressão que falta.", "conteudo": { "texto": "Could I have a ___ call at six thirty, please? I have an early flight." }, "gabarito": { "respostas": [["wake-up", "wake up", "wakeup"]] }, "explicacao": "Wake-up call = ligação do hotel para acordar o hóspede.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["included", "Is", "breakfast"] }, "gabarito": { "aceitas": ["Is breakfast included?"] }, "explicacao": "Is + breakfast + included?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu gostaria de um quarto de casal.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I would like a double room.", "I would like a double room, please.", "I would like a double room please.", "I would like to book a double room.", "Could I have a double room?", "Could I have a double room, please?", "Could I have a double room please?", "Can I have a double room?", "Can I have a double room, please?"] }, "explicacao": "Quarto de casal = double room. Eu gostaria de = I'd like.", "tagsErro": ["pedido_educado", "vocabulario_servicos"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro do pedido.", "conteudo": { "frase": "Could you to call a taxi for me?" }, "gabarito": { "aceitas": ["Could you call a taxi for me?", "Could you call me a taxi?"] }, "explicacao": "Depois de could não vem to: Could you call a taxi for me?", "tagsErro": ["pedido_educado"] }
+      ]
+    },
+    {
+      "slug": "a2-m07-l5",
+      "ordem": 5,
+      "titulo": "A round-trip ticket, please",
+      "objetivo": "Comprar passagens e entender avisos de estação e aeroporto: só ida ou ida e volta, plataforma, portão, atraso, assento e cartão de embarque.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Na bilheteria (ticket office) da rodoviária ou da estação de trem: I'd like a one-way ticket to Boston (passagem só de ida) ou a round-trip ticket (ida e volta). What time does the next bus leave? (A que horas sai o próximo ônibus?)",
+          "Plataforma é platform (no trem) e portão de embarque é gate (no aeroporto): The train leaves from platform 4. Your flight boards at gate 12. Departure = partida; arrival = chegada; delay = atraso. The flight is delayed (O voo está atrasado).",
+          "No check-in do aeroporto: Can I see your passport, please? Do you have any bags to check? (Tem malas para despachar?) Would you like a window or an aisle seat? (Janela ou corredor?) Here's your boarding pass (Aqui está seu cartão de embarque).",
+          "Para decidir na hora, use will: I'll take the window seat. I'll take the next bus. E para pedir informação com educação: Could you tell me where gate 12 is?"
+        ],
+        "regras": [
+          "a one-way ticket = só ida; a round-trip ticket = ida e volta",
+          "platform (trem) / gate (avião)",
+          "departure / arrival / delay",
+          "The flight is delayed. = O voo está atrasado.",
+          "a window seat / an aisle seat",
+          "boarding pass = cartão de embarque; check a bag = despachar uma mala"
+        ],
+        "notaContrastiva": "\"Perder o voo\" é *miss*, não *lose*: não diga *I lost my flight* → diga *I missed my flight*. E \"despachar a mala\" é *check a bag*: não diga *dispatch a bag*.",
+        "exemplos": [
+          { "en": "I'd like a round-trip ticket to Boston, please.", "pt": "Eu gostaria de uma passagem de ida e volta para Boston, por favor." },
+          { "en": "What time does the next bus leave?", "pt": "A que horas sai o próximo ônibus?" },
+          { "en": "The train leaves from platform 4.", "pt": "O trem sai da plataforma 4." },
+          { "en": "Our flight is delayed.", "pt": "Nosso voo está atrasado." },
+          { "en": "Do you have any bags to check?", "pt": "Você tem malas para despachar?" },
+          { "en": "Would you like a window or an aisle seat?", "pt": "Você prefere janela ou corredor?" },
+          { "en": "Here's your boarding pass. You board at gate 12.", "pt": "Aqui está seu cartão de embarque. Você embarca no portão 12." },
+          { "en": "I missed my flight because of the traffic.", "pt": "Perdi meu voo por causa do trânsito." }
+        ],
+        "vocabulario": [
+          { "en": "ticket office", "pt": "bilheteria" },
+          { "en": "one-way ticket", "pt": "passagem só de ida" },
+          { "en": "round-trip ticket", "pt": "passagem de ida e volta" },
+          { "en": "platform", "pt": "plataforma" },
+          { "en": "gate", "pt": "portão de embarque" },
+          { "en": "departure / arrival", "pt": "partida / chegada" },
+          { "en": "delayed", "pt": "atrasado" },
+          { "en": "aisle seat / window seat", "pt": "assento no corredor / na janela" },
+          { "en": "boarding pass", "pt": "cartão de embarque" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "I'm coming back on Sunday, so I'd like a ___ ticket, please.", "opcoes": ["one-way", "round-trip", "boarding", "window"] }, "gabarito": { "correta": 1 }, "explicacao": "Vai e volta: round-trip ticket (ida e volta).", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "Excuse me, which ___ does the train to Chicago leave from? — Number 4.", "opcoes": ["platform", "gate", "door", "seat"] }, "gabarito": { "correta": 0 }, "explicacao": "Trem sai da platform (plataforma). Gate é o portão de embarque no aeroporto.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Our flight is ___. It's going to leave two hours late." }, "gabarito": { "respostas": [["delayed", "late"]] }, "explicacao": "Voo atrasado = delayed flight. The flight is delayed.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Would you like a window or an ___ seat? — Window, please." }, "gabarito": { "respostas": [["aisle"]] }, "explicacao": "Aisle seat = assento no corredor. Repare: an aisle, porque aisle começa com som de vogal.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a palavra certa para cada lacuna.", "conteudo": { "texto": "Do you have any bags to ___? — Yes, this suitcase. — OK. Here's your boarding ___. Your flight leaves from gate 9.", "opcoesPorLacuna": [["check", "send", "dispatch"], ["pass", "paper", "letter"]] }, "gabarito": { "respostas": [["check"], ["pass"]] }, "explicacao": "Despachar a mala = check a bag. Cartão de embarque = boarding pass.", "tagsErro": ["vocabulario_servicos", "falso_cognato"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["ticket", "a", "I", "one-way", "would", "like"] }, "gabarito": { "aceitas": ["I would like a one-way ticket."] }, "explicacao": "I + would like + a + one-way ticket.", "tagsErro": ["pedido_educado"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada palavra à tradução.", "conteudo": { "esquerda": ["departure", "arrival", "delay", "gate", "aisle seat", "boarding pass"], "direita": ["portão de embarque", "cartão de embarque", "chegada", "partida", "assento no corredor", "atraso"] }, "gabarito": { "pares": [3, 2, 5, 0, 4, 1] }, "explicacao": "Palavras dos painéis de aeroporto e estação.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I lost my flight because of the traffic." }, "gabarito": { "aceitas": ["I missed my flight because of the traffic.", "I missed the flight because of the traffic."] }, "explicacao": "Perder o voo, o ônibus ou o trem = miss. Lose é perder um objeto.", "tagsErro": ["falso_cognato"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu gostaria de uma passagem de ida e volta para Boston.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I would like a round-trip ticket to Boston.", "I would like a round trip ticket to Boston.", "I would like a round-trip ticket to Boston, please.", "I would like a round-trip ticket to Boston please.", "I would like a return ticket to Boston.", "Could I have a round-trip ticket to Boston?", "Can I have a round-trip ticket to Boston?"] }, "explicacao": "Ida e volta = round-trip. Passagem para Boston = a ticket to Boston.", "tagsErro": ["pedido_educado", "vocabulario_servicos"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "O voo está atrasado.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["The flight is delayed.", "The flight is late.", "The flight has been delayed.", "Our flight is delayed.", "The plane is delayed.", "The plane is late."] }, "explicacao": "Atrasado = delayed (ou late).", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a resposta com a decisão tomada na hora.", "conteudo": { "texto": "Window or aisle seat?", "opcoes": ["I take the aisle.", "I took the window.", "I'm going to take a trip.", "I'll take the window seat, please."] }, "gabarito": { "correta": 3 }, "explicacao": "Decisão na hora: I'll take the window seat.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "What time does the next bus to Austin ___? — At ten fifteen." }, "gabarito": { "respostas": [["leave", "depart", "go"]] }, "explicacao": "What time does the bus leave? (A que horas o ônibus sai?) Depois de does, o verbo fica na forma base.", "tagsErro": ["do_support"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["delayed", "is", "train", "Our"] }, "gabarito": { "aceitas": ["Our train is delayed."] }, "explicacao": "Our train + is + delayed.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você poderia me dizer onde fica o portão 12?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Could you tell me where gate 12 is?", "Could you tell me where gate twelve is?", "Could you please tell me where gate 12 is?", "Can you tell me where gate 12 is?", "Can you tell me where gate twelve is?", "Can you please tell me where gate 12 is?", "Would you tell me where gate 12 is?"] }, "explicacao": "Could you tell me where gate 12 is? Depois de tell me where, a ordem é de frase afirmativa: gate 12 is.", "tagsErro": ["pedido_educado", "ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.", "conteudo": { "frase": "Do you have any bags to dispatch?" }, "gabarito": { "aceitas": ["Do you have any bags to check?"] }, "explicacao": "Despachar a mala = check a bag.", "tagsErro": ["falso_cognato"] }
+      ]
+    },
+    {
+      "slug": "a2-m07-l6",
+      "ordem": 6,
+      "titulo": "At the front desk",
+      "objetivo": "Entender e usar um diálogo completo de hotel: chegada, reserva, documentos, café da manhã, quarto e pedidos.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Nesta lição juntamos tudo num diálogo de hotel. Receptionist: Good evening! How can I help you? — Guest: Hi. I have a reservation. My name is Clara Souza. — Receptionist: Let me check... Yes, a double room for three nights. Could I see your passport, please? — Guest: Sure, here you are. Is breakfast included? — Receptionist: Yes, it is. It's from six thirty to ten. Here's your key card. Your room is on the fifth floor, and the elevator is on the right. — Guest: Thank you. Could I have a wake-up call at seven? — Receptionist: Of course. I'll call you at seven. Enjoy your stay!",
+          "Repare nas frases-chave: How can I help you? (Como posso ajudar?), Let me check (Deixe-me verificar), Here you are (Aqui está, ao entregar algo), Enjoy your stay! (Aproveite a estadia!).",
+          "A hóspede pede com Could I...? e Could you...?, e o recepcionista promete com will: I'll call you at seven. Andar do prédio é floor, sempre com on: on the fifth floor."
+        ],
+        "regras": [
+          "How can I help you? / Can I help you?",
+          "Let me check. = Deixe-me verificar.",
+          "Here you are. = Aqui está.",
+          "Could I see your passport, please?",
+          "Your room is on the fifth floor.",
+          "Enjoy your stay! = Aproveite a estadia!"
+        ],
+        "notaContrastiva": "Andar do prédio pede on: não diga *my room is in the fifth floor* → diga *on the fifth floor*. E ao entregar algo, não diga só *Here is.* → diga *Here you are.* ou *Here it is.*",
+        "exemplos": [
+          { "en": "Good evening! How can I help you?", "pt": "Boa noite! Como posso ajudar?" },
+          { "en": "I have a reservation. My name is Clara Souza.", "pt": "Eu tenho uma reserva. Meu nome é Clara Souza." },
+          { "en": "Let me check.", "pt": "Deixe-me verificar." },
+          { "en": "Could I see your passport, please? — Sure, here you are.", "pt": "Posso ver seu passaporte, por favor? — Claro, aqui está." },
+          { "en": "Your room is on the fifth floor.", "pt": "Seu quarto fica no quinto andar." },
+          { "en": "The elevator is on the right.", "pt": "O elevador fica à direita." },
+          { "en": "I'll call you at seven.", "pt": "Eu ligo para você às sete." },
+          { "en": "Enjoy your stay!", "pt": "Aproveite a estadia!" }
+        ],
+        "vocabulario": [
+          { "en": "receptionist", "pt": "recepcionista" },
+          { "en": "guest", "pt": "hóspede" },
+          { "en": "Let me check.", "pt": "Deixe-me verificar." },
+          { "en": "Here you are.", "pt": "Aqui está." },
+          { "en": "floor", "pt": "andar" },
+          { "en": "stay", "pt": "estadia" },
+          { "en": "passport", "pt": "passaporte" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia o diálogo. Que quarto o hóspede pede?", "conteudo": { "texto": "Receptionist: Good afternoon! How can I help you?\nGuest: Hi. I'd like a single room for tonight, please.\nReceptionist: Let me check... Yes, we have one. It's on the third floor.\nGuest: Great. Is breakfast included?\nReceptionist: I'm afraid it isn't, but there's a nice café next door.\nGuest: OK. Could you call a taxi for me at eight tomorrow?\nReceptionist: Sure. I'll call one for you. Here's your key card. Enjoy your stay!", "opcoes": ["Um quarto de casal por duas noites.", "Um quarto para uma pessoa, só para hoje.", "Um quarto no oitavo andar.", "Um quarto com café da manhã."] }, "gabarito": { "correta": 1 }, "explicacao": "\"I'd like a single room for tonight.\" Single room = para uma pessoa; for tonight = só esta noite." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia o diálogo. O café da manhã está incluído?", "conteudo": { "texto": "Receptionist: Good afternoon! How can I help you?\nGuest: Hi. I'd like a single room for tonight, please.\nReceptionist: Let me check... Yes, we have one. It's on the third floor.\nGuest: Great. Is breakfast included?\nReceptionist: I'm afraid it isn't, but there's a nice café next door.\nGuest: OK. Could you call a taxi for me at eight tomorrow?\nReceptionist: Sure. I'll call one for you. Here's your key card. Enjoy your stay!", "opcoes": ["Sim, das sete às dez.", "Sim, no café ao lado.", "Não, mas há um café ao lado.", "Só para hóspedes de quarto de casal."] }, "gabarito": { "correta": 2 }, "explicacao": "\"I'm afraid it isn't, but there's a nice café next door.\" I'm afraid it isn't = infelizmente não está." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia o diálogo. O que o recepcionista promete fazer?", "conteudo": { "texto": "Receptionist: Good afternoon! How can I help you?\nGuest: Hi. I'd like a single room for tonight, please.\nReceptionist: Let me check... Yes, we have one. It's on the third floor.\nGuest: Great. Is breakfast included?\nReceptionist: I'm afraid it isn't, but there's a nice café next door.\nGuest: OK. Could you call a taxi for me at eight tomorrow?\nReceptionist: Sure. I'll call one for you. Here's your key card. Enjoy your stay!", "opcoes": ["Chamar um táxi para o hóspede.", "Trocar o quarto.", "Levar as malas.", "Servir o café no quarto."] }, "gabarito": { "correta": 0 }, "explicacao": "\"Could you call a taxi for me?\" — \"Sure. I'll call one for you.\" Promessa com will.", "tagsErro": ["will_decisao"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Could I see your passport, please? — Sure. Here you ___." }, "gabarito": { "respostas": [["are"]] }, "explicacao": "Ao entregar algo: Here you are (Aqui está)." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a preposição certa para cada lacuna.", "conteudo": { "texto": "Your room is ___ the fifth floor. The elevator is ___ the right.", "opcoesPorLacuna": [["on", "in", "at"], ["on", "in", "at"]] }, "gabarito": { "respostas": [["on"], ["on"]] }, "explicacao": "On the fifth floor (andar) e on the right (à direita).", "tagsErro": ["preposicao"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["your", "Enjoy", "stay"] }, "gabarito": { "aceitas": ["Enjoy your stay!"] }, "explicacao": "Enjoy your stay! = Aproveite a estadia!" },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada frase à tradução.", "conteudo": { "esquerda": ["Here you are.", "Let me check.", "Enjoy your stay!", "How can I help you?", "I'll call you at seven."], "direita": ["Como posso ajudar?", "Deixe-me verificar.", "Eu ligo para você às sete.", "Aqui está.", "Aproveite a estadia!"] }, "gabarito": { "pares": [3, 1, 4, 0, 2] }, "explicacao": "Frases típicas da recepção de um hotel." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My room is in the fifth floor." }, "gabarito": { "aceitas": ["My room is on the fifth floor."] }, "explicacao": "Andar do prédio pede on: on the fifth floor.", "tagsErro": ["preposicao"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu tenho uma reserva. Meu nome é Clara Souza.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I have a reservation. My name is Clara Souza.", "I have a booking. My name is Clara Souza.", "I have a reservation, my name is Clara Souza.", "I have a reservation. I am Clara Souza."] }, "explicacao": "Reserva = reservation (ou booking).", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você poderia chamar um táxi para mim?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Could you call a taxi for me?", "Could you call me a taxi?", "Could you please call a taxi for me?", "Could you call a taxi for me, please?", "Could you call a taxi for me please?", "Could you get me a taxi?", "Can you call a taxi for me?", "Can you call me a taxi?", "Can you call a taxi for me, please?", "Can you call a taxi for me please?", "Would you call a taxi for me?"] }, "explicacao": "Você poderia...? = Could you...? Chamar um táxi para mim = call a taxi for me (ou call me a taxi).", "tagsErro": ["pedido_educado"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Guest: The TV in my room isn't working. Receptionist: I'm sorry. I ___ someone up right away.", "opcoes": ["send", "sent", "will send", "sending"] }, "gabarito": { "correta": 2 }, "explicacao": "Oferta na hora: I'll (I will) send someone.", "tagsErro": ["will_decisao"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Good evening! How can I ___ you?" }, "gabarito": { "respostas": [["help"]] }, "explicacao": "How can I help you? = Como posso ajudar?" },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["check", "me", "Let"] }, "gabarito": { "aceitas": ["Let me check."] }, "explicacao": "Let me check = Deixe-me verificar." },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Aqui está o seu cartão-chave.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Here is your key card.", "Here is your keycard.", "Here is your key."] }, "explicacao": "Aqui está = Here is (Here's). Cartão-chave = key card.", "tagsErro": ["vocabulario_servicos"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro do pedido.", "conteudo": { "frase": "Could I have a wake-up call in seven, please?" }, "gabarito": { "aceitas": ["Could I have a wake-up call at seven, please?", "Could I have a wake-up call at seven please?", "Could I have a wake up call at seven, please?", "Could I have a wake up call at seven please?"] }, "explicacao": "Horário pede at: at seven.", "tagsErro": ["preposicao"] }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "The phone is ringing! — I ___ get it.", "opcoes": ["am", "do", "will", "going"] }, "gabarito": { "correta": 2 }, "explicacao": "Decisão na hora: I'll (I will) get it.", "tagsErro": ["will_decisao"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido.", "conteudo": { "texto": "___ you help me with this form, please?", "opcoes": ["Could", "Are", "Do", "Shall"] }, "gabarito": { "correta": 0 }, "explicacao": "Pedido educado: Could you help me...?", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com a forma correta do verbo entre parênteses.", "conteudo": { "texto": "I'd like ___ (book) a double room, please." }, "gabarito": { "respostas": [["to book"]] }, "explicacao": "I'd like + to + verbo: I'd like to book.", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "May I ___ your passport, please?", "opcoes": ["seeing", "to see", "see", "saw"] }, "gabarito": { "correta": 2 }, "explicacao": "Depois de may vem o verbo base: May I see...?", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o tipo de passagem.", "conteudo": { "texto": "I'm coming back next week, so I need a ___ ticket." }, "gabarito": { "respostas": [["round-trip", "round trip", "return"]] }, "explicacao": "Ida e volta = round-trip ticket.", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "Your flight boards at ___ 14.", "opcoes": ["platform", "gate", "floor", "station"] }, "gabarito": { "correta": 1 }, "explicacao": "No aeroporto, o portão de embarque é o gate.", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com a forma negativa de will.", "conteudo": { "texto": "Don't worry, I ___ forget. I promise!" }, "gabarito": { "respostas": [["won't", "will not"]] }, "explicacao": "Promessa: I won't (= will not) forget.", "tagsErro": ["will_decisao", "negativa"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a resposta.", "conteudo": { "texto": "Can I pay by card? — I'm ___, we only take cash.", "opcoes": ["afraid", "scared", "worried", "happy"] }, "gabarito": { "correta": 0 }, "explicacao": "I'm afraid... = infelizmente... É o jeito educado de dar uma resposta negativa.", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "Is breakfast ___? — Yes, it's in the price of the room." }, "gabarito": { "respostas": [["included"]] }, "explicacao": "Is breakfast included? = o café da manhã está incluído?", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "Our train is ___. It's going to arrive an hour late.", "opcoes": ["lost", "missed", "delayed", "early"] }, "gabarito": { "correta": 2 }, "explicacao": "Atrasado = delayed.", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. Por quantas noites é a reserva?", "conteudo": { "texto": "Dear Mr. Costa,\nThank you for your reservation at the Lakeview Hotel. You have a double room for two nights, from May 10 to May 12. Check-in is at 3 p.m. and check-out is at 11 a.m. Breakfast is included and is served in the garden restaurant. The hotel has free Wi-Fi, but parking is not free. We will be happy to call a taxi for you from the airport.\nBest regards,\nAnna Miller, Front Desk", "opcoes": ["Uma noite.", "Duas noites.", "Três noites.", "Uma semana."] }, "gabarito": { "correta": 1 }, "explicacao": "\"You have a double room for two nights, from May 10 to May 12.\"" },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o e-mail. O que NÃO é grátis no hotel?", "conteudo": { "texto": "Dear Mr. Costa,\nThank you for your reservation at the Lakeview Hotel. You have a double room for two nights, from May 10 to May 12. Check-in is at 3 p.m. and check-out is at 11 a.m. Breakfast is included and is served in the garden restaurant. The hotel has free Wi-Fi, but parking is not free. We will be happy to call a taxi for you from the airport.\nBest regards,\nAnna Miller, Front Desk", "opcoes": ["O café da manhã.", "O Wi-Fi.", "O estacionamento.", "O check-in."] }, "gabarito": { "correta": 2 }, "explicacao": "\"The hotel has free Wi-Fi, but parking is not free.\" O café da manhã está incluído na reserva." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o diálogo. Que passagem a mulher compra?", "conteudo": { "texto": "Woman: Hi. I'd like a one-way ticket to Philadelphia, please.\nClerk: Sure. The next train leaves at 10:40 from platform 6. But I'm afraid it's delayed twenty minutes.\nWoman: Oh, no. Is there a later train?\nClerk: Yes, there's one at 12:15.\nWoman: OK, I'll take the 10:40 train anyway. Can I pay by card?\nClerk: Of course.", "opcoes": ["Ida e volta para Filadélfia.", "Ida e volta para Nova York.", "Duas passagens só de ida.", "Só de ida para Filadélfia."] }, "gabarito": { "correta": 3 }, "explicacao": "\"I'd like a one-way ticket to Philadelphia.\" One-way = só de ida." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o diálogo. Qual problema o atendente menciona?", "conteudo": { "texto": "Woman: Hi. I'd like a one-way ticket to Philadelphia, please.\nClerk: Sure. The next train leaves at 10:40 from platform 6. But I'm afraid it's delayed twenty minutes.\nWoman: Oh, no. Is there a later train?\nClerk: Yes, there's one at 12:15.\nWoman: OK, I'll take the 10:40 train anyway. Can I pay by card?\nClerk: Of course.", "opcoes": ["O trem está atrasado.", "A plataforma mudou.", "Não aceitam cartão.", "Não há mais passagens."] }, "gabarito": { "correta": 0 }, "explicacao": "\"I'm afraid it's delayed twenty minutes.\" O trem está 20 minutos atrasado." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["call", "you", "I", "back", "will", "later"] }, "gabarito": { "aceitas": ["I will call you back later.", "Later I will call you back."] }, "explicacao": "Promessa com will: I will call you back later.", "tagsErro": ["will_decisao"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Posso ver o cardápio, por favor?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Can I see the menu, please?", "Can I see the menu please?", "Can I please see the menu?", "Could I see the menu, please?", "Could I see the menu please?", "Could I please see the menu?", "May I see the menu, please?", "May I see the menu please?", "Can I have the menu, please?", "Can I have the menu please?", "Could I have the menu, please?", "Could I have the menu please?"] }, "explicacao": "Posso...? = Can I / Could I / May I...? Cardápio = menu.", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I'd like send this package to Peru." }, "gabarito": { "aceitas": ["I'd like to send this package to Peru."] }, "explicacao": "Falta o to: I'd like to send...", "tagsErro": ["pedido_educado"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês (você decidiu agora, na loja).", "conteudo": { "frase": "Eu vou levar a azul.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I will take the blue one.", "I will take the blue one, please.", "I will take the blue one please.", "I will get the blue one.", "I will buy the blue one.", "I will take the blue.", "I am going to take the blue one."] }, "explicacao": "Decisão tomada na hora: I'll take the blue one.", "tagsErro": ["will_decisao"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a frase.", "conteudo": { "texto": "We don't have any bread. — Oh, I ___ buy some on my way home.", "opcoes": ["am", "will", "did", "going"] }, "gabarito": { "correta": 1 }, "explicacao": "Decisão na hora: I'll (I will) buy some.", "tagsErro": ["will_decisao"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra que completa o pedido.", "conteudo": { "texto": "Excuse me, ___ you tell me where the bank is?", "opcoes": ["are", "do", "could", "shall"] }, "gabarito": { "correta": 2 }, "explicacao": "Pedido educado: Could you tell me...?", "tagsErro": ["pedido_educado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com a forma correta do verbo entre parênteses.", "conteudo": { "texto": "I'd like ___ (open) an account, please." }, "gabarito": { "respostas": [["to open"]] }, "explicacao": "I'd like + to + verbo: I'd like to open.", "tagsErro": ["pedido_educado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Could I ___ the check, please?", "opcoes": ["have", "having", "to have", "had"] }, "gabarito": { "correta": 0 }, "explicacao": "Depois de could vem o verbo base: Could I have...?", "tagsErro": ["pedido_educado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o tipo de passagem.", "conteudo": { "texto": "I'm not coming back, so I only need a ___ ticket." }, "gabarito": { "respostas": [["one-way", "one way", "single"]] }, "explicacao": "Só de ida = one-way ticket.", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "The train to Boston leaves from ___ 3.", "opcoes": ["gate", "seat", "platform", "floor"] }, "gabarito": { "correta": 2 }, "explicacao": "Trem sai da platform (plataforma).", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "I'm busy now, but I ___ call you back in ten minutes." }, "gabarito": { "respostas": [["will"]] }, "explicacao": "Promessa: I will (I'll) call you back.", "tagsErro": ["will_decisao"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a resposta certa.", "conteudo": { "texto": "Could you close the window? — ___! It's cold in here.", "opcoes": ["I'm afraid", "Not", "Of course", "Never"] }, "gabarito": { "correta": 2 }, "explicacao": "Para aceitar um pedido: Of course! (Claro!)", "tagsErro": ["pedido_educado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com uma palavra.", "conteudo": { "texto": "What time is check-___? — At noon. Please leave your key card at the front desk." }, "gabarito": { "respostas": [["out"]] }, "explicacao": "Sair do hotel = check out.", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a palavra certa.", "conteudo": { "texto": "Would you like a window or an ___ seat?", "opcoes": ["isle", "middle", "door", "aisle"] }, "gabarito": { "correta": 3 }, "explicacao": "Assento no corredor = aisle seat (com an, porque aisle começa com som de vogal).", "tagsErro": ["vocabulario_servicos"] },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o anúncio. Como é o café da manhã no hostel?", "conteudo": { "texto": "Sunny Beach Hostel\nWe have single and double rooms and a big shared room for groups. All rooms have air conditioning. Breakfast is not included, but you can buy it at our café for $8. Check-in is from 2 p.m. and check-out is at 10 a.m. Do you need a taxi from the bus station? Just call us and we'll send one.", "opcoes": ["É grátis.", "Não está incluído, mas pode ser comprado.", "Não existe café da manhã.", "É servido só para grupos."] }, "gabarito": { "correta": 1 }, "explicacao": "\"Breakfast is not included, but you can buy it at our café for $8.\"" },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o anúncio. O que o hostel oferece se você ligar?", "conteudo": { "texto": "Sunny Beach Hostel\nWe have single and double rooms and a big shared room for groups. All rooms have air conditioning. Breakfast is not included, but you can buy it at our café for $8. Check-in is from 2 p.m. and check-out is at 10 a.m. Do you need a taxi from the bus station? Just call us and we'll send one.", "opcoes": ["Um quarto grátis.", "Um café da manhã.", "Um táxi da rodoviária.", "Um passeio na praia."] }, "gabarito": { "correta": 2 }, "explicacao": "\"Do you need a taxi from the bus station? Just call us and we'll send one.\"" },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o diálogo. Que assento o homem recebe?", "conteudo": { "texto": "Agent: Good morning. Can I see your passport, please?\nMan: Here you are.\nAgent: Thank you. Do you have any bags to check?\nMan: Just this suitcase. Could I have a window seat?\nAgent: I'm afraid there are no window seats left. Would you like an aisle seat?\nMan: Sure, that's fine.\nAgent: Here's your boarding pass. You board at gate 22.", "opcoes": ["Janela.", "Meio.", "Primeira classe.", "Corredor."] }, "gabarito": { "correta": 3 }, "explicacao": "Não há mais janelas (\"no window seats left\"), e ele aceita o aisle seat (corredor)." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o diálogo. Quantas malas o homem despacha?", "conteudo": { "texto": "Agent: Good morning. Can I see your passport, please?\nMan: Here you are.\nAgent: Thank you. Do you have any bags to check?\nMan: Just this suitcase. Could I have a window seat?\nAgent: I'm afraid there are no window seats left. Would you like an aisle seat?\nMan: Sure, that's fine.\nAgent: Here's your boarding pass. You board at gate 22.", "opcoes": ["Uma mala.", "Duas malas.", "Nenhuma mala.", "Três malas."] }, "gabarito": { "correta": 0 }, "explicacao": "\"Do you have any bags to check?\" — \"Just this suitcase.\" Só uma mala." },
+      { "forma": 2, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte o pedido.", "conteudo": { "palavras": ["Could", "have", "I", "wake-up", "a", "call"] }, "gabarito": { "aceitas": ["Could I have a wake-up call?"] }, "explicacao": "Could + I + have + a wake-up call?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você poderia repetir, por favor?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Could you repeat that, please?", "Could you repeat that please?", "Could you repeat, please?", "Could you repeat please?", "Could you repeat it, please?", "Could you repeat it please?", "Could you please repeat that?", "Could you say that again, please?", "Could you say that again please?", "Can you repeat that, please?", "Can you repeat that please?", "Can you repeat, please?", "Can you please repeat that?", "Would you repeat that, please?"] }, "explicacao": "Você poderia...? = Could you...? Repetir = repeat (that).", "tagsErro": ["pedido_educado"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My flight is late. I think I will lose my connection." }, "gabarito": { "aceitas": ["My flight is late. I think I will miss my connection.", "My flight is late. I think I am going to miss my connection."] }, "explicacao": "Perder a conexão (o voo seguinte) = miss my connection. Lose é perder um objeto.", "tagsErro": ["falso_cognato"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu te ajudo com a mala.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I will help you with your suitcase.", "I will help you with the suitcase.", "I will help you with your bag.", "I will help you with the bag.", "I can help you with your suitcase.", "I can help you with your bag.", "Let me help you with your suitcase.", "Let me help you with your bag.", "Let me help you with the suitcase.", "Let me help you with the bag."] }, "explicacao": "Oferta de ajuda: I'll help you with your suitcase.", "tagsErro": ["will_decisao"] }
+    ]
+  }
+}

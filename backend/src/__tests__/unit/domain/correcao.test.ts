@@ -54,6 +54,19 @@ describe('corrigir', () => {
     expect(corrigir(i, 'she works in a bank').correto).toBe(true);
   });
 
+  it("reads a pronoun's 's as is or has, and 'd as would or had", () => {
+    const perfeito = item('translate', { frase: 'Ela nunca foi ao Chile.', direcao: 'pt-en' }, { aceitas: ['She has never been to Chile.'] });
+    expect(corrigir(perfeito, "She's never been to Chile").correto).toBe(true);
+    expect(corrigir(perfeito, 'She is never been to Chile').correto).toBe(false);
+
+    const ser = item('translate', { frase: 'Ela é professora.', direcao: 'pt-en' }, { aceitas: ["She's a teacher."] });
+    expect(corrigir(ser, 'She is a teacher').correto).toBe(true);
+    expect(corrigir(ser, 'She has a teacher').correto).toBe(false);
+
+    const gostaria = item('translate', { frase: 'Eu gostaria de um café.', direcao: 'pt-en' }, { aceitas: ['I would like a coffee.'] });
+    expect(corrigir(gostaria, "I'd like a coffee").correto).toBe(true);
+  });
+
   it('word_order', () => {
     const i = item('word_order', { palavras: ['is', 'She', 'a', 'teacher'] }, { aceitas: ['She is a teacher.'] });
     expect(corrigir(i, ['She', 'is', 'a', 'teacher']).correto).toBe(true);
