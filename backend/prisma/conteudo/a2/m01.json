@@ -1,0 +1,424 @@
+{
+  "slug": "a2-m01",
+  "ordem": 1,
+  "titulo": "Routines vs now",
+  "tema": "Rotina, trabalho e o que está acontecendo agora",
+  "descricao": "Falar do trabalho e da rotina e do que está acontecendo agora ou nesta fase: presente simples × present continuous, verbos de estado e perguntas nos dois tempos.",
+  "canDos": [
+    "Dizer o que faço, onde trabalho e como é a minha rotina.",
+    "Contar o que estou fazendo agora e o que está diferente nesta semana ou neste mês.",
+    "Escolher entre o presente simples e o present continuous pelas pistas da frase.",
+    "Usar verbos de estado (like, want, need, know) sem -ing.",
+    "Fazer e responder perguntas com wh- nos dois tempos.",
+    "Escrever uma mensagem curta sobre a minha rotina e a minha fase atual."
+  ],
+  "gramatica": "Presente simples × present continuous; present continuous para situações temporárias (this week, these days, at the moment); verbos de estado; perguntas com wh- e respostas curtas nos dois tempos; posição dos advérbios de frequência.",
+  "vocabulario": "Profissões e locais de trabalho, rotina de trabalho, expressões de tempo (usually, every day, these days, nowadays, this week, at the moment).",
+  "funcao": "Descrever hábitos e rotina, falar do momento atual e de situações temporárias.",
+  "pronuncia": "Terminações -s do presente simples: /s/ (works, starts), /z/ (plays, lives) e /ɪz/ (watches, teaches, uses).",
+  "licoes": [
+    {
+      "slug": "a2-m01-l1",
+      "ordem": 1,
+      "titulo": "What do you do?",
+      "objetivo": "Falar da profissão, do local de trabalho e da rotina com o presente simples e advérbios de frequência.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Para perguntar a profissão de alguém, a forma mais natural em inglês é What do you do? (O que você faz?). A resposta usa o verbo be com a ou an: I'm a nurse. I'm an engineer. Também dá para dizer onde a pessoa trabalha: I work at a bank, She works in a hospital, He works for a tech company (para uma empresa).",
+          "Rotina e trabalho ficam no presente simples. Lembre do -s na terceira pessoa (she works, he teaches, it opens) e de do/does nas perguntas e negativas: Does she work on Saturdays? He doesn't work at night.",
+          "Os advérbios de frequência (always, usually, often, sometimes, never) ficam antes do verbo principal, mas depois do verbo be: I usually start at eight. She is always busy."
+        ],
+        "regras": [
+          "What do you do? = Qual é a sua profissão? / O que você faz?",
+          "I'm a nurse. / I'm an engineer. / I work as a teacher.",
+          "work at / in + lugar: at a bank, in a hospital",
+          "work for + empresa: for a tech company",
+          "she works, he teaches, it opens (+s / +es)",
+          "advérbio + verbo: I usually walk to work.",
+          "be + advérbio: She is always busy."
+        ],
+        "notaContrastiva": "Não traduza O que você faz? como *What are you doing?* (isso é O que você está fazendo agora?) → para profissão, diga *What do you do?*. E não diga *I work like a teacher* → diga *I work as a teacher* ou *I'm a teacher*.",
+        "exemplos": [
+          { "en": "What do you do? — I'm a nurse.", "pt": "O que você faz? — Sou enfermeira." },
+          { "en": "My brother works at a bank downtown.", "pt": "Meu irmão trabalha num banco no centro." },
+          { "en": "She works for a tech company.", "pt": "Ela trabalha para uma empresa de tecnologia." },
+          { "en": "I usually start work at eight.", "pt": "Eu normalmente começo a trabalhar às oito." },
+          { "en": "He never works on Sundays.", "pt": "Ele nunca trabalha aos domingos." },
+          { "en": "Does your mother work on weekends?", "pt": "Sua mãe trabalha nos fins de semana?" },
+          { "en": "Our boss is always busy.", "pt": "Nossa chefe está sempre ocupada." }
+        ],
+        "vocabulario": [
+          { "en": "nurse", "pt": "enfermeiro(a)" },
+          { "en": "chef", "pt": "cozinheiro(a), chef" },
+          { "en": "cashier", "pt": "caixa (pessoa)" },
+          { "en": "mechanic", "pt": "mecânico(a)" },
+          { "en": "engineer", "pt": "engenheiro(a)" },
+          { "en": "salesperson", "pt": "vendedor(a)" },
+          { "en": "office", "pt": "escritório" },
+          { "en": "factory", "pt": "fábrica" },
+          { "en": "garage", "pt": "oficina (de carro)" },
+          { "en": "boss", "pt": "chefe" },
+          { "en": "company", "pt": "empresa" },
+          { "en": "start / finish work", "pt": "começar / terminar o trabalho" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a resposta correta.", "conteudo": { "texto": "— What do you do? — I ___ a nurse.", "opcoes": ["am", "do", "work"] }, "gabarito": { "correta": 0 }, "explicacao": "Para dizer a profissão usamos be + a/an: I am (I'm) a nurse. Com work, seria I work as a nurse.", "tagsErro": ["artigo_profissao"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a preposição correta.", "conteudo": { "texto": "My brother works ___ a big hospital in Recife.", "opcoes": ["at", "on", "to"] }, "gabarito": { "correta": 0 }, "explicacao": "Trabalhar num lugar = work at (ou in) + lugar: works at a big hospital.", "tagsErro": ["preposicao"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no presente simples.", "conteudo": { "texto": "Carla ___ (teach) math at a public school, and she ___ (love) her job." }, "gabarito": { "respostas": [["teaches"], ["loves"]] }, "explicacao": "Carla = she: teach ganha -es (teaches) porque termina em -ch; love ganha só -s (loves).", "tagsErro": ["terceira_pessoa_s", "ortografia_s"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Bruno ___ to work by bus.", "opcoesPorLacuna": [["usually goes", "goes usually", "is usually go"]] }, "gabarito": { "respostas": [["usually goes"]] }, "explicacao": "O advérbio de frequência vem antes do verbo principal: Bruno usually goes to work by bus.", "tagsErro": ["adverbio_frequencia"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra em cada lacuna.", "conteudo": { "texto": "What time ___ your father ___ (start) work?" }, "gabarito": { "respostas": [["does"], ["start"]] }, "explicacao": "Pergunta no presente simples com he/she: What time + does + sujeito + verbo base (start, sem -s).", "tagsErro": ["do_support"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["for", "She", "works", "company", "a", "tech"] }, "gabarito": { "aceitas": ["She works for a tech company."] }, "explicacao": "Trabalhar para uma empresa = work for a company. She → works.", "tagsErro": ["preposicao"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada profissional ao lugar onde trabalha.", "conteudo": { "esquerda": ["A nurse", "A chef", "A teacher", "A cashier", "A mechanic"], "direita": ["works in a kitchen.", "works at a garage.", "works in a hospital.", "works at a school.", "works at a supermarket."] }, "gabarito": { "pares": [2, 0, 3, 4, 1] }, "explicacao": "Nurse → hospital; chef → kitchen (cozinha); teacher → school; cashier → supermarket; mechanic → garage (oficina)." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He goes never to the gym." }, "gabarito": { "aceitas": ["He never goes to the gym."] }, "explicacao": "Never vem antes do verbo principal: He never goes to the gym.", "tagsErro": ["adverbio_frequencia"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Minha irmã trabalha num hospital.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["My sister works at a hospital.", "My sister works in a hospital."] }, "explicacao": "My sister = she → works. Num hospital = at a hospital (ou in a hospital).", "tagsErro": ["terceira_pessoa_s", "preposicao"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês (pergunta sobre a profissão).", "conteudo": { "frase": "O que você faz?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["What do you do?", "What is your job?", "What do you do for a living?", "What is your profession?", "What is your occupation?"] }, "explicacao": "Para perguntar a profissão: What do you do? Não use What are you doing?, que significa O que você está fazendo agora?", "tagsErro": ["do_support", "simples_continuo"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Ana ___ her email every morning.", "opcoes": ["checks", "check", "checking"] }, "gabarito": { "correta": 0 }, "explicacao": "Every morning = rotina → presente simples. Ana = she → checks.", "tagsErro": ["terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "___ your mother work on weekends?" }, "gabarito": { "respostas": [["Does"]] }, "explicacao": "Pergunta no presente simples com your mother (= she): Does + sujeito + verbo base.", "tagsErro": ["do_support"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["usually", "home", "work", "from", "I", "on", "Fridays"] }, "gabarito": { "aceitas": ["I usually work from home on Fridays.", "On Fridays I usually work from home."] }, "explicacao": "Usually vem antes de work. Trabalhar de casa = work from home. On Fridays pode ir no fim ou no começo.", "tagsErro": ["adverbio_frequencia"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ele nunca trabalha aos domingos.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["He never works on Sundays.", "On Sundays he never works.", "On Sundays, he never works."] }, "explicacao": "Never antes do verbo; he → works. Aos domingos = on Sundays.", "tagsErro": ["adverbio_frequencia", "terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My father work in a factory." }, "gabarito": { "aceitas": ["My father works in a factory.", "My father works at a factory."] }, "explicacao": "My father = he → o verbo ganha -s: works.", "tagsErro": ["terceira_pessoa_s"] }
+      ]
+    },
+    {
+      "slug": "a2-m01-l2",
+      "ordem": 2,
+      "titulo": "I'm working from home this week",
+      "objetivo": "Usar o present continuous para situações temporárias: this week, these days, at the moment, nowadays.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No A1 você usou o present continuous para o que está acontecendo agora, neste segundo: I'm eating. Ele também serve para situações temporárias, que valem por um período mas não para sempre: I'm working from home this week. She's studying for an exam these days. They're living with their grandma at the moment.",
+          "As pistas mais comuns são this week, this month, this year, these days, nowadays (hoje em dia), at the moment e right now. A pessoa não precisa estar fazendo aquilo exatamente agora: se digo I'm reading a great book these days, posso estar no ônibus, sem o livro na mão.",
+          "A forma é a mesma: am / is / are + verbo com -ing. Atenção à grafia: make → making (cai o e), run → running e plan → planning (dobra a consoante), study → studying (mantém o y), lie → lying."
+        ],
+        "regras": [
+          "am / is / are + verbo-ing",
+          "Situação temporária: I'm working from home this week.",
+          "Pistas: this week / month / year, these days, nowadays, at the moment",
+          "make → making / run → running / study → studying / lie → lying",
+          "Negativa: I'm not sleeping much these days."
+        ],
+        "notaContrastiva": "Para uma fase temporária, o português usa o presente simples ou estar + -ndo (Esta semana trabalho de casa / estou trabalhando de casa), mas o inglês pede o continuous: não diga *I work from home this week* → diga *I'm working from home this week*.",
+        "exemplos": [
+          { "en": "I'm working from home this week.", "pt": "Estou trabalhando de casa esta semana." },
+          { "en": "She's studying for an exam these days.", "pt": "Ela está estudando para uma prova nesses dias." },
+          { "en": "We're taking the subway because our car is at the garage.", "pt": "Estamos pegando o metrô porque nosso carro está na oficina." },
+          { "en": "My cousin is staying with us this month.", "pt": "Meu primo está ficando com a gente este mês." },
+          { "en": "I'm not sleeping very well at the moment.", "pt": "Não estou dormindo muito bem no momento." },
+          { "en": "Nowadays a lot of people are working from home.", "pt": "Hoje em dia muita gente está trabalhando de casa." }
+        ],
+        "vocabulario": [
+          { "en": "these days", "pt": "nesses dias, ultimamente" },
+          { "en": "nowadays", "pt": "hoje em dia" },
+          { "en": "at the moment", "pt": "no momento" },
+          { "en": "this week / this month", "pt": "esta semana / este mês" },
+          { "en": "work from home", "pt": "trabalhar de casa" },
+          { "en": "stay with", "pt": "ficar (hospedado) com" },
+          { "en": "project", "pt": "projeto" },
+          { "en": "subway", "pt": "metrô" },
+          { "en": "learn to drive", "pt": "aprender a dirigir" },
+          { "en": "wedding", "pt": "casamento (festa)" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "This week my boss is on vacation, so I ___ her job.", "opcoes": ["am doing", "do", "does"] }, "gabarito": { "correta": 0 }, "explicacao": "This week = situação temporária → present continuous: I am doing her job.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Lucas ___ with his cousins in São Paulo this month.", "opcoes": ["is staying", "stays", "stay"] }, "gabarito": { "correta": 0 }, "explicacao": "This month = por um período, não para sempre → is staying.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no present continuous.", "conteudo": { "texto": "These days we ___ (take) the subway because our car is at the garage." }, "gabarito": { "respostas": [["are taking"]] }, "explicacao": "These days = fase temporária → are taking. Take perde o e: taking.", "tagsErro": ["simples_continuo", "ortografia_ing"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no present continuous (afirmativa e negativa).", "conteudo": { "texto": "My sister ___ (plan) her wedding at the moment, so she ___ (not / sleep) very much." }, "gabarito": { "respostas": [["is planning"], ["is not sleeping", "isn't sleeping"]] }, "explicacao": "Plan dobra o n: planning. Negativa: is not (isn't) + sleeping.", "tagsErro": ["ortografia_ing", "negativa"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ a great book these days.", "opcoesPorLacuna": [["am reading", "read", "reads"]] }, "gabarito": { "respostas": [["am reading"]] }, "explicacao": "These days = fase atual → present continuous: I am reading.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["learning", "is", "She", "this", "to", "drive", "year"] }, "gabarito": { "aceitas": ["She is learning to drive this year.", "This year she is learning to drive."] }, "explicacao": "This year = situação temporária → is learning. Aprender a dirigir = learn to drive." },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo à sua forma com -ing.", "conteudo": { "esquerda": ["make", "run", "study", "swim", "write", "lie"], "direita": ["writing", "studying", "lying", "making", "swimming", "running"] }, "gabarito": { "pares": [3, 5, 1, 4, 0, 2] }, "explicacao": "Make e write perdem o e; run e swim dobram a consoante; study mantém o y; lie troca ie por y: lying.", "tagsErro": ["ortografia_ing"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I am work from home this week." }, "gabarito": { "aceitas": ["I am working from home this week.", "This week I am working from home."] }, "explicacao": "Present continuous = am + verbo com -ing: I am working.", "tagsErro": ["gerundio"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Estou trabalhando muito esta semana.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I am working a lot this week.", "This week I am working a lot.", "This week, I am working a lot.", "I am working hard this week.", "This week I am working hard.", "This week, I am working hard."] }, "explicacao": "Fase temporária → I am working. Muito = a lot (ou hard, com work).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eles estão morando em Curitiba no momento.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["They are living in Curitiba at the moment.", "At the moment they are living in Curitiba.", "At the moment, they are living in Curitiba.", "They are living in Curitiba right now.", "Right now they are living in Curitiba.", "Right now, they are living in Curitiba.", "They are living in Curitiba now.", "Now they are living in Curitiba."] }, "explicacao": "Morar ali só por enquanto = situação temporária → are living. No momento = at the moment.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Our teacher is sick, so Mr. Lima ___ our class this week.", "opcoes": ["is teaching", "teaches", "teach"] }, "gabarito": { "correta": 0 }, "explicacao": "Só esta semana, no lugar da professora → situação temporária: is teaching.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no present continuous.", "conteudo": { "texto": "I ___ (try) to eat more vegetables these days." }, "gabarito": { "respostas": [["am trying", "'m trying"]] }, "explicacao": "These days → present continuous: I am trying.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["new", "a", "Rafael", "is", "project", "on", "working"] }, "gabarito": { "aceitas": ["Rafael is working on a new project."] }, "explicacao": "Trabalhar num projeto = work on a project; fase atual → is working." },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela está estudando para uma prova esta semana.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She is studying for a test this week.", "She is studying for an exam this week.", "This week she is studying for a test.", "This week, she is studying for a test.", "This week she is studying for an exam.", "This week, she is studying for an exam."] }, "explicacao": "Esta semana → present continuous: She is studying. Prova = test ou exam.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro de grafia da frase.", "conteudo": { "frase": "These days my brother is runing every morning." }, "gabarito": { "aceitas": ["These days my brother is running every morning.", "These days, my brother is running every morning.", "My brother is running every morning these days."] }, "explicacao": "Run dobra o n antes de -ing: running.", "tagsErro": ["ortografia_ing"] }
+      ]
+    },
+    {
+      "slug": "a2-m01-l3",
+      "ordem": 3,
+      "titulo": "Usually… but this week…",
+      "objetivo": "Contrastar o presente simples (rotina, fatos) com o present continuous (agora e situações temporárias).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Agora juntamos os dois tempos. O presente simples fala do que é rotina, hábito ou fato permanente: I live in Salvador. He works in an office. It rains a lot in March. O present continuous fala do que está acontecendo agora ou só nesta fase: I'm living with my aunt this year. Today he's working from home.",
+          "Muitas vezes os dois aparecem na mesma frase, ligados por but: I usually drive to work, but this week I'm taking the bus. Pense assim: isso é o normal (simples) ou é a exceção de agora (continuous)?",
+          "Pistas do simples: usually, always, often, never, every day, on Mondays, once a week. Pistas do continuous: now, right now, at the moment, today, this week, these days, Look!, Listen!"
+        ],
+        "regras": [
+          "Rotina / fato → presente simples: I live in Salvador.",
+          "Agora / fase temporária → present continuous: I'm living with my aunt this year.",
+          "usually …, but this week … → simples, mas continuous",
+          "Pistas do simples: usually, always, never, every day, on Mondays",
+          "Pistas do continuous: now, at the moment, today, this week, these days, Look!"
+        ],
+        "notaContrastiva": "Não use o continuous para o que é rotina: não diga *Clara is working in a bank every day* → diga *Clara works in a bank every day*. E não use o simples para o que está acontecendo agora: não diga *Look! It rains* → diga *Look! It's raining*.",
+        "exemplos": [
+          { "en": "I usually drive to work, but this week I'm taking the bus.", "pt": "Eu normalmente vou de carro para o trabalho, mas esta semana estou pegando ônibus." },
+          { "en": "My parents live in Belo Horizonte, but this month they're traveling in Portugal.", "pt": "Meus pais moram em Belo Horizonte, mas este mês estão viajando por Portugal." },
+          { "en": "He works in an office. Today he's working from home.", "pt": "Ele trabalha num escritório. Hoje ele está trabalhando de casa." },
+          { "en": "It rains a lot in Belém in March.", "pt": "Chove muito em Belém em março." },
+          { "en": "Look! It's raining.", "pt": "Olha! Está chovendo." },
+          { "en": "Daniel plays in a band. At the moment he's writing a new song.", "pt": "Daniel toca numa banda. No momento ele está escrevendo uma música nova." }
+        ],
+        "vocabulario": [
+          { "en": "usually", "pt": "normalmente, geralmente" },
+          { "en": "often", "pt": "com frequência" },
+          { "en": "once a week", "pt": "uma vez por semana" },
+          { "en": "today", "pt": "hoje" },
+          { "en": "drive to work", "pt": "ir de carro para o trabalho" },
+          { "en": "take the bus", "pt": "pegar o ônibus" },
+          { "en": "travel", "pt": "viajar" },
+          { "en": "band", "pt": "banda" },
+          { "en": "the news", "pt": "o noticiário" },
+          { "en": "farmers' market", "pt": "feira" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Paula usually ___ to work, but this week she's taking the bus because it's raining.", "opcoes": ["walks", "is walking", "walk"] }, "gabarito": { "correta": 0 }, "explicacao": "Usually = rotina → presente simples. Paula = she → walks.", "tagsErro": ["simples_continuo", "terceira_pessoa_s"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Shh! I ___ to the news.", "opcoes": ["am listening", "listen", "listens"] }, "gabarito": { "correta": 0 }, "explicacao": "Shh! mostra que a ação está acontecendo agora → am listening.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "My parents ___ in Belo Horizonte, but this month they ___ in Portugal.", "opcoesPorLacuna": [["live", "are living"], ["are traveling", "travel"]] }, "gabarito": { "respostas": [["live"], ["are traveling"]] }, "explicacao": "Onde moram é fato permanente → live. This month é só uma fase → are traveling.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no presente simples ou no present continuous.", "conteudo": { "texto": "Daniel ___ (play) the guitar in a band. At the moment he ___ (write) a new song." }, "gabarito": { "respostas": [["plays"], ["is writing", "'s writing"]] }, "explicacao": "Tocar numa banda é o que ele faz sempre → plays. At the moment → is writing (write perde o e).", "tagsErro": ["simples_continuo", "ortografia_ing"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no presente simples ou no present continuous.", "conteudo": { "texto": "It ___ (rain) a lot in Belém in March." }, "gabarito": { "respostas": [["rains"]] }, "explicacao": "É um fato que se repete todo ano → presente simples. It → rains.", "tagsErro": ["simples_continuo", "terceira_pessoa_s"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["but", "usually", "drink", "coffee", "I", "am", "drinking", "today", "tea", "I"] }, "gabarito": { "aceitas": ["I usually drink coffee but today I am drinking tea.", "Today I am drinking tea but I usually drink coffee."] }, "explicacao": "Usually → drink (rotina); today → am drinking (exceção de hoje).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue o começo ao final de cada frase.", "conteudo": { "esquerda": ["Every Saturday, my dad", "Right now, my dad", "Every year, we", "This year, we", "Look! The kids"], "direita": ["are playing in the rain.", "goes to the farmers' market.", "is washing the car.", "are saving money for a trip.", "go to the beach in January."] }, "gabarito": { "pares": [1, 2, 4, 3, 0] }, "explicacao": "Every Saturday e every year pedem o presente simples (goes, go). Right now, this year e Look! pedem o continuous (is washing, are saving, are playing).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "Clara is working in a bank every day." }, "gabarito": { "aceitas": ["Clara works in a bank every day.", "Clara works at a bank every day.", "Every day Clara works in a bank.", "Every day Clara works at a bank."] }, "explicacao": "Every day = rotina → presente simples: Clara works.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ele mora no Rio, mas está trabalhando em Recife este mês.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["He lives in Rio, but he is working in Recife this month.", "He lives in Rio but he is working in Recife this month.", "He lives in Rio, but this month he is working in Recife.", "He lives in Rio but this month he is working in Recife.", "He lives in Rio de Janeiro, but he is working in Recife this month.", "He lives in Rio de Janeiro, but this month he is working in Recife."] }, "explicacao": "Onde mora (permanente) → lives. Este mês (temporário) → is working.", "tagsErro": ["simples_continuo", "terceira_pessoa_s"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Nós geralmente jantamos às oito.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["We usually have dinner at eight.", "We usually eat dinner at eight.", "We usually have dinner at 8.", "We usually eat dinner at 8.", "We usually have dinner at eight o'clock.", "We usually eat dinner at eight o'clock.", "We usually have dinner at 8 o'clock.", "We usually eat dinner at 8 o'clock."] }, "explicacao": "Geralmente = usually, antes do verbo; rotina → presente simples. Jantar = have dinner (ou eat dinner).", "tagsErro": ["adverbio_frequencia"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Look! Your phone ___.", "opcoes": ["is ringing", "rings", "ring"] }, "gabarito": { "correta": 0 }, "explicacao": "Look! = agora → present continuous: is ringing.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "Fernanda ___ English at a language school, but she ___ Spanish this semester.", "opcoesPorLacuna": [["teaches", "is teaching"], ["is studying", "studies"]] }, "gabarito": { "respostas": [["teaches"], ["is studying"]] }, "explicacao": "A profissão dela é fixa → teaches. This semester é uma fase → is studying.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["at", "the", "Marcos", "is", "moment", "sleeping"] }, "gabarito": { "aceitas": ["Marcos is sleeping at the moment.", "At the moment Marcos is sleeping."] }, "explicacao": "At the moment → present continuous: Marcos is sleeping.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela sempre toma café da manhã às seis.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She always has breakfast at six.", "She always eats breakfast at six.", "She always has breakfast at 6.", "She always eats breakfast at 6.", "She always has breakfast at six o'clock.", "She always eats breakfast at six o'clock.", "She always has breakfast at 6 o'clock.", "She always eats breakfast at 6 o'clock."] }, "explicacao": "Always antes do verbo; rotina → presente simples. She → has (de have) ou eats.", "tagsErro": ["adverbio_frequencia", "terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My grandmother is visiting us every Christmas." }, "gabarito": { "aceitas": ["My grandmother visits us every Christmas.", "Every Christmas my grandmother visits us.", "Every Christmas, my grandmother visits us.", "My grandma visits us every Christmas."] }, "explicacao": "Every Christmas = algo que se repete → presente simples: visits.", "tagsErro": ["simples_continuo"] }
+      ]
+    },
+    {
+      "slug": "a2-m01-l4",
+      "ordem": 4,
+      "titulo": "I know, I need, I want",
+      "objetivo": "Reconhecer os verbos de estado e usá-los no presente simples, mesmo quando falam do momento atual.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Alguns verbos não falam de uma ação, e sim de um estado: o que sentimos, queremos, sabemos ou possuímos. São os verbos de estado, como like, love, hate, want, need, prefer, know, understand, remember, believe, mean, cost e belong. Eles normalmente ficam no presente simples, mesmo quando falam de agora: I need help now. Do you understand? This bag belongs to me.",
+          "Por isso não se diz I'm needing, Are you understanding? ou I'm knowing. Para o momento atual, o presente simples já basta: I want a coffee right now.",
+          "Have é um caso especial: com o sentido de ter/possuir é verbo de estado (I have a car, sem -ing), mas com o sentido de uma ação, como comer ou tomar, pode ir para o continuous: I'm having lunch. We're having a great time."
+        ],
+        "regras": [
+          "Verbos de estado: like, love, hate, want, need, prefer, know, understand, remember, believe, mean, cost, belong",
+          "Estado + agora → presente simples: I need help now.",
+          "Pergunta: Do you understand? (e não Are you understanding?)",
+          "have = possuir → I have a car.",
+          "have = ação → I'm having lunch / a shower / a good time."
+        ],
+        "notaContrastiva": "Em português dizemos Estou precisando de ajuda ou Estou querendo um café, mas em inglês não: não diga *I'm needing help* → diga *I need help*. E cuidado com need of: não diga *She needs of a car* → diga *She needs a car*.",
+        "exemplos": [
+          { "en": "I need a new laptop for work.", "pt": "Eu preciso de um notebook novo para o trabalho." },
+          { "en": "Do you understand the question?", "pt": "Você entende a pergunta?" },
+          { "en": "I don't remember his name.", "pt": "Não lembro o nome dele." },
+          { "en": "This jacket costs too much.", "pt": "Esta jaqueta custa caro demais." },
+          { "en": "Who does this bag belong to?", "pt": "De quem é esta bolsa?" },
+          { "en": "I have a car, but today I'm having lunch at home.", "pt": "Eu tenho carro, mas hoje vou almoçar em casa (estou almoçando em casa)." },
+          { "en": "What does this word mean?", "pt": "O que esta palavra significa?" }
+        ],
+        "vocabulario": [
+          { "en": "need", "pt": "precisar (de)" },
+          { "en": "want", "pt": "querer" },
+          { "en": "prefer", "pt": "preferir" },
+          { "en": "know", "pt": "saber, conhecer" },
+          { "en": "understand", "pt": "entender" },
+          { "en": "remember", "pt": "lembrar" },
+          { "en": "believe", "pt": "acreditar" },
+          { "en": "mean", "pt": "significar, querer dizer" },
+          { "en": "cost", "pt": "custar" },
+          { "en": "belong to", "pt": "pertencer a" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ your name. Can you repeat it, please?", "opcoes": ["don't remember", "am not remembering", "not remember"] }, "gabarito": { "correta": 0 }, "explicacao": "Remember é verbo de estado → presente simples. Negativa com do: I don't remember.", "tagsErro": ["verbo_estado", "do_support"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "This jacket is nice, but it ___ too much.", "opcoes": ["costs", "is costing", "cost"] }, "gabarito": { "correta": 0 }, "explicacao": "Cost é verbo de estado → presente simples. It → costs.", "tagsErro": ["verbo_estado", "terceira_pessoa_s"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Right now I ___ a new laptop for work.", "opcoesPorLacuna": [["need", "am needing"]] }, "gabarito": { "respostas": [["need"]] }, "explicacao": "Need é verbo de estado: mesmo com right now, fica no presente simples: I need.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Sorry, I can't talk now. I ___ lunch with my boss.", "opcoesPorLacuna": [["am having", "have"]] }, "gabarito": { "respostas": [["am having"]] }, "explicacao": "Have lunch é uma ação (almoçar), não posse; acontecendo agora → am having.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra em cada lacuna.", "conteudo": { "texto": "___ you ___ (understand) the question?" }, "gabarito": { "respostas": [["Do"], ["understand"]] }, "explicacao": "Understand é verbo de estado → pergunta no presente simples: Do you understand?", "tagsErro": ["verbo_estado", "do_support"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["know", "Do", "answer", "the", "you"] }, "gabarito": { "aceitas": ["Do you know the answer?"] }, "explicacao": "Know é verbo de estado → Do + you + know?", "tagsErro": ["verbo_estado"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada verbo ao seu significado.", "conteudo": { "esquerda": ["belong to", "prefer", "mean", "believe", "need"], "direita": ["precisar", "acreditar", "significar", "pertencer a", "preferir"] }, "gabarito": { "pares": [3, 4, 2, 1, 0] }, "explicacao": "Todos são verbos de estado: normalmente não vão para -ing." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "I am wanting a glass of water." }, "gabarito": { "aceitas": ["I want a glass of water."] }, "explicacao": "Want é verbo de estado → presente simples: I want.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu não entendo esta palavra.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I do not understand this word."] }, "explicacao": "Understand → presente simples; negativa com don't: I don't understand.", "tagsErro": ["verbo_estado", "do_support"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Ela precisa de um carro novo.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["She needs a new car."] }, "explicacao": "She → needs. Precisar de = need, sem preposição: needs a new car.", "tagsErro": ["verbo_estado", "terceira_pessoa_s"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a opção correta.", "conteudo": { "texto": "What ___ this word ___?", "opcoes": ["does / mean", "is / meaning", "do / means"] }, "gabarito": { "correta": 0 }, "explicacao": "Mean é verbo de estado → What does this word mean? (does + verbo base).", "tagsErro": ["verbo_estado", "do_support"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses na forma correta.", "conteudo": { "texto": "My kids ___ (love) pizza." }, "gabarito": { "respostas": [["love"]] }, "explicacao": "Love é verbo de estado → presente simples. My kids = they → love, sem -s.", "tagsErro": ["verbo_estado"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["this", "to", "Who", "bag", "does", "belong"] }, "gabarito": { "aceitas": ["Who does this bag belong to?"] }, "explicacao": "De quem é? = Who does … belong to? A preposição to fica no fim.", "tagsErro": ["verbo_estado", "ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você conhece o Pedro?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Do you know Pedro?"] }, "explicacao": "Conhecer alguém = know (verbo de estado) → Do you know Pedro? Sem artigo antes do nome.", "tagsErro": ["verbo_estado", "artigo_nome"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "He is knowing the city very well." }, "gabarito": { "aceitas": ["He knows the city very well."] }, "explicacao": "Know é verbo de estado → presente simples: He knows.", "tagsErro": ["verbo_estado"] }
+      ]
+    },
+    {
+      "slug": "a2-m01-l5",
+      "ordem": 5,
+      "titulo": "Where do you work? What are you doing?",
+      "objetivo": "Fazer e responder perguntas com wh- e de sim/não nos dois tempos, com respostas curtas.",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "No presente simples, a pergunta usa do ou does antes do sujeito e o verbo na forma base: Where do you work? What time does she leave? How often do you cook?",
+          "No present continuous, a pergunta coloca am, is ou are antes do sujeito e mantém o verbo com -ing: What are you doing? Where is he going? Why are they laughing?",
+          "As respostas curtas repetem o auxiliar da pergunta: Do you work on Saturdays? — Yes, I do. / No, I don't. Is she working today? — Yes, she is. / No, she isn't. Não responda Yes, I do para uma pergunta com are, nem Yes, I am para uma pergunta com do."
+        ],
+        "regras": [
+          "Simples: Wh- + do/does + sujeito + verbo base → Where does she work?",
+          "Continuous: Wh- + am/is/are + sujeito + -ing → What are you doing?",
+          "Do you…? — Yes, I do. / No, I don't.",
+          "Are you…? — Yes, I am. / No, I'm not.",
+          "How often do you…? → pergunta sobre frequência"
+        ],
+        "notaContrastiva": "Em português a pergunta não muda a ordem (Onde você está indo?), mas em inglês o auxiliar vem antes do sujeito: não diga *Where you are going?* → diga *Where are you going?*. E não esqueça do do: não diga *Where you work?* → diga *Where do you work?*.",
+        "exemplos": [
+          { "en": "Where do you work? — At a bank.", "pt": "Onde você trabalha? — Num banco." },
+          { "en": "What are you doing? — I'm making a cake.", "pt": "O que você está fazendo? — Estou fazendo um bolo." },
+          { "en": "What time does the class start?", "pt": "A que horas a aula começa?" },
+          { "en": "Why is Bruno wearing a suit today?", "pt": "Por que o Bruno está de terno hoje?" },
+          { "en": "How often do you go to the gym? — Three times a week.", "pt": "Com que frequência você vai à academia? — Três vezes por semana." },
+          { "en": "Are you working today? — No, I'm not.", "pt": "Você está trabalhando hoje? — Não." },
+          { "en": "Does Carla like her new job? — Yes, she does.", "pt": "A Carla gosta do emprego novo? — Sim." }
+        ],
+        "vocabulario": [
+          { "en": "where", "pt": "onde" },
+          { "en": "what time", "pt": "a que horas" },
+          { "en": "how often", "pt": "com que frequência" },
+          { "en": "why", "pt": "por que" },
+          { "en": "who", "pt": "quem" },
+          { "en": "wear a suit", "pt": "usar terno" },
+          { "en": "dentist", "pt": "dentista" },
+          { "en": "laugh", "pt": "rir" },
+          { "en": "talk about", "pt": "falar sobre" },
+          { "en": "gym", "pt": "academia" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.", "conteudo": { "texto": "Where ___ your brother work?", "opcoes": ["does", "is", "do"] }, "gabarito": { "correta": 0 }, "explicacao": "Work está na forma base → presente simples com does (your brother = he).", "tagsErro": ["do_support"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a palavra que completa a pergunta.", "conteudo": { "texto": "What ___ you watching?", "opcoes": ["are", "do", "does"] }, "gabarito": { "correta": 0 }, "explicacao": "Watching (com -ing) pede o present continuous: What are you watching?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "How often ___ you go to the gym?" }, "gabarito": { "respostas": [["do"]] }, "explicacao": "Go na forma base → presente simples com you: How often do you go?", "tagsErro": ["do_support"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "Why ___ Bruno wearing a suit today?" }, "gabarito": { "respostas": [["is"]] }, "explicacao": "Wearing pede o continuous; Bruno = he → is.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Escolha a resposta curta correta.", "conteudo": { "texto": "— Are you working today? — No, I ___.", "opcoes": ["am not", "don't", "not"] }, "gabarito": { "correta": 0 }, "explicacao": "A pergunta usa are → a resposta curta usa be: No, I'm not (I am not)." },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["does", "What", "start", "time", "class", "the"] }, "gabarito": { "aceitas": ["What time does the class start?"] }, "explicacao": "What time + does + the class + start (forma base)?", "tagsErro": ["do_support", "ordem_pergunta"] },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue cada pergunta à resposta.", "conteudo": { "esquerda": ["What do you do?", "What are you doing?", "Where do you live?", "Where are you going?", "How often do you cook?"], "direita": ["To the supermarket.", "I'm a dentist.", "I'm making a cake.", "Almost every day.", "In Fortaleza."] }, "gabarito": { "pares": [1, 2, 4, 0, 3] }, "explicacao": "What do you do? = profissão; What are you doing? = agora; Where are you going? = para onde vai agora; How often = frequência.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.", "conteudo": { "frase": "Where you are going?" }, "gabarito": { "aceitas": ["Where are you going?"] }, "explicacao": "Na pergunta, are vem antes do sujeito: Where are you going?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Onde você trabalha?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Where do you work?"] }, "explicacao": "Presente simples: Where + do + you + work?", "tagsErro": ["do_support"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "O que ela está fazendo?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["What is she doing?"] }, "explicacao": "Present continuous: What + is + she + doing?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a resposta curta correta.", "conteudo": { "texto": "— Does Carla like her new job? — Yes, she ___.", "opcoes": ["does", "is", "likes"] }, "gabarito": { "correta": 0 }, "explicacao": "A pergunta usa does → Yes, she does." },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What ___ they talking about?" }, "gabarito": { "respostas": [["are"]] }, "explicacao": "Talking pede o continuous; they → are.", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["Saturdays", "do", "on", "you", "do", "What", "usually"] }, "gabarito": { "aceitas": ["What do you usually do on Saturdays?"] }, "explicacao": "What + do (auxiliar) + you + usually + do (verbo fazer) + on Saturdays?", "tagsErro": ["do_support", "adverbio_frequencia"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Por que você está rindo?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Why are you laughing?"] }, "explicacao": "Present continuous: Why + are + you + laughing?", "tagsErro": ["ordem_pergunta"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da pergunta.", "conteudo": { "frase": "What time does your father gets up?" }, "gabarito": { "aceitas": ["What time does your father get up?"] }, "explicacao": "Depois de does, o verbo fica na forma base: get up (sem -s).", "tagsErro": ["do_support"] }
+      ]
+    },
+    {
+      "slug": "a2-m01-l6",
+      "ordem": 6,
+      "titulo": "A message from Porto Alegre",
+      "objetivo": "Ler e escrever uma mensagem curta que mistura rotina (presente simples) e fase atual (present continuous).",
+      "minutosEstimados": 15,
+      "apresentacao": {
+        "explicacao": [
+          "Numa mensagem ou e-mail para um amigo, é comum misturar os dois tempos: o que é normal na nossa vida (presente simples) e o que está acontecendo agora ou nesta fase (present continuous).",
+          "Leia a mensagem do Leo: Hi Bia! How are you? I'm writing from Porto Alegre. I usually work at the office downtown, but this month I'm working from home because they're painting the building. I like it! I wake up at seven, have breakfast with my kids and start work at eight. At the moment I'm sitting on the balcony with my laptop and a cup of coffee. The only problem is my dog: he always wants to play when I have a meeting! Write soon, Leo",
+          "Repare: usually work, wake up, have breakfast e start work são rotina (simples). This month I'm working, they're painting e at the moment I'm sitting são a fase atual (continuous). Like e wants são verbos de estado, então ficam no simples. Para ligar as ideias, use and, but, so (então, por isso) e because (porque)."
+        ],
+        "regras": [
+          "Rotina na mensagem → presente simples: I wake up at seven.",
+          "Fase atual / agora → present continuous: This month I'm working from home.",
+          "Verbos de estado → simples: I like it. He wants to play.",
+          "but = mas; so = então, por isso; because = porque",
+          "Começo e fim: Hi …! / How are you? … Write soon, / Bye,"
+        ],
+        "notaContrastiva": "Não escreva a mensagem toda no continuous: não diga *I'm waking up at seven every day* → diga *I wake up at seven every day*. E não confunda so e because: *I'm tired, so I'm staying home* (por isso) × *I'm staying home because I'm tired* (porque).",
+        "exemplos": [
+          { "en": "I'm writing from Porto Alegre.", "pt": "Estou escrevendo de Porto Alegre." },
+          { "en": "I usually work at the office downtown.", "pt": "Eu normalmente trabalho no escritório do centro." },
+          { "en": "This month I'm working from home because they're painting the building.", "pt": "Este mês estou trabalhando de casa porque estão pintando o prédio." },
+          { "en": "At the moment I'm sitting on the balcony.", "pt": "No momento estou sentado na varanda." },
+          { "en": "My dog always wants to play when I have a meeting.", "pt": "Meu cachorro sempre quer brincar quando tenho uma reunião." },
+          { "en": "I'm very tired, so I'm going to bed early these days.", "pt": "Estou muito cansado, então estou indo dormir cedo esses dias." },
+          { "en": "Write soon!", "pt": "Escreva logo! / Me responde!" }
+        ],
+        "vocabulario": [
+          { "en": "message", "pt": "mensagem" },
+          { "en": "balcony", "pt": "varanda, sacada" },
+          { "en": "building", "pt": "prédio" },
+          { "en": "paint", "pt": "pintar" },
+          { "en": "meeting", "pt": "reunião" },
+          { "en": "laptop", "pt": "notebook" },
+          { "en": "downtown", "pt": "no centro (da cidade)" },
+          { "en": "so", "pt": "então, por isso" },
+          { "en": "because", "pt": "porque" },
+          { "en": "write soon", "pt": "escreva logo" }
+        ]
+      },
+      "exercicios": [
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia a mensagem. Onde Leo normalmente trabalha?", "conteudo": { "texto": "Hi Bia! How are you? I'm writing from Porto Alegre. I usually work at the office downtown, but this month I'm working from home because they're painting the building. I like it! I wake up at seven, have breakfast with my kids and start work at eight. At the moment I'm sitting on the balcony with my laptop and a cup of coffee. The only problem is my dog: he always wants to play when I have a meeting! Write soon, Leo", "opcoes": ["Em casa.", "No escritório, no centro.", "Numa cafeteria.", "Na varanda."] }, "gabarito": { "correta": 1 }, "explicacao": "I usually work at the office downtown: usually mostra a rotina. Em casa é só este mês." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que Leo está trabalhando em casa este mês?", "conteudo": { "texto": "Hi Bia! How are you? I'm writing from Porto Alegre. I usually work at the office downtown, but this month I'm working from home because they're painting the building. I like it! I wake up at seven, have breakfast with my kids and start work at eight. At the moment I'm sitting on the balcony with my laptop and a cup of coffee. The only problem is my dog: he always wants to play when I have a meeting! Write soon, Leo", "opcoes": ["Porque está doente.", "Porque os filhos estão de férias.", "Porque estão pintando o prédio.", "Porque o escritório fechou para sempre."] }, "gabarito": { "correta": 2 }, "explicacao": "…because they're painting the building: estão pintando o prédio (situação temporária)." },
+        { "etapa": "controlada", "tipo": "mcq", "enunciado": "Leia a mensagem. O que Leo está fazendo enquanto escreve?", "conteudo": { "texto": "Hi Bia! How are you? I'm writing from Porto Alegre. I usually work at the office downtown, but this month I'm working from home because they're painting the building. I like it! I wake up at seven, have breakfast with my kids and start work at eight. At the moment I'm sitting on the balcony with my laptop and a cup of coffee. The only problem is my dog: he always wants to play when I have a meeting! Write soon, Leo", "opcoes": ["Tomando café da manhã com os filhos.", "Está sentado na varanda com o notebook.", "Está numa reunião.", "Está brincando com o cachorro."] }, "gabarito": { "correta": 1 }, "explicacao": "At the moment I'm sitting on the balcony with my laptop: o continuous mostra o que acontece agora." },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "I usually ___ to work by bus, but this week I ___ my bike.", "opcoesPorLacuna": [["go", "am going"], ["am riding", "ride"]] }, "gabarito": { "respostas": [["go"], ["am riding"]] }, "explicacao": "Usually → rotina: go. This week → fase temporária: am riding.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "controlada", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses no presente simples.", "conteudo": { "texto": "My dog always ___ (want) to play when I ___ (have) a meeting." }, "gabarito": { "respostas": [["wants"], ["have"]] }, "explicacao": "Want é verbo de estado e my dog = it → wants. Have a meeting aqui é rotina (sempre que acontece) → I have.", "tagsErro": ["verbo_estado", "terceira_pessoa_s"] },
+        { "etapa": "semicontrolada", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["writing", "from", "am", "I", "Porto", "Alegre"] }, "gabarito": { "aceitas": ["I am writing from Porto Alegre."] }, "explicacao": "Está escrevendo agora → present continuous: I am writing." },
+        { "etapa": "semicontrolada", "tipo": "match", "enunciado": "Ligue o começo ao final de cada frase.", "conteudo": { "esquerda": ["I'm very tired", "I love my job,", "There's no class today,", "I usually drive to work,"], "direita": ["so the students are staying home.", "because I'm sleeping very little these days.", "but the hours are long.", "but today I'm walking."] }, "gabarito": { "pares": [1, 2, 0, 3] }, "explicacao": "Because explica a causa; so mostra a consequência; but faz um contraste (rotina × exceção de hoje)." },
+        { "etapa": "semicontrolada", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "At the moment I sit on the balcony." }, "gabarito": { "aceitas": ["At the moment I am sitting on the balcony.", "At the moment, I am sitting on the balcony.", "I am sitting on the balcony at the moment."] }, "explicacao": "At the moment → present continuous: I am sitting (sit dobra o t).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu normalmente trabalho no escritório, mas esta semana estou trabalhando de casa.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I usually work at the office, but this week I am working from home.", "I usually work at the office but this week I am working from home.", "I usually work in the office, but this week I am working from home.", "I usually work in the office but this week I am working from home.", "I usually work at the office, but I am working from home this week.", "I usually work at the office but I am working from home this week.", "I usually work in the office, but I am working from home this week.", "I usually work in the office but I am working from home this week.", "I usually work at the office, but this week I am working at home.", "I usually work in the office, but this week I am working at home.", "I usually work at the office, but I am working at home this week.", "I usually work in the office, but I am working at home this week."] }, "explicacao": "Normalmente → usually work (rotina). Esta semana → am working (temporário). De casa = from home.", "tagsErro": ["simples_continuo", "adverbio_frequencia"] },
+        { "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Meu filho está aprendendo a nadar.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["My son is learning to swim.", "My son is learning how to swim."] }, "explicacao": "Fase atual → is learning. Aprender a nadar = learn to swim.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Hi Mom! I ___ you from the airport. My flight is late.", "opcoes": ["am calling", "call", "calls"] }, "gabarito": { "correta": 0 }, "explicacao": "A ligação está acontecendo agora → am calling.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "Julia usually ___ math at a university, but this semester she ___ a course in Canada.", "opcoesPorLacuna": [["teaches", "is teaching"], ["is taking", "takes"]] }, "gabarito": { "respostas": [["teaches"], ["is taking"]] }, "explicacao": "Usually → teaches (rotina). This semester → is taking (fase temporária).", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "word_order", "enunciado": "Monte a frase.", "conteudo": { "palavras": ["usually", "the", "I", "office", "at", "work"] }, "gabarito": { "aceitas": ["I usually work at the office."] }, "explicacao": "Usually antes do verbo principal: I usually work.", "tagsErro": ["adverbio_frequencia"] },
+        { "etapa": "quiz", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Hoje eu estou trabalhando de casa.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Today I am working from home.", "Today, I am working from home.", "I am working from home today.", "Today I am working at home.", "Today, I am working at home.", "I am working at home today."] }, "explicacao": "Hoje, como exceção → present continuous: I am working from home.", "tagsErro": ["simples_continuo"] },
+        { "etapa": "quiz", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "This week my sister is stay with us." }, "gabarito": { "aceitas": ["This week my sister is staying with us.", "This week, my sister is staying with us.", "My sister is staying with us this week."] }, "explicacao": "Present continuous = is + verbo com -ing: is staying.", "tagsErro": ["gerundio"] }
+      ]
+    }
+  ],
+  "teste": {
+    "itens": [
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My uncle ___ in a car factory.", "opcoes": ["works", "is work", "work"] }, "gabarito": { "correta": 0 }, "explicacao": "Profissão / rotina → presente simples. My uncle = he → works.", "tagsErro": ["terceira_pessoa_s"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Be quiet! The baby ___.", "opcoes": ["is sleeping", "sleeps", "sleep"] }, "gabarito": { "correta": 0 }, "explicacao": "Be quiet! mostra que está acontecendo agora → is sleeping.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses na forma correta.", "conteudo": { "texto": "She ___ (study) for her final exams these days." }, "gabarito": { "respostas": [["is studying", "'s studying"]] }, "explicacao": "These days = fase temporária → is studying.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ what you mean.", "opcoes": ["understand", "am understanding", "understands"] }, "gabarito": { "correta": 0 }, "explicacao": "Understand é verbo de estado → presente simples: I understand.", "tagsErro": ["verbo_estado"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "How often ___ your sister visit you?" }, "gabarito": { "respostas": [["does"]] }, "explicacao": "Visit na forma base → presente simples; your sister = she → does.", "tagsErro": ["do_support"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a ordem correta.", "conteudo": { "texto": "Paulo ___ late. He's very organized.", "opcoes": ["is never", "never is", "never"] }, "gabarito": { "correta": 0 }, "explicacao": "Com o verbo be, o advérbio vem depois: Paulo is never late.", "tagsErro": ["adverbio_frequencia"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "We usually ___ at home, but tonight we ___ at a restaurant.", "opcoesPorLacuna": [["eat", "are eating"], ["are eating", "eat"]] }, "gabarito": { "respostas": [["eat"], ["are eating"]] }, "explicacao": "Usually → eat (rotina). Tonight, como exceção → are eating.", "tagsErro": ["simples_continuo"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a resposta curta correta.", "conteudo": { "texto": "— Are your parents working today? — Yes, they ___.", "opcoes": ["are", "do", "work"] }, "gabarito": { "correta": 0 }, "explicacao": "A pergunta usa are → Yes, they are." },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What ___ you doing right now?" }, "gabarito": { "respostas": [["are"]] }, "explicacao": "Doing + right now → present continuous: What are you doing?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 1, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "This car ___ to my neighbor.", "opcoes": ["belongs", "is belonging", "belong"] }, "gabarito": { "correta": 0 }, "explicacao": "Belong é verbo de estado → presente simples; this car = it → belongs.", "tagsErro": ["verbo_estado"] },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Qual é o horário normal de Renata no restaurante?", "conteudo": { "texto": "My name is Renata and I'm a chef. I usually work at a small restaurant in Florianópolis from Tuesday to Sunday. I start at two in the afternoon and finish at eleven at night. But this month the restaurant is closed for repairs, so I'm working at a hotel near the beach. I'm cooking breakfast for the guests, so I'm getting up at five!", "opcoes": ["Das 5h às 11h.", "Das 14h às 23h.", "Das 11h às 14h.", "De terça a sábado, de manhã."] }, "gabarito": { "correta": 1 }, "explicacao": "I start at two in the afternoon and finish at eleven at night: das 14h às 23h." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Por que Renata está acordando às cinco este mês?", "conteudo": { "texto": "My name is Renata and I'm a chef. I usually work at a small restaurant in Florianópolis from Tuesday to Sunday. I start at two in the afternoon and finish at eleven at night. But this month the restaurant is closed for repairs, so I'm working at a hotel near the beach. I'm cooking breakfast for the guests, so I'm getting up at five!", "opcoes": ["Porque o restaurante abre cedo.", "Porque está fazendo o café da manhã num hotel.", "Porque está de férias na praia.", "Porque mora longe do trabalho."] }, "gabarito": { "correta": 1 }, "explicacao": "I'm cooking breakfast for the guests, so I'm getting up at five: ela faz o café da manhã dos hóspedes do hotel." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. Por que Tiago não pode jogar futebol no sábado?", "conteudo": { "texto": "Hi Caio, thanks for your message! Sorry, I can't play soccer this Saturday. My cousin from Manaus is staying with us this week and we're showing him the city. He loves museums, so we're visiting a different one every day. Do you want to have lunch with us on Sunday? We usually go to a nice place near the park. Bye, Tiago", "opcoes": ["Porque está doente.", "Porque o primo está hospedado na casa dele.", "Porque vai viajar para Manaus.", "Porque trabalha aos sábados."] }, "gabarito": { "correta": 1 }, "explicacao": "My cousin from Manaus is staying with us this week: o primo está na casa dele." },
+      { "forma": 1, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que Tiago convida Caio para fazer?", "conteudo": { "texto": "Hi Caio, thanks for your message! Sorry, I can't play soccer this Saturday. My cousin from Manaus is staying with us this week and we're showing him the city. He loves museums, so we're visiting a different one every day. Do you want to have lunch with us on Sunday? We usually go to a nice place near the park. Bye, Tiago", "opcoes": ["Visitar um museu no sábado.", "Jogar futebol no domingo.", "Almoçar com eles no domingo.", "Conhecer Manaus."] }, "gabarito": { "correta": 2 }, "explicacao": "Do you want to have lunch with us on Sunday? = almoçar com eles no domingo." },
+      { "forma": 1, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["is", "Why", "crying", "baby", "the"] }, "gabarito": { "aceitas": ["Why is the baby crying?"] }, "explicacao": "Why + is + the baby + crying?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eu não preciso de ajuda.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["I do not need help.", "I do not need any help."] }, "explicacao": "Need é verbo de estado → I don't need help (sem of).", "tagsErro": ["verbo_estado", "do_support"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "She don't work on Sundays." }, "gabarito": { "aceitas": ["She doesn't work on Sundays."] }, "explicacao": "Com she, a negativa usa doesn't: She doesn't work.", "tagsErro": ["do_support"] },
+      { "forma": 1, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Eles estão morando com os avós este ano.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["They are living with their grandparents this year.", "This year they are living with their grandparents.", "This year, they are living with their grandparents."] }, "explicacao": "Este ano = temporário → are living. Os avós deles = their grandparents.", "tagsErro": ["simples_continuo"] },
+
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "My cousin ___ at a call center.", "opcoes": ["works", "is work", "work"] }, "gabarito": { "correta": 0 }, "explicacao": "Profissão / rotina → presente simples. My cousin = he/she → works.", "tagsErro": ["terceira_pessoa_s"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "Listen! Someone ___ at the door.", "opcoes": ["is knocking", "knocks", "knock"] }, "gabarito": { "correta": 0 }, "explicacao": "Listen! mostra que está acontecendo agora → is knocking.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete com o verbo entre parênteses na forma correta.", "conteudo": { "texto": "My dad ___ (learn) Spanish this year." }, "gabarito": { "respostas": [["is learning", "'s learning"]] }, "explicacao": "This year = fase temporária → is learning.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a forma correta.", "conteudo": { "texto": "I ___ this song. Who sings it?", "opcoes": ["love", "am loving", "loves"] }, "gabarito": { "correta": 0 }, "explicacao": "Love é verbo de estado → presente simples: I love.", "tagsErro": ["verbo_estado"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "What time ___ the bank open?" }, "gabarito": { "respostas": [["does"]] }, "explicacao": "Open na forma base → presente simples; the bank = it → does.", "tagsErro": ["do_support"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a ordem correta.", "conteudo": { "texto": "My boss ___ busy on Mondays.", "opcoes": ["is always", "always is", "always"] }, "gabarito": { "correta": 0 }, "explicacao": "Com o verbo be, o advérbio vem depois: My boss is always busy.", "tagsErro": ["adverbio_frequencia"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Escolha a forma correta para cada lacuna.", "conteudo": { "texto": "I usually ___ the bus, but today I ___ a taxi.", "opcoesPorLacuna": [["take", "am taking"], ["am taking", "take"]] }, "gabarito": { "respostas": [["take"], ["am taking"]] }, "explicacao": "Usually → take (rotina). Today, como exceção → am taking.", "tagsErro": ["simples_continuo"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a resposta curta correta.", "conteudo": { "texto": "— Does your sister live with you? — No, she ___.", "opcoes": ["doesn't", "isn't", "don't"] }, "gabarito": { "correta": 0 }, "explicacao": "A pergunta usa does → No, she doesn't." },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "cloze", "enunciado": "Complete a pergunta com uma palavra.", "conteudo": { "texto": "Where ___ you going?" }, "gabarito": { "respostas": [["are"]] }, "explicacao": "Going pede o continuous; you → are.", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 2, "habilidade": "gramatica_vocabulario", "tipo": "mcq", "enunciado": "Escolha a opção correta.", "conteudo": { "texto": "How much ___ these shoes ___?", "opcoes": ["do / cost", "are / costing", "does / costs"] }, "gabarito": { "correta": 0 }, "explicacao": "Cost é verbo de estado → presente simples. These shoes = they → do + cost.", "tagsErro": ["verbo_estado", "do_support"] },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Como Gustavo vai para o trabalho todos os dias?", "conteudo": { "texto": "Hello! I'm Gustavo and I work as a mechanic in Campinas. Every day I take the bus to the garage at seven. I usually have lunch with my coworkers at a small restaurant. This week is different: my boss is on vacation, so I'm managing the garage. I'm working until nine at night and I'm eating sandwiches at my desk.", "opcoes": ["De carro.", "De ônibus.", "A pé.", "De bicicleta."] }, "gabarito": { "correta": 1 }, "explicacao": "Every day I take the bus to the garage: ele vai de ônibus." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia o texto. Por que esta semana é diferente para Gustavo?", "conteudo": { "texto": "Hello! I'm Gustavo and I work as a mechanic in Campinas. Every day I take the bus to the garage at seven. I usually have lunch with my coworkers at a small restaurant. This week is different: my boss is on vacation, so I'm managing the garage. I'm working until nine at night and I'm eating sandwiches at my desk.", "opcoes": ["Porque ele está de férias.", "Porque está cuidando da oficina no lugar do chefe.", "Porque a oficina está fechada.", "Porque está almoçando com os colegas."] }, "gabarito": { "correta": 1 }, "explicacao": "My boss is on vacation, so I'm managing the garage: ele está cuidando da oficina." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que Nanda está fazendo em Belo Horizonte?", "conteudo": { "texto": "Hi Lu! How are things? I'm writing from my new apartment in Belo Horizonte. I'm doing an internship at a design company for three months. I love it, but I don't know many people here yet. On weekends I usually walk in the park or go to the movies alone. Are you coming to visit me in July? Kisses, Nanda", "opcoes": ["Estudando numa universidade.", "Fazendo um estágio numa empresa de design.", "Passando férias.", "Procurando um apartamento."] }, "gabarito": { "correta": 1 }, "explicacao": "I'm doing an internship at a design company: internship = estágio." },
+      { "forma": 2, "habilidade": "leitura", "tipo": "mcq", "enunciado": "Leia a mensagem. O que Nanda normalmente faz nos fins de semana?", "conteudo": { "texto": "Hi Lu! How are things? I'm writing from my new apartment in Belo Horizonte. I'm doing an internship at a design company for three months. I love it, but I don't know many people here yet. On weekends I usually walk in the park or go to the movies alone. Are you coming to visit me in July? Kisses, Nanda", "opcoes": ["Sai com muitos amigos.", "Visita a Lu.", "Caminha no parque ou vai ao cinema.", "Trabalha na empresa."] }, "gabarito": { "correta": 2 }, "explicacao": "On weekends I usually walk in the park or go to the movies alone." },
+      { "forma": 2, "habilidade": "escrita", "tipo": "word_order", "enunciado": "Monte a pergunta.", "conteudo": { "palavras": ["she", "What", "doing", "is"] }, "gabarito": { "aceitas": ["What is she doing?"] }, "explicacao": "What + is + she + doing?", "tagsErro": ["ordem_pergunta"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Você conhece a minha irmã?", "direcao": "pt-en" }, "gabarito": { "aceitas": ["Do you know my sister?"] }, "explicacao": "Conhecer alguém = know (verbo de estado) → Do you know my sister?", "tagsErro": ["verbo_estado", "do_support"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "error_correction", "enunciado": "Corrija o erro da frase.", "conteudo": { "frase": "My brother is wanting a new cell phone." }, "gabarito": { "aceitas": ["My brother wants a new cell phone.", "My brother wants a new cellphone."] }, "explicacao": "Want é verbo de estado → presente simples: My brother wants.", "tagsErro": ["verbo_estado"] },
+      { "forma": 2, "habilidade": "escrita", "tipo": "translate", "enunciado": "Traduza para o inglês.", "conteudo": { "frase": "Esta semana eu estou acordando cedo.", "direcao": "pt-en" }, "gabarito": { "aceitas": ["This week I am getting up early.", "This week, I am getting up early.", "I am getting up early this week.", "This week I am waking up early.", "This week, I am waking up early.", "I am waking up early this week."] }, "explicacao": "Esta semana = temporário → present continuous. Acordar = wake up ou get up.", "tagsErro": ["simples_continuo"] }
+    ]
+  }
+}
