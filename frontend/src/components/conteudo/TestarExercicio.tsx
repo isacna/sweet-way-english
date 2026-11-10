@@ -24,6 +24,8 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
 
   function montarResposta(): Resposta | null {
     switch (item.tipo) {
+      case "sequence":
+        return texto.trim() ? texto.trim().split(/\s+/).map((n) => Number(n) - 1) : [];
       case "mcq":
         return indice;
       case "cloze": {
@@ -67,6 +69,9 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
 
   let entrada: React.ReactNode;
   switch (item.tipo) {
+    case "sequence":
+      entrada = <div className="space-y-2"><ol>{lista(c.trechos).map((t, i) => <li key={i}>{i + 1}. {t}</li>)}</ol><input aria-label="Ordem dos trechos" className={classeInput} value={texto} onChange={(e) => setTexto(e.target.value)} placeholder="Números na ordem, ex.: 3 1 2" /></div>;
+      break;
     case "mcq":
       entrada = (
         <div className="flex flex-wrap gap-3">

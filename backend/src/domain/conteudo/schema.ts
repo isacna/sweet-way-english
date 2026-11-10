@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { midiaSchema, missaoSchema } from './midia.js';
 import { normalizar, tokensFrase } from '../correcao.js';
 
 // Formato do conteúdo do curso. É usado:
@@ -23,6 +24,7 @@ const mcq = z.object({
   ...base,
   tipo: z.literal('mcq'),
   conteudo: z.object({
+    midia: midiaSchema.optional(),
     opcoes: z.array(texto).min(2).max(5),
     texto: texto.optional(), // frase/trecho de apoio (ex.: leitura)
   }),
@@ -33,6 +35,7 @@ const cloze = z.object({
   ...base,
   tipo: z.literal('cloze'),
   conteudo: z.object({
+    midia: midiaSchema.optional(),
     texto: texto, // lacunas marcadas com ___
     opcoesPorLacuna: z.array(z.array(texto).min(2)).optional(), // se presente, vira lista de seleção
   }),
@@ -42,7 +45,10 @@ const cloze = z.object({
 const wordOrder = z.object({
   ...base,
   tipo: z.literal('word_order'),
-  conteudo: z.object({ palavras: z.array(texto).min(2) }), // já embaralhadas
+  conteudo: z.object({
+    midia: midiaSchema.optional(),
+    palavras: z.array(texto).min(2), // já embaralhadas
+  }),
   gabarito: z.object({ aceitas: z.array(texto).min(1) }),
 });
 
@@ -50,6 +56,7 @@ const match = z.object({
   ...base,
   tipo: z.literal('match'),
   conteudo: z.object({
+    midia: midiaSchema.optional(),
     esquerda: z.array(texto).min(2).max(8),
     direita: z.array(texto).min(2).max(8), // já embaralhada
   }),
@@ -59,22 +66,42 @@ const match = z.object({
 const translate = z.object({
   ...base,
   tipo: z.literal('translate'),
-  conteudo: z.object({ frase: texto, direcao: z.enum(['pt-en', 'en-pt']) }),
+  conteudo: z.object({
+    midia: midiaSchema.optional(),
+    frase: texto,
+    direcao: z.enum(['pt-en', 'en-pt']),
+  }),
   gabarito: z.object({ aceitas: z.array(texto).min(1) }),
 });
 
 const errorCorrection = z.object({
   ...base,
   tipo: z.literal('error_correction'),
-  conteudo: z.object({ frase: texto }), // frase com um erro
+  conteudo: z.object({
+    midia: midiaSchema.optional(),
+    frase: texto, // frase com um erro
+  }),
   gabarito: z.object({ aceitas: z.array(texto).min(1) }),
 });
 
+const sequence = z.object({
+  ...base,
+  tipo: z.literal('sequence'),
+  conteudo: z.object({ midia: midiaSchema.optional(), trechos: z.array(texto).min(3).max(8) }),
+  gabarito: z.object({ ordem: z.array(z.number().int().min(0)) }),
+});
+
 export const itemSchema = z
-  .discriminatedUnion('tipo', [mcq, cloze, wordOrder, match, translate, errorCorrection])
+  .discriminatedUnion('tipo', [mcq, cloze, wordOrder, match, translate, errorCorrection, sequence])
   .superRefine((item, ctx) => {
     const erro = (message: string) => ctx.addIssue({ code: 'custom', message });
     switch (item.tipo) {
+      case 'sequence': {
+        const n = item.conteudo.trechos.length;
+        if (new Set(item.conteudo.trechos.map(normalizar)).size !== n) erro('sequence: trechos repetidos');
+        if (item.gabarito.ordem.length !== n || [...item.gabarito.ordem].sort((a, b) => a - b).some((v, i) => v !== i)) erro('sequence: ordem precisa ser uma permutação dos índices');
+        break;
+      }
       case 'mcq': {
         if (item.gabarito.correta >= item.conteudo.opcoes.length) erro('mcq: `correta` fora das opções');
         const norm = item.conteudo.opcoes.map(normalizar);
@@ -127,6 +154,8 @@ export const itemTesteSchema = itemSchema.and(
 );
 
 export const apresentacaoSchema = z.object({
+  recursos: z.array(midiaSchema).max(4).optional(),
+  missao: missaoSchema.optional(),
   explicacao: z.array(texto).min(1), // parágrafos em PT (sem markdown)
   regras: z.array(texto).optional(), // tópicos curtos ("I am / you are / he is")
   notaContrastiva: texto.optional(), // armadilha típica de brasileiros

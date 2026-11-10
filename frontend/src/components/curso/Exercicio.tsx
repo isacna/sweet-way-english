@@ -1,6 +1,8 @@
 "use client";
 
 import type { ItemRenderizavel, Resposta, Resultado } from "@/lib/curso";
+import { MidiaLicao } from "./MidiaLicao";
+import { ExercicioSequence } from "./ExercicioSequence";
 import { ExercicioCloze } from "./ExercicioCloze";
 import { ExercicioMatch } from "./ExercicioMatch";
 import { ExercicioMcq } from "./ExercicioMcq";
@@ -23,6 +25,9 @@ export function Exercicio({ item, value, onChange, disabled, feedback, onSubmit,
   const comum = { id: item.id, value, onChange, disabled, feedback, onSubmit };
   let corpo: React.ReactNode;
   switch (item.tipo) {
+    case "sequence":
+      corpo = <ExercicioSequence {...comum} conteudo={item.conteudo} />;
+      break;
     case "mcq":
       corpo = <ExercicioMcq {...comum} conteudo={item.conteudo} />;
       break;
@@ -48,6 +53,7 @@ export function Exercicio({ item, value, onChange, disabled, feedback, onSubmit,
         {numero && <span className="mr-1.5 text-grape">{numero}</span>}
         {item.enunciado}
       </p>
+      {item.conteudo.midia && <MidiaLicao key={item.id} midia={item.conteudo.midia} />}
       {corpo}
     </div>
   );

@@ -108,6 +108,7 @@ export function respostaVazia(tipo: string): unknown {
   switch (tipo) {
     case 'mcq':
       return -1;
+    case 'sequence':
     case 'cloze':
     case 'word_order':
     case 'match':

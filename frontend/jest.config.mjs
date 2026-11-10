@@ -10,6 +10,7 @@ const config = {
     "^@/(.*)$": "<rootDir>/src/$1",
   },
   testPathIgnorePatterns: ["/node_modules/", "<rootDir>/e2e/"],
+  modulePathIgnorePatterns: ["<rootDir>/.next/"],
 };
 
 export default createJestConfig(config);

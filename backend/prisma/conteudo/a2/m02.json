@@ -22,8 +22,27 @@
       "ordem": 1,
       "titulo": "We flew to Recife",
       "objetivo": "Contar para onde você foi e como viajou, com verbos irregulares de transporte e by bus, by plane, on foot.",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "We flew to Recife",
+          "enunciado": "Conte uma viagem real ou inventada em quatro frases: destino, transporte principal, transporte local e companhia.",
+          "criterios": [
+            "Usei verbos no passado.",
+            "Usei by com transporte ou on foot."
+          ],
+          "exemplo": "I went to Salvador with my sister. We travelled by bus. We took a taxi to the hotel. We went to the beach on foot."
+        },
+        "recursos": [
+          {
+            "tipo": "video",
+            "modo": "link",
+            "titulo": "Past simple — irregular verbs",
+            "fonte": "British Council — LearnEnglish Teens (A1–A2)",
+            "url": "https://learnenglishteens.britishcouncil.org/grammar/a1-a2-grammar/past-simple-irregular-verbs",
+            "orientacao": "Assista ao vídeo explicativo na fonte e observe os verbos destacados nas legendas. Anote três formas de passado e use uma delas em seu relato de viagem. A fonte inclui transcrição e explicação."
+          }
+        ],
         "explicacao": [
           "Para contar uma viagem, usamos o passado simples. Muitos verbos de viagem são irregulares: não ganham -ed, mudam de forma. Go vira went, fly vira flew, leave vira left, take vira took, get vira got, drive vira drove e ride vira rode.",
           "A forma do passado é a mesma para todas as pessoas: I went, she went, they went. Não existe \"wents\" nem \"goed\".",
@@ -126,6 +145,66 @@
           "tagsErro": ["preposicao"]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Como o grupo foi do hotel → praia?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 1",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Last July, we flew to Recife. We took a bus from the airport to the hotel. The beach was close, so we went there on foot."
+            },
+            "opcoes": [
+              "By plane.",
+              "By bus.",
+              "On foot."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "No relato: Last July, we flew to Recife. We took a bus from the airport to the hotel. The beach was close, so we went there on foot.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l1:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "We took a bus to the hotel.",
+              "We walked from the hotel to the beach.",
+              "We flew to Recife."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 1",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Last July, we flew to Recife. We took a bus from the airport to the hotel. The beach was close, so we went there on foot."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: We flew to Recife. → We took a bus to the hotel. → We walked from the hotel to the beach.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l1:sequencia"
+          ]
+        },
+        {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
           "conteudo": { "frase": "Nós fomos para a praia de ônibus.", "direcao": "pt-en" },
           "gabarito": { "aceitas": ["We went to the beach by bus.", "We went by bus to the beach.", "We took the bus to the beach.", "We took a bus to the beach."] },
@@ -181,8 +260,17 @@
       "ordem": 2,
       "titulo": "I bought a souvenir",
       "objetivo": "Contar o que você fez na viagem com mais verbos irregulares e pronunciar bem o -ed dos verbos regulares.",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "I bought a souvenir",
+          "enunciado": "Escreva um cartão-postal de quatro frases sobre atividades de uma viagem.",
+          "criterios": [
+            "Usei pelo menos dois verbos irregulares no passado.",
+            "Incluí uma reação pessoal → viagem."
+          ],
+          "exemplo": "I went to Recife. I ate fish near the beach. I bought a postcard. I loved the trip!"
+        },
         "explicacao": [
           "Na viagem fazemos muitas coisas, e vários desses verbos também são irregulares: buy → bought (comprar), spend → spent (gastar, passar tempo), lose → lost (perder), find → found (encontrar), swim → swam (nadar), meet → met (conhecer, encontrar alguém), feel → felt (sentir-se) e sleep → slept (dormir).",
           "Spend serve para dinheiro e para tempo: I spent 200 reais. We spent a week in Natal (Passamos uma semana em Natal).",
@@ -285,6 +373,66 @@
           "tagsErro": ["verbo_irregular"]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O que a pessoa comprou para a irmã?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 2",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "On Saturday, I bought a postcard for my sister. Then I ate fish at a small restaurant. In the evening, I met an old friend and we talked for hours."
+            },
+            "opcoes": [
+              "A postcard.",
+              "A meal.",
+              "A train ticket."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "No relato: On Saturday, I bought a postcard for my sister. Then I ate fish at a small restaurant. In the evening, I met an old friend and we talked for hours.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l2:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "I ate fish at a restaurant.",
+              "I met an old friend.",
+              "I bought a postcard."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 2",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "On Saturday, I bought a postcard for my sister. Then I ate fish at a small restaurant. In the evening, I met an old friend and we talked for hours."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: I bought a postcard. → I ate fish at a restaurant. → I met an old friend.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l2:sequencia"
+          ]
+        },
+        {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
           "conteudo": { "frase": "Eu comprei uma lembrancinha para minha irmã.", "direcao": "pt-en" },
           "gabarito": { "aceitas": ["I bought a souvenir for my sister.", "I bought my sister a souvenir."] },
@@ -340,8 +488,17 @@
       "ordem": 3,
       "titulo": "Where did you go?",
       "objetivo": "Fazer e responder perguntas sobre uma viagem com where, when, how, who, what e how long + did.",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "Where did you go?",
+          "enunciado": "Crie três perguntas para entrevistar alguém sobre uma viagem e escreva respostas possíveis.",
+          "criterios": [
+            "Usei did com verbo na forma base.",
+            "Perguntei sobre três informações diferentes."
+          ],
+          "exemplo": "Where did you go? I went to Natal. How did you travel? By plane. How long did you stay? For a week."
+        },
         "explicacao": [
           "Para perguntar sobre o passado, usamos a palavra interrogativa + did + sujeito + verbo na forma base: Where did you go? When did they arrive? Depois de did, o verbo nunca fica no passado: Where did you go?, e não \"Where did you went?\".",
           "As palavras interrogativas mais usadas numa conversa sobre viagem são: where (onde, para onde), when (quando), how (como), who... with (com quem), what (o que) e how long (quanto tempo).",
@@ -441,6 +598,54 @@
           "tagsErro": ["do_support"]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Qual informação ainda falta para saber com quem a pessoa viajou?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 3",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Where did you go? We went to Curitiba. How did you travel? By bus. How long did you stay? We stayed for three days."
+            },
+            "opcoes": [
+              "The destination.",
+              "The travel companion.",
+              "The length of the trip."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: Where did you go? We went to Curitiba. How did you travel? By bus. How long did you stay? We stayed for three days.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l3:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Você sabe o destino e a duração, mas quer descobrir a companhia. O que pergunta?",
+          "conteudo": {
+            "opcoes": [
+              "How long did you stay?",
+              "Who did you travel with?",
+              "Where did you go?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Who did you travel with? pergunta com quem a pessoa viajou.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l3:decisao"
+          ]
+        },
+        {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
           "conteudo": { "frase": "Com quem você viajou?", "direcao": "pt-en" },
           "gabarito": { "aceitas": ["Who did you travel with?", "Who did you go with?", "Who did you take the trip with?", "With whom did you travel?", "With who did you travel?"] },
@@ -496,8 +701,17 @@
       "ordem": 4,
       "titulo": "Who called you?",
       "objetivo": "Perguntar quem fez algo ou o que aconteceu (sem did) e diferenciar de perguntas com did.",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "Who called you?",
+          "enunciado": "Escreva uma pergunta para descobrir quem realizou uma ação e outra para descobrir o objeto da ação.",
+          "criterios": [
+            "Na pergunta sobre o sujeito, não usei did.",
+            "Na pergunta sobre o objeto, usei did e verbo base."
+          ],
+          "exemplo": "Who found the bag? A driver found it. What did Ana lose? She lost her bag."
+        },
         "explicacao": [
           "Quando who ou what é o sujeito da pergunta, isto é, quando perguntamos quem fez a ação ou o que aconteceu, não usamos did. O verbo vai direto para o passado: Who called you? (Quem ligou para você?) What happened? (O que aconteceu?)",
           "Compare com as perguntas em que who ou what é o objeto: Who did you call? (Para quem você ligou?) Aqui você fez a ação, então usamos did + verbo base.",
@@ -598,6 +812,68 @@
           "tagsErro": ["pergunta_sujeito"]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Quem encontrou a bolsa?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Ana lost her bag at the station. A driver found it. He called Ana, and she collected it that afternoon."
+            },
+            "opcoes": [
+              "Ana.",
+              "A driver.",
+              "A hotel receptionist."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: Ana lost her bag at the station. A driver found it. He called Ana, and she collected it that afternoon.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l4:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "A driver found the bag.",
+              "The driver called Ana.",
+              "Ana collected the bag.",
+              "Ana lost her bag."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Ana lost her bag at the station. A driver found it. He called Ana, and she collected it that afternoon."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              3,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: Ana lost her bag. → A driver found the bag. → The driver called Ana. → Ana collected the bag.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l4:sequencia"
+          ]
+        },
+        {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
           "conteudo": { "frase": "O que aconteceu no aeroporto?", "direcao": "pt-en" },
           "gabarito": { "aceitas": ["What happened at the airport?", "What happened in the airport?"] },
@@ -653,8 +929,17 @@
       "ordem": 5,
       "titulo": "Two years ago",
       "objetivo": "Dizer quando algo aconteceu com ago, last, in + ano, on + data e when I was...",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "Two years ago",
+          "enunciado": "Escreva três lembranças de viagens usando last, ago e in com um ano.",
+          "criterios": [
+            "Usei ago depois do período de tempo.",
+            "Não coloquei in antes de last."
+          ],
+          "exemplo": "I visited Recife last year. I went to a museum two months ago. I travelled to Natal in 2022."
+        },
         "explicacao": [
           "Ago significa \"atrás\" e vem depois do período de tempo: two years ago (dois anos atrás), three days ago, a long time ago. Nunca diga \"ago two years\".",
           "Last significa \"passado\" e vem antes da palavra, sem the: last week, last month, last summer, last Saturday. Não diga \"the last week\" para \"semana passada\".",
@@ -755,6 +1040,54 @@
           "tagsErro": ["expressao_tempo"]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Há quantos dias o grupo chegou?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 5",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Today is Friday. We arrived on Tuesday. Yesterday, we visited the museum. Last night, we had dinner near the river."
+            },
+            "opcoes": [
+              "One day ago.",
+              "Two days ago.",
+              "Three days ago."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "No relato: Today is Friday. We arrived on Tuesday. Yesterday, we visited the museum. Last night, we had dinner near the river.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l5:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Hoje → sexta-feira e a visita ao museu foi quinta-feira. Qual legenda está correta?",
+          "conteudo": {
+            "opcoes": [
+              "We visited the museum tomorrow.",
+              "We visited the museum yesterday.",
+              "We visit the museum three days ago."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Yesterday se refere → quinta-feira neste contexto; visited marca o passado.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l5:decisao"
+          ]
+        },
+        {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",
           "conteudo": { "frase": "Nós viajamos para o Chile no ano passado.", "direcao": "pt-en" },
           "gabarito": { "aceitas": ["We traveled to Chile last year.", "We travelled to Chile last year.", "We went to Chile last year.", "Last year we traveled to Chile.", "Last year, we traveled to Chile.", "Last year we went to Chile.", "Last year, we went to Chile."] },
@@ -810,8 +1143,17 @@
       "ordem": 6,
       "titulo": "First, then, finally",
       "objetivo": "Contar a história de uma viagem em ordem, com first, then, after that e finally, e o vocabulário de viagem.",
-      "minutosEstimados": 15,
+      "minutosEstimados": 23,
       "apresentacao": {
+        "missao": {
+          "titulo": "First, then, finally",
+          "enunciado": "Conte uma viagem com um imprevisto e a solução em cinco frases. Use conectores para organizar a história.",
+          "criterios": [
+            "Incluí um problema e sua solução.",
+            "Usei first, then ou after that e finally."
+          ],
+          "exemplo": "First, we went to the station. We missed our train. Then we bought new tickets. After that, we called the hotel. Finally, we arrived safely."
+        },
         "explicacao": [
           "Para contar uma história em ordem, usamos sequenciadores: first (primeiro), then (depois, então), after that (depois disso), next (em seguida) e finally (por fim). Eles costumam vir no começo da frase: First, we packed our bags. Then, we took a taxi.",
           "Finally é para a última ação da história. Não confunda com \"finalmente\" no sentido de alívio, que também existe, mas aqui o foco é a ordem: Finally, we got to the hotel.",
@@ -912,6 +1254,68 @@
           "gabarito": { "aceitas": ["After that, we went to the beach.", "After that we went to the beach.", "Then, we went to the beach.", "Then we went to the beach.", "Next, we went to the beach.", "Next we went to the beach.", "Afterwards, we went to the beach.", "Afterwards we went to the beach."] },
           "explicacao": "After sozinho não funciona como sequenciador. Use after that, then ou next.",
           "tagsErro": ["sequenciador"]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Por que o grupo telefonou para o hotel?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "First, we missed our bus. Then we bought tickets for the next one. After that, we called the hotel to explain the delay. Finally, we arrived at midnight."
+            },
+            "opcoes": [
+              "To explain a late arrival.",
+              "To cancel a holiday.",
+              "To order dinner."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "No relato: First, we missed our bus. Then we bought tickets for the next one. After that, we called the hotel to explain the delay. Finally, we arrived at midnight.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l6:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "We bought new tickets.",
+              "We called the hotel.",
+              "We arrived at midnight.",
+              "We missed our bus."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Diário de viagem — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "First, we missed our bus. Then we bought tickets for the next one. After that, we called the hotel to explain the delay. Finally, we arrived at midnight."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              3,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: We missed our bus. → We bought new tickets. → We called the hotel. → We arrived at midnight.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a2-m02-l6:sequencia"
+          ]
         },
         {
           "etapa": "producao", "tipo": "translate", "enunciado": "Traduza para o inglês.",

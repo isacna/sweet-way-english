@@ -156,6 +156,30 @@ No piloto qualquer professor (admin ou não) vê esse grupo, porque esses alunos
 
 ## Notas de implementação (detalhes não previstos acima)
 
+### Pilotos multimídia (A1 M04, A1 M06, A2 M02)
+
+As 18 lições desses módulos incluem 36 atividades adicionais (18 de escuta, 9 de decisão e 9 de ordenação) e 18 missões pessoais. Os exercícios e quizzes anteriores são preservados. A escuta original usa a voz do navegador, identificada no player; não é uma gravação humana. A música do Super Simple é uma extensão infantil opcional. O áudio de café e o vídeo explicativo de passado do British Council abrem na fonte, com suas legendas/transcrições. Nenhum quiz depende da disponibilidade desses serviços.
+
+- Todo `conteudo` de exercício pode incluir `midia`. A apresentação aceita `recursos` (até quatro mídias) e `missao`.
+- Mídia: `{ tipo: "audio" | "video" | "musica", modo: "voz" | "arquivo" | "youtube" | "link", titulo, fonte, orientacao, url?, transcricao?, inicio?, fim? }`. URLs devem usar HTTPS. `youtube` recebe `https://www.youtube.com/watch?v=ID`; o player monta uma URL de incorporação e só a carrega após um clique. Arquivos exigem transcrição; voz exige texto e não aceita URL. `inicio` e `fim` são segundos inteiros, somente para arquivo/YouTube, com fim maior que início. Não há autoplay.
+- Novo tipo `sequence`: `conteudo: { trechos: string[], midia? }`, com 3–8 trechos distintos, e `gabarito: { ordem: number[] }`, uma permutação dos índices. A resposta do aluno é a lista de índices selecionados na ordem; só a sequência completa correta recebe um ponto. O gabarito continua exclusivo do servidor.
+- Missão: `{ titulo, enunciado, criterios: string[], exemplo }`, com 2–6 critérios. É uma produção livre com autoavaliação, sem nota, XP ou bloqueio de progressão. O aluno pode guardar a resposta no caderno existente (limite total de 5.000 caracteres). O editor da professora preserva e permite editar todos esses campos.
+- `npm run conteudo:validar -- --diversidade` acrescenta avisos de sequências repetidas, falta de mídia, falta de missão e pouca variedade de formatos. Os avisos editoriais não invalidam o acervo legado.
+
+Para disponibilizar em um ambiente existente, após revisar o conteúdo, executar no diretório `backend`:
+
+```sh
+npx prisma migrate deploy
+npx prisma generate
+npx tsx scripts/atualizar-pilotos.ts
+# Após conferir a simulação:
+npx tsx scripts/atualizar-pilotos.ts --aplicar
+```
+
+O atualizador só acrescenta exercícios marcados com `piloto_multimidia_v1` e uma chave `piloto:<slug>:<atividade>`. Reexecuções não duplicam esses itens; edições da professora nesses itens são preservadas. Não remova as tags de identificação. A apresentação atual é mantida; a missão só é incluída se ainda não existir, e os recursos são acrescentados por URL até o limite de quatro. IDs existentes, tentativas, revisões, quizzes e status de publicação não são alterados. Em lições já publicadas, aplicar torna as adições visíveis imediatamente. Não usar `conteudo:importar -- --sobrescrever` para essa atualização, pois esse fluxo substitui exercícios.
+
+Validação de interface: `BASE_URL=http://localhost:3000 npx playwright test e2e/multimidia.spec.ts --project=chromium` usa API simulada e não grava no banco. Cobre apresentação, ordenação, notas e largura de 390 px; reprodução real de mídia externa e comportamento em aparelho físico exigem verificação separada.
+
 - `POST /curso/revisao/:exercicioId`: **409** `{ error, proximaEm }` se o item ainda não venceu (`proximaEm > agora`).
   Sem isso, daria para responder o mesmo item várias vezes seguidas e somar `XP.revisaoCorreta` sem limite.
 - `POST /curso/licoes/:id/quiz`: 409 se a lição não tem nenhum item `quiz`. Resposta em formato errado para o tipo → 400

@@ -1,17 +1,32 @@
 // Tipos do curso autoguiado. Contrato completo em docs/api-curso.md.
 
 export type Etapa = "controlada" | "semicontrolada" | "producao" | "quiz";
-export type TipoExercicio = "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction";
+export type TipoExercicio = "sequence" | "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction";
 export type Habilidade = "gramatica_vocabulario" | "leitura" | "escrita";
 export type StatusConteudo = "rascunho" | "revisao" | "publicado";
 
+export type Midia = {
+  tipo: "audio" | "video" | "musica";
+  modo: "arquivo" | "youtube" | "link" | "voz";
+  titulo: string;
+  fonte: string;
+  url?: string;
+  transcricao?: string;
+  orientacao: string;
+  inicio?: number;
+  fim?: number;
+};
+
+export type Missao = { titulo: string; enunciado: string; criterios: string[]; exemplo: string };
+
 export type ConteudoExercicio =
-  | { tipo: "mcq"; conteudo: { opcoes: string[]; texto?: string } }
-  | { tipo: "cloze"; conteudo: { texto: string; opcoesPorLacuna?: string[][] } }
-  | { tipo: "word_order"; conteudo: { palavras: string[] } }
-  | { tipo: "match"; conteudo: { esquerda: string[]; direita: string[] } }
-  | { tipo: "translate"; conteudo: { frase: string; direcao: "pt-en" | "en-pt" } }
-  | { tipo: "error_correction"; conteudo: { frase: string } };
+  | { tipo: "sequence"; conteudo: { midia?: Midia; trechos: string[] } }
+  | { tipo: "mcq"; conteudo: { midia?: Midia; opcoes: string[]; texto?: string } }
+  | { tipo: "cloze"; conteudo: { midia?: Midia; texto: string; opcoesPorLacuna?: string[][] } }
+  | { tipo: "word_order"; conteudo: { midia?: Midia; palavras: string[] } }
+  | { tipo: "match"; conteudo: { midia?: Midia; esquerda: string[]; direita: string[] } }
+  | { tipo: "translate"; conteudo: { midia?: Midia; frase: string; direcao: "pt-en" | "en-pt" } }
+  | { tipo: "error_correction"; conteudo: { midia?: Midia; frase: string } };
 
 /** Resposta enviada ao backend, por tipo: mcq → índice; cloze → textos por lacuna;
  *  word_order → palavras na ordem; match → índice em `direita` para cada item de `esquerda`;
@@ -29,6 +44,8 @@ export type Resultado = {
 };
 
 export type Apresentacao = {
+  recursos?: Midia[];
+  missao?: Missao;
   explicacao: string[];
   regras?: string[];
   notaContrastiva?: string;
@@ -183,6 +200,8 @@ export type ItemRenderizavel = { id: number; enunciado: string } & ConteudoExerc
 export function respostaPreenchida(item: ItemRenderizavel, r: Resposta | undefined): boolean {
   if (r === undefined) return false;
   switch (item.tipo) {
+    case "sequence":
+      return Array.isArray(r) && r.length === item.conteudo.trechos.length && new Set<string | number>(r).size === r.length && r.every((v) => typeof v === "number" && Number.isInteger(v) && v >= 0 && v < item.conteudo.trechos.length);
     case "mcq":
       return typeof r === "number" && r >= 0;
     case "cloze": {
@@ -209,6 +228,8 @@ export function respostaParaEnvio(item: ItemRenderizavel, r: Resposta | undefine
   switch (item.tipo) {
     case "mcq":
       return -1;
+    case "sequence":
+      return [] as number[];
     case "cloze":
     case "word_order":
       return [] as string[];
@@ -223,6 +244,8 @@ export function respostaParaEnvio(item: ItemRenderizavel, r: Resposta | undefine
 export function formatarResposta(item: ItemRenderizavel, r: Resposta | undefined): string {
   if (r === undefined) return "—";
   switch (item.tipo) {
+    case "sequence":
+      return Array.isArray(r) && r.length ? (r as number[]).map((i) => item.conteudo.trechos[i] ?? "?").join(" → ") : "—";
     case "mcq":
       return typeof r === "number" && r >= 0 ? (item.conteudo.opcoes[r] ?? "—") : "—";
     case "cloze":
@@ -285,7 +308,7 @@ export function proximoPasso(trilha: Trilha): ProximoPasso {
 
 /** A resposta esperada é uma frase em inglês (para oferecer o áudio de pronúncia)? */
 export function respostaEmIngles(item: ConteudoExercicio): boolean {
-  if (item.tipo === "match") return false;
+  if (item.tipo === "match" || item.tipo === "sequence") return false;
   if (item.tipo === "translate") return item.conteudo.direcao === "pt-en";
   return true;
 }

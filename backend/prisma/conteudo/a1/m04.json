@@ -20,8 +20,27 @@
       "ordem": 1,
       "titulo": "I work, you study",
       "objetivo": "Falar de hábitos e rotina com I, you, we e they no presente simples.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "I work, you study",
+          "enunciado": "Escreva três frases sobre sua rotina usando I e uma sobre algo que você e outra pessoa fazem usando we. Como extensão opcional, ouça a canção e compare a rotina mostrada com a sua.",
+          "criterios": [
+            "Usei três ações da minha rotina.",
+            "Usei we para uma ação compartilhada."
+          ],
+          "exemplo": "I work in a shop. I study at night. I cook at home. We have dinner together."
+        },
+        "recursos": [
+          {
+            "tipo": "musica",
+            "modo": "youtube",
+            "titulo": "This Is The Way — rotinas em uma canção",
+            "fonte": "Super Simple Songs — canção infantil; recurso opcional para iniciantes",
+            "url": "https://www.youtube.com/watch?v=4XLQpRI_wOQ",
+            "orientacao": "Ouça a canção e observe os gestos. Identifique ações da rotina e depois descreva duas ações da sua manhã. Use as legendas do player como apoio."
+          }
+        ],
         "explicacao": [
           "O presente simples (simple present) serve para falar de hábitos, rotinas e fatos: I work in an office. We live in Brasília. They study English.",
           "Com I, you, we e they, o verbo fica na forma básica, igual ao dicionário: I work, you work, we work, they work. Não use o verbo be junto: diga I work, e não I am work.",
@@ -284,6 +303,58 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Quando a pessoa estuda inglês?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 1",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "I work at a bakery. I start at six. We make bread in the morning. I study English at night."
+            },
+            "opcoes": [
+              "In the morning.",
+              "At night.",
+              "At six."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: I work at a bakery. I start at six. We make bread in the morning. I study English at night.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l1:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "I have breakfast at six thirty.",
+              "I go to work at seven.",
+              "I get up at six."
+            ]
+          },
+          "gabarito": {
+            "ordem": [
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: I get up at six. → I have breakfast at six thirty. → I go to work at seven.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l1:sequencia"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -422,8 +493,17 @@
       "ordem": 2,
       "titulo": "She works in a hospital",
       "objetivo": "Usar o presente simples com he, she e it (verbo + -s).",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "She works in a hospital",
+          "enunciado": "Descreva a rotina de uma pessoa que você conhece em quatro frases com he ou she.",
+          "criterios": [
+            "Mantive o mesmo sujeito.",
+            "Revisei o -s dos verbos."
+          ],
+          "exemplo": "My brother works in a shop. He starts at nine. He has lunch at one. He plays football at night."
+        },
         "explicacao": [
           "Com he, she e it (e com qualquer sujeito no singular, como Ana ou my father), o verbo no presente simples ganha -s: I work → she works; I live → he lives; I sleep → it sleeps.",
           "Em português o verbo muda em quase todas as pessoas (eu trabalho, ela trabalha, nós trabalhamos). Em inglês só muda na terceira pessoa do singular, e a mudança é só esse -s. Esquecer o -s (She work) é o erro mais comum de brasileiros neste ponto.",
@@ -679,6 +759,54 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Qual horário combina com o trabalho da irmã?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 2",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "My sister is a nurse. She works at night. She sleeps in the morning. She has lunch at two."
+            },
+            "opcoes": [
+              "9 a.m. to 5 p.m.",
+              "8 p.m. to 6 a.m.",
+              "12 p.m. to 2 p.m."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: My sister is a nurse. She works at night. She sleeps in the morning. She has lunch at two.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l2:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Sua amiga trabalha → noite e dorme de manhã. Qual convite respeita essa rotina?",
+          "conteudo": {
+            "opcoes": [
+              "Breakfast at 8 a.m.",
+              "Lunch at 2 p.m.",
+              "Dinner at 10 p.m."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "O almoço acontece depois do período de sono e antes do trabalho noturno.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l2:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -826,8 +954,17 @@
       "ordem": 3,
       "titulo": "He watches, she studies",
       "objetivo": "Escrever corretamente o verbo com he, she e it: -es, -ies e has.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "He watches, she studies",
+          "enunciado": "Crie um perfil de rotina com study, watch, go e have para uma personagem.",
+          "criterios": [
+            "Usei studies e watches.",
+            "Usei goes e has."
+          ],
+          "exemplo": "Mia studies English. She watches films. She goes to work by bus. She has lunch at noon."
+        },
         "explicacao": [
           "Alguns verbos mudam um pouco mais com he, she e it. Verbos terminados em -ch, -sh, -ss, -x e -o ganham -es: watch → watches, wash → washes, fix → fixes, go → goes, do → does.",
           "Verbos terminados em consoante + y trocam o y por -ies: study → studies. Mas se antes do y houver uma vogal, é só acrescentar -s: play → plays, buy → buys.",
@@ -1101,6 +1238,54 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O que Leo faz no sábado?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 3",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Leo studies in the morning. He watches cooking videos at night. On Saturday, he washes his bike and goes to the park."
+            },
+            "opcoes": [
+              "He washes his bike.",
+              "He studies at night.",
+              "He cooks at school."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "No relato: Leo studies in the morning. He watches cooking videos at night. On Saturday, he washes his bike and goes to the park.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l3:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O perfil de Leo diz que ele vai ao parque no sábado. Qual legenda combina?",
+          "conteudo": {
+            "opcoes": [
+              "He goes to the park on Saturday.",
+              "He go to the park every night.",
+              "He studies in the park every morning."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "He pede goes; o dia informado no relato → Saturday.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l3:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -1245,8 +1430,17 @@
       "ordem": 4,
       "titulo": "What time is it?",
       "objetivo": "Perguntar e dizer as horas.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "What time is it?",
+          "enunciado": "Escreva uma agenda com três compromissos e os horários por extenso em inglês.",
+          "criterios": [
+            "Incluí três horários.",
+            "Distingui horário do transporte e do compromisso."
+          ],
+          "exemplo": "Breakfast is at seven. Work starts at eight thirty. Dinner is at seven fifteen."
+        },
         "explicacao": [
           "Para perguntar as horas: What time is it? (Que horas são?). Para responder, comece sempre com It's: It's three o'clock. Em inglês a frase precisa de sujeito, por isso o it é obrigatório, mesmo sem significado.",
           "O jeito mais fácil de dizer as horas é ler os números: 7:15 = seven fifteen, 7:30 = seven thirty, 7:45 = seven forty-five. Para hora cheia, use o'clock: It's eight o'clock. Para minutos de 1 a 9, diga oh antes: 7:05 = seven oh five.",
@@ -1502,6 +1696,66 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Você quer chegar antes da aula. Qual → o horário de início?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "The bus leaves at seven fifteen. The English class starts at eight thirty. Lunch is at twelve."
+            },
+            "opcoes": [
+              "7:15",
+              "8:30",
+              "12:00"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: The bus leaves at seven fifteen. The English class starts at eight thirty. Lunch is at twelve.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l4:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "The class starts at eight thirty.",
+              "Lunch is at twelve.",
+              "The bus leaves at seven fifteen."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "The bus leaves at seven fifteen. The English class starts at eight thirty. Lunch is at twelve."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              2,
+              0,
+              1
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: The bus leaves at seven fifteen. → The class starts at eight thirty. → Lunch is at twelve.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l4:sequencia"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -1643,8 +1897,17 @@
       "ordem": 5,
       "titulo": "On Monday, at seven, in the morning",
       "objetivo": "Usar os dias da semana e as preposições de tempo at, on e in.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "On Monday, at seven, in the morning",
+          "enunciado": "Convide alguém para estudar e informe dia da semana, período do dia e horário.",
+          "criterios": [
+            "Usei on antes do dia.",
+            "Usei at antes do horário."
+          ],
+          "exemplo": "We study English on Tuesday, in the afternoon, at three."
+        },
         "explicacao": [
           "Os dias da semana em inglês sempre começam com letra maiúscula: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. Saturday e Sunday formam o weekend (fim de semana).",
           "Para dizer quando algo acontece, usamos três preposições: at para horas e momentos exatos (at 7 o'clock, at noon, at night); on para dias (on Monday, on the weekend); in para partes do dia (in the morning, in the afternoon, in the evening).",
@@ -1897,6 +2160,54 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Quando acontece a aula de inglês?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 5",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "I play tennis on Monday. I study English on Wednesday evening. On Friday, I work at seven in the morning."
+            },
+            "opcoes": [
+              "On Monday morning.",
+              "On Friday at seven.",
+              "On Wednesday evening."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "No relato: I play tennis on Monday. I study English on Wednesday evening. On Friday, I work at seven in the morning.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l5:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Agenda: Monday → tennis; Wednesday evening → English; Friday 7 a.m. → work. Qual lembrete corresponde → agenda?",
+          "conteudo": {
+            "opcoes": [
+              "English: on Wednesday, in the evening.",
+              "Tennis: on Friday, at seven.",
+              "Work: on Monday, in the evening."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "O lembrete precisa combinar atividade, dia e período, não apenas uma preposição.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l5:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -2052,8 +2363,17 @@
       "ordem": 6,
       "titulo": "A day in my life",
       "objetivo": "Descrever um dia inteiro, o seu e o de outra pessoa, em sequência.",
-      "minutosEstimados": 25,
+      "minutosEstimados": 33,
       "apresentacao": {
+        "missao": {
+          "titulo": "A day in my life",
+          "enunciado": "Conte seu dia em cinco frases. Depois, conte duas ações do dia de outra pessoa.",
+          "criterios": [
+            "Organizei as ações em sequência.",
+            "Mudei os verbos ao passar de I para he ou she."
+          ],
+          "exemplo": "First, I get up. Then I have breakfast. I work in the morning. I study at night. Finally, I go to bed. My sister works at night. She sleeps in the morning."
+        },
         "explicacao": [
           "Nesta lição você junta tudo o que aprendeu no módulo para descrever um dia inteiro: o presente simples (I work / she works), as horas e as preposições at, on e in.",
           "Para ligar as ações em sequência, use then (depois, então) e after that (depois disso): I get up at 7. Then I take a shower. After that, I have breakfast. Para hábitos diários, use every day (todos os dias), normalmente no fim da frase.",
@@ -2291,6 +2611,68 @@
           "explicacao": "Carlos = he, então todos os verbos ganham -s: gets up… goes.",
           "tagsErro": [
             "terceira_pessoa_s"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O que acontece logo após o café da manhã?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "First, I get up at six. Then I have breakfast. After breakfast, I take the bus to work. At night, I read a book and go to bed."
+            },
+            "opcoes": [
+              "The person reads a book.",
+              "The person takes the bus.",
+              "The person goes to bed."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: First, I get up at six. Then I have breakfast. After breakfast, I take the bus to work. At night, I read a book and go to bed.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l6:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "I have breakfast.",
+              "I take the bus to work.",
+              "I read a book at night.",
+              "I get up."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "Rotinas em contexto — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "First, I get up at six. Then I have breakfast. After breakfast, I take the bus to work. At night, I read a book and go to bed."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              3,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: I get up. → I have breakfast. → I take the bus to work. → I read a book at night.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m04-l6:sequencia"
           ]
         },
         {

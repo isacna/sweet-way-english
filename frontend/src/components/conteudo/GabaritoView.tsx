@@ -40,6 +40,9 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
 
   let corpo: React.ReactNode = null;
   switch (item.tipo) {
+    case "sequence":
+      corpo = <ol className="list-inside list-decimal">{(g.ordem as number[] ?? []).map((i) => <li key={i}>{lista(c.trechos)[i]}</li>)}</ol>;
+      break;
     case "mcq": {
       const opcoes = lista(c.opcoes);
       corpo = (

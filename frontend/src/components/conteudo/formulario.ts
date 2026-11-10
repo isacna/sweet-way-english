@@ -4,6 +4,8 @@
 
 import type {
   Apresentacao,
+  Midia,
+  Missao,
   Etapa,
   ExercicioCompleto,
   LicaoEdicao,
@@ -13,6 +15,7 @@ import type {
 export const ORDEM_ETAPAS: Etapa[] = ["controlada", "semicontrolada", "producao", "quiz"];
 
 export const TIPOS: TipoExercicio[] = [
+  "sequence",
   "mcq",
   "cloze",
   "word_order",
@@ -22,6 +25,7 @@ export const TIPOS: TipoExercicio[] = [
 ];
 
 export const rotuloTipo: Record<TipoExercicio, string> = {
+  sequence: "Ordenar acontecimentos / diálogo",
   mcq: "Múltipla escolha",
   cloze: "Lacunas",
   word_order: "Ordenar palavras",
@@ -36,6 +40,7 @@ export type ParForm = { esquerda: string; direita: string };
 
 /** Um exercício no editor. Campos de todos os tipos ficam juntos para permitir trocar o tipo sem perder texto. */
 export type ExercicioForm = {
+  midia?: Midia;
   chave: string;
   id?: number;
   etapa: Etapa;
@@ -66,6 +71,8 @@ export type ExercicioForm = {
 export type LinhaPar = { en: string; pt: string };
 
 export type ApresentacaoForm = {
+  recursos?: Midia[];
+  missao?: Missao;
   explicacao: string[];
   regras: string[];
   notaContrastiva: string;
@@ -161,8 +168,12 @@ export function exercicioParaForm(ex: ExercicioCompleto): ExercicioForm {
   f.explicacao = ex.explicacao ?? "";
   f.tagsErro = (ex.tagsErro ?? []).join(", ");
   const c = (ex.conteudo ?? {}) as Qualquer;
+  f.midia = c.midia as Midia | undefined;
   const g = (ex.gabarito ?? {}) as Qualquer;
   switch (ex.tipo) {
+    case "sequence":
+      f.palavras = (Array.isArray(g.ordem) ? (g.ordem as number[]).map((i) => lista(c.trechos)[i]) : lista(c.trechos)).join("\n");
+      break;
     case "mcq":
       f.opcoes = lista(c.opcoes);
       if (f.opcoes.length < 2) f.opcoes = [...f.opcoes, "", ""].slice(0, 2);
@@ -213,6 +224,8 @@ export function licaoParaForm(l: LicaoEdicao): LicaoForm {
     objetivo: l.objetivo,
     minutosEstimados: String(l.minutosEstimados),
     apresentacao: {
+      recursos: a.recursos,
+      missao: a.missao,
       explicacao: a.explicacao?.length ? [...a.explicacao] : [""],
       regras: [...(a.regras ?? [])],
       notaContrastiva: a.notaContrastiva ?? "",
@@ -282,6 +295,12 @@ export function montarMatch(pares: ParForm[]): { esquerda: string[]; direita: st
 // ─── Conversão para o backend ───────────────────────────────────────────────
 
 export function exercicioParaPayload(f: ExercicioForm): ExercicioPayload {
+  const payload = exercicioSemMidia(f);
+  if (f.midia) payload.conteudo.midia = f.midia;
+  return payload;
+}
+
+function exercicioSemMidia(f: ExercicioForm): ExercicioPayload {
   const tags = f.tagsErro
     .split(",")
     .map((t) => t.trim())
@@ -295,6 +314,11 @@ export function exercicioParaPayload(f: ExercicioForm): ExercicioPayload {
     ...(tags.length ? { tagsErro: tags } : {}),
   };
   switch (f.tipo) {
+    case "sequence": {
+      const trechos = linhas(f.palavras);
+      const perm = permutacaoEstavel(trechos.length, trechos.join('|'));
+      return { ...base, conteudo: { trechos: perm.map((i) => trechos[i]) }, gabarito: { ordem: trechos.map((_, i) => perm.indexOf(i)) } };
+    }
     case "mcq": {
       // Remove opções vazias ajustando o índice da correta
       const indices = f.opcoes.map((o, i) => (o.trim() ? i : -1)).filter((i) => i >= 0);
@@ -354,6 +378,8 @@ export function licaoParaPayload(f: LicaoForm): LicaoPayload {
   const regras = a.regras.map((r) => r.trim()).filter(Boolean);
   const vocabulario = limparPares(a.vocabulario);
   const apresentacao: Apresentacao = {
+    ...(a.recursos?.length ? { recursos: a.recursos } : {}),
+    ...(a.missao ? { missao: { ...a.missao, criterios: a.missao.criterios.map((c) => c.trim()).filter(Boolean) } } : {}),
     explicacao: a.explicacao.map((p) => p.trim()).filter(Boolean),
     exemplos: limparPares(a.exemplos),
     ...(regras.length ? { regras } : {}),
@@ -375,6 +401,9 @@ export function avisosExercicio(f: ExercicioForm): string[] {
   if (!f.enunciado.trim()) avisos.push("Falta o enunciado.");
   if (!f.explicacao.trim()) avisos.push("Falta a explicação (feedback mostrado depois da resposta).");
   switch (f.tipo) {
+    case "sequence":
+      if (linhas(f.palavras).length < 3 || linhas(f.palavras).length > 8) avisos.push("Informe de 3 a 8 acontecimentos, um por linha.");
+      break;
     case "mcq": {
       const preenchidas = f.opcoes.filter((o) => o.trim()).length;
       if (preenchidas < 2) avisos.push("Informe pelo menos 2 opções.");

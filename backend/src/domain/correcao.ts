@@ -3,7 +3,7 @@
 // Variações legítimas (contrações, pontuação final, maiúsculas) são normalizadas; o resto
 // precisa estar listado em `aceitas`.
 
-export type Tipo = 'mcq' | 'cloze' | 'word_order' | 'match' | 'translate' | 'error_correction';
+export type Tipo = 'sequence' | 'mcq' | 'cloze' | 'word_order' | 'match' | 'translate' | 'error_correction';
 
 export interface ItemCorrigivel {
   tipo: string;
@@ -116,6 +116,13 @@ export function corrigir(item: ItemCorrigivel, resposta: unknown): Resultado {
   const exp = item.explicacao;
 
   switch (item.tipo as Tipo) {
+    case 'sequence': {
+      if (!Array.isArray(resposta) || resposta.some((r) => !Number.isInteger(r) || r < 0 || r >= c.trechos.length) || new Set(resposta).size !== resposta.length || resposta.length > c.trechos.length)
+        throw new RespostaInvalida('sequence espera índices únicos dos trechos');
+      const ordem: number[] = g.ordem;
+      const ok = resposta.length === ordem.length && ordem.every((v, i) => resposta[i] === v);
+      return resultado(ok, ok ? 1 : 0, ordem.map((i) => c.trechos[i]).join(' → '), exp);
+    }
     case 'mcq': {
       if (typeof resposta !== 'number') throw new RespostaInvalida('mcq espera o índice da opção');
       return resultado(resposta === g.correta, resposta === g.correta ? 1 : 0, c.opcoes[g.correta], exp);

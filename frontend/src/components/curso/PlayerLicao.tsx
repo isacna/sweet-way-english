@@ -33,10 +33,12 @@ import {
   type Resultado,
   type ResultadoQuiz,
 } from "@/lib/curso";
+import { MidiaLicao } from "./MidiaLicao";
+import { MissaoLicao } from "./MissaoLicao";
 import { BotaoOuvir } from "./BotaoOuvir";
 import { Exercicio } from "./Exercicio";
 import { FeedbackResultado } from "./FeedbackResultado";
-import { PainelNotas, useNotaLicao } from "./PainelNotas";
+import { NOTA_MAX, PainelNotas, useNotaLicao } from "./PainelNotas";
 import { TextoDestacado, Termo, termosDaLicao } from "./TextoDestacado";
 import { BarraAcao, BarraProgresso, classeBotao } from "./ui";
 
@@ -165,6 +167,8 @@ function Apresentacao({
           ))}
         </ol>
       </section>
+
+      {ap.recursos?.map((midia, i) => <MidiaLicao key={i} midia={midia} />)}
 
       {ap.regras && ap.regras.length > 0 && (
         <CartaoSecao icone={<ListChecks className="h-5 w-5" />} titulo="Resumo da regra">
@@ -849,6 +853,12 @@ export function PlayerLicao({ licao }: { licao: LicaoDetalhe }) {
           onMudar={mudarPratica}
           onConcluir={() => irPara("quiz")}
         />
+      )}
+
+      {licao.apresentacao.missao && (
+        <div hidden={fase !== "pratica" && fase !== "resultado"}>
+          <MissaoLicao key={licao.id} missao={licao.apresentacao.missao} onAnotar={notas.anotar} espacoNotas={NOTA_MAX - notas.texto.trimEnd().length - (notas.texto.trim() ? 1 : 0)} />
+        </div>
       )}
 
       {fase === "quiz" &&

@@ -21,8 +21,17 @@
       "ordem": 1,
       "titulo": "Rice, eggs, bread — contáveis e incontáveis",
       "objetivo": "Diferenciar substantivos contáveis e incontáveis e usar a/an corretamente com comida e bebida.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "Rice, eggs, bread — contáveis e incontáveis",
+          "enunciado": "Monte uma lista de café da manhã com dois itens contáveis e dois incontáveis.",
+          "criterios": [
+            "Usei números ou a/an nos contáveis.",
+            "Usei some nos incontáveis."
+          ],
+          "exemplo": "Two eggs, an apple, some bread and some milk."
+        },
         "explicacao": [
           "Em inglês, os substantivos se dividem em contáveis e incontáveis. Contáveis são coisas que podemos contar: an apple, two apples, a sandwich, three eggs. Eles têm singular e plural.",
           "Incontáveis são coisas que vemos como massa, líquido ou conjunto: water, milk, rice, bread, cheese, sugar, money. Eles não têm plural e não usam a/an quando falamos deles em geral: I drink water (e não \"I drink a water every day\"), bread (e não \"breads\").",
@@ -310,6 +319,54 @@
           "explicacao": "A glass of + incontável: a glass of milk. At night pode ir no fim ou no começo."
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O que já está disponível em casa?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 1",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "For breakfast, we need two eggs, some bread and an apple. We have milk at home."
+            },
+            "opcoes": [
+              "Eggs.",
+              "Milk.",
+              "An apple."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: For breakfast, we need two eggs, some bread and an apple. We have milk at home.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l1:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Você precisa de dois ovos, pão e uma maçã. Qual lista atende ao pedido?",
+          "conteudo": {
+            "opcoes": [
+              "Two eggs, some bread and an apple.",
+              "Some eggs, a bread and two apples.",
+              "An egg, two breads and some apple."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "Use números com eggs, some com bread e an antes de apple.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l1:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -452,8 +509,17 @@
       "ordem": 2,
       "titulo": "Some and any",
       "objetivo": "Usar some em frases afirmativas e any em negativas e perguntas.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "Some and any",
+          "enunciado": "Descreva o que há e o que falta na sua cozinha. Termine com uma pergunta sobre um ingrediente.",
+          "criterios": [
+            "Usei some na afirmativa.",
+            "Usei any na negativa e na pergunta."
+          ],
+          "exemplo": "We have some bread. We do not have any milk. Do we have any eggs?"
+        },
         "explicacao": [
           "Some e any indicam uma quantidade não exata (\"um pouco de\", \"alguns\"). Usamos com incontáveis (some milk) e com contáveis no plural (some apples).",
           "Regra básica: some em frases afirmativas (We have some cheese.) e any em negativas e perguntas (We don't have any eggs. Do you have any sugar?).",
@@ -686,6 +752,54 @@
           "explicacao": "Afirmativa → some; negativa e pergunta → any; um só ovo → an egg."
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Qual item precisa entrar na lista de compras?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 2",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "We have some rice and some eggs. We do not have any cheese. There is some milk in the fridge."
+            },
+            "opcoes": [
+              "Rice.",
+              "Milk.",
+              "Cheese."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "No relato: We have some rice and some eggs. We do not have any cheese. There is some milk in the fridge.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l2:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Sua cozinha tem arroz e ovos, mas não tem queijo. Qual mensagem evita comprar o que já existe?",
+          "conteudo": {
+            "opcoes": [
+              "We need some rice.",
+              "We need some eggs.",
+              "We need some cheese."
+            ]
+          },
+          "gabarito": {
+            "correta": 2
+          },
+          "explicacao": "O ingrediente que falta → cheese. Some funciona no pedido afirmativo de compra.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l2:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -825,8 +939,17 @@
       "ordem": 3,
       "titulo": "How much? How many?",
       "objetivo": "Perguntar quantidades com How much (incontáveis) e How many (contáveis).",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "How much? How many?",
+          "enunciado": "Você vai preparar um lanche para amigos. Escreva duas perguntas sobre quantidades, uma com how much e outra com how many.",
+          "criterios": [
+            "Usei how many com um item contável.",
+            "Usei how much com um item incontável."
+          ],
+          "exemplo": "How many sandwiches do we need? How much juice do we need?"
+        },
         "explicacao": [
           "Para perguntar quantidade, usamos How many com contáveis no plural e How much com incontáveis: How many eggs do you need? How much water do you drink?",
           "Em português os dois são \"quantos/quanto\". A dica é pensar: dá para contar (one, two, three…)? Então é How many + plural.",
@@ -1076,6 +1199,54 @@
           "explicacao": "Potato, tomato, carrot e onion são contáveis (How many potatoes?). Juice é incontável (How much juice?)."
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Quantas frutas inteiras serão usadas?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 3",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "We need four bananas and two apples for the fruit salad. We also need some orange juice."
+            },
+            "opcoes": [
+              "Four.",
+              "Six.",
+              "Two."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: We need four bananas and two apples for the fruit salad. We also need some orange juice.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l3:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Você quer saber a quantidade de suco para o lanche. Qual pergunta resolve?",
+          "conteudo": {
+            "opcoes": [
+              "How many juice do we need?",
+              "How much juice do we need?",
+              "How much bananas do we need?"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Juice → incontável: pergunte how much juice.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l3:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -1211,8 +1382,17 @@
       "ordem": 4,
       "titulo": "I'd like… / Can I have…? — fazendo pedidos",
       "objetivo": "Pedir comida e bebida de forma educada com I'd like e Can I have…?",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "I'd like… / Can I have…? — fazendo pedidos",
+          "enunciado": "Escreva seu pedido de um lanche e uma bebida, incluindo tamanho e uma expressão de cortesia.",
+          "criterios": [
+            "Pedi um lanche e uma bebida.",
+            "Usei please e uma estrutura de pedido."
+          ],
+          "exemplo": "Can I have a cheese sandwich and a large tea, please?"
+        },
         "explicacao": [
           "Para pedir algo de forma educada, use I'd like… (eu gostaria de…) ou Can I have…? (pode me ver…?). I'd like é a forma curta de I would like.",
           "Depois de I'd like vem o que você quer: I'd like a sandwich. I'd like some water. Também pode vir to + verbo: I'd like to order.",
@@ -1456,6 +1636,68 @@
           "explicacao": "Para pedir, use I'd like (eu gostaria), não I like (eu gosto)."
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Qual bebida acompanha o pedido?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Good morning. Can I have a cheese sandwich, please? Of course. Would you like a drink? Yes, a small coffee, please."
+            },
+            "opcoes": [
+              "A large tea.",
+              "A small coffee.",
+              "An orange juice."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: Good morning. Can I have a cheese sandwich, please? Of course. Would you like a drink? Yes, a small coffee, please.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l4:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "Server: Hello! What would you like?",
+              "Customer: A cheese sandwich, please.",
+              "Server: Here is your sandwich.",
+              "Customer: Good morning."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 4",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Good morning. Can I have a cheese sandwich, please? Of course. Would you like a drink? Yes, a small coffee, please."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              3,
+              0,
+              1,
+              2
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: Customer: Good morning. → Server: Hello! What would you like? → Customer: A cheese sandwich, please. → Server: Here is your sandwich.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l4:sequencia"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -1589,8 +1831,17 @@
       "ordem": 5,
       "titulo": "How much is it? — preços",
       "objetivo": "Perguntar e dizer preços em dólares e centavos.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "How much is it? — preços",
+          "enunciado": "Monte um pedido com dois itens e escreva uma pergunta sobre o total. Cardápio: tea $2; sandwich $4; cake $3.",
+          "criterios": [
+            "Meu pedido cabe em um orçamento de $7.",
+            "Perguntei o preço total."
+          ],
+          "exemplo": "I would like a sandwich and a tea, please. How much is it? It is six dollars."
+        },
         "explicacao": [
           "Para perguntar o preço, use How much: How much is the coffee? (uma coisa ou incontável) / How much are the cookies? (várias coisas). Responda com It's… ou They're…",
           "Preços em dólar: $1 = one dollar; $5 = five dollars; 50¢ = fifty cents. $3.50 se lê \"three dollars and fifty cents\" ou, de modo mais comum, \"three fifty\".",
@@ -1838,6 +2089,54 @@
           ]
         },
         {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Quanto custa um sanduíche com um suco?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 5",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "The sandwich is four dollars. The juice is two dollars fifty. A cookie is one dollar."
+            },
+            "opcoes": [
+              "$5.00",
+              "$6.50",
+              "$7.50"
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "No relato: The sandwich is four dollars. The juice is two dollars fifty. A cookie is one dollar.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l5:escuta"
+          ]
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "Você tem $6. Cardápio: sandwich $4; juice $2.50; cookie $1. Qual pedido cabe no orçamento?",
+          "conteudo": {
+            "opcoes": [
+              "A sandwich and a juice.",
+              "A sandwich and a cookie.",
+              "Two sandwiches."
+            ]
+          },
+          "gabarito": {
+            "correta": 1
+          },
+          "explicacao": "Sanduíche e cookie custam $5; as outras opções ultrapassam $6.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l5:decisao"
+          ]
+        },
+        {
           "etapa": "producao",
           "tipo": "translate",
           "enunciado": "Traduza para o inglês.",
@@ -1963,8 +2262,27 @@
       "ordem": 6,
       "titulo": "At the café — pedindo no café",
       "objetivo": "Participar de um diálogo completo em um café: pedir, responder ao atendente e pagar.",
-      "minutosEstimados": 20,
+      "minutosEstimados": 28,
       "apresentacao": {
+        "missao": {
+          "titulo": "At the café — pedindo no café",
+          "enunciado": "Crie um diálogo de seis falas: saudação, pedido, pergunta do atendente, resposta, preço e agradecimento.",
+          "criterios": [
+            "Respondi se vou consumir no local ou levar.",
+            "Incluí pedido, preço e agradecimento."
+          ],
+          "exemplo": "Hello!\nCan I have a coffee, please?\nTo eat in or take away?\nTake away, please.\nThat is two dollars.\nThank you!"
+        },
+        "recursos": [
+          {
+            "tipo": "audio",
+            "modo": "link",
+            "titulo": "Ordering in a café → escuta com diferentes clientes",
+            "fonte": "British Council — LearnEnglish (A1)",
+            "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/ordering-cafe",
+            "orientacao": "Extensão opcional: ouça os pedidos e observe como os clientes indicam tamanho e consumo no local ou para viagem. Depois adapte seu diálogo. A transcrição e as atividades estão na fonte."
+          }
+        ],
         "explicacao": [
           "Nesta lição juntamos tudo em um diálogo de café. O atendente costuma dizer: Hi! What would you like? / Anything else? / For here or to go? / That's $9.50.",
           "O cliente responde: I'd like… / Can I have…, please? / How much is…? / No, that's all, thanks. / For here, please. (para comer aqui) / To go, please. (para levar)",
@@ -2201,6 +2519,70 @@
             ]
           },
           "explicacao": "Orange começa com som de vogal → an orange juice."
+        },
+        {
+          "tipo": "mcq",
+          "etapa": "semicontrolada",
+          "enunciado": "O cliente vai consumir onde?",
+          "conteudo": {
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Can I have a tea and a slice of cake, please? Certainly. To eat in or take away? To eat in, please. That is five dollars. Here you are. Thank you."
+            },
+            "opcoes": [
+              "At the café.",
+              "At home.",
+              "On the bus."
+            ]
+          },
+          "gabarito": {
+            "correta": 0
+          },
+          "explicacao": "No relato: Can I have a tea and a slice of cake, please? Certainly. To eat in or take away? To eat in, please. That is five dollars. Here you are. Thank you.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l6:escuta"
+          ]
+        },
+        {
+          "tipo": "sequence",
+          "etapa": "semicontrolada",
+          "enunciado": "Organize os acontecimentos ou as falas na ordem da situação.",
+          "conteudo": {
+            "trechos": [
+              "Server: To eat in or take away?",
+              "Customer: To eat in, please.",
+              "Server: That is five dollars.",
+              "Customer: Here you are. Thank you.",
+              "Customer: A tea and a slice of cake, please."
+            ],
+            "midia": {
+              "tipo": "audio",
+              "modo": "voz",
+              "titulo": "No café — 6",
+              "fonte": "Sweet Way English — roteiro original, voz do navegador",
+              "orientacao": "Ouça para entender a situação. Repita devagar se precisar; a transcrição está disponível como apoio.",
+              "transcricao": "Can I have a tea and a slice of cake, please? Certainly. To eat in or take away? To eat in, please. That is five dollars. Here you are. Thank you."
+            }
+          },
+          "gabarito": {
+            "ordem": [
+              4,
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "explicacao": "A sequência começa pela preparação ou pelo pedido e termina na última ação: Customer: A tea and a slice of cake, please. → Server: To eat in or take away? → Customer: To eat in, please. → Server: That is five dollars. → Customer: Here you are. Thank you.",
+          "tagsErro": [
+            "piloto_multimidia_v1",
+            "piloto:a1-m06-l6:sequencia"
+          ]
         },
         {
           "etapa": "producao",

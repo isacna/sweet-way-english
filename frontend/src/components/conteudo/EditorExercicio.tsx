@@ -14,6 +14,7 @@ import {
   rotuloTipo,
   type ExercicioForm,
 } from "./formulario";
+import { EditorMidia, novaMidia } from "./EditorMidia";
 import { TestarExercicio } from "./TestarExercicio";
 import { CaixaGabarito, Campo, classeBotaoLink, classeInput } from "./ui";
 
@@ -136,6 +137,11 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
             />
           </Campo>
 
+          <fieldset className="space-y-3">
+            <legend className="text-sm font-semibold">Mídia para esta atividade</legend>
+            {valor.midia ? <><EditorMidia valor={valor.midia} onChange={(v) => set("midia", v)} /><button type="button" className={classeBotaoLink} onClick={() => set("midia", undefined)}>Remover mídia</button></> : <button type="button" className={classeBotaoLink} onClick={() => set("midia", novaMidia())}>+ Adicionar áudio, vídeo ou música</button>}
+          </fieldset>
+
           <FormularioTipo valor={valor} onChange={onChange} idBase={idBase} />
 
           <Campo
@@ -200,6 +206,8 @@ function FormularioTipo({
   const set = <K extends keyof ExercicioForm>(k: K, v: ExercicioForm[K]) => onChange({ ...valor, [k]: v });
 
   switch (valor.tipo) {
+    case "sequence":
+      return <Campo rotulo="Acontecimentos ou falas na ordem correta" dica="De 3 a 8 trechos, um por linha. O aluno ver? os trechos embaralhados."><textarea aria-label="Acontecimentos na ordem correta" rows={6} className={classeInput} value={valor.palavras} onChange={(e) => set("palavras", e.target.value)} /></Campo>;
     case "mcq":
       return (
         <div className="space-y-3">

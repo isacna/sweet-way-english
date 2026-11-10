@@ -243,6 +243,7 @@ enum EtapaExercicio {
 
 // Tipos de item (discriminador `tipo` em schema.ts); vale para Exercicio e ItemTeste
 enum TipoExercicio {
+  sequence
   mcq
   cloze
   word_order
