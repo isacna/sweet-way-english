@@ -6,6 +6,7 @@ import {
   MARCADOR_LACUNA,
   ORDEM_ETAPAS,
   TIPOS,
+  DITADO_MAX_PALAVRAS,
   avisosExercicio,
   contarLacunas,
   exercicioParaPayload,
@@ -15,6 +16,7 @@ import {
   type ExercicioForm,
 } from "./formulario";
 import { EditorMidia, novaMidia } from "./EditorMidia";
+import { BotaoOuvir } from "../curso/BotaoOuvir";
 import { TestarExercicio } from "./TestarExercicio";
 import { CaixaGabarito, Campo, classeBotaoLink, classeInput } from "./ui";
 
@@ -139,7 +141,7 @@ export function EditorExercicio({ numero, valor, onChange, onRemover, onSubir, o
 
           <fieldset className="space-y-3">
             <legend className="text-sm font-semibold">Mídia para esta atividade</legend>
-            {valor.midia ? <><EditorMidia valor={valor.midia} onChange={(v) => set("midia", v)} /><button type="button" className={classeBotaoLink} onClick={() => set("midia", undefined)}>Remover mídia</button></> : <button type="button" className={classeBotaoLink} onClick={() => set("midia", novaMidia())}>+ Adicionar áudio, vídeo ou música</button>}
+            {valor.tipo === "dictation" ? <p className="text-xs text-ink-soft">O ditado não usa mídia: a frase é falada pela voz do navegador do aluno.</p> : valor.midia ? <><EditorMidia valor={valor.midia} onChange={(v) => set("midia", v)} /><button type="button" className={classeBotaoLink} onClick={() => set("midia", undefined)}>Remover mídia</button></> : <button type="button" className={classeBotaoLink} onClick={() => set("midia", novaMidia())}>+ Adicionar áudio, vídeo ou música</button>}
           </fieldset>
 
           <FormularioTipo valor={valor} onChange={onChange} idBase={idBase} />
@@ -503,5 +505,57 @@ function FormularioTipo({
         </div>
       );
     }
+
+    case "dictation":
+      return (
+        <div className="space-y-3">
+          <Campo
+            rotulo="Frase falada (em inglês)"
+            htmlFor={`${idBase}-frase`}
+            dica={`Curta (até ${DITADO_MAX_PALAVRAS} palavras) e já ensinada na lição. O aluno só ouve: a frase não aparece escrita antes da resposta. Números por extenso.`}
+          >
+            <div className="flex flex-wrap items-center gap-2">
+              <input
+                id={`${idBase}-frase`}
+                lang="en"
+                value={valor.frase}
+                onChange={(e) => set("frase", e.target.value)}
+                className={`${classeInput} min-w-0 flex-1`}
+              />
+              {valor.frase.trim() && <BotaoOuvir texto={valor.frase.trim()} comLento />}
+            </div>
+          </Campo>
+          <Campo
+            rotulo="Dica (opcional)"
+            htmlFor={`${idBase}-dica`}
+            dica="Em português, mostrada junto do campo de resposta. Não pode conter a frase."
+          >
+            <input
+              id={`${idBase}-dica`}
+              value={valor.dica}
+              onChange={(e) => set("dica", e.target.value)}
+              className={classeInput}
+            />
+          </Campo>
+          <CaixaGabarito titulo="Respostas aceitas">
+            <textarea
+              aria-label="Respostas aceitas"
+              rows={3}
+              placeholder="Uma por linha. Em branco, vale a própria frase falada."
+              value={valor.aceitas}
+              onChange={(e) => set("aceitas", e.target.value)}
+              className={classeInput}
+            />
+            <p className="text-xs text-ink-soft">
+              A frase falada precisa ser aceita. Maiúsculas, pontuação final e contrações (isn&apos;t = is not) já são
+              equivalentes; liste o resto, como vírgulas opcionais e números em algarismos (eighteen / 18).
+            </p>
+          </CaixaGabarito>
+          <p className="text-xs text-ink-soft">
+            O ditado só vale na prática (não entra no mini-quiz nem em teste de módulo) e o aluno pode pulá-lo se o
+            navegador não tiver voz em inglês.
+          </p>
+        </div>
+      );
   }
 }

@@ -163,7 +163,13 @@ export function TestarExercicio({ item }: { item: ExercicioPayload }) {
           aria-label="Resposta de teste"
           value={texto}
           onChange={(e) => setTexto(e.target.value)}
-          placeholder={item.tipo === "word_order" ? "Digite a frase na ordem, separando por espaços" : "Digite uma resposta"}
+          placeholder={
+            item.tipo === "word_order"
+              ? "Digite a frase na ordem, separando por espaços"
+              : item.tipo === "dictation"
+                ? "Digite o que o aluno escreveria ao ouvir a frase"
+                : "Digite uma resposta"
+          }
           className={classeInput}
         />
       );

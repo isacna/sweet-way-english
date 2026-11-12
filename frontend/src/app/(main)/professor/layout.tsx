@@ -1,3 +1,4 @@
+import { BarraLateral } from "@/components/BarraLateral";
 import { Navbar } from "@/components/Navbar";
 import { NavbarUser } from "@/components/NavbarUser";
 import { TeacherNav } from "@/components/TeacherNav";
@@ -43,16 +44,21 @@ export default async function ProfessorLayout({
   return (
     <div
       data-area="professor"
-      className="min-h-screen bg-canvas text-ink [&_input[type=checkbox]]:accent-accent [&_input[type=radio]]:accent-accent"
+      className="min-h-screen bg-canvas text-ink lg:flex [&_input[type=checkbox]]:accent-accent [&_input[type=radio]]:accent-accent"
     >
-      <Navbar
-        variant="dashboard"
-        logoUrl={logoUrl}
-        center={<TeacherNav />}
-        mobileBelow={<TeacherNav variant="tabs" />}
-        right={<NavbarUser mobileNav={<TeacherNav variant="vertical" />} />}
-      />
-      <main className="mx-auto max-w-7xl px-4 pt-5 pb-16 sm:px-6 sm:pt-8">{children}</main>
+      {/* A partir de lg: barra lateral. Abaixo: cabeçalho + faixa de abas. */}
+      <BarraLateral area="professor" logoUrl={logoUrl} />
+      <div className="min-w-0 flex-1">
+        <Navbar
+          variant="dashboard"
+          className="lg:hidden"
+          logoUrl={logoUrl}
+          center={<TeacherNav />}
+          mobileBelow={<TeacherNav variant="tabs" />}
+          right={<NavbarUser mobileNav={<TeacherNav variant="vertical" />} />}
+        />
+        <main className="mx-auto max-w-7xl px-4 pt-5 pb-16 sm:px-6 sm:pt-8 lg:px-10">{children}</main>
+      </div>
     </div>
   );
 }

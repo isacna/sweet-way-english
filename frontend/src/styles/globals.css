@@ -99,6 +99,7 @@
   --animate-pop-in: pop-in 0.35s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
   --animate-rise: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
   --animate-shake: shake 0.4s ease-in-out both;
+  --animate-flutuar: flutuar 4.5s ease-in-out infinite;
 }
 
 @keyframes pop-in {
@@ -108,6 +109,10 @@
 @keyframes rise {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
+}
+@keyframes flutuar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -9px; }
 }
 @keyframes shake {
   0%, 100% { transform: translateX(0); }
@@ -276,5 +281,42 @@ html[data-preferencia-tema="escuro"] [data-area] {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/*
+ * Impressão do certificado (/aluno/curso/certificado/[codigo]): só a folha marcada com
+ * data-imprimir="certificado" vai para o papel. As regras só valem em páginas que têm essa folha,
+ * então imprimir qualquer outra tela continua como antes.
+ */
+@page certificado {
+  size: A4 landscape;
+  margin: 10mm;
+}
+@media print {
+  body:has([data-imprimir="certificado"]),
+  body:has([data-imprimir="certificado"]) [data-area] {
+    display: block !important;
+    min-height: 0 !important;
+    background: #fff !important;
+  }
+  /* barra lateral, cabeçalhos, navegação e o que estiver marcado para ficar de fora */
+  body:has([data-imprimir="certificado"]) :is(aside, header, nav, [data-nao-imprimir]) {
+    display: none !important;
+  }
+  body:has([data-imprimir="certificado"]) main {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  [data-imprimir="certificado"] {
+    page: certificado; /* folha deitada onde o navegador aceita páginas nomeadas */
+    width: 100% !important;
+    aspect-ratio: 277 / 186 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }

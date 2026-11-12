@@ -120,6 +120,7 @@ function SessaoRevisao({ sessao, onRecarregar }: { sessao: Sessao; onRecarregar:
             if (feedback) avancar();
             else void verificar();
           }}
+          onPular={avancar}
         />
         {feedback && (
           <FeedbackResultado resultado={feedback} ouvir={respostaEmIngles(atual)}>
