@@ -15,6 +15,7 @@ npx prisma migrate deploy  # Apply pending migrations (CI, Docker, production)
 npx prisma generate        # Regenerate Prisma client after schema changes
 npm run db:seed            # Seed the database (prisma/seed.ts)
 npm run db:migrar-sqlite -- path/to/dev.db [--forcar]  # Copy an old SQLite DB into Postgres
+npm run lembretes:enviar [-- --simular]                # Send today's study reminders (cron); --simular only lists them
 npx prisma studio          # Open Prisma GUI
 
 # Build and run compiled (what the Docker image does)
@@ -159,9 +160,23 @@ Contract: `docs/api-curso.md`. Controller: `CursoController.ts`. Only `publicado
 | `POST` | `/api/curso/licoes/:id/quiz` | Submit mini-quiz (`{ respostas }`); ≥80% completes the lesson |
 | `GET` | `/api/curso/revisao` | Up to 20 due review items |
 | `POST` | `/api/curso/revisao/:exercicioId` | Answer a review item (Leitner); 409 if not due yet |
-| `POST` | `/api/curso/modulos/:id/teste` | Start (201) or resume (200) a module test attempt; 403/409/423 |
+| `POST` | `/api/curso/modulos/:id/teste` | Start (201) or resume (200) a module test attempt; optional `{ adiantar: true }` skips the "all lessons done" check (test-out); 403/409/423 |
 | `POST` | `/api/curso/tentativas/:id` | Finish an attempt (`{ respostas }`) |
-| `PATCH` | `/api/curso/perfil` | `{ metodologia }` — only `gramatica` in v1 |
+| `PATCH` | `/api/curso/perfil` | `{ metodologia?, metaDiariaXp?, onboardingConcluido?, lembretesEmail? }` — only `gramatica` in v1; daily goal is 10, 30 or 60 XP; `onboardingConcluido: true` ends the welcome flow; `lembretesEmail` turns the e-mail study reminders on or off (opt-in) |
+| `GET` | `/api/curso/conquistas` | Achievements derived from progress (`domain/conquistas.ts`); nothing is stored |
+| `GET` | `/api/curso/certificados` | Per level: completion and certificate; issues the `Certificado` row the first time the level is complete |
+
+#### Certificates (public) — `certificado.routes.ts`
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/api/certificados/:codigo` | Public check of a level certificate: `{ nomeAluno, nivel, emitidoEm }` or 404. Rate-limited (60 req / 15 min per IP, skipped when `NODE_ENV=test`) |
+
+Controller: `ConquistasController.ts` (`getConquistas`, `getCertificados`, `verificarCertificado`). Achievements are computed by `calcularConquistas()` from the profile and `carregarTrilha()` (published content only). A level is complete when every published module has a passed test (`nivelConcluido`). `getCertificados` inserts with `createMany` + `skipDuplicates` and draws another 12-char code (`gerarCodigoCertificado`, no 0/O/1/I/L) if the insert was skipped. An issued certificate is never revoked by later publishing. The public endpoint returns only the name printed on the certificate, the level and the date.
+
+#### Reminders — `lembrete.routes.ts` (public)
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/api/lembretes/cancelar` | `{ token }` (or `?token=`) → turns `PerfilAprendiz.lembretesEmail` off; 200 with the same message for any valid token, 400 otherwise; rate-limited like the auth routes |
 
 #### Course content (teacher) — `conteudo.routes.ts`, `requireRole('professor')`
 Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is global (any professor can review/publish).
@@ -176,7 +191,7 @@ Controllers: `ConteudoController.ts`, `ProgressoController.ts`. Content is globa
 | `POST` | `/api/conteudo/exercicios/verificar` | Editor preview: `{ item, resposta }` → `corrigir()` |
 | `GET` | `/api/professor/progresso?turmaId=` | Course progress of the professor's students; `?turmaId=sem-turma` = students with no Matricula (any professor, pilot) |
 
-Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Answers (`resposta`, each value of `respostas`) are capped at 2000 chars of JSON (`respostaLimitada`) and a submission at 200 answers, because grading normalizes with regexes. Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
+Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progresso.ts` thresholds/XP/Leitner/streak, `desbloqueio.ts` unlock rules and form rotation); Prisma helpers shared by the course controllers in `src/http/controllers/cursoApoio.ts` (`carregarTrilha`, `registrarEstudo`, `colocarNaRevisao`, `exercicioPublico`…). Answers (`resposta`, each value of `respostas`) are capped at 2000 chars of JSON (`respostaLimitada`) and a submission at 200 answers, because grading normalizes with regexes. Test-out ("adiantar"): `calcularTrilha` sets `podeAdiantar` (unlocked, not passed, lessons missing, not in the wait) and opens every lesson of an unlocked module whose test is passed; `licoesPermitemTeste` decides the 409 in `iniciarTeste`. Lessons are never marked completed by a test. `dictation` items are spoken by the browser, so `conteudo.frase` is public by design: `exercicioSchema` refuses the type in the `quiz` stage and `itemTesteSchema` refuses it in module tests, and grading returns the spoken sentence as `respostaEsperada`. `scripts/atualizar-pilotos.ts` (dry run by default, `--aplicar` to write) appends the pilot items tagged `piloto_multimidia_v1` / `piloto_ditado_v1` (`MODULOS_PILOTO` in `domain/conteudo/pilotos.ts`: a1-m01, a1-m02, a1-m04, a1-m06, a2-m02) to lessons already in the database without replacing the teacher's edits. Never send `gabarito`/`explicacao`/`tagsErro` to a student before they answer — build responses with `exercicioPublico`/`itemTestePublico`. The course routers wrap controllers so async errors reach `errorHandler` (Express 4 does not catch rejected promises).
 
 #### Files — `arquivo.routes.ts`
 | Method | Path | Description |
@@ -198,6 +213,8 @@ Course code layout: pure rules in `src/domain/` (`correcao.ts` grading, `progres
 
 **E-mail** (`src/email/`): `enviarEmail({ para, assunto, html, texto })`. With `RESEND_API_KEY` it POSTs to `https://api.resend.com/emails` with `fetch` (no SDK) from `EMAIL_FROM`; without it nothing is sent: outside production the console provider logs the message, link included (dev), and in production it only logs a warning without recipient or link (whoever reads the logs could otherwise reset someone's password). Templates are in `src/email/templates.ts` (Portuguese HTML + plain text). Tests mock `../email/index.js`.
 
+**Study reminders** (opt-in, `PerfilAprendiz.lembretesEmail`, default false). Rules are pure functions in `src/domain/lembretes.ts`: `decidirLembrete(perfil, agora)` returns `ofensiva` (streak ≥ 2, studied yesterday, not today), `saudade` (last study exactly 3 or 7 days ago), `primeira-licao` (never studied, profile created 3 days ago) or `null`; days are counted in Brasília time; at most one per day (`ultimoLembreteEm`); only `papel = aluno`. `src/services/lembretes.ts` `enviarLembretes({ simular })` selects the candidates, reserves each profile by stamping `ultimoLembreteEm` with a conditional update before sending (a failed send undoes the stamp), and sends through `enviarEmail` with the `emailLembrete*` templates. In production without `RESEND_API_KEY` it sends and stamps nothing. There is no in-process timer: cron runs `npm run lembretes:enviar` once a day in the evening (`--simular` lists who would get what). Every reminder has an unsubscribe link `${FRONTEND_URL}/lembretes/cancelar?token=…` and `List-Unsubscribe` / `List-Unsubscribe-Post` headers (`Mensagem.cabecalhos`). The token is a JWT `{ tipo: 'cancelar-lembretes', id }` signed with `JWT_SECRET` (365 days); it has no `v`, so `authenticateToken` rejects it as a session.
+
 **Middleware** (`src/http/middlewares/auth.ts`):
 - `authenticateToken`: reads the JWT from `Authorization: Bearer` when present (API clients, tests, e2e), otherwise from the `sw_sessao` cookie (the browser). An explicit header wins so that an API client whose cookie jar holds another user's session still acts as the token it sent. Returns 401 for a missing, invalid or expired token, for legacy tokens without `exp` or `v`, and, after one lookup by id, when the user no longer exists or `versaoToken` differs from `v`. Attaches `req.user = { id, email, role, admin }`. It is async; database errors go to `next(err)`.
 - `requireRole(...papeis)`: 403 unless `req.user.role` is in the list.
@@ -215,7 +232,7 @@ Prisma with PostgreSQL. The client lives in `src/database/client.ts` (`@prisma/a
 `docker run -d --name sweetway-pg -p 5432:5432 -e POSTGRES_USER=sweetway -e POSTGRES_PASSWORD=sweetway -e POSTGRES_DB=sweetway postgres:17-alpine`.
 Then set `DATABASE_URL=postgresql://sweetway:sweetway@localhost:5432/sweetway`, run `npx prisma migrate deploy` and `npm run db:seed`. In Docker Compose the `postgres` service is wired up for you, and the entrypoint runs `migrate deploy` on every start and seeds only when `SEED_ON_START=1`.
 
-**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`, followed by `20261109000000_sessao_e_senha` (`Usuario.versaoToken`, `TokenSenha`). The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
+**Migrations:** `prisma/migrations/` starts with a single baseline, `20261108000000_base_postgres`, followed by `20261109000000_sessao_e_senha` (`Usuario.versaoToken`, `TokenSenha`). `20261111000000_meta_diaria_onboarding` adds `PerfilAprendiz.metaDiariaXp` / `xpDoDia` / `onboardingEm` (profiles that had already studied are marked as onboarded). `20261112000000_exercicio_dictation` adds the `dictation` exercise type and `20261112010000_lembretes_certificado` adds `PerfilAprendiz.lembretesEmail` / `ultimoLembreteEm` and the `Certificado` table. The 9 SQLite-era migrations are archived in `prisma/migrations-sqlite-arquivo/` (reference only, never applied).
 
 **Moving data from SQLite** (`scripts/migrar-sqlite-para-postgres.ts`, logic in `scripts/migrar-sqlite/migrar.ts`):
 ```bash
@@ -240,8 +257,9 @@ The script opens the SQLite file read-only and copies every table in FK order in
 - `Feedback` — one-to-one with `Submissao`; has `nota` (grade) and `comentario`
 - `MaterialApoio` — resource attached to a `Turma`; `tipo` enum: `pdf | audio | video | link`. Either `url` (external link) or `arquivoId` (upload), never both (CHECK `MaterialApoio_url_ou_arquivo` in the migration)
 - `Arquivo` — metadata of a private upload: uuid `id`, `donoId`, `nomeOriginal`, `caminho` (file name inside `UPLOAD_DIR`), `mime` (detected), `tamanho`. `Atividade.arquivoId` (teacher attachment), `Submissao.arquivoId` and `MaterialApoio.arquivoId` are nullable and unique. Both directions are `Restrict` (the owner, and the record pointing to the file), because the file on disk must go too: whoever deletes rows calls `apagarArquivos(tx, ids)` inside the transaction and `removerDoDisco(caminhos)` after the commit (`alunos.excluirAluno`, `professores.excluirProfessor`, `materiais.apagarMaterial`, `atividades.atualizarAtividade` in `src/services/`). A raw `prisma.turma.delete` leaves orphaned `Arquivo` rows (still visible only to their owner)
+- `Certificado` — level certificate: unique public `codigo`, `usuarioId` (cascade), `nivelId` (restrict), `nomeAluno` as it was when issued, `emitidoEm`; one per student and level.
 - `ConfiguracaoApp.logoCaminho` — logo file name inside `UPLOAD_DIR` (public, not an `Arquivo`)
-- Course (Phase 1): `Nivel` → `Modulo` → `Licao` → `Exercicio` (PPP stages), `ItemTeste` (parallel forms per module), and learner state `PerfilAprendiz`, `ProgressoLicao`, `RevisaoItem` (Leitner), `TentativaTeste`. `Modulo`/`Licao` have `status: rascunho | revisao | publicado`.
+- Course (Phase 1): `Nivel` → `Modulo` → `Licao` → `Exercicio` (PPP stages), `ItemTeste` (parallel forms per module), and learner state `PerfilAprendiz`, `ProgressoLicao`, `RevisaoItem` (Leitner), `TentativaTeste`. `PerfilAprendiz` also holds the daily goal: `metaDiariaXp` (`METAS_DIARIAS` in `domain/progresso.ts`) and `xpDoDia`, which only counts while `ultimoEstudoEm` is today in Brasília time (`xpDoDiaVigente`); `registrarEstudo` keeps it and sets `onboardingEm` on the first XP. `Modulo`/`Licao` have `status: rascunho | revisao | publicado`.
 
 After any `schema.prisma` change, run `npx prisma migrate dev` then `npx prisma generate`.
 

@@ -23,7 +23,13 @@ Só conteúdo com `status = publicado` (módulo **e** lição) aparece para o al
 Trilha completa com progresso.
 ```ts
 {
-  perfil: { xp: number; ofensivaAtual: number; ofensivaMaxima: number; metodologia: string; revisoesPendentes: number },
+  perfil: {
+    xp: number; ofensivaAtual: number; ofensivaMaxima: number; metodologia: string; revisoesPendentes: number;
+    metaDiariaXp: number;        // 10 | 30 | 60 (padrão 30)
+    xpHoje: number;              // XP ganho hoje, no fuso de Brasília
+    onboardingPendente: boolean; // ainda não passou pelas boas-vindas
+    lembretesEmail: boolean;     // aceitou lembretes de estudo por e-mail (padrão false)
+  },
   niveis: [{
     id, codigo, nome, descricao,
     modulos: [{
@@ -106,8 +112,66 @@ Finaliza (409 se já finalizada; 404 se não é do aluno). Usa `avaliarTeste()`.
 }
 ```
 
-### `PATCH /curso/perfil` — `{ metodologia }`
-Só `"gramatica"` é aceita na v1 (400 para as outras, com mensagem "em breve"). Devolve o perfil.
+### `PATCH /curso/perfil` — `{ metodologia?, metaDiariaXp?, onboardingConcluido?, lembretesEmail? }`
+Pelo menos um campo (400 se o corpo vier vazio). Devolve o perfil.
+- `metodologia`: só `"gramatica"` é aceita na v1 (400 para as outras, com mensagem "em breve").
+- `metaDiariaXp`: `10`, `30` ou `60` (400 para outro valor).
+- `onboardingConcluido: true`: encerra as boas-vindas (a data só é gravada na primeira vez). Ganhar XP pela primeira
+  vez (lição, revisão ou teste) também encerra.
+- `lembretesEmail`: `true` liga e `false` desliga os lembretes de estudo por e-mail (opt-in; 400 se não for booleano).
+
+### `GET /curso/conquistas`
+Conquistas derivadas do progresso (nada é gravado; regras em `backend/src/domain/conquistas.ts`). Só conteúdo publicado conta.
+`{ conquistas: [{ id, titulo, descricao, obtida: boolean, progresso?: { atual: number; alvo: number } }] }`
+- Lista fixa, na ordem: `primeira-licao`, `dez-licoes`, `quiz-perfeito` (uma lição com melhor quiz 100%), `primeiro-modulo`,
+  `ofensiva-3`, `ofensiva-7`, `ofensiva-30` (pela `ofensivaMaxima`), `xp-500`, `xp-2000` e uma `nivel-<codigo>` por nível
+  com módulos publicados.
+- `progresso` só vem nas conquistas de contagem (alvo > 1); `atual` nunca passa de `alvo`. Não há data de obtenção.
+
+### `GET /curso/certificados`
+Um item por nível com módulos publicados:
+`{ niveis: [{ nivel: { id, codigo, nome }, concluido: boolean, modulosAprovados: number, totalModulos: number, certificado: { codigo, emitidoEm, nomeAluno } | null }] }`
+- Nível concluído = todos os módulos **publicados** do nível com teste aprovado (o teste do A2-M10 é a prova do nível).
+  Nível sem módulo publicado não aparece e nunca está concluído.
+- O certificado é emitido na primeira chamada depois da conclusão: código de 12 caracteres aleatórios (sem 0/O/1/I/L),
+  com o nome do aluno naquele momento. Um por aluno e nível; chamadas simultâneas não duplicam.
+- Um certificado já emitido continua sendo devolvido mesmo que um módulo novo seja publicado depois no nível
+  (`concluido` volta a `false`, `certificado` permanece).
+
+### Teste do módulo sem concluir as lições (nivelamento)
+Em um módulo liberado, ainda não aprovado, com lições faltando e fora da espera (`teste.podeAdiantar` em `GET /curso`),
+o aluno pode fazer o teste sem concluir as lições, enviando `{ adiantar: true }` em `POST /curso/modulos/:id/teste`
+(400 se `adiantar` não for booleano). Aprovado: o módulo conta como aprovado e o próximo é liberado; as lições continuam
+`concluida: false`, mas todas ficam `desbloqueada: true` (vale para qualquer módulo liberado com teste aprovado).
+Reprovado: mesma espera de 24 h. Só o XP do teste é dado. Sem as lições concluídas o POST responde 409, exceto com
+`adiantar: true` ou quando o teste do módulo já foi aprovado (refazer para treinar). `adiantar` não muda o 403
+(módulo bloqueado) nem o 423 (espera).
+
+### Tipo de exercício `dictation` (ditado)
+`conteudo: { frase: string, dica?: string }` e `gabarito: { aceitas: string[] }`. O aluno ouve `frase` na voz do navegador
+(speechSynthesis, en-US) e escreve o que ouviu; a resposta é um texto, corrigido como `translate`. `respostaEsperada` é a
+frase ditada. Como a voz é gerada no navegador, `frase` vai no payload público do exercício: por isso o tipo só é aceito
+na prática da lição (etapas `controlada`, `semicontrolada`, `producao`) e na revisão, e é recusado no mini-quiz e em
+itens de teste de módulo. A tela nunca mostra a frase antes da resposta. Travas do conteúdo: a frase precisa ser aceita
+pelo próprio gabarito, ter no máximo 12 palavras e 120 caracteres, não ter algarismos (variações como "18" vão em
+`aceitas`), não aparecer no enunciado nem na dica, e o item não aceita `midia`. Sem voz em inglês no navegador, o aluno
+vê um aviso e pula o item (na revisão ele continua pendente).
+
+## Público
+
+### `GET /certificados/:codigo`
+Conferência de certificado, sem login. Limite de 60 consultas / 15 min por IP.
+`{ nomeAluno, nivel: { codigo, nome }, emitidoEm }`, ou 404 `{ error: "Certificado não encontrado" }`.
+Aceita o código em minúsculas e com hífens ou espaços (`abcd-efgh-jkmn`). Nenhum outro dado do aluno é devolvido.
+
+### `POST /lembretes/cancelar` — `{ token }`
+Desliga os lembretes de estudo de quem é dono do token (o link "parar de receber" de cada lembrete:
+`${FRONTEND_URL}/lembretes/cancelar?token=…`). O token é um JWT de propósito único
+(`{ tipo: 'cancelar-lembretes', id }`, 365 dias) e não vale como sessão. Também aceita o token na query
+(`?token=`), para o POST de um clique do cabeçalho `List-Unsubscribe`.
+- 200 `{ message }`: sempre a mesma resposta para um token válido (mesmo se já estava desligado).
+- 400 `{ error }`: token ausente, inválido ou vencido.
+- Limite: 20 requisições / 15 min por IP.
 
 ## Professora — `requireRole('professor')`
 

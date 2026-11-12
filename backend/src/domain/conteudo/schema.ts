@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { midiaSchema, missaoSchema } from './midia.js';
-import { normalizar, tokensFrase } from '../correcao.js';
+import { normalizar, respostaAceita, tokensFrase } from '../correcao.js';
 
 // Formato do conteúdo do curso. É usado:
 //  - pelos arquivos-fonte em prisma/conteudo/<nivel>/*.json (importados pelo seed)
@@ -91,8 +91,23 @@ const sequence = z.object({
   gabarito: z.object({ ordem: z.array(z.number().int().min(0)) }),
 });
 
+// Ditado: o aluno ouve `frase` na voz do navegador (speechSynthesis) e escreve o que ouviu.
+// Como a voz é gerada no navegador, `frase` vai no payload público: o tipo só vale na prática e na
+// revisão (ver exercicioSchema e itemTesteSchema) e a tela nunca mostra a frase antes da resposta.
+export const DITADO_MAX_PALAVRAS = 12;
+const dictation = z.object({
+  ...base,
+  tipo: z.literal('dictation'),
+  conteudo: z.object({
+    midia: z.never({ error: 'dictation: não aceita mídia (a própria frase é o áudio)' }).optional(),
+    frase: texto.max(120), // o que é falado (inglês)
+    dica: texto.optional(), // ajuda em PT mostrada junto do campo; não pode entregar a frase
+  }),
+  gabarito: z.object({ aceitas: z.array(texto).min(1) }),
+});
+
 export const itemSchema = z
-  .discriminatedUnion('tipo', [mcq, cloze, wordOrder, match, translate, errorCorrection, sequence])
+  .discriminatedUnion('tipo', [mcq, cloze, wordOrder, match, translate, errorCorrection, sequence, dictation])
   .superRefine((item, ctx) => {
     const erro = (message: string) => ctx.addIssue({ code: 'custom', message });
     switch (item.tipo) {
@@ -145,13 +160,36 @@ export const itemSchema = z
           erro('error_correction: a frase com erro aparece entre as respostas aceitas');
         break;
       }
+      case 'dictation': {
+        const { frase, dica } = item.conteudo;
+        const alvo = normalizar(frase);
+        if (!/\p{L}/u.test(frase)) erro('dictation: a frase precisa ter palavras');
+        if (!respostaAceita(frase, item.gabarito.aceitas))
+          erro('dictation: a frase ditada precisa estar entre as respostas aceitas');
+        if (tokensFrase(frase).length > DITADO_MAX_PALAVRAS)
+          erro(`dictation: frase longa demais para um ditado (máximo ${DITADO_MAX_PALAVRAS} palavras)`);
+        // Cada voz lê algarismos de um jeito; a frase vai por extenso e "18" entra como variante aceita
+        if (/\d/.test(frase)) erro('dictation: escreva os números da frase por extenso (algarismos só em `aceitas`)');
+        if (alvo && [item.enunciado, dica ?? ''].some((t) => normalizar(t).includes(alvo)))
+          erro('dictation: o enunciado e a dica não podem conter a frase ditada');
+        break;
+      }
     }
   });
 
-export const exercicioSchema = itemSchema.and(z.object({ etapa: z.enum(ETAPAS) }));
-export const itemTesteSchema = itemSchema.and(
-  z.object({ forma: z.number().int().min(1), habilidade: z.enum(HABILIDADES_TESTE) }),
-);
+// O ditado depende de o navegador ter voz em inglês e pode ser pulado; por isso fica fora do mini-quiz,
+// que conta para concluir a lição.
+export const exercicioSchema = itemSchema.and(z.object({ etapa: z.enum(ETAPAS) })).superRefine((e, ctx) => {
+  if (e.tipo === 'dictation' && e.etapa === 'quiz')
+    ctx.addIssue({ code: 'custom', message: 'dictation: não pode ser usado no mini-quiz (só na prática)' });
+});
+// No ditado a frase vai ao navegador para ser falada, então não serve para teste de módulo.
+export const itemTesteSchema = itemSchema
+  .and(z.object({ forma: z.number().int().min(1), habilidade: z.enum(HABILIDADES_TESTE) }))
+  .superRefine((i, ctx) => {
+    if (i.tipo === 'dictation')
+      ctx.addIssue({ code: 'custom', message: 'dictation: não pode ser usado em teste de módulo (a frase vai ao navegador)' });
+  });
 
 export const apresentacaoSchema = z.object({
   recursos: z.array(midiaSchema).max(4).optional(),

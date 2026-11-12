@@ -14,6 +14,8 @@ import { avisoRouter } from './aviso.routes.js';
 import { cursoRouter } from './curso.routes.js';
 import { conteudoRouter, progressoRouter } from './conteudo.routes.js';
 import { arquivoRouter } from './arquivo.routes.js';
+import { lembreteRouter } from './lembrete.routes.js';
+import { certificadoRouter } from './certificado.routes.js';
 
 const router = Router();
 
@@ -46,6 +48,8 @@ router.use('/curso', cursoRouter);
 router.use('/conteudo', conteudoRouter);
 router.use('/professor/progresso', progressoRouter);
 router.use('/arquivos', arquivoRouter);
+router.use('/lembretes', lembreteRouter);
+router.use('/certificados', certificadoRouter); // público: conferência de certificado pelo código
 router.use('/', adminRouter);
 
 export { router };

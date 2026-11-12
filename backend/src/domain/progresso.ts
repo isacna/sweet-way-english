@@ -34,7 +34,7 @@ export function novaRevisao(agora = new Date()) {
 
 const FUSO = 'America/Sao_Paulo';
 
-function diaLocal(d: Date): string {
+export function diaLocal(d: Date): string {
   return new Intl.DateTimeFormat('en-CA', { timeZone: FUSO }).format(d); // AAAA-MM-DD
 }
 
@@ -63,6 +63,18 @@ export function atualizarOfensiva(
 export function ofensivaVigente(perfil: { ofensivaAtual: number; ultimoEstudoEm: Date | null }, agora = new Date()) {
   if (!perfil.ultimoEstudoEm) return 0;
   return diasEntre(diaLocal(perfil.ultimoEstudoEm), diaLocal(agora)) <= 1 ? perfil.ofensivaAtual : 0;
+}
+
+// ─── Meta diária (XP por dia, no fuso de Brasília) ──────────────────────────
+
+/** Opções de meta: leve (uma revisão curta), regular (uma lição) e intensa (duas lições). */
+export const METAS_DIARIAS = [10, 30, 60] as const;
+export const META_DIARIA_PADRAO = 30;
+
+/** XP já ganho hoje: o contador só vale se o último estudo foi hoje. */
+export function xpDoDiaVigente(perfil: { xpDoDia: number; ultimoEstudoEm: Date | null }, agora = new Date()) {
+  if (!perfil.ultimoEstudoEm) return 0;
+  return diaLocal(perfil.ultimoEstudoEm) === diaLocal(agora) ? perfil.xpDoDia : 0;
 }
 
 // ─── Teste de módulo ────────────────────────────────────────────────────────

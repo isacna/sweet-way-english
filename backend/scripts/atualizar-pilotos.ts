@@ -1,5 +1,5 @@
 // Simulação por padrão. --aplicar inclui apenas os novos exercícios e recursos.
-// Execute a migração do enum sequence antes de aplicar. Não publica nem remove dados.
+// Execute as migrações dos enums sequence e dictation antes de aplicar. Não publica nem remove dados.
 import { prisma } from '../src/database/client.js';
 import type { Prisma } from '../src/database/generated/prisma/client.js';
 import { lerModulos } from '../src/domain/conteudo/arquivos.js';
@@ -11,7 +11,7 @@ async function main() {
   if (args.some((a) => a !== '--aplicar')) throw new Error('Uso: tsx scripts/atualizar-pilotos.ts [--aplicar]');
   const aplicar = args.includes('--aplicar');
   const arquivos = lerModulos().filter((a) => a.modulo && MODULOS_PILOTO.includes(a.modulo.slug));
-  if (arquivos.length !== MODULOS_PILOTO.length || arquivos.some((a) => a.erros.length)) throw new Error('Valide os três módulos-piloto antes de atualizar.');
+  if (arquivos.length !== MODULOS_PILOTO.length || arquivos.some((a) => a.erros.length)) throw new Error('Valide os módulos-piloto antes de atualizar.');
   console.log(aplicar ? 'Aplicando atualização aditiva.' : 'SIMULAÇÃO: nenhuma alteração será salva.');
   await prisma.$transaction(async (tx) => {
     for (const { modulo } of arquivos) {

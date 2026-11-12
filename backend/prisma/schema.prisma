@@ -50,6 +50,7 @@ model Usuario {
   licoesRevisadas            Licao[]          @relation("LicaoRevisor")
   tokensSenha                TokenSenha[]
   arquivos                   Arquivo[]
+  certificados               Certificado[]
 }
 
 // Pedido de redefinição de senha. Guarda só o SHA-256 do token enviado por e-mail, nunca o token.
@@ -244,6 +245,7 @@ enum EtapaExercicio {
 // Tipos de item (discriminador `tipo` em schema.ts); vale para Exercicio e ItemTeste
 enum TipoExercicio {
   sequence
+  dictation
   mcq
   cloze
   word_order
@@ -268,14 +270,15 @@ enum Metodologia {
 }
 
 model Nivel {
-  id           Int      @id @default(autoincrement())
-  codigo       String   @unique // "A1"
+  id           Int           @id @default(autoincrement())
+  codigo       String        @unique // "A1"
   nome         String
   descricao    String?
   ordem        Int
-  criadoEm     DateTime @default(now())
-  atualizadoEm DateTime @updatedAt
+  criadoEm     DateTime      @default(now())
+  atualizadoEm DateTime      @updatedAt
   modulos      Modulo[]
+  certificados Certificado[]
 }
 
 model Modulo {
@@ -366,16 +369,43 @@ model ItemTeste {
 // ─── Estado do aprendiz ─────────────────────────────────────────────────────
 
 model PerfilAprendiz {
-  id             Int         @id @default(autoincrement())
-  usuarioId      Int         @unique
-  metodologia    Metodologia @default(gramatica)
-  xp             Int         @default(0)
-  ofensivaAtual  Int         @default(0)
-  ofensivaMaxima Int         @default(0)
-  ultimoEstudoEm DateTime?
-  criadoEm       DateTime    @default(now())
-  atualizadoEm   DateTime    @updatedAt
-  usuario        Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  id               Int         @id @default(autoincrement())
+  usuarioId        Int         @unique
+  metodologia      Metodologia @default(gramatica)
+  xp               Int         @default(0)
+  ofensivaAtual    Int         @default(0)
+  ofensivaMaxima   Int         @default(0)
+  ultimoEstudoEm   DateTime?
+  /// Meta de XP por dia (10, 30 ou 60; ver METAS_DIARIAS em domain/progresso.ts)
+  metaDiariaXp     Int         @default(30)
+  /// XP ganho no dia de `ultimoEstudoEm` (fuso de Brasília); vale 0 se esse dia não é hoje
+  xpDoDia          Int         @default(0)
+  /// Quando terminou (ou pulou) as boas-vindas; null = ainda mostrar
+  onboardingEm     DateTime?
+  /// Aceitou receber lembretes de estudo por e-mail (opt-in)
+  lembretesEmail   Boolean     @default(false)
+  /// Último lembrete de estudo enviado (no máximo um por dia)
+  ultimoLembreteEm DateTime?
+  criadoEm         DateTime    @default(now())
+  atualizadoEm     DateTime    @updatedAt
+  usuario          Usuario     @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+}
+
+/// Certificado de conclusão de um nível (todos os testes de módulo do nível aprovados).
+/// `codigo` é público: serve para qualquer pessoa conferir o certificado.
+model Certificado {
+  id        Int      @id @default(autoincrement())
+  codigo    String   @unique
+  usuarioId Int
+  nivelId   Int
+  /// Nome do aluno no momento da emissão
+  nomeAluno String
+  emitidoEm DateTime @default(now())
+  usuario   Usuario  @relation(fields: [usuarioId], references: [id], onDelete: Cascade)
+  nivel     Nivel    @relation(fields: [nivelId], references: [id], onDelete: Restrict)
+
+  @@unique([usuarioId, nivelId])
+  @@index([nivelId])
 }
 
 model ProgressoLicao {

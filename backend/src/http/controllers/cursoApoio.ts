@@ -5,7 +5,7 @@ import { prisma } from '../../database/client.js';
 import type { Prisma } from '../../database/generated/prisma/client.js';
 import { corrigir, RespostaInvalida, versaoPublica, type ItemCorrigivel, type Resultado } from '../../domain/correcao.js';
 import { calcularTrilha, respostaVazia, type EstadoModulo } from '../../domain/desbloqueio.js';
-import { atualizarOfensiva, novaRevisao, ofensivaVigente } from '../../domain/progresso.js';
+import { atualizarOfensiva, novaRevisao, ofensivaVigente, xpDoDiaVigente } from '../../domain/progresso.js';
 
 /** Cliente do Prisma ou o `tx` de uma transação interativa. */
 export type Db = Prisma.TransactionClient;
@@ -166,16 +166,25 @@ export async function perfilPublico(usuarioId: number, agora = new Date(), db: D
     ofensivaMaxima: perfil.ofensivaMaxima,
     metodologia: perfil.metodologia,
     revisoesPendentes,
+    metaDiariaXp: perfil.metaDiariaXp,
+    xpHoje: xpDoDiaVigente(perfil, agora),
+    onboardingPendente: perfil.onboardingEm === null,
+    lembretesEmail: perfil.lembretesEmail,
   };
 }
 
-/** Registra um estudo: atualiza a ofensiva e soma XP. */
+/** Registra um estudo: atualiza a ofensiva, soma XP (total e do dia) e, ao ganhar XP, encerra as boas-vindas. */
 export async function registrarEstudo(db: Db, usuarioId: number, xp: number, agora = new Date()) {
   const perfil = await obterPerfil(usuarioId, db);
   const ofensiva = atualizarOfensiva(perfil, agora);
   return db.perfilAprendiz.update({
     where: { usuarioId },
-    data: { ...ofensiva, xp: { increment: xp } },
+    data: {
+      ...ofensiva,
+      xp: { increment: xp },
+      xpDoDia: xpDoDiaVigente(perfil, agora) + xp,
+      ...(xp > 0 && perfil.onboardingEm === null ? { onboardingEm: agora } : {}),
+    },
   });
 }
 

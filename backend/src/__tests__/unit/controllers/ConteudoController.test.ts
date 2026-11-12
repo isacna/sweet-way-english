@@ -31,6 +31,8 @@ const mcq = (extra: object = {}) => ({
   ...extra,
 });
 
+const ditado = { tipo: 'dictation', enunciado: 'Ouça e escreva.', conteudo: { frase: "It's cold today." }, gabarito: { aceitas: ['It is cold today.'] }, explicacao: 'x' };
+
 const apresentacao = {
   explicacao: ['O verbo to be.'],
   exemplos: [
@@ -245,6 +247,25 @@ describe('ConteudoController', () => {
     it('returns 400 for an answer in the wrong format', async () => {
       await verificarItem(mockReq({ body: { item: mcq(), resposta: 'am' } }), res);
       expect(res.status).toHaveBeenCalledWith(400);
+    });
+
+    it('corrects an unsaved dictation item and shows the spoken sentence', async () => {
+      await verificarItem(mockReq({ body: { item: ditado, resposta: 'it is cold today' } }), res);
+      expect(res.json).toHaveBeenCalledWith({ correto: true, pontuacao: 1, respostaEsperada: "It's cold today.", explicacao: 'x' });
+    });
+
+    it('returns 400 for a dictation whose sentence is not in its own key', async () => {
+      await verificarItem(mockReq({ body: { item: { ...ditado, gabarito: { aceitas: ['It is hot today.'] } }, resposta: 'x' } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+    });
+  });
+
+  describe('dictation in a lesson', () => {
+    it('is refused in the mini-quiz before touching the database', async () => {
+      await salvarLicao(mockReq({ params: { id: '11' }, body: edicao([{ ...mcq(), etapa: 'quiz' }, { ...ditado, etapa: 'quiz' }]) }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json).toHaveBeenCalledWith({ error: expect.stringMatching(/mini-quiz/) });
+      expect(prismaMock.$transaction).not.toHaveBeenCalled();
     });
   });
 });

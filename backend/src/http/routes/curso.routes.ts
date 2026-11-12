@@ -12,6 +12,7 @@ import {
   finalizarTentativa,
   atualizarPerfil,
 } from '../controllers/CursoController.js';
+import { getConquistas, getCertificados } from '../controllers/ConquistasController.js';
 import { h } from '../asyncHandler.js';
 
 // Curso autoguiado — aluno. Contrato em docs/api-curso.md.
@@ -28,5 +29,7 @@ router.post('/revisao/:exercicioId', h(responderRevisao));
 router.post('/modulos/:id/teste', h(iniciarTeste));
 router.post('/tentativas/:id', h(finalizarTentativa));
 router.patch('/perfil', h(atualizarPerfil));
+router.get('/conquistas', h(getConquistas));
+router.get('/certificados', h(getCertificados));
 
 export { router as cursoRouter };

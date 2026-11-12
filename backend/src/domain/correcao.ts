@@ -3,7 +3,7 @@
 // Variações legítimas (contrações, pontuação final, maiúsculas) são normalizadas; o resto
 // precisa estar listado em `aceitas`.
 
-export type Tipo = 'sequence' | 'mcq' | 'cloze' | 'word_order' | 'match' | 'translate' | 'error_correction';
+export type Tipo = 'sequence' | 'mcq' | 'cloze' | 'word_order' | 'match' | 'translate' | 'error_correction' | 'dictation';
 
 export interface ItemCorrigivel {
   tipo: string;
@@ -97,6 +97,11 @@ function iguais(resposta: string, aceitas: string[]) {
   return aceitas.some((a) => r.includes(canonico(a)));
 }
 
+/** A resposta bate com alguma das aceitas? (mesma comparação da correção; usada pelas travas do conteúdo) */
+export function respostaAceita(resposta: string, aceitas: string[]): boolean {
+  return iguais(resposta, aceitas);
+}
+
 const resultado = (correto: boolean, pontuacao: number, respostaEsperada: string, explicacao: string): Resultado => ({
   correto,
   pontuacao: Math.round(pontuacao * 100) / 100,
@@ -108,7 +113,7 @@ export class RespostaInvalida extends Error {}
 
 /**
  * Corrige uma resposta. Formato esperado de `resposta` por tipo:
- * mcq: number · cloze: string[] · word_order: string[] · match: number[] · translate/error_correction: string
+ * mcq: number · cloze: string[] · word_order: string[] · match: number[] · translate/error_correction/dictation: string
  */
 export function corrigir(item: ItemCorrigivel, resposta: unknown): Resultado {
   const c = item.conteudo as any;
@@ -155,6 +160,12 @@ export function corrigir(item: ItemCorrigivel, resposta: unknown): Resultado {
       if (typeof resposta !== 'string') throw new RespostaInvalida('esperado um texto');
       const ok = iguais(resposta, g.aceitas);
       return resultado(ok, ok ? 1 : 0, g.aceitas[0], exp);
+    }
+    case 'dictation': {
+      // Ditado: o aluno ouve `conteudo.frase` (voz do navegador) e escreve. A correção mostra a frase ditada.
+      if (typeof resposta !== 'string') throw new RespostaInvalida('esperado um texto');
+      const ok = iguais(resposta, g.aceitas);
+      return resultado(ok, ok ? 1 : 0, c.frase, exp);
     }
     default:
       throw new RespostaInvalida(`tipo de exercício desconhecido: ${item.tipo}`);

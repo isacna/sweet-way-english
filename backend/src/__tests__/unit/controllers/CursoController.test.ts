@@ -91,7 +91,7 @@ const itemTeste = (id: number, habilidade: string, forma = 1) => ({
   explicacao: 'exp',
 });
 
-const perfil = { usuarioId: 10, xp: 40, ofensivaAtual: 2, ofensivaMaxima: 3, ultimoEstudoEm: new Date(), metodologia: 'gramatica' };
+const perfil = { usuarioId: 10, xp: 40, ofensivaAtual: 2, ofensivaMaxima: 3, ultimoEstudoEm: new Date(), metodologia: 'gramatica', metaDiariaXp: 30, xpDoDia: 12, onboardingEm: null as Date | null, lembretesEmail: false };
 
 /** Estado do aluno: lições concluídas e tentativas finalizadas. */
 function estado({ concluidas = [] as number[], tentativas = [] as object[] } = {}) {
@@ -137,15 +137,46 @@ describe('CursoController', () => {
       await getTrilha(studentReq(), res);
 
       const body = res.json.mock.calls[0][0];
-      expect(body.perfil).toEqual({ xp: 40, ofensivaAtual: 2, ofensivaMaxima: 3, metodologia: 'gramatica', revisoesPendentes: 3 });
+      expect(body.perfil).toEqual({
+        xp: 40,
+        ofensivaAtual: 2,
+        ofensivaMaxima: 3,
+        metodologia: 'gramatica',
+        revisoesPendentes: 3,
+        metaDiariaXp: 30,
+        xpHoje: 12,
+        onboardingPendente: true,
+        lembretesEmail: false,
+      });
       expect(body.niveis).toHaveLength(1);
       const [m1, m2] = body.niveis[0].modulos;
       expect(m1).toMatchObject({ desbloqueado: true, licoesConcluidas: 1, totalLicoes: 2, canDos: ['can 1', 'can 2'] });
-      expect(m1.teste).toEqual({ disponivel: false, aprovado: false, melhorPercentual: null, tentativas: 0, bloqueadoAte: null });
+      expect(m1.teste).toEqual({ disponivel: false, podeAdiantar: true, aprovado: false, melhorPercentual: null, tentativas: 0, bloqueadoAte: null });
       expect(m1.licoes[0]).toMatchObject({ id: 11, concluida: true, desbloqueada: true, melhorPercentual: 90 });
       expect(m1.licoes[1]).toMatchObject({ id: 12, concluida: false, desbloqueada: true, melhorPercentual: 0 });
       expect(m2.desbloqueado).toBe(false);
+      expect(m2.teste.podeAdiantar).toBe(false);
       expect(prismaMock.perfilAprendiz.createMany).toHaveBeenCalledWith({ data: [{ usuarioId: 10 }], skipDuplicates: true });
+    });
+
+    it('after a test-out: module passed, its lessons open but not completed, next module unlocked', async () => {
+      estado({ tentativas: [{ moduloId: 1, aprovado: true, percentual: 88, finalizadaEm: new Date() }] });
+
+      await getTrilha(studentReq(), res);
+
+      const [m1, m2] = res.json.mock.calls[0][0].niveis[0].modulos;
+      expect(m1).toMatchObject({ desbloqueado: true, licoesConcluidas: 0, totalLicoes: 2 });
+      expect(m1.teste).toMatchObject({ aprovado: true, disponivel: false, podeAdiantar: false, melhorPercentual: 88 });
+      expect(m1.licoes.map((l: any) => [l.desbloqueada, l.concluida])).toEqual([[true, false], [true, false]]);
+      expect(m2.desbloqueado).toBe(true);
+      expect(m2.teste).toMatchObject({ disponivel: false, podeAdiantar: true });
+    });
+
+    it('does not offer the test-out during the wait after a failure', async () => {
+      estado({ tentativas: [{ moduloId: 1, aprovado: false, percentual: 40, finalizadaEm: new Date() }] });
+      await getTrilha(studentReq(), res);
+      const [m1] = res.json.mock.calls[0][0].niveis[0].modulos;
+      expect(m1.teste).toMatchObject({ disponivel: false, podeAdiantar: false, bloqueadoAte: expect.any(String) });
     });
 
     it('reports a broken streak as 0', async () => {
@@ -481,6 +512,89 @@ describe('CursoController', () => {
       expect(prismaMock.tentativaTeste.create.mock.calls[0][0].data).toEqual({ usuarioId: 10, moduloId: 1, forma: 2, itemIds: [201, 202] });
     });
 
+    // ── Adiantar o teste (nivelamento) ──
+    /** Prepara os mocks para uma tentativa nova na forma 1. */
+    function semTentativaAberta() {
+      prismaMock.tentativaTeste.findFirst.mockResolvedValue(null);
+      prismaMock.itemTeste.findMany
+        .mockResolvedValueOnce([{ forma: 1 }, { forma: 2 }])
+        .mockResolvedValueOnce([itemTeste(101, 'leitura'), itemTeste(102, 'escrita')]);
+      prismaMock.tentativaTeste.create.mockResolvedValue({ id: 60 });
+    }
+
+    it('with adiantar: creates an attempt although lessons are incomplete', async () => {
+      estado({ concluidas: [11] });
+      semTentativaAberta();
+
+      await iniciarTeste(studentReq({ params: { id: '1' }, body: { adiantar: true } }), res);
+
+      expect(res.status).toHaveBeenCalledWith(201);
+      expect(res.json.mock.calls[0][0]).toMatchObject({ tentativaId: 60, forma: 1 });
+      expect(prismaMock.tentativaTeste.create.mock.calls[0][0].data).toEqual({ usuarioId: 10, moduloId: 1, forma: 1, itemIds: [101, 102] });
+    });
+
+    it('with adiantar: resumes the open attempt', async () => {
+      estado();
+      prismaMock.tentativaTeste.findFirst.mockResolvedValue({ id: 50, forma: 1, itemIds: [101] });
+      prismaMock.itemTeste.findMany.mockResolvedValue([itemTeste(101, 'leitura')]);
+
+      await iniciarTeste(studentReq({ params: { id: '1' }, body: { adiantar: true } }), res);
+
+      expect(res.status).not.toHaveBeenCalled();
+      expect(res.json.mock.calls[0][0].tentativaId).toBe(50);
+      expect(prismaMock.tentativaTeste.create).not.toHaveBeenCalled();
+    });
+
+    it.each([{ body: undefined }, { body: {} }, { body: { adiantar: false } }])(
+      'without the flag ($body): still 409 when lessons are incomplete',
+      async ({ body }) => {
+        estado({ concluidas: [11] });
+        await iniciarTeste(studentReq({ params: { id: '1' }, body }), res);
+        expect(res.status).toHaveBeenCalledWith(409);
+        expect(prismaMock.tentativaTeste.create).not.toHaveBeenCalled();
+      },
+    );
+
+    it('with adiantar: still 403 for a locked module', async () => {
+      estado();
+      await iniciarTeste(studentReq({ params: { id: '2' }, body: { adiantar: true } }), res);
+      expect(res.status).toHaveBeenCalledWith(403);
+      expect(prismaMock.tentativaTeste.create).not.toHaveBeenCalled();
+    });
+
+    it('with adiantar: still 423 during the wait after a failed attempt', async () => {
+      estado({ tentativas: [{ moduloId: 1, aprovado: false, percentual: 40, finalizadaEm: new Date() }] });
+      prismaMock.tentativaTeste.findFirst.mockResolvedValue(null);
+      await iniciarTeste(studentReq({ params: { id: '1' }, body: { adiantar: true } }), res);
+      expect(res.status).toHaveBeenCalledWith(423);
+      expect(res.json.mock.calls[0][0].bloqueadoAte).toEqual(expect.any(String));
+      expect(prismaMock.tentativaTeste.create).not.toHaveBeenCalled();
+    });
+
+    it('with adiantar: unlocks the test of the next module after a test-out', async () => {
+      estado({ tentativas: [{ moduloId: 1, aprovado: true, percentual: 90, finalizadaEm: new Date() }] });
+      semTentativaAberta();
+      await iniciarTeste(studentReq({ params: { id: '2' }, body: { adiantar: true } }), res);
+      expect(res.status).toHaveBeenCalledWith(201);
+    });
+
+    it.each([{ body: undefined }, { body: { adiantar: true } }])(
+      'module already passed with lessons incomplete: retake allowed with or without the flag ($body)',
+      async ({ body }) => {
+        estado({ tentativas: [{ moduloId: 1, aprovado: true, percentual: 90, finalizadaEm: new Date() }] });
+        semTentativaAberta();
+        await iniciarTeste(studentReq({ params: { id: '1' }, body }), res);
+        expect(res.status).toHaveBeenCalledWith(201);
+      },
+    );
+
+    it('returns 400 when adiantar is not a boolean', async () => {
+      estado();
+      await iniciarTeste(studentReq({ params: { id: '1' }, body: { adiantar: 'sim' } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.nivel.findMany).not.toHaveBeenCalled();
+    });
+
     it('returns 409 when the module has no test items', async () => {
       estado({ concluidas: [11, 12] });
       prismaMock.tentativaTeste.findFirst.mockResolvedValue(null);
@@ -567,6 +681,50 @@ describe('CursoController', () => {
     it('accepts "gramatica" and returns the profile', async () => {
       await atualizarPerfil(studentReq({ body: { metodologia: 'gramatica' } }), res);
       expect(res.json.mock.calls[0][0]).toMatchObject({ metodologia: 'gramatica', xp: 40, revisoesPendentes: 0 });
+    });
+    it('saves the daily goal and finishes the onboarding once', async () => {
+      await atualizarPerfil(studentReq({ body: { metaDiariaXp: 60, onboardingConcluido: true } }), res);
+      const data = prismaMock.perfilAprendiz.update.mock.calls[0][0].data;
+      expect(data.metaDiariaXp).toBe(60);
+      expect(data.onboardingEm).toBeInstanceOf(Date);
+      expect(data.metodologia).toBeUndefined();
+    });
+
+    it('does not overwrite the onboarding date', async () => {
+      prismaMock.perfilAprendiz.findUniqueOrThrow.mockResolvedValue({ ...perfil, onboardingEm: new Date('2026-01-01') });
+      await atualizarPerfil(studentReq({ body: { onboardingConcluido: true } }), res);
+      expect(prismaMock.perfilAprendiz.update.mock.calls[0][0].data.onboardingEm).toBeUndefined();
+      expect(res.json.mock.calls[0][0].onboardingPendente).toBe(false);
+    });
+
+    it('turns the e-mail reminders on and off', async () => {
+      prismaMock.perfilAprendiz.findUniqueOrThrow.mockResolvedValue({ ...perfil, lembretesEmail: true });
+      await atualizarPerfil(studentReq({ body: { lembretesEmail: true } }), res);
+      expect(prismaMock.perfilAprendiz.update.mock.calls[0][0].data).toEqual({ lembretesEmail: true });
+      expect(res.json.mock.calls[0][0].lembretesEmail).toBe(true);
+
+      await atualizarPerfil(studentReq({ body: { lembretesEmail: false, metaDiariaXp: 10 } }), res);
+      expect(prismaMock.perfilAprendiz.update.mock.calls[1][0].data).toEqual({ lembretesEmail: false, metaDiariaXp: 10 });
+    });
+
+    it('leaves the reminders alone when the field is not sent, and rejects a non-boolean', async () => {
+      await atualizarPerfil(studentReq({ body: { metaDiariaXp: 30 } }), res);
+      expect(prismaMock.perfilAprendiz.update.mock.calls[0][0].data.lembretesEmail).toBeUndefined();
+
+      res = mockRes();
+      await atualizarPerfil(studentReq({ body: { lembretesEmail: 'sim' } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.perfilAprendiz.update).toHaveBeenCalledTimes(1);
+    });
+
+    it('rejects a goal outside the options and an empty body', async () => {
+      await atualizarPerfil(studentReq({ body: { metaDiariaXp: 25 } }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(res.json.mock.calls[0][0].error).toMatch(/Meta diária/);
+      res = mockRes();
+      await atualizarPerfil(studentReq({ body: {} }), res);
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.perfilAprendiz.update).not.toHaveBeenCalled();
     });
   });
 });
