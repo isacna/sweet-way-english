@@ -87,10 +87,21 @@ function BotaoTeste({ modulo }: { modulo: ModuloTrilha }) {
     );
   }
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-sm font-medium text-ink-soft">
-      <Lock className="h-4 w-4" aria-hidden />
-      Teste do módulo: conclua todas as lições
-    </span>
+    <div className="flex flex-col items-start gap-1.5">
+      <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 text-sm font-medium text-ink-soft">
+        <Lock className="h-4 w-4" aria-hidden />
+        Teste do módulo: conclua todas as lições
+      </span>
+      {/* Nivelamento: quem já sabe o conteúdo pode adiantar o teste (a página do teste explica as condições) */}
+      {teste.podeAdiantar && (
+        <Link
+          href={`${href}?adiantar=1`}
+          className="inline-flex min-h-[44px] items-center rounded-xl text-sm font-semibold text-grape hover:underline focus:outline-none focus-visible:ring-4 focus-visible:ring-grape/30"
+        >
+          Já sei este conteúdo: fazer o teste do módulo
+        </Link>
+      )}
+    </div>
   );
 }
 
@@ -159,6 +170,11 @@ function CartaoModulo({
           </div>
           {bloqueado && (
             <p className="mt-2 text-xs text-ink-faint">Passe no teste do módulo anterior para liberar.</p>
+          )}
+          {!bloqueado && aprovado && modulo.licoesConcluidas < modulo.totalLicoes && (
+            <p className="mt-2 text-xs text-ink-faint">
+              Módulo concluído pelo teste. As lições continuam abertas para estudar quando quiser.
+            </p>
           )}
         </div>
         <ChevronDown
@@ -381,6 +397,12 @@ export default function TrilhaCursoPage() {
         <div className="relative">
           <h1 className="text-[1.7rem] font-semibold leading-tight tracking-tight text-ink sm:text-3xl">Meu curso de inglês</h1>
           <p className="mt-1 text-ink-soft">Siga a trilha no seu ritmo: uma lição de cada vez.</p>
+          <Link
+            href="/aluno/curso/conquistas"
+            className="mt-2 inline-flex min-h-[44px] items-center gap-1.5 rounded-lg text-sm font-semibold text-grape hover:underline"
+          >
+            Conquistas e certificados →
+          </Link>
 
           <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
             <Estatistica

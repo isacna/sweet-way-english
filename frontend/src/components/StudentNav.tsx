@@ -4,13 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { iconesNav } from "./navIcons";
 
-const navItems: { href: string; label: string; icon: string }[] = [
+export const itensNavAluno: { href: string; label: string; icon: string }[] = [
   { href: "/aluno", label: "Painel", icon: "painel" },
   { href: "/aluno/curso", label: "Curso", icon: "curso" },
   { href: "/aluno/turmas", label: "Turmas", icon: "turmas" },
   { href: "/aluno/feedbacks", label: "Feedbacks", icon: "feedbacks" },
   { href: "/aluno/materiais", label: "Materiais", icon: "materiais" },
 ];
+const navItems = itensNavAluno;
 
 /** Telas de foco (lição, revisão, teste): sem barra inferior, para a barra de ação ficar livre. */
 export function emModoFoco(pathname: string) {

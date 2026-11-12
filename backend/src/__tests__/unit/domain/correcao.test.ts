@@ -86,6 +86,47 @@ describe('corrigir', () => {
     expect(corrigir(i, 'I have 20 years').correto).toBe(false);
   });
 
+  describe('dictation', () => {
+    const d = { tipo: 'dictation', conteudo: { frase: "They're students." }, gabarito: { aceitas: ['They are students.'] }, explicacao: 'e' };
+    const numero = { tipo: 'dictation', conteudo: { frase: 'She is eighteen years old.' }, gabarito: { aceitas: ['She is eighteen years old.', 'She is 18 years old.'] }, explicacao: 'e' };
+
+    it.each([
+      ["They're students.", true],
+      ['they are students', true],
+      ['  They’re   students !', true],
+      ['THEY ARE STUDENTS.', true],
+      ['Their students.', false],
+      ['They are student.', false],
+      ['They are students too.', false],
+      ['', false],
+      ['   ', false],
+    ])('%j → %s', (resposta, correto) => {
+      const r = corrigir(d, resposta);
+      expect(r.correto).toBe(correto);
+      expect(r.pontuacao).toBe(correto ? 1 : 0);
+    });
+
+    it('shows the spoken sentence as the expected answer, not the first key', () => {
+      expect(corrigir(d, 'x').respostaEsperada).toBe("They're students.");
+      expect(corrigir(d, 'x').explicacao).toBe('e');
+    });
+
+    it('accepts the variants listed in the key', () => {
+      expect(corrigir(numero, 'she is 18 years old').correto).toBe(true);
+      expect(corrigir(numero, "She's eighteen years old.").correto).toBe(true);
+      expect(corrigir(numero, 'She is eighteen.').correto).toBe(false);
+    });
+
+    it('throws RespostaInvalida for a non-text answer', () => {
+      expect(() => corrigir(d, ['They', 'are'])).toThrow(RespostaInvalida);
+      expect(() => corrigir(d, 3)).toThrow(RespostaInvalida);
+    });
+
+    it('never sends the key to the browser, only the sentence to be spoken', () => {
+      expect(versaoPublica({ id: 1, ...d })).toEqual({ id: 1, tipo: 'dictation', conteudo: { frase: "They're students." } });
+    });
+  });
+
   it('rejects an empty answer', () => {
     const i = item('translate', { frase: 'Oi', direcao: 'pt-en' }, { aceitas: ['Hi'] });
     expect(corrigir(i, '   ').correto).toBe(false);

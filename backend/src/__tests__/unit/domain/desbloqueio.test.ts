@@ -3,7 +3,9 @@ import {
   bloqueadoAte,
   calcularTrilha,
   escolherForma,
+  licoesPermitemTeste,
   percentualDe,
+  podeAdiantarTeste,
   respostaVazia,
 } from '../../../domain/desbloqueio.js';
 import { corrigir } from '../../../domain/correcao.js';
@@ -66,6 +68,78 @@ describe('calcularTrilha', () => {
   it('treats a module without published lessons as having all lessons done', () => {
     const t = calcularTrilha([{ id: 9, licoes: [] }], new Set(), [], agora);
     expect(t.get(9)).toMatchObject({ todasConcluidas: true, testeDisponivel: true });
+  });
+});
+
+describe('adiantar o teste (nivelamento)', () => {
+  const reprovada = (h: number) => ({ moduloId: 1, aprovado: false, percentual: 40, finalizadaEm: horasAtras(h) });
+  const aprovada = (moduloId: number, h: number) => ({ moduloId, aprovado: true, percentual: 90, finalizadaEm: horasAtras(h) });
+
+  it.each([
+    { caso: 'new student, current module', concluidas: [], tentativas: [], modulo: 1, esperado: true },
+    { caso: 'some lessons done', concluidas: [11], tentativas: [], modulo: 1, esperado: true },
+    { caso: 'all lessons done (regular test instead)', concluidas: [11, 12], tentativas: [], modulo: 1, esperado: false },
+    { caso: 'locked module', concluidas: [], tentativas: [], modulo: 2, esperado: false },
+    { caso: 'in the 24 h wait', concluidas: [], tentativas: [reprovada(2)], modulo: 1, esperado: false },
+    { caso: 'after the wait', concluidas: [], tentativas: [reprovada(25)], modulo: 1, esperado: true },
+    { caso: 'already passed', concluidas: [], tentativas: [aprovada(1, 5)], modulo: 1, esperado: false },
+    { caso: 'next module after a test-out', concluidas: [], tentativas: [aprovada(1, 5)], modulo: 2, esperado: true },
+  ])('podeAdiantar: $caso → $esperado', ({ concluidas, tentativas, modulo, esperado }) => {
+    const t = calcularTrilha(modulos, new Set(concluidas), tentativas, agora);
+    expect(t.get(modulo)!.podeAdiantar).toBe(esperado);
+    // nunca os dois ao mesmo tempo: ou o teste normal está disponível, ou dá para adiantar
+    expect(t.get(modulo)!.testeDisponivel && t.get(modulo)!.podeAdiantar).toBe(false);
+  });
+
+  it('never offers it for a module with no published lessons', () => {
+    const t = calcularTrilha([{ id: 9, licoes: [] }], new Set(), [], agora);
+    expect(t.get(9)).toMatchObject({ testeDisponivel: true, podeAdiantar: false });
+  });
+
+  it('passing by test-out unlocks the next module and opens every lesson, which stay not completed', () => {
+    const t = calcularTrilha(modulos, new Set(), [aprovada(1, 5)], agora);
+    expect(t.get(1)).toMatchObject({ aprovado: true, licoesConcluidas: 0, todasConcluidas: false, testeDisponivel: false });
+    expect(t.get(1)!.licoes.get(11)).toEqual({ desbloqueada: true, concluida: false });
+    expect(t.get(1)!.licoes.get(12)).toEqual({ desbloqueada: true, concluida: false });
+    expect(t.get(2)!.desbloqueado).toBe(true);
+    // no módulo seguinte vale a regra normal: só a primeira lição
+    expect(t.get(2)!.licoes.get(21)!.desbloqueada).toBe(true);
+    expect(t.get(2)!.licoes.get(22)!.desbloqueada).toBe(false);
+    expect(t.get(3)!.desbloqueado).toBe(false);
+  });
+
+  it('failing by test-out keeps lessons in sequence and the next module locked', () => {
+    const t = calcularTrilha(modulos, new Set(), [reprovada(2)], agora);
+    expect(t.get(1)).toMatchObject({ aprovado: false, podeAdiantar: false, testeDisponivel: false });
+    expect(t.get(1)!.bloqueadoAte).not.toBeNull();
+    expect(t.get(1)!.licoes.get(11)!.desbloqueada).toBe(true);
+    expect(t.get(1)!.licoes.get(12)!.desbloqueada).toBe(false);
+    expect(t.get(2)!.desbloqueado).toBe(false);
+  });
+
+  it('a stale approval in a locked module does not open its lessons', () => {
+    const t = calcularTrilha(modulos, new Set(), [aprovada(2, 5)], agora);
+    expect(t.get(2)!.licoes.get(21)!.desbloqueada).toBe(false);
+    expect(t.get(2)!.podeAdiantar).toBe(false);
+  });
+
+  it.each([
+    { desbloqueado: true, aprovado: false, todasConcluidas: false, emEspera: false, esperado: true },
+    { desbloqueado: false, aprovado: false, todasConcluidas: false, emEspera: false, esperado: false },
+    { desbloqueado: true, aprovado: true, todasConcluidas: false, emEspera: false, esperado: false },
+    { desbloqueado: true, aprovado: false, todasConcluidas: true, emEspera: false, esperado: false },
+    { desbloqueado: true, aprovado: false, todasConcluidas: false, emEspera: true, esperado: false },
+  ])('podeAdiantarTeste($desbloqueado, $aprovado, $todasConcluidas, $emEspera) → $esperado', ({ esperado, ...m }) => {
+    expect(podeAdiantarTeste(m)).toBe(esperado);
+  });
+
+  it.each([
+    { todasConcluidas: true, aprovado: false, adiantar: false, esperado: true },
+    { todasConcluidas: false, aprovado: false, adiantar: false, esperado: false },
+    { todasConcluidas: false, aprovado: false, adiantar: true, esperado: true },
+    { todasConcluidas: false, aprovado: true, adiantar: false, esperado: true },
+  ])('licoesPermitemTeste($todasConcluidas, $aprovado, $adiantar) → $esperado', ({ adiantar, esperado, ...m }) => {
+    expect(licoesPermitemTeste(m, adiantar)).toBe(esperado);
   });
 });
 

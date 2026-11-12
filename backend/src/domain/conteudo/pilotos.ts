@@ -1,7 +1,10 @@
 import type { ExercicioConteudo, LicaoConteudo } from './schema.js';
 
-export const MODULOS_PILOTO = ['a1-m04', 'a1-m06', 'a2-m02'];
+export const MODULOS_PILOTO = ['a1-m01', 'a1-m02', 'a1-m04', 'a1-m06', 'a2-m02'];
 export const TAG_PILOTO = 'piloto_multimidia_v1';
+/** Piloto de ditado (A1-M01 e A1-M02): um item `dictation` por lição, na prática semicontrolada. */
+export const TAG_PILOTO_DITADO = 'piloto_ditado_v1';
+const TAGS_PILOTO = [TAG_PILOTO, TAG_PILOTO_DITADO];
 
 type Existente = { ordem: number; tagsErro: unknown };
 
@@ -9,7 +12,7 @@ type Existente = { ordem: number; tagsErro: unknown };
 export function planejarPiloto(licao: LicaoConteudo, exercicios: Existente[], apresentacao: unknown) {
   const tags = new Set(exercicios.flatMap((e) => Array.isArray(e.tagsErro) ? e.tagsErro.filter((t): t is string => typeof t === 'string') : []));
   const novos: ExercicioConteudo[] = licao.exercicios.filter((e) =>
-    e.tagsErro?.includes(TAG_PILOTO) && !e.tagsErro.some((t) => t.startsWith('piloto:') && tags.has(t)),
+    e.tagsErro?.some((t) => TAGS_PILOTO.includes(t)) && !e.tagsErro.some((t) => t.startsWith('piloto:') && tags.has(t)),
   );
   const atual = (apresentacao && typeof apresentacao === 'object' && !Array.isArray(apresentacao) ? apresentacao : {}) as Record<string, unknown>;
   const recursos = Array.isArray(atual.recursos) ? [...atual.recursos] : [];
@@ -35,7 +38,7 @@ export function auditarDiversidade(licoes: LicaoConteudo[]): string[] {
   for (const l of licoes) {
     const assinatura = l.exercicios.map((e) => `${e.etapa}:${e.tipo}`).join('|');
     sequencias.set(assinatura, [...(sequencias.get(assinatura) ?? []), l.slug]);
-    if (!l.apresentacao.recursos?.length && !l.exercicios.some((e) => e.conteudo.midia)) avisos.push(`${l.slug}: sem mídia de apoio ou escuta.`);
+    if (!l.apresentacao.recursos?.length && !l.exercicios.some((e) => e.conteudo.midia || e.tipo === 'dictation')) avisos.push(`${l.slug}: sem mídia de apoio ou escuta.`);
     if (!l.apresentacao.missao) avisos.push(`${l.slug}: sem missão pessoal com autoavaliação.`);
     const pratica = l.exercicios.filter((e) => e.etapa !== 'quiz');
     if (new Set(pratica.map((e) => e.tipo)).size < 3) avisos.push(`${l.slug}: menos de 3 formatos na prática.`);

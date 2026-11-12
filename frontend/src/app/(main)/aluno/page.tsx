@@ -3,9 +3,36 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CalendarClock, ChevronRight, ClipboardList, KeyRound, MessageSquareText, Star, UsersRound } from "lucide-react";
+import {
+  CalendarClock,
+  ChevronRight,
+  ClipboardList,
+  Flame,
+  GraduationCap,
+  KeyRound,
+  MessageSquareText,
+  Repeat2,
+  Star,
+  UsersRound,
+} from "lucide-react";
+import { ResumoConquistas } from "@/components/conquistas/ResumoConquistas";
+import { BoasVindas } from "@/components/curso/BoasVindas";
 import { ContinuarCursoCard } from "@/components/curso/ContinuarCursoCard";
-import { Cabecalho, Carregando, classeBotao, classeLinkAcao, Mensagem, Secao, Selo, Vazio } from "@/components/painel/ui";
+import { CartaoMeta } from "@/components/curso/MetaDiaria";
+import {
+  Cabecalho,
+  Carregando,
+  classeBotao,
+  classeLinkAcao,
+  Contagem,
+  Indicador,
+  Mensagem,
+  Secao,
+  Selo,
+  Vazio,
+} from "@/components/painel/ui";
+import { usePrimeiroNome, useHojePt } from "@/lib/sessaoUi";
+import { totaisDaTrilha, useTrilha } from "@/lib/trilha";
 import { prazo, situacaoAluno, type SituacaoAluno } from "@/components/turmas/status";
 import type { AtividadeComEntregas, FeedbackDoAluno, TurmaResumo } from "@/components/turmas/tipos";
 import type { TomSelo } from "@/components/painel/ui";
@@ -23,6 +50,9 @@ type Linha = {
 
 export default function AlunoDashboardPage() {
   const router = useRouter();
+  const nome = usePrimeiroNome();
+  const hoje = useHojePt();
+  const { trilha, falhou } = useTrilha();
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
   const [turmas, setTurmas] = useState<TurmaResumo[]>([]);
@@ -84,12 +114,66 @@ export default function AlunoDashboardPage() {
 
   const paraFazer = linhas.filter((l) => l.situacao.chave === "a-entregar" || l.situacao.chave === "reprovada");
   const aguardando = linhas.filter((l) => l.situacao.chave === "enviada");
+  const totais = trilha ? totaisDaTrilha(trilha) : null;
+  const revisoes = trilha?.perfil.revisoesPendentes ?? 0;
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6">
-      <Cabecalho titulo="Seu painel" descricao="Curso, atividades da turma e o retorno do professor." />
+    <div className="mx-auto max-w-6xl space-y-6">
+      {trilha?.perfil.onboardingPendente && <BoasVindas nome={nome} trilha={trilha} />}
+      <Cabecalho
+        eyebrow={hoje || undefined}
+        titulo={nome ? `Olá, ${nome}!` : "Seu painel"}
+        descricao={
+          carregando || erro
+            ? "Curso, atividades da turma e o retorno do professor."
+            : paraFazer.length > 0
+              ? `Você tem ${paraFazer.length} ${paraFazer.length === 1 ? "atividade" : "atividades"} da turma para fazer.`
+              : revisoes > 0
+                ? `Nada pendente na turma. Há ${revisoes} ${revisoes === 1 ? "item" : "itens"} para revisar no curso.`
+                : "Nada pendente na turma. Bom momento para avançar no curso."
+        }
+      />
 
-      <ContinuarCursoCard />
+      <ContinuarCursoCard trilha={trilha} falhou={falhou} />
+
+      {!falhou && (
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          <CartaoMeta perfil={trilha?.perfil ?? null} />
+          <Indicador
+            icone={<Flame />}
+            tom="chama"
+            ordem={1}
+            valor={trilha ? <Contagem valor={trilha.perfil.ofensivaAtual} /> : "…"}
+            rotulo={trilha?.perfil.ofensivaAtual === 1 ? "Dia seguido" : "Dias seguidos"}
+            detalhe={
+              trilha
+                ? trilha.perfil.ofensivaAtual > 0 && trilha.perfil.xpHoje === 0
+                  ? "Estude hoje para não perder"
+                  : `Recorde: ${trilha.perfil.ofensivaMaxima}`
+                : undefined
+            }
+          />
+          <Indicador
+            icone={<GraduationCap />}
+            ordem={2}
+            valor={totais ? <Contagem valor={totais.percentual} sufixo="%" /> : "…"}
+            rotulo="Do curso concluído"
+            detalhe={totais ? `${totais.concluidas} de ${totais.total} lições` : undefined}
+            href="/aluno/curso"
+          />
+          <Indicador
+            icone={<Repeat2 />}
+            tom="doce"
+            ordem={3}
+            valor={trilha ? <Contagem valor={revisoes} /> : "…"}
+            rotulo="Para revisar"
+            detalhe={trilha ? (revisoes > 0 ? "Revisão pronta para hoje" : "Revisão em dia") : undefined}
+            href="/aluno/curso/revisao"
+          />
+        </div>
+      )}
+
+      <ResumoConquistas />
 
       {erro && <Mensagem tom="erro">{erro}</Mensagem>}
 
@@ -136,7 +220,9 @@ export default function AlunoDashboardPage() {
               <Vazio
                 compacto
                 titulo="Nada pendente"
-                texto={aguardando.length ? "Suas entregas estão com o professor." : "Quando houver atividade nova, ela aparece aqui."}
+                texto={
+                  aguardando.length ? "Suas entregas estão com o professor." : "Quando houver atividade nova, ela aparece aqui."
+                }
               />
             ) : (
               <ul className="space-y-2.5">

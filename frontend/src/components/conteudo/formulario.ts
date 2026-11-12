@@ -22,6 +22,7 @@ export const TIPOS: TipoExercicio[] = [
   "match",
   "translate",
   "error_correction",
+  "dictation",
 ];
 
 export const rotuloTipo: Record<TipoExercicio, string> = {
@@ -32,6 +33,7 @@ export const rotuloTipo: Record<TipoExercicio, string> = {
   match: "Associar pares",
   translate: "Tradução",
   error_correction: "Corrigir o erro",
+  dictation: "Ditado (ouvir e escrever)",
 };
 
 export const MARCADOR_LACUNA = "___";
@@ -59,13 +61,15 @@ export type ExercicioForm = {
   opcoesLacunas: string[]; // uma string por lacuna, opções uma por linha
   // word_order
   palavras: string; // uma por linha (ou separadas por espaço)
-  // word_order, translate, error_correction
+  // word_order, translate, error_correction, dictation
   aceitas: string; // uma por linha
   // match
   pares: ParForm[];
-  // translate / error_correction
+  // translate / error_correction / dictation (a frase falada)
   frase: string;
   direcao: "pt-en" | "en-pt";
+  // dictation
+  dica: string;
 };
 
 export type LinhaPar = { en: string; pt: string };
@@ -155,6 +159,7 @@ export function exercicioVazio(etapa: Etapa, tipo: TipoExercicio): ExercicioForm
     ],
     frase: "",
     direcao: "pt-en",
+    dica: "",
   };
 }
 
@@ -207,6 +212,12 @@ export function exercicioParaForm(ex: ExercicioCompleto): ExercicioForm {
       break;
     case "error_correction":
       f.frase = String(c.frase ?? "");
+      f.aceitas = lista(g.aceitas).join("\n");
+      break;
+    case "dictation":
+      f.midia = undefined; // ditado não aceita mídia: a própria frase é o áudio
+      f.frase = String(c.frase ?? "");
+      f.dica = typeof c.dica === "string" ? c.dica : "";
       f.aceitas = lista(g.aceitas).join("\n");
       break;
   }
@@ -296,7 +307,7 @@ export function montarMatch(pares: ParForm[]): { esquerda: string[]; direita: st
 
 export function exercicioParaPayload(f: ExercicioForm): ExercicioPayload {
   const payload = exercicioSemMidia(f);
-  if (f.midia) payload.conteudo.midia = f.midia;
+  if (f.midia && f.tipo !== "dictation") payload.conteudo.midia = f.midia;
   return payload;
 }
 
@@ -365,7 +376,30 @@ function exercicioSemMidia(f: ExercicioForm): ExercicioPayload {
         conteudo: { frase: f.frase.trim() },
         gabarito: { aceitas: linhas(f.aceitas) },
       };
+    case "dictation":
+      return {
+        ...base,
+        conteudo: { frase: f.frase.trim(), ...(f.dica.trim() ? { dica: f.dica.trim() } : {}) },
+        gabarito: { aceitas: aceitasDoDitado(f) },
+      };
   }
+}
+
+/** Comparação aproximada à do backend, só para os avisos do editor (quem decide é o servidor). */
+const semelhante = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[‘’ʼ`´]/g, "'")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/[.!?;:,\s]+$/, "");
+
+export const DITADO_MAX_PALAVRAS = 12;
+
+/** Respostas aceitas do ditado: as listadas; sem nenhuma, vale a própria frase falada. */
+export function aceitasDoDitado(f: Pick<ExercicioForm, "frase" | "aceitas">): string[] {
+  const aceitas = linhas(f.aceitas);
+  return aceitas.length || !f.frase.trim() ? aceitas : [f.frase.trim()];
 }
 
 const limparPares = (v: LinhaPar[]) =>
@@ -435,6 +469,20 @@ export function avisosExercicio(f: ExercicioForm): string[] {
       if (!f.frase.trim()) avisos.push("Falta a frase.");
       if (!linhas(f.aceitas).length) avisos.push("Informe pelo menos uma resposta aceita.");
       break;
+    case "dictation": {
+      const frase = semelhante(f.frase);
+      if (!frase) {
+        avisos.push("Falta a frase que será falada.");
+        break;
+      }
+      if (f.etapa === "quiz") avisos.push("Ditado não pode ficar no mini-quiz: escolha uma etapa de prática.");
+      if (/\d/.test(f.frase)) avisos.push("Escreva os números da frase por extenso (algarismos só nas respostas aceitas).");
+      if (frase.split(" ").length > DITADO_MAX_PALAVRAS)
+        avisos.push(`Frase longa demais para um ditado (máximo ${DITADO_MAX_PALAVRAS} palavras).`);
+      if ([f.enunciado, f.dica].some((t) => semelhante(t).includes(frase)))
+        avisos.push("O enunciado e a dica não podem conter a frase: o aluno a veria escrita.");
+      break;
+    }
   }
   return avisos;
 }
