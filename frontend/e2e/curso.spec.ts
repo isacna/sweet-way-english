@@ -20,7 +20,7 @@ type ExercicioCompleto = {
   id: number;
   ordem: number;
   etapa: Etapa;
-  tipo: "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction";
+  tipo: "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction" | "dictation";
   enunciado: string;
   conteudo: Record<string, unknown>;
   gabarito: Record<string, unknown>;
@@ -113,6 +113,19 @@ async function responder(page: Page, e: ExercicioCompleto) {
     case "error_correction":
       await page.locator(`#texto-${e.id}`).fill(g.aceitas![0]);
       break;
+    case "dictation": {
+      // O navegador de teste pode não ter voz em inglês: espera a detecção terminar e, se aparecer o
+      // aviso para pular, segue pelo "Tentar ouvir mesmo assim" (a resposta vem do gabarito, não do áudio).
+      const campo = page.locator(`#texto-${e.id}`);
+      await expect(bloco.locator('[data-voz="ok"], [data-voz="sem-voz"]')).toBeVisible();
+      const tentar = bloco.getByRole("button", { name: "Tentar ouvir mesmo assim" });
+      if (await tentar.isVisible()) await tentar.click({ timeout: 2000 }).catch(() => {});
+      await expect(bloco.getByRole("button", { name: "Ouvir", exact: true })).toBeVisible();
+      // A frase ditada não pode estar escrita na tela antes da resposta
+      await expect(bloco).not.toContainText((e.conteudo as { frase: string }).frase);
+      await campo.fill(g.aceitas![0]);
+      break;
+    }
   }
 }
 

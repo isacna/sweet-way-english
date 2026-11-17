@@ -281,6 +281,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "Your bag is new."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Your bag is new."
+            ]
+          },
+          "explicacao": "A frase é Your bag is new. = Sua bolsa é nova. Your (seu, sua) é diferente de you're (você é/está).",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l1:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -668,6 +686,24 @@
           "explicacao": "It's significa it is. O possessivo de it é its, sem apóstrofo: Its name is Luna."
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "Our house is small."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Our house is small."
+            ]
+          },
+          "explicacao": "A frase é Our house is small. = Nossa casa é pequena. Our = nosso, nossa.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l2:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -1045,6 +1081,24 @@
           "explicacao": "Em inglês o dono vem primeiro, com 's: my father's car. The car of my father é tradução palavra por palavra do português.",
           "tagsErro": [
             "possessivo_s"
+          ]
+        },
+        {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "The teacher's bag is big."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The teacher's bag is big."
+            ]
+          },
+          "explicacao": "A frase é The teacher's bag is big. = A bolsa da professora é grande. O 's depois de teacher indica posse.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l3:ditado"
           ]
         },
         {
@@ -1470,6 +1524,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "Her brother is tall and thin."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Her brother is tall and thin."
+            ]
+          },
+          "explicacao": "A frase é Her brother is tall and thin. = O irmão dela é alto e magro. Thin começa com th.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l4:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -1882,6 +1954,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "The boxes are big."
+          },
+          "gabarito": {
+            "aceitas": [
+              "The boxes are big."
+            ]
+          },
+          "explicacao": "A frase é The boxes are big. = As caixas são grandes. Box termina em x, então o plural leva -es: boxes.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l5:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -2260,6 +2350,24 @@
             ]
           },
           "explicacao": "Those é plural, então o verbo é are."
+        },
+        {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "These are my cousins."
+          },
+          "gabarito": {
+            "aceitas": [
+              "These are my cousins."
+            ]
+          },
+          "explicacao": "A frase é These are my cousins. = Estes são meus primos. These é o plural de this.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m02-l6:ditado"
+          ]
         },
         {
           "tipo": "translate",

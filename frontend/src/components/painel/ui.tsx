@@ -8,7 +8,7 @@
 
 import Link from "next/link";
 import { ArrowLeft, CircleAlert, CircleCheck, Info, TriangleAlert } from "lucide-react";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 // ─── Botões ──────────────────────────────────────────────────────────────────
 
@@ -192,6 +192,106 @@ export function Secao({
       </div>
       {children}
     </section>
+  );
+}
+
+// ─── Indicadores ─────────────────────────────────────────────────────────────
+
+export type TomIndicador = "accent" | "sol" | "chama" | "sucesso" | "doce";
+
+const coresIndicador: Record<TomIndicador, string> = {
+  accent: "bg-accent-soft text-accent",
+  sol: "bg-sun-soft text-sun-ink",
+  chama: "bg-flame-soft text-flame-ink",
+  sucesso: "bg-success-soft text-success-ink",
+  doce: "bg-candy-soft text-candy",
+};
+
+/**
+ * Número que sobe de 0 até `valor` quando aparece (ou muda). Com "reduzir movimento" ligado,
+ * mostra o valor final direto. O leitor de tela recebe sempre o valor final.
+ */
+export function Contagem({ valor, sufixo = "" }: { valor: number; sufixo?: string }) {
+  const [mostrado, setMostrado] = useState(0);
+
+  useEffect(() => {
+    const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duracao = semMovimento || valor === 0 ? 0 : 700;
+    let quadro = 0;
+    const inicio = performance.now();
+    const passo = (agora: number) => {
+      const p = duracao === 0 ? 1 : Math.min(1, (agora - inicio) / duracao);
+      setMostrado(Math.round(valor * (1 - Math.pow(1 - p, 4)))); // desacelera no fim
+      if (p < 1) quadro = requestAnimationFrame(passo);
+    };
+    quadro = requestAnimationFrame(passo);
+    return () => cancelAnimationFrame(quadro);
+  }, [valor]);
+
+  return (
+    <>
+      <span aria-hidden>
+        {mostrado.toLocaleString("pt-BR")}
+        {sufixo}
+      </span>
+      <span className="sr-only">
+        {valor.toLocaleString("pt-BR")}
+        {sufixo}
+      </span>
+    </>
+  );
+}
+
+/**
+ * Cartão de número do painel: ícone, valor grande, rótulo e uma linha de detalhe. Com `href`, vira link.
+ * `ordem` (0, 1, 2…) atrasa a entrada para os cartões de uma fileira surgirem em cascata.
+ */
+export function Indicador({
+  icone,
+  valor,
+  rotulo,
+  detalhe,
+  tom = "accent",
+  href,
+  ordem = 0,
+}: {
+  icone: ReactNode;
+  valor: ReactNode;
+  rotulo: string;
+  detalhe?: ReactNode;
+  tom?: TomIndicador;
+  href?: string;
+  ordem?: number;
+}) {
+  const conteudo = (
+    <>
+      <span
+        className={`mb-3 flex h-9 w-9 items-center justify-center rounded-xl [&>svg]:h-[18px] [&>svg]:w-[18px] ${coresIndicador[tom]}`}
+        aria-hidden
+      >
+        {icone}
+      </span>
+      <span className="block text-[1.7rem] font-semibold leading-none tabular-nums tracking-[-0.03em] text-ink sm:text-[2rem]">
+        {valor}
+      </span>
+      <span className="mt-1.5 block text-sm font-semibold leading-snug text-ink">{rotulo}</span>
+      {detalhe && <span className="mt-0.5 block text-xs leading-snug text-ink-soft">{detalhe}</span>}
+    </>
+  );
+  const classe = "card block animate-pop-in p-4 sm:p-5";
+  const style = { animationDelay: `${ordem * 70}ms` };
+  return href ? (
+    <Link
+      href={href}
+      style={style}
+      className={`${classe} transition-[border-color,box-shadow,translate] hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md`}
+    >
+      {conteudo}
+    </Link>
+  ) : (
+    <div className={classe} style={style}>
+      {conteudo}
+    </div>
   );
 }
 

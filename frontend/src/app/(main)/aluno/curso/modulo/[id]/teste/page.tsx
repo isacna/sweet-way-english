@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
 import { Exercicio } from "@/components/curso/Exercicio";
 import { FeedbackResultado } from "@/components/curso/FeedbackResultado";
-import { ArrowLeft, Hourglass, Lock, PenLine, Repeat2, Target } from "lucide-react";
+import { ArrowLeft, FastForward, Hourglass, Lock, PenLine, Repeat2, Target } from "lucide-react";
 import { Aviso, BarraAcao, BarraProgresso, Carregando, classeBotao } from "@/components/curso/ui";
 import { apiFetch } from "@/lib/api";
 import {
@@ -199,6 +199,8 @@ function Resultado({
         {resultado.aprovado ? (
           <p className="text-sm text-ink-soft">
             {resultado.proximoModuloId !== null ? "O próximo módulo foi liberado." : "Parabéns pelo esforço!"}
+            {modulo && modulo.licoesConcluidas < modulo.totalLicoes &&
+              " As lições deste módulo continuam abertas para você estudar quando quiser."}
           </p>
         ) : (
           <p className="text-sm text-ink-soft">
@@ -297,6 +299,8 @@ function Resultado({
 
 function TesteModulo({ id }: { id: string }) {
   const router = useRouter();
+  // `?adiantar=1` (vindo da trilha): fazer o teste sem ter concluído as lições (nivelamento)
+  const pediuAdiantar = useSearchParams()?.get("adiantar") === "1";
   const [carregando, setCarregando] = useState(true);
   const [modulo, setModulo] = useState<ModuloTrilha | null>(null);
   const [fase, setFase] = useState<Fase>({ tipo: "intro" });
@@ -340,7 +344,10 @@ function TesteModulo({ id }: { id: string }) {
     setIniciando(true);
     setErro("");
     try {
-      const res = await apiFetch(`/curso/modulos/${encodeURIComponent(id)}/teste`, { method: "POST" });
+      const res = await apiFetch(`/curso/modulos/${encodeURIComponent(id)}/teste`, {
+        method: "POST",
+        ...(adiantando && { body: JSON.stringify({ adiantar: true }) }),
+      });
       if (res.status === 423) {
         const data = await res.json().catch(() => ({}));
         setBloqueadoAte(typeof data?.bloqueadoAte === "string" ? data.bloqueadoAte : null);
@@ -377,7 +384,10 @@ function TesteModulo({ id }: { id: string }) {
 
   const titulo = modulo ? `Teste do módulo ${modulo.ordem}: ${modulo.titulo}` : "Teste do módulo";
   const emEspera = !!bloqueadoAte && new Date(bloqueadoAte) > new Date();
-  const licoesIncompletas = modulo ? modulo.licoesConcluidas < modulo.totalLicoes : false;
+  // Faltam lições e o módulo ainda não foi aprovado (aprovado pode refazer para treinar, mesmo sem as lições)
+  const licoesIncompletas = modulo ? modulo.licoesConcluidas < modulo.totalLicoes && !modulo.teste.aprovado : false;
+  // Só adianta quem pediu e pode; em espera, a mensagem de espera basta
+  const adiantando = pediuAdiantar && licoesIncompletas && !!modulo?.teste.podeAdiantar;
 
   return (
     <div className="mx-auto max-w-2xl space-y-5">
@@ -452,7 +462,26 @@ function TesteModulo({ id }: { id: string }) {
                 <Hourglass className="h-4 w-4 shrink-0" aria-hidden /> Nova tentativa a partir de {formatarDataHora(bloqueadoAte!)}.
               </p>
             )}
-            {licoesIncompletas && !emEspera && (
+            {adiantando && !emEspera && (
+              <div className="space-y-2 rounded-2xl bg-grape-mist p-4 text-sm text-ink ring-1 ring-grape/30" role="status">
+                <p className="flex items-center gap-2 font-semibold">
+                  <FastForward className="h-4 w-4 shrink-0 text-grape" aria-hidden />
+                  Você vai fazer o teste sem ter concluído as lições ({modulo!.licoesConcluidas}/{modulo!.totalLicoes})
+                </p>
+                <ul className="list-disc space-y-1 pl-5 text-ink-soft">
+                  <li>
+                    <strong className="text-ink">Se passar:</strong> o módulo fica concluído e o próximo é liberado. As
+                    lições deste módulo continuam abertas para estudar quando quiser.
+                  </li>
+                  <li>
+                    <strong className="text-ink">Se não passar:</strong> só dá para tentar de novo depois de 24 horas.
+                    Enquanto isso, as lições seguem disponíveis.
+                  </li>
+                </ul>
+                <p className="text-ink-soft">Vale a pena só se você já conhece bem este conteúdo.</p>
+              </div>
+            )}
+            {licoesIncompletas && !adiantando && !emEspera && (
               <p className="flex items-start gap-2 rounded-2xl bg-gray-50 p-3 text-sm text-ink-soft ring-1 ring-line" role="status">
                 <Lock className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                 <span>Conclua todas as lições do módulo ({modulo!.licoesConcluidas}/{modulo!.totalLicoes}) para liberar o
@@ -472,7 +501,7 @@ function TesteModulo({ id }: { id: string }) {
               <button
                 type="button"
                 onClick={() => void iniciar()}
-                disabled={iniciando || emEspera || licoesIncompletas}
+                disabled={iniciando || emEspera || (licoesIncompletas && !adiantando)}
                 className={classeBotao("primario")}
               >
                 {iniciando ? "Preparando…" : "Começar o teste"}
@@ -501,5 +530,10 @@ function TesteModulo({ id }: { id: string }) {
 export default function TesteModuloPage() {
   const params = useParams<{ id: string }>();
   const id = params?.id ?? "";
-  return <TesteModulo key={id} id={id} />;
+  // Suspense: TesteModulo lê a query (`?adiantar=1`) com useSearchParams
+  return (
+    <Suspense fallback={<Carregando />}>
+      <TesteModulo key={id} id={id} />
+    </Suspense>
+  );
 }

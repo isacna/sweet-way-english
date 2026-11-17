@@ -4,6 +4,7 @@ import type { ItemRenderizavel, Resposta, Resultado } from "@/lib/curso";
 import { MidiaLicao } from "./MidiaLicao";
 import { ExercicioSequence } from "./ExercicioSequence";
 import { ExercicioCloze } from "./ExercicioCloze";
+import { ExercicioDictation } from "./ExercicioDictation";
 import { ExercicioMatch } from "./ExercicioMatch";
 import { ExercicioMcq } from "./ExercicioMcq";
 import { ExercicioTexto } from "./ExercicioTexto";
@@ -18,10 +19,12 @@ type Props = {
   onSubmit?: () => void;
   /** Prefixo do enunciado, ex.: "3." no quiz. */
   numero?: string;
+  /** Deixa o aluno pular um item que o navegador não consegue tocar (ditado sem voz em inglês). */
+  onPular?: () => void;
 };
 
 /** Enunciado + renderizador do tipo certo. Usado na prática, no quiz, na revisão e no teste. */
-export function Exercicio({ item, value, onChange, disabled, feedback, onSubmit, numero }: Props) {
+export function Exercicio({ item, value, onChange, disabled, feedback, onSubmit, numero, onPular }: Props) {
   const comum = { id: item.id, value, onChange, disabled, feedback, onSubmit };
   let corpo: React.ReactNode;
   switch (item.tipo) {
@@ -45,6 +48,9 @@ export function Exercicio({ item, value, onChange, disabled, feedback, onSubmit,
       break;
     case "error_correction":
       corpo = <ExercicioTexto {...comum} tipo="error_correction" conteudo={item.conteudo} />;
+      break;
+    case "dictation":
+      corpo = <ExercicioDictation {...comum} conteudo={item.conteudo} onPular={onPular} />;
       break;
   }
   return (

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { iconesNav } from "./navIcons";
 
-const navItems = [
+export const itensNavProfessor: { href: string; label: string; icon: string }[] = [
   { href: "/professor", label: "Painel", icon: "painel" },
   { href: "/professor/turmas", label: "Turmas", icon: "turmas" },
   { href: "/professor/alunos", label: "Alunos", icon: "alunos" },
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/professor/conteudo", label: "Conteúdo", icon: "conteudo" },
   { href: "/professor/progresso", label: "Progresso", icon: "progresso" },
 ];
+const navItems = itensNavProfessor;
 
 /** horizontal = cabeçalho no desktop; vertical = dentro do menu do perfil; tabs = faixa rolável no mobile. */
 export type TeacherNavVariant = "horizontal" | "vertical" | "tabs";

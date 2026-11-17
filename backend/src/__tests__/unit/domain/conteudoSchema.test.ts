@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { itemSchema, moduloSchema } from '../../../domain/conteudo/schema.js';
+import { exercicioSchema, itemSchema, itemTesteSchema, moduloSchema } from '../../../domain/conteudo/schema.js';
 
 const mcq = { tipo: 'mcq', enunciado: 'Escolha', explicacao: 'Use is com he/she/it.', conteudo: { opcoes: ['am', 'is', 'are'] }, gabarito: { correta: 1 } };
 const cloze = { tipo: 'cloze', enunciado: 'Complete', explicacao: 'x', conteudo: { texto: 'I ___ a student.' }, gabarito: { respostas: [['am', "'m"]] } };
@@ -25,6 +25,8 @@ function moduloValido() {
     teste: { itens: [...forma(1), ...forma(2)] },
   };
 }
+
+const ditado = { tipo: 'dictation', enunciado: 'Ouça e escreva.', explicacao: 'x', conteudo: { frase: "It's cold today." }, gabarito: { aceitas: ['It is cold today.'] } };
 
 const erros = (r: { success: boolean; error?: { issues: { message: string }[] } }) => r.error?.issues.map((i) => i.message) ?? [];
 
@@ -62,6 +64,42 @@ describe('itemSchema', () => {
   it('rejects error_correction whose wrong sentence is accepted', () => {
     const r = itemSchema.safeParse({ tipo: 'error_correction', enunciado: 'Corrija', explicacao: 'x', conteudo: { frase: 'She work.' }, gabarito: { aceitas: ['she work'] } });
     expect(r.success).toBe(false);
+  });
+});
+
+describe('dictation', () => {
+  it('accepts a sentence that its own key accepts (contraction included)', () => {
+    expect(erros(itemSchema.safeParse(ditado))).toEqual([]);
+    expect(erros(itemSchema.safeParse({ ...ditado, conteudo: { frase: 'She is eighteen.', dica: 'Pode usar algarismos.' }, gabarito: { aceitas: ['She is eighteen.', 'She is 18.'] } }))).toEqual([]);
+  });
+
+  it.each([
+    ['a sentence the key rejects', { gabarito: { aceitas: ['It is hot today.'] } }, /precisa estar entre as respostas aceitas/],
+    ['digits in the spoken sentence', { conteudo: { frase: 'She is 18.' }, gabarito: { aceitas: ['She is 18.'] } }, /por extenso/],
+    ['a sentence with no words', { conteudo: { frase: '...' }, gabarito: { aceitas: ['...'] } }, /precisa ter palavras/],
+    ['more than 12 words', { conteudo: { frase: 'one two three four five six seven eight nine ten eleven twelve thirteen' }, gabarito: { aceitas: ['one two three four five six seven eight nine ten eleven twelve thirteen'] } }, /longa demais/],
+    ['the sentence written in the prompt', { enunciado: "Escreva: it's cold today" }, /não podem conter a frase/],
+    ['the sentence written in the hint', { conteudo: { frase: "It's cold today.", dica: "Começa com It's cold today" } }, /não podem conter a frase/],
+    ['media on the item', { conteudo: { frase: "It's cold today.", midia: { tipo: 'audio', modo: 'voz', titulo: 't', fonte: 'f', orientacao: 'o', transcricao: 'x' } } }, /não aceita mídia/],
+    ['an empty key', { gabarito: { aceitas: [] } }, /./],
+  ])('rejects %s', (_nome, mudanca, mensagem) => {
+    const r = itemSchema.safeParse({ ...ditado, ...mudanca });
+    expect(r.success).toBe(false);
+    expect(erros(r).join('\n')).toMatch(mensagem);
+  });
+
+  it('is allowed in practice, but not in the mini-quiz', () => {
+    for (const etapa of ['controlada', 'semicontrolada', 'producao'])
+      expect(exercicioSchema.safeParse({ ...ditado, etapa }).success).toBe(true);
+    expect(erros(exercicioSchema.safeParse({ ...ditado, etapa: 'quiz' })).join()).toMatch(/mini-quiz/);
+  });
+
+  it('is rejected as a module test item, alone and inside a module', () => {
+    const item = { ...ditado, forma: 1, habilidade: 'escrita' };
+    expect(erros(itemTesteSchema.safeParse(item)).join()).toMatch(/teste de módulo/);
+    const m = moduloValido();
+    m.teste.itens[14] = item as never;
+    expect(erros(moduloSchema.safeParse(m)).join()).toMatch(/teste de módulo/);
   });
 });
 

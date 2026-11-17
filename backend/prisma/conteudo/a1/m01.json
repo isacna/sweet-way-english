@@ -276,6 +276,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "Nice to meet you."
+          },
+          "gabarito": {
+            "aceitas": [
+              "Nice to meet you."
+            ]
+          },
+          "explicacao": "A frase é Nice to meet you. = Prazer em conhecer você. Repare: meet se escreve com dois \"e\".",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l1:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -706,6 +724,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "It's cold today."
+          },
+          "gabarito": {
+            "aceitas": [
+              "It is cold today."
+            ]
+          },
+          "explicacao": "A frase é It's cold today. = Está frio hoje. It's é a forma curta de it is; as duas formas estão certas.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l2:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -1064,6 +1100,24 @@
             ]
           },
           "explicacao": "Rafael e Thiago são duas pessoas (they), então o verbo é are, não is."
+        },
+        {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "They're students."
+          },
+          "gabarito": {
+            "aceitas": [
+              "They are students."
+            ]
+          },
+          "explicacao": "A frase é They're students. = Eles são estudantes. They're é a forma curta de they are (não confunda com their, que é \"deles\").",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l3:ditado"
+          ]
         },
         {
           "tipo": "translate",
@@ -1470,6 +1524,24 @@
           ]
         },
         {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "He is an engineer."
+          },
+          "gabarito": {
+            "aceitas": [
+              "He is an engineer."
+            ]
+          },
+          "explicacao": "A frase é He is an engineer. = Ele é engenheiro. Antes de som de vogal usamos an: an engineer.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l4:ditado"
+          ]
+        },
+        {
           "tipo": "translate",
           "etapa": "producao",
           "enunciado": "Traduza para o inglês.",
@@ -1842,6 +1914,24 @@
             ]
           },
           "explicacao": "Em e-mails e sites, o ponto se diz dot, não point."
+        },
+        {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "How do you spell that?"
+          },
+          "gabarito": {
+            "aceitas": [
+              "How do you spell that?"
+            ]
+          },
+          "explicacao": "A frase é How do you spell that? = Como se soletra isso? Spell se escreve com dois \"l\".",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l5:ditado"
+          ]
         },
         {
           "tipo": "translate",
@@ -2227,6 +2317,26 @@
           "explicacao": "Em inglês, idade se diz com o verbo be: I am twelve (years old). Have para idade é um erro muito comum de brasileiros.",
           "tagsErro": [
             "have_idade"
+          ]
+        },
+        {
+          "tipo": "dictation",
+          "etapa": "semicontrolada",
+          "enunciado": "Ouça a frase e escreva em inglês o que você ouviu.",
+          "conteudo": {
+            "frase": "She is eighteen years old.",
+            "dica": "O número pode ser escrito por extenso ou em algarismos."
+          },
+          "gabarito": {
+            "aceitas": [
+              "She is eighteen years old.",
+              "She is 18 years old."
+            ]
+          },
+          "explicacao": "A frase é She is eighteen years old. = Ela tem dezoito anos. Eighteen = eight + teen, com um \"t\" só.",
+          "tagsErro": [
+            "piloto_ditado_v1",
+            "piloto:a1-m01-l6:ditado"
           ]
         },
         {

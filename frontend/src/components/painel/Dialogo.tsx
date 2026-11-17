@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useEffect, useId, useRef, type ReactNode } from "react";
+import { useEffect, useId, useRef, type PointerEvent, type ReactNode } from "react";
 import { classeBotao } from "./ui";
 
 const FOCAVEIS =
@@ -87,6 +87,47 @@ export function Dialogo({
     };
   }, []);
 
+  // No celular a folha fecha arrastando o cabeçalho para baixo. Usa a propriedade `translate`
+  // (e não `transform`) porque a animação de entrada mantém o `transform` final.
+  const arrasto = useRef<{ y: number; t: number; dy: number } | null>(null);
+
+  function moverFolha(dy: number, animar: boolean) {
+    const caixa = ref.current;
+    if (!caixa) return;
+    caixa.style.transition = animar ? "translate 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)" : "none";
+    caixa.style.translate = dy === 0 ? "" : `0 ${dy}px`;
+  }
+
+  function iniciarArrasto(e: PointerEvent<HTMLDivElement>) {
+    if (bloquearFechar || e.pointerType === "mouse" || window.innerWidth >= 640) return;
+    if ((e.target as HTMLElement).closest("button, a")) return;
+    arrasto.current = { y: e.clientY, t: e.timeStamp, dy: 0 };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }
+
+  function arrastar(e: PointerEvent<HTMLDivElement>) {
+    const a = arrasto.current;
+    if (!a) return;
+    const delta = e.clientY - a.y;
+    // Para cima a folha resiste (efeito elástico); para baixo acompanha o dedo
+    a.dy = delta < 0 ? delta * 0.15 : delta;
+    moverFolha(a.dy, false);
+  }
+
+  function soltar(e: PointerEvent<HTMLDivElement>) {
+    const a = arrasto.current;
+    if (!a) return;
+    arrasto.current = null;
+    const velocidade = a.dy / Math.max(1, e.timeStamp - a.t); // px/ms
+    const altura = ref.current?.offsetHeight ?? 0;
+    if (e.type !== "pointercancel" && (a.dy > Math.min(140, altura / 3) || (a.dy > 24 && velocidade > 0.5))) {
+      moverFolha(altura, true);
+      setTimeout(() => fecharRef.current(), 180);
+    } else {
+      moverFolha(0, true);
+    }
+  }
+
   return (
     <div
       className="fixed inset-0 z-[70] flex items-end justify-center bg-ink/45 backdrop-blur-sm sm:items-center sm:p-4"
@@ -103,7 +144,15 @@ export function Dialogo({
         tabIndex={-1}
         className={`pb-safe flex max-h-[92dvh] w-full ${largura} animate-rise flex-col rounded-t-[1.5rem] border border-line bg-card shadow-lg focus:outline-none sm:rounded-[var(--radius-card)] sm:pb-0`}
       >
-        <div className="flex items-start justify-between gap-3 border-b border-line px-5 py-3.5 sm:px-6">
+        <div
+          className="relative flex touch-none items-start justify-between gap-3 border-b border-line px-5 pb-3.5 pt-5 sm:touch-auto sm:px-6 sm:pt-3.5"
+          onPointerDown={iniciarArrasto}
+          onPointerMove={arrastar}
+          onPointerUp={soltar}
+          onPointerCancel={soltar}
+        >
+          {/* Alça da folha (só no celular) */}
+          <span aria-hidden className="absolute left-1/2 top-2 h-1 w-10 -translate-x-1/2 rounded-full bg-gray-300 sm:hidden" />
           <div className="min-w-0 pt-2">
             <h2 id={tituloId} className="text-lg font-semibold tracking-[-0.01em] text-ink">
               {titulo}

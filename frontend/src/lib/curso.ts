@@ -1,7 +1,7 @@
 // Tipos do curso autoguiado. Contrato completo em docs/api-curso.md.
 
 export type Etapa = "controlada" | "semicontrolada" | "producao" | "quiz";
-export type TipoExercicio = "sequence" | "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction";
+export type TipoExercicio = "sequence" | "mcq" | "cloze" | "word_order" | "match" | "translate" | "error_correction" | "dictation";
 export type Habilidade = "gramatica_vocabulario" | "leitura" | "escrita";
 export type StatusConteudo = "rascunho" | "revisao" | "publicado";
 
@@ -26,11 +26,13 @@ export type ConteudoExercicio =
   | { tipo: "word_order"; conteudo: { midia?: Midia; palavras: string[] } }
   | { tipo: "match"; conteudo: { midia?: Midia; esquerda: string[]; direita: string[] } }
   | { tipo: "translate"; conteudo: { midia?: Midia; frase: string; direcao: "pt-en" | "en-pt" } }
-  | { tipo: "error_correction"; conteudo: { midia?: Midia; frase: string } };
+  | { tipo: "error_correction"; conteudo: { midia?: Midia; frase: string } }
+  // Ditado: `frase` é falada pela voz do navegador e nunca aparece escrita antes da resposta. Não aceita mídia.
+  | { tipo: "dictation"; conteudo: { midia?: undefined; frase: string; dica?: string } };
 
 /** Resposta enviada ao backend, por tipo: mcq → índice; cloze → textos por lacuna;
  *  word_order → palavras na ordem; match → índice em `direita` para cada item de `esquerda`;
- *  translate/error_correction → texto. */
+ *  translate/error_correction/dictation → texto. */
 export type Resposta = number | string | string[] | number[];
 
 export type ExercicioPublico = { id: number; ordem: number; etapa: Etapa; enunciado: string } & ConteudoExercicio;
@@ -59,6 +61,14 @@ export type PerfilAprendiz = {
   ofensivaMaxima: number;
   metodologia: string;
   revisoesPendentes: number;
+  /** Meta de XP por dia (10, 30 ou 60). */
+  metaDiariaXp: number;
+  /** XP ganho hoje (fuso de Brasília). */
+  xpHoje: number;
+  /** Ainda não passou pelas boas-vindas. */
+  onboardingPendente: boolean;
+  /** Aceitou receber lembretes de estudo por e-mail. */
+  lembretesEmail: boolean;
 };
 
 export type LicaoResumo = {
@@ -87,7 +97,10 @@ export type ModuloTrilha = {
   licoesConcluidas: number;
   totalLicoes: number;
   teste: {
+    /** Todas as lições concluídas e fora da espera. */
     disponivel: boolean;
+    /** Dá para fazer o teste sem concluir as lições (módulo liberado, não aprovado, fora da espera). */
+    podeAdiantar: boolean;
     aprovado: boolean;
     melhorPercentual: number | null;
     tentativas: number;
@@ -218,6 +231,7 @@ export function respostaPreenchida(item: ItemRenderizavel, r: Resposta | undefin
       );
     case "translate":
     case "error_correction":
+    case "dictation":
       return typeof r === "string" && r.trim() !== "";
   }
 }
@@ -292,9 +306,16 @@ export type ProximoPasso =
 export function proximoPasso(trilha: Trilha): ProximoPasso {
   const modulos = trilha.niveis.flatMap((n) => n.modulos);
   if (modulos.length === 0) return { tipo: "vazio" };
+  // Lição pendente em módulo já aprovado (teste adiantado): fica aberta, mas só vira o próximo passo
+  // quando não há mais nada à frente na trilha.
+  let pendenteEmAprovado: ProximoPasso | null = null;
   for (const m of modulos) {
     if (!m.desbloqueado) continue;
     const licao = m.licoes.find((l) => l.desbloqueada && !l.concluida);
+    if (licao && m.teste.aprovado) {
+      pendenteEmAprovado ??= { tipo: "licao", modulo: m, licao };
+      continue;
+    }
     if (licao) return { tipo: "licao", modulo: m, licao };
     if (!m.teste.aprovado) {
       if (m.teste.bloqueadoAte && new Date(m.teste.bloqueadoAte) > new Date()) {
@@ -303,7 +324,7 @@ export function proximoPasso(trilha: Trilha): ProximoPasso {
       if (m.teste.disponivel) return { tipo: "teste", modulo: m };
     }
   }
-  return { tipo: "fim" };
+  return pendenteEmAprovado ?? { tipo: "fim" };
 }
 
 /** A resposta esperada é uma frase em inglês (para oferecer o áudio de pronúncia)? */
@@ -311,4 +332,36 @@ export function respostaEmIngles(item: ConteudoExercicio): boolean {
   if (item.tipo === "match" || item.tipo === "sequence") return false;
   if (item.tipo === "translate") return item.conteudo.direcao === "pt-en";
   return true;
+}
+
+// ─── Conquistas e certificados (GET /curso/conquistas, /curso/certificados, /certificados/:codigo) ───
+
+export interface Conquista {
+  id: string;
+  titulo: string;
+  descricao: string;
+  obtida: boolean;
+  /** Só nas conquistas de contagem; `atual` nunca passa de `alvo`. */
+  progresso?: { atual: number; alvo: number };
+}
+
+export interface CertificadoEmitido {
+  codigo: string;
+  emitidoEm: string;
+  nomeAluno: string;
+}
+
+export interface CertificadoNivel {
+  nivel: { id: number; codigo: string; nome: string };
+  concluido: boolean;
+  modulosAprovados: number;
+  totalModulos: number;
+  certificado: CertificadoEmitido | null;
+}
+
+/** Resposta da conferência pública: nada além do que está impresso no certificado. */
+export interface CertificadoPublico {
+  nomeAluno: string;
+  nivel: { codigo: string; nome: string };
+  emitidoEm: string;
 }

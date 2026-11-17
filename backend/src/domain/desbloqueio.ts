@@ -1,8 +1,12 @@
 // Regras de desbloqueio da trilha (funções puras, sem banco).
 //  - Primeiro módulo publicado: liberado. Módulo N: liberado quando o teste do módulo N−1 foi aprovado.
 //  - Lição 1 de um módulo liberado: liberada. Lição N: liberada quando a N−1 está concluída.
+//    Em um módulo liberado cujo teste já foi aprovado, todas as lições ficam liberadas (ver "adiantar").
 //  - Teste: disponível quando todas as lições publicadas do módulo estão concluídas e não está em espera
 //    (ESPERA_REPROVACAO_HORAS após uma reprovação).
+//  - Adiantar o teste (nivelamento): em um módulo liberado e ainda não aprovado, quem já sabe o conteúdo pode
+//    fazer o teste sem concluir as lições. Aprovado: o módulo conta como aprovado e o próximo é liberado, como
+//    sempre; as lições continuam "não concluídas" (é a verdade), só que abertas. Reprovado: a mesma espera.
 import { ESPERA_REPROVACAO_HORAS } from './progresso.js';
 
 const HORA_MS = 60 * 60 * 1000;
@@ -37,6 +41,8 @@ export interface EstadoModulo {
   tentativas: number;
   bloqueadoAte: Date | null;
   testeDisponivel: boolean;
+  /** Pode fazer o teste sem ter concluído as lições: liberado, não aprovado, lições faltando, fora da espera. */
+  podeAdiantar: boolean;
   proximoModuloId: number | null;
 }
 
@@ -69,7 +75,8 @@ export function calcularTrilha(
     let anteriorConcluida = true;
     for (const l of m.licoes) {
       const concluida = licoesConcluidas.has(l.id);
-      licoes.set(l.id, { desbloqueada: desbloqueado && anteriorConcluida, concluida });
+      // Módulo aprovado (ex.: teste adiantado): todas as lições abertas, mesmo sem a anterior concluída
+      licoes.set(l.id, { desbloqueada: desbloqueado && (anteriorConcluida || aprovado), concluida });
       anteriorConcluida = concluida;
     }
     const concluidas = m.licoes.filter((l) => licoesConcluidas.has(l.id)).length;
@@ -87,12 +94,32 @@ export function calcularTrilha(
       tentativas: doModulo.length,
       bloqueadoAte: espera,
       testeDisponivel: desbloqueado && todasConcluidas && !espera,
+      podeAdiantar: podeAdiantarTeste({ desbloqueado, aprovado, todasConcluidas, emEspera: espera !== null }),
       proximoModuloId: modulos[idx + 1]?.id ?? null,
     });
     anteriorAprovado = desbloqueado && aprovado;
   });
 
   return estados;
+}
+
+/** Regra de "adiantar o teste": módulo liberado, ainda não aprovado, com lições faltando e fora da espera. */
+export function podeAdiantarTeste(m: {
+  desbloqueado: boolean;
+  aprovado: boolean;
+  todasConcluidas: boolean;
+  emEspera: boolean;
+}): boolean {
+  return m.desbloqueado && !m.aprovado && !m.todasConcluidas && !m.emEspera;
+}
+
+/**
+ * As lições deixam o aluno iniciar (ou retomar) uma tentativa do teste? Sim quando todas estão concluídas,
+ * quando o módulo já foi aprovado (refazer para treinar, inclusive depois de adiantar) ou quando o aluno pediu
+ * para adiantar. Módulo bloqueado e espera são conferidos à parte.
+ */
+export function licoesPermitemTeste(m: { todasConcluidas: boolean; aprovado: boolean }, adiantar: boolean): boolean {
+  return m.todasConcluidas || m.aprovado || adiantar;
 }
 
 /** Próxima forma em rodízio, diferente da última quando houver mais de uma. */

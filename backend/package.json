@@ -13,6 +13,7 @@
     "db:migrar-sqlite": "tsx scripts/migrar-sqlite-para-postgres.ts",
     "conteudo:validar": "tsx scripts/validar-conteudo.ts",
     "conteudo:importar": "tsx scripts/importar-conteudo.ts",
+    "lembretes:enviar": "tsx scripts/enviar-lembretes.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:db": "vitest run --config vitest.db.config.ts",

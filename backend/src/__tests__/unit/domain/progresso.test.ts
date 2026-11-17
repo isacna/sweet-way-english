@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { atualizarOfensiva, avaliarTeste, ofensivaVigente, proximaRevisao, CAIXA_MAXIMA } from '../../../domain/progresso.js';
+import { atualizarOfensiva, avaliarTeste, ofensivaVigente, proximaRevisao, xpDoDiaVigente, CAIXA_MAXIMA } from '../../../domain/progresso.js';
 
 // 15:00 UTC = 12:00 em Brasília
 const dia = (d: string) => new Date(`${d}T15:00:00Z`);
@@ -84,5 +84,16 @@ describe('avaliarTeste', () => {
       { habilidade: 'b', pontuacao: 0.5 },
     ]);
     expect(r).toMatchObject({ percentual: 75, aprovado: true });
+  });
+});
+
+describe('meta diária', () => {
+  it('counts the XP of the day only while the last study was today (Brasília time)', () => {
+    const hoje = new Date('2026-01-02T15:00:00Z');
+    expect(xpDoDiaVigente({ xpDoDia: 20, ultimoEstudoEm: new Date('2026-01-02T12:00:00Z') }, hoje)).toBe(20);
+    expect(xpDoDiaVigente({ xpDoDia: 20, ultimoEstudoEm: new Date('2026-01-01T12:00:00Z') }, hoje)).toBe(0);
+    // 02:30 UTC do dia 2 ainda é dia 1 em Brasília
+    expect(xpDoDiaVigente({ xpDoDia: 20, ultimoEstudoEm: new Date('2026-01-02T02:30:00Z') }, hoje)).toBe(0);
+    expect(xpDoDiaVigente({ xpDoDia: 20, ultimoEstudoEm: null }, hoje)).toBe(0);
   });
 });

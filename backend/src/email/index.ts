@@ -8,6 +8,8 @@ export interface Mensagem {
   assunto: string;
   html: string;
   texto: string;
+  /** Cabeçalhos extras da mensagem (ex.: List-Unsubscribe nos lembretes). */
+  cabecalhos?: Record<string, string>;
 }
 
 export interface ProvedorEmail {
@@ -35,7 +37,14 @@ export function provedorResend(apiKey: string, remetente: string): ProvedorEmail
       const r = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ from: remetente, to: [msg.para], subject: msg.assunto, html: msg.html, text: msg.texto }),
+        body: JSON.stringify({
+          from: remetente,
+          to: [msg.para],
+          subject: msg.assunto,
+          html: msg.html,
+          text: msg.texto,
+          ...(msg.cabecalhos ? { headers: msg.cabecalhos } : {}),
+        }),
       });
       if (!r.ok) {
         const corpo = await r.text().catch(() => '');

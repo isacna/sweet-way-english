@@ -5,9 +5,10 @@ import { prisma } from '../../database/client.js';
 import type { Prisma } from '../../database/generated/prisma/client.js';
 import { AuthRequest } from '../../types/index.js';
 import type { Resultado } from '../../domain/correcao.js';
-import { escolherForma, percentualDe } from '../../domain/desbloqueio.js';
+import { escolherForma, licoesPermitemTeste, percentualDe } from '../../domain/desbloqueio.js';
 import {
   ESPERA_REPROVACAO_HORAS,
+  METAS_DIARIAS,
   PERCENTUAL_DOMINIO_LICAO,
   XP,
   avaliarTeste,
@@ -26,6 +27,7 @@ import {
   itemTestePublico,
   listaNumeros,
   listaTextos,
+  obterPerfil,
   perfilPublico,
   proximaLicaoId,
   registrarEstudo,
@@ -44,7 +46,24 @@ const respostasSchema = z.object({
 });
 const NOTA_MAX_CARACTERES = 5000;
 const notaSchema = z.object({ texto: z.string().max(NOTA_MAX_CARACTERES) });
-const perfilSchema = z.object({ metodologia: z.enum(['gramatica', 'comunicativa', 'gamificada', 'input']) });
+const perfilSchema = z
+  .object({
+    metodologia: z.enum(['gramatica', 'comunicativa', 'gamificada', 'input']).optional(),
+    metaDiariaXp: z
+      .number()
+      .refine((n) => (METAS_DIARIAS as readonly number[]).includes(n))
+      .optional(),
+    onboardingConcluido: z.literal(true).optional(),
+    // Lembretes de estudo por e-mail (opt-in): true liga, false desliga
+    lembretesEmail: z.boolean().optional(),
+  })
+  .refine(
+    (d) =>
+      d.metodologia !== undefined ||
+      d.metaDiariaXp !== undefined ||
+      d.onboardingConcluido !== undefined ||
+      d.lembretesEmail !== undefined,
+  );
 
 // ─── Trilha ─────────────────────────────────────────────────────────────────
 
@@ -77,6 +96,7 @@ export async function getTrilha(req: AuthRequest, res: Response) {
           totalLicoes: estado.totalLicoes,
           teste: {
             disponivel: estado.testeDisponivel,
+            podeAdiantar: estado.podeAdiantar,
             aprovado: estado.aprovado,
             melhorPercentual: estado.melhorPercentual,
             tentativas: estado.tentativas,
@@ -363,12 +383,17 @@ export async function responderRevisao(req: AuthRequest, res: Response) {
 
 // ─── Teste de módulo ────────────────────────────────────────────────────────
 
+/** `adiantar: true` = fazer o teste sem ter concluído as lições (nivelamento; regra em domain/desbloqueio.ts). */
+const iniciarTesteSchema = z.object({ adiantar: z.boolean().optional() });
+
 export async function iniciarTeste(req: AuthRequest, res: Response) {
   const moduloId = idParam(req.params.id);
   if (!moduloId) {
     res.status(400).json({ error: 'ID inválido' });
     return;
   }
+  const corpo = iniciarTesteSchema.safeParse(req.body ?? {});
+  if (!corpo.success) return erroZod(res, corpo.error);
   const usuarioId = req.user.id;
   const agora = new Date();
   const trilha = await carregarTrilha(usuarioId, agora);
@@ -381,7 +406,8 @@ export async function iniciarTeste(req: AuthRequest, res: Response) {
     res.status(403).json({ error: 'Seja aprovado no teste do módulo anterior para liberar este' });
     return;
   }
-  if (!estado.todasConcluidas) {
+  // Sem as lições concluídas, só com pedido explícito de adiantar (ou para refazer um teste já aprovado)
+  if (!licoesPermitemTeste(estado, corpo.data.adiantar === true)) {
     res.status(409).json({ error: 'Conclua todas as lições do módulo antes do teste' });
     return;
   }
@@ -511,17 +537,32 @@ export async function finalizarTentativa(req: AuthRequest, res: Response) {
 export async function atualizarPerfil(req: AuthRequest, res: Response) {
   const corpo = perfilSchema.safeParse(req.body);
   if (!corpo.success) {
-    res.status(400).json({ error: 'Metodologia inválida' });
+    const campo = corpo.error.issues[0]?.path[0];
+    res.status(400).json({
+      error:
+        campo === 'metaDiariaXp'
+          ? `Meta diária inválida: use ${METAS_DIARIAS.join(', ')}`
+          : campo === 'metodologia'
+            ? 'Metodologia inválida'
+            : 'Dados do perfil inválidos',
+    });
     return;
   }
-  if (corpo.data.metodologia !== 'gramatica') {
+  const { metodologia, metaDiariaXp, onboardingConcluido, lembretesEmail } = corpo.data;
+  if (metodologia && metodologia !== 'gramatica') {
     res.status(400).json({ error: 'Esta metodologia estará disponível em breve' });
     return;
   }
-  await prisma.perfilAprendiz.upsert({
+  const perfil = await obterPerfil(req.user.id);
+  await prisma.perfilAprendiz.update({
     where: { usuarioId: req.user.id },
-    update: { metodologia: corpo.data.metodologia },
-    create: { usuarioId: req.user.id, metodologia: corpo.data.metodologia },
+    data: {
+      ...(metodologia ? { metodologia } : {}),
+      ...(metaDiariaXp ? { metaDiariaXp } : {}),
+      ...(lembretesEmail !== undefined ? { lembretesEmail } : {}),
+      // Só a primeira conclusão grava a data
+      ...(onboardingConcluido && perfil.onboardingEm === null ? { onboardingEm: new Date() } : {}),
+    },
   });
   res.json(await perfilPublico(req.user.id));
 }

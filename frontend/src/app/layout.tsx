@@ -18,7 +18,14 @@ export const metadata: Metadata = {
   icons: {
     icon: "/logo-sweet.png",
     shortcut: "/logo-sweet.png",
-    apple: "/logo-sweet.png",
+    // iOS: ícone opaco de 180px (o PNG do logo é transparente e ficaria com fundo preto)
+    apple: { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+  },
+  // "Adicionar à Tela de Início" no iOS abre sem a barra do navegador. O manifesto vem de app/manifest.ts.
+  appleWebApp: {
+    capable: true,
+    title: "Sweet Way",
+    statusBarStyle: "black",
   },
 };
 

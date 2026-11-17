@@ -159,6 +159,20 @@ export function GabaritoView({ item }: { item: ItemComGabarito }) {
         </div>
       );
       break;
+    case "dictation":
+      corpo = (
+        <div className="space-y-2">
+          <p className="text-sm">
+            <span className="text-xs text-ink-soft mr-2">Frase falada (o aluno só ouve):</span>
+            <span className="font-medium text-ink" lang="en">
+              {String(c.frase ?? "")}
+            </span>
+          </p>
+          {typeof c.dica === "string" && <p className="text-xs text-ink-soft">Dica mostrada ao aluno: {c.dica}</p>}
+          <Aceitas valores={lista(g.aceitas)} />
+        </div>
+      );
+      break;
     default:
       corpo = (
         <pre className="text-xs bg-gray-50 p-2 rounded overflow-x-auto">

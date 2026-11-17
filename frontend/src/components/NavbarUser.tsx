@@ -24,9 +24,16 @@ function rotuloPapel(role: string): string {
 type NavbarUserProps = {
   /** No mobile: links do menu (Painel, Turmas…) dentro do dropdown do perfil. */
   mobileNav?: ReactNode;
+  /** "lateral" = cartão no pé da barra lateral (o menu abre para cima). */
+  variante?: "barra" | "lateral";
+  /** Na lateral encolhida: só o avatar. */
+  compacto?: boolean;
+  /** Confere a sessão ao montar. Com duas instâncias na tela (cabeçalho + lateral), só uma confere. */
+  validar?: boolean;
 };
 
-export function NavbarUser({ mobileNav }: NavbarUserProps) {
+export function NavbarUser({ mobileNav, variante = "barra", compacto = false, validar = true }: NavbarUserProps) {
+  const lateral = variante === "lateral";
   const [montado, setMontado] = useState(false);
   const [aberto, setAberto] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -41,6 +48,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
   // Cookie expirado ou senha trocada em outro lugar → volta para o login.
   const [, setValidado] = useState(false);
   useEffect(() => {
+    if (!validar) return;
     let cancelado = false;
     const tipoAntes = getStoredUser()?.role === "professor" ? "professor" : "aluno";
     validarSessao()
@@ -58,7 +66,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
     return () => {
       cancelado = true;
     };
-  }, []);
+  }, [validar]);
 
   useEffect(() => {
     if (!aberto) return;
@@ -103,29 +111,53 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
         aria-haspopup="menu"
-        className="flex min-h-[44px] items-center gap-2 rounded-full py-1 pl-1 pr-2 transition-colors hover:bg-gray-100 sm:gap-3 sm:pl-3"
+        aria-label={lateral && compacto ? `Conta de ${exibirNome}` : undefined}
+        className={
+          lateral
+            ? `flex min-h-[52px] w-full items-center gap-3 rounded-xl p-1.5 text-left transition-colors hover:bg-gray-100 ${
+                compacto ? "justify-center" : ""
+              }`
+            : "flex min-h-[44px] items-center gap-2 rounded-full py-1 pl-1 pr-2 transition-colors hover:bg-gray-100 sm:gap-3 sm:pl-3"
+        }
       >
-        <div className="text-right hidden sm:block min-w-0 max-w-[180px]">
+        <div
+          className={
+            lateral
+              ? compacto
+                ? "hidden"
+                : "min-w-0 flex-1"
+              : "text-right hidden sm:block min-w-0 max-w-[180px]"
+          }
+        >
           <p className="text-sm font-medium text-ink truncate">
             {exibirNome}
           </p>
           <p className="text-xs text-ink-soft text-left">{exibirPapel}</p>
         </div>
         <div
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-candy-soft via-grape-soft to-sky-soft ring-2 ring-card shadow-sm"
+          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-candy-soft via-grape-soft to-sky-soft ring-2 ring-card shadow-sm ${
+            lateral ? "-order-1" : ""
+          }`}
           aria-hidden
         >
           <span className="font-display text-sm font-semibold text-grape">
             {nome ? iniciais(nome) : "…"}
           </span>
         </div>
-        <ChevronDown aria-hidden className={`h-4 w-4 shrink-0 text-ink-faint transition-transform ${aberto ? "rotate-180" : ""}`} />
+        <ChevronDown
+          aria-hidden
+          className={`h-4 w-4 shrink-0 text-ink-faint transition-transform ${
+            lateral ? (compacto ? "hidden" : aberto ? "" : "rotate-180") : aberto ? "rotate-180" : ""
+          }`}
+        />
       </button>
 
       {aberto && (
         <div
           role="menu"
-          className="absolute right-0 z-[60] mt-2 w-[min(100vw-2rem,280px)] origin-top-right animate-pop-in overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-lg"
+          className={`absolute z-[60] w-[min(100vw-2rem,280px)] animate-pop-in overflow-hidden rounded-2xl border border-line bg-card py-1 shadow-lg ${
+            lateral ? "bottom-full left-0 mb-2 origin-bottom-left" : "right-0 mt-2 origin-top-right"
+          }`}
         >
           <div className="border-b border-line bg-gradient-to-br from-grape-mist to-card px-4 py-3">
             <p className="text-sm font-semibold text-ink truncate">
@@ -150,7 +182,7 @@ export function NavbarUser({ mobileNav }: NavbarUserProps) {
               {mobileNav}
             </div>
           ) : null}
-          {role === "professor" && (
+          {role === "professor" && !lateral && (
             <Link
               href="/professor/configuracoes"
               role="menuitem"
