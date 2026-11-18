@@ -68,7 +68,7 @@ function LoginPageContent() {
 
   return (
     <AuthShell
-      link={tipo === "professor" ? { href: "/home", rotulo: "Início" } : { href: "/cadastro", rotulo: "Criar conta" }}
+      link={tipo === "professor" ? { href: "/", rotulo: "Início" } : { href: "/cadastro", rotulo: "Criar conta" }}
     >
       <div
         className="mb-7 grid grid-cols-2 gap-1 rounded-[14px] bg-black/30 p-1 text-sm font-medium shadow-[inset_0_0_0_1px_rgba(214,228,255,0.1)]"

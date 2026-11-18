@@ -39,7 +39,7 @@ export function Navbar({
   logoUrl,
   mobileBelow,
 }: NavbarProps) {
-  const logoHref = logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/home");
+  const logoHref = logoHrefProp ?? (variant === "dashboard" ? "/professor" : "/");
 
   return (
     <header className={`sticky top-0 z-50 border-b border-line bg-card/80 backdrop-blur-xl backdrop-saturate-150 ${className}`}>

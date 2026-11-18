@@ -22,6 +22,9 @@ services:
       # Domínio público (ex.: sweetwayenglish.com.br): o Caddy emite e renova o certificado HTTPS sozinho.
       # Para testar sem domínio, use SITE_ENDERECO=http://localhost (só HTTP, sem certificado).
       SITE_ENDERECO: "${SITE_ENDERECO:?Defina SITE_ENDERECO no .env, o domínio ou http://localhost para testar}"
+      # Opcional: endereço com www, que só redireciona para URL_PUBLICA (o DNS do www precisa apontar para a VPS).
+      SITE_ENDERECO_WWW: ${SITE_ENDERECO_WWW:-http://www.localhost}
+      URL_PUBLICA: ${URL_PUBLICA}
     volumes:
       - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data

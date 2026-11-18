@@ -215,9 +215,10 @@ Sem biblioteca de estado global — todo estado é local via hooks React + `loca
 frontend/src/
 ├── app/
 │   ├── layout.tsx                      # Root layout (fontes Geist, metadata global)
-│   ├── page.tsx                        # Redireciona / → /home
+│   ├── page.tsx                        # Landing page pública (/)
+│   ├── robots.ts, sitemap.ts           # /robots.txt e /sitemap.xml
 │   └── (main)/                         # Route group com layout compartilhado
-│       ├── home/page.tsx               # Landing page pública
+│       ├── home/page.tsx               # Endereço antigo: redireciona /home → / (308)
 │       ├── login/page.tsx              # Formulário de login (?tipo=aluno|professor)
 │       ├── professor/                  # Área restrita ao professor
 │       │   ├── layout.tsx              # Verifica auth + TeacherNav

@@ -1,5 +1,5 @@
 /*
- * Home (/home): hero de tela cheia com vídeo (referência "Fastshot"), adaptado ao Sweet Way.
+ * Home (/): hero de tela cheia com vídeo (referência "Fastshot"), adaptado ao Sweet Way.
  * Desktop: composição em unidades de um quadro de 1560×1008 (1u = 1px de referência), que escala
  * como um bloco só. Tablet e celular viram layouts fluidos em px.
  * Da referência ficam o fundo, os menus e a entrada; a caixa de prompt vira headline + CTAs do curso.
@@ -221,8 +221,15 @@
   display: grid;
   visibility: hidden;
 }
-.tituloMedida > span {
+.tituloMedida::before,
+.tituloMedida::after {
   grid-area: 1 / 1;
+}
+.tituloMedida::before {
+  content: attr(data-a);
+}
+.tituloMedida::after {
+  content: attr(data-b);
 }
 .cursor {
   display: inline-block;

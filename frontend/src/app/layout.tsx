@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
+import { OG_PADRAO, SITE_DESCRICAO, SITE_NOME, SITE_URL } from "@/lib/site";
 import { scriptTemaInicial } from "@/lib/temaScript";
 
 // Inter variável (eixo óptico 14–32). A variável fica no <html>: o Tailwind resolve --font-sans e
@@ -12,9 +13,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sweet Way English",
-  description:
-    "Curso de inglês do básico ao intermediário, no seu ritmo, com explicação em português e uma professora acompanhando.",
+  // Base das URLs absolutas (canonical, Open Graph). Cada página pública define o próprio canonical.
+  metadataBase: new URL(SITE_URL),
+  // As páginas dão só o próprio título ("Entrar"); a marca entra pelo modelo
+  title: { default: SITE_NOME, template: `%s | ${SITE_NOME}` },
+  description: SITE_DESCRICAO,
+  openGraph: { ...OG_PADRAO, title: SITE_NOME, description: SITE_DESCRICAO },
+  twitter: { card: "summary_large_image" },
   icons: {
     icon: "/logo-sweet.png",
     shortcut: "/logo-sweet.png",

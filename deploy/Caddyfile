@@ -34,3 +34,10 @@
 		format json
 	}
 }
+
+# Opcional: o endereço com www redireciona (permanente) para o principal, para os buscadores verem um endereço só.
+# Só ligue (SITE_ENDERECO_WWW=www.seudominio.com.br) depois de apontar o DNS do www para a VPS: sem isso o Caddy
+# não consegue o certificado. Sem a variável, o bloco atende um nome que ninguém acessa.
+{$SITE_ENDERECO_WWW:http://www.localhost} {
+	redir {$URL_PUBLICA:http://localhost}{uri} permanent
+}
