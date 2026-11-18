@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Link from "next/link";
 import { BadgeCheck, CircleAlert, SearchX } from "lucide-react";
 import { BrandMark } from "@/components/BrandMark";
@@ -20,7 +21,15 @@ type Consulta = { situacao: "valido"; certificado: CertificadoPublico } | { situ
 async function consultar(codigo: string): Promise<Consulta> {
   try {
     const base = (process.env.BACKEND_URL ?? "http://localhost:3333").replace(/\/$/, "");
-    const res = await fetch(`${base}/api/certificados/${encodeURIComponent(codigo)}`, { cache: "no-store" });
+    // O backend limita as consultas por IP. Sem repassar o IP de quem está conferindo, todas as visitas
+    // contariam como uma só (a do servidor do Next) e o limite bloquearia todo mundo junto.
+    // O último valor do X-Forwarded-For é o que o proxy mais próximo (Caddy) escreveu; o backend só o usa
+    // quando está configurado para confiar no proxy (TRUST_PROXY).
+    const ip = (await headers()).get("x-forwarded-for")?.split(",").pop()?.trim();
+    const res = await fetch(`${base}/api/certificados/${encodeURIComponent(codigo)}`, {
+      cache: "no-store",
+      headers: ip ? { "X-Forwarded-For": ip } : undefined,
+    });
     if (res.status === 404) return { situacao: "ausente" };
     if (!res.ok) return { situacao: "falha" };
     return { situacao: "valido", certificado: (await res.json()) as CertificadoPublico };

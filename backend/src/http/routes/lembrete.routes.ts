@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
-import { cancelar } from '../controllers/LembreteController.js';
+import { abrirCancelar, cancelar } from '../controllers/LembreteController.js';
 import { h } from '../asyncHandler.js';
 
 // Lembretes de estudo por e-mail. A rota é pública: quem clica no link do e-mail pode não estar logado.
@@ -16,6 +16,7 @@ const cancelarLimiter = rateLimit({
   skip: () => process.env.NODE_ENV === 'test',
 });
 
+router.get('/cancelar', cancelarLimiter, abrirCancelar);
 router.post('/cancelar', cancelarLimiter, h(cancelar));
 
 export { router as lembreteRouter };

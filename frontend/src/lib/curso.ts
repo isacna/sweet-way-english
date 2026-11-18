@@ -65,6 +65,8 @@ export type PerfilAprendiz = {
   metaDiariaXp: number;
   /** XP ganho hoje (fuso de Brasília). */
   xpHoje: number;
+  /** Já estudou hoje, mesmo sem ganhar XP (prática, resposta errada): a ofensiva do dia está garantida. */
+  estudouHoje?: boolean;
   /** Ainda não passou pelas boas-vindas. */
   onboardingPendente: boolean;
   /** Aceitou receber lembretes de estudo por e-mail. */

@@ -18,6 +18,7 @@ const prismaMock = vi.hoisted(() => ({
     updateMany: vi.fn(),
   },
   $transaction: vi.fn(),
+  $queryRaw: vi.fn(),
 }));
 
 vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
@@ -30,6 +31,7 @@ import {
   enviarQuiz,
   listarRevisao,
   responderRevisao,
+  pularRevisao,
   iniciarTeste,
   finalizarTentativa,
   atualizarPerfil,
@@ -145,6 +147,7 @@ describe('CursoController', () => {
         revisoesPendentes: 3,
         metaDiariaXp: 30,
         xpHoje: 12,
+        estudouHoje: true,
         onboardingPendente: true,
         lembretesEmail: false,
       });
@@ -449,6 +452,54 @@ describe('CursoController', () => {
       prismaMock.revisaoItem.findFirst.mockResolvedValue({ id: 3, caixa: 4, proximaEm: new Date(0), exercicio: mcq(1, 'quiz') });
       await responderRevisao(studentReq({ params: { exercicioId: '1' }, body: { resposta: 1 } }), res);
       expect(res.json.mock.calls[0][0]).toMatchObject({ correto: false, caixa: 1, xpGanho: 0 });
+    });
+
+    it('locks the profile row before reading it, so concurrent requests do not lose daily XP', async () => {
+      prismaMock.revisaoItem.findFirst.mockResolvedValue({ id: 3, caixa: 2, proximaEm: new Date(0), exercicio: mcq(1, 'quiz') });
+      await responderRevisao(studentReq({ params: { exercicioId: '1' }, body: { resposta: 0 } }), res);
+      expect(prismaMock.$queryRaw).toHaveBeenCalledTimes(1);
+      expect(prismaMock.$queryRaw.mock.calls[0][0].join('?')).toMatch(/FOR UPDATE/);
+      expect(prismaMock.$queryRaw.mock.invocationCallOrder[0]).toBeLessThan(
+        prismaMock.perfilAprendiz.findUniqueOrThrow.mock.invocationCallOrder[0],
+      );
+    });
+  });
+
+  describe('pularRevisao', () => {
+    const ditado = { tipo: 'dictation' };
+    const pular = () => pularRevisao(studentReq({ params: { exercicioId: '1' } }), res);
+
+    it('returns 404 when the item is not in the review', async () => {
+      prismaMock.revisaoItem.findFirst.mockResolvedValue(null);
+      await pular();
+      expect(res.status).toHaveBeenCalledWith(404);
+    });
+
+    it('only skips dictation items', async () => {
+      prismaMock.revisaoItem.findFirst.mockResolvedValue({ id: 3, proximaEm: new Date(0), exercicio: { tipo: 'mcq' } });
+      await pular();
+      expect(res.status).toHaveBeenCalledWith(400);
+      expect(prismaMock.revisaoItem.update).not.toHaveBeenCalled();
+    });
+
+    it('postpones a due dictation to tomorrow, keeping its box and giving no XP', async () => {
+      prismaMock.revisaoItem.findFirst.mockResolvedValue({ id: 3, proximaEm: new Date(0), exercicio: ditado });
+      const antes = Date.now();
+      await pular();
+      const { where, data } = prismaMock.revisaoItem.update.mock.calls[0][0];
+      expect(where).toEqual({ id: 3 });
+      expect(Object.keys(data)).toEqual(['proximaEm']);
+      expect(data.proximaEm.getTime()).toBeGreaterThanOrEqual(antes + 86400000);
+      expect(res.json).toHaveBeenCalledWith({ proximaEm: data.proximaEm.toISOString() });
+      expect(prismaMock.perfilAprendiz.update).not.toHaveBeenCalled();
+    });
+
+    it('does not push an item that is already postponed', async () => {
+      const proximaEm = new Date(Date.now() + 3600000);
+      prismaMock.revisaoItem.findFirst.mockResolvedValue({ id: 3, proximaEm, exercicio: ditado });
+      await pular();
+      expect(prismaMock.revisaoItem.update).not.toHaveBeenCalled();
+      expect(res.json).toHaveBeenCalledWith({ proximaEm: proximaEm.toISOString() });
     });
   });
 

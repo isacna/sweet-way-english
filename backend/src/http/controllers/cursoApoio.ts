@@ -5,7 +5,7 @@ import { prisma } from '../../database/client.js';
 import type { Prisma } from '../../database/generated/prisma/client.js';
 import { corrigir, RespostaInvalida, versaoPublica, type ItemCorrigivel, type Resultado } from '../../domain/correcao.js';
 import { calcularTrilha, respostaVazia, type EstadoModulo } from '../../domain/desbloqueio.js';
-import { atualizarOfensiva, novaRevisao, ofensivaVigente, xpDoDiaVigente } from '../../domain/progresso.js';
+import { atualizarOfensiva, diaLocal, novaRevisao, ofensivaVigente, xpDoDiaVigente } from '../../domain/progresso.js';
 
 /** Cliente do Prisma ou o `tx` de uma transação interativa. */
 export type Db = Prisma.TransactionClient;
@@ -168,14 +168,23 @@ export async function perfilPublico(usuarioId: number, agora = new Date(), db: D
     revisoesPendentes,
     metaDiariaXp: perfil.metaDiariaXp,
     xpHoje: xpDoDiaVigente(perfil, agora),
+    // Prática e resposta errada contam como estudo e valem 0 XP: `xpHoje` sozinho não diz se a ofensiva está garantida
+    estudouHoje: perfil.ultimoEstudoEm !== null && diaLocal(perfil.ultimoEstudoEm) === diaLocal(agora),
     onboardingPendente: perfil.onboardingEm === null,
     lembretesEmail: perfil.lembretesEmail,
   };
 }
 
-/** Registra um estudo: atualiza a ofensiva, soma XP (total e do dia) e, ao ganhar XP, encerra as boas-vindas. */
+/**
+ * Registra um estudo: atualiza a ofensiva, soma XP (total e do dia) e, ao ganhar XP, encerra as boas-vindas.
+ * Chame dentro de uma transação: a linha do perfil fica travada até o commit.
+ */
 export async function registrarEstudo(db: Db, usuarioId: number, xp: number, agora = new Date()) {
-  const perfil = await obterPerfil(usuarioId, db);
+  await db.perfilAprendiz.createMany({ data: [{ usuarioId }], skipDuplicates: true });
+  // `xpDoDia` e a ofensiva saem do valor lido. Sem a trava, duas requisições ao mesmo tempo (duas abas, quiz e
+  // revisão) leriam o mesmo perfil e uma apagaria o XP do dia da outra.
+  await db.$queryRaw`SELECT 1 FROM "PerfilAprendiz" WHERE "usuarioId" = ${usuarioId} FOR UPDATE`;
+  const perfil = await db.perfilAprendiz.findUniqueOrThrow({ where: { usuarioId } });
   const ofensiva = atualizarOfensiva(perfil, agora);
   return db.perfilAprendiz.update({
     where: { usuarioId },

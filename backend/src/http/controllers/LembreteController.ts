@@ -1,5 +1,6 @@
 import type { Request, Response } from 'express';
 import { z } from 'zod';
+import { env } from '../../config/env.js';
 import { validar } from '../validacao.js';
 import { cancelarLembretes } from '../../services/lembretes.js';
 
@@ -18,4 +19,14 @@ export async function cancelar(req: Request, res: Response) {
   const { token } = validar(cancelarSchema, { token: corpo.token ?? req.query?.token });
   await cancelarLembretes(token);
   res.json({ message: MSG_LEMBRETES_CANCELADOS });
+}
+
+/**
+ * GET /lembretes/cancelar (público): quem abre no navegador o endereço do cabeçalho List-Unsubscribe (cliente de
+ * e-mail sem o POST de um clique) vai para a página do site, que desliga os lembretes e mostra o resultado.
+ * Nada é alterado aqui: um GET pode ser disparado por antivírus e pré-visualização de links.
+ */
+export function abrirCancelar(req: Request, res: Response) {
+  const token = typeof req.query?.token === 'string' ? req.query.token.slice(0, 2000) : '';
+  res.redirect(302, `${env.frontendUrl}/lembretes/cancelar${token ? `?token=${encodeURIComponent(token)}` : ''}`);
 }

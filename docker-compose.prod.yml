@@ -107,6 +107,42 @@ services:
     restart: unless-stopped
     logging: *logs
 
+  # Lembretes de estudo por e-mail (só para quem ligou): a mesma imagem do backend, que uma vez por dia, em
+  # LEMBRETES_HORA_UTC, roda scripts/enviar-lembretes.ts. Rodar de novo no mesmo dia não manda em dobro.
+  # Sem RESEND_API_KEY nada é enviado. Mandar agora: `docker compose ... exec lembretes npm run lembretes:enviar`.
+  lembretes:
+    image: ghcr.io/${GHCR_DONO:-isacna}/sweet-way-english-backend:${IMAGEM_TAG:-latest}
+    build:
+      context: ./backend
+    # Troca o entrypoint da API (migrações + servidor) por um laço que só espera a hora. Roda como `node`.
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "Lembretes de estudo: todo dia às $$LEMBRETES_HORA_UTC (UTC)."
+        while :; do
+          if [ "$$(date -u +%H:%M)" = "$$LEMBRETES_HORA_UTC" ]; then
+            node_modules/.bin/tsx scripts/enviar-lembretes.ts || echo "Lembretes: a execução terminou com erro."
+            sleep 60
+          fi
+          sleep 30
+        done
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql://${POSTGRES_USER:-sweetway}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sweetway}}
+      JWT_SECRET: ${JWT_SECRET}
+      APP_URL: ${URL_PUBLICA}
+      FRONTEND_URL: ${URL_PUBLICA}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-Sweet Way English <onboarding@resend.dev>}
+      NODE_ENV: production
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      # HH:MM em UTC. 22:00 UTC = 19:00 em Brasília (a imagem não tem os fusos instalados, por isso UTC).
+      LEMBRETES_HORA_UTC: ${LEMBRETES_HORA_UTC:-22:00}
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    logging: *logs
+
   # pg_dump diário + cópia dos uploads, com retenção local; opcionalmente criptografa e envia para fora (rclone).
   backup:
     image: ghcr.io/${GHCR_DONO:-isacna}/sweet-way-english-backup:${IMAGEM_TAG:-latest}

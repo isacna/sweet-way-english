@@ -385,14 +385,21 @@ function exercicioSemMidia(f: ExercicioForm): ExercicioPayload {
   }
 }
 
-/** Comparação aproximada à do backend, só para os avisos do editor (quem decide é o servidor). */
+/**
+ * Mesmos passos de `normalizar()` do backend (domain/correcao.ts), para os avisos do editor baterem com a
+ * validação do servidor, que é quem decide. Mudou lá, mude aqui.
+ */
 const semelhante = (s: string) =>
   s
+    .normalize("NFC")
     .toLowerCase()
     .replace(/[‘’ʼ`´]/g, "'")
+    .replace(/[“”]/g, '"')
     .replace(/\s+/g, " ")
+    .replace(/ ([,.!?;:])/g, "$1")
     .trim()
-    .replace(/[.!?;:,\s]+$/, "");
+    .replace(/[.!?;:,\s]+$/, "")
+    .trim();
 
 export const DITADO_MAX_PALAVRAS = 12;
 

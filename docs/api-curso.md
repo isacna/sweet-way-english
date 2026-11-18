@@ -27,6 +27,7 @@ Trilha completa com progresso.
     xp: number; ofensivaAtual: number; ofensivaMaxima: number; metodologia: string; revisoesPendentes: number;
     metaDiariaXp: number;        // 10 | 30 | 60 (padrão 30)
     xpHoje: number;              // XP ganho hoje, no fuso de Brasília
+    estudouHoje: boolean;        // estudou hoje, mesmo sem XP (prática, resposta errada): a ofensiva do dia está garantida
     onboardingPendente: boolean; // ainda não passou pelas boas-vindas
     lembretesEmail: boolean;     // aceitou lembretes de estudo por e-mail (padrão false)
   },
@@ -91,6 +92,11 @@ Até 20 itens com `proximaEm <= agora`, mais antigos primeiro: `{ itens: (Exerci
 404 se o item não está na revisão do aluno. Corrige, aplica `proximaRevisao()`, soma `XP.revisaoCorreta` se acertou,
 atualiza a ofensiva. Resposta: `Resultado & { caixa: number; proximaEm: string; xpGanho: number }`.
 
+### `POST /curso/revisao/:exercicioId/pular`
+Só para itens `dictation` (400 nos outros tipos; 404 se o item não está na revisão do aluno). Para quem não tem
+voz em inglês no navegador: adia o item para daqui a 1 dia, sem mudar de caixa, sem XP e sem contar como estudo.
+Se o item já não está vencido, nada muda. Resposta: `{ proximaEm: string }`.
+
 ### `POST /curso/modulos/:id/teste`
 Inicia uma tentativa. 409 se lições incompletas; 423 `{ error, bloqueadoAte }` se em espera; 403 se módulo bloqueado.
 Escolhe a forma (diferente da última tentativa, quando houver mais de uma). Se já há tentativa não finalizada do
@@ -125,14 +131,16 @@ Conquistas derivadas do progresso (nada é gravado; regras em `backend/src/domai
 `{ conquistas: [{ id, titulo, descricao, obtida: boolean, progresso?: { atual: number; alvo: number } }] }`
 - Lista fixa, na ordem: `primeira-licao`, `dez-licoes`, `quiz-perfeito` (uma lição com melhor quiz 100%), `primeiro-modulo`,
   `ofensiva-3`, `ofensiva-7`, `ofensiva-30` (pela `ofensivaMaxima`), `xp-500`, `xp-2000` e uma `nivel-<codigo>` por nível
-  com módulos publicados.
+  com módulos publicados. O alvo da `nivel-<codigo>` é o nível inteiro (módulos publicados ou não): com o nível
+  publicado só em parte, ela não é obtida.
 - `progresso` só vem nas conquistas de contagem (alvo > 1); `atual` nunca passa de `alvo`. Não há data de obtenção.
 
 ### `GET /curso/certificados`
 Um item por nível com módulos publicados:
 `{ niveis: [{ nivel: { id, codigo, nome }, concluido: boolean, modulosAprovados: number, totalModulos: number, certificado: { codigo, emitidoEm, nomeAluno } | null }] }`
-- Nível concluído = todos os módulos **publicados** do nível com teste aprovado (o teste do A2-M10 é a prova do nível).
-  Nível sem módulo publicado não aparece e nunca está concluído.
+- Nível concluído = **todos** os módulos do nível com teste aprovado (o teste do A2-M10 é a prova do nível).
+  `totalModulos` conta o nível inteiro, publicado ou não: enquanto faltar publicar algum módulo, o nível não é
+  concluído e nenhum certificado é emitido. Nível sem módulo publicado não aparece.
 - O certificado é emitido na primeira chamada depois da conclusão: código de 12 caracteres aleatórios (sem 0/O/1/I/L),
   com o nome do aluno naquele momento. Um por aluno e nível; chamadas simultâneas não duplicam.
 - Um certificado já emitido continua sendo devolvido mesmo que um módulo novo seja publicado depois no nível
@@ -170,6 +178,9 @@ Desliga os lembretes de estudo de quem é dono do token (o link "parar de recebe
 (`{ tipo: 'cancelar-lembretes', id }`, 365 dias) e não vale como sessão. Também aceita o token na query
 (`?token=`), para o POST de um clique do cabeçalho `List-Unsubscribe`.
 - 200 `{ message }`: sempre a mesma resposta para um token válido (mesmo se já estava desligado).
+
+`GET /lembretes/cancelar?token=…` (cliente de e-mail que abre o endereço do `List-Unsubscribe` no navegador)
+não altera nada: redireciona (302) para `${FRONTEND_URL}/lembretes/cancelar?token=…`, a página que faz o POST.
 - 400 `{ error }`: token ausente, inválido ou vencido.
 - Limite: 20 requisições / 15 min por IP.
 

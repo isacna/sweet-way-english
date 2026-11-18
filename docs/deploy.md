@@ -197,6 +197,10 @@ Backup vindo de fora (R2/B2): `dc run --rm backup rclone copy r2:sweetway-backup
 
 - **Site no ar:** cadastre `https://SEU_DOMINIO/api/health` no [UptimeRobot](https://uptimerobot.com) (grátis, de 5 em 5 minutos, alerta por e-mail ou Telegram). O health também confere o banco (`SELECT 1`).
 - **Backup:** pelo healthchecks.io (acima).
+- **Lembretes de estudo:** o serviço `lembretes` envia os e-mails uma vez por dia em `LEMBRETES_HORA_UTC` (padrão 22:00 UTC, 19:00 em Brasília), só para quem ligou os lembretes e só com `RESEND_API_KEY` definida.
+  - `dc logs --since 25h lembretes` mostra a última execução (`Lembretes de estudo: N enviado(s), N falha(s)`).
+  - `dc exec lembretes npm run lembretes:enviar -- --simular` lista quem receberia hoje, sem enviar. Sem `-- --simular`, envia agora.
+  - As regras valem para dias exatos (3 e 7 dias sem estudar): se o serviço ficar parado num dia, os lembretes daquele dia não são enviados depois.
 - **Logs:** JSON no stdout, com rotação de 10 MB × 5 arquivos por serviço.
   - `dc logs -f backend`, ou `dc logs --since 1h backend | grep '"level":50'` para ver os erros.
   - Cada requisição tem um `X-Request-Id`, que também volta na resposta.
