@@ -12,6 +12,7 @@ import {
   PERCENTUAL_DOMINIO_LICAO,
   XP,
   avaliarTeste,
+  novaRevisao,
   proximaRevisao,
 } from '../../domain/progresso.js';
 import {
@@ -379,6 +380,39 @@ export async function responderRevisao(req: AuthRequest, res: Response) {
   });
 
   res.json({ ...resultado, caixa: proxima.caixa, proximaEm: proxima.proximaEm.toISOString(), xpGanho });
+}
+
+/**
+ * POST /curso/revisao/:exercicioId/pular: o ditado depende de o navegador ter voz em inglês. Quem não consegue
+ * ouvir adia o item para amanhã, sem mudar de caixa e sem XP; senão ele ficaria vencido para sempre.
+ */
+export async function pularRevisao(req: AuthRequest, res: Response) {
+  const exercicioId = idParam(req.params.exercicioId);
+  if (!exercicioId) {
+    res.status(400).json({ error: 'ID inválido' });
+    return;
+  }
+  const agora = new Date();
+  const item = await prisma.revisaoItem.findFirst({
+    where: { usuarioId: req.user.id, exercicioId, exercicio: { licao: { status: 'publicado', modulo: { status: 'publicado' } } } },
+    select: { id: true, proximaEm: true, exercicio: { select: { tipo: true } } },
+  });
+  if (!item) {
+    res.status(404).json({ error: 'Este exercício não está na sua revisão' });
+    return;
+  }
+  if (item.exercicio.tipo !== 'dictation') {
+    res.status(400).json({ error: 'Só o ditado pode ser pulado na revisão' });
+    return;
+  }
+  // Já adiado (ex.: dois cliques): não empurra de novo
+  if (item.proximaEm.getTime() > agora.getTime()) {
+    res.json({ proximaEm: item.proximaEm.toISOString() });
+    return;
+  }
+  const { proximaEm } = novaRevisao(agora);
+  await prisma.revisaoItem.update({ where: { id: item.id }, data: { proximaEm } });
+  res.json({ proximaEm: proximaEm.toISOString() });
 }
 
 // ─── Teste de módulo ────────────────────────────────────────────────────────

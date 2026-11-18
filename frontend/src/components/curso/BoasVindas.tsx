@@ -39,6 +39,8 @@ export function BoasVindas({ nome, trilha }: { nome: string; trilha: Trilha }) {
   const [lembretes, setLembretes] = useState(trilha.perfil.lembretesEmail ?? false);
   const [salvando, setSalvando] = useState(false);
   const [erro, setErro] = useState("");
+  // Gravou no servidor: fecha aqui mesmo, sem depender de a trilha ser recarregada com sucesso
+  const [fechado, setFechado] = useState(false);
   const tituloRef = useRef<HTMLHeadingElement>(null);
 
   // A cada passo o foco vai para o título (leitor de tela anuncia a tela nova)
@@ -47,12 +49,13 @@ export function BoasVindas({ nome, trilha }: { nome: string; trilha: Trilha }) {
   }, [passo]);
 
   useEffect(() => {
+    if (fechado) return;
     const antes = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = antes;
     };
-  }, []);
+  }, [fechado]);
 
   const proximo = proximoPasso(trilha);
   const destino = proximo.tipo === "licao" ? `/aluno/curso/licao/${proximo.licao.id}` : "/aluno/curso";
@@ -70,7 +73,11 @@ export function BoasVindas({ nome, trilha }: { nome: string; trilha: Trilha }) {
       return;
     }
     if (irPara) router.push(irPara);
+    // "Pular" fica no painel; indo para a lição, a tela segue coberta até a navegação terminar
+    else setFechado(true);
   }
+
+  if (fechado) return null;
 
   const titulos = [
     nome ? `Boas-vindas, ${nome}!` : "Boas-vindas!",

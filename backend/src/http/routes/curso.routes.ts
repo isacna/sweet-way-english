@@ -8,6 +8,7 @@ import {
   enviarQuiz,
   listarRevisao,
   responderRevisao,
+  pularRevisao,
   iniciarTeste,
   finalizarTentativa,
   atualizarPerfil,
@@ -26,6 +27,7 @@ router.post('/exercicios/:id/verificar', h(verificarExercicio));
 router.post('/licoes/:id/quiz', h(enviarQuiz));
 router.get('/revisao', h(listarRevisao));
 router.post('/revisao/:exercicioId', h(responderRevisao));
+router.post('/revisao/:exercicioId/pular', h(pularRevisao));
 router.post('/modulos/:id/teste', h(iniciarTeste));
 router.post('/tentativas/:id', h(finalizarTentativa));
 router.patch('/perfil', h(atualizarPerfil));

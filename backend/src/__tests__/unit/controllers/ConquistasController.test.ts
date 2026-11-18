@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 const prismaMock = vi.hoisted(() => ({
   nivel: { findMany: vi.fn() },
+  modulo: { groupBy: vi.fn() },
   progressoLicao: { findMany: vi.fn() },
   tentativaTeste: { findMany: vi.fn() },
   perfilAprendiz: { createMany: vi.fn(), findUniqueOrThrow: vi.fn() },
@@ -33,8 +34,17 @@ const aprovada = (moduloId: number) => ({ moduloId, aprovado: true, percentual: 
 const reprovada = (moduloId: number) => ({ moduloId, aprovado: false, percentual: 40, finalizadaEm: new Date('2026-10-01') });
 const progresso = (licaoId: number, melhorPercentual = 90, concluida = true) => ({ licaoId, concluida, melhorPercentual });
 
-function estado({ niveis = [A1, A2, B1] as object[], progressos = [] as object[], tentativas = [] as object[] } = {}) {
+/** `modulosNoNivel`: quantos módulos cada nível tem no banco (publicados ou não). Padrão: tudo publicado. */
+function estado({
+  niveis = [A1, A2, B1] as object[],
+  progressos = [] as object[],
+  tentativas = [] as object[],
+  modulosNoNivel = { 1: 2, 2: 1 } as Record<number, number>,
+} = {}) {
   prismaMock.nivel.findMany.mockResolvedValue(niveis);
+  prismaMock.modulo.groupBy.mockResolvedValue(
+    Object.entries(modulosNoNivel).map(([nivelId, total]) => ({ nivelId: Number(nivelId), _count: { _all: total } })),
+  );
   prismaMock.progressoLicao.findMany.mockResolvedValue(progressos);
   prismaMock.tentativaTeste.findMany.mockResolvedValue(tentativas);
 }
@@ -103,6 +113,13 @@ describe('ConquistasController', () => {
       expect(c['nivel-a1']).toMatchObject({ obtida: true, progresso: { atual: 2, alvo: 2 } });
       expect(c['nivel-a2'].obtida).toBe(false);
     });
+
+    it('does not complete a level that is only partly published', async () => {
+      // A1 tem 10 módulos no banco e só 2 publicados: passar nos 2 não fecha o nível
+      estado({ tentativas: [aprovada(1), aprovada(2)], modulosNoNivel: { 1: 10, 2: 1 } });
+      await getConquistas(studentReq(), res);
+      expect(porId()['nivel-a1']).toMatchObject({ obtida: false, progresso: { atual: 2, alvo: 10 } });
+    });
   });
 
   // ── GET /curso/certificados ─────────────────────────────────────────────────
@@ -163,6 +180,21 @@ describe('ConquistasController', () => {
 
       expect(prismaMock.certificado.createMany).toHaveBeenCalledTimes(2);
       expect(res.json.mock.calls[0][0].niveis[0].certificado).not.toBeNull();
+    });
+
+    it('does not issue a certificate while part of the level is unpublished', async () => {
+      // Só 2 dos 10 módulos de A1 estão publicados e o aluno passou nos dois
+      estado({ tentativas: [aprovada(1), aprovada(2)], modulosNoNivel: { 1: 10, 2: 1 } });
+
+      await getCertificados(studentReq(), res);
+
+      expect(prismaMock.certificado.createMany).not.toHaveBeenCalled();
+      expect(res.json.mock.calls[0][0].niveis[0]).toMatchObject({
+        concluido: false,
+        modulosAprovados: 2,
+        totalModulos: 10,
+        certificado: null,
+      });
     });
 
     it('never completes a level whose modules are not published', async () => {

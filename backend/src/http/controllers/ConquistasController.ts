@@ -24,15 +24,26 @@ export function gerarCodigoCertificado() {
   return codigo;
 }
 
-/** Níveis com módulos publicados e quantos testes de módulo o aluno já passou em cada um. */
-function niveisDoAluno(trilha: Trilha) {
+/** Quantos módulos cada nível tem no banco, publicados ou não. */
+async function modulosPorNivel() {
+  const grupos = await prisma.modulo.groupBy({ by: ['nivelId'], _count: { _all: true } });
+  return new Map(grupos.map((g) => [g.nivelId, g._count._all]));
+}
+
+/**
+ * Níveis com módulos publicados e quantos testes de módulo o aluno já passou em cada um.
+ * `totalModulos` conta o nível inteiro, também os módulos ainda não publicados: com o nível publicado só em
+ * parte, ninguém o conclui (nem ganha o certificado) passando só no que já está no ar.
+ */
+async function niveisDoAluno(trilha: Trilha) {
+  const totais = await modulosPorNivel();
   return trilha.niveis
     .filter((n) => n.modulos.length > 0)
     .map((n) => ({
       id: n.id,
       codigo: n.codigo,
       nome: n.nome,
-      totalModulos: n.modulos.length,
+      totalModulos: Math.max(totais.get(n.id) ?? 0, n.modulos.length),
       modulosAprovados: n.modulos.filter((m) => trilha.estados.get(m.id)?.aprovado).length,
     }));
 }
@@ -47,7 +58,7 @@ export async function getConquistas(req: AuthRequest, res: Response) {
     .flatMap((m) => m.licoes)
     .map((l) => trilha.progressoPorLicao.get(l.id))
     .filter((p) => p?.concluida);
-  const niveis: NivelDoAluno[] = niveisDoAluno(trilha);
+  const niveis: NivelDoAluno[] = await niveisDoAluno(trilha);
 
   res.json({
     conquistas: calcularConquistas({
@@ -64,7 +75,7 @@ export async function getConquistas(req: AuthRequest, res: Response) {
 
 export async function getCertificados(req: AuthRequest, res: Response) {
   const usuarioId = req.user.id;
-  const niveis = niveisDoAluno(await carregarTrilha(usuarioId));
+  const niveis = await niveisDoAluno(await carregarTrilha(usuarioId));
   const concluidos = niveis.filter(nivelConcluido);
 
   const buscar = () => prisma.certificado.findMany({ where: { usuarioId } });

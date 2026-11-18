@@ -67,6 +67,14 @@ function SessaoRevisao({ sessao, onRecarregar }: { sessao: Sessao; onRecarregar:
     else setIndice((i) => i + 1);
   }
 
+  /** Ditado sem voz em inglês: adia o item para amanhã no servidor (senão ele ficaria vencido para sempre). */
+  function pular() {
+    if (!atual || enviando || feedback) return;
+    // Se a chamada falhar, o item só volta na próxima sessão: não vale travar a revisão por isso
+    void apiFetch(`/curso/revisao/${atual.id}/pular`, { method: "POST" }).catch(() => null);
+    avancar();
+  }
+
   if (fim) {
     const restantes = total - itens.length;
     return (
@@ -120,7 +128,7 @@ function SessaoRevisao({ sessao, onRecarregar }: { sessao: Sessao; onRecarregar:
             if (feedback) avancar();
             else void verificar();
           }}
-          onPular={avancar}
+          onPular={pular}
         />
         {feedback && (
           <FeedbackResultado resultado={feedback} ouvir={respostaEmIngles(atual)}>

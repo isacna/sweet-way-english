@@ -5,7 +5,7 @@
 export interface NivelDoAluno {
   codigo: string; // "A1"
   nome: string;
-  /** Módulos publicados do nível. */
+  /** Módulos do nível inteiro, publicados ou não. */
   totalModulos: number;
   /** Módulos publicados do nível com teste aprovado. */
   modulosAprovados: number;
@@ -30,7 +30,7 @@ export interface Conquista {
   progresso?: { atual: number; alvo: number };
 }
 
-/** Nível concluído: tem módulos publicados e o teste de todos eles foi aprovado. */
+/** Nível concluído: o teste de todos os módulos do nível foi aprovado (um módulo ainda não publicado impede). */
 export function nivelConcluido(nivel: { totalModulos: number; modulosAprovados: number }): boolean {
   return nivel.totalModulos > 0 && nivel.modulosAprovados >= nivel.totalModulos;
 }

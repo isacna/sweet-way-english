@@ -147,7 +147,7 @@ export default function AlunoDashboardPage() {
             rotulo={trilha?.perfil.ofensivaAtual === 1 ? "Dia seguido" : "Dias seguidos"}
             detalhe={
               trilha
-                ? trilha.perfil.ofensivaAtual > 0 && trilha.perfil.xpHoje === 0
+                ? trilha.perfil.ofensivaAtual > 0 && !(trilha.perfil.estudouHoje ?? trilha.perfil.xpHoje > 0)
                   ? "Estude hoje para não perder"
                   : `Recorde: ${trilha.perfil.ofensivaMaxima}`
                 : undefined

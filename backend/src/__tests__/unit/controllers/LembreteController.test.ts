@@ -8,7 +8,7 @@ const prismaMock = vi.hoisted(() => ({
 vi.mock('../../../database/client.js', () => ({ prisma: prismaMock }));
 vi.mock('../../../email/index.js', () => ({ enviarEmail: vi.fn() }));
 
-import { cancelar, MSG_LEMBRETES_CANCELADOS } from '../../../http/controllers/LembreteController.js';
+import { abrirCancelar, cancelar, MSG_LEMBRETES_CANCELADOS } from '../../../http/controllers/LembreteController.js';
 import { tokenCancelarLembretes } from '../../../services/lembretes.js';
 import { env } from '../../../config/env.js';
 import { executar, mockReq, mockRes } from '../../helpers/mockReqRes.js';
@@ -61,5 +61,25 @@ describe('LembreteController.cancelar', () => {
     expect(res.status).toHaveBeenCalledWith(400);
     expect(res.json.mock.calls[0][0].error).toMatch(/Link inválido ou expirado/);
     expect(prismaMock.perfilAprendiz.updateMany).not.toHaveBeenCalled();
+  });
+});
+
+describe('LembreteController.abrirCancelar', () => {
+  const resComRedirect = () => ({ ...mockRes(), redirect: vi.fn() }) as any;
+
+  beforeEach(() => vi.resetAllMocks());
+
+  it('sends a GET on the List-Unsubscribe address to the site page, changing nothing', () => {
+    const res = resComRedirect();
+    const token = tokenCancelarLembretes(42);
+    abrirCancelar(req({ query: { token } }), res);
+    expect(res.redirect).toHaveBeenCalledWith(302, `${env.frontendUrl}/lembretes/cancelar?token=${encodeURIComponent(token)}`);
+    expect(prismaMock.perfilAprendiz.updateMany).not.toHaveBeenCalled();
+  });
+
+  it('goes to the page without a token when none was sent', () => {
+    const res = resComRedirect();
+    abrirCancelar(req({ query: { token: ['a', 'b'] } }), res);
+    expect(res.redirect).toHaveBeenCalledWith(302, `${env.frontendUrl}/lembretes/cancelar`);
   });
 });
