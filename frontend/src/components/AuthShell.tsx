@@ -23,7 +23,7 @@ export function AuthShell({
       <div className={s.scrim} aria-hidden />
 
       <header className={s.nav}>
-        <Link href="/home" className={s.brand} aria-label="Sweet Way English, página inicial">
+        <Link href="/"className={s.brand} aria-label="Sweet Way English, página inicial">
           <span className={s.mark} aria-hidden>
             <Image src="/logo-sweet.png" alt="" width={512} height={512} priority className={s.markImg} />
           </span>

@@ -7,7 +7,7 @@ import type { CertificadoPublico } from "@/lib/curso";
 
 // A página mostra o nome de uma pessoa: não deve ser indexada
 export const metadata: Metadata = {
-  title: "Conferir certificado · Sweet Way English",
+  title: "Conferir certificado",
   robots: { index: false, follow: false },
 };
 
@@ -46,7 +46,7 @@ export default async function ConferirCertificadoPage({ params }: { params: Prom
   return (
     <div className="bg-cotton flex min-h-dvh flex-col">
       <header className="mx-auto flex w-full max-w-3xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
-        <Link href="/home" aria-label="Sweet Way English: página inicial" className="rounded-xl transition-opacity hover:opacity-85">
+        <Link href="/"aria-label="Sweet Way English: página inicial" className="rounded-xl transition-opacity hover:opacity-85">
           <BrandMark />
         </Link>
         <span className="eyebrow text-ink-faint">Conferência de certificado</span>
@@ -114,7 +114,7 @@ export default async function ConferirCertificadoPage({ params }: { params: Prom
         )}
 
         <p className="mt-6 text-center text-sm text-ink-soft">
-          <Link href="/home" className="font-semibold text-accent underline underline-offset-2">
+          <Link href="/"className="font-semibold text-accent underline underline-offset-2">
             Conheça o curso Sweet Way English
           </Link>
         </p>

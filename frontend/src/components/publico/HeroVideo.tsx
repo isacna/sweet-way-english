@@ -3,8 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useSyncExternalStore } from "react";
+import { preload } from "react-dom";
 import s from "./HeroVideo.module.css";
-import { VideoFundo } from "./VideoFundo";
+import { VIDEO_FUNDO, VideoFundo } from "./VideoFundo";
 
 const links = [
   { href: "/cadastro", rotulo: "Curso A1" },
@@ -62,12 +63,9 @@ function TituloAlternado({ className }: { className: string }) {
     <h1 className={`${className} ${s.titulo}`}>
       {/* Leitor de tela: um título estável, sem anunciar letra por letra */}
       <span className={s.srOnly}>{TITULOS[0].texto}</span>
-      {/* Reserva a altura do maior texto para a página não pular enquanto digita */}
-      <span className={s.tituloMedida} aria-hidden>
-        {TITULOS.map((t) => (
-          <span key={t.lang}>{t.texto}</span>
-        ))}
-      </span>
+      {/* Reserva a altura do maior texto para a página não pular enquanto digita. Os textos entram pelo CSS
+          (::before / ::after), para o título não ficar repetido no HTML que os buscadores leem. */}
+      <span className={s.tituloMedida} aria-hidden data-a={TITULOS[0].texto} data-b={TITULOS[1].texto} />
       <span className={s.tituloVisivel} aria-hidden lang={exibido.lang}>
         {texto}
         {digitando && <span className={s.cursor} />}
@@ -79,6 +77,11 @@ function TituloAlternado({ className }: { className: string }) {
 // ─── Hero ───────────────────────────────────────────────────────────────────
 
 export function HeroVideo() {
+  // O poster do vídeo ocupa a tela inteira (é o maior elemento da página): o <link rel="preload"> sai no HTML do
+  // servidor e o navegador busca a imagem cedo. Tem de ser chamado aqui, num componente de cliente: chamado na
+  // página (componente de servidor), o Next não emite o link numa página pré-gerada.
+  preload(VIDEO_FUNDO.poster, { as: "image", fetchPriority: "high" });
+
   // A classe de entrada já vem no HTML do servidor (sem "piscar" antes da animação)
   // e sai depois que tudo entrou, para não deixar will-change ligado.
   const [animando, setAnimando] = useState(true);
@@ -95,9 +98,10 @@ export function HeroVideo() {
         <input type="checkbox" id="menu-home" className={s.menuToggle} aria-label="Abrir menu" />
 
         <header className={s.nav}>
-          <Link href="/home" className={s.brand} aria-label="Sweet Way English, página inicial">
+          <Link href="/" className={s.brand} aria-label="Sweet Way English, página inicial">
             <span className={s.mark} aria-hidden>
-              <Image src="/logo-sweet.png" alt="" width={512} height={512} priority className={s.markImg} />
+              {/* Aparece com ~80px: `sizes` evita baixar o PNG de 512px; sem `priority`, para não disputar com o poster */}
+              <Image src="/logo-sweet.png" alt="" width={512} height={512} sizes="96px" loading="eager" className={s.markImg} />
             </span>
             <span className={s.wordmark}>Sweet Way English</span>
           </Link>
